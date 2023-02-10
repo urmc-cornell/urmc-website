@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.about-us {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.purpose {
+    width: 80%;
+    margin-top: 20px;
+    font-size: 25px;
+    color: #37383C;
+    font-weight: 500;
+    /* background-color: red; */
+
+}

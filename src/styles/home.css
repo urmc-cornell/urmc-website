@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.header {
+    font-family: "Hard";
+    font-size: 75px;
+    text-align: center;
+    padding: 0 10rem;
+    margin-bottom: 15px;
+}
+
+.sub-header {
+    color: #37383C;
+    text-align: center;
+}
+
+.btn {
+    flex: 1 0 1;
+    margin: 10px;
+    display: flex;
+    width: auto;
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    justify-content: center;
+    font-weight: bold;
+    background-size: 200% auto;
+    font-size: 20px;
+    align-items: center;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    text-decoration: none;
+    border-radius: 64px;
+}
+
+.btn-1 {
+    background-image: linear-gradient(to right, #5F8DBF 0%, #79baff 50%);
+}
+
+.btn-2 {
+    background-image: linear-gradient(to right, #F18F02 0%, #FFB244 50%);
+}
+
+.flexbox-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+}
+
+.btn-1:hover {
+    background-image: linear-gradient(to right, #4b6f96 0%, #6096d0 50%);
+}
+
+.btn-2:hover {
+    background-image: linear-gradient(to right, #b16802 0%, #d8963a 50%);
+}
+
+.blue_ellipse {
+    position: absolute;
+    bottom: 0px;
+    max-width: 100%;
+    max-height: 80%;
+}
+
+.yellow_ellipse {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    max-width: 100%;
+    max-height: 80%;
+    height: auto;
+    width: auto\9;
+}
+
+.group {
+    position: relative;
+    margin-top: 12%;
+    bottom: -4px;
+    width: 100%;
+    aspect-ratio: 4.5;
+}
+
+.images {
+    position: relative;
+}
+
