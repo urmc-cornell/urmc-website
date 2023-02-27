@@ -5,7 +5,7 @@ export default function Footer() {
     let linkedin = require('../images/assets/linkedIn.png');
 
     return <nav className="foot">
-        <h1 className="footer-title">Underrepresented Minorities in Computing</h1>
+        <h1 className="footer-title">UNDERREPRESENTED MINORITIES IN COMPUTING</h1>
         <ul>
             <li>
                 <a href="/">
