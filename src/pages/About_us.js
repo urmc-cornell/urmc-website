@@ -1,4 +1,9 @@
-export default function About_us() {
+import React, { Component } from 'react'
+
+class About_us extends Component {
+// export default function About_us() {
+
+    render() {
     return <about_us>
         <div className="about-us">
             <h1>About Us</h1>
@@ -11,4 +16,7 @@ export default function About_us() {
 
 
     </about_us>
+    }
 }
+
+export default About_us;

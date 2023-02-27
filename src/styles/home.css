@@ -10,8 +10,12 @@ body {
     font-family: "Hard";
     font-size: 75px;
     text-align: center;
-    padding: 0 10rem;
-    margin-bottom: 15px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.header.bottom {
+    margin-top: 0;
 }
 
 .sub-header {
@@ -84,6 +88,8 @@ body {
     margin-top: 12%;
     bottom: -4px;
     width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
     aspect-ratio: 4.5;
 }
 
@@ -91,3 +97,17 @@ body {
     position: relative;
 }
 
+
+@media (max-width: 768px) {
+    .header {
+        font-size: 20px;
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+
+    .sub-header {
+        font-size: 16px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}

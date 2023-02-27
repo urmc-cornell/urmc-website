@@ -25,6 +25,11 @@ code {
 }
 
 @font-face {
+  font-family: "skinny-montserrat";
+  src: local("Montserrat"),
+    url("../fonts/static/Montserrat-Light.ttf") format("truetype");
+}
+@font-face {
   font-family: "Hard";
   src: local("Montserrat"),
     url("../fonts/static/Montserrat-Bold.ttf") format("truetype");
