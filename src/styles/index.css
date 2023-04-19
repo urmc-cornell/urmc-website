@@ -40,3 +40,9 @@ code {
   src: local("Helv"),
     url("../fonts/helvfold/oh/Helvetica\ Neue\ UltraLight.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "Montserrat-Medium-Soft";
+  src: local("Helv"),
+    url("../fonts/static/Montserrat-SemiBold.ttf") format("truetype");
+}

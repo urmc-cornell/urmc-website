@@ -22,3 +22,55 @@ body {
     /* background-color: red; */
 
 }
+
+.pillars {
+    /* background-color: red;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;  */
+
+    display: flex;
+    flex-wrap: wrap; /* allow images to wrap to next row */
+    justify-content: center; /* center images horizontally */
+    align-items: center; /* center images vertically */
+    max-width: 100%; /* ensure container doesn't exceed parent width */
+    position: relative; /* enable absolute positioning for child elements */
+
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+.pillar {
+    width: 400px; /* set width to 100% to cover the container */
+    height: auto; /* maintain aspect ratio */
+    position: relative;
+    /* height: 20px; */
+}
+
+.stats {
+    background: #D6E7B4;
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 36px;
+    margin-top: 50px;
+}
+
+.stats-block {
+    text-align: center;
+    font-size: 13px;
+}
+
+.stats-block.bottom {
+    /* margin-top: 0; */
+    font-size: 30px;
+    font-weight: bold;
+}
+

@@ -1,30 +1,19 @@
-export default function AUCard() {
+import React, { Component } from 'react'
 
+class AUCard extends Component {
+    // export default function AUCard() {
 
-    return <nav className="foot">
-        <h1 className="footer-title">Underrepresented Minorities in Computing</h1>
-        <ul>
-            <li>
-                <a href="/">
-                    <img src={mail} className="socials" href=""></img>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.instagram.com/urmc_cornell/" target="_blank">
-                    <img src={instagram} className="socials" href="/"></img>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/company/urmc-cornell/" target="_blank">
-                    <img src={linkedin} className="socials" href=""></img>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.facebook.com/cornellurmc" target="_blank">
-                    <img src={facebook} className="socials" href="/"></img>
-                </a>
-            </li>
-        </ul>
-    </nav>
+    render(props) {
+        return (
+            <div className="card">
+                <h1>{this.props.title}</h1>
+                <div className="images">
+                    <img src={blue_ellipse} className="blue_ellipse"></img>
+                    <img src={yellow_ellipse} className="yellow_ellipse"></img>
+                </div>
+            </div>
+        )
+    }
 }
 
+export default AUCard

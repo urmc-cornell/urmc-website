@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import '../styles/bars.css'
 
 class Navbar extends Component {
-// export default function Navbar() {
 
     state = {clicked: false}
 
@@ -12,7 +11,7 @@ class Navbar extends Component {
         console.log(this.state.clicked)
     }
 
-    render() {
+    render(props) {
     return <nav className="nav">
         <a href="/">
             <img src={require('../images/gold_logo.png')} className="site-title" href="/"></img>
