@@ -13,7 +13,6 @@ import evanPrimary from '../headshots/evanPrimary.png';
 import macarenaPrimary from '../headshots/macarenaPrimary.png';
 import derekPrimary from '../headshots/derekPrimary.png';
 
-
 export const cards = [
     {
         id: 1,
@@ -21,14 +20,12 @@ export const cards = [
         image: kaylaPrimary,
         name: 'Kayla Sprayberry'
     },
-
     {
         id: 2,
         title: 'CO-PRESIDENT',
         image: derekPrimary,
         name: 'Derek Sanchez'
     },
-
     {
         id: 3,
         title: 'CO-DESIGN CHAIR',
@@ -101,14 +98,4 @@ export const cards = [
         image: macarenaPrimary,
         name: 'Macarena Hesse'
     }
-    
-    
-    
-    
 ];
-
-function getCards () {
-    return cards
-}
-
-export default getCards;

@@ -19,19 +19,9 @@ body {
     font-size: 25px;
     color: #37383C;
     font-weight: 500;
-    /* background-color: red; */
-
 }
 
 .pillars {
-    /* background-color: red;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;  */
-
     display: flex;
     flex-wrap: wrap; /* allow images to wrap to next row */
     justify-content: center; /* center images horizontally */
@@ -42,7 +32,6 @@ body {
     margin-left: 50px;
     margin-right: 50px;
 }
-
 
 .pillar {
     width: 400px; /* set width to 100% to cover the container */
@@ -69,7 +58,6 @@ body {
 }
 
 .stats-block.bottom {
-    /* margin-top: 0; */
     font-size: 30px;
     font-weight: bold;
 }

@@ -1,4 +1,3 @@
-
 .leadership {
     display: flex;
     text-align: center;
@@ -12,39 +11,34 @@
     color: #37383C;
     font-size: 25px;
 }
-/* 
-.grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  } */
 
   .grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 100fr));
+    grid-gap: 20px;
     overflow: auto;
     max-width: 100%;
     height: auto;
     margin-left: 20px;
     margin-right: 20px;
+    background-color: pink;
     align-items: center;
     justify-content: center;
-
   }
-  
+
   .grid-item {
     display: flex;
     padding: 20px;
     align-items: center;
     text-align: center;
+    background-color: blue;
+    width: auto;
     justify-content: center;
   }
 
 
 @media (max-width: 767px) { /* adjust the breakpoint as needed */
     .grid-container {
-      grid-template-columns: repeat(1, 1fr); /* switch to 2 columns on small screens */
       width: 200;
       height: 1000px;
       margin-left: auto;
@@ -52,6 +46,6 @@
     }
   
     .grid-item {
-      width: auto; /* set a minimum width for the cards */
+      width: fit; /* set a minimum width for the cards */
     }
   }

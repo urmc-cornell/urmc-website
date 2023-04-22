@@ -16,12 +16,10 @@ class Navbar extends Component {
         <a href="/">
             <img src={require('../images/gold_logo.png')} className="site-title" href="/"></img>
         </a>
-
         <div className="menu-icon" onClick={this.handleClick}>
             <i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i>
 
         </div>
-
         <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
             <CustomLink href="/about-us">ABOUT US</CustomLink>
             <CustomLink href="/leadership">LEADERSHIP</CustomLink>

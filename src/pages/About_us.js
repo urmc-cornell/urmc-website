@@ -5,7 +5,6 @@ import profdev from '../images/profdev.png';
 import Carousel from '../components/APCItem'
 
 class About_us extends Component {
-    // export default function About_us() {
 
     render() {
         return <about_us>
@@ -17,13 +16,11 @@ class About_us extends Component {
                     within the computing fields and foster an environment that empowers underrepresented
                     minorities with technological aspirations through <span style={{ color: '#265999' }}>3 pillars:</span></h6>
             </div>
-
             <div className="pillars">
                 <img src={academic} className="pillar"></img>
                 <img src={community} className="pillar"></img>
                 <img src={profdev} className="pillar"></img>
             </div>
-
             <div className="stats">
                 <div className="stats-block">
                     <h1 className="greenTop">FOUNDED</h1>
@@ -44,8 +41,6 @@ class About_us extends Component {
 
                 <Carousel />
             </div>
-
-
         </about_us>
     }
 }

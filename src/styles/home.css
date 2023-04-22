@@ -97,7 +97,6 @@ body {
     position: relative;
 }
 
-
 @media (max-width: 768px) {
     .header {
         font-size: 20px;

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import '../styles/eboardcard.css'
-// class EboardCard extends Component {
 
 function EboardCard(props) {
     return (
@@ -20,7 +19,5 @@ function EboardCard(props) {
         </eboardcard>
     )
 }
-// }
-
 
 export default EboardCard;
