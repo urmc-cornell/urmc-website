@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import academic from '../images/academic.png';
 import community from '../images/community.png';
 import profdev from '../images/profdev.png';
-import Carousel from '../components/APCItem'
 
 class About_us extends Component {
 
@@ -37,8 +36,6 @@ class About_us extends Component {
             </div>
 
             <div>
-                <h1>Under Construction!</h1>
-
             </div>
         </about_us>
     }
