@@ -37,9 +37,8 @@ class About_us extends Component {
             </div>
 
             <div>
-                <h1>My Carousel</h1>
+                <h1>Under Construction!</h1>
 
-                <Carousel />
             </div>
         </about_us>
     }

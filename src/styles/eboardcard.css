@@ -32,6 +32,8 @@
     font-family: "Montserrat-Medium-Soft";
     font-size: 23px;
     padding-bottom: 17px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .image-container img {
