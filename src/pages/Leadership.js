@@ -14,7 +14,7 @@ class Leadership extends Component {
     }
 
     handleCardClick = (card) => {
-        this.setState({ selectedCard: card, popupActive: true });
+        this.setState({ selectedCard: card, popupActive: card.popup });
     }
 
     handleClose = (active) => {

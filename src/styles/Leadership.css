@@ -21,7 +21,6 @@
     height: auto;
     margin-left: 20px;
     margin-right: 20px;
-    background-color: pink;
     align-items: center;
     justify-content: center;
   }
@@ -31,7 +30,6 @@
     padding: 20px;
     align-items: center;
     text-align: center;
-    background-color: blue;
     width: auto;
     justify-content: center;
   }
