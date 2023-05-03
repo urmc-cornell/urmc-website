@@ -37,7 +37,6 @@ class About_us extends Component {
             </div>
 
             <div>
-                <h1>Under Construction!</h1>
 
             </div>
         </about_us>

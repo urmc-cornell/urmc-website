@@ -1,0 +1,63 @@
+.popup-event {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 0.15s forwards;
+  }
+
+  .popup-inner-event {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    overflow: hidden;
+    width: 85%;
+    border-radius: 20px;
+    padding-top: 80px;
+  }
+
+  .popup-inner-event img {
+    width: 450px;
+    height: 450px;
+  }
+
+  .popup-inner-event .close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 37px;
+    height: 35.9px;
+  
+  }
+  .popup-inner-event .close-btn:hover {
+    content: url('../images/assets/xHover.png');
+  }
+
+  .blurb-background {
+    width: 100%;
+    height: 150px;
+    background-color: #37383C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .blurb {
+    width: 60%;
+    font-family: 'Montserrat-Medium-Soft';
+    font-weight: 600;
+    color: #FFFF;
+  }
+
+
+
+  

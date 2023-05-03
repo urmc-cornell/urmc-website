@@ -5,8 +5,6 @@ import instaGold from '../images/assets/instagramGold.png';
 import linkedGold from '../images/assets/linkedinGold.png';
 import x from '../images/assets/x.png';
 
-const askAbout = ['Soccer', 'NFL', 'Formula 1']
-
 function eboardPopup(props) {
     return (props.trigger) ? (
         <div className="popup">
