@@ -19,34 +19,35 @@ class Leadership extends Component {
 
     handleClose = (active) => {
         this.setState({ selectedCard: null, popupActive: active });
-        console.log("I was called")
     }
 
     render() {
         const { selectedCard } = this.state;
 
-        return <leadership>
+        return <div>
             <h1 className="leadership">Executive Board</h1>
             <h2 className="fall22"> Spring 2023</h2>
             <EboardPopup trigger={this.state.popupActive} card={this.state.selectedCard} setTrigger={this.handleClose}>
                 <h3>My popup!</h3>
             </EboardPopup>
-            <div className="grid-container">
-                {cards.map(card => (
-                    <div className="grid-item"
-                        onClick={() => this.handleCardClick(card)}
-                    >
-                        <EboardCard
-                            key={card.id}
-                            imageURL={card.image}
-                            title={card.title}
-                            name={card.name}
+            <div className="grid-container-container">
+                <div className="grid-container">
+                    {cards.map(card => (
+                        <div className="grid-item"
                             onClick={() => this.handleCardClick(card)}
-                        />
-                    </div>
-                ))}
+                        >
+                            <EboardCard
+                                key={card.id}
+                                imageURL={card.image}
+                                title={card.title}
+                                name={card.name}
+                                onClick={() => this.handleCardClick(card)}
+                            />
+                        </div>
+                    ))}
+                </div>
             </div>
-        </leadership>
+        </div>
     }
 }
 

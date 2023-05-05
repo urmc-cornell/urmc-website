@@ -1,0 +1,41 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 100fr));
+    grid-gap: 20px;
+    overflow: auto;
+    max-width: 70%;
+    width: 80%;
+    height: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.grid-item {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+    width: auto;
+    justify-content: center;
+}
+
+.grid-item img {
+    width: 300px;
+    height: 300px;
+}
+
+.this-week {
+    font-family: "Montserrat-Medium-Soft";
+    display: flex;
+    font-size: 23px;
+    left: 72px;
+    font-variant: all-small-caps;
+    margin-left: 72px;
+    
+
+    color: #265999;
+
+}

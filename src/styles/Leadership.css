@@ -11,6 +11,12 @@
     color: #37383C;
     font-size: 25px;
 }
+.grid-container-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
 
   .grid-container {
     display: grid;

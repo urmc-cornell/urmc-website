@@ -34,7 +34,6 @@ class About_us extends Component {
                     <h2 className="stats-block bottom">15</h2>
                 </div>
             </div>
-
             <div>
             </div>
         </about_us>

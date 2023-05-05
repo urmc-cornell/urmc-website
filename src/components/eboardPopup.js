@@ -5,14 +5,14 @@ import instaGold from '../images/assets/instagramGold.png';
 import linkedGold from '../images/assets/linkedinGold.png';
 import x from '../images/assets/x.png';
 
-const askAbout = ['Soccer', 'NFL', 'Formula 1']
-
 function eboardPopup(props) {
     return (props.trigger) ? (
         <div className="popup">
             <div className="popup-inner">
                 <div className="img-profile">
-                    <img src={props.card.secondaryImage}></img>
+                    <div className="secondary">
+                        <img src={props.card.secondaryImage}></img>
+                    </div>
                     <div className="profile-stack">
                         <div className="name">{props.card.name}</div>
                         <div className="position">{props.card.title}</div>

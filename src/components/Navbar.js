@@ -8,7 +8,6 @@ class Navbar extends Component {
 
     handleClick = () => {
         this.setState({ clicked: !this.state.clicked })
-        console.log(this.state.clicked)
     }
 
     render(props) {
@@ -23,8 +22,8 @@ class Navbar extends Component {
         <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
             <CustomLink href="/about-us">ABOUT US</CustomLink>
             <CustomLink href="/leadership">LEADERSHIP</CustomLink>
-            {/* <CustomLink href="/events">EVENTS</CustomLink>
-            <CustomLink href="/ta-directory">TA DIRECTORY</CustomLink>
+            <CustomLink href="/events">EVENTS</CustomLink>
+            {/* <CustomLink href="/ta-directory">TA DIRECTORY</CustomLink>
             <CustomLink href="/getting-involved">GETTING INVOLVED</CustomLink>
             <CustomLink href="/sponsors">SPONSORS</CustomLink> */}
         </ul>
