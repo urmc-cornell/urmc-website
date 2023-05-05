@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import academic from '../images/academic.png';
 import community from '../images/community.png';
 import profdev from '../images/profdev.png';
-import Carousel from '../components/APCItem'
 
 class About_us extends Component {
 
@@ -35,9 +34,7 @@ class About_us extends Component {
                     <h2 className="stats-block bottom">15</h2>
                 </div>
             </div>
-
             <div>
-
             </div>
         </about_us>
     }
