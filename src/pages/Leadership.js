@@ -19,13 +19,12 @@ class Leadership extends Component {
 
     handleClose = (active) => {
         this.setState({ selectedCard: null, popupActive: active });
-        console.log("I was called")
     }
 
     render() {
         const { selectedCard } = this.state;
 
-        return <leadership>
+        return <div>
             <h1 className="leadership">Executive Board</h1>
             <h2 className="fall22"> Spring 2023</h2>
             <EboardPopup trigger={this.state.popupActive} card={this.state.selectedCard} setTrigger={this.handleClose}>
@@ -48,8 +47,7 @@ class Leadership extends Component {
                     ))}
                 </div>
             </div>
-
-        </leadership>
+        </div>
     }
 }
 

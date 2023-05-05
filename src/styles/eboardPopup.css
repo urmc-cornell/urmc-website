@@ -61,7 +61,6 @@
   font-style: normal;
   font-weight: 900;
   font-size: 25px;
-  line-height: 37px;
   /* identical to box height */
 
   display: flex;
@@ -88,7 +87,6 @@
   font-style: normal;
   font-weight: 500;
   font-size: 19px;
-  line-height: 30px;
   display: flex;
   align-items: center;
   text-transform: capitalize;
@@ -171,20 +169,49 @@
 }
 
 @media (max-width: 767px) {
+  
+  .popup-inner {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    gap: 0px;
+  }
 
-  /* adjust the breakpoint as needed */
-  .popup-inner img {
-    width: 100px;
-    height: 100px;
+  .secondary {
+    width: 300px;
+    height: auto;
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .secondary img {
+    width: 80%;
+    height: auto;
   }
 
   .profile-stack {
     margin-left: 30px;
-    gap: 20px;
-    background-color: yellow;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    /* background-color: red; */
+    margin-left: 0;
+    /* transform: scale(0.8); */
   }
+
+  .img-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bio {
+    font-size: 12px;
+  }
+  
 }
 
 @keyframes fadeIn {

@@ -10,7 +10,9 @@ function eboardPopup(props) {
         <div className="popup">
             <div className="popup-inner">
                 <div className="img-profile">
-                    <img src={props.card.secondaryImage}></img>
+                    <div className="secondary">
+                        <img src={props.card.secondaryImage}></img>
+                    </div>
                     <div className="profile-stack">
                         <div className="name">{props.card.name}</div>
                         <div className="position">{props.card.title}</div>

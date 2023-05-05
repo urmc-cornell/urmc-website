@@ -20,15 +20,66 @@
     gap: 20px;
     background-color: rgba(255, 255, 255, 0.9);
     overflow: hidden;
-    width: 85%;
-    border-radius: 20px;
-    padding-top: 80px;
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
   }
 
-  .popup-inner-event img {
-    width: 450px;
-    height: 450px;
+  .flyer {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+  
+  .flyer-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 100fr)); */
+    grid-template-columns: auto min-content;
+    /* position: relative; */
+
+    /* height: 300px; */
+    width: 100%;
+    height: auto;
+    justify-content: center;
+  }
+
+  .flyer-image {
+    justify-self: center;
+    align-self: center;
+    width: 30%;
+    height: auto;
+  }
+
+  .sidebar {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 30px;
+    margin-bottom: 10px;
+    flex-direction: row;
+  }
+
+  .sidebar img {
+    width: 50px;
+    height: auto;
+  }
+
+  /* .sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+  } */
+  
+  /* .flyer-container img {
+    width: 35%;
+    height: auto;
+  } */
 
   .popup-inner-event .close-btn {
     position: absolute;
@@ -36,28 +87,40 @@
     right: 16px;
     width: 37px;
     height: 35.9px;
-  
   }
+
   .popup-inner-event .close-btn:hover {
     content: url('../images/assets/xHover.png');
   }
 
   .blurb-background {
     width: 100%;
-    height: 150px;
+    height: 20%;
     background-color: #37383C;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    bottom: 0;
   }
 
   .blurb {
-    width: 60%;
+    width: 80%;
     font-family: 'Montserrat-Medium-Soft';
     font-weight: 600;
     color: #FFFF;
   }
 
+  @media (max-width: 767px) {
+    .flyer-image {
+      width: 70%;
+      height: auto;
+    }
+
+    .blurb {
+      font-size: 10px;
+    }
+  }
 
 
   
