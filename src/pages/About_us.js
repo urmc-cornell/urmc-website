@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import academic from '../images/academic.png';
 import community from '../images/community.png';
 import profdev from '../images/profdev.png';
-
+import Carousel from '../components/Carousel';
 class About_us extends Component {
 
     render() {
@@ -35,6 +35,7 @@ class About_us extends Component {
                 </div>
             </div>
             <div>
+                <Carousel></Carousel>
             </div>
         </about_us>
     }

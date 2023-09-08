@@ -1,0 +1,37 @@
+.carousel-item {
+    display: inline-flex;
+    
+}
+
+
+body {
+    margin: 0;
+}
+
+.carousel {
+    overflow: hidden;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.inner {
+    white-space: nowrap;
+    transition: transform 0.3s;
+    box-shadow: 0 5px 15 px rgba(0,0,0,0.05);
+}
+
+.carousel-item {
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 490px;
+    background-color: #ffff;
+}
+
+.carousel-img {
+    width: 250px;
+    padding: 0 20px 0 20px;
+
+}
