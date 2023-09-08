@@ -3,6 +3,9 @@ import '../styles/Carousel.css'
 
 import leftArrow from '../images/assets/arrow_left.png';
 import rightArrow from '../images/assets/arrow_right.png';
+import filledIndicator from '../images/assets/indicator_filled.png'
+import emptyIndicator from '../images/assets/indicator_empty.png'
+
 
 
 import kayla from '../headshots/kaylaPrimary.png';
@@ -20,16 +23,9 @@ const Carousel = () => {
         { image: carousel },
         { image: carousel },
         { image: carousel },
-        { image: carousel }, 
-        { image: carousel }, 
         { image: carousel },
         { image: carousel },
         { image: carousel },
-        { image: carousel },
-        { image: carousel }, 
-        { image: carousel }, 
-        { image: carousel },
-
     ]
 
     const updateIndex = (newIndex) => {
@@ -44,18 +40,32 @@ const Carousel = () => {
     return (
         <div className="carousel">
             <div className="inner"
-                style={{ transform: `translate(-${activeIndex * 103}%)` }}>
+                style={{ transform: `translate(-${activeIndex * 100}%)` }}>
                 {items.map((item) => {
                     return <CarouselItem item={item} />;
                 })}
             </div>
             <div className="carousel-bottom-bar">
                 <button className="button-arrow" onClick={() => { updateIndex(activeIndex - 1) }}>
-                    <img src={leftArrow}></img>
+                    <img src={leftArrow} />
                 </button>
-                <div className="indicators"> ... </div>
+                <div className="indicators">
+                    {items.map((item, index) => {
+                        return (
+                            <button
+                                onClick={() => {
+                                    updateIndex(index);
+                                }}
+                                className="button-arrow"
+                            >
+                                <img src={index === activeIndex ? filledIndicator : emptyIndicator} />
+                            </button>
+                        )
+                    })}
+                </div>
+
                 <button className="button-arrow" onClick={() => { updateIndex(activeIndex + 1) }}>
-                    <img src={rightArrow}></img>
+                    <img src={rightArrow} />
                 </button>
             </div>
         </div>
