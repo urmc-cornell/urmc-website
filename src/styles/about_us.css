@@ -62,3 +62,18 @@ body {
     font-weight: bold;
 }
 
+.academic-support {
+    margin-left: 10%;
+}
+
+@media (max-width: 768px) {
+    .pillars {
+        display: none;
+    }
+
+    .stats {
+        display: none;
+    }
+    
+
+}
