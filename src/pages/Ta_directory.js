@@ -3,6 +3,7 @@ import EboardCard from '../components/EboardCard';
 import '../styles/Leadership.css';
 import { cards } from '../Supporting/TA-Constants'
 import EboardPopup from '../components/eboardPopup';
+import TaPopup from '../components/taPopup';
 
 class TADirectory extends Component {
     constructor(props) {
@@ -27,9 +28,9 @@ class TADirectory extends Component {
         return <div>
             <h1 className="leadership">URM TA Directory</h1>
             <h2 className="fall22"> Fall 2023</h2>
-            <EboardPopup trigger={this.state.popupActive} card={this.state.selectedCard} setTrigger={this.handleClose}>
+            <TaPopup trigger={this.state.popupActive} card={this.state.selectedCard} setTrigger={this.handleClose}>
                 <h3>My popup!</h3>
-            </EboardPopup>
+            </TaPopup>
             <div className="grid-container-container">
                 <div className="grid-container">
                     {cards.map(card => (
