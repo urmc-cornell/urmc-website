@@ -6,15 +6,8 @@ import rightArrow from '../images/assets/arrow_right.png';
 import filledIndicator from '../images/assets/indicator_filled.png'
 import emptyIndicator from '../images/assets/indicator_empty.png'
 
-
-
-import kayla from '../headshots/kaylaPrimary.png';
 import carousel from '../images/carousel/carousel1.png';
 import CarouselItem from './CarouselItem';
-
-
-
-
 
 const Carousel = () => {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -42,7 +35,8 @@ const Carousel = () => {
             <div className="inner"
                 style={{ transform: `translate(-${activeIndex * 100}%)` }}>
                 {items.map((item) => {
-                    return <CarouselItem item={item} />;
+                    return <CarouselItem item={item}></CarouselItem>
+                    // return <img className="carousel-img" src={item.image}></img>;
                 })}
             </div>
             <div className="carousel-bottom-bar">
