@@ -20,20 +20,7 @@ class About_us extends Component {
                 <img src={community} className="pillar"></img>
                 <img src={profdev} className="pillar"></img>
             </div>
-            <div className="stats">
-                <div className="stats-block">
-                    <h1 className="greenTop">FOUNDED</h1>
-                    <h2 className="stats-block bottom">2016</h2>
-                </div>
-                <div className="stats-block">
-                    <h1 className="greenTop">ACTIVE MEMBERS</h1>
-                    <h2 className="stats-block bottom">150+</h2>
-                </div>
-                <div className="stats-block">
-                    <h1 className="greenTop">SPONSORS</h1>
-                    <h2 className="stats-block bottom">15</h2>
-                </div>
-            </div>
+
 
             <div className="academic-support">
                 <Carousel></Carousel>
