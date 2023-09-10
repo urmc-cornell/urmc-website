@@ -36,7 +36,6 @@ const Carousel = () => {
                 style={{ transform: `translate(-${activeIndex * 100}%)` }}>
                 {items.map((item) => {
                     return <CarouselItem item={item}></CarouselItem>
-                    // return <img className="carousel-img" src={item.image}></img>;
                 })}
             </div>
             <div className="carousel-bottom-bar">

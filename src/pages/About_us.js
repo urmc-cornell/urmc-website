@@ -3,6 +3,10 @@ import academic from '../images/academic.png';
 import community from '../images/community.png';
 import profdev from '../images/profdev.png';
 import Carousel from '../components/Carousel';
+import AboutUsPillarCard from '../components/AboutUsPillarCard';
+import * as Constants from '../Supporting/StringConstants';
+import Widget from '../components/Widget';
+
 class About_us extends Component {
 
     render() {
@@ -23,7 +27,16 @@ class About_us extends Component {
 
 
             <div className="academic-support">
-                <Carousel></Carousel>
+                <div className="academic-top">
+                    <Carousel></Carousel>
+                    <AboutUsPillarCard title={Constants.AcademicCard.CardTitle} body={Constants.AcademicCard.CardBody}></AboutUsPillarCard>
+                </div>
+                <div className="widgets">
+                    <Widget></Widget>
+                    <Widget></Widget>
+                    <Widget></Widget>
+                    <Widget></Widget>
+                </div>
             </div>
         </about_us>
     }

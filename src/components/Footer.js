@@ -11,7 +11,7 @@ export default function Footer() {
             <h1 className="footer-title">UNDERREPRESENTED MINORITIES IN COMPUTING</h1>
             <div className="footer-subtitle">
                 <img className="heart" src={heart}></img>
-                <h2 className="footer-subtitle-text">CURRENTLY THRIVING iN ITHACA, NEW YORK.</h2>
+                <h2 className="footer-subtitle-text">CURRENTLY THRIVING IN ITHACA, NEW YORK.</h2>
             </div>
         </div>
 

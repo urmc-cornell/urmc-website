@@ -64,6 +64,20 @@ body {
 
 .academic-support {
     margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+.academic-top {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.widgets {
+    display: grid;
 }
 
 @media (max-width: 768px) {

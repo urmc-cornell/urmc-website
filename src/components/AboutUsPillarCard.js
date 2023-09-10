@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
+import '../styles/AboutUsPillarCard.css'
 
 
-const AboutUsPillarCard = ({props}) => {
+const AboutUsPillarCard = (props) => {
     return (
-        <div></div>
+        <div className="card">
+            <div className="content">
+                <div className="title">{props.title}</div>
+                <div className="body-about-us">{props.body}</div>
+            </div>
+        </div>
     )
 };
 

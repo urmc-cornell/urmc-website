@@ -108,7 +108,7 @@
         display: flex;
         flex-direction: column;
         width: 80%;
-        height: 100vh;
+        height: 120vh;
         position: absolute;
         top: 0px;
         left: -100%;
@@ -158,5 +158,4 @@
         margin-left: auto;
         gap: 0.5rem
     }
-
   }
