@@ -24,7 +24,7 @@ export default function Getting_involved() {
                             <h3 className='subheader-text'>Send us an email to connect with our Corporate directors and receive our Sponsorship Packet!</h3>
                         </div>
                         <div className='button-div'> 
-                            <a class="btn btn-1" href="" target="_blank">SPONSOR US</a> 
+                            <a class="btn btn-1" href="mailto:urmc@cornell.edu" target="_blank">SPONSOR US</a> 
                         </div>
                     </div>
                     <div className='info-card'> 
