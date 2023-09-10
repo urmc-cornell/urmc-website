@@ -85,9 +85,8 @@
 .group {
     position: relative;
     margin-top: 12%;
-    width: 95%;
-    padding-left: 10px;
-    padding-right: 10px;
+    width: 98%;
+    padding-bottom: 0;
 }
 
 .images {

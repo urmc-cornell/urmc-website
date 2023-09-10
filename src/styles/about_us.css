@@ -6,6 +6,12 @@ body {
     margin: 0;
 }
 
+.about-us-page {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
 .about-us {
     display: flex;
     text-align: center;
@@ -13,22 +19,27 @@ body {
     justify-content: center;
 }
 
+.heading-academic {
+    font-size: 40px;
+    font-weight: 600;
+    color: #265999;
+}
+
 .purpose {
     width: 80%;
     margin-top: 20px;
-    font-size: 25px;
+    font-size: 30px;
     color: #37383C;
     font-weight: 500;
 }
 
 .pillars {
     display: flex;
-    flex-wrap: wrap; /* allow images to wrap to next row */
+    flex-wrap: wrap;
     justify-content: center; /* center images horizontally */
     align-items: center; /* center images vertically */
     max-width: 100%; /* ensure container doesn't exceed parent width */
     position: relative; /* enable absolute positioning for child elements */
-
     margin-left: 50px;
     margin-right: 50px;
 }
@@ -81,13 +92,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    .pillars {
-        display: none;
-    }
-
     .stats {
         display: none;
     }
-    
-
 }
