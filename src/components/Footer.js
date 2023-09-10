@@ -9,7 +9,7 @@ export default function Footer() {
         <ul>
             <li>
                 <a href="/">
-                    <img src={mail} className="socials" href=""></img>
+                    <img src={mail} className="socials" href="mailto:urmc@cornell.edu"></img>
                 </a>
             </li>
             <li>
