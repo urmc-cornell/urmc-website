@@ -15,39 +15,41 @@ import Ta_directory from './pages/Ta_directory';
 
 function App() {
   let component
-  
-  switch(window.location.pathname) {
+
+  switch (window.location.pathname) {
     case "/":
-      component = <Home/>
+      component = <Home className="body"/>
       break
     case "/about-us":
-      component = <About_us/>
+      component = <About_us />
       break
     case "/events":
-      component = <Events/>
+      component = <Events />
       break
     case "/ta-directory":
-      component = <Ta_directory/>
+      component = <Ta_directory />
       break
     case "/getting-involved":
-      component = <Getting_involved/>
+      component = <Getting_involved />
       break
     case "/leadership":
-      component = <Leadership/>
+      component = <Leadership />
       break
     case "/sponsors":
-      component = <Sponsors/>
-      break      
+      component = <Sponsors />
+      break
   }
 
   return (
     <div className="page-container">
       <div className="content-wrap">
         <Navbar />
-        {component}
+        <div className="body">
+          {component}
+        </div>
         <div className="foot-params">
           <Footer />
-        </div> 
+        </div>
       </div>
     </div>
   );

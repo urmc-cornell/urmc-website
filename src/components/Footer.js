@@ -1,3 +1,5 @@
+import heart from '../images/assets/heart.png';
+
 export default function Footer() {
     let mail = require('../images/assets/mail.png');
     let facebook = require('../images/assets/facebook.png');
@@ -5,7 +7,14 @@ export default function Footer() {
     let linkedin = require('../images/assets/linkedIn.png');
 
     return <nav className="foot">
-        <h1 className="footer-title">UNDERREPRESENTED MINORITIES IN COMPUTING</h1>
+        <div className="footer-text">
+            <h1 className="footer-title">UNDERREPRESENTED MINORITIES IN COMPUTING</h1>
+            <div className="footer-subtitle">
+                <img className="heart" src={heart}></img>
+                <h2 className="footer-subtitle-text">CURRENTLY THRIVING iN ITHACA, NEW YORK.</h2>
+            </div>
+        </div>
+
         <ul>
             <li>
                 <a href="/">
