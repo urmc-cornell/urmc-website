@@ -1,0 +1,55 @@
+.getting-involved {
+    text-align: center;
+}
+
+.flexbox-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    row-gap: 10px;
+}
+
+.info-card-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    row-gap: 10px;
+}
+
+.button-div {
+    padding-top: 25px;
+}
+
+.info-card {
+    margin: 10px;
+    padding: 20px;
+    width: 422px;
+    height: 300px;
+
+}
+
+.text-background {
+    background-color: #FFF3E2;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 32px 32px;
+    width: 100%;
+    height: 100%;
+}
+
+.subheader-text {
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+}
+
+.bold-text {
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+
+}
