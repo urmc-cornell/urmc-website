@@ -8,7 +8,8 @@ export default function Home() {
         <h2 className="header bottom"> MINORITIES IN COMPUTING</h2>
         <h2 className="sub-header">Building a supportive community where all can find success.</h2>
         <div className="flexbox-container">
-            <a class="btn btn-1" href="https://urmc.slack.com/join/shared_invite/zt-984krsoy-9lIJn2XrJOx1NuQUtKc40w" target="_blank">JOIN THE COMMUNITY</a>
+            {/* https://urmc.slack.com/join/shared_invite/zt-984krsoy-9lIJn2XrJOx1NuQUtKc40w */}
+            <a class="btn btn-1" href="/getting-involved" target="_blank">JOIN THE COMMUNITY</a>
             <a class="btn btn-2" href="/about-us">LEARN MORE</a>
         </div>
         

@@ -8,8 +8,8 @@ export default function Footer() {
         <h1 className="footer-title">UNDERREPRESENTED MINORITIES IN COMPUTING</h1>
         <ul>
             <li>
-                <a href="/">
-                    <img src={mail} className="socials" href="mailto:urmc@cornell.edu"></img>
+                <a href="mailto:urmc@cornell.edu">
+                    <img src={mail} className="socials" href=""></img>
                 </a>
             </li>
             <li>
