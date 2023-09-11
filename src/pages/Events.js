@@ -24,11 +24,13 @@ class Events extends Component {
         fetch(fullURL)
             .then(res => res.text())
             .then(rep => {
+                // figure out why 47, 0, -2 here
                 let data = JSON.parse(rep.substring(47).slice(0, -2));
                 let activeRows = data.table.rows.length;
 
                 let events = []
                 for (let i = 0; i < activeRows; i++) {
+                    // 
                     let rawImageURL = data.table.rows[i].c[2].v
                     let blurb = data.table.rows[i].c[3].v
 

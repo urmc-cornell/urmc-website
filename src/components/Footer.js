@@ -17,7 +17,7 @@ export default function Footer() {
 
         <ul>
             <li>
-                <a href="/">
+                <a href="mailto:urmc@cornell.edu">
                     <img src={mail} className="socials" href=""></img>
                 </a>
             </li>
