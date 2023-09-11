@@ -28,14 +28,12 @@ class Leadership extends Component {
             <h1 className="leadership">Executive Board</h1>
             <h2 className="fall22"> Spring 2023</h2>
             <EboardPopup trigger={this.state.popupActive} card={this.state.selectedCard} setTrigger={this.handleClose}>
-                <h3>My popup!</h3>
             </EboardPopup>
             <div className="grid-container-container">
                 <div className="grid-container">
                     {cards.map(card => (
                         <div className="grid-item"
-                            onClick={() => this.handleCardClick(card)}
-                        >
+                            onClick={() => this.handleCardClick(card)}>
                             <EboardCard
                                 key={card.id}
                                 imageURL={card.image}

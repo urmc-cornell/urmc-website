@@ -69,6 +69,7 @@
 .blue_ellipse {
     position: absolute;
     bottom: 0px;
+    left: 0px;
     max-width: 100%;
     max-height: 80%;
 }
@@ -83,16 +84,15 @@
 
 .group {
     position: relative;
-    margin-top: 12%;
-    bottom: -4px;
-    width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    margin-bottom: 0;
+    width: 98%;
 }
 
 .images {
+    display: flex;
+    justify-content: center;
     position: relative;
-    width: 100%;
+    margin-top: auto;
 }
 
 @media (max-width: 768px) {
