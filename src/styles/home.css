@@ -84,15 +84,15 @@
 
 .group {
     position: relative;
-    margin-top: 12%;
+    margin-bottom: 0;
     width: 98%;
-    padding-bottom: 0;
 }
 
 .images {
     display: flex;
     justify-content: center;
     position: relative;
+    margin-top: auto;
 }
 
 @media (max-width: 768px) {
