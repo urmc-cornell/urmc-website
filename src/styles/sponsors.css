@@ -1,0 +1,10 @@
+.heading {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: red;
+}
+
+.thanks{
+    font-weight: normal;
+}
