@@ -77,7 +77,7 @@ class Events extends Component {
                 <h1 align="center">Events</h1>
                 <EventsPopup trigger={this.state.popupActive} event={this.state.selectedEvent} setTrigger={this.handleClose}></EventsPopup>
                 <div align="center">
-                    <h2 align="left" className="this-week">COMING UP @ URMC:</h2>
+                    {this.state.events && <h2 align="left" className="this-week">COMING UP @ URMC:</h2>}
                     <div className="grid-container">
                         {this.state.events.filter(e => e.date >= new Date()).sort((a, b) => a.date - b.date).map(event =>
                             <div className="grid-item" onClick={() => this.handleCardClick(event)}>
