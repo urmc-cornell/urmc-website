@@ -10,8 +10,8 @@ export default function Sponsors() {
                 <h3 className="thanks">Thank you for all your continued support of our organization!</h3>
             </div>
             <div className="buttons"> 
-                <a class="btn btn-2" href="" target="_blank">DONATE</a>
-                <a class="btn btn-1" href="" target="_blank">GETTING INVOLVED</a>
+                <a class="btn btn-2" href="/getting-involved" target="_blank">GETTING INVOLVED</a>
+                <a class="btn btn-1" href="https://securelb.imodules.com/s/1717/giving/interior.aspx?sid=1717&gid=2&pgid=16421&bledit=1&dids=702" target="_blank">DONATE</a>
 
             </div>
         </div>
