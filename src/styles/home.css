@@ -42,6 +42,7 @@
     box-shadow: 0 0 20px #eee;
     text-decoration: none;
     border-radius: 64px;
+    text-align: center;
 }
 
 .btn-small {
@@ -59,10 +60,14 @@
 
 .btn-1 {
     background-image: linear-gradient(to right, #5F8DBF 0%, #79baff 50%);
+    text-align: center;
 }
 
 .btn-2 {
     background-image: linear-gradient(to right, #F18F02 0%, #FFB244 50%);
+    text-align: center;
+
+
 }
 
 .btn-gold {
