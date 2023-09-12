@@ -1,5 +1,6 @@
 import '../styles/sponsors.css';
 import '../styles/home.css'
+import janestreet from '../images/sponsors/jane-street.png';
 
 
 export default function Sponsors() {
@@ -12,6 +13,8 @@ export default function Sponsors() {
             <div className="sponsor-tiers">
                 <div className="gold-sponsors"> 
                     <a className="btn-small btn-gold">GOLD</a>
+                    {/* cant get this to work properly :( */}
+                    {/* <img src={janestreet} alt="Jane Street Logo" className="logo"> </img> */}
                 </div>
                 <div className="silver-sponsors"> 
                     <a className="btn-small btn-silver">SILVER</a>

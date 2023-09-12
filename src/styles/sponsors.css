@@ -18,6 +18,9 @@
     justify-content: center;
     align-items: center; 
     gap: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    max-width: 100%;    
 }
  .gold-sponsors {
     background-color: rgba(238, 181, 12, .1);
@@ -51,4 +54,10 @@
               
 .buttons {
     padding: 30px;
+}
+
+.logo {
+    width: 400px; /* set width to 100% to cover the container */
+    height: auto; /* maintain aspect ratio */
+    position: relative;
 }
