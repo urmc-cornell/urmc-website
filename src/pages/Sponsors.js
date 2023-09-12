@@ -1,6 +1,9 @@
 import '../styles/sponsors.css';
 import '../styles/home.css'
 import janestreet from '../images/sponsors/jane-street.png';
+import capitalone from '../images/sponsors/capital-one.png';
+import bloomberg from '../images/sponsors/bloomberg.png';
+
 
 
 export default function Sponsors() {
@@ -18,6 +21,9 @@ export default function Sponsors() {
                 </div>
                 <div className="silver-sponsors"> 
                     <a className="btn-small btn-silver">SILVER</a>
+                    {/* <img src={capitalone} alt="Capital One Logo" className="logo"> </img> */}
+                    {/* <img src={bloomberg} alt="Bloomberg Logo" className="logo"> </img> */}
+
                 </div>
                 <div className="bronze-sponsors"> 
                     <a className="btn-small btn-bronze">BRONZE</a>
