@@ -52,6 +52,26 @@
     background-image: linear-gradient(to right, #F18F02 0%, #FFB244 50%);
 }
 
+.btn-gold {
+    background-image: linear-gradient(to right bottom, rgba(218, 164, 21, 1), rgba(218, 164, 21, .2));
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.btn-silver {
+    background-image: linear-gradient(to right bottom, rgba(38, 89, 153, 1), rgba(38, 89, 153, .2));
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.btn-bronze {
+    background-image: linear-gradient(to right bottom, rgba(55, 56, 60, 1),rgba(55, 56, 60, .2));
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .buttons {
     display: flex;
     flex-direction: row;

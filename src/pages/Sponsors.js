@@ -6,18 +6,18 @@ export default function Sponsors() {
     return (
         <div> 
             <div className="heading"> 
-                <h1 className="corporate sponsors text"> 2023-2024 CORPORATE SPONSORS </h1>
+                <h1 className="corporate-sponsors-text"> 2023-2024 CORPORATE SPONSORS </h1>
                 <h3 className="thanks">Thank you for all your continued support of our organization!</h3>
             </div>
             <div className="sponsor-tiers">
                 <div className="gold-sponsors"> 
-                    <h3> Placeholder text for now </h3>
+                    <a className="btn btn-gold">GOLD</a>
                 </div>
                 <div className="silver-sponsors"> 
-                    <h3> Placeholder text for now </h3>
+                    <a className="btn btn-silver">SILVER</a>
                 </div>
                 <div className="bronze-sponsors"> 
-                    <h3> Placeholder text for now </h3>
+                    <a className="btn btn-bronze">BRONZE</a>
                 </div>
             </div>
             <div className="buttons"> 
