@@ -44,6 +44,19 @@
     border-radius: 64px;
 }
 
+.btn-small {
+    margin: 10px;
+    display: flex;
+    padding: 10px 20px 10px 20px;
+    font-weight: bold;
+    background-size: 200% auto;
+    font-size: 20px;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    text-decoration: none;
+    border-radius: 15px;
+}
+
 .btn-1 {
     background-image: linear-gradient(to right, #5F8DBF 0%, #79baff 50%);
 }

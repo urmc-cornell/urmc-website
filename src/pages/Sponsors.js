@@ -11,13 +11,13 @@ export default function Sponsors() {
             </div>
             <div className="sponsor-tiers">
                 <div className="gold-sponsors"> 
-                    <a className="btn btn-gold">GOLD</a>
+                    <a className="btn-small btn-gold">GOLD</a>
                 </div>
                 <div className="silver-sponsors"> 
-                    <a className="btn btn-silver">SILVER</a>
+                    <a className="btn-small btn-silver">SILVER</a>
                 </div>
                 <div className="bronze-sponsors"> 
-                    <a className="btn btn-bronze">BRONZE</a>
+                    <a className="btn-small btn-bronze">BRONZE</a>
                 </div>
             </div>
             <div className="buttons"> 
