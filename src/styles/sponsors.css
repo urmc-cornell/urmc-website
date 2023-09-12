@@ -6,4 +6,41 @@
 
 .thanks{
     font-weight: normal;
+    font-size: x-large;
 }
+
+.sponsor-tiers{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+ .gold-sponsors {
+    background-color: rgba(238, 181, 12, .1);
+    border-radius: 5px;
+    border-color: rgba(238, 181, 12, 1) ;
+    box-shadow: 0 0 20px #eee;
+    width: 1000px;
+    height: 300px;
+    
+} 
+
+.silver-sponsors {
+    background-color: rgba(38, 89, 153, .1) ;
+    border-radius: 5px;
+    border-color: rgba(38, 89, 153, 1) ;
+    box-shadow: 0 0 20px #eee;
+    width: 1000px;
+    height: 300px;
+
+}
+
+.bronze-sponsors {
+    background-color: rgba(55, 56, 60, .1);
+    border-radius: 5px;
+    border-color: rgba(55, 56, 60, 1) ;
+    box-shadow: 0 0 20px #eee;
+    width: 1000px;
+    height: 300px;
+} 
+              
