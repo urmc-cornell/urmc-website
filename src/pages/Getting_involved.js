@@ -6,7 +6,6 @@ export default function Getting_involved() {
     return (
         <div>
             <h1 className="getting-involved">Getting Involved</h1>
-            {/* TODO NEED LISTSERV LINK from email */}
             <div className='flexbox-container'>
                 <div className='info-card-row'> 
                     <div className='info-card'> 

@@ -42,14 +42,52 @@
     box-shadow: 0 0 20px #eee;
     text-decoration: none;
     border-radius: 64px;
+    text-align: center;
+}
+
+.btn-small {
+    margin: 10px;
+    display: flex;
+    padding: 10px 20px 10px 20px;
+    font-weight: bold;
+    background-size: 200% auto;
+    font-size: 20px;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    text-decoration: none;
+    border-radius: 15px;
 }
 
 .btn-1 {
     background-image: linear-gradient(to right, #5F8DBF 0%, #79baff 50%);
+    text-align: center;
 }
 
 .btn-2 {
     background-image: linear-gradient(to right, #F18F02 0%, #FFB244 50%);
+    text-align: center;
+
+
+}
+
+.btn-gold {
+    background-image: linear-gradient(to right bottom, rgba(218, 164, 21, 1), rgba(218, 164, 21, .2));
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.btn-silver {
+    background-image: linear-gradient(to right bottom, rgba(38, 89, 153, 1), rgba(38, 89, 153, .2));
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.btn-bronze {
+    background-image: linear-gradient(to right bottom, rgba(55, 56, 60, 1),rgba(55, 56, 60, .2));
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .buttons {
