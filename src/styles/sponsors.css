@@ -22,34 +22,32 @@
     margin-right: 50px;
     max-width: 100%;    
 }
- .gold-sponsors {
-    background-color: rgba(238, 181, 12, .1);
+
+ .sponsor-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
     border-radius: 15px;
-    border-color: rgba(238, 181, 12, 1) ;
     box-shadow: 0 0 20px #eee;
     width: 1000px;
     height: 200px;
     position: relative;
+    flex-direction: row;
+ }
+ .gold-sponsors {
+    background-color: rgba(238, 181, 12, .1);
+    border-color: rgba(238, 181, 12, 1) ;
 } 
 
 .silver-sponsors {
     background-color: rgba(38, 89, 153, .1) ;
-    border-radius: 15px;
     border-color: rgba(38, 89, 153, 1) ;
-    box-shadow: 0 0 20px #eee;
-    width: 1000px;
-    height: 200px;
-    position: relative;
 }
 
 .bronze-sponsors {
     background-color: rgba(55, 56, 60, .1);
-    border-radius: 15px;
     border-color: rgba(55, 56, 60, 1) ;
-    box-shadow: 0 0 20px #eee;
-    width: 1000px;
-    height: 200px;
-    position: relative;
 } 
               
 .buttons {
@@ -57,7 +55,9 @@
 }
 
 .logo {
-    width: 400px; /* set width to 100% to cover the container */
-    height: auto; /* maintain aspect ratio */
-    position: relative;
+    max-width:50%;
+    max-height:50%;
+    text-align: center;
+    position: static;
+
 }

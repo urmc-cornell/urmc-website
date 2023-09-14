@@ -16,13 +16,12 @@ export default function Sponsors() {
             <div className="sponsor-tiers">
                 <div className="sponsor-section gold-sponsors"> 
                     <a className="btn-small btn-gold">GOLD</a>
-                    {/* cant get this to work properly :( */}
-                    {/* <img src={janestreet} alt="Jane Street Logo" className="logo"> </img> */}
+                    <img src={janestreet} alt="Jane Street Logo" className="logo"></img>
                 </div>
                 <div className="sponsor-section silver-sponsors"> 
                     <a className="btn-small btn-silver">SILVER</a>
-                    {/* <img src={capitalone} alt="Capital One Logo" className="logo"> </img> */}
-                    {/* <img src={bloomberg} alt="Bloomberg Logo" className="logo"> </img> */}
+                    <img src={capitalone} alt="Capital One Logo" className="logo"></img>
+                    <img src={bloomberg} alt="Bloomberg Logo" className="logo"></img>
 
                 </div>
                 <div className="sponsor-section bronze-sponsors"> 
