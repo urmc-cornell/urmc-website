@@ -1,48 +1,48 @@
-<!-- IF A SECTION IS NOT APPLICABLE TO YOU, PLEASE DELETE IT!! -->
+<!-- if a section isn't applicable, feel free to delete it.-->
 
-<!-- Your title should be able to summarize what changes you've made in one sentence. For example: "Exclude staff from the check for follows" -->
+<!-- your title should be able to summarize what changes you've made in one sentence. For example: "Exclude staff from the check for follows" -->
 
 
 ## Context
 
-<!-- What are you working on? -->
+<!-- what are you working on? -->
 
 
 
 ## Changes Made
 
-<!-- Include details of what your changes actually are and how it is intended to work. -->
+<!-- include details of what your changes actually are and how it is intended to work. -->
 
 
 
 ## Test Plan
 
-<!-- Describe how you tested this feature. Manual testing and/or unit testing. Please include repro steps and/or how to turn the feature on if applicable. -->
+<!-- describe how you tested this feature. Manual testing and/or unit testing. Please include repro steps and/or how to turn the feature on if applicable. -->
 
 
 
 ## Next Steps (delete if not applicable)
 
-<!-- If this is part of a multi-PR change, please describe what changes you plan on addressing in future PRs. -->
+<!-- if this is part of a multi-PR change, please describe what changes you plan on addressing in future PRs. -->
 
 
 
 ## Related PRs or Issues (delete if not applicable)
 
-<!-- List related PRs against other branches/repositories. -->
+<!-- list related PRs against other branches/repositories. -->
 
 
 
 ## Screenshots (delete if not applicable)
 
-<!-- This could include of screenshots of the new feature / proof that the changes work. -->
+<!-- this could include of screenshots of the new feature / proof that the changes work. -->
 
 <details>
 
   <summary>Screen Shot Name</summary>
 
 
-  <!-- Insert file link here. Newlines above and below your link are necessary for this to work. -->
+  <!-- insert file link here. Newlines above and below your link are necessary for this to work. -->
 
 
 </details>
