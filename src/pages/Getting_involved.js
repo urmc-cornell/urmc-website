@@ -4,7 +4,7 @@ import '../styles/home.css'
 
 export default function Getting_involved() {
     return (
-        <div>
+        <div className="getting-involved-page">
             <h1 className="getting-involved">Getting Involved</h1>
             <div className='flexbox-container'>
                 <div className='info-card-row'> 

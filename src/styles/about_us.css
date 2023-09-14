@@ -17,8 +17,8 @@ body {
     flex-direction: column;
     text-align: center;
     align-items: center;
-    font-size: 40px;
-    font-weight: 700;
+    /* font-size: 40px; */
+    /* font-weight: 700; */
     justify-content: center;
 }
 
@@ -152,16 +152,11 @@ body {
     }
 
     .academic-support {
-        /* justify-content: center; */
         align-items: center;
     }
 
     .pillars {
         display: none;
-    }
-
-    .about-us {
-        font-size: 20px;
     }
 
     .purpose {
