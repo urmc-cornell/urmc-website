@@ -1,4 +1,4 @@
-<!-- IF A SECTION IS NOT APPLICABLE TO YOU, PLEASE DELETE IT!! -->
+<!-- if a section isn't applicable, feel free to delete it.-->
 
 <!-- Your title should be able to summarize what changes you've made in one sentence. For example: "Exclude staff from the check for follows" -->
 
