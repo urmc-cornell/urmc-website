@@ -13,7 +13,7 @@ class About_us extends Component {
         return (
             <about_us className="about-us-page">
                 <div className="about-us">
-                    About Us
+                    <h1>About us</h1>
                     <h6 className="purpose"> The purpose of Underrepresented Minorities in Computing is to promote diversity
                         within the computing fields and foster an environment that empowers underrepresented
                         minorities with technological aspirations through <span style={{ color: '#265999' }}>3 pillars:</span></h6>

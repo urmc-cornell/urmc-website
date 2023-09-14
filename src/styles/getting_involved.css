@@ -25,10 +25,12 @@
 }
 
 .info-card {
+    display: flex;
+    flex-direction: column;
     margin: 10px;
     padding: 20px;
     width: 422px;
-    height: 300px;
+    /* height: 300px; */
 }
 
 .text-background {
@@ -61,4 +63,32 @@
 
 .header-text {
     text-align: left;
+}
+
+
+@media (max-width: 768px) {
+
+    .getting-involved-page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-background {
+        padding: 10px 10px;
+    }
+
+    .header-text {
+        font-size: 20px;
+    }
+
+    .info-card-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-card {
+        width: 90%;
+    }
+
 }
