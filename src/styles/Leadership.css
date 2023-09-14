@@ -1,3 +1,10 @@
+.leadership-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+
 .leadership {
     display: flex;
     text-align: center;
@@ -14,8 +21,9 @@
 .grid-container-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  height: 80%;
 
+  justify-content: center;
 }
 
   .grid-container {
@@ -24,11 +32,11 @@
     grid-gap: 20px;
     overflow: auto;
     max-width: 100%;
-    height: auto;
     margin-left: 20px;
     margin-right: 20px;
     align-items: center;
     justify-content: center;
+    height: 100%;
   }
 
   .grid-item {
@@ -41,15 +49,14 @@
   }
 
 
-@media (max-width: 767px) { /* adjust the breakpoint as needed */
+@media (max-width: 767px) {
     .grid-container {
       width: 200;
-      height: 1000px;
       margin-left: auto;
       margin-right: auto;
     }
   
     .grid-item {
-      width: fit; /* set a minimum width for the cards */
+      width: fit;
     }
   }

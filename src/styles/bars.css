@@ -100,28 +100,31 @@
 }
 
 @media (max-width: 768px) {
-    /* .nav {
-        position: relative;
-    } */
 
     .nav-menu {
         display: flex;
         flex-direction: column;
-        width: 80%;
-        height: 120vh;
-        position: absolute;
-        top: 0px;
-        left: -100%;
-        opacity: 1;
-        transition: all 0.5s ease;
+        margin-top: 30%;
     }
 
-    .nav-menu.active {
+    .nav-container.active {
         background-color: #FFF3E2;
         left: 0;
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 1;
+    }
+
+    .nav-container {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        height: 100vh;
+        position: absolute;
+        top: 0px;
+        left: -100%;
+        opacity: 1;
+        transition: all 0.5s ease;
     }
 
     .menu-icon {
@@ -158,4 +161,4 @@
         margin-left: auto;
         gap: 0.5rem
     }
-  }
+}

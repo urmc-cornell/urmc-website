@@ -5,8 +5,10 @@
 .home {
     display: flex;
     justify-content: center;
-    height: 100vh;
+    /* align-items: stretch; */
+    flex-grow: 1;
     flex-direction: column;
+    position: relative;
 }
 
 .header {
@@ -55,7 +57,7 @@
     color: white;
     box-shadow: 0 0 20px #eee;
     text-decoration: none;
-    border-radius: 15px;
+    border-radius: 64px;
 }
 
 .btn-1 {
@@ -137,6 +139,10 @@
 
     .home-content {
         position: absolute;
+        top: 50%;
+        left: 5%;
+        right: 5%;
+        transform: translateY(-50%);
     }
 
     .header {
