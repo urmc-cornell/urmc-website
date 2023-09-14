@@ -96,7 +96,7 @@ class About_us extends Component {
                     <div className="academic-support">
                         <div className="academic-title" style={{ color: "#B95F37" }}>PROFESSIONAL DEVELOPMENT</div>
                         <div className="academic-cards">
-                            <Carousel pics={Constants.Professional.CarouselImages}></Carousel>
+                            <Carousel color="#FBBFA4" pics={Constants.Professional.CarouselImages}></Carousel>
                             <AboutUsPillarCard title={Constants.Professional.Card.title} body={Constants.Professional.Card.body} color="#FBBFA4" textColor="#B95F37"></AboutUsPillarCard>
                         </div>
                         <div className="academic-widgets">
