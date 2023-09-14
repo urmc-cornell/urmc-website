@@ -8,11 +8,15 @@ The purpose of the Underrepresented Minorities in Computing club (URMC), is to p
 ## Development
 ### 1. Installation
 
-We built this website using [React](https://react.dev/learn/installation). We also use [Node.js](https://nodejs.org/en/download) for building and running our website locally. Because npm is installed with Node.js, you don't need to worry about installing npm seperately.
+To run the website you must install [React](https://react.dev/learn/installation). You need to also install [Node.js](https://nodejs.org/en/download) for building and running our website locally. Node Package Manager (npm) comes installed with Node.js, so you don't need to worry about installing npm seperately although it is required.
 
 After you clone the repo into your directory, run `npm install` to install any packages the website may need. Anytime you want to run the website afterwards, run `npm start`.
 
 ### 2. Styling
 For any questions regarding code cleanliness or styling, refer to the [URMC WebDev Documentation](https://docs.google.com/document/d/1ImqZqqJGLdxjY_TIxWs0IBbJVYc_5c_U1gz1Jrp457E/edit?usp=sharing) where we list what styling guidelines we expect for the website.
 
-For any inquiries into our website, reach out to WebDev chairs Elvis Marcelo (em662@cornell.edu) or Ronald Jabouin (rj336@cornell.edu).
+### 3. Deployment
+To deploy the website, you will need to run `npm run build` to generate the `index.html` and `build` folder containing all the CSS and Javascript code necessary to render the website, both of which can be found in the root `urmc-website` folder.
+
+For any questions on our website, reach out to WebDev chairs Elvis Marcelo (em662@cornell.edu) or Ronald Jabouin (rj336@cornell.edu).
+
