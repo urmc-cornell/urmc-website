@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import '../styles/Widget.css'
 
 const Widget = (props) => {
@@ -6,9 +6,9 @@ const Widget = (props) => {
         <div className="widget">
             <div className="container">
                 <img className="icon" src={props.image}></img>
-                <div className="text">
-                    <div className="widget-title">{props.title}hi guys</div>
-                    <div className="widget-body">{props.body}test widgey</div>
+                <div className="widget-content">
+                    <div className="widget-title">{props.title}</div>
+                    <div className="widget-body">{props.body}</div>
                 </div>
             </div>
         </div>

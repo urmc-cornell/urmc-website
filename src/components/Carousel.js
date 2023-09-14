@@ -9,7 +9,7 @@ import emptyIndicator from '../images/assets/indicator_empty.png'
 import carousel from '../images/carousel/carousel1.png';
 import CarouselItem from './CarouselItem';
 
-const Carousel = () => {
+const Carousel = (props) => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     const items = [
@@ -32,13 +32,16 @@ const Carousel = () => {
 
     return (
         <div className="carousel">
-            <div className="inner"
-                style={{ transform: `translate(-${activeIndex * 100}%)` }}>
-                {items.map((item) => {
-                    return <CarouselItem item={item}></CarouselItem>
-                })}
+            <div className="frame">
+                <div className="inner"
+                    style={{ transform: `translate(-${activeIndex * 100}%)` }}>
+                    {items.map((item) => {
+                        return <img className="carousel-img" src={item.image}></img>
+                    })}
+                </div>
             </div>
-            <div className="carousel-bottom-bar">
+
+            <div className="carousel-bottom-bar" style={{ backgroundColor: props.color }}>
                 <button className="button-arrow" onClick={() => { updateIndex(activeIndex - 1) }}>
                     <img src={leftArrow} />
                 </button>

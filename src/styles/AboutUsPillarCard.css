@@ -33,5 +33,22 @@
     /* align-items: center; */
     /* background-color: pink; */
     gap: 20px;
+}
 
+@media (max-width: 767px) {
+    .title {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+    .body-about-us {
+        font-size: 15px;
+        margin-top: 0;
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
+        padding-bottom: 30px;
+    }
 }
