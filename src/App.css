@@ -8,17 +8,21 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: #F6F6F6;
+  /* background: #F6F6F6; */
+}
+
+.content-wrap {
+  display: flex;
+  flex-direction: column;
+  /* height: 500px; */
+  min-height: 100vh;
 }
 
 .body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-}
-
-.content-wrap {
-  min-height: 100vh;
+  flex-grow: 1;
+  /* min-height: 100vh; */
 }
 
 .foot-params {
