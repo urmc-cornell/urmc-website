@@ -7,6 +7,8 @@ import AboutUsPillarCard from '../components/AboutUsPillarCard';
 import * as Constants from '../Supporting/AboutUsConstants';
 import Widget from '../components/Widget';
 
+
+
 class About_us extends Component {
 
     render() {
@@ -58,7 +60,7 @@ class About_us extends Component {
                     <div className="academic-support">
                         <div className="academic-title">ACADEMIC SUPPORT</div>
                         <div className="academic-cards">
-                            <Carousel></Carousel>
+                            <Carousel pics={Constants.Academic.CarouselImages}></Carousel>
                             <AboutUsPillarCard title={Constants.Academic.Card.title} body={Constants.Academic.Card.body}></AboutUsPillarCard>
                         </div>
                         <div className="academic-widgets">
@@ -76,7 +78,7 @@ class About_us extends Component {
                     <div className="academic-support">
                         <div className="academic-title" style={{ color: "#86739F" }}>COMMUNITY BUILDING</div>
                         <div className="academic-cards">
-                            <Carousel color="#D9CCEA"></Carousel>
+                            <Carousel color="#D9CCEA" pics={Constants.Community.CarouselImages}></Carousel>
                             <AboutUsPillarCard title={Constants.Community.Card.title} body={Constants.Community.Card.body} color="#D9CCEA" textColor="#86739F"></AboutUsPillarCard>
                         </div>
                         <div className="academic-widgets">
@@ -94,7 +96,7 @@ class About_us extends Component {
                     <div className="academic-support">
                         <div className="academic-title" style={{ color: "#B95F37" }}>PROFESSIONAL DEVELOPMENT</div>
                         <div className="academic-cards">
-                            <Carousel></Carousel>
+                            <Carousel pics={Constants.Professional.CarouselImages}></Carousel>
                             <AboutUsPillarCard title={Constants.Professional.Card.title} body={Constants.Professional.Card.body} color="#FBBFA4" textColor="#B95F37"></AboutUsPillarCard>
                         </div>
                         <div className="academic-widgets">

@@ -13,7 +13,25 @@ import corporateIcon from '../images/assets/mdi_company.png'
 import codeIcon from '../images/assets/material-symbols_code-blocks.png'
 import resumeIcon from '../images/assets/mdi_resume.png'
 
+import a1 from '../images/carousel/academic/a1.png'
+import a2 from '../images/carousel/academic/a2.png'
+import a3 from '../images/carousel/academic/a3.png'
+import a4 from '../images/carousel/academic/a4.png'
+
+import c1 from '../images/carousel/community/c1.JPG'
+import c2 from '../images/carousel/community/c2.JPG'
+import c3 from '../images/carousel/community/c3.JPG'
+import c4 from '../images/carousel/community/c4.JPG'
+
+import p1 from '../images/carousel/professional/p1.JPG'
+import p2 from '../images/carousel/professional/p2.JPG'
+import p3 from '../images/carousel/professional/p3.JPG'
+
+
+
 export const Academic = {
+    
+    CarouselImages: [a1,a2,a3,a4],
     Card: {
         title: "Ensuring academic success",
         body: "Our wonderful academic chairs work to uphold and facilitate academic success. It is crucial that GBody members feel supported academically but more importantly, never feel alone."
@@ -44,6 +62,7 @@ export const Academic = {
 }
 
 export const Community = {
+    CarouselImages: [c1,c2,c3,c4],
     Card: {
         title: "Building community",
         body: "The family we have created sets us apart from other organizations and really helps our members to thrive. Outreach puts all of their efforts into strengthening the community and also attracting more people into this family, regardless of their major!"
@@ -74,6 +93,7 @@ export const Community = {
 }
 
 export const Professional = {
+    CarouselImages: [p1,p2,p3],
     Card: {
         title: "Promoting professional excellence",
         body: "Our amazing professional development chairs work to promote professional excellence. Working to help our members grow at the very beginning of their professional careers, and supporting URMs as they explore their interests."

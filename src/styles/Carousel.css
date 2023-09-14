@@ -9,11 +9,15 @@
 
 .inner {
     display: flex;
-    height: 303px;
+    max-height: 303px;
     flex-direction: row;
     flex-wrap: nowrap;
     transition: transform 0.3s;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    overflow: visible;
+    width: 100%;
+    height: 100%;
 }
 
 .sqs-block.image-block {
@@ -21,7 +25,8 @@
    }
    
 .carousel-img {
-    width: 554px;
+    width: 100%;
+    object-fit: cover;
 }
 
 .carousel-bottom-bar {
@@ -50,20 +55,22 @@
     .carousel {
         width: 100%;
         height: 50%;
+        object-fit: cover;
+
     }
 
     .carousel-img {
         width: 100%;
+        object-fit: cover;
     }
     
     .carousel-bottom-bar {
         width: 100%;
         height: 50%;
+
     }
 
     .inner {
-        background-color: red;
-
         overflow: visible;
         width: 100%;
         height: 50%;

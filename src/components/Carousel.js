@@ -6,26 +6,14 @@ import rightArrow from '../images/assets/arrow_right.png';
 import filledIndicator from '../images/assets/indicator_filled.png'
 import emptyIndicator from '../images/assets/indicator_empty.png'
 
-import carousel from '../images/carousel/carousel1.png';
-import CarouselItem from './CarouselItem';
-
 const Carousel = (props) => {
     const [activeIndex, setActiveIndex] = useState(0);
-
-    const items = [
-        { image: carousel },
-        { image: carousel },
-        { image: carousel },
-        { image: carousel },
-        { image: carousel },
-        { image: carousel },
-    ]
 
     const updateIndex = (newIndex) => {
         if (newIndex < 0) {
             newIndex = 0;
-        } else if (newIndex >= items.length) {
-            newIndex = items.length - 1;
+        } else if (newIndex >= props.pics.length) {
+            newIndex = props.pics.length - 1;
         }
         setActiveIndex(newIndex);
     };
@@ -35,8 +23,8 @@ const Carousel = (props) => {
             <div className="frame">
                 <div className="inner"
                     style={{ transform: `translate(-${activeIndex * 100}%)` }}>
-                    {items.map((item) => {
-                        return <img className="carousel-img" src={item.image}></img>
+                    {props.pics.map((item) => {
+                        return <img className="carousel-img" src={item}></img>
                     })}
                 </div>
             </div>
@@ -46,7 +34,7 @@ const Carousel = (props) => {
                     <img src={leftArrow} />
                 </button>
                 <div className="indicators">
-                    {items.map((item, index) => {
+                    {props.pics.map((item, index) => {
                         return (
                             <button
                                 onClick={() => {
