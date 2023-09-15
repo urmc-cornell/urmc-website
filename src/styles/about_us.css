@@ -128,8 +128,10 @@ body {
     justify-content: space-between;
     display: flex;
     flex-direction: row;
+    gap: 30px;
     flex-grow: 1;
 }
+
 
 .pillar-sections {
     display: flex;

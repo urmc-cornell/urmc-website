@@ -65,12 +65,12 @@ class About_us extends Component {
                         </div>
                         <div className="academic-widgets">
                             <div className="widget-row">
-                                <Widget image={Constants.Academic.Widget.Slack.icon} title={Constants.Community.Widget.Slack.body} body={Constants.Academic.Widget.Slack.body}></Widget>
-                                <Widget image={Constants.Academic.Widget.Exam.icon} title={Constants.Academic.Widget.Exam.title} body={Constants.Academic.Widget.Exam.body}></Widget>
+                                <Widget className="widget-item" image={Constants.Academic.Widget.Slack.icon} title={Constants.Community.Widget.Slack.body} body={Constants.Academic.Widget.Slack.body}></Widget>
+                                <Widget className="widget-item" image={Constants.Academic.Widget.Exam.icon} title={Constants.Academic.Widget.Exam.title} body={Constants.Academic.Widget.Exam.body}></Widget>
                             </div>
                             <div className="widget-row">
-                                <Widget image={Constants.Academic.Widget.Study.icon} title={Constants.Academic.Widget.Study.title} body={Constants.Academic.Widget.Study.body}></Widget>
-                                <Widget image={Constants.Academic.Widget.TA.icon} title={Constants.Academic.Widget.TA.title} body={Constants.Academic.Widget.TA.body}></Widget>
+                                <Widget className="widget-item" image={Constants.Academic.Widget.Study.icon} title={Constants.Academic.Widget.Study.title} body={Constants.Academic.Widget.Study.body}></Widget>
+                                <Widget className="widget-item" image={Constants.Academic.Widget.TA.icon} title={Constants.Academic.Widget.TA.title} body={Constants.Academic.Widget.TA.body}></Widget>
                             </div>
                         </div>
                     </div>
