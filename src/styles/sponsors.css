@@ -61,3 +61,50 @@
     position: static;
 
 }
+
+@media (max-width: 768px) {
+
+    .corporate-sponsors-text {
+        font-size: x-large;
+    }
+    .thanks{
+        font-weight: normal;
+        font-size: medium;
+    }
+
+    .logo {
+        max-width: 40%;
+        max-height: 40%;
+    }
+
+    .sponsor-tiers{
+        display: flex;
+        flex-direction: column;
+        column-gap: normal;
+        justify-content: center;
+        align-items: center; 
+        gap: 50px;
+        margin-left: 50px;
+        margin-right: 50px;
+        max-width: 100%;    
+    }
+    
+     .sponsor-section{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 45px;
+        border-radius: 15px;
+        box-shadow: 0 0 20px #eee;
+        width: 300px;
+        height: 200px;
+        position: relative;
+        flex-direction: row;
+     }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
