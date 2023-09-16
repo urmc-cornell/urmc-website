@@ -114,6 +114,7 @@ body {
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
+    gap: 100px;
 }
 
 .academic-widgets {
