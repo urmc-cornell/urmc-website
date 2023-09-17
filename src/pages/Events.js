@@ -10,12 +10,13 @@ let sheetRange = 'A2:F37'
 let fullURL = ("https://docs.google.com/spreadsheets/d/" + sheetID + '/gviz/tq?sheet=' + sheetTitle + '&range=' + sheetRange);
 
 class Events extends Component {
-
     constructor(props) {
         super(props);
         this.state = {
             selectedEvent: null,
-            events: [],
+            // events: [],
+            pastEvents: [],
+            comingUpEvents: [],
             popupActive: false
         };
     }
@@ -25,8 +26,12 @@ class Events extends Component {
             .then(res => res.text())
             .then(rep => {
                 // figure out why 47, 0, -2 here
+                
                 let data = JSON.parse(rep.substring(47).slice(0, -2));
                 let activeRows = data.table.rows.length;
+
+                let comingUpEvents = []
+                let pastEvents = []
 
                 let events = []
                 for (let i = 0; i < activeRows; i++) {
@@ -53,11 +58,20 @@ class Events extends Component {
                         date: eventDate,
                         instaLink: instaLink
                     }
-                    events.push(event)
+
+                    if(event.date >= new Date()) {
+                        comingUpEvents.push(event)
+                        
+                    } else {
+                        pastEvents.push(event)
+                    }
+                    // events.push(event)
                 }
 
                 this.setState({
-                    events: events,
+                    // events: events
+                    pastEvents: pastEvents,
+                    comingUpEvents: comingUpEvents
                 })
             })
 
@@ -77,9 +91,9 @@ class Events extends Component {
                 <h1 align="center">Events</h1>
                 <EventsPopup trigger={this.state.popupActive} event={this.state.selectedEvent} setTrigger={this.handleClose}></EventsPopup>
                 <div align="center">
-                    {this.state.events && <h2 align="left" className="this-week">COMING UP @ URMC:</h2>}
+                    {this.state.comingUpEvents.length ? <h2 align="left" className="this-week">COMING UP @ URMC:</h2> : null}
                     <div className="grid-container">
-                        {this.state.events.filter(e => e.date >= new Date()).sort((a, b) => a.date - b.date).map(event =>
+                        {this.state.comingUpEvents.sort((a, b) => a.date - b.date).map(event =>
                             <div className="grid-item" onClick={() => this.handleCardClick(event)}>
                                 <img src={event.flyer}>
                                 </img>
@@ -88,7 +102,7 @@ class Events extends Component {
                     </div>
                     <h2 align="left" className="this-week">PAST EVENTS:</h2>
                     <div className="grid-container">
-                        {this.state.events.filter(e => e.date < new Date()).sort((a, b) => b.date - a.date).map(event =>
+                        {this.state.pastEvents.sort((a, b) => b.date - a.date).map(event =>
                             <div className="grid-item" onClick={() => this.handleCardClick(event)}>
                                 <img src={event.flyer}></img>
                             </div>
@@ -98,7 +112,6 @@ class Events extends Component {
             </div>
         );
     }
-
 }
 
 export default Events
