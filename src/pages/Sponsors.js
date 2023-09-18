@@ -29,7 +29,7 @@ export default function Sponsors() {
                 </div>
             </div>
             <div className="buttons"> 
-                <a class="btn btn-2" href="/getting-involved" target="https://docs.google.com/forms/d/e/1FAIpQLSc8c-drC3WBcVMqknx09q6-cBWRYeCbZYN1tBu98RM4CuDoTg/viewform">GETTING INVOLVED</a>
+                <a class="btn btn-2" href="/getting-involved" target='_self'>GETTING INVOLVED</a>
                 <a class="btn btn-1" href="https://securelb.imodules.com/s/1717/giving/interior.aspx?sid=1717&gid=2&pgid=16421&bledit=1&dids=702" target="_blank">DONATE</a>
             </div>
         </div>
