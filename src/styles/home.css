@@ -167,4 +167,18 @@
     .images {
         margin-top: auto;
     }
+
+    .btn-gold {
+        font-size: 15px;
+        padding: 10px;
+    }
+    .btn-silver {
+        font-size: 15px;
+        padding: 10px;
+    }
+    
+    .btn-bronze {
+        font-size: 15px;
+        padding: 10px;
+    }
 }
