@@ -25,6 +25,7 @@
 
  .sponsor-section{
     display: flex;
+    flex-wrap: wrap;    
     align-items: center;
     justify-content: center;
     gap: 45px;
@@ -55,8 +56,8 @@
 }
 
 .logo {
-    max-width:50%;
-    max-height:50%;
+    max-width:40%;
+    max-height:40%;
     text-align: center;
     position: static;
 
@@ -73,17 +74,17 @@
     }
 
     .logo {
-        max-width: 40%;
-        max-height: 40%;
+        max-width: 20%;
+        max-height: 20%;
     }
 
     .sponsor-tiers{
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;    
         column-gap: normal;
         justify-content: center;
         align-items: center; 
-        gap: 50px;
         margin-left: 50px;
         margin-right: 50px;
         max-width: 100%;    
@@ -93,7 +94,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 45px;
         border-radius: 15px;
         box-shadow: 0 0 20px #eee;
         width: 300px;
