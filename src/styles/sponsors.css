@@ -57,6 +57,11 @@
     padding: 30px;
 }
 
+.bloomberg {
+    width:25%;
+    height:25%;
+}
+
 .logo {
     max-width:40%;
     max-height:40%;
