@@ -35,7 +35,9 @@
     height: 200px;
     position: relative;
     flex-direction: row;
+    padding-top: 20px;
  }
+
  .gold-sponsors {
     background-color: rgba(238, 181, 12, .1);
     border-color: rgba(238, 181, 12, 1) ;
@@ -78,6 +80,16 @@
         max-height: 20%;
     }
 
+    .gold-logo{
+        max-width: 40%;
+        max-height: 40%;
+    }
+
+    .bronze-logo {
+        max-width: 35%;
+        max-height: 35%;
+    }
+
     .sponsor-tiers{
         display: flex;
         flex-direction: column;
@@ -92,6 +104,7 @@
     
      .sponsor-section{
         display: flex;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
         border-radius: 15px;
@@ -99,7 +112,7 @@
         width: 300px;
         height: 200px;
         position: relative;
-        flex-direction: row;
+        padding-top: 50px;
      }
 
     .buttons {

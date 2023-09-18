@@ -26,31 +26,28 @@ export default function Sponsors() {
             <div className="sponsor-tiers">
                 <div className="sponsor-section gold-sponsors"> 
                     <a className="btn-small btn-gold">GOLD</a>
-                    <img src={janestreet} alt="Jane Street Logo" className="logo"></img>
-                    <img src={reddit} alt="reddit Logo" className="logo"></img>
-                    <img src={thoughtworks} alt="thoughtworks Logo" className="logo"></img>
+                    <img src={janestreet} alt="Jane Street Logo" className="logo gold-logo"></img>
+                    <img src={reddit} alt="reddit Logo" className="logo gold-logo"></img>
+                    <img src={thoughtworks} alt="thoughtworks Logo" className="logo gold-logo"></img>
 
 
                 </div>
                 <div className="sponsor-section silver-sponsors"> 
                     <a className="btn-small btn-silver">SILVER</a>
-                    <img src={bloomberg} alt="Bloomberg Logo" className="logo"></img>
-                    <img src={meta} alt="Meta Logo" className="logo"></img>
-                    <img src={duolingo} alt="duolingo Logo" className="logo"></img>
-                    <img src={goldman} alt="goldman Logo" className="logo"></img>
-                    <img src={yext} alt="yext Logo" className="logo"></img>
-                    <img src={oracle} alt="oracle Logo" className="logo"></img>
-                    <img src={capitalone} alt="Capital One Logo" className="logo"></img>
-
-
-                    
+                        <img src={bloomberg} alt="Bloomberg Logo" className="logo"></img>
+                        <img src={meta} alt="Meta Logo" className="logo"></img>
+                        <img src={duolingo} alt="duolingo Logo" className="logo"></img>
+                        <img src={goldman} alt="goldman Logo" className="logo"></img>
+                        <img src={yext} alt="yext Logo" className="logo"></img>
+                        <img src={oracle} alt="oracle Logo" className="logo"></img>
+                        <img src={capitalone} alt="Capital One Logo" className="logo"></img>
                 </div>
                 <div className="sponsor-section bronze-sponsors"> 
                     <a className="btn-small btn-bronze">BRONZE</a>
-                    <img src={google} alt="google Logo" className="logo"></img>
-                    <img src={uber} alt="uber Logo" className="logo"></img>
-                    <img src={palantir} alt="palantir Logo" className="logo"></img>
-                    <img src={sony} alt="sony Logo" className="logo"></img>
+                    <img src={google} alt="google Logo" className="logo bronze-logo"></img>
+                    <img src={uber} alt="uber Logo" className="logo bronze-logo"></img>
+                    <img src={palantir} alt="palantir Logo" className="logo bronze-logo"></img>
+                    <img src={sony} alt="sony Logo" className="logo bronze-logo"></img>
 
                     
                 </div>
