@@ -31,6 +31,10 @@ import stephPrimary from '../headshots/stephPrimary.jpg'
 import ronaldPrimary from '../headshots/ronaldPrimary.jpg'
 import alisaPrimary from '../headshots/alisaPrimary.png'
 import alisaSecondary from '../headshots/alisaSecondary.png'
+import andresPrimary from '../headshots/andresPrimary.jpeg'
+import andresSecondary from '../headshots/andresSecondary.jpeg'
+
+
 
 
 
@@ -103,7 +107,18 @@ export const cards = [
         bio: "Hi! My name is Mateo Weiner. I am a junior from the Bay Area studying Computer Science in the College of Engineering. I am currently one of the Academic Chairs for URMC while some of my other campus involvements include being a backend developer for AppDev and being Treasurer of Contigo Peru. Outside of school, I enjoy watching and playing sports as well as going to the gym.",
         popup: true
     },
-    // andres here
+    {
+        id: 5,
+        title: 'CO-ACADEMIC CHAIR',
+        image: andresPrimary,
+        majors: 'Information Science \'24',
+        secondaryImage: andresSecondary,
+        askAbout: ["COOKING", "GYM", "BAKING", "HIKING", "TENNIS"],
+        name: 'Andres Wu ',
+        bio: "Hey, I'm Andres! I'm a senior studying Information Science with a concentration in Data Science. I was born and raised in San José, Costa Rica and although I first started off my journey at Cornell as a health sciences major I'm now pursuing a career in software engineering! Outside of class you can find me working out at the gym, cooking, and baking!",
+        popup: true
+    },
+    
     {
         id: 6,
         title: 'ALUMNI CHAIR',
@@ -175,7 +190,7 @@ export const cards = [
         name: 'Leopold Dorilas',
         popup: false
     },
-    // nixon here
+    // nixon here - 13
     {
         id: 14,
         title: 'CO-MENTORSHIP CHAIR',
@@ -202,7 +217,7 @@ export const cards = [
     },
     {
         id: 16,
-        title: 'CO-OUTREACH CHAIR',
+        title: 'OUTREACH ADVISOR',
         image: judithPrimary,
         name: 'Judith Jatto',
         secondaryImage: judithSecondary,
@@ -227,7 +242,7 @@ export const cards = [
     // adrianna here - 18
     {
         id: 19,
-        title: 'CO-PUBLIC RELATIONS CHAIR',
+        title: 'PUBLIC RELATIONS ADVISOR',
         image: celestePrimary,
         name: 'Celeste Naughton',
         secondaryImage: celesteSecondary,
