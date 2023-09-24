@@ -132,12 +132,14 @@ export const cards = [
     },
     {
         id: 7,
-        title: 'SENIOR-CORPORATE CHAIR',
+        title: 'SENIOR CORPORATE CHAIR',
         image: alisaPrimary,
         majors: 'Information Science, Systems, and Technology | Education Minor \'25',
         askAbout: ['spanish love songs', 'food spots', 'marathons', 'corporate events', 'writing emails', 'embroidery', 'compass program', 'teresa'],
         secondaryImage: alisaSecondary,
         name: 'Alisa Castillo ',
+        linkedIn: 'https://www.linkedin.com/in/alisa-castillo/',
+        insta: "https://www.instagram.com/alisa.castle/",
         bio: "Hi! My name is Alisa and I'm originally from Los Angeles, California~ I'm currently a junior in the College of Engineering majoring in Information Science, Systems, and Technology and minoring in Education. On top of working with URMC, I work as a Student Program Coordinator for Cornell Outdoor Education and as a Peer Mentor for Coaching and Mentoring for Professional and Student Success (COMPASS). I love exploring all that Ithaca has to offer and the different food places there are (MIX is a really good brunch place~). I'm a runner at heart and have ran five marathons. Feel free to reach out to me whenever about all things URMC and Ithaca!",
         popup: true
     },
