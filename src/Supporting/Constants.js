@@ -111,7 +111,7 @@ export const cards = [
         id: 9,
         title: 'CO-DESIGN CHAIR',
         image: abiPrimary,
-        name: 'Abigail Castillo',
+        name: 'Abigail Castro',
         popup: false
     },
     {
