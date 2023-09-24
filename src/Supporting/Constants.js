@@ -144,8 +144,9 @@ export const cards = [
         name: 'Leopold Dorilas',
         popup: false
     },
+    // nixon here
     {
-        id: 13,
+        id: 14,
         title: 'CO-MENTORSHIP CHAIR',
         image: carlaPrimary,
         name: 'Carla Flores',
@@ -158,7 +159,7 @@ export const cards = [
         popup: true
     },
     {
-        id: 14,
+        id: 15,
         title: 'CO-MENTORSHIP CHAIR',
         image: kellyPrimary,
         majors: 'Information Science \'25',
@@ -168,7 +169,7 @@ export const cards = [
         popup: true
     },
     {
-        id: 15,
+        id: 16,
         title: 'CO-OUTREACH CHAIR',
         image: judithPrimary,
         name: 'Judith Jatto',
@@ -181,7 +182,7 @@ export const cards = [
         popup: true
     },
     {
-        id: 16,
+        id: 17,
         title: 'CO-OUTREACH CHAIR',
         image: stephPrimary,
         majors: 'Information Science | Computer Science Minor \'25',
@@ -190,9 +191,9 @@ export const cards = [
         bio: "Hi! My name is Stephanie Dyer and I am a junior in CALS majoring in Information Science and minoring in Computer Science.I am Internal Relations for Les Femmes de Substance and a volunteer for Girls Who Code. As the Outreach Chair for URMC, I am so excited to meet new faces and create an inclusive space for everyone in CIS! Please feel free to reach out about anything 💗",
         popup: true
     },
-    // adrianna here - 17
+    // adrianna here - 18
     {
-        id: 18,
+        id: 19,
         title: 'CO-PUBLIC RELATIONS CHAIR',
         image: celestePrimary,
         name: 'Celeste Naughton',
@@ -205,7 +206,7 @@ export const cards = [
         popup: true
     },
     {
-        id: 19,
+        id: 20,
         title: 'CO-PUBLIC RELATIONS',
         image: richlovePrimary,
         name: 'Richlove Nkansah',
@@ -218,7 +219,7 @@ export const cards = [
         popup: true
     },
     {
-        id: 20,
+        id: 21,
         title: 'CO-PUBLIC RELATIONS CHAIR',
         image: macarenaPrimary,
         name: 'Macarena Hesse',
@@ -231,7 +232,7 @@ export const cards = [
         popup: true
     },
     {
-        id: 21,
+        id: 22,
         title: 'CO-PROFESSIONAL DEVELOPMENT CHAIR',
         image: joPrimary,
         name: 'Joseph Uguarte',
@@ -244,7 +245,7 @@ export const cards = [
         popup: true
     },
     {
-        id: 22,
+        id: 23,
         title: 'CO-PROFESSIONAL DEVELOPMENT CHAIR',
         image: lukemanPrimary,
         name: 'Lukman Moyosore',
@@ -257,7 +258,7 @@ export const cards = [
         popup: true
     },
     {
-        id: 23,
+        id: 24,
         title: 'SECRETARY',
         image: momoPrimary,
         name: 'Mohammed Shummo',
@@ -270,14 +271,14 @@ export const cards = [
         popup: true
     },
     {
-        id: 24,
+        id: 25,
         title: 'CO-SOCIAL CHAIR',
         image: brianPrimary,
         name: 'Brian Sanchez',
         popup: false
     },
     {
-        id: 25,
+        id: 26,
         title: 'CO-SOCIAL CHAIR',
         image: dashaPrimary,
         name: 'Dasha Griffiths',
@@ -290,7 +291,7 @@ export const cards = [
         popup: true
     },
     {
-        id: 26,
+        id: 27,
         title: 'CO-SOCIAL CHAIR',
         image: chinaPrimary,
         name: 'Cawentchina Narcisse',
@@ -303,21 +304,21 @@ export const cards = [
         popup: true
     },
     {
-        id: 27,
+        id: 28,
         title: 'TREASURER',
         image: hectorPrimary,
         name: 'Hector Hurtado',
         popup: false
     },
     {
-        id: 28,
+        id: 29,
         title: 'CO-WEB DEVELOPMENT CHAIR',
         image: elvisPrimary,
         name: 'Elvis Marcelo',
         popup: false
     },
     {
-        id: 29,
+        id: 30,
         title: 'CO-WEB DEVELOPMENT CHAIR',
         image: ronaldPrimary,
         secondaryImage: ronaldSecondary,
@@ -328,15 +329,6 @@ export const cards = [
         bio: "Hey, I'm a sophomore studying Computer Science in A&S. I'm from Long Island, NY and I'm one of the Web Development chairs. Outside of URMC, I enjoy taking photos, working out, and working on personal projects.",
         popup: true
     },
-
-    // {
-    //     id: 26,
-    //     title: 'CO-EVENTS CHAIR',
-    //     image: kembaPrimary,
-    //     name: 'Kemba Yeboah',
-    //     popup: false
-    // },
-
 
   
 ];
