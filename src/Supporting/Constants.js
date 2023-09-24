@@ -1,13 +1,13 @@
 import richlovePrimary from '../headshots/richlovePrimary.png';
 import kaylaPrimary from '../headshots/kaylaPrimary.png';
 import chinaPrimary from '../headshots/chinaPrimary.png';
-import joPrimary from '../headshots/joPrimary.png';
+import joPrimary from '../headshots/joPrimary.jpeg';
 import momoPrimary from '../headshots/momoPrimary.png';
 import judithPrimary from '../headshots/judithPrimary.png';
 import dashaPrimary from '../headshots/dashaPrimary.png';
 import carlaPrimary from '../headshots/carlaPrimary.png';
 import lukemanPrimary from '../headshots/lukemanPrimary.png';
-import franklin from '../headshots/franklin.png';
+import franklinPrimary from '../headshots/franklinPrimary.png';
 import mateoPrimary from '../headshots/mateoPrimary.png';
 import evanPrimary from '../headshots/evanPrimary.png';
 import macarenaPrimary from '../headshots/macarenaPrimary.png';
@@ -29,7 +29,8 @@ import kellyPrimary from '../headshots/kellyPrimary.jpg'
 import alulaPrimary from '../headshots/alulaPrimary.png'
 import stephPrimary from '../headshots/stephPrimary.jpg'
 import ronaldPrimary from '../headshots/ronaldPrimary.jpg'
-
+import alisaPrimary from '../headshots/alisaPrimary.png'
+import alisaSecondary from '../headshots/alisaSecondary.png'
 
 
 
@@ -38,20 +39,22 @@ import alulaSecondary from '../headshots/alulaSecondary.png'
 import ronaldSecondary from '../headshots/ronaldPrimary.jpg'
 import stephSecondary from '../headshots/stephSecondary.jpg'
 import richloveSecondary from '../secondaries/richloveSecondary.png';
-import kaylaSecondary from '../secondaries/kaylaSecondary.png';
+import kaylaSecondary from '../headshots/kaylaSecondary.png';
 import chinaSecondary from '../secondaries/chinaSecondary.png';
-import joSecondary from '../secondaries/joSecondary.png';
+import joSecondary from '../headshots/joSecondary.jpeg';
 import momoSecondary from '../secondaries/momoSecondary.png';
 import judithSecondary from '../secondaries/judithSecondary.png';
-import dashaSecondary from '../secondaries/dashaSecondary.png';
-import carlaSecondary from '../secondaries/carlaSecondary.png';
+import dashaSecondary from '../headshots/dashaSecondary.jpg';
+import carlaSecondary from '../headshots/carlaSecondary.jpeg';
 import lukmanSecondary from '../secondaries/lukmanSecondary.png';
-import mateoSecondary from '../secondaries/mateoSecondary.png';
+import mateoSecondary from '../headshots/mateoSecondary.jpg';
 import evanSecondary from '../secondaries/evanSecondary.png';
-import macarenaSecondary from '../secondaries/macarenaSecondary.png';
+import macarenaSecondary from '../headshots/macarenaSecondary.jpeg';
 import celesteSecondary from '../secondaries/celesteSecondary.png';
 import randySecondary from '../headshots/randySecondary.jpeg'
 import kellySecondary from '../headshots/kellySecondary.jpg'
+import franklinSecondary from '../headshots/franklinSecondary.jpeg'
+
 
 export const cards = [
     {
@@ -92,7 +95,7 @@ export const cards = [
         title: 'CO-ACADEMIC CHAIR',
         image: mateoPrimary,
         name: 'Mateo Weiner',
-        secondaryImage: mateoPrimary,
+        secondaryImage: mateoSecondary,
         majors: 'Computer Science | ECE, Business Minor \'25',
         insta: 'https://www.instagram.com/mateow99/',
         linkedIn: 'https://www.linkedin.com/in/mateoweiner/',
@@ -112,7 +115,17 @@ export const cards = [
         bio: "Heyyy, My name is Randy. Im in CALs doing a double major in Information science and Global Development. Where am I from... huh... Originally born in Kenya, but have lived in upstate New York (Oneonta) most of my life.",
         popup: true
     },
-    // alisa here
+    {
+        id: 7,
+        title: 'SENIOR-CORPORATE CHAIR',
+        image: alisaPrimary,
+        majors: 'Information Science, Systems, and Technology | Education Minor \'25',
+        askAbout: ['CORPORATE'],
+        secondaryImage: alisaSecondary,
+        name: 'Alisa Castillo ',
+        bio: "Hi! My name is Alisa and I'm originally from Los Angeles, California~ I'm currently a junior in the College of Engineering majoring in Information Science, Systems, and Technology and minoring in Education. On top of working with URMC, I work as a Student Program Coordinator for Cornell Outdoor Education and as a Peer Mentor for Coaching and Mentoring for Professional and Student Success (COMPASS). I love exploring all that Ithaca has to offer and the different food places there are (MIX is a really good brunch place~). I'm a runner at heart and have ran five marathons. Feel free to reach out to me whenever about all things URMC and Ithaca!",
+        popup: true
+    },
     {
         id: 8,
         title: 'CO-CORPORATE CHAIR',
@@ -145,9 +158,9 @@ export const cards = [
     {
         id: 11,
         title: 'CO-EVENTS CHAIR',
-        image: franklin,
-        name: 'Franklin Moyo',
-        secondaryImage: franklin,
+        image: franklinPrimary,
+        name: 'Mnumzana Franklin Moyo',
+        secondaryImage: franklinSecondary,
         majors: 'Computer Science \'25',
         insta: 'https://www.instagram.com/mnu_ster/',
         linkedIn: 'linkedin.com/in/mnumzana-franklin-moyo-37b8ba180',
