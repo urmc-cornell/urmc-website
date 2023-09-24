@@ -23,7 +23,20 @@ import yinkaPrimary from '../headshots/yinkaPrimary.png';
 import celestePrimary from '../headshots/celestePrimary.png';
 import elvisPrimary from '../headshots/elvisPrimary.jpg';
 import leoPrimary from '../headshots/leoPrimary.jpeg';
+import ignPrimary from '../headshots/ignPrimary.jpeg'
+import randyPrimary from '../headshots/randyPrimary.jpeg'
+import kellyPrimary from '../headshots/kellyPrimary.jpg'
+import alulaPrimary from '../headshots/alulaPrimary.png'
+import stephPrimary from '../headshots/stephPrimary.jpg'
+import ronaldPrimary from '../headshots/ronaldPrimary.jpg'
 
+
+
+
+import ignSecondary from '../headshots/ignSecondary.jpeg'
+import alulaSecondary from '../headshots/alulaSecondary.png'
+import ronaldSecondary from '../headshots/ronaldPrimary.jpg'
+import stephSecondary from '../headshots/stephSecondary.jpg'
 import richloveSecondary from '../secondaries/richloveSecondary.png';
 import kaylaSecondary from '../secondaries/kaylaSecondary.png';
 import chinaSecondary from '../secondaries/chinaSecondary.png';
@@ -37,6 +50,8 @@ import mateoSecondary from '../secondaries/mateoSecondary.png';
 import evanSecondary from '../secondaries/evanSecondary.png';
 import macarenaSecondary from '../secondaries/macarenaSecondary.png';
 import celesteSecondary from '../secondaries/celesteSecondary.png';
+import randySecondary from '../headshots/randySecondary.jpeg'
+import kellySecondary from '../headshots/kellySecondary.jpg'
 
 export const cards = [
     {
