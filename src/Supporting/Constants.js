@@ -125,7 +125,7 @@ export const cards = [
         image: randyPrimary,
         majors: 'Information Science | Global Development \'26',
         secondaryImage: randySecondary,
-        askAbout: ['SOCCER'],
+        askAbout: ['Reading', 'TV/MOVIES', 'ANIMALS', 'run', 'international companies' ],
         name: 'Randy Odago ',
         bio: "Heyyy, My name is Randy. Im in CALs doing a double major in Information science and Global Development. Where am I from... huh... Originally born in Kenya, but have lived in upstate New York (Oneonta) most of my life.",
         popup: true
@@ -135,7 +135,7 @@ export const cards = [
         title: 'SENIOR-CORPORATE CHAIR',
         image: alisaPrimary,
         majors: 'Information Science, Systems, and Technology | Education Minor \'25',
-        askAbout: ['CORPORATE'],
+        askAbout: ['spanish love songs', 'food spots', 'marathons', 'corporate events', 'writing emails', 'embroidery', 'compass program', 'teresa'],
         secondaryImage: alisaSecondary,
         name: 'Alisa Castillo ',
         bio: "Hi! My name is Alisa and I'm originally from Los Angeles, California~ I'm currently a junior in the College of Engineering majoring in Information Science, Systems, and Technology and minoring in Education. On top of working with URMC, I work as a Student Program Coordinator for Cornell Outdoor Education and as a Peer Mentor for Coaching and Mentoring for Professional and Student Success (COMPASS). I love exploring all that Ithaca has to offer and the different food places there are (MIX is a really good brunch place~). I'm a runner at heart and have ran five marathons. Feel free to reach out to me whenever about all things URMC and Ithaca!",
@@ -146,7 +146,7 @@ export const cards = [
         title: 'CO-CORPORATE CHAIR',
         image: ignPrimary,
         majors: 'Computer Science \'25',
-        askAbout: ['COMPUTER SCIENCE'],
+        askAbout: ['soccer', "poker", "gym", "anime", "music festivals", "coding", "my labradoodle named Goldo :)"],
         secondaryImage: ignSecondary,
         name: 'Ignazio Perez Romero ',
         bio: "Hey everyone! I'm Ignazio, a junior majoring in Computer Science. A piece of advice I would give is to always go out of your comfort zone. I was born and raised in San Juan, Puerto Rico and moved to California at the age of 14. Since then, I have now lived in Texas, Indiana, and now upstate New York (Ithaca). Although I was terrified the first time, I've met great people everywhere I've been and learned from each place. That being said, keep your roots intact ...I'm proud to be a Boricua!",
@@ -165,7 +165,7 @@ export const cards = [
         image: alulaPrimary,
         majors: 'Information Science \'25',
         secondaryImage: alulaSecondary,
-        askAbout: ['DESIGN', 'MUSIC'],
+        askAbout: ['art', 'clothes', 'music', 'graphic design'],
         name: 'Alula Belay ',
         bio: "I am currently a junior Info Sci major in CALS pursing a data science concentration. I have a passion for design and creating things for the world to enjoy. I also like to watch horror movies.",
         popup: true
@@ -179,7 +179,7 @@ export const cards = [
         majors: 'Computer Science \'25',
         insta: 'https://www.instagram.com/mnu_ster/',
         linkedIn: 'linkedin.com/in/mnumzana-franklin-moyo-37b8ba180',
-        askAbout: ['Food', '8 hour naps', 'movies', 'Android development'],
+        askAbout: ['Food', '8 hour naps', 'movies', 'Android development', 'TV Series', 'Volleyball', 'Cooking Meat'],
         bio: "Hello there! My name's Mnumzana. I'm from Zimbabwe and I'm having a good time being a computer science student at Cornell and the Co-events chair for URMC. I love a good, long and hot shower and I also love Chinese food. Hmm, do I like school?...let's just say I do what's necessary hahaha. I also love going to the cinema to watch movies that have a 70%+ score on Rotten Tomatoes.",
         popup: true
     },
@@ -200,7 +200,7 @@ export const cards = [
         majors: 'Computer Science, Economics & Business Minor \'25',
         insta: 'https://www.instagram.com/carlamflores24/',
         linkedIn: 'https://www.linkedin.com/in/carla-flores-440795192',
-        askAbout: ['Baking', 'Mexico'],
+        askAbout: ['australia','nature documentaries', 'Baking', 'Mexico'],
         bio: "Hi everyone! My name is Carla and I am a junior in the College of Arts & Sciences studying Econ and CS. Outside of URMC, I am also a facilitator for the 2110 AEW. During my free time, I enjoy spending time with friends especially in nature 🌳.",
         popup: true
     },
@@ -210,7 +210,7 @@ export const cards = [
         image: kellyPrimary,
         majors: 'Information Science \'25',
         secondaryImage: kellySecondary,
-        askAbout: ['MENTORSHIP'],
+        askAbout: ['MUSIC', 'walks'],
         name: 'Kelly Ankoue',
         bio: "I'm Kelly, a junior majoring in Information Science with a concentration in UX design. I am from Brooklyn, New York, and I am passionate about design and exploring human interaction. I love vlogging and taking pictures in my free time because I love memories. Additionally, I have recently become passionate about makeup and using it to express myself as a form of art.",
         popup: true
@@ -234,7 +234,7 @@ export const cards = [
         image: stephPrimary,
         majors: 'Information Science | Computer Science Minor \'25',
         secondaryImage: stephSecondary,
-        askAbout: ['OUTREACH'],
+        askAbout: ['Tyler\, The Creator', 'gym/fitness', 'traveling' , 'fashion'],
         name: 'Stephanie Dyer ',
         bio: "Hi! My name is Stephanie Dyer and I am a junior in CALS majoring in Information Science and minoring in Computer Science.I am Internal Relations for Les Femmes de Substance and a volunteer for Girls Who Code. As the Outreach Chair for URMC, I am so excited to meet new faces and create an inclusive space for everyone in CIS! Please feel free to reach out about anything 💗",
         popup: true
@@ -275,7 +275,7 @@ export const cards = [
         majors: 'Computer Science | Fashion Studies Minor \'26',
         insta: 'https://www.instagram.com/macarenahesse/',
         linkedIn: 'https://www.linkedin.com/in/macarena-hesse/',
-        askAbout: ['Travel', 'Fashion', 'Music', 'Graphic Design'],
+        askAbout: ['Travel', 'Fashion', 'Music Festivals', 'Tennis', 'Graphic Design'],
         bio: "Hi, I'm Macarena! I'm originally from Lima, Peru and now live in Miami, FL. I'm currently majoring in ISST in the College of Engineering and minoring in Fashion Studies and Business. I'm really interested in business analytics and merging my interests in tech and fashion. Besides URMC, I am also a part of Cornell Business Analytics (CBA), Society of Hispanic Professional Engineers (SHPE), Society of Women Engineers (SWE), Cornell Concrete Canoe, Thread Magazine, Collective X Magazine, Alpha Epsilon Phi, and I'm a tour guide on campus. Feel free to reach out!",
         popup: true
     },
@@ -288,7 +288,7 @@ export const cards = [
         majors: 'Computer Science, Linguistics \'25',
         insta: 'https://www.instagram.com/joseph.ugt/',
         linkedIn: 'https://www.linkedin.com/in/joseph-ugarte/',
-        askAbout: ['Rap & K-pop', 'Duolingo', 'Videogames', 'OCaml', 'Startup'],
+        askAbout: ['Rap & K-pop', 'Duolingo', 'Videogames', 'OCaml', 'Startup', 'mets'],
         bio: "Hey! My name is Joe, and I'm from Jackson, New Jersey, but ethnically, I am part Bolivian & Peruvian. I study computer science & linguistics in the College of Arts and Sciences, where I hope to learn more about the intersection of these two fields. I currently TA for CS 3110, which is my third semester on course staff, and develop for Hack4Impact. Though outside of academics, you can catch me snowboarding, extending my 160+ day Duolingo streak, and watching baseball. ",
         popup: true
     },
