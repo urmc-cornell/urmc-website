@@ -107,6 +107,7 @@ export const cards = [
         image: randyPrimary,
         majors: 'Information Science | Global Development \'26',
         secondaryImage: randySecondary,
+        askAbout: ['SOCCER'],
         name: 'Randy Odago ',
         bio: "Heyyy, My name is Randy. Im in CALs doing a double major in Information science and Global Development. Where am I from... huh... Originally born in Kenya, but have lived in upstate New York (Oneonta) most of my life.",
         popup: true
@@ -117,6 +118,7 @@ export const cards = [
         title: 'CO-CORPORATE CHAIR',
         image: ignPrimary,
         majors: 'Computer Science \'25',
+        askAbout: ['COMPUTER SCIENCE'],
         secondaryImage: ignSecondary,
         name: 'Ignazio Perez Romero ',
         bio: "Hey everyone! I'm Ignazio, a junior majoring in Computer Science. A piece of advice I would give is to always go out of your comfort zone. I was born and raised in San Juan, Puerto Rico and moved to California at the age of 14. Since then, I have now lived in Texas, Indiana, and now upstate New York (Ithaca). Although I was terrified the first time, I've met great people everywhere I've been and learned from each place. That being said, keep your roots intact ...I'm proud to be a Boricua!",
@@ -135,8 +137,9 @@ export const cards = [
         image: alulaPrimary,
         majors: 'Information Science \'25',
         secondaryImage: alulaSecondary,
+        askAbout: ['DESIGN', 'MUSIC'],
         name: 'Alula Belay ',
-        bio: "Hey everyone! I'm Ignazio, a junior majoring in Computer Science. A piece of advice I would give is to always go out of your comfort zone. I was born and raised in San Juan, Puerto Rico and moved to California at the age of 14. Since then, I have now lived in Texas, Indiana, and now upstate New York (Ithaca). Although I was terrified the first time, I've met great people everywhere I've been and learned from each place. That being said, keep your roots intact ...I'm proud to be a Boricua!",
+        bio: "I am currently a junior Info Sci major in CALS pursing a data science concentration. I have a passion for design and creating things for the world to enjoy. I also like to watch horror movies.",
         popup: true
     },
     {
@@ -179,6 +182,7 @@ export const cards = [
         image: kellyPrimary,
         majors: 'Information Science \'25',
         secondaryImage: kellySecondary,
+        askAbout: ['MENTORSHIP'],
         name: 'Kelly Ankoue',
         bio: "I'm Kelly, a junior majoring in Information Science with a concentration in UX design. I am from Brooklyn, New York, and I am passionate about design and exploring human interaction. I love vlogging and taking pictures in my free time because I love memories. Additionally, I have recently become passionate about makeup and using it to express myself as a form of art.",
         popup: true
@@ -202,6 +206,7 @@ export const cards = [
         image: stephPrimary,
         majors: 'Information Science | Computer Science Minor \'25',
         secondaryImage: stephSecondary,
+        askAbout: ['OUTREACH'],
         name: 'Stephanie Dyer ',
         bio: "Hi! My name is Stephanie Dyer and I am a junior in CALS majoring in Information Science and minoring in Computer Science.I am Internal Relations for Les Femmes de Substance and a volunteer for Girls Who Code. As the Outreach Chair for URMC, I am so excited to meet new faces and create an inclusive space for everyone in CIS! Please feel free to reach out about anything 💗",
         popup: true
@@ -222,7 +227,7 @@ export const cards = [
     },
     {
         id: 20,
-        title: 'CO-PUBLIC RELATIONS',
+        title: 'CO-PUBLIC RELATIONS CHAIR',
         image: richlovePrimary,
         name: 'Richlove Nkansah',
         secondaryImage: richloveSecondary,
