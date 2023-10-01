@@ -33,6 +33,9 @@ import alisaPrimary from '../headshots/alisaPrimary.png'
 import alisaSecondary from '../headshots/alisaSecondary.png'
 import andresPrimary from '../headshots/andresPrimary.jpeg'
 import andresSecondary from '../headshots/andresSecondary.jpeg'
+import nixonPrimary from '../headshots/nixonPrimary.jpeg'
+import nixonSecondary from '../headshots/nixonSecondary.jpg'
+
 
 
 
@@ -192,7 +195,19 @@ export const cards = [
         name: 'Leopold Dorilas',
         popup: false
     },
-    // nixon here - 13
+    {
+        id: 13,
+        title: 'CO-EVENTS CHAIR',
+        image: nixonPrimary,
+        name: 'Nixon Zuniga',
+        secondaryImage: nixonSecondary,
+        majors: 'Computer Science, Entrepreneurship \'25',
+        insta: ' www.instagram.com/nixonrzuniga/',
+        linkedIn: 'www.linkedin.com/in/nixonrzuniga/',
+        askAbout: ['Soccer', "Latin Dancing", "Taekwondo", "Tyler, the Creator", "Rauw Alejandro"],
+        bio: "Hey! I'm Nixon, a junior in CAS studying Computer Science 💻 and minoring in Entrepreneurship & Innovation 🕴🏽. I am also 100% Ecuadorian 🇪🇨. Apart from URMC, I also serve as the treasurer of the Sabor Latin Dance Ensemble 💃 and hold a position on Cornell's Taekwondo Club's first team 🥋. I love music of all genres 🎵, so please put me on to some underground gems 💎 and feel free to reach out for anything! 🫶🏽",
+        popup: true
+    },
     {
         id: 14,
         title: 'CO-MENTORSHIP CHAIR',
