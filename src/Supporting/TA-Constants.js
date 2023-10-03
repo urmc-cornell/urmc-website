@@ -15,9 +15,6 @@ import simoneSecondary from '../ta-headshots/simoneSecondary.jpeg';
 
 
 
-
-
-
 export const cards = [
     {
         id: 1,
