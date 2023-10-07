@@ -24,7 +24,7 @@ class Navbar extends Component {
                     <CustomLink href="/about-us">ABOUT US</CustomLink>
                     <CustomLink href="/leadership">LEADERSHIP</CustomLink>
                     <CustomLink href="/events">EVENTS</CustomLink>
-                    {/* <CustomLink href="/ta-directory">TA DIRECTORY</CustomLink> */}
+                     <CustomLink href="/ta-directory">TA DIRECTORY</CustomLink> 
                     <CustomLink href="/getting-involved">GETTING INVOLVED</CustomLink>
                     <CustomLink href="/sponsors">SPONSORS</CustomLink>
                 </ul>
