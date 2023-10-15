@@ -37,7 +37,7 @@ export const cards = [
         secondaryImage: danielaSecondary,
         majors: 'Computer Science | Business Minor \'25',
         insta: 'https://www.instagram.com/daniela_c.77/',
-        linkedIn: 'linkedin.con/in/daniela-carmona-lopez-mestre/',
+        linkedIn: 'https://www.linkedin.com/in/daniela-carmona-lopez-mestre/',
         askAbout: ['CS 4820'],
         bio: "Hi! I’m a junior studying Computer Science in the College of Engineering with a minor in Business. I’m a lead TA for CS 1110, I play in the Cornell women’s rugby team, and am a member of URMC. ",
         popup: true
@@ -91,7 +91,7 @@ export const cards = [
         insta: 'https://www.instagram.com/kaysuppp/',
         linkedIn: 'https://www.linkedin.com/in/dashagriffiths/',
         askAbout: ['CS 3410'],
-        bio: "Hey, I'm Dasha, a senior CS student in the college of Arts and Sciences. I love video games and listening to music.",
+        bio: "Hey, I'm Dasha, a senior CS student in the college of Arts and Sciences. I have been on the Eboard since I stepped on campus and love it for the community it opened to me and for the wonderful people I get to meet day by day. I am very happy to serve my community as social chair❤️ Hope to see you around!",
         popup: true
     },
     {
