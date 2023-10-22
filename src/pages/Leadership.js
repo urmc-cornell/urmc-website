@@ -66,7 +66,7 @@ class Leadership extends Component {
                         majors: majors,
                         insta: instagram,
                         linkedIn: linkedin,
-                        askAbout: [askAbout],
+                        askAbout: askAbout.split(","),
                         bio: bio,
                         popup, popup
                         // if (headshot_two_url != null) {
@@ -76,6 +76,7 @@ class Leadership extends Component {
                         // }
 
                     }
+                    console.log(askAbout)
                     eboard.push(eboard_card)
                 }
 
