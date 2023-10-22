@@ -29,9 +29,6 @@ class Leadership extends Component {
                 
                 let data = JSON.parse(rep.substring(47).slice(0, -2));
                 let activeRows = data.table.rows.length;
-                // console.log(activeRows);
-                
-                // console.log("hello")
 
                 let eboard = []
 
@@ -46,7 +43,7 @@ class Leadership extends Component {
                     let linkedin = data.table.rows[i].c[11].v
                     let askAbout = data.table.rows[i].c[8].v
                     let bio = data.table.rows[i].c[7].v
-                    let popup = true
+                    var popup = true
 
                     let headshot_one_id = headshot_one.split('=')[1];
                     let headshot_one_url = "https://drive.google.com/uc?export=view&id=" + headshot_one_id
@@ -54,16 +51,11 @@ class Leadership extends Component {
                     let headshot_two_id = headshot_two.split('=')[1];
                     let headshot_two_url = "https://drive.google.com/uc?export=view&id=" + headshot_two_id
 
-                    // when it was hardcoded, popupstatus was hardcode
+                    // when it was hardcoded, popupstatus was manually set
                     // need to do this dynamically per card depending on if
                     // all needed information is there
 
-                    // var popupActive = false;
-                    // if (headshot_two != null) {
-                    //     popupActive = true
-                    // } else {
-                    //     popupActive = false
-                    // }
+
 
                     let eboard_card = {
                         id: id,
@@ -73,10 +65,15 @@ class Leadership extends Component {
                         secondaryImage: headshot_two_url,
                         majors: majors,
                         insta: instagram,
-                        linkedin: linkedin,
-                        askAbout: askAbout,
+                        linkedIn: linkedin,
+                        askAbout: [askAbout],
                         bio: bio,
                         popup, popup
+                        // if (headshot_two_url != null) {
+                        //     popup = true
+                        // } else {
+                        //     popup = false
+                        // }
 
                     }
                     eboard.push(eboard_card)
