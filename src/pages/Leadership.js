@@ -65,7 +65,6 @@ class Leadership extends Component {
                     //     popupActive = false
                     // }
 
-
                     let eboard_card = {
                         id: id,
                         title: title,
