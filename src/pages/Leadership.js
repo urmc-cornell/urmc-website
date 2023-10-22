@@ -29,18 +29,26 @@ class Leadership extends Component {
                 
                 let data = JSON.parse(rep.substring(47).slice(0, -2));
                 let activeRows = data.table.rows.length;
-                console.log(data);
+                // console.log(activeRows);
                 
+                // console.log("hello")
 
                 let eboard = []
+
                 for (let i = 0; i < activeRows; i++) {
-                    let name = data.table.rows[i].c[3].v
-                    let graduation_year = data.table.rows[i].c[4].v
-                    let position = data.table.rows[i].c[5].v
-                    let headshot_one = data.table.rows[i].c[6].v
-                    let headshot_two = data.table.rows[i].c[7].v
-                    let bio = data.table.rows[i].c[8].v
-                    let interests = data.table.rows[i].c[9].v
+                    // console.log("I wok")
+
+                    // console.log("whasdfdssdftt")
+
+                    let id = data.table.rows[i].c[0].v
+                    let name = data.table.rows[i].c[2].v
+                    let graduation_year = data.table.rows[i].c[3].v
+                    let position = data.table.rows[i].c[4].v
+                    let headshot_one = data.table.rows[i].c[5].v
+                    let headshot_two = data.table.rows[i].c[6].v
+                    let bio = data.table.rows[i].c[7].v
+                    let interests = data.table.rows[i].c[8].v
+
 
 
                     let headshot_one_id = headshot_one.split('=')[1];
@@ -60,6 +68,9 @@ class Leadership extends Component {
                     }
                     eboard.push(eboard_card)
                 }
+
+                // console.log("eboard stuff");
+                // console.log("whattt");
 
                 this.setState({
                     eboard_list: eboard,
@@ -90,7 +101,7 @@ class Leadership extends Component {
                         <div className="grid-item"
                             onClick={() => this.handleCardClick(card)}>
                             <EboardCard
-                                key={card.name}
+                                key={card.id}
                                 imageURL={card.headshot_one}
                                 title={card.position}
                                 name={card.name}
