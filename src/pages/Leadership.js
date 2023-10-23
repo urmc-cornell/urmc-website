@@ -45,14 +45,13 @@ class Leadership extends Component {
                     let bio = data.table.rows[i].c[7].v
                     var popup = true
 
-                    console.log(headshot_one.split('/'), name)
 
                     let headshot_one_id = headshot_one.split('/')[5];
                     let headshot_one_url = "https://drive.google.com/uc?id=" + headshot_one_id
                     // https://drive.google.com/uc?id=
 
-                    let headshot_two_id = headshot_two.split('=')[1];
-                    let headshot_two_url = "https://drive.google.com/uc?export=view&id=" + headshot_two_id
+                    let headshot_two_id = headshot_two.split('/')[5];
+                    let headshot_two_url = "https://drive.google.com/uc?id=" + headshot_two_id
 
                     let eboard_card = {
                         id: id,
