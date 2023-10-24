@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import EboardCard from '../components/EboardCard';
 import '../styles/Leadership.css';
-import { cards } from '../Supporting/Constants.js'
 import EboardPopup from '../components/eboardPopup';
 
 

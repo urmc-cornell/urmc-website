@@ -8,8 +8,8 @@ import bahaaPrimary from '../ta-headshots/bahaaPrimary.png';
 import bahaaSecondary from '../ta-headshots/bahaaSecondary.jpeg';
 import abolajiPrimary from '../ta-headshots/abolajiPrimary.jpeg';
 import abolajiSecondary from '../ta-headshots/abolajiSecondary.jpeg';
-import dashaPrimary from '../headshots/dashaPrimary.png';
-import dashaSecondary from '../headshots/dashaSecondary.jpg';
+// import dashaPrimary from '../headshots/dashaPrimary.png';
+// import dashaSecondary from '../headshots/dashaSecondary.jpg';
 import simonePrimary from '../ta-headshots/simonePrimary.jpeg';
 import simoneSecondary from '../ta-headshots/simoneSecondary.jpeg';
 
@@ -81,19 +81,19 @@ export const cards = [
         bio: "Hey! I'm Nigerian-American, born in Brooklyn, NY, but currently live in Long Island. I'm studying Information Science(UX Design) at CALS. I love meeting new people, so feel free to hit me up!",
         popup: true
     },
-    {
-        id: 6,
-        title: 'CS 3410',
-        image: dashaPrimary,
-        name: 'Dasha Griffiths',
-        secondaryImage: dashaSecondary,
-        majors: 'Computer Science \'24',
-        insta: 'https://www.instagram.com/kaysuppp/',
-        linkedIn: 'https://www.linkedin.com/in/dashagriffiths/',
-        askAbout: ['CS 3410'],
-        bio: "Hey, I'm Dasha, a senior CS student in the college of Arts and Sciences. I have been on the Eboard since I stepped on campus and love it for the community it opened to me and for the wonderful people I get to meet day by day. I am very happy to serve my community as social chair❤️ Hope to see you around!",
-        popup: true
-    },
+    // {
+    //     id: 6,
+    //     title: 'CS 3410',
+    //     image: dashaPrimary,
+    //     name: 'Dasha Griffiths',
+    //     secondaryImage: dashaSecondary,
+    //     majors: 'Computer Science \'24',
+    //     insta: 'https://www.instagram.com/kaysuppp/',
+    //     linkedIn: 'https://www.linkedin.com/in/dashagriffiths/',
+    //     askAbout: ['CS 3410'],
+    //     bio: "Hey, I'm Dasha, a senior CS student in the college of Arts and Sciences. I have been on the Eboard since I stepped on campus and love it for the community it opened to me and for the wonderful people I get to meet day by day. I am very happy to serve my community as social chair❤️ Hope to see you around!",
+    //     popup: true
+    // },
     {
         id: 7,
         title: 'CS 3410',
