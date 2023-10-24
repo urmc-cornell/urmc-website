@@ -25,7 +25,9 @@ class Leadership extends Component {
         fetch(fullURL)
             .then(res => res.text())
             .then(rep => {
-                // figure out why 47, 0, -2 here
+                // figure out why 47, 0, -2 here 
+                    // its from some tutorial but it basicially gets you each row 
+                    // and it's information which we use below
                 
                 let data = JSON.parse(rep.substring(47).slice(0, -2));
                 let activeRows = data.table.rows.length;
@@ -53,6 +55,12 @@ class Leadership extends Component {
                     let headshot_two_id = headshot_two.split('/')[5];
                     let headshot_two_url = "https://drive.google.com/uc?id=" + headshot_two_id
 
+                    if (bio != 'test') {
+                        popup = true
+                    } else {
+                        popup = false
+                    }
+
                     let eboard_card = {
                         id: id,
                         title: title,
@@ -65,12 +73,9 @@ class Leadership extends Component {
                         // makes comma seperated list of interests
                         askAbout: askAbout.split(","),
                         bio: bio,
-                        popup, popup
-                        // if (headshot_two_url != null) {
-                        //     popup = true
-                        // } else {
-                        //     popup = false
-                        // }
+                        // popup, popup
+                        popup: popup,
+
 
                     }
                     eboard.push(eboard_card)
@@ -107,7 +112,7 @@ class Leadership extends Component {
                             <EboardCard
                                 key={card.id}
                                 imageURL={card.image}
-                                title={card.title}
+                                title={card.title.toUpperCase()}
                                 name={card.name}
                                 onClick={() => this.handleCardClick(card)}
                             />
