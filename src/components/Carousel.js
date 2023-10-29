@@ -11,9 +11,9 @@ const Carousel = (props) => {
 
     const updateIndex = (newIndex) => {
         if (newIndex < 0) {
-            newIndex = 0;
-        } else if (newIndex >= props.pics.length) {
             newIndex = props.pics.length - 1;
+        } else if (newIndex >= props.pics.length) {
+            newIndex = 0;
         }
         setActiveIndex(newIndex);
     };
