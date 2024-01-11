@@ -13,6 +13,10 @@ export default function Footer() {
                 <img className="heart" src={heart}></img>
                 <h2 className="footer-subtitle-text">CURRENTLY THRIVING IN ITHACA, NEW YORK.</h2>
             </div>
+            <div className="footer-subtitle">
+                {/* <img className="heart" src={heart}></img> */}
+                <h2 className="footer-subtitle-text">This organization is a registered student organization of Cornell University.</h2>
+            </div>
         </div>
 
         <ul>
