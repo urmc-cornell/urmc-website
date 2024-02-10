@@ -100,12 +100,12 @@ class Leadership extends Component {
 
         return <div>
             <h1 className="leadership">Executive Board</h1>
-            <h2 className="fall22"> Fall 2023</h2>
+            <h2 className="fall22"> Spring 2024 - Coming Soon</h2>
             <EboardPopup trigger={this.state.popupActive} card={this.state.selectedCard} setTrigger={this.handleClose}>
             </EboardPopup>
-            <div className="grid-container-container">
+            {/* <div className="grid-container-container">
                 <div className="grid-container">
-                    {eboard_list.map(card => (
+                    <{eboard_list.map(card => (
                         <div className="grid-item"
                             onClick={() => this.handleCardClick(card)}>
                             <EboardCard
@@ -116,9 +116,9 @@ class Leadership extends Component {
                                 onClick={() => this.handleCardClick(card)}
                             />
                         </div>
-                    ))}
+                    ))}>
                 </div>
-            </div>
+            </div> */}
         </div>
     }
 }
