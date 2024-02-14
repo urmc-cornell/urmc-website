@@ -1,7 +1,7 @@
 import ronaldPrimary from '../Supporting/leadership-headshots/ronaldPrimary.jpg';
 
 
-
+//TODO: Add all 28 leadership people to site 
 export const cards = [
     {
         id: 1,
@@ -16,5 +16,8 @@ export const cards = [
         bio: "Hey, I'm a sophomore studying Computer Science in A&S. I'm from Long Island, NY and I'm one of the Web Development chairs. Outside of URMC, I enjoy taking photos, working out, and working on personal projects.",
         popup: true
     },
+
+
+
 
 ];
