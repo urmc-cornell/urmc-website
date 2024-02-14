@@ -13,7 +13,7 @@ export const cards = [
         // insta: 'https://www.instagram.com/kaylaspray/',
         linkedIn: 'https://www.linkedin.com/in/ronaldjabouin/',
         askAbout: ['soccer', 'film', 'photography'],
-        bio: " test for now test for now test for now test for now test for now test for now test for now test for now test for now test for now test for now test for now test for now test for now v test for now test for now test for now test for now  test for now test for now test for now ",
+        bio: "Hey, I'm a sophomore studying Computer Science in A&S. I'm from Long Island, NY and I'm one of the Web Development chairs. Outside of URMC, I enjoy taking photos, working out, and working on personal projects.",
         popup: true
     },
 
