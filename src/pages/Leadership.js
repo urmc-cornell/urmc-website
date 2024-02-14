@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import EboardCard from '../components/EboardCard';
 import '../styles/Leadership.css';
 import EboardPopup from '../components/eboardPopup';
-import { cards } from '../Supporting/Leadership-Constants'
+import { cards } from '../Supporting/Leadership-Constants.js'
 
 
 
@@ -102,7 +102,7 @@ class Leadership extends Component {
 
         return <div>
             <h1 className="leadership">Executive Board</h1>
-            <h2 className="fall22"> Spring 2024 - Coming Soon</h2>
+            <h2 className="fall22"> Spring 2024</h2>
             <EboardPopup trigger={this.state.popupActive} card={this.state.selectedCard} setTrigger={this.handleClose}>
             </EboardPopup>
             <div className="grid-container-container">

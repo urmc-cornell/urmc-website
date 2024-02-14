@@ -1,4 +1,4 @@
-import ronaldPrimary from '../leadership-headshots/ronaldPrimary.jpeg';
+import ronaldPrimary from '../Supporting/leadership-headshots/ronaldPrimary.jpg';
 
 
 
@@ -13,7 +13,7 @@ export const cards = [
         // insta: 'https://www.instagram.com/kaylaspray/',
         linkedIn: 'https://www.linkedin.com/in/ronaldjabouin/',
         askAbout: ['soccer', 'film', 'photography'],
-        bio: "Hi everyone ! I am an international student from Managua, Nicaragua. I am currently interested in the intersection of Computer Science and Mathematics. In my free time, I like listening to Arctic Monkeys and Bad Bunny.",
+        bio: " test for now test for now test for now test for now test for now test for now test for now test for now test for now test for now test for now test for now test for now test for now v test for now test for now test for now test for now  test for now test for now test for now ",
         popup: true
     },
 
