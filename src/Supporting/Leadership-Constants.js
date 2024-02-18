@@ -6,7 +6,6 @@ import danielPrimary from '../Supporting/leadership-headshots/danielPrimary.jpg'
 import ignazioPrimary from '../Supporting/leadership-headshots/ignazioPrimary.jpg';
 import leoPrimary from '../Supporting/leadership-headshots/leoPrimary.jpg';
 import chinaPrimary from '../Supporting/leadership-headshots/chinaPrimary.jpg';
-import andresPrimary from '../Supporting/leadership-headshots/andresPrimary.jpg';
 import josephPrimary from '../Supporting/leadership-headshots/josephPrimary.jpg';
 import lukemanPrimary from '../Supporting/leadership-headshots/lukemanPrimary.jpg';
 import macarenaPrimary from '../Supporting/leadership-headshots/macarenaPrimary.jpg';
@@ -70,19 +69,6 @@ export const cards = [
         linkedIn: 'https://www.linkedin.com/in/mateoweiner/',
         askAbout: ["Soccer", "NFL", "Formula 1"],
         bio: "Hi! My name is Mateo Weiner. I am a junior from the Bay Area studying Computer Science in the College of Engineering. I am currently one of the Academic Chairs for URMC while some of my other campus involvements include being a backend developer for AppDev and being Treasurer of Contigo Peru. Outside of school, I enjoy watching and playing sports as well as going to the gym.",
-        popup: true
-    },
-    {
-        id: 5,
-        title: 'Academic',
-        image: andresPrimary,
-        name: 'Andres Wu',
-        secondaryImage: andresPrimary,
-        majors: 'Computer Science \'27',
-        // insta: 'https://www.instagram.com/kaylaspray/',
-        linkedIn: '',
-        askAbout: ["cooking", "gym", "baking", "hiking", "tennis"],
-        bio: "Hey, I'm Andres! I'm a senior studying Information Science with a concentration in Data Science. I was born and raised in San José, Costa Rica and although I first started off my journey at Cornell as a health sciences major I'm now pursuing a career in software engineering! Outside of class you can find me working out at the gym, cooking, and baking!",
         popup: true
     },
     {

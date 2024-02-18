@@ -5,7 +5,7 @@ import profdev from '../images/profdev.png';
 import Carousel from '../components/Carousel';
 import AboutUsPillarCard from '../components/AboutUsPillarCard';
 import * as Constants from '../Supporting/AboutUsConstants';
-import Widget from '../components/Widget';
+import Widget from '../components/Widget';  
 
 
 
@@ -15,7 +15,7 @@ class About_us extends Component {
         return (
             <about_us className="about-us-page">
                 <div className="about-us">
-                    <h1>About Us</h1>
+                    <h1>About us</h1>
                     <h6 className="purpose"> The purpose of Underrepresented Minorities in Computing is to promote diversity
                         within the computing fields and foster an environment that empowers underrepresented
                         minorities with technological aspirations through <span style={{ color: '#265999' }}>3 pillars:</span></h6>
@@ -65,12 +65,12 @@ class About_us extends Component {
                         </div>
                         <div className="academic-widgets">
                             <div className="widget-row">
-                                <Widget className="widget-item" image={Constants.Academic.Widget.Slack.icon} title={Constants.Community.Widget.Slack.body} body={Constants.Academic.Widget.Slack.body}></Widget>
-                                <Widget className="widget-item" image={Constants.Academic.Widget.Exam.icon} title={Constants.Academic.Widget.Exam.title} body={Constants.Academic.Widget.Exam.body}></Widget>
+                                <Widget image={Constants.Academic.Widget.Slack.icon} title={Constants.Community.Widget.Slack.body} body={Constants.Academic.Widget.Slack.body}></Widget>
+                                <Widget image={Constants.Academic.Widget.Exam.icon} title={Constants.Academic.Widget.Exam.title} body={Constants.Academic.Widget.Exam.body}></Widget>
                             </div>
                             <div className="widget-row">
-                                <Widget className="widget-item" image={Constants.Academic.Widget.Study.icon} title={Constants.Academic.Widget.Study.title} body={Constants.Academic.Widget.Study.body}></Widget>
-                                <Widget className="widget-item" image={Constants.Academic.Widget.TA.icon} title={Constants.Academic.Widget.TA.title} body={Constants.Academic.Widget.TA.body}></Widget>
+                                <Widget image={Constants.Academic.Widget.Study.icon} title={Constants.Academic.Widget.Study.title} body={Constants.Academic.Widget.Study.body}></Widget>
+                                <Widget image={Constants.Academic.Widget.TA.icon} title={Constants.Academic.Widget.TA.title} body={Constants.Academic.Widget.TA.body}></Widget>
                             </div>
                         </div>
                     </div>
