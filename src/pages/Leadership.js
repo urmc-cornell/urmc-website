@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import EboardCard from '../components/EboardCard';
 import '../styles/Leadership.css';
 import EboardPopup from '../components/eboardPopup';
+import { cards } from '../Supporting/Leadership-Constants.js'
+
 
 
 let sheetID = "1MSvTcAeph8ehYwtBIBBbcLLkVg3JhWwtTCz1ODSEl1w"
@@ -100,25 +102,26 @@ class Leadership extends Component {
 
         return <div>
             <h1 className="leadership">Executive Board</h1>
-            <h2 className="fall22"> Spring 2024 - Coming Soon</h2>
+            <h2 className="fall22"> Spring 2024</h2>
             <EboardPopup trigger={this.state.popupActive} card={this.state.selectedCard} setTrigger={this.handleClose}>
             </EboardPopup>
-            {/* <div className="grid-container-container">
+            <div className="grid-container-container">
                 <div className="grid-container">
-                    <{eboard_list.map(card => (
+                    {cards.map(card => (
                         <div className="grid-item"
-                            onClick={() => this.handleCardClick(card)}>
+                            onClick={() => this.handleCardClick(card)}
+                        >
                             <EboardCard
                                 key={card.id}
                                 imageURL={card.image}
-                                title={card.title.toUpperCase()}
+                                title={card.title}
                                 name={card.name}
                                 onClick={() => this.handleCardClick(card)}
                             />
                         </div>
-                    ))}>
+                    ))}
                 </div>
-            </div> */}
+            </div>
         </div>
     }
 }
