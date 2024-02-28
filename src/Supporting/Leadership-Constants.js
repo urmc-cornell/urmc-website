@@ -146,7 +146,7 @@ export const cards = [
         linkedIn: 'https://www.linkedin.com/company/urmc-cornell/',
         askAbout: [],
         bio: "",
-        popup: true
+        popup: false
     },
     {
         id: 11,
