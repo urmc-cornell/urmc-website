@@ -158,7 +158,7 @@ export const cards = [
         // insta: 'https://www.instagram.com/kaylaspray/',
         linkedIn: "http://linkedin.com/in/mnumzana-franklin-moyo-37b8ba180",
         askAbout: ["TV series", "Volleyball", "Cooking meat"],
-        bio: "I am a sophomore studying Computer Science in the college of Arts & Sciences. I am from Zimbabwe (very proud)! I do not enjoy reading. I prefer watching instead.",
+        bio: "I am a sophomore studying Computer Science in the college of Arts & Sciences. I am from Zimbabwe (very proud)! I do not enjoy reading. I prefer watching movies instead. In my freetime, I like to play volleyball with my friends and cook.",
         popup: true
     },
     {
@@ -210,7 +210,7 @@ export const cards = [
         // insta: 'https://www.instagram.com/kaylaspray/',
         linkedIn: "https://www.linkedin.com/in/richlove-nkansah-6374291b5/",
         askAbout: ["Hiking", "adventure", "karaoke."],
-        bio: "Richlove is a sophomore in A&S studying Computer Science with a minor in Cognitive Science. She enjoys long walks, cooking, and dancing. She is the eldest of 5 siblings and speaks 4 languages.",
+        bio: "Richlove is a sophomore in A&S studying Computer Science with a minor in Cognitive Science. She enjoys long walks with beautiful scenery, cooking, and dancing. She is the eldest of 5 siblings and speaks 4 languages.",
         popup: true
     },
     {
