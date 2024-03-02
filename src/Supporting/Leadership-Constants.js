@@ -158,7 +158,7 @@ export const cards = [
         // insta: 'https://www.instagram.com/kaylaspray/',
         linkedIn: "http://linkedin.com/in/mnumzana-franklin-moyo-37b8ba180",
         askAbout: ["TV series", "Volleyball", "Cooking meat"],
-        bio: "I am a sophomore studying Computer Science in the college of Arts & Sciences. I am from Zimbabwe (very proud)! I do not enjoy reading. I prefer watching instead.",
+        bio: "I am a sophomore studying Computer Science in the college of Arts & Sciences. I am from Zimbabwe (very proud)! I do not enjoy reading. I prefer watching instead                               ",
         popup: true
     },
     {
