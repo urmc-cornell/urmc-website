@@ -6,6 +6,7 @@ import Events from "./pages/Events.js";
 import Getting_involved from "./pages/Getting_involved.js";
 import Leadership from "./pages/Leadership.js";
 import Sponsors from "./pages/Sponsors.js";
+import Points from "./pages/Points.js";
 
 //fonts
 import "./fonts/static/Montserrat-Light.ttf";
@@ -37,6 +38,9 @@ function App() {
       break
     case "/sponsors":
       component = <Sponsors />
+      break
+    case "/points":
+      component = <Points />
       break
   }
 
