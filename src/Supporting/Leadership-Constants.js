@@ -2,6 +2,14 @@ import ronaldPrimary from '../Supporting/leadership-headshots/ronaldPrimary.jpg'
 import celestePrimary from '../Supporting/leadership-headshots/celestePrimary.jpg';
 import judithPrimary from '../Supporting/leadership-headshots/judithPrimary.jpg';
 import mateoPrimary from '../Supporting/leadership-headshots/mateoPrimary.jpg';
+import temiPrimary from '../Supporting/leadership-headshots/temiPrimary.jpg';
+import danielaPrimary from '../Supporting/leadership-headshots/danielaPrimary.jpg';
+import osamaPrimary from '../Supporting/leadership-headshots/osamaPrimary.jpg';
+import fadiPrimary from '../Supporting/leadership-headshots/fadiPrimary.jpeg';
+import ruthPrimary from '../Supporting/leadership-headshots/ruthPrimary.jpg';
+import timPrimary from '../Supporting/leadership-headshots/timPrimary.jpeg';
+import winifredPrimary from '../Supporting/leadership-headshots/winifredPrimary.jpg';
+import rafaelPrimary from '../Supporting/leadership-headshots/rafaelPrimary.jpg';
 import danielPrimary from '../Supporting/leadership-headshots/danielPrimary.jpg';
 import ignazioPrimary from '../Supporting/leadership-headshots/ignazioPrimary.jpg';
 import leoPrimary from '../Supporting/leadership-headshots/leoPrimary.jpg';
@@ -72,6 +80,20 @@ export const cards = [
         popup: true
     },
     {
+        id: 5,
+        title: 'Academic Advisor',
+        image: temiPrimary,
+        name: 'Temi Adebowale',
+        secondaryImage: temiPrimary,
+        majors: 'Computer Science \'27',
+        // insta: 'https://www.instagram.com/kaylaspray/',
+        linkedIn: 'https://www.linkedin.com/in/temi-adebowale/',
+        askAbout: ["Investing", "Basketball", "Gaming (1v1 me)",  "Running", "Consumer Electronics", "Vibing", "Binge Watching"],
+        bio: "Hey I'm Temi Adebowale, a freshman CS Major here in the College of Engineering. I was born and raised in H-Town (Houston,TX)! As Academic Chair, I work to host all academic events and bring academic resources to all of you! Other than URMC you can find me on DTI, Cornell Data Science, Cornell XR, or at NSBE. If you need anything, feel very free to reach out.",
+        popup: true
+    },
+
+    {
         id: 6,
         title: 'Academic',
         image: danielPrimary,
@@ -99,7 +121,7 @@ export const cards = [
     },
     {
         id: 8,
-        title: 'Corporate',
+        title: 'Corporate Chair',
         image: ignazioPrimary,
         name: 'Ignazio Perez Romero',
         secondaryImage: ignazioPrimary,
@@ -112,7 +134,34 @@ export const cards = [
     },
     {
         id: 9,
-        title: 'Design',
+        title: 'Corporate Chair',
+        image: timPrimary,
+        name: 'Oluwasemilore Timothy Adeyemi',
+        secondaryImage: timPrimary,
+        majors: 'Computer Science \'27',
+        // insta: 'https://www.instagram.com/kaylaspray/',
+        linkedIn: '',
+        askAbout: ["Christian faith", "Basketball", "Soccer", "Volleyball", "Afro beat", "FOOD"],
+        bio: "Hi, my name is Tim Adeyemi. I am a freshman studying Computer Science in the College of Engineering. I was born and raised in Lagos Nigeria and moved to Houston Texas when I was 10. I love technology and innovation and hope to use it develop software for underdeveloped countries. I love playing sports, working out and watching anime.",
+        popup: true
+    },
+
+    {
+        id: 10,
+        title: 'Design Chair',
+        image: winifredPrimary,
+        name: 'Winifred Agyei',
+        secondaryImage: winifredPrimary,
+        majors: "Information Science '27",
+        // insta: 'https://www.instagram.com/kaylaspray/',
+        linkedIn: 'https://www.linkedin.com/in/winifred-agyei-82306628b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        askAbout: ["swimming", "dancing", "reading"],
+        bio: "Hello, I'm Winifred, pursuing a major in Information Science with a focus on Data Science. Hailing from Ghana, I currently serve as one of the design chairs at URMC. Beyond my role there, I proudly represent Cornell CALS as an Ambassador, sharing my passion for CALS with prospective and admitted students.",
+        popup: true
+    },
+    {
+        id: 11,
+        title: 'Design Chair',
         image: stefaniePrimary,
         name: 'Stefanie Rivera-Osorio',
         secondaryImage: stefaniePrimary,
@@ -135,9 +184,23 @@ export const cards = [
     //     askAbout: ["TV series", "Volleyball", "Cooking meat"],
     //     bio: "I am a sophomore studying Computer Science in the college of Arts & Sciences. I am from Zimbabwe (very proud)! I do not enjoy reading. I prefer watching instead."
     // },
+
     {
-        id: 10,
-        title: 'Events',
+        id: 12,
+        title: 'Co-Events',
+        image: rafaelPrimary,
+        name: 'Rafael Barrios',
+        secondaryImage: rafaelPrimary,
+        majors: 'Computer Science \'27',
+        // insta: 'https://www.instagram.com/kaylaspray/',
+        linkedIn: 'https://www.linkedin.com/in/rafael-barrios-344089213/',
+        askAbout: ["exercising", "reggaeton", "metal rock"],
+        bio: "I'm Rafael Barrios, and I am a freshman pursuing a major in Information Science in the School of Arts and Sciences. Two concentrations I'm interested in include Data Science and Interactive Technologies.  I am currently from Pompano Beach, Florida but spent a large portion of my life in Calgary, Canada. In my free time, I like to listen to music and go to the beach.",
+        popup: true
+    },
+    {
+        id: 13,
+        title: 'Co-Events',
         image: leoPrimary,
         name: 'Leopold Dorilas',
         secondaryImage: leoPrimary,
@@ -149,7 +212,7 @@ export const cards = [
         popup: false
     },
     {
-        id: 11,
+        id: 14,
         title: 'Events',
         image: mnumzanaPrimary,
         name: 'Mnumzana Franklin Moyo',
@@ -162,7 +225,20 @@ export const cards = [
         popup: true
     },
     {
-        id: 12,
+        id: 15,
+        title: 'Mentorship',
+        image: danielaPrimary,
+        name: 'Daniela Carmona Lopez',
+        secondaryImage: danielaPrimary,
+        majors: 'Computer Science \'25',
+        // insta: 'https://www.instagram.com/kaylaspray/',
+        linkedIn: "https://www.linkedin.com/in/daniela-carmona-lopez-mestre/",
+        askAbout: ["Music", "rugby", "teaching", "design"],
+        bio: "I'm a junior studying Computer Science in the College of Engineering with a minor in Business. I also play for the Women's Rugby Team. I've been a part of URMC since my freshman year and I'm excited to be Co-Mentorship Chair this semester!",
+        popup: true
+    },
+    {
+        id: 16,
         title: 'Mentorship',
         image: kellyPrimary,
         name: 'Kelly Ankoue',
@@ -175,7 +251,7 @@ export const cards = [
         popup: true
     },
     {
-        id: 13,
+        id: 17,
         title: 'Outreach',
         image: stephaniePrimary,
         name: 'Stephanie Dyer',
@@ -188,7 +264,7 @@ export const cards = [
         popup: true
     },
     {
-        id: 14,
+        id: 18,
         title: 'Outreach',
         image: mohammedPrimary,
         name: 'Mohammed Shummo',
@@ -201,7 +277,7 @@ export const cards = [
         popup: true
     },
     {
-        id: 15,
+        id: 19,
         title: 'Public Relations',
         image: richlovePrimary,
         name: 'Richlove Nkansah',
@@ -214,7 +290,7 @@ export const cards = [
         popup: true
     },
     {
-        id: 16,
+        id: 20,
         title: 'Public Relations',
         image: chinaPrimary,
         name: 'Cawentchina Narcisse',
@@ -227,7 +303,7 @@ export const cards = [
         popup: true
     },
     {
-        id: 17,
+        id: 21,
         title: 'Professional Development',
         image: josephPrimary,
         name: 'Joseph Ugarte',
@@ -240,7 +316,7 @@ export const cards = [
         popup: true
     },
     {
-        id: 18,
+        id: 22,
         title: 'Professional Development',
         image: lukemanPrimary,
         name: 'Lukmam Moyosore',
@@ -253,8 +329,8 @@ export const cards = [
         popup: true
     },
     {
-        id: 19,
-        title: 'Social',
+        id: 23,
+        title: 'Social Chair',
         image: macarenaPrimary,
         name: 'Macarena Hesse',
         secondaryImage: macarenaPrimary,
@@ -265,5 +341,31 @@ export const cards = [
         bio: "Hi, I'm Macarena! I'm originally from Lima, Peru and now live in Miami, FL. I'm currently majoring in ISST in the College of Engineering and minoring in Fashion Studies and Business. I'm really interested in business analytics and merging my interests in tech and fashion. Besides URMC, I am also a part of Cornell Business Analytics (CBA), Society of Hispanic Professional Engineers (SHPE), Society of Women Engineers (SWE), Cornell Concrete Canoe, Thread Magazine, Collective X Magazine, Alpha Epsilon Phi, and I'm a tour guide on campus. Feel free to reach out!",
         popup: true
     },
-
+    {
+        id: 24,
+        title: 'Social Chair',
+        image: osamaPrimary,
+        name: 'Osama Awadalla',
+        secondaryImage: osamaPrimary,
+        majors: "Statistical Science '25",
+        // insta: 'https://www.instagram.com/kaylaspray/',
+        linkedIn: 'https://www.linkedin.com/company/urmc-cornell/',
+        askAbout: ["Drake", "The Weeknd", "Basketball", "Weight Lifting", "Hiking"],
+        bio: "Hi! My name is Osama, and I'm a junior in the college of Arts and Sciences studying Statistics. My academic interests are in Machine Learning, Time Series Analysis, Economics, Political Science, and Finance. On my free time I like working out, and eating good food with friends.",
+        popup: true
+    },
+    {
+        id: 25,
+        title: 'Treasurer',
+        image: ruthPrimary,
+        name: 'Ruth Tadesse',
+        secondaryImage: ruthPrimary,
+        majors: "Computer Science '27",
+        // insta: 'https://www.instagram.com/kaylaspray/',
+        linkedIn: 'https://www.linkedin.com/in/ruth-taddesse/',
+        askAbout: ["Closing the education gap through SWE", "Dancing", "Chocolate", "Stacking URMC's cash (!!)"],
+        bio: "Hi! My name is Osama, and I'm a junior in the college of Arts and Sciences studying Statistics. My academic interests are in Machine Learning, Time Series Analysis, Economics, Political Science, and Finance. On my free time I like working out, and eating good food with friends.",
+        popup: true
+    },
+    
 ];
