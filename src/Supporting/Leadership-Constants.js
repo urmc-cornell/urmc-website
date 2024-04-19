@@ -81,7 +81,7 @@ export const cards = [
     },
     {
         id: 5,
-        title: 'Academic Advisor',
+        title: 'Academic',
         image: temiPrimary,
         name: 'Temi Adebowale',
         secondaryImage: temiPrimary,
