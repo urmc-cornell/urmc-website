@@ -37,7 +37,7 @@ export const cards = [
         // insta: 'https://www.instagram.com/kaylaspray/',
         linkedIn: 'https://www.linkedin.com/in/ronaldjabouin/',
         askAbout: ['soccer', 'film', 'photography'],
-        bio: "Hey, I'm a sophomore studying Computer Science in A&S. I'm from Long Island, NY and I'm one of the Web Development chairs. Outside of URMC, I enjoy taking photos, working out, and working on personal projects.",
+        bio: "Hey, I'm a sophomore studying Computer Science in A&S. I'm from Long Island, NY and I'm the president of URMC. Outside of URMC, I enjoy taking photos, working out, and working on personal projects.",
         popup: true
     },
     {
@@ -63,7 +63,7 @@ export const cards = [
         // insta: 'https://www.instagram.com/kaylaspray/',
         linkedIn: 'https://www.linkedin.com/in/judith-jatto/',
         askAbout: ["Jesus🫶🏽", "Singing🎶", "Dancing💃🏻", "Restaruants", "positive vibes🤗", "Traveling✈️", "Disney🤩"],
-        bio: "Hello👋! My name is Judith, and I'm currently a Junior in the College of Engineering. As the Outreach Advisor for URMC, I'm incredibly passionate about the supportive space it offers for minorities in CIS. Being able to give back and foster a community like ours is truly awe-inspiring. If you're interested in getting involved or need assistance with anything, please don't hesitate to reach out. Let's make a positive impact together!🫶🏽",
+        bio: "Hello👋! My name is Judith, and I'm currently a Junior in the College of Engineering. As the Vice President of URMC, I'm incredibly passionate about the supportive space it offers for minorities in CIS. Being able to give back and foster a community like ours is truly awe-inspiring. If you're interested in getting involved or need assistance with anything, please don't hesitate to reach out. Let's make a positive impact together!🫶🏽",
         popup: true
     },
     {
@@ -92,7 +92,6 @@ export const cards = [
         bio: "Hey I'm Temi Adebowale, a freshman CS Major here in the College of Engineering. I was born and raised in H-Town (Houston,TX)! As Academic Chair, I work to host all academic events and bring academic resources to all of you! Other than URMC you can find me on DTI, Cornell Data Science, Cornell XR, or at NSBE. If you need anything, feel very free to reach out.",
         popup: true
     },
-
     {
         id: 6,
         title: 'Academic',
@@ -103,7 +102,7 @@ export const cards = [
         // insta: 'https://www.instagram.com/kaylaspray/',
         linkedIn: 'https://www.linkedin.com/in/daniel-j-weiner',
         askAbout: ["Soccer", "NFL", "Formula 1"],
-        bio: "My name is Daniel and I'm a freshman representative! I currently plan on majoring in CS in A&S. I’m from Bay Area, California. I love listening to music, working out, and spending time with friends and family. A fun fact about me is I love PB&J sandwiches.",
+        bio: "My name is Daniel and I'm an Academic Chair! I currently plan on majoring in CS in A&S. I’m from Bay Area, California. I love listening to music, working out, and spending time with friends and family. A fun fact about me is I love PB&J sandwiches.",
         popup: true
     },
     {
@@ -172,18 +171,6 @@ export const cards = [
         bio: "Hey everyone! My name is Stefanie. I'm a freshman in the College of Engineering studying computer science and plan to pursue a minor in business. In my free time, I like to hangout with friends, listen to music, and dance. My other involvements on campus are being a Ryan Scholar and a valet at the Statler Hotel. Feel free to reach out!",
         popup: true
     },
-    // {
-    //     id: 9,
-    //     title: 'Events',
-    //     image: franklinPrimary,
-    //     name: 'Mnumzana Franklin Moyo',
-    //     secondaryImage: franklinPrimary,
-    //     majors: 'Computer Science \'26',
-    //     // insta: 'https://www.instagram.com/kaylaspray/',
-    //     linkedIn: 'https://www.linkedin.com/company/urmc-cornell/',
-    //     askAbout: ["TV series", "Volleyball", "Cooking meat"],
-    //     bio: "I am a sophomore studying Computer Science in the college of Arts & Sciences. I am from Zimbabwe (very proud)! I do not enjoy reading. I prefer watching instead."
-    // },
 
     {
         id: 12,
@@ -191,7 +178,7 @@ export const cards = [
         image: rafaelPrimary,
         name: 'Rafael Barrios',
         secondaryImage: rafaelPrimary,
-        majors: 'Computer Science \'27',
+        majors: 'Information Science \'27',
         // insta: 'https://www.instagram.com/kaylaspray/',
         linkedIn: 'https://www.linkedin.com/in/rafael-barrios-344089213/',
         askAbout: ["exercising", "reggaeton", "metal rock"],
@@ -364,8 +351,20 @@ export const cards = [
         // insta: 'https://www.instagram.com/kaylaspray/',
         linkedIn: 'https://www.linkedin.com/in/ruth-taddesse/',
         askAbout: ["Closing the education gap through SWE", "Dancing", "Chocolate", "Stacking URMC's cash (!!)"],
-        bio: "Hi! My name is Osama, and I'm a junior in the college of Arts and Sciences studying Statistics. My academic interests are in Machine Learning, Time Series Analysis, Economics, Political Science, and Finance. On my free time I like working out, and eating good food with friends.",
+        bio: "Hi!! I'm Ruth Taddesse, I'm a freshman in COE studying CS, and I'm your treasurer :) I love the supportive and fun environment URMC provides, so I hope to support that through E-Board! Outside of URMC, I'm on Cornell Electric Vehicles and work at the Statler Hotel. I also enjoy spending time with my friends, dancing, reading mystery books, and pondering the economic state of the world (and coding ig). Hit me up anytime for anything academic or personal, let's be friends! <3",
         popup: true
     },
-    
+    {
+        id: 26,
+        title: 'Secretary',
+        image: fadiPrimary,
+        name: 'Fadi Ismail',
+        secondaryImage: fadiPrimary,
+        majors: "Computer Science '27",
+        // insta: 'https://www.instagram.com/kaylaspray/',
+        linkedIn: 'https://www.linkedin.com/in/ruth-taddesse/',
+        askAbout: ["Fitness", "Drake", "Medicine", "Cooking", "Travel", "NBA"],
+        bio: "Hey! My name is Fadi and I'm from Katy, TX and I’m a Sudanese-American. I'm a freshman majoring in Computer Science in the College of Engineering and minoring in Business on the pre-med track. Alongside URMC I'm a part of the Pan-African Muslim Student Association and Cornell Business Analytics (CBA). Outside of school, I enjoy playing sports, going to the gym, and chilling with friends. If you ever need to talk feel free to reach out!",
+        popup: true
+    },
 ];
