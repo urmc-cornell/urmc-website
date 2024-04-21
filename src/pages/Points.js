@@ -2,10 +2,39 @@ import '../styles/sponsors.css';
 import '../styles/home.css'; 
 import '../styles/Leadership.css'; 
 import '../styles/about_us.css'; 
-import '../styles/points.css'; 
+import '../styles/points.css';
+
+import React, { useState } from 'react'
+
+let sheetID = "1Gmj6r89FF-QDD4NbBRG7nXKXjcQGUZbO6ddVM359H6k"
+let sheetTitle = "Points"
+//SHEET_RANGE might have to be changed if we ever have >30 events, but probably not
+let sheetRange = "A2:C200"
+let fullURL = ("https://docs.google.com/spreadsheets/d/" + sheetID + '/gviz/tq?sheet=' + sheetTitle + '&range=' + sheetRange);
+
+
 
 
 export default function Points() {
+
+    const [data, setState] = useState([]);
+    const apiGet = (netid) => {
+        fetch(fullURL)
+        .then((response) => response.json())
+        .then((json) => {
+
+            var result = JSON.parse(json);
+            for (var i=0; i < result["table"]["rows"].length; i++){
+                if (result["table"]["rows"][i]["c"][1]["v"] === netid) {
+                    setState(result["table"]["rows"][i]["c"][2]["v"]);
+                    break;
+                }
+            }
+
+        });
+    };
+
+
     return (
         <div> 
             <div className="heading"> 
