@@ -9,7 +9,7 @@ import React, { useState } from 'react'
 let sheetID = "1Gmj6r89FF-QDD4NbBRG7nXKXjcQGUZbO6ddVM359H6k"
 let sheetTitle = "Points"
 //SHEET_RANGE might have to be changed if we ever have >30 events, but probably not
-let sheetRange = "A2:C200"
+let sheetRange = 'A2:C200'
 let fullURL = ("https://docs.google.com/spreadsheets/d/" + sheetID + '/gviz/tq?sheet=' + sheetTitle + '&range=' + sheetRange);
 
 
@@ -18,21 +18,34 @@ let fullURL = ("https://docs.google.com/spreadsheets/d/" + sheetID + '/gviz/tq?s
 export default function Points() {
 
     const [data, setState] = useState([]);
-    const apiGet = (netid) => {
-        fetch(fullURL)
-        .then((response) => response.json())
-        .then((json) => {
+    const apiGet = () => {
+        // fetch(fullURL)
+        // .then(response => response.text())
+        // .then(data => document.getElementById("json").innerHTML=myItems(data.substring(47).slice(0, -2)))
+        // .then(json => console.log(json));
 
-            var result = JSON.parse(json);
-            for (var i=0; i < result["table"]["rows"].length; i++){
-                if (result["table"]["rows"][i]["c"][1]["v"] === netid) {
-                    setState(result["table"]["rows"][i]["c"][2]["v"]);
+        fetch(fullURL)
+        .then(response => response.text())
+        .then(data => {
+            var json = JSON.parse(data.substring(47).slice(0, -2))
+            var netid = document.getElementById("netID").value;
+            var dataToLog = data; 
+
+            for (var i=0; i < json["table"]["rows"].length; i++){
+                if (json["table"]["rows"][i]["c"][1]["v"] === netid) {
+                    setState(json["table"]["rows"][i]["c"][2]["v"]);
+                    console.log(json["table"]["rows"][i]["c"][2]["f"]);
                     break;
                 }
             }
 
-        });
+        
+        })
+        .catch(error => console.error('Error:', error));
+
+        
     };
+    
 
 
     return (
@@ -62,7 +75,7 @@ export default function Points() {
                     <div className="netID input">
                         <form id="points-form" action="#">
                             <input type="text" id="netID" name="netID" placeholder="Enter netID here"></input>
-                    
+                            <button onClick={apiGet}>Get Points</button>
                         </form>
                     </div>
                 </div>
