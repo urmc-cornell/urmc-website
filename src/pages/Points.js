@@ -19,26 +19,24 @@ export default function Points() {
 
     const [data, setState] = useState([]);
     const apiGet = () => {
-        // fetch(fullURL)
-        // .then(response => response.text())
-        // .then(data => document.getElementById("json").innerHTML=myItems(data.substring(47).slice(0, -2)))
-        // .then(json => console.log(json));
-
         fetch(fullURL)
         .then(response => response.text())
         .then(data => {
             var json = JSON.parse(data.substring(47).slice(0, -2))
             var netid = document.getElementById("netID").value;
-            var dataToLog = data; 
+            var found = false;
 
             for (var i=0; i < json["table"]["rows"].length; i++){
-                if (json["table"]["rows"][i]["c"][1]["v"] === netid) {
-                    setState(json["table"]["rows"][i]["c"][2]["v"]);
+                if (json["table"]["rows"][i]["c"][1]["v"].toLowerCase() == netid.toLowerCase()) {
+                    found = true;
+                    setState(json["table"]["rows"][i]["c"][2]["f"]);
                     console.log(json["table"]["rows"][i]["c"][2]["f"]);
                     break;
                 }
             }
-
+            if (found != true) {
+                setState("NetID Not Found");
+            }
         
         })
         .catch(error => console.error('Error:', error));
