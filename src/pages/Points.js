@@ -19,10 +19,12 @@ export default function Points() {
 
     const [points, setPoints] = useState([]);
     const [loading, setLoading] = useState([]);
-    const [first, setFirst] = useState([]);
-    const [second, setSecond] = useState([]);
-    const [third, setThird] = useState([]);
-// leaderboard
+
+    // leaderboard
+    // const [first, setFirst] = useState([]);
+    // const [second, setSecond] = useState([]);
+    // const [third, setThird] = useState([]);
+
     // let netID = [];
     // let point = [];
     
@@ -67,11 +69,24 @@ export default function Points() {
         if (loading) {
             return <div>Loading...</div>;
           }
-      };
+    };
+
+    function handleSubmit(event) {
+        event.preventDefault(); // Prevent the form from actually submitting
+        if (event.key === 'Enter') {
+            apiGet();
+        }
+        
+    }
+    const pointsForm = document.getElementById("points-form");
+    pointsForm.addEventListener("submit", handleSubmit);
+      
+
+    
     
 
     return (
-        <div style={{ height: 500, overflow: 'auto' }}>
+        <div style={{ height: 1000, overflow: 'auto' }}>
             <div className="heading"> 
                 <h1 className="Points"> Points Tracking </h1>
                 <h3 className="subheader">URMC Collects Points To Reward Active Members</h3>
@@ -97,7 +112,7 @@ export default function Points() {
                     <div className="netID input">
                         <form id="points-form" action="#">
                             <input type="text" id="netID" name="netID" placeholder="Enter netID here"></input>  
-                            <button type="button" id="myButton" onClick={apiGet}>Get Points</button>
+                            <button type="submit" id="myButton" onClick={apiGet}>Get Points</button>
                             <h3 className="subheader">{waiting}{points}</h3>
                             
                         </form>
