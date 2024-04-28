@@ -17,37 +17,61 @@ let fullURL = ("https://docs.google.com/spreadsheets/d/" + sheetID + '/gviz/tq?s
 
 export default function Points() {
 
-    const [data, setState] = useState([]);
-    const apiGet = () => {
-        fetch(fullURL)
-        .then(response => response.text())
-        .then(data => {
-            var json = JSON.parse(data.substring(47).slice(0, -2))
-            var netid = document.getElementById("netID").value;
-            var found = false;
+    const [points, setPoints] = useState([]);
+    const [loading, setLoading] = useState([]);
+    const [first, setFirst] = useState([]);
+    const [second, setSecond] = useState([]);
+    const [third, setThird] = useState([]);
+// leaderboard
+    // let netID = [];
+    // let point = [];
+    
+    // for (let i = 0; i < json["table"]["rows"].length; i++) {
+    //     netID.push(json["table"]["rows"][i]["c"][1]["v"].toLowerCase());
+    //     points.push(json["table"]["rows"][i]["c"][2]["f"]);
+    // }
+    // setFirst(netID[0] + ": " + point[0] + " Points");
+    // setSecond(netID[1] + ": " + point[1] + " Points");
+    // setThird(netID[2] + ": " + point[2] + " Points");
 
-            for (var i=0; i < json["table"]["rows"].length; i++){
-                if (json["table"]["rows"][i]["c"][1]["v"].toLowerCase() == netid.toLowerCase()) {
-                    found = true;
-                    setState(json["table"]["rows"][i]["c"][2]["f"]);
-                    console.log(json["table"]["rows"][i]["c"][2]["f"]);
-                    break;
-                }
-            }
-            if (found != true) {
-                setState("NetID Not Found");
-            }
-        
-        })
-        .catch(error => console.error('Error:', error));
+    const apiGet = async () => {
+        try {
+          setLoading(true); // Set loading to true before fetching
+          const response = await fetch(fullURL);
+          const data = await response.text();
+          const json = JSON.parse(data.substring(47).slice(0, -2));
+          const netid = document.getElementById("netID").value;
+          var found = false;
 
-        
-    };
+          for (let i = 0; i < json["table"]["rows"].length; i++) {
+           
+            if (json["table"]["rows"][i]["c"][1]["v"].toLowerCase() == netid.toLowerCase()) {
+              found = true;
+              setPoints("Points: " + json["table"]["rows"][i]["c"][2]["f"]);
+              break;
+            }
+          }
+
+
+          if (!found) {
+            setPoints("NetID Not Found");
+          }
+        } catch (error) {
+          console.error('Error:', error);
+        } finally {
+          setLoading(false); // Set loading to false after fetching
+        }
+      };
+
+    const waiting = () => {
+        if (loading) {
+            return <div>Loading...</div>;
+          }
+      };
     
 
-
     return (
-        <div> 
+        <div style={{ height: 500, overflow: 'auto' }}>
             <div className="heading"> 
                 <h1 className="Points"> Points Tracking </h1>
                 <h3 className="subheader">URMC Collects Points To Reward Active Members</h3>
@@ -72,9 +96,18 @@ export default function Points() {
                     
                     <div className="netID input">
                         <form id="points-form" action="#">
-                            <input type="text" id="netID" name="netID" placeholder="Enter netID here"></input>
-                            <button onClick={apiGet}>Get Points</button>
+                            <input type="text" id="netID" name="netID" placeholder="Enter netID here"></input>  
+                            <button type="button" id="myButton" onClick={apiGet}>Get Points</button>
+                            <h3 className="subheader">{waiting}{points}</h3>
+                            
                         </form>
+                        {/* leaderboard */}
+                        {/* <h3 className="subheader">Leaderboard</h3>
+                        <ol className="fall22">
+                                <li>{first}</li>
+                                <li>{second}</li>
+                                <li>{third}</li>
+                        </ol> */}
                     </div>
                 </div>
 
