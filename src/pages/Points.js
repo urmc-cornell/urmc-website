@@ -12,9 +12,6 @@ let sheetTitle = "Points"
 let sheetRange = 'A2:C200'
 let fullURL = ("https://docs.google.com/spreadsheets/d/" + sheetID + '/gviz/tq?sheet=' + sheetTitle + '&range=' + sheetRange);
 
-
-
-
 export default function Points() {
 
     const [points, setPoints] = useState([]);
@@ -50,6 +47,7 @@ export default function Points() {
             if (json["table"]["rows"][i]["c"][1]["v"].toLowerCase() == netid.toLowerCase()) {
               found = true;
               setPoints("Points: " + json["table"]["rows"][i]["c"][2]["f"]);
+              console.log(points);
               break;
             }
           }
@@ -79,12 +77,8 @@ export default function Points() {
         
     }
     const pointsForm = document.getElementById("points-form");
-    pointsForm.addEventListener("submit", handleSubmit);
-      
-
+    // pointsForm.addEventListener("submit", handleSubmit);
     
-    
-
     return (
         <div style={{ height: 1000, overflow: 'auto' }}>
             <div className="heading"> 
