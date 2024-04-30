@@ -63,12 +63,6 @@ export default function Points() {
         }
       };
 
-    const waiting = () => {
-        if (loading) {
-            return <div>Loading...</div>;
-          }
-    };
-
     function handleSubmit(event) {
         event.preventDefault(); // Prevent the form from actually submitting
         if (event.key === 'Enter') {
@@ -77,7 +71,7 @@ export default function Points() {
         
     }
     const pointsForm = document.getElementById("points-form");
-    // pointsForm.addEventListener("submit", handleSubmit);
+    pointsForm.addEventListener("submit", handleSubmit);
     
     return (
         <div style={{ height: 1000, overflow: 'auto' }}>
@@ -107,7 +101,7 @@ export default function Points() {
                         <form id="points-form" action="#">
                             <input type="text" id="netID" name="netID" placeholder="Enter netID here"></input>  
                             <button type="submit" id="myButton" onClick={apiGet}>Get Points</button>
-                            <h3 className="subheader">{waiting}{points}</h3>
+                            <h3 className="subheader">{points}</h3>
                             
                         </form>
                         {/* leaderboard */}
