@@ -119,15 +119,8 @@ export default function Points() {
                         </ol> */}
                     </div>
                 </div>
-
             </div>
-            
-
-
                 {/* Text field to check points */}
-
-            
-            
         </div>
     );
 }
