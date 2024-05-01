@@ -4,7 +4,7 @@ import '../styles/Leadership.css';
 import '../styles/about_us.css'; 
 import '../styles/points.css';
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 let sheetID = "1Gmj6r89FF-QDD4NbBRG7nXKXjcQGUZbO6ddVM359H6k"
 let sheetTitle = "Points"
@@ -15,6 +15,7 @@ let fullURL = ("https://docs.google.com/spreadsheets/d/" + sheetID + '/gviz/tq?s
 export default function Points() {
 
     const [points, setPoints] = useState([]);
+    const [json, setJson] = useState([]);
     const [loading, setLoading] = useState([]);
 
     // leaderboard
@@ -33,46 +34,43 @@ export default function Points() {
     // setSecond(netID[1] + ": " + point[1] + " Points");
     // setThird(netID[2] + ": " + point[2] + " Points");
 
-    const apiGet = async () => {
+    useEffect(() => {
+      async function fetchData() {
         try {
-          setLoading(true); // Set loading to true before fetching
           const response = await fetch(fullURL);
           const data = await response.text();
-          const json = JSON.parse(data.substring(47).slice(0, -2));
-          const netid = document.getElementById("netID").value;
-          var found = false;
-
-          for (let i = 0; i < json["table"]["rows"].length; i++) {
-           
-            if (json["table"]["rows"][i]["c"][1]["v"].toLowerCase() == netid.toLowerCase()) {
-              found = true;
-              setPoints("Points: " + json["table"]["rows"][i]["c"][2]["f"]);
-              console.log(points);
-              break;
-            }
-          }
-
-
-          if (!found) {
-            setPoints("NetID Not Found");
-          }
+          const jsonData = JSON.parse(data.substring(47).slice(0, -2));
+          setJson(jsonData);
         } catch (error) {
           console.error('Error:', error);
         } finally {
-          setLoading(false); // Set loading to false after fetching
+          setLoading(false);
         }
-      };
+      }
+      fetchData();
+    }, []);
 
-    function handleSubmit(event) {
-        event.preventDefault(); // Prevent the form from actually submitting
-        if (event.key === 'Enter') {
-            apiGet();
-        }
+    console.log(json);
+
+    const point_set = (event) => {
+      event.preventDefault(); // Do not delete this line, stops page from refreshing
+      const netid = document.getElementById("netID").value;
+      var found = false;
+
+      for (let i = 0; i < json["table"]["rows"].length; i++) {
         
+        if (json["table"]["rows"][i]["c"][1]["v"].toLowerCase() == netid.toLowerCase()) {
+          found = true;
+          setPoints("Points: " + json["table"]["rows"][i]["c"][2]["f"]);
+          break;
+        }
+      }
+      if (!found) {
+        setPoints("NetID Not Found");
+      }
     }
-    const pointsForm = document.getElementById("points-form");
-    pointsForm.addEventListener("submit", handleSubmit);
-    
+
+
     return (
         <div style={{ height: 1000, overflow: 'auto' }}>
             <div className="heading"> 
@@ -98,9 +96,9 @@ export default function Points() {
                     <h3 className="subheader">Enter your netID below to see your points</h3>
                     
                     <div className="netID input">
-                        <form id="points-form" action="#">
+                        <form id="points-form">
                             <input type="text" id="netID" name="netID" placeholder="Enter netID here"></input>  
-                            <button type="submit" id="myButton" onClick={apiGet}>Get Points</button>
+                            <button type="submit" id="myButton" onClick={point_set}>Get Points</button>
                             <h3 className="subheader">{points}</h3>
                             
                         </form>
