@@ -16,23 +16,7 @@ export default function Points() {
 
     const [points, setPoints] = useState([]);
     const [json, setJson] = useState([]);
-    const [loading, setLoading] = useState([]);
-
-    // leaderboard
-    // const [first, setFirst] = useState([]);
-    // const [second, setSecond] = useState([]);
-    // const [third, setThird] = useState([]);
-
-    // let netID = [];
-    // let point = [];
-    
-    // for (let i = 0; i < json["table"]["rows"].length; i++) {
-    //     netID.push(json["table"]["rows"][i]["c"][1]["v"].toLowerCase());
-    //     points.push(json["table"]["rows"][i]["c"][2]["f"]);
-    // }
-    // setFirst(netID[0] + ": " + point[0] + " Points");
-    // setSecond(netID[1] + ": " + point[1] + " Points");
-    // setThird(netID[2] + ": " + point[2] + " Points");
+    const [leaderboard, setLeaderboard] = useState([]);
 
     useEffect(() => {
       async function fetchData() {
@@ -41,16 +25,23 @@ export default function Points() {
           const data = await response.text();
           const jsonData = JSON.parse(data.substring(47).slice(0, -2));
           setJson(jsonData);
+
+
+          let board = [];
+          for (let i = 0; i < 3; i++) {
+            var str = json["table"]["rows"][i]["c"][1]["v"].toLowerCase() + ": " + json["table"]["rows"][i]["c"][2]["f"] + " Points";
+            board.push(str);
+          }
+          setLeaderboard(board)
+
         } catch (error) {
           console.error('Error:', error);
-        } finally {
-          setLoading(false);
-        }
+        } 
       }
       fetchData();
-    }, []);
+    }, [json]);
 
-    console.log(json);
+    
 
     const point_set = (event) => {
       event.preventDefault(); // Do not delete this line, stops page from refreshing
@@ -103,12 +94,14 @@ export default function Points() {
                             
                         </form>
                         {/* leaderboard */}
-                        {/* <h3 className="subheader">Leaderboard</h3>
-                        <ol className="fall22">
-                                <li>{first}</li>
-                                <li>{second}</li>
-                                <li>{third}</li>
-                        </ol> */}
+                        <h2>Leaderboard</h2>
+                        <div className="fall22">
+                          <ol className="subheader">
+                                  <li>{leaderboard[0]}</li>
+                                  <li>{leaderboard[1]}</li>
+                                  <li>{leaderboard[2]}</li>
+                          </ol> 
+                      </div>
                     </div>
                 </div>
             </div>
