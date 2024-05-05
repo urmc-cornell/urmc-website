@@ -75,9 +75,9 @@ export default function Points() {
                 
                     <div className="fall22">
                         <ul>
-                            <li>Attending events and completing the attendance form.</li>
-                            <li>Participating in mentor matching as a mentor or mentee.</li>
-                            <li>and doing something else....</li>
+                            <li>3 Points: Attending events and completing the attendance form.</li>
+                            <li>2 Points: Attending a non GBody event. Ex: Attending a mentorship, corporate, or professional development event.</li>
+                            <li>1 Point: Responding to URMC forms</li>
                         </ul>
                     </div>
                 </div>
