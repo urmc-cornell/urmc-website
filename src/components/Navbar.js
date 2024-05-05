@@ -27,6 +27,8 @@ class Navbar extends Component {
                      <CustomLink href="/ta-directory">TA DIRECTORY</CustomLink> 
                     <CustomLink href="/getting-involved">GETTING INVOLVED</CustomLink>
                     <CustomLink href="/sponsors">SPONSORS</CustomLink>
+                    <CustomLink href="/points">POINTS</CustomLink>
+
                 </ul>
             </div>
         </nav>
