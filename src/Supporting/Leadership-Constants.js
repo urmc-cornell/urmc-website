@@ -66,19 +66,19 @@ export const cards = [
         bio: "Hello👋! My name is Judith, and I'm currently a Junior in the College of Engineering. As the Vice President of URMC, I'm incredibly passionate about the supportive space it offers for minorities in CIS. Being able to give back and foster a community like ours is truly awe-inspiring. If you're interested in getting involved or need assistance with anything, please don't hesitate to reach out. Let's make a positive impact together!🫶🏽",
         popup: true
     },
-    {
-        id: 4,
-        title: 'Academic Advisor',
-        image: mateoPrimary,
-        name: 'Mateo Weiner',
-        secondaryImage: mateoPrimary,
-        majors: 'Computer Science \'25',
-        // insta: 'https://www.instagram.com/kaylaspray/',
-        linkedIn: 'https://www.linkedin.com/in/mateoweiner/',
-        askAbout: ["Soccer", "NFL", "Formula 1"],
-        bio: "Hi! My name is Mateo Weiner. I am a junior from the Bay Area studying Computer Science in the College of Engineering. I am currently one of the Academic Chairs for URMC while some of my other campus involvements include being a backend developer for AppDev and being Treasurer of Contigo Peru. Outside of school, I enjoy watching and playing sports as well as going to the gym.",
-        popup: true
-    },
+    // {
+    //     id: 4,
+    //     title: 'Academic Advisor',
+    //     image: mateoPrimary,
+    //     name: 'Mateo Weiner',
+    //     secondaryImage: mateoPrimary,
+    //     majors: 'Computer Science \'25',
+    //     // insta: 'https://www.instagram.com/kaylaspray/',
+    //     linkedIn: 'https://www.linkedin.com/in/mateoweiner/',
+    //     askAbout: ["Soccer", "NFL", "Formula 1"],
+    //     bio: "Hi! My name is Mateo Weiner. I am a junior from the Bay Area studying Computer Science in the College of Engineering. I am currently one of the Academic Chairs for URMC while some of my other campus involvements include being a backend developer for AppDev and being Treasurer of Contigo Peru. Outside of school, I enjoy watching and playing sports as well as going to the gym.",
+    //     popup: true
+    // },
     {
         id: 5,
         title: 'Academic',
@@ -185,19 +185,19 @@ export const cards = [
         bio: "I'm Rafael Barrios, and I am a freshman pursuing a major in Information Science in the School of Arts and Sciences. Two concentrations I'm interested in include Data Science and Interactive Technologies.  I am currently from Pompano Beach, Florida but spent a large portion of my life in Calgary, Canada. In my free time, I like to listen to music and go to the beach.",
         popup: true
     },
-    {
-        id: 13,
-        title: 'Co-Events',
-        image: leoPrimary,
-        name: 'Leopold Dorilas',
-        secondaryImage: leoPrimary,
-        majors: 'Computer Science \'26',
-        // insta: 'https://www.instagram.com/kaylaspray/',
-        linkedIn: 'https://www.linkedin.com/company/urmc-cornell/',
-        askAbout: [],
-        bio: "",
-        popup: false
-    },
+    // {
+    //     id: 13,
+    //     title: 'Co-Events',
+    //     image: leoPrimary,
+    //     name: 'Leopold Dorilas',
+    //     secondaryImage: leoPrimary,
+    //     majors: 'Computer Science \'26',
+    //     // insta: 'https://www.instagram.com/kaylaspray/',
+    //     linkedIn: 'https://www.linkedin.com/company/urmc-cornell/',
+    //     askAbout: [],
+    //     bio: "",
+    //     popup: false
+    // },
     {
         id: 14,
         title: 'Events',

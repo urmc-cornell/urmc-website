@@ -74,7 +74,7 @@ export default function Points() {
                     <h3 className="thanks">Members can earn points by...</h3>
                 
                     <div className="fall22">
-                        <ul>
+                        <ul> 
                             <li>3 Points: Attending events and completing the attendance form.</li>
                             <li>2 Points: Attending a non GBody event. Ex: Attending a mentorship, corporate, or professional development event.</li>
                             <li>1 Point: Responding to URMC forms</li>
