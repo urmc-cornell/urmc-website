@@ -13,14 +13,14 @@ export default function Getting_involved() {
                             <h3 className='subheader-text'>Find out about URMC events, on-campus and off-campus opportunities, and other events happening within the CIS community!</h3>
                         </div>
                         <div className='button-div'> 
-                        <a class="btn btn-2" href="https://join.slack.com/t/urmc/shared_invite/zt-2dy8ndtoy-~6zcRR2skt7Z5iT5iAyIBg" target="_blank">JOIN THE SLACK</a>
+                        <a class="btn btn-1" href="https://join.slack.com/t/urmc/shared_invite/zt-2dy8ndtoy-~6zcRR2skt7Z5iT5iAyIBg" target="_blank">JOIN THE SLACK</a>
 
                         </div>
                     </div>
                     <div className=''> 
                         <div className="text-background">
                             <h1 className='header-text'> COMPANIES </h1>
-                            <h3 className='subheader-text'>Send us an email to connect with our Corporate directors and receive our Sponsorship Packet!</h3>
+                            <h3 className='subheader-text'>Send us an email to connect with our Corporate directors and receive our Sponsorship Packet! You won't regret it!</h3>
                         </div>
                         <div className='button-div'> 
                             <a class="btn btn-1" href="mailto:urmc@cornell.edu" target="_blank">SPONSOR US</a> 
@@ -29,10 +29,10 @@ export default function Getting_involved() {
                     <div className=''> 
                         <div className="text-background">
                             <h1 className='header-text'> ALUMNI </h1>
-                            <h3 className='subheader-text'>Are you an alumni or current student who wants to keep up with URMC? Sign up to receive updates about URMC events and opportunities to get involved! </h3>
+                            <h3 className='subheader-text'>Are you an alumni or current student who wants to keep up with URMC? Sign up to receive updates about URMC!  </h3>
                         </div>
                         <div className='button-div'> 
-                        <a class="btn btn-2" href="https://docs.google.com/forms/d/e/1FAIpQLSc8c-drC3WBcVMqknx09q6-cBWRYeCbZYN1tBu98RM4CuDoTg/viewform" target="_blank">JOIN THE LISTSERV</a>
+                        <a class="btn btn-1" href="https://docs.google.com/forms/d/e/1FAIpQLSc8c-drC3WBcVMqknx09q6-cBWRYeCbZYN1tBu98RM4CuDoTg/viewform" target="_blank">JOIN THE LISTSERV</a>
                         </div>
                     </div>
                     <div className=''> 
@@ -41,7 +41,7 @@ export default function Getting_involved() {
                             <h3 className='subheader-text'>Help URMC continue to have the resources to empower URM's in tech to accomplish their dreams. </h3>
                         </div>
                         <div className='button-div'> 
-                        <a class="btn btn-2" href="https://docs.google.com/forms/d/e/1FAIpQLSc8c-drC3WBcVMqknx09q6-cBWRYeCbZYN1tBu98RM4CuDoTg/viewform" target="_blank">DONATE</a>
+                        <a class="btn btn-1" href="https://givingday.cornell.edu/campaigns/under-represented-minorities-in-computing-urmc" target="_blank">DONATE</a>
                         </div>
                     </div>
                 
