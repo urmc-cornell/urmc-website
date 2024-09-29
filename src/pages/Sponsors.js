@@ -48,13 +48,13 @@ export default function Sponsors() {
                 </div>
                 <div className="sponsor-section bronze-sponsors"> 
                     <a className="btn-small btn-bronze">BRONZE</a>
-                    <img src={google} alt="google Logo" className="logo bronze-logo"></img>
-                    <img src={uber} alt="uber Logo" className="logo uber bronze-logo"></img>
-                    <img src={mastercard} alt="master card Logo" className="logo bronze-logo"></img>
-                    <img src={datadog} alt="datadog Logo" className="logo bronze-logo"></img>
-                    <img src={roblox} alt="roblox Logo" className="logo bronze-logo"></img>
-                    <img src={palantir} alt="palantir Logo" className="logo palantir bronze-logo"></img>
-                    <img src={ey} alt="ey Logo" className="logo ey bronze-logo"></img>
+                    <img src={google} alt="google Logo" className="logo "></img>
+                    <img src={uber} alt="uber Logo" className="logo "></img>
+                    <img src={mastercard} alt="master card Logo" className="logo "></img>
+                    <img src={datadog} alt="datadog Logo" className="logo "></img>
+                    <img src={roblox} alt="roblox Logo" className="logo "></img>
+                    <img src={palantir} alt="palantir Logo" className="logo "></img>
+                    <img src={ey} alt="ey Logo" className="logo "></img>
 
                     
                 </div>
