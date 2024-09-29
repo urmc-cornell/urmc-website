@@ -47,9 +47,9 @@
     display: grid;
     grid-template: 1fr 1fr / 1fr 1fr;
     gap: 10px;
-    padding-left: 150px;
     width: 1050px;
-    height: 1050px;
+    margin: 0 auto; /* Center the grid */
+    padding-left: 0; /* Remove the left padding */
 }
 
 .subheader-text {
