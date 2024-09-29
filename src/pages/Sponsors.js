@@ -38,11 +38,11 @@ export default function Sponsors() {
                 <div className="sponsor-section silver-sponsors"> 
                     <a className="btn-small btn-silver">SILVER</a>
                         {/* <img src={meta} alt="Meta Logo" className="logo"></img> */}
-                        <img src={duolingo} alt="duolingo Logo" className="logo"></img>
+                        <img src={duolingo} alt="duolingo Logo" className=" duolingo"></img>
                         {/* <img src={goldman} alt="goldman Logo" className="logo"></img> */}
                         {/* <img src={yext} alt="yext Logo" className="logo"></img> */}
                         {/* <img src={oracle} alt="oracle Logo" className="logo"></img> */}
-                        <img src={capitalone} alt="Capital One Logo" className="logo"></img>
+                        <img src={capitalone} alt="Capital One Logo" className="duolingo"></img>
                         <img src={bloomberg} alt="Bloomberg Logo" className="logo bloomberg"></img>
 
                 </div>
