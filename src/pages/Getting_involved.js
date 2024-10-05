@@ -21,9 +21,11 @@ export default function Getting_involved() {
                     </div>
                     <div className='button-div'> 
                         <a class="btn btn-1" href="https://join.slack.com/t/urmc/shared_invite/zt-2dy8ndtoy-~6zcRR2skt7Z5iT5iAyIBg" target="_blank">JOIN THE SLACK</a>
+
                     </div>
                 </div>
             </div>
+
             <div className='grid-container'>
                 <div className=''> 
                     <div className="text-background">
@@ -43,7 +45,7 @@ export default function Getting_involved() {
                     <a class="btn btn-1" href="https://givingday.cornell.edu/campaigns/under-represented-minorities-in-computing-urmc" target="_blank">DONATE</a>
                     </div>
                 </div>
-
+                
             </div>
             <p></p>
         </div>
