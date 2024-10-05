@@ -49,6 +49,8 @@ export default function Getting_involved() {
                 </div>
                 
             </div>
+            <p></p>
+            <p></p>
         </div>
 
 
