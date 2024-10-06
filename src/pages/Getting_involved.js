@@ -42,7 +42,7 @@ export default function Getting_involved() {
                         <h3 className='subheader-text'>Help URMC continue to have the resources to empower URM's in tech to accomplish their dreams. </h3>
                     </div>
                     <div className='button-div'> 
-                    <a class="btn btn-1" href="https://givingday.cornell.edu/campaigns/under-represented-minorities-in-computing-urmc" target="_blank">DONATE</a>
+                    <a class="btn btn-1" href="https://securelb.imodules.com/s/1717/giving/interior.aspx?sid=1717&gid=2&pgid=16421&bledit=1&dids=702" target="_blank">DONATE</a>
                     </div>
                 </div>
                 
