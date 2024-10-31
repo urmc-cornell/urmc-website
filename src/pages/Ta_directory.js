@@ -32,18 +32,30 @@ class TADirectory extends Component {
                 <h3>My popup!</h3>
             </TaPopup>
             <div className="grid-container-container">
-                <div className="grid-container">
+                <div className="grid-container" style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(3, 1fr)',
+                    gap: '20px',
+                    justifyContent: 'center',
+                    padding: '20px'
+                }}>
                     {cards.map(card => (
                         <div className="grid-item"
                             onClick={() => this.handleCardClick(card)}
                         >
-                            <EboardCard
-                                key={card.id}
-                                imageURL={card.image}
-                                title={card.title}
-                                name={card.name}
-                                onClick={() => this.handleCardClick(card)}
-                            />
+                             <div className="ta-card" style={{
+                                backgroundColor: '#f2d2bd',
+                                padding: '20px',
+                                borderRadius: '12px',
+                                boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+                                margin: '10px',
+                                cursor: 'pointer',
+                                width: '264px',
+                                height: '150px'
+                            }}>
+                                <h3>{card.title}</h3>
+                                <p>{card.name}</p>
+                            </div>
                         </div>
                     ))}
                 </div>
