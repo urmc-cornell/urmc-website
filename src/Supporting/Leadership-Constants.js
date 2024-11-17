@@ -157,19 +157,6 @@ export const cards = [
 
     {
         id: 10,
-        title: 'Events Chair',
-        image: danielAniPrimary,
-        name: 'Daniel Anigioro',
-        secondaryImage: danielAniSecondary,
-        majors: "Electrical and Computer Engineering '27",
-        // insta: 'https://www.instagram.com/kaylaspray/',
-        linkedIn: 'http://linkedin.com/in/daniel-anigioro-188a80223',
-        askAbout: ["Fortnite", "Soccer"],
-        bio: "Hi! I’m Daniel, a sophomore at Cornell University majoring in Electrical and Computer Engineering with a keen interest in VLSI, cloud computing, and hardware cybersecurity. Outside of my academic and professional life, I enjoy playing soccer, diving into Fortnite, and exploring the latest in Chip technology. If you’re interested in discussing tech, STEM outreach, or just want to chat about soccer, feel free to reach out!",
-        popup: true
-    },
-    {
-        id: 11,
         title: 'Design Chair',
         image: stefaniePrimary,
         name: 'Stefanie Rivera-Osorio',
@@ -179,6 +166,19 @@ export const cards = [
         linkedIn: 'https://www.linkedin.com/company/urmc-cornell/',
         askAbout: ["Jesus","Soccer", "Cars", "Music"," Apple"," Dancing", "Fashion"],
         bio: "Hey everyone! My name is Stefanie. I'm a freshman in the College of Engineering studying computer science and plan to pursue a minor in business. In my free time, I like to hangout with friends, listen to music, and dance. My other involvements on campus are being a Ryan Scholar and a valet at the Statler Hotel. Feel free to reach out!",
+        popup: true
+    },
+    {
+        id: 11,
+        title: 'Events Chair',
+        image: danielAniPrimary,
+        name: 'Daniel Anigioro',
+        secondaryImage: danielAniSecondary,
+        majors: "Electrical and Computer Engineering '27",
+        // insta: 'https://www.instagram.com/kaylaspray/',
+        linkedIn: 'http://linkedin.com/in/daniel-anigioro-188a80223',
+        askAbout: ["Fortnite", "Soccer"],
+        bio: "Hi! I’m Daniel, a sophomore at Cornell University majoring in Electrical and Computer Engineering with a keen interest in VLSI, cloud computing, and hardware cybersecurity. Outside of my academic and professional life, I enjoy playing soccer, diving into Fortnite, and exploring the latest in Chip technology. If you’re interested in discussing tech, STEM outreach, or just want to chat about soccer, feel free to reach out!",
         popup: true
     },
 
