@@ -299,19 +299,19 @@ export const cards = [
         bio: "My name is China and I am Haitian American raised in Florida. I have a multicultural background and enjoy learning about different cultures and languages. In my free time, I like to read and spend time with my friends and family.",
         popup: true
     },
-    {
-        id: 21,
-        title: 'Professional Development',
-        image: josephPrimary,
-        name: 'Joseph Ugarte',
-        secondaryImage: josephPrimary,
-        majors: "Computer Science | Linguistics '25",
-        // insta: 'https://www.instagram.com/kaylaspray/',
-        linkedIn: "https://www.linkedin.com/in/joseph-ugarte/",
-        askAbout: ["Mets", "Duolingo", "OCaml", "(Rap, Hip-Hop, & RnB)", "Videogames"],
-        bio: "Hey! My name is Joe, and I'm from Jackson, New Jersey, but ethnically, I am part Bolivian & Peruvian. I study computer science & linguistics in the College of Arts and Sciences, where I hope to learn more about the intersection of these two fields. I currently TA for CS 3110, which is my third semester on course staff, and develop for Hack4Impact. Though outside of academics, you can catch me snowboarding, extending my 160+ day Duolingo streak, and watching baseball.",
-        popup: true
-    },
+    // {
+    //     id: 21,
+    //     title: 'Professional Development',
+    //     image: josephPrimary,
+    //     name: 'Joseph Ugarte',
+    //     secondaryImage: josephPrimary,
+    //     majors: "Computer Science | Linguistics '25",
+    //     // insta: 'https://www.instagram.com/kaylaspray/',
+    //     linkedIn: "https://www.linkedin.com/in/joseph-ugarte/",
+    //     askAbout: ["Mets", "Duolingo", "OCaml", "(Rap, Hip-Hop, & RnB)", "Videogames"],
+    //     bio: "Hey! My name is Joe, and I'm from Jackson, New Jersey, but ethnically, I am part Bolivian & Peruvian. I study computer science & linguistics in the College of Arts and Sciences, where I hope to learn more about the intersection of these two fields. I currently TA for CS 3110, which is my third semester on course staff, and develop for Hack4Impact. Though outside of academics, you can catch me snowboarding, extending my 160+ day Duolingo streak, and watching baseball.",
+    //     popup: true
+    // },
     {
         id: 22,
         title: 'Professional Development',
