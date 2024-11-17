@@ -1,0 +1,52 @@
+.points-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.points-box {
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.points-box .points {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.points-box.green {
+    background-color: #90EE90;
+}
+
+.points-box.orange {
+    background-color: #FFB347;
+}
+
+.points-box.yellow {
+    background-color: #FFEB99;
+}
+
+.points-container {
+    display: flex;
+    gap: 40px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.points-section {
+    flex: 3;
+}
+
+.leaderboard-section {
+    flex: 3;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    margin-top: 60px;
+}
