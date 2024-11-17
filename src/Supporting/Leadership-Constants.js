@@ -24,6 +24,16 @@ import stefaniePrimary from '../Supporting/leadership-headshots/stefaniePrimary.
 import stephaniePrimary from '../Supporting/leadership-headshots/stephaniePrimary.jpg';
 import richlovePrimary from '../Supporting/leadership-headshots/richlovePrimary.jpg';
 import kellyPrimary from '../Supporting/leadership-headshots/kellyPrimary.jpg';
+import casperPrimary from '../Supporting/leadership-headshots/casperPrimary.jpg';
+import casperSecondary from '../Supporting/leadership-headshots/casperSecondary.jpg';
+import temiSecondary from '../Supporting/leadership-headshots/temiSecondary.jpg';
+import danielAniPrimary from '../Supporting/leadership-headshots/danielAniPrimary.png';
+import danielAniSecondary from '../Supporting/leadership-headshots/danielAniSecondary.jpg';
+import nigelPrimary from '../Supporting/leadership-headshots/nigelPrimary.jpg';
+import nigelSecondary from '../Supporting/leadership-headshots/nigelSecondary.jpg';
+import boubakarPrimary from '../Supporting/leadership-headshots/boubakarPrimary.jpg';
+import boubakarSecondary from '../Supporting/leadership-headshots/boubakarSecondary.jpg';
+
 
 //TODO: Add all 28 leadership people to site 
 export const cards = [
@@ -84,11 +94,11 @@ export const cards = [
         title: 'Academic',
         image: temiPrimary,
         name: 'Temi Adebowale',
-        secondaryImage: temiPrimary,
+        secondaryImage: temiSecondary,
         majors: 'Computer Science \'27',
-        // insta: 'https://www.instagram.com/kaylaspray/',
+        insta: 'https://www.instagram.com/temi_100/',
         linkedIn: 'https://www.linkedin.com/in/temi-adebowale/',
-        askAbout: ["Investing", "Basketball", "Gaming (1v1 me)",  "Running", "Consumer Electronics", "Vibing", "Binge Watching"],
+        askAbout: ["Investing", "Basketball", "Gaming (1v1 me)",  "Running", "Technology", "Faith"],
         bio: "Hey I'm Temi Adebowale, a freshman CS Major here in the College of Engineering. I was born and raised in H-Town (Houston,TX)! As Academic Chair, I work to host all academic events and bring academic resources to all of you! Other than URMC you can find me on DTI, Cornell Data Science, Cornell XR, or at NSBE. If you need anything, feel very free to reach out.",
         popup: true
     },
@@ -108,14 +118,14 @@ export const cards = [
     {
         id: 7,
         title: 'Alumni Chair',
-        image: randyPrimary,
-        name: 'Randy Odago',
-        secondaryImage: randyPrimary,
-        majors: "Information Science | Global Development '26",
-        // insta: 'https://www.instagram.com/kaylaspray/',
-        linkedIn: 'https://www.linkedin.com/company/urmc-cornell/',
-        askAbout: ["Reading", "TV/movies", "animals", "running", "international companies"],
-        bio: "Heyyy, My name is Randy. Im in CALs doing a double major in Information science and Global Development. Where am I from... huh... Originally born in Kenya, but have lived in upstate New York (Oneonta) most of my life.",
+        image: casperPrimary,
+        name: 'Casper Liao',
+        secondaryImage: casperSecondary,
+        majors: "Computer Science '27",
+        insta: 'https://www.instagram.com/casper_cable?igsh=MWRhNTBjbG51cXVpeQ%3D%3D&utm_source=qr',
+        linkedIn: 'https://www.linkedin.com/in/casper-liao/',
+        askAbout: ["Canoe Polo", "Rock Climbing", "AI/ML", "Gaming", "Anime", "Gym"],
+        bio: "Hey, I am Casper! I am from Taiwan and I came to the US for the first time in my freshman fall! I am studying Computer Science in the College of Arts & Sciences, minoring in ORIE and Business. I am excited about many different fields of technology, from SWE to AI/ML to fintech to blockchain. I also aspire to be a tech entrepreneur, so you can find me hanging out at hackathons and startup hours. In my free time, I like to go to the gym, watch anime, and I am working on reading more books~",
         popup: true
     },
     {
@@ -147,15 +157,15 @@ export const cards = [
 
     {
         id: 10,
-        title: 'Design Chair',
-        image: winifredPrimary,
-        name: 'Winifred Agyei',
-        secondaryImage: winifredPrimary,
-        majors: "Information Science '27",
+        title: 'Events Chair',
+        image: danielAniPrimary,
+        name: 'Daniel Anigioro',
+        secondaryImage: danielAniSecondary,
+        majors: "Electrical and Computer Engineering '27",
         // insta: 'https://www.instagram.com/kaylaspray/',
-        linkedIn: 'https://www.linkedin.com/in/winifred-agyei-82306628b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-        askAbout: ["swimming", "dancing", "reading"],
-        bio: "Hello, I'm Winifred, pursuing a major in Information Science with a focus on Data Science. Hailing from Ghana, I currently serve as one of the design chairs at URMC. Beyond my role there, I proudly represent Cornell CALS as an Ambassador, sharing my passion for CALS with prospective and admitted students.",
+        linkedIn: 'http://linkedin.com/in/daniel-anigioro-188a80223',
+        askAbout: ["Fortnite", "Soccer"],
+        bio: "Hi! I’m Daniel, a sophomore at Cornell University majoring in Electrical and Computer Engineering with a keen interest in VLSI, cloud computing, and hardware cybersecurity. Outside of my academic and professional life, I enjoy playing soccer, diving into Fortnite, and exploring the latest in Chip technology. If you’re interested in discussing tech, STEM outreach, or just want to chat about soccer, feel free to reach out!",
         popup: true
     },
     {
@@ -237,19 +247,19 @@ export const cards = [
         bio: "I'm Kelly, a junior majoring in Information Science with a concentration in UX design. I am from Brooklyn, New York, and I am passionate about design and exploring human interaction. I love vlogging and taking pictures in my free time because I love memories. Additionally, I have recently become passionate about makeup and using it to express myself as a form of art.",
         popup: true
     },
-    {
-        id: 17,
-        title: 'Outreach',
-        image: stephaniePrimary,
-        name: 'Stephanie Dyer',
-        secondaryImage: stephaniePrimary,
-        majors: "Information Science | Computer Science Minor '25",
-        // insta: 'https://www.instagram.com/kaylaspray/',
-        linkedIn: "https://www.linkedin.com/company/urmc-cornell/",
-        askAbout: ["Tyler, The Creator", "going to the gym/ fitness", "traveling" , "fashion"],
-        bio: "Hi! My name is Stephanie Dyer and I am a junior in CALS majoring in Information Science and minoring in Computer Science.I am Internal Relations for Les Femmes de Substance and a volunteer for Girls Who Code. As the Outreach Chair for URMC, I am so excited to meet new faces and create an inclusive space for everyone in CIS! Please feel free to reach out about anything 💗",
-        popup: true
-    },
+    // {
+    //     id: 17,
+    //     title: 'Outreach',
+    //     image: stephaniePrimary,
+    //     name: 'Stephanie Dyer',
+    //     secondaryImage: stephaniePrimary,
+    //     majors: "Information Science | Computer Science Minor '25",
+    //     // insta: 'https://www.instagram.com/kaylaspray/',
+    //     linkedIn: "https://www.linkedin.com/company/urmc-cornell/",
+    //     askAbout: ["Tyler, The Creator", "going to the gym/ fitness", "traveling" , "fashion"],
+    //     bio: "Hi! My name is Stephanie Dyer and I am a junior in CALS majoring in Information Science and minoring in Computer Science.I am Internal Relations for Les Femmes de Substance and a volunteer for Girls Who Code. As the Outreach Chair for URMC, I am so excited to meet new faces and create an inclusive space for everyone in CIS! Please feel free to reach out about anything 💗",
+    //     popup: true
+    // },
     {
         id: 18,
         title: 'Outreach',
@@ -263,19 +273,19 @@ export const cards = [
         bio: "Hello! My name is Mohammed Shummo, but my nickname is Momo. I am currently a sophomore in the college of Engineering studying computer science. My other involvements on campus are being a Ryan and Bridge Scholars, and a member of NSBE. I enjoy mediating, walking, and getting to meet new people!",
         popup: true
     },
-    {
-        id: 19,
-        title: 'Public Relations',
-        image: richlovePrimary,
-        name: 'Richlove Nkansah',
-        secondaryImage: richlovePrimary,
-        majors: "Computer Science '26",
-        // insta: 'https://www.instagram.com/kaylaspray/',
-        linkedIn: "https://www.linkedin.com/in/richlove-nkansah-6374291b5/",
-        askAbout: ["Hiking", "adventure", "karaoke."],
-        bio: "Richlove is a sophomore in A&S studying Computer Science with a minor in Cognitive Science. She enjoys long walks with beautiful scenery, cooking, and dancing. She is the eldest of 5 siblings and speaks 4 languages.",
-        popup: true
-    },
+    // {
+    //     id: 19,
+    //     title: 'Freshman Representative',
+    //     image: nigelPrimary,
+    //     name: 'Nigel Tatum',
+    //     secondaryImage: nigelSecondary,
+    //     majors: "Computer Science '28",
+    //     insta: 'https://www.instagram.com/nigeltatem/',
+    //     linkedIn: "https://www.linkedin.com/in/nigeltatem/",
+    //     askAbout: ["Joji", "Astronomy", "Hackathons", "Star Trek", "Video Game Design", "Daniel Caesar", "Data Science", "Working Out", "RYLA", "Rex Orange County", "Space Exploration", "Frontend Development", "Moral Philosophy", "Climbing"],
+    //     bio: "Richlove is a sophomore in A&S studying Computer Science with a minor in Cognitive Science. She enjoys long walks with beautiful scenery, cooking, and dancing. She is the eldest of 5 siblings and speaks 4 languages.",
+    //     popup: true
+    // },
     {
         id: 20,
         title: 'Public Relations',
@@ -289,19 +299,19 @@ export const cards = [
         bio: "My name is China and I am Haitian American raised in Florida. I have a multicultural background and enjoy learning about different cultures and languages. In my free time, I like to read and spend time with my friends and family.",
         popup: true
     },
-    {
-        id: 21,
-        title: 'Professional Development',
-        image: josephPrimary,
-        name: 'Joseph Ugarte',
-        secondaryImage: josephPrimary,
-        majors: "Computer Science | Linguistics '25",
-        // insta: 'https://www.instagram.com/kaylaspray/',
-        linkedIn: "https://www.linkedin.com/in/joseph-ugarte/",
-        askAbout: ["Mets", "Duolingo", "OCaml", "(Rap, Hip-Hop, & RnB)", "Videogames"],
-        bio: "Hey! My name is Joe, and I'm from Jackson, New Jersey, but ethnically, I am part Bolivian & Peruvian. I study computer science & linguistics in the College of Arts and Sciences, where I hope to learn more about the intersection of these two fields. I currently TA for CS 3110, which is my third semester on course staff, and develop for Hack4Impact. Though outside of academics, you can catch me snowboarding, extending my 160+ day Duolingo streak, and watching baseball.",
-        popup: true
-    },
+    // {
+    //     id: 21,
+    //     title: 'Professional Development',
+    //     image: josephPrimary,
+    //     name: 'Joseph Ugarte',
+    //     secondaryImage: josephPrimary,
+    //     majors: "Computer Science | Linguistics '25",
+    //     // insta: 'https://www.instagram.com/kaylaspray/',
+    //     linkedIn: "https://www.linkedin.com/in/joseph-ugarte/",
+    //     askAbout: ["Mets", "Duolingo", "OCaml", "(Rap, Hip-Hop, & RnB)", "Videogames"],
+    //     bio: "Hey! My name is Joe, and I'm from Jackson, New Jersey, but ethnically, I am part Bolivian & Peruvian. I study computer science & linguistics in the College of Arts and Sciences, where I hope to learn more about the intersection of these two fields. I currently TA for CS 3110, which is my third semester on course staff, and develop for Hack4Impact. Though outside of academics, you can catch me snowboarding, extending my 160+ day Duolingo streak, and watching baseball.",
+    //     popup: true
+    // },
     {
         id: 22,
         title: 'Professional Development',
@@ -365,6 +375,32 @@ export const cards = [
         linkedIn: 'https://www.linkedin.com/in/fadi-ismail-961366269/',
         askAbout: ["Fitness", "Drake", "Medicine", "Cooking", "Travel", "NBA"],
         bio: "Hey! My name is Fadi and I'm from Katy, TX and I’m a Sudanese-American. I'm a freshman majoring in Computer Science in the College of Engineering and minoring in Business on the pre-med track. Alongside URMC I'm a part of the Pan-African Muslim Student Association and Cornell Business Analytics (CBA). Outside of school, I enjoy playing sports, going to the gym, and chilling with friends. If you ever need to talk feel free to reach out!",
+        popup: true
+    },
+    {
+        id: 27,
+        title: 'Freshman Representative',
+        image: boubakarPrimary,
+        name: 'Boubakar Diallo',
+        secondaryImage: boubakarSecondary,
+        majors: "Electrical and Computer Engineering '28",
+        insta: 'https://www.instagram.com/boubakar_diallo_1233/',
+        linkedIn: 'http://www.linkedin.com/in/boubakardiallo',
+        askAbout: ["Soccer", "Traveling", "Anime"],
+        bio: "Hi, my name is Boubakar Diallo. I am a freshman studying Electrical and Computer Engineering, minoring in Computer Science and Business. I am from Guinea and moved to Boston, MA, three years ago. I am excited to learn about AI and its application in making everyday life easier. Right now, I am participating in project teams and clubs that help improve the world.",
+        popup: true
+    },
+    {
+        id: 28,
+        title: 'Freshman Representative',
+        image: nigelPrimary,
+        name: 'Nigel Tatum',
+        secondaryImage: nigelSecondary,
+        majors: "Computer Science '28",
+        insta: 'https://www.instagram.com/nigeltatem/',
+        linkedIn: "https://www.linkedin.com/in/nigeltatem/",
+        askAbout: ["Joji", "Astronomy", "Hackathons", "Star Trek", "Video Game Design", "Daniel Caesar", "Data Science", "Working Out", "RYLA", "Rex Orange County", "Space Exploration", "Frontend Development", "Moral Philosophy", "Climbing"],
+        bio: "I'm Nigel Tatem, a freshman Computer Science major in the College of Engineering at Cornell. I'm from Frisco, Texas and I’m dedicated to helping expand web development and professional development initiatives. Beyond URMC, I'm involved with the Cornell Undergraduate Research Journal, the Cybersecurity team, and work as a developer on Cornell DTI’s CoursePlan project. My focus is on data science and machine learning, and I’m passionate about building technology that makes a difference and creating a supportive community for underrepresented students in tech.",
         popup: true
     },
 ];
