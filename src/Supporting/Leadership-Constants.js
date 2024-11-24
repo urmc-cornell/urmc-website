@@ -117,7 +117,7 @@ export const cards = [
     },
     {
         id: 7,
-        title: 'Alumni Chair',
+        title: 'Alumni',
         image: casperPrimary,
         name: 'Casper Liao',
         secondaryImage: casperSecondary,
@@ -130,7 +130,7 @@ export const cards = [
     },
     {
         id: 8,
-        title: 'Corporate Chair',
+        title: 'Corporate',
         image: ignazioPrimary,
         name: 'Ignazio Perez Romero',
         secondaryImage: ignazioPrimary,
@@ -143,7 +143,7 @@ export const cards = [
     },
     {
         id: 9,
-        title: 'Corporate Chair',
+        title: 'Corporate',
         image: timPrimary,
         name: 'Oluwasemilore Timothy Adeyemi',
         secondaryImage: timPrimary,
@@ -157,7 +157,7 @@ export const cards = [
 
     {
         id: 10,
-        title: 'Design Chair',
+        title: 'Design',
         image: stefaniePrimary,
         name: 'Stefanie Rivera-Osorio',
         secondaryImage: stefaniePrimary,
@@ -170,7 +170,7 @@ export const cards = [
     },
     {
         id: 11,
-        title: 'Events Chair',
+        title: 'Events',
         image: danielAniPrimary,
         name: 'Daniel Anigioro',
         secondaryImage: danielAniSecondary,
@@ -184,7 +184,7 @@ export const cards = [
 
     {
         id: 12,
-        title: 'Co-Events',
+        title: 'Events',
         image: rafaelPrimary,
         name: 'Rafael Barrios',
         secondaryImage: rafaelPrimary,
@@ -327,7 +327,7 @@ export const cards = [
     },
     {
         id: 23,
-        title: 'Social Chair',
+        title: 'Social',
         image: macarenaPrimary,
         name: 'Macarena Hesse',
         secondaryImage: macarenaPrimary,
@@ -340,7 +340,7 @@ export const cards = [
     },
     {
         id: 24,
-        title: 'Social Chair',
+        title: 'Social',
         image: osamaPrimary,
         name: 'Osama Awadalla',
         secondaryImage: osamaPrimary,

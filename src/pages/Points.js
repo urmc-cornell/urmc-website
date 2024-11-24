@@ -31,21 +31,52 @@ export default function Points() {
 
     // Fetch leaderboard on component mount
     useEffect(() => {
-        const fetchLeaderboard = async () => {
-            try {
-                const response = await fetch('http://localhost:5000/api/leaderboard');
-                const data = await response.json();
-                const formattedLeaderboard = data.map(entry => 
-                    `${entry.first_name} ${entry.last_name}: ${entry.total_points} Points`
-                );
-                setLeaderboard(formattedLeaderboard);
-            } catch (error) {
-                console.error('Error fetching leaderboard:', error);
-            }
-        };
+        async function fetchData() {
+          try {
+            const response = await fetch(fullURL);
+            const data = await response.text();
+            const jsonData = JSON.parse(data.substring(47).slice(0, -2));
 
-        fetchLeaderboard();
-    }, []);
+            let board = [];
+            for (let i = 0; i < 10; i++) {
+              var str = jsonData["table"]["rows"][i]["c"][1]["v"].toLowerCase() + ": " + jsonData["table"]["rows"][i]["c"][2]["f"] + " Points";
+              board.push(str);
+            }
+            setLeaderboard(board)
+  
+          } catch (error) {
+            console.error('Error:', error);
+          } 
+        }
+        fetchData();
+      }, []); // Empty dependency array since we only want to fetch once on mount
+
+
+      const point_set = async (event) => {
+        event.preventDefault(); // Do not delete this line, stops page from refreshing
+        const netid = document.getElementById("netID").value;
+        var found = false;
+  
+        try {
+          const response = await fetch(fullURL);
+          const data = await response.text();
+          const jsonData = JSON.parse(data.substring(47).slice(0, -2));
+          
+          for (let i = 0; i < jsonData["table"]["rows"].length; i++) {
+            if (jsonData["table"]["rows"][i]["c"][1]["v"].toLowerCase() === netid.toLowerCase()) {
+              found = true;
+              setPoints("Points: " + jsonData["table"]["rows"][i]["c"][2]["f"]);
+              break;
+            }
+          }
+          if (!found) {
+            setPoints("NetID Not Found");
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          setPoints("Error fetching points");
+        }
+      }
 
     return (
         <div style={{ height: 1000, overflow: 'auto' }}>
@@ -81,9 +112,40 @@ export default function Points() {
                             <h3 className="subheader">Enter your netID below to see your points</h3>
                             
                             <div className="netID input">
-                                <form id="points-form">
-                                    <input type="text" id="netID" name="netID" placeholder="Enter netID here"></input>  
-                                    <button type="submit" id="myButton" onClick={fetchPoints}>Get Points</button>
+                                <form id="points-form" style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '15px'}}>
+                                    <input 
+                                        type="text" 
+                                        id="netID" 
+                                        name="netID" 
+                                        placeholder="Enter netID here"
+                                        style={{
+                                            padding: '12px 20px',
+                                            fontSize: '16px',
+                                            borderRadius: '25px',
+                                            border: '2px solid #e0e0e0',
+                                            width: '250px',
+                                            outline: 'none',
+                                            transition: 'border-color 0.3s ease'
+                                        }}
+                                    />  
+                                    <button 
+                                        type="submit" 
+                                        id="myButton" 
+                                        onClick={point_set}
+                                        style={{
+                                            padding: '12px 30px',
+                                            fontSize: '16px',
+                                            borderRadius: '25px',
+                                            border: 'none',
+                                            backgroundColor: '#4CAF50',
+                                            color: 'white',
+                                            cursor: 'pointer',
+                                            transition: 'background-color 0.3s ease',
+                                            boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                                        }}
+                                    >
+                                        Get Points
+                                    </button>
                                     <h3 className="subheader">{points}</h3>
                                 </form>
                             </div>
@@ -94,7 +156,7 @@ export default function Points() {
                     <div className="leaderboard-section">
                         <h2>Leaderboard</h2>
                         <div className="fall22">
-                            <ol className="subheader">
+                            <ul className="subheader" style={{textAlign: 'left', paddingLeft: '20px'}}>
                                 <li>{leaderboard[0]}</li>
                                 <li>{leaderboard[1]}</li>
                                 <li>{leaderboard[2]}</li>
@@ -105,7 +167,7 @@ export default function Points() {
                                 <li>{leaderboard[7]}</li>
                                 <li>{leaderboard[8]}</li>
                                 <li>{leaderboard[9]}</li>
-                            </ol> 
+                            </ul> 
                         </div>
                     </div>
                 </div>
