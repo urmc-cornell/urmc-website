@@ -18,6 +18,7 @@ import mastercard from '../images/sponsors/master-card.svg';
 import datadog from '../images/sponsors/datadog.svg';
 import roblox from '../images/sponsors/roblox.jpeg';
 import ey from '../images/sponsors/ey.png'
+import linkedin from '../images/sponsors/linkedin.png'
 
 export default function Sponsors() {
     return (
@@ -30,6 +31,7 @@ export default function Sponsors() {
                 <div className="sponsor-section gold-sponsors"> 
                     <a className="btn-small btn-gold">GOLD</a>
                     <img src={janestreet} alt="Jane Street Logo" className="logo gold-logo"></img>
+                    <img src={linkedin} alt="linkedin Logo" className="logo gold-logo"></img>
                     {/* <img src={reddit} alt="reddit Logo" className="logo gold-logo"></img> */}
                     {/* <img src={thoughtworks} alt="thoughtworks Logo" className="logo gold-logo"></img> */}
 
