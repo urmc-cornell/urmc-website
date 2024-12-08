@@ -79,7 +79,7 @@ export default function Points() {
       }
 
     return (
-        <div style={{ height: 1000, overflow: 'auto' }}>
+        <div style={{ height: 1000, overflow: 'auto' }} className="points-page">
             <div className="heading"> 
                 <h1 className="Points"> Points Tracking </h1>
                 <h3 className="subheader">URMC Collects Points To Reward Active Members</h3>

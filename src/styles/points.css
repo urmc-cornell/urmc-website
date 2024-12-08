@@ -50,3 +50,65 @@
     border-radius: 8px;
     margin-top: 60px;
 }
+
+/* Mobile styles - will only apply when screen width is less than 768px */
+@media (max-width: 768px) {
+    .points-page {
+        padding: 20px !important;
+        height: auto !important;
+        min-height: 100vh !important;
+    }
+
+    .points-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+        padding: 10px !important;
+    }
+
+    .points-section {
+        width: 100% !important;
+    }
+
+    .points-boxes {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        width: 100% !important;
+        max-width: 500px !important;
+        margin: 0 auto !important;
+    }
+
+    .view_points {
+        width: 100% !important;
+        max-width: 500px !important;
+        margin: 30px auto !important;
+    }
+
+    .leaderboard-section {
+        width: 100% !important;
+        max-width: 500px !important;
+        margin: 0 auto !important;
+        padding: 20px !important;
+        background-color: #f5f5f5 !important;
+        border-radius: 15px !important;
+    }
+
+    .leaderboard-section h2 {
+        text-align: center !important;
+    }
+
+    .leaderboard-section ul {
+        list-style: none !important;
+        margin: 0 !important;
+    }
+
+    .leaderboard-section li {
+        padding: 10px 0 !important;
+        border-bottom: 1px solid #ddd !important;
+    }
+
+    .leaderboard-section li:last-child {
+        border-bottom: none !important;
+    }
+}
