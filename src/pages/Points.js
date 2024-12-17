@@ -30,6 +30,8 @@ export default function Points() {
     };
 
     // Fetch leaderboard on component mount
+
+    // change to query DB 
     useEffect(() => {
         const fetchLeaderboard = async () => {
             try {

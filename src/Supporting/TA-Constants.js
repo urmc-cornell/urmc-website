@@ -52,7 +52,7 @@ export const cards = [
     },
     {
         id: 11,
-        title: 'CS 3119',
+        title: 'CS 3110',
         name: 'Pedro Pontes Garcia',
     },
     {

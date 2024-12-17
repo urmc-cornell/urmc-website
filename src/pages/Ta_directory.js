@@ -14,6 +14,18 @@ class TADirectory extends Component {
         };
     }
 
+    groupCardsByCourse = () => {
+        const grouped = {};
+        cards.forEach(card => {
+            const courseNum = card.title.split(' ')[1]; // Assumes format "CS XXXX"
+            if (!grouped[courseNum]) {
+                grouped[courseNum] = [];
+            }
+            grouped[courseNum].push(card);
+        });
+        return grouped;
+    }
+
     handleCardClick = (card) => {
         this.setState({ selectedCard: card, popupActive: card.popup });
     }
@@ -23,42 +35,49 @@ class TADirectory extends Component {
     }
 
     render() {
-        const { selectedCard } = this.state;
+        const groupedCards = this.groupCardsByCourse();
 
         return <div>
             <h1 className="leadership">URM TA Directory</h1>
             <h2 className="fall22"> Fall 2024</h2>
-            <TaPopup trigger={this.state.popupActive} card={this.state.selectedCard} setTrigger={this.handleClose}>
-                <h3>My popup!</h3>
-            </TaPopup>
-            <div className="grid-container-container">
-                <div className="grid-container" style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(3, 1fr)',
-                    gap: '20px',
-                    justifyContent: 'center',
-                    padding: '20px'
-                }}>
-                    {cards.map(card => (
-                        <div className="grid-item"
-                            onClick={() => this.handleCardClick(card)}
-                        >
-                             <div className="ta-card" style={{
-                                backgroundColor: '#f2d2bd',
-                                padding: '20px',
-                                borderRadius: '12px',
-                                boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-                                margin: '10px',
-                                cursor: 'pointer',
-                                width: '264px',
-                                height: '150px'
-                            }}>
-                                <h3>{card.title}</h3>
-                                <p>{card.name}</p>
-                            </div>
+           
+            <div className="course-sections">
+                {Object.entries(groupedCards).map(([courseNum, courseCards]) => (
+                    <div key={courseNum} className="course-section">
+                        <h2 className="course-header">CS {courseNum}</h2>
+                        <div className="grid-container" style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+                            gap: '20px',
+                            justifyContent: 'start',
+                            padding: '20px',
+                            maxWidth: '1200px',
+                            margin: '0 auto'
+                        }}>
+                            {courseCards.map(card => (
+                                <div 
+                                    key={card.name}
+                                    className="grid-item"
+                                    onClick={() => this.handleCardClick(card)}
+                                >
+                                    <div className="ta-card" style={{
+                                        backgroundColor: '#f2d2bd',
+                                        padding: '20px',
+                                        borderRadius: '12px',
+                                        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+                                        margin: '10px',
+                                        cursor: 'pointer',
+                                        width: '264px',
+                                        height: '150px'
+                                    }}>
+                                        <h3>{card.title}</h3>
+                                        <p>{card.name}</p>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-                    ))}
-                </div>
+                    </div>
+                ))}
             </div>
         </div>
     }

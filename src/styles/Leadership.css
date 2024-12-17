@@ -6,18 +6,19 @@
 }
 
 .leadership {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .fall22 {
-    display:flex;
-    justify-content: center;
-    color: #37383C;
-    font-size: 25px;
+  display: flex;
+  justify-content: center;
+  color: #37383C;
+  font-size: 25px;
 }
+
 .grid-container-container {
   display: flex;
   align-items: center;
@@ -26,37 +27,57 @@
   justify-content: center;
 }
 
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 100fr));
-    grid-gap: 20px;
-    overflow: auto;
-    max-width: 100%;
-    margin-left: 20px;
-    margin-right: 20px;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 100fr));
+  grid-gap: 20px;
+  overflow: auto;
+  max-width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
 
-  .grid-item {
-    display: flex;
-    padding: 20px;
-    align-items: center;
-    text-align: center;
-    width: auto;
-    justify-content: center;
-  }
+.grid-item {
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  text-align: center;
+  width: auto;
+  justify-content: center;
+}
 
 
 @media (max-width: 767px) {
-    .grid-container {
-      width: 200;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  
-    .grid-item {
-      width: fit;
-    }
+  .grid-container {
+    width: 200;
+    margin-left: auto;
+    margin-right: auto;
   }
+
+  .grid-item {
+    width: fit;
+  }
+}
+
+.course-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.course-section {
+  width: 100%;
+}
+
+.course-header {
+  margin: 0 0 10px 0;
+  color: #333;
+  border-bottom: 2px solid #f2d2bd;
+  padding-bottom: 5px;
+}
