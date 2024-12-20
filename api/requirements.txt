@@ -1,0 +1,6 @@
+flask
+slack-sdk
+slackeventsapi
+python-dotenv
+psycopg2-binary
+gunicorn

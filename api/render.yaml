@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: slack-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn api.slack:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9
+      - key: SLACK_SIGNING_SECRET
+        sync: false
+      - key: SLACK_BOT_TOKEN
+        sync: false

@@ -23,7 +23,25 @@ def fetch_data_from_google_sheets(url):
     if response.status_code == 200:
         # Parse the JSON response
         json_data = response.text[47:-2]  # Remove the prefix and suffix
-        return json.loads(json_data)['table']['rows']
+        data = json.loads(json_data)['table']['rows']
+        
+        # Add validation and logging
+        print(f"Retrieved {len(data)} rows from Google Sheets")
+        if data:
+            # Print sample of first row
+            print("\nSample data (first row):")
+            first_row = [cell['v'] if 'v' in cell else None for cell in data[0]['c']]
+            print(first_row)
+            
+            # Validate data structure
+            for i, row in enumerate(data):
+                if not isinstance(row, dict) or 'c' not in row:
+                    print(f"Warning: Invalid row structure at index {i}")
+                    continue
+                values = [cell['v'] if 'v' in cell else None for cell in row['c']]
+                if len(values) != 3:  # Expecting 3 columns
+                    print(f"Warning: Row {i} has {len(values)} columns instead of 3")
+        return data
     else:
         print(f"Error fetching data: {response.status_code}")
         return []
@@ -50,6 +68,39 @@ def insert_data_into_postgresql(rows):
         cursor.close()
         conn.close()
 
+def create_table_if_not_exists():
+    try:
+        conn = psycopg2.connect(**db_config)
+        cursor = conn.cursor()
+        
+        create_table_query = '''
+        CREATE TABLE IF NOT EXISTS points_table (
+            id SERIAL PRIMARY KEY,
+            student VARCHAR(255),
+            netid VARCHAR(255),
+            points INTEGER
+        );
+        '''
+        
+        cursor.execute(create_table_query)
+        conn.commit()
+        print("Table created successfully")
+        
+    except Exception as e:
+        print(f"Error creating table: {e}")
+    finally:
+        cursor.close()
+        conn.close()
+
 if __name__ == "__main__":
+    print("Creating table if it doesn't exist...")
+    create_table_if_not_exists()
+    
+    print("Starting data fetch...")
     rows = fetch_data_from_google_sheets(full_url)
-    insert_data_into_postgresql(rows)
+    
+    if rows:
+        print("\nProceeding to database insertion...")
+        insert_data_into_postgresql(rows)
+    else:
+        print("No data to insert into database")

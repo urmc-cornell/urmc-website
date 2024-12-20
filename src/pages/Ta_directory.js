@@ -17,11 +17,12 @@ class TADirectory extends Component {
     groupCardsByCourse = () => {
         const grouped = {};
         cards.forEach(card => {
-            const courseNum = card.title.split(' ')[1]; // Assumes format "CS XXXX"
-            if (!grouped[courseNum]) {
-                grouped[courseNum] = [];
+            const [prefix, courseNum] = card.title.split(' '); // Split into prefix (CS/INFO) and number
+            const courseKey = `${prefix} ${courseNum}`; // Use full course code as key
+            if (!grouped[courseKey]) {
+                grouped[courseKey] = [];
             }
-            grouped[courseNum].push(card);
+            grouped[courseKey].push(card);
         });
         return grouped;
     }
@@ -40,11 +41,10 @@ class TADirectory extends Component {
         return <div>
             <h1 className="leadership">URM TA Directory</h1>
             <h2 className="fall22"> Fall 2024</h2>
-           
             <div className="course-sections">
-                {Object.entries(groupedCards).map(([courseNum, courseCards]) => (
-                    <div key={courseNum} className="course-section">
-                        <h2 className="course-header">CS {courseNum}</h2>
+                {Object.entries(groupedCards).map(([courseKey, courseCards]) => (
+                    <div key={courseKey} className="course-section">
+                        <h2 className="course-header">{courseKey}</h2>
                         <div className="grid-container" style={{
                             display: 'grid',
                             gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
