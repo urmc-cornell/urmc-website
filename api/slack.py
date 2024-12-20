@@ -3,10 +3,9 @@ load_dotenv()
 
 from slack_sdk.web import WebClient
 from slackeventsapi import SlackEventAdapter
-from server import create_server
+from flask import Flask, request
 import os
 import psycopg2
-from flask import request
 import logging
 
 # Set up logging at the top of your file
@@ -14,7 +13,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Initialize Flask app
-app = create_server()
+app = Flask(__name__)
 
 # Initialize the event adapter and web client
 slack_signing_secret = os.environ["SLACK_SIGNING_SECRET"]
