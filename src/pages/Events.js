@@ -1,137 +1,141 @@
 import "../styles/Events.css";
-import React, { Component } from "react";
 import EventsPopup from "../components/eventsPopup.js";
+import { React, useState, useEffect } from "react";
+import { supabase } from "../lib/supabaseClient.js";
 
-let sheetID = "1Xfl8FV_jihQp8WaH7KvMTCqUwVCAQFHF7K9VV9QwPF8";
-let sheetTitle = "URMC Website Events";
-//SHEET_RANGE might have to be changed if we ever have >30 events, but probably not
-let sheetRange = "A2:F37";
-let fullURL =
-  "https://docs.google.com/spreadsheets/d/" +
-  sheetID +
-  "/gviz/tq?sheet=" +
-  sheetTitle +
-  "&range=" +
-  sheetRange;
+export default function Events() {
+  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [pastEvents, setPastEvents] = useState([]);
+  const [comingUpEvents, setComingUpEvents] = useState([]);
+  const [popupActive, setPopupActive] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-class Events extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedEvent: null,
-      // events: [],
-      pastEvents: [],
-      comingUpEvents: [],
-      popupActive: false,
-    };
-  }
+  // Fetch events data when component mounts
+  useEffect(() => {
+    fetchEvents();
+  }, []);
 
-  componentDidMount() {
-    fetch(fullURL)
-      .then((res) => res.text())
-      .then((rep) => {
-        // figure out why 47, 0, -2 here
+  // Fetches and processes events data from Supabase database
+  async function fetchEvents() {
+    try {
+      // Query events table for required fields
+      const { data, error } = await supabase.from("events").select(`
+          id,
+          name,
+          date,
+          description,
+          flyer_url,
+          instagram_url
+        `);
 
-        let data = JSON.parse(rep.substring(47).slice(0, -2));
-        let activeRows = data.table.rows.length;
+      if (error) throw error;
 
-        let comingUpEvents = [];
-        let pastEvents = [];
+      // Transform database records into format needed for display
+      const transformedEvents = data.map((event) => {
+        // Convert Google Drive URL to direct image URL
+        let flyerUrl = event.flyer_url;
 
-        let events = [];
-        for (let i = 0; i < activeRows; i++) {
-          //
-          let rawImageURL = data.table.rows[i].c[2].v;
-          let blurb = data.table.rows[i].c[3].v;
-
-          let instaLink = "";
-
-          try {
-            instaLink = data.table.rows[i].c[4].v;
-          } catch (err) {}
-
-          // let instaLink = (data.table.rows[i].c[4].v == null) ? "link" : data.table.rows[i].c[4].v
-          let eventDate = new Date(Date.parse(data.table.rows[i].c[5].f));
-          let id = rawImageURL.split("=")[1];
-          let flyerURL = "https://drive.google.com/uc?export=view&id=" + id;
-
-          let event = {
-            flyer: flyerURL,
-            blurb: blurb,
-            date: eventDate,
-            instaLink: instaLink,
-          };
-
-          if (event.date >= new Date()) {
-            comingUpEvents.push(event);
-          } else {
-            pastEvents.push(event);
-          }
-          // events.push(event)
+        // Handle different Google Drive URL formats by extracting file ID
+        // and creating a direct thumbnail URL
+        if (flyerUrl.includes("drive.google.com/file")) {
+          const fileId = flyerUrl.split("/d/")[1].split("/")[0];
+          flyerUrl = `https://drive.google.com/thumbnail?id=${fileId}&sz=w1000`;
+        } else if (flyerUrl.includes("drive.google.com/open?id=")) {
+          const fileId = flyerUrl.split("id=")[1];
+          flyerUrl = `https://drive.google.com/thumbnail?id=${fileId}&sz=w1000`;
         }
 
-        this.setState({
-          // events: events
-          pastEvents: pastEvents,
-          comingUpEvents: comingUpEvents,
-        });
+        // Return transformed event object with needed properties
+        return {
+          id: event.id,
+          flyer: flyerUrl,
+          blurb: event.description,
+          date: new Date(event.date),
+          instaLink: event.instagram_url || "", // Default to empty string if no Instagram URL
+        };
       });
+
+      // Split events into past and upcoming based on current date
+      const now = new Date();
+      const upcoming = transformedEvents.filter((event) => event.date >= now);
+      const past = transformedEvents.filter((event) => event.date < now);
+
+      // Update state with sorted events
+      setComingUpEvents(upcoming);
+      setPastEvents(past);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false); // Update loading state whether successful or not
+    }
   }
 
-  handleCardClick = (event) => {
-    this.setState({ selectedEvent: event, popupActive: true });
+  // Handler for when an event card is clicked - shows popup with event details
+  const handleCardClick = (event) => {
+    setSelectedEvent(event);
+    setPopupActive(true);
   };
 
-  handleClose = (active) => {
-    this.setState({ selectedEvent: null, popupActive: active });
+  // Handler for closing the event popup modal
+  const handleClose = (active) => {
+    setSelectedEvent(null);
+    setPopupActive(active);
   };
 
-  render() {
-    return (
-      <div>
-        <h1 align="center">Events</h1>
-        <EventsPopup
-          trigger={this.state.popupActive}
-          event={this.state.selectedEvent}
-          setTrigger={this.handleClose}
-        ></EventsPopup>
-        <div align="center">
-          {this.state.comingUpEvents.length ? (
-            <h2 align="left" className="this-week">
-              COMING UP @ URMC:
-            </h2>
-          ) : null}
-          <div className="grid-container">
-            {this.state.comingUpEvents
-              .sort((a, b) => a.date - b.date)
-              .map((event) => (
-                <div
-                  className="grid-item"
-                  onClick={() => this.handleCardClick(event)}
-                >
-                  <img src={event.flyer}></img>
-                </div>
-              ))}
-          </div>
+  // Show loading/error states while data is being fetched
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+
+  // Render the events page
+  return (
+    <div>
+      <h1 align="center">Events</h1>
+      {/* Popup modal component for showing detailed event info */}
+      <EventsPopup
+        trigger={popupActive}
+        event={selectedEvent}
+        setTrigger={handleClose}
+      />
+      <div align="center">
+        {/* Only show upcoming events section if there are any */}
+        {comingUpEvents.length ? (
           <h2 align="left" className="this-week">
-            PAST EVENTS:
+            COMING UP @ URMC:
           </h2>
-          <div className="grid-container">
-            {this.state.pastEvents
-              .sort((a, b) => b.date - a.date)
-              .map((event) => (
-                <div
-                  className="grid-item"
-                  onClick={() => this.handleCardClick(event)}
-                >
-                  <img src={event.flyer}></img>
-                </div>
-              ))}
-          </div>
+        ) : null}
+        <div className="grid-container">
+          {/* Map through upcoming events sorted by date (ascending) */}
+          {comingUpEvents
+            .sort((a, b) => a.date - b.date)
+            .map((event) => (
+              <div
+                key={event.id}
+                className="grid-item"
+                onClick={() => handleCardClick(event)}
+              >
+                <img src={event.flyer} alt="Event flyer" />
+              </div>
+            ))}
+        </div>
+        <h2 align="left" className="this-week">
+          PAST EVENTS:
+        </h2>
+        <div className="grid-container">
+          {/* Map through past events sorted by date (descending) */}
+          {pastEvents
+            .sort((a, b) => b.date - a.date)
+            .map((event) => (
+              <div
+                key={event.id}
+                className="grid-item"
+                onClick={() => handleCardClick(event)}
+              >
+                <img src={event.flyer} alt="Event flyer" />
+              </div>
+            ))}
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
-
-export default Events;

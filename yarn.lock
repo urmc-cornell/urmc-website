@@ -1720,7 +1720,7 @@
     "@types/ws" "^8.5.10"
     ws "^8.18.0"
 
-"@supabase/storage-js@2.7.1":
+"@supabase/storage-js@^2.7.1", "@supabase/storage-js@2.7.1":
   version "2.7.1"
   resolved "https://registry.npmjs.org/@supabase/storage-js/-/storage-js-2.7.1.tgz"
   integrity sha512-asYHcyDR1fKqrMpytAS1zjyEfvxuOIp1CIXX7ji4lHHcJKqyk+sLl/Vxgm4sN6u8zvuUtae9e4kDxQP2qrwWBA==

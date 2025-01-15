@@ -13,7 +13,12 @@ class Navbar extends Component {
     return (
       <nav className="nav">
         <a href="/">
-          <img src={goldLogo} className="site-title" href="/"></img>
+          <img
+            src={goldLogo}
+            className="site-title"
+            href="/"
+            alt="Gold URMC Logo"
+          ></img>
         </a>
         <div className="menu-icon" onClick={this.handleClick}>
           <i
@@ -46,7 +51,7 @@ function CustomLink({ href, children, ...props }) {
   const path = window.location.pathname;
 
   return (
-    <li className={path == href ? "active" : ""}>
+    <li className={path === href ? "active" : ""}>
       <a href={href} {...props}>
         {children}
       </a>
