@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import EboardCard from "../components/EboardCard";
+import EboardCard from "../components/EboardCard.js";
 import "../styles/Leadership.css";
-import EboardPopup from "../components/eboardPopup";
+import EboardPopup from "../components/eboardPopup.js";
 import { cards } from "../Supporting/Leadership-Constants.js";
 
 let sheetID = "1MSvTcAeph8ehYwtBIBBbcLLkVg3JhWwtTCz1ODSEl1w";

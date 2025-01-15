@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './styles/index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./styles/index.css";
+import App from "./App.js";
+import reportWebVitals from "./reportWebVitals.js";
 
 //styles
 import "./styles/bars.css";
@@ -10,7 +10,7 @@ import "./styles/home.css";
 import "./styles/about_us.css";
 import "@fontsource/montserrat";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
