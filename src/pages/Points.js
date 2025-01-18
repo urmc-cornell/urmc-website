@@ -8,6 +8,7 @@ import React, { useState, useEffect } from "react";
 import { supabase } from "../lib/supabaseClient.js";
 
 export default function Points() {
+  let semester = "sp25";
   // State for individual points lookup and leaderboard
   const [points, setPoints] = useState(null);
   const [leaderboard, setLeaderboard] = useState([]);
@@ -21,8 +22,9 @@ export default function Points() {
         .select(
           "netid, points_tracking!points_tracking_member_id_fkey (points)"
         )
-        // Filter where the members netid matches our search
+        // Filter where the members netid and the points semester matches our search
         .eq("netid", netid.toLowerCase())
+        .eq("points_tracking.semester", semester)
         // Ensures only one record is returned (specific to the netid)
         .single();
 
@@ -38,7 +40,7 @@ export default function Points() {
         return;
       }
 
-      // Calculate total points using reduce (sum up all points)
+      // Calculate total points only for current semester
       const totalPoints =
         data.points_tracking.reduce((sum, record) => sum + record.points, 0) ||
         0;
@@ -56,7 +58,7 @@ export default function Points() {
         // Query Supabase database to get all members and their associated points
         const { data, error } = await supabase.from("members").select(
           // Using a join between members table and points_tracking table
-          "netid, points_tracking!points_tracking_member_id_fkey (points)"
+          "netid, points_tracking!points_tracking_member_id_fkey (points, semester)"
         );
 
         // If query returns an error, throw it to be caught
@@ -69,11 +71,10 @@ export default function Points() {
         const boardData = data
           .map((member) => ({
             netid: member.netid,
-            // Calculate total points by summing all point records for this member
-            totalPoints: member.points_tracking.reduce(
-              (sum, record) => sum + record.points,
-              0
-            ),
+            // Only sum points for current semester
+            totalPoints: member.points_tracking
+              .filter((record) => record.semester === semester)
+              .reduce((sum, record) => sum + record.points, 0),
           }))
           .sort((a, b) => b.totalPoints - a.totalPoints)
           .slice(0, 10);
@@ -96,7 +97,7 @@ export default function Points() {
     fetchLeaderboard();
   }, []); // Empty dependency array means this effect runs only once when component mounts
 
-  // Handle individual points lookup from Google Sheets
+  // Handle individual points lookup
   const point_set = async (event) => {
     event.preventDefault(); // Do not delete this line, stops page from refreshing
     const netid = document.getElementById("netID").value;
