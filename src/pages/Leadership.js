@@ -42,6 +42,18 @@ export default function Leadership() {
 
       if (error) throw error;
 
+      if (error) throw error;
+
+      // Define position priority order
+      const positionOrder = {
+        "Co - President": 1,
+        "Vice - President": 2,
+        "Treasurer": 3,
+        "Secretary": 4,
+        // Add other positions and their priorities...
+      };
+  
+
       // Transform database records into format needed for EboardCard components
       const transformedData = data.map((member) => ({
         id: member.id,
@@ -55,7 +67,31 @@ export default function Leadership() {
         askAbout: member.ask_about || [], // Default to empty array if null
         bio: member.bio,
         popup: true,
-      }));
+      }))
+      .sort((a, b) => {
+        // If both are Co-Presidents, sort alphabetically by name
+        if (a.title.includes("Co - President") && b.title.includes("Co - President")) {
+          return a.name.localeCompare(b.name);
+        }
+        // If both are Vice-Presidents, sort alphabetically by name
+        if (a.title.includes("Vice - President") && b.title.includes("Vice - President")) {
+          return a.name.localeCompare(b.name);
+        }
+        
+        // Put Co-Presidents first
+        if (a.title.includes("Co - President")) return -1;
+        if (b.title.includes("Co - President")) return 1;
+        
+        // Put Vice-Presidents second
+        if (a.title.includes("Vice - President")) return -1;
+        if (b.title.includes("Vice - President")) return 1;
+        
+        // Sort rest alphabetically by title, then by name
+        if (a.title === b.title) {
+          return a.name.localeCompare(b.name);
+        }
+        return a.title.localeCompare(b.title);
+      });
 
       setEboardList(transformedData);
     } catch (err) {
