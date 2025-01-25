@@ -154,7 +154,7 @@
         align-items: center;
         justify-content: center;
         border-radius: 15px;
-        box-shadow: 0 0 20px #eee;
+        /* box-shadow: 0 0 20px #eee; */
         width: 300px;
         height: 200px;
         position: relative;
