@@ -41,7 +41,7 @@
     background-size: 200% auto;
     font-size: 20px;
     color: white;
-    box-shadow: 0 0 20px #eee;
+    /* box-shadow: 0 0 20px #eee; */
     text-decoration: none;
     border-radius: 64px;
     text-align: center;
@@ -55,7 +55,7 @@
     background-size: 200% auto;
     font-size: 20px;
     color: white;
-    box-shadow: 0 0 20px #eee;
+    /* box-shadow: 0 0 20px grey; */
     text-decoration: none;
     border-radius: 64px;
 }
@@ -72,21 +72,28 @@
 
 }
 
+.btn-plat {
+    background: linear-gradient(273deg, rgba(38, 89, 153, 0.80) 3.86%, #C0C0C0 96.11%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .btn-gold {
-    background-image: linear-gradient(to right bottom, rgba(218, 164, 21, 1), rgba(218, 164, 21, .2));
+    background-image: linear-gradient(108deg, #CFAE45 19.51%, rgba(211, 135, 69, 0.80) 71.52%);
     position: absolute;
     top: 0;
     left: 0;
 }
 .btn-silver {
-    background-image: linear-gradient(to right bottom, rgba(38, 89, 153, 1), rgba(38, 89, 153, .2));
+    background-image: linear-gradient(99deg, rgba(192, 192, 192, 0.50) 0.49%, #C0C0C0 102.93%);
     position: absolute;
     top: 0;
     left: 0;
 }
 
 .btn-bronze {
-    background-image: linear-gradient(to right bottom, rgba(55, 56, 60, 1),rgba(55, 56, 60, .2));
+    background: linear-gradient(97deg, #CD7F32 0.44%, rgba(205, 127, 50, 0.50) 100.44%);
     position: absolute;
     top: 0;
     left: 0;

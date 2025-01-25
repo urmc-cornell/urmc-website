@@ -1,9 +1,14 @@
+*{
+    width: auto;
+}
+
 .heading {
     display: flex;
     flex-direction: column;
     text-align: center;
     gap: 0px;
     height: 150px;
+    color: white;
 }
 
 .thanks{
@@ -23,43 +28,63 @@
     max-width: 100%;    
 }
 
- .sponsor-section{
+.sponsor-section {
     display: flex;
     flex-wrap: wrap;    
     align-items: center;
     justify-content: center;
-    gap: 45px;
+    gap: 2.5%; /* Use percentage-based gap for responsiveness */
     border-radius: 15px;
-    box-shadow: 0 0 20px #eee;
-    width: 1000px;
-    height: 200px;
+    width: 90%; /* Set width as a percentage of the parent or viewport */
+    height: auto; /* Let height adjust automatically based on content */
+    max-width: 1360px; /* Optional: Limit maximum width for larger screens */
+    aspect-ratio: 1360 / 220; 
     position: relative;
     flex-direction: row;
-    padding-top: 20px;
- }
+    padding-top: 2%; /* Use percentage-based padding */
+    overflow: visible;
+}
+
+ .plat-sponsors {
+    border: 0px solid #EEB50C;
+    background: #DDEAF0;
+} 
 
  .gold-sponsors {
-    background-color: rgba(238, 181, 12, .1);
-    border-color: rgba(238, 181, 12, 1) ;
+    border: 0px solid #EEB50C;
+    background: #CBA135;
 } 
 
 .silver-sponsors {
-    background-color: rgba(38, 89, 153, .1) ;
-    border-color: rgba(38, 89, 153, 1) ;
+    border: 0px solid #C0C0C0;
+    background: rgba(192, 192, 192, 0.50);
 }
 
 .bronze-sponsors {
-    background-color: rgba(55, 56, 60, .1);
-    border-color: rgba(55, 56, 60, 1) ;
+    background: rgba(205, 127, 50, 0.40);
 } 
               
 .buttons {
     padding: 30px;
 }
+.linkedin {
+    width: auto;
+    height: 50rem;
+}
 
 .bloomberg {
-    width:25%;
-    height:25%;
+    width: auto;
+    height: 3.9rem;
+}
+
+.roblox {
+    width: auto;
+    height: 5rem;
+}
+
+.janestreet {
+    width: auto;
+    height: 15rem;
 }
 
 .uber {
@@ -68,8 +93,9 @@
 }
 
 .ey {
-    margin-top: -2%;
-    margin-left: -2%;
+    height: 7.6rem;
+    width: auto;
+    margin-bottom: 2%;
 }
 
 .duolingo {
@@ -78,8 +104,8 @@
 }
 
 .logo {
-    max-width: 30%;
-    max-height: 30%;
+    max-width: 60%;
+    max-height: 60%;
     text-align: center;
     position: static;
 
@@ -128,7 +154,7 @@
         align-items: center;
         justify-content: center;
         border-radius: 15px;
-        box-shadow: 0 0 20px #eee;
+        /* box-shadow: 0 0 20px #eee; */
         width: 300px;
         height: 200px;
         position: relative;
