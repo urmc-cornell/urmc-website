@@ -14,11 +14,12 @@ import sony from '../images/sponsors/sony.png';
 import thoughtworks from '../images/sponsors/thoughtworks.png';
 import uber from '../images/sponsors/uber.png';
 import yext from '../images/sponsors/yext.png';
-import mastercard from '../images/sponsors/master-card.svg';
-import datadog from '../images/sponsors/datadog.svg';
-import roblox from '../images/sponsors/roblox.jpeg';
+import mastercard from '../images/sponsors/master-card.png';
+import datadog from '../images/sponsors/datadog.png';
+import roblox from '../images/sponsors/roblox.png';
 import ey from '../images/sponsors/ey.png'
 import linkedin from '../images/sponsors/linkedin.png'
+import hrt from '../images/sponsors/hrt.png'
 
 export default function Sponsors() {
     return (
@@ -27,11 +28,23 @@ export default function Sponsors() {
                 <h1 className="corporate-sponsors-text"> 2024-2025 CORPORATE SPONSORS </h1>
                 <h3 className="thanks">Thank you for all your continued support of our organization!</h3>
             </div>
+
             <div className="sponsor-tiers">
+
+                <div className="sponsor-section plat-sponsors"> 
+                        <a className="btn-small btn-plat">PLATINUM</a>
+                        <img src={linkedin} alt="linkedin Logo" className="linkedin logo gold-logo"></img>
+                        {/* <img src={reddit} alt="reddit Logo" className="logo gold-logo"></img> */}
+                        {/* <img src={thoughtworks} alt="thoughtworks Logo" className="logo gold-logo"></img> */}
+
+
+                </div>
+
                 <div className="sponsor-section gold-sponsors"> 
                     <a className="btn-small btn-gold">GOLD</a>
-                    <img src={janestreet} alt="Jane Street Logo" className="logo gold-logo"></img>
-                    <img src={linkedin} alt="linkedin Logo" className="logo gold-logo"></img>
+                    <img src={janestreet} alt="Jane Street Logo" className="janestreet logo gold-logo"></img>
+                    <img src={hrt} alt="HRT Logo" className="hrt logo gold-logo"></img>
+                    {/* <img src={linkedin} alt="linkedin Logo" className="logo gold-logo"></img> */}
                     {/* <img src={reddit} alt="reddit Logo" className="logo gold-logo"></img> */}
                     {/* <img src={thoughtworks} alt="thoughtworks Logo" className="logo gold-logo"></img> */}
 
@@ -40,23 +53,23 @@ export default function Sponsors() {
                 <div className="sponsor-section silver-sponsors"> 
                     <a className="btn-small btn-silver">SILVER</a>
                         {/* <img src={meta} alt="Meta Logo" className="logo"></img> */}
-                        <img src={duolingo} alt="duolingo Logo" className=" duolingo"></img>
+                        {/* <img src={duolingo} alt="duolingo Logo" className=" duolingo"></img> */}
                         {/* <img src={goldman} alt="goldman Logo" className="logo"></img> */}
                         {/* <img src={yext} alt="yext Logo" className="logo"></img> */}
                         {/* <img src={oracle} alt="oracle Logo" className="logo"></img> */}
-                        <img src={capitalone} alt="Capital One Logo" className="duolingo"></img>
+                        {/* <img src={capitalone} alt="Capital One Logo" className="duolingo"></img> */}
                         <img src={bloomberg} alt="Bloomberg Logo" className="logo bloomberg"></img>
 
                 </div>
                 <div className="sponsor-section bronze-sponsors"> 
                     <a className="btn-small btn-bronze">BRONZE</a>
-                    <img src={google} alt="google Logo" className="logo "></img>
-                    <img src={uber} alt="uber Logo" className="logo "></img>
-                    <img src={mastercard} alt="master card Logo" className="logo "></img>
-                    <img src={datadog} alt="datadog Logo" className="logo "></img>
-                    <img src={roblox} alt="roblox Logo" className="logo "></img>
-                    <img src={palantir} alt="palantir Logo" className="logo "></img>
-                    <img src={ey} alt="ey Logo" className="logo "></img>
+                    <img src={google} alt="google Logo" className="logo"></img>
+                    {/* <img src={uber} alt="uber Logo" className="logo "></img> */}
+                    <img src={mastercard} alt="master card Logo" className="logo"></img>
+                    <img src={datadog} alt="datadog Logo" className="logo"></img>
+                    <img src={roblox} alt="roblox Logo" className="logo"></img>
+                    {/* <img src={palantir} alt="palantir Logo" className="logo "></img> */}
+                    <img src={ey} alt="ey Logo" className="ey logo"></img>
 
                     
                 </div>
