@@ -79,7 +79,7 @@ export default function Points() {
       }
 
     return (
-        <div style={{ height: 1000, overflow: 'auto' }} className="points-page">
+        <div style={{ height: 1000, overflow: 'auto', color: 'white'}} className="points-page">
             <div className="heading"> 
                 <h1 className="Points"> Points Tracking </h1>
                 <h3 className="subheader">URMC Collects Points To Reward Active Members</h3>
@@ -88,7 +88,7 @@ export default function Points() {
                 <div className="points-container">
                     {/* Left side - Points Breakdown */}
                     <div className="points-section">
-                        <h2 className="fall22">Earning Points</h2>
+                        <h2 className="fall22" style={{color: 'white'}}>Earning Points</h2>
                         <h3 className="thanks">Members can earn points by...</h3>
                     
                         <div className="points-boxes">
@@ -108,7 +108,7 @@ export default function Points() {
 
                         {/* Points lookup form */}
                         <div className="view_points">
-                            <h2 className="fall22">View Points</h2>
+                            <h2 className="fall22" style={{color: 'white'}}>View Points</h2>
                             <h3 className="subheader">Enter your netID below to see your points</h3>
                             
                             <div className="netID input">
@@ -156,7 +156,7 @@ export default function Points() {
                     <div className="leaderboard-section">
                         <h2>Leaderboard</h2>
                         <div className="fall22">
-                            <ul className="subheader" style={{textAlign: 'left', paddingLeft: '20px'}}>
+                            <ul className="subheader" style={{textAlign: 'left', paddingLeft: '20px', color: 'lightgrey'}}>
                                 <li>{leaderboard[0]}</li>
                                 <li>{leaderboard[1]}</li>
                                 <li>{leaderboard[2]}</li>
