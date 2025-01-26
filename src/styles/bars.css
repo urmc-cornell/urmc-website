@@ -3,7 +3,7 @@
 }
 
 .foot {
-    background: #FBDCB1;
+    background: #EEEEE6;
     color: #000000;
     display: flex;
     justify-content: space-between;
@@ -36,13 +36,13 @@
 }
 
 .nav li.active {
-    color: #B95F37;
-    background-color: #FBDCB1;
+    color: #667BC4;
+    background-color: #C7D3FB;
     border-radius: 11px;
 }
 
 .nav li:hover {
-    color: #B95F37;
+    color: #667BC4;
 }
 
 .nav-menu {

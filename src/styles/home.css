@@ -38,8 +38,8 @@
     display: flex;
     padding: 20px 40px 20px 40px;
     font-weight: bold;
-    background-size: 200% auto;
-    font-size: 20px;
+    /* background-size: 200% auto; */
+    font-size: 30px;
     color: white;
     /* box-shadow: 0 0 20px #eee; */
     text-decoration: none;
@@ -61,7 +61,7 @@
 }
 
 .btn-1 {
-    background-image: linear-gradient(to right, #5F8DBF 0%, #79baff 50%);
+    background-image: linear-gradient(108deg, #DFC856 19%, #D38745 71%);
     text-align: center;
 }
 
@@ -106,7 +106,8 @@
 }
 
 .btn-1:hover {
-    background-image: linear-gradient(to right, #4b6f96 0%, #6096d0 50%);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
 }
 
 .btn-2:hover {
