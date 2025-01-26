@@ -27,7 +27,7 @@ class TADirectory extends Component {
 
         return <div>
             <h1 className="leadership">URM TA Directory</h1>
-            <h2 className="fall22"> Fall 2024</h2>
+            <h2 className="fall22"> Spring 2025</h2>
             <TaPopup trigger={this.state.popupActive} card={this.state.selectedCard} setTrigger={this.handleClose}>
                 <h3>My popup!</h3>
             </TaPopup>
@@ -44,7 +44,7 @@ class TADirectory extends Component {
                             onClick={() => this.handleCardClick(card)}
                         >
                              <div className="ta-card" style={{
-                                backgroundColor: '#f2d2bd',
+                                backgroundColor: '#EEEEE6',
                                 padding: '20px',
                                 borderRadius: '12px',
                                 boxShadow: '0 2px 4px rgba(0,0,0,0.1)',

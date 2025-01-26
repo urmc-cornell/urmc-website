@@ -39,7 +39,7 @@ import boubakarSecondary from '../Supporting/leadership-headshots/boubakarSecond
 export const cards = [
     {
         id: 1,
-        title: 'Co - President',
+        title: 'Co-President',
         image: ronaldPrimary,
         name: 'Ronald Jabouin Jr',
         secondaryImage: ronaldPrimary,
@@ -52,7 +52,7 @@ export const cards = [
     },
     {
         id: 2,
-        title: 'Co - President',
+        title: 'Co-President',
         image: celestePrimary,
         name: 'Celeste Naughton',
         secondaryImage: celestePrimary,
@@ -65,7 +65,7 @@ export const cards = [
     },
     {
         id: 3,
-        title: 'Vice - President',
+        title: 'Vice-President',
         image: judithPrimary,
         name: 'Judith Jatto',
         secondaryImage: judithPrimary,

@@ -2,7 +2,7 @@
     width: 250px;
     overflow: hidden;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background-color: #FFF3E2;
+    background-color: #EEEEE6;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -21,15 +21,21 @@
 }
 
 .card-title {
+    align-self: stretch;
+    text-align: center;
     font-family: "Montserrat-Medium-Soft";
-    font-weight: 900;
-    font-size: 18px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    font-variant: all-small-caps;
+    color: #37383C;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: normal;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .card-name {
     font-family: "Montserrat-Medium-Soft";
+    color: #000;
     font-size: 23px;
     padding-bottom: 17px;
     padding-left: 5px;

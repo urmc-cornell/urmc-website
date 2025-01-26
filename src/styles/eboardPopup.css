@@ -22,7 +22,7 @@
   gap: 20px;
   padding: 32px;
   width: 85%;
-  background-color: white;
+  background-color: #f3f3ed;
   border-radius: 20px;
 }
 
@@ -120,7 +120,7 @@
   gap: 10px;
   width: auto;
   height: 32px;
-  background: #E2F3BF;
+  background: #667BC4;
   border-radius: 11px;
   font-family: 'Montserrat-Medium-Soft';
   font-style: normal;
@@ -130,6 +130,7 @@
   display: flex;
   align-items: center;
   text-transform: uppercase;
+  color: #ffffff;
 }
 
 .contact {
