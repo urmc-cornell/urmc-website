@@ -24,10 +24,6 @@ export default function Home() {
             <h1 className="header">UNDERREPRESENTED MINORITIES IN</h1>
             <h2 className="header bottom">COMPUTING</h2>
             <h2 className="sub-header">Building a supportive community where all can find success.</h2>
-            {/* <div className="buttons">
-                <a class="btn btn-1" href="https://urmc.slack.com/join/shared_invite/zt-984krsoy-9lIJn2XrJOx1NuQUtKc40w" target="_blank">JOIN THE COMMUNITY</a>
-                <a class="btn btn-2" href="/about-us">LEARN MORE</a>
-            </div> */}
         </div>
 
         <div className="images">
