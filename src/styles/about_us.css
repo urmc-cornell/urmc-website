@@ -7,8 +7,11 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 100px;
+    /* gap: 100px; */
+    gap: 6rem;
     padding-bottom: 60px;
+    margin-bottom: 6rem;
+    
 }
 
 .about-us {
@@ -22,6 +25,16 @@ body {
     justify-content: center;
 }
 
+.about-header{
+    color: #F0F0F0;
+    text-align: center;
+    font-family: "Helvetica Neue";
+    font-size: 3.375rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
 .heading-academic {
     font-size: 40px;
     font-weight: 600;
@@ -29,12 +42,21 @@ body {
 }
 
 .purpose {
-    width: 80%;
+    width: 90%;
     margin-top: 20px;
     margin-bottom: 10px;
-    font-size: 30px;
-    color: #37383C;
-    font-weight: 500;
+
+    color: #F0F0F0;
+    font-family: "Helvetica Neue";
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.purpose-bolded {
+    color: #EEB50C;
+    font-weight: 700;
 }
 
 .pillars {
@@ -42,29 +64,53 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    max-width: 100%;
-    position: relative;
-    margin-left: 50px;
-    margin-right: 50px;
+    width: 100%;
+    margin-left: 7.34rem;
+    margin-right: 7.34rem;  
+    gap: 4rem;  
 }
 
 .pillar {
-    width: 400px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+
+    width: 23.9375rem;
     height: auto;
-    position: relative;
+    padding: 3.6875rem 0.5rem;
+
+    gap: 2.5rem;
+
+    border-radius: 1rem;
+    background: #667BC4;
 }
 
-.stats {
+.pillar-icon {
+    width: 9.375rem;
+    height: 9.375rem;
+}
+
+.pillar-text {
+    color: #FFF;
+    text-align: center;
+    font-family: Hard;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: normal;
+}
+
+
+.stats-bar {
     display: flex;
-    width: 1139px;
-    height: 146px;
-    padding: 39px 109px;
+    width: 76.375rem;
+    height: 12.125rem;
+    padding: 2.4375rem 6.8125rem;
     justify-content: center;
     align-items: center;
-    gap: 152px;
+    gap: 9.5rem;
     flex-shrink: 0;
-    border-radius: 36px;
-    background: var(--Light-Green, #D6E7B4);
+    border-radius: 2.25rem;
+    background: #667BC4;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -77,13 +123,22 @@ body {
 }
 
 .stats-header {
-    font-size: 25px;
+    /* font-size: 25px;
+    font-weight: 600; */
+
+    color: #F0F0F0;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 2rem;
     font-weight: 600;
 }
 
 .stats-number {
-    font-size: 50px;
-    font-weight: 800;
+    color: #F0F0F0;
+    text-align: center;
+    font-family: Hard;
+    font-size: 2.8125rem;
+    font-weight: 700;
 }
 
 .stats-block.bottom {
@@ -91,25 +146,160 @@ body {
     font-weight: bold;
 }
 
-.academic-support {
-    margin-left: 10%;
-    margin-right: 10%;
+
+
+
+.pillar-sections {
     display: flex;
-    gap: 40px;
+    flex-direction: column;
+    width: 100%;
+    gap: 100px;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+    /* margin-left: 5.84rem; */
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+}
+
+.pillar-section {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.section-images{
+    display: flex;
     flex-direction: column;
 }
 
-.academic-title {
-    color: var(--URMC-Blue, #265999);
-    font-family: Helvetica Neue;
-    font-size: 40px;
+
+
+.section-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title {
+    color: #EEB50C;
+    font-family: Montserrat;
+    font-size: 3.5rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    font-variant: all-small-caps;
+    text-transform: capitalize;
 }
 
-.academic-cards {
+.section-text{
+    color: #FFF;
+    font-family: Medium;
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+
+.academic-images{
+    display: flex;
+    flex-direction: column;
+    gap: 2.69rem;
+}
+
+#academic-1{
+    width: 34.1875rem;
+    height: 20.5625rem;
+    flex-shrink: 0;
+}
+
+#academic-2{
+    margin-left: 4.12rem;
+    width: 32.25rem;
+    height: 21.5625rem;
+}
+
+.community-images{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    /* padding: 20px; */
+}
+
+.profdev-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 3.5rem;
+    grid-template-areas: 
+        "image1 image3"
+        "image2 image3";
+}
+
+#profdev-1{
+    grid-area: image1;
+    width: 23.14094rem;
+    height: 17.35569rem;
+    flex-shrink: 0;
+}
+
+#profdev-2{
+    grid-area: image2;
+    width: 24.04019rem;
+    height: 18.03013rem;
+    flex-shrink: 0;
+    flex-shrink: 0;
+}
+
+#profdev-3{
+    grid-area: image3;
+    width: 22.51144rem;
+    height: 15.01763rem;
+    flex-shrink: 0;
+    margin: auto;
+}
+
+.join-section{
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+#join-header{
+    color: #EEB50C;
+    font-family: Hard;
+    font-size: 3.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    height: 5rem;
+    margin: 0;
+}
+
+#join-button{
+    display: flex;
+    height: 4.3125rem;
+    padding: 0.25rem 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+
+    border-radius: 4rem;
+    background: var(--urmc-gold-gradient, linear-gradient(108deg, #DFC856 19.51%, #D38745 71.52%));
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin: 0;
+}
+
+#join-text {
+    color: var(--URMC-White, #F9F9F9);
+    text-align: center;
+    font-family: Hard;
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.section-cards {
     display: flex;
     width: 100%;
     flex-direction: row;
@@ -117,7 +307,7 @@ body {
     gap: 100px;
 }
 
-.academic-widgets {
+.section-widgets {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -134,16 +324,10 @@ body {
 }
 
 
-.pillar-sections {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 100px;
-}
 
 @media (max-width: 768px) {
 
-    .academic-title {
+    .pillar-title {
         font-size: 30px;
     }
     .stats {
@@ -154,7 +338,7 @@ body {
         gap: 20px;
     }
 
-    .academic-support {
+    .pillar-support {
         align-items: center;
     }
 
@@ -166,7 +350,7 @@ body {
         font-size: 15px;
     }
 
-    .academic-cards {
+    .pillar-cards {
         flex-direction: column;
         gap: 20px;
     }

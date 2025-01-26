@@ -15,7 +15,8 @@ import Home from './pages/Home.js';
 import Ta_directory from './pages/Ta_directory';
 
 function App() {
-  let component
+  let component;
+  const isHomePage = window.location.pathname === "/";
 
   switch (window.location.pathname) {
     case "/":
@@ -47,7 +48,7 @@ function App() {
   return (
     <div className="page-container">
       <div className="content-wrap">
-        <Navbar />
+        {!isHomePage && <Navbar />}
         <div className="body">
           {component}
         </div>

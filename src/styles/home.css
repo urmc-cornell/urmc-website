@@ -11,12 +11,55 @@
     position: relative;
 }
 
+.home-nav{
+    display: flex;
+    align-items: center;
+    margin-left: 4.5rem;
+    margin-top: 2.75rem;
+}
+
+
+.home-logo {
+    /* position: relative; */
+    width: 22rem;
+    height: 9.1875rem;
+    /* margin-left: 4.5rem;
+    margin-top: 2.75rem; */
+}
+
+.home-nav-menu {
+    display: flex;
+    width: 65.875rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2.6875rem;
+    list-style: none;
+    padding-top: 2rem;
+}
+
+
+.home-nav-menu li a {
+    text-decoration: none;
+    color: #D9D9D9;
+    font-family: Medium;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+
 .header {
-    font-family: "Hard";
-    font-size: 75px;
-    text-align: center;
+    color: #F0F0F0;
     padding-bottom: 0;
     margin-bottom: 0;
+    text-align: center;
+    font-family: "Hard";
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
 }
 
 .header.bottom {
@@ -24,8 +67,16 @@
 }
 
 .sub-header {
-    color: #37383C;
+    /* color: #37383C;
+    text-align: center; */
+
+    color: #F0F0F0;
     text-align: center;
+    font-family: "Helvetica Neue";
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .heart {
@@ -116,31 +167,38 @@
 
 .blue_ellipse {
     position: absolute;
-    bottom: 0px;
-    left: 0px;
-    max-width: 100%;
-    max-height: 80%;
+    bottom: 0rem;
+    left: 0rem;
+    width: 64.0625rem;
+    height: 24.74056rem;
+    flex-shrink: 0;
+    padding-top: 2rem;
+
+    /* max-width: 100%;
+    max-height: 80%; */
 }
 
-.yellow_ellipse {
+.purple_ellipse {
     position: absolute;
-    right: 0px;
-    bottom: 0px;
-    max-width: 100%;
-    max-height: 80%;
+    bottom: 0rem;
+    right: 0rem;
+    width: 57.125rem;
+    height: 23.83388rem;
+    flex-shrink: 0;
+    padding-top: 2rem;
 }
 
 .group {
     position: relative;
     margin-bottom: 0;
-    width: 98%;
+    width: 100%;
 }
 
 .images {
     display: flex;
     justify-content: center;
     position: relative;
-    margin-top: auto;
+    margin-top: 2.56rem;
 }
 
 @media (max-width: 768px) {

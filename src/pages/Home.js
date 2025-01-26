@@ -1,23 +1,41 @@
-import group from '../images/urmcSP22.png';
+import group from '../images/urmcfa2024.png';
 import blue_ellipse from '../images/blue_ellipse.png';
-import yellow_ellipse from '../images/yellow_ellipse.png';
+import purple_ellipse from '../images/purple_ellipse.png';
+import About_us from './About_us';
 
 export default function Home() {
     return <home className="home">
+
+        <nav className="home-nav">
+            <a href="/" >
+                <img src={require('../images/gold_logo.png')} alt="URMC Logo" className="home-logo"/>
+            </a>
+            <ul className="home-nav-menu">
+                <li><a href="/leadership">LEADERSHIP</a></li>
+                <li><a href="/events">EVENTS</a></li>
+                <li><a href="/ta-directory">TA DIRECTORY</a></li>
+                <li><a href="/getting-involved">GETTING INVOLVED</a></li>
+                <li><a href="/sponsors">SPONSORS</a></li>
+                <li><a href="/points">POINTS</a></li>
+            </ul>
+        </nav>
+
         <div className="home-content">
-            <h1 className="header">UNDERREPRESENTED</h1>
-            <h2 className="header bottom"> MINORITIES IN COMPUTING</h2>
+            <h1 className="header">UNDERREPRESENTED MINORITIES IN</h1>
+            <h2 className="header bottom">COMPUTING</h2>
             <h2 className="sub-header">Building a supportive community where all can find success.</h2>
-            <div className="buttons">
+            {/* <div className="buttons">
                 <a class="btn btn-1" href="https://urmc.slack.com/join/shared_invite/zt-984krsoy-9lIJn2XrJOx1NuQUtKc40w" target="_blank">JOIN THE COMMUNITY</a>
                 <a class="btn btn-2" href="/about-us">LEARN MORE</a>
-            </div>
+            </div> */}
         </div>
 
         <div className="images">
             <img src={blue_ellipse} className="blue_ellipse"></img>
-            <img src={yellow_ellipse} className="yellow_ellipse"></img>
+            <img src={purple_ellipse} className="purple_ellipse"></img>
             <img src={group} className="group"></img>
         </div>
+
+        <About_us></About_us>
     </home>
 }
