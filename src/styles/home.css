@@ -2,39 +2,45 @@
     box-sizing: border-box;
 }
 
+:root {
+    /* dimensionless ratio of (current viewport / 1512px) */
+    --scale: 1;
+  }
+
 .home {
     display: flex;
-    justify-content: center;
-    /* align-items: stretch; */
+    /* justify-content: center; */
     flex-grow: 1;
     flex-direction: column;
     position: relative;
+    overflow-x:hidden;
+
+    /* max-width: 1512px;
+    margin: 0 auto; */
 }
 
 .home-nav{
+    
     display: flex;
     align-items: center;
-    margin-left: 4.5rem;
-    margin-top: 2.75rem;
+    margin-left: calc(4.5rem * var(--scale));
+    margin-top: calc(2.75rem * var(--scale));
 }
 
 
 .home-logo {
-    /* position: relative; */
-    width: 22rem;
-    height: 9.1875rem;
-    /* margin-left: 4.5rem;
-    margin-top: 2.75rem; */
+    width: calc(22rem * var(--scale));
+    height: calc(9.1875rem * var(--scale));
 }
 
 .home-nav-menu {
     display: flex;
-    width: 65.875rem;
+    width: calc(65.875rem * var(--scale));
     justify-content: center;
     align-items: center;
-    gap: 2.6875rem;
+    gap: calc(2.6875rem * var(--scale));
     list-style: none;
-    padding-top: 2rem;
+    padding-top:calc(2rem * var(--scale));
 }
 
 
@@ -42,13 +48,23 @@
     text-decoration: none;
     color: #D9D9D9;
     font-family: Medium;
-    font-size: 1.25rem;
+    font-size: calc(1.25rem * var(--scale));
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     text-transform: uppercase;
 }
 
+.home-nav-menu li a:hover {
+    color: #667BC4;
+}
+
+.home-nav-menu li.active {
+    color: #667BC4;
+    background-color: #C7D3FB;
+    padding: calc(0.25rem * var(--scale)) calc(0.625rem * var(--scale));
+    border-radius: calc(0.6875rem * var(--scale));
+}
 
 .header {
     color: #F0F0F0;
@@ -56,7 +72,7 @@
     margin-bottom: 0;
     text-align: center;
     font-family: "Hard";
-    font-size: 4rem;
+    font-size: calc(4rem * var(--scale));
     font-weight: 700;
     line-height: normal;
     text-transform: uppercase;
@@ -73,42 +89,42 @@
     color: #F0F0F0;
     text-align: center;
     font-family: "Helvetica Neue";
-    font-size: 1.875rem;
+    font-size: calc(1.875rem * var(--scale));
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
 .heart {
-    width: 11px;
-    height: 11px;
+    width: calc(11px * var(--scale));
+    height: calc(11px * var(--scale));
 }
 
 .btn {
-    margin: 10px;
+    margin: calc(10px * var(--scale));
     display: flex;
-    padding: 20px 40px 20px 40px;
+    padding: calc(20px * var(--scale)) calc(40px * var(--scale));
     font-weight: bold;
     /* background-size: 200% auto; */
-    font-size: 30px;
+    font-size: calc(30px * var(--scale));
     color: white;
     /* box-shadow: 0 0 20px #eee; */
     text-decoration: none;
-    border-radius: 64px;
+    border-radius: calc(64px * var(--scale));
     text-align: center;
 }
 
 .btn-small {
-    margin: 10px;
+    margin: calc(10px * var(--scale));
     display: flex;
-    padding: 10px 20px 10px 20px;
+    padding: calc(10px * var(--scale)) calc(20px * var(--scale));
     font-weight: bold;
     background-size: 200% auto;
-    font-size: 20px;
+    font-size: calc(20px * var(--scale));
     color: white;
     /* box-shadow: 0 0 20px grey; */
     text-decoration: none;
-    border-radius: 64px;
+    border-radius: calc(64px * var(--scale));
 }
 
 .btn-1 {
@@ -167,12 +183,12 @@
 
 .blue_ellipse {
     position: absolute;
-    bottom: 0rem;
-    left: 0rem;
-    width: 64.0625rem;
-    height: 24.74056rem;
+    bottom: 0;
+    left: 0;
+    width: calc(64.0625rem * var(--scale));
+    height: calc(24.74056rem * var(--scale));
     flex-shrink: 0;
-    padding-top: 2rem;
+    padding-top: calc(2rem * var(--scale));
 
     /* max-width: 100%;
     max-height: 80%; */
@@ -180,12 +196,12 @@
 
 .purple_ellipse {
     position: absolute;
-    bottom: 0rem;
-    right: 0rem;
-    width: 57.125rem;
-    height: 23.83388rem;
+    bottom: 0;
+    right: 0;
+    width: calc(57.125rem * var(--scale));
+    height: calc(23.83388rem * var(--scale));
     flex-shrink: 0;
-    padding-top: 2rem;
+    padding-top: calc(2rem * var(--scale));
 }
 
 .group {
@@ -198,7 +214,7 @@
     display: flex;
     justify-content: center;
     position: relative;
-    margin-top: 2.56rem;
+    margin-top: calc(2.56rem * var(--scale));
 }
 
 @media (max-width: 768px) {
@@ -212,7 +228,7 @@
     }
 
     .header {
-        font-size: 20px;
+        font-size: calc(20px * var(--scale));
     }
 
     .buttons {
@@ -221,11 +237,11 @@
     }
 
     .btn {
-        font-size: 16px;
+        font-size: 16px ;
     }
 
     .sub-header {
-        font-size: 16px;
+        font-size: 16px ;
         margin-left: 50px;
         margin-right: 50px;
     }

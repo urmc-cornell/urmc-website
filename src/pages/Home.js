@@ -1,9 +1,14 @@
+import { useEffect } from 'react';
 import group from '../images/urmcfa2024.png';
 import blue_ellipse from '../images/blue_ellipse.png';
 import purple_ellipse from '../images/purple_ellipse.png';
 import About_us from './About_us';
+import { useScale } from '../hooks/useScale';
 
 export default function Home() {
+
+    useScale()
+
     return <home className="home">
 
         <nav className="home-nav">
@@ -33,5 +38,8 @@ export default function Home() {
         </div>
 
         <About_us></About_us>
+        
     </home>
+
+    
 }

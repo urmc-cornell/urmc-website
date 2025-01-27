@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react';
 import academic from '../images/academic_icon.svg';
 import community from '../images/community_icon.svg';
 import profdev from '../images/prof_icon.svg';
@@ -16,6 +16,8 @@ import profdev1 from '../images/sections/prof_dev1.png'
 import profdev2 from '../images/sections/prof_dev2.png' 
 import profdev3 from '../images/sections/prof_dev3.png' 
 import '../styles/about_us.css';
+import { useScale } from '../hooks/useScale';
+
 
 // Component for individual pillar
 const Pillar = ({ icon, text }) => (
@@ -34,20 +36,20 @@ const StatsItem = ({ header, number }) => (
 );
 
 // Component for pillar section
-const PillarSection = ({ title, children, imageSection }) => (
-  <div className="pillar-section">
+const PillarSection = ({ title, children, imageSection, className }) => (
+  <div className={`pillar-section ${className || ''}`}>
     {imageSection}
     <div className="section-content">
       <div className="section-title">{title}</div>
-      <div className="section-text">
-        {children}
-      </div>
+      <div className="section-text">{children}</div>
     </div>
   </div>
 );
 
-class About_us extends Component {
-    render() {
+function About_us() {
+
+  useScale();
+  
   return (
     <main className="about-us-page">
       <section className="about-us">
@@ -87,7 +89,7 @@ class About_us extends Component {
           </ul>
         </PillarSection>
 
-        <PillarSection 
+        <PillarSection className="reverse"
           title="Community Building"
           imageSection={
             <div className="community-images">
@@ -149,6 +151,5 @@ class About_us extends Component {
     </main>
   );
 }
-};
 
 export default About_us;

@@ -100,7 +100,7 @@ class Leadership extends Component {
     render() {
         const {selectedCard, eboard_list } = this.state;
 
-        return <div>
+        return <div className='leadership-page'>
             <h1 className="leadership">Executive Board</h1>
             <h2 className="fall22"> Spring 2025</h2>
             <EboardPopup trigger={this.state.popupActive} card={this.state.selectedCard} setTrigger={this.handleClose}>

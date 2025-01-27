@@ -79,98 +79,79 @@ export default function Points() {
       }
 
     return (
-        <div style={{ height: 1000, overflow: 'auto', color: 'white'}} className="points-page">
-            <div className="heading"> 
-                <h1 className="Points"> Points Tracking </h1>
-                <h3 className="subheader">URMC Collects Points To Reward Active Members</h3>
-                
-                {/* Main content container */}
-                <div className="points-container">
-                    {/* Left side - Points Breakdown */}
-                    <div className="points-section">
-                        <h2 className="fall22" style={{color: 'white'}}>Earning Points</h2>
-                        <h3 className="thanks">Members can earn points by...</h3>
-                    
-                        <div className="points-boxes">
-                            <div className="points-box green">
-                                <span className="points">3 Points</span>
-                                <span className="description">Attending events and completing the attendance form</span>
-                            </div>
-                            <div className="points-box orange">
-                                <span className="points">2 Points</span>
-                                <span className="description">Attending a non G-Body event</span>
-                            </div>
-                            <div className="points-box yellow">
-                                <span className="points">1 Point</span>
-                                <span className="description">Responding to URMC forms</span>
+        <div className="points-page">
+            <h1 className="points">Points</h1>
+            
+            <div className="points-container">
+                    <h2 className="section-title">Point Allocation</h2>
+                    <div className="points-allocation">
+                        <div className="point-group">
+                            <span className="point-value">+1 Point</span>
+                            <div className="point-descriptions">
+                                <div className="point-item">
+                                    <span className="point-description">Event Attendance</span>
+                                </div>
+                                <div className="point-item">
+                                    <span className="point-description">Updating Academic Folder (Max 3)</span>
+                                </div>
                             </div>
                         </div>
-
-                        {/* Points lookup form */}
-                        <div className="view_points">
-                            <h2 className="fall22" style={{color: 'white'}}>View Points</h2>
-                            <h3 className="subheader">Enter your netID below to see your points</h3>
-                            
-                            <div className="netID input">
-                                <form id="points-form" style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '15px'}}>
-                                    <input 
-                                        type="text" 
-                                        id="netID" 
-                                        name="netID" 
-                                        placeholder="Enter netID here"
-                                        style={{
-                                            padding: '12px 20px',
-                                            fontSize: '16px',
-                                            borderRadius: '25px',
-                                            border: '2px solid #e0e0e0',
-                                            width: '250px',
-                                            outline: 'none',
-                                            transition: 'border-color 0.3s ease'
-                                        }}
-                                    />  
-                                    <button 
-                                        type="submit" 
-                                        id="myButton" 
-                                        onClick={point_set}
-                                        style={{
-                                            padding: '12px 30px',
-                                            fontSize: '16px',
-                                            borderRadius: '25px',
-                                            border: 'none',
-                                            backgroundColor: '#4CAF50',
-                                            color: 'white',
-                                            cursor: 'pointer',
-                                            transition: 'background-color 0.3s ease',
-                                            boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-                                        }}
-                                    >
-                                        Get Points
-                                    </button>
-                                    <h3 className="subheader">{points}</h3>
-                                </form>
+                        <div className="point-group">
+                            <span className="point-value">+2 Point</span>
+                            <div className="point-descriptions">
+                                <div className="point-item">
+                                    <span className="point-description">Event Attendance as a TA (eg. review session)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="point-group">
+                            <span className="point-value">+3 Point</span>
+                            <div className="point-descriptions">
+                                <div className="point-item">
+                                    <span className="point-description">Be a mentor/mentee (meet atleast once)</span>
+                                </div>
                             </div>
                         </div>
                     </div>
+            </div>
 
-                    {/* Right side - Leaderboard */}
-                    <div className="leaderboard-section">
-                        <h2>Leaderboard</h2>
-                        <div className="fall22">
-                            <ul className="subheader" style={{textAlign: 'left', paddingLeft: '20px', color: 'lightgrey'}}>
-                                <li>{leaderboard[0]}</li>
-                                <li>{leaderboard[1]}</li>
-                                <li>{leaderboard[2]}</li>
-                                <li>{leaderboard[3]}</li>
-                                <li>{leaderboard[4]}</li>
-                                <li>{leaderboard[5]}</li>
-                                <li>{leaderboard[6]}</li>
-                                <li>{leaderboard[7]}</li>
-                                <li>{leaderboard[8]}</li>
-                                <li>{leaderboard[9]}</li>
-                            </ul> 
+            <div className="points-container">
+
+                    <h2 className="section-title">Point Rewards</h2>
+                    <div className="rewards-grid">
+                        <div className="reward-card">
+                            <h3 className="reward-title">{"Resume\nBook"}</h3>
+                            <p className="reward-value">5 Points</p>
+                        </div>
+                        <div className="reward-card">
+                            <h3 className="reward-title">{"Conference\nScholarships"}</h3>
+                            <p className="reward-value">Top Earners</p>
+                        </div>
+                        <div className="reward-card">
+                            <h3 className="reward-title">{"G-Body\nPrizes"}</h3>
+                            <p className="reward-value">Every 5 Points</p>
                         </div>
                     </div>
-                </div>
+            </div>
+
+            <div className="view-points">
+                <h1>View Points</h1>
+                <h2>Enter your netid below to see your points</h2>
+                <form id="points-form">
+                    <input 
+                        type="text" 
+                        id="netID" 
+                        name="netID" 
+                    />  
+                    <button 
+                        type="submit" 
+                        id="myButton" 
+                        onClick={point_set}
+                    >
+                        Get Points
+                    </button>
+                    <h3>{points}</h3>
+                </form>
             </div>
         </div>
     );

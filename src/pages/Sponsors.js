@@ -20,12 +20,15 @@ import roblox from '../images/sponsors/roblox.png';
 import ey from '../images/sponsors/ey.png'
 import linkedin from '../images/sponsors/linkedin.png'
 import hrt from '../images/sponsors/hrt.png'
+import { useScale } from '../hooks/useScale';
+import React from 'react';
 
 export default function Sponsors() {
+    useScale();
     return (
-        <div> 
+        <div className='sponsor-page'> 
             <div className="heading"> 
-                <h1 className="corporate-sponsors-text"> 2024-2025 CORPORATE SPONSORS </h1>
+                <h1 className="corporate-sponsors-text"> 2025 Corporate Sponsors </h1>
                 <h3 className="thanks">Thank you for all your continued support of our organization!</h3>
             </div>
 
@@ -43,7 +46,6 @@ export default function Sponsors() {
                 <div className="sponsor-section gold-sponsors"> 
                     <a className="btn-small btn-gold">GOLD</a>
                     <img src={janestreet} alt="Jane Street Logo" className="janestreet logo gold-logo"></img>
-                    <img src={hrt} alt="HRT Logo" className="hrt logo gold-logo"></img>
                     {/* <img src={linkedin} alt="linkedin Logo" className="logo gold-logo"></img> */}
                     {/* <img src={reddit} alt="reddit Logo" className="logo gold-logo"></img> */}
                     {/* <img src={thoughtworks} alt="thoughtworks Logo" className="logo gold-logo"></img> */}
@@ -59,6 +61,7 @@ export default function Sponsors() {
                         {/* <img src={oracle} alt="oracle Logo" className="logo"></img> */}
                         {/* <img src={capitalone} alt="Capital One Logo" className="duolingo"></img> */}
                         <img src={bloomberg} alt="Bloomberg Logo" className="logo bloomberg"></img>
+                        <img src={hrt} alt="HRT Logo" className="hrt logo gold-logo"></img>
 
                 </div>
                 <div className="sponsor-section bronze-sponsors"> 

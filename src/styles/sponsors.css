@@ -2,18 +2,37 @@
     width: auto;
 }
 
+
+.sponsor-page{
+    margin-top: calc(1.5rem * var(--scale));
+    margin-bottom: calc(3.47rem * var(--scale));
+}
+
 .heading {
     display: flex;
     flex-direction: column;
     text-align: center;
     gap: 0px;
-    height: 150px;
     color: white;
 }
 
+.corporate-sponsors-text {
+    color: #F0F0F0;
+    font-family: "Helvetica Neue";
+    font-size: calc(4rem * var(--scale));
+    font-weight: 700;
+    margin: 0rem;
+}
+
+
 .thanks{
-    font-weight: normal;
-    font-size: x-large;
+    /* font-weight: normal;
+    font-size: x-large; */
+
+    color: var(--Leadership-Gray-White, #EEEEE6);
+    font-family: "Helvetica Neue";
+    font-size: calc(1.5625rem * var(--scale));
+    font-weight: 400;
 }
 
 .sponsor-tiers{
@@ -22,9 +41,10 @@
     column-gap: normal;
     justify-content: center;
     align-items: center; 
-    gap: 50px;
-    margin-left: 50px;
-    margin-right: 50px;
+    gap: calc(50px * var(--scale));
+    margin-left: calc(50px * var(--scale));
+    margin-right: calc(50px * var(--scale));
+    margin: calc(2.5rem * var(--scale)) 0rem;
     max-width: 100%;    
 }
 
@@ -34,10 +54,10 @@
     align-items: center;
     justify-content: center;
     gap: 2.5%; /* Use percentage-based gap for responsiveness */
-    border-radius: 15px;
+    border-radius: calc(15px * var(--scale));
     width: 90%; /* Set width as a percentage of the parent or viewport */
     height: auto; /* Let height adjust automatically based on content */
-    max-width: 1360px; /* Optional: Limit maximum width for larger screens */
+    max-width: calc(1360px * var(--scale));
     aspect-ratio: 1360 / 220; 
     position: relative;
     flex-direction: row;
@@ -65,26 +85,26 @@
 } 
               
 .buttons {
-    padding: 30px;
+    padding: calc(30px * var(--scale));
 }
 .linkedin {
     width: auto;
-    height: 50rem;
+    height: calc(50rem * var(--scale));
 }
 
 .bloomberg {
     width: auto;
-    height: 3.9rem;
+    height: calc(3.9rem * var(--scale));
 }
 
 .roblox {
     width: auto;
-    height: 5rem;
+    height: calc(5rem * var(--scale));
 }
 
 .janestreet {
     width: auto;
-    height: 15rem;
+    height: calc(15rem * var(--scale));
 }
 
 .uber {
@@ -93,7 +113,7 @@
 }
 
 .ey {
-    height: 7.6rem;
+    height: calc(7.6rem * var(--scale));
     width: auto;
     margin-bottom: 2%;
 }
@@ -109,6 +129,10 @@
     text-align: center;
     position: static;
 
+}
+
+.btn-1{
+    background: var(--blue-cta-color, linear-gradient(138deg, #C0C0C0 -18.69%, #265999 96.38%));
 }
 
 @media (max-width: 768px) {
@@ -165,5 +189,7 @@
         display: flex;
         flex-direction: column;
     }
+
+
 }
 
