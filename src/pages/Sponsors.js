@@ -57,7 +57,6 @@ export default function Sponsors() {
                         {/* <img src={goldman} alt="goldman Logo" className="logo"></img> */}
                         {/* <img src={yext} alt="yext Logo" className="logo"></img> */}
                         {/* <img src={oracle} alt="oracle Logo" className="logo"></img> */}
-                        {/* <img src={capitalone} alt="Capital One Logo" className="duolingo"></img> */}
                         <img src={bloomberg} alt="Bloomberg Logo" className="logo bloomberg"></img>
 
                 </div>
@@ -69,6 +68,7 @@ export default function Sponsors() {
                     <img src={datadog} alt="datadog Logo" className="logo"></img>
                     <img src={roblox} alt="roblox Logo" className="logo"></img>
                     {/* <img src={palantir} alt="palantir Logo" className="logo "></img> */}
+                    <img src={capitalone} alt="Capital One Logo" className="duolingo"></img>
                     <img src={ey} alt="ey Logo" className="ey logo"></img>
 
                     
