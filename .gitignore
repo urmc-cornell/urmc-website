@@ -11,6 +11,12 @@
 # production
 /build
 
+
+# environment variables
+.env
+.env.*
+!.env.example
+
 # misc
 .DS_Store
 .env.local
@@ -23,3 +29,7 @@ yarn-debug.log*
 yarn-error.log*
 
 secrets.json
+
+venv/
+__pycache__/
+*.pyc

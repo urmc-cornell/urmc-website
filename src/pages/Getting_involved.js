@@ -1,6 +1,6 @@
 import '../styles/getting_involved.css';
 import '../styles/home.css'
-import { useScale } from '../hooks/useScale';
+import { useScale } from '../hooks/useScale.js';
 import React from 'react';
 
 

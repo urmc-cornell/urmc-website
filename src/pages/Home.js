@@ -2,8 +2,9 @@ import { useEffect } from 'react';
 import group from '../images/urmcfa2024.png';
 import blue_ellipse from '../images/blue_ellipse.png';
 import purple_ellipse from '../images/purple_ellipse.png';
-import About_us from './About_us';
-import { useScale } from '../hooks/useScale';
+import About_us from './About_us.js';
+import { useScale } from '../hooks/useScale.js';
+import gold_logo from '../images/gold_logo.png'
 
 export default function Home() {
 
@@ -13,7 +14,7 @@ export default function Home() {
 
         <nav className="home-nav">
             <a href="/" >
-                <img src={require('../images/gold_logo.png')} alt="URMC Logo" className="home-logo"/>
+                <img src={gold_logo} alt="URMC Logo" className="home-logo"/>
             </a>
             <ul className="home-nav-menu">
                 <li><a href="/leadership">LEADERSHIP</a></li>

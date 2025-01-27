@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import academic from '../images/academic_icon.svg';
 import community from '../images/community_icon.svg';
 import profdev from '../images/prof_icon.svg';
-import Carousel from '../components/Carousel';
-import AboutUsPillarCard from '../components/AboutUsPillarCard';
-import * as Constants from '../Supporting/AboutUsConstants';
-import Widget from '../components/Widget';
+import Carousel from '../components/Carousel.js';
+import AboutUsPillarCard from '../components/AboutUsPillarCard.js';
+import * as Constants from '../Supporting/AboutUsConstants.js';
+import Widget from '../components/Widget.js';
 import academic1 from '../images/sections/academic_1.png'  
 import academic2 from '../images/sections/academic_2.png'  
 import community1 from '../images/sections/community_1.png'  
@@ -16,7 +16,7 @@ import profdev1 from '../images/sections/prof_dev1.png'
 import profdev2 from '../images/sections/prof_dev2.png' 
 import profdev3 from '../images/sections/prof_dev3.png' 
 import '../styles/about_us.css';
-import { useScale } from '../hooks/useScale';
+import { useScale } from '../hooks/useScale.js';
 
 
 // Component for individual pillar

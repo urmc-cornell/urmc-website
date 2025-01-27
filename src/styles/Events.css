@@ -1,3 +1,10 @@
+.page-title{
+    color: #F0F0F0;
+    text-align: center;
+    font-family: "Helvetica Neue";
+    font-size: 4rem;
+    font-weight: 700;
+}
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 100fr));
@@ -30,10 +37,11 @@
 .this-week {
     font-family: "Montserrat-Medium-Soft";
     display: flex;
-    font-size: 23px;
     left: 72px;
-    font-variant: all-small-caps;
     margin-left: 72px;
     color: #265999;
 
+    color: #EEB50C;
+    font-size: 2.25rem;
+    font-weight: 600;
 }

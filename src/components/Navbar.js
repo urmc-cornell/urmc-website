@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/bars.css';
-import { useScale } from '../hooks/useScale';
+import { useScale } from '../hooks/useScale.js';
+import gold_logo from '../images/gold_logo.png'
 
 function Navbar() {
     const [clicked, setClicked] = React.useState(false);
@@ -13,7 +14,7 @@ function Navbar() {
     return (
         <nav className="nav">
             <a href="/">
-                <img src={require('../images/gold_logo.png')} className="site-title" alt="URMC Logo" />
+                <img src={gold_logo} className="site-title" alt="URMC Logo" />
             </a>
             <div className="menu-icon" onClick={handleClick}>
                 <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
@@ -33,7 +34,7 @@ function Navbar() {
 }
 
 function CustomLink({ href, children, ...props }) {
-    const path = window.location.pathname
+  const path = window.location.pathname;
 
     return (
         <li className={path === href ? "active" : ""}>

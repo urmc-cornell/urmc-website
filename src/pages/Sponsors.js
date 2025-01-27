@@ -20,7 +20,7 @@ import roblox from '../images/sponsors/roblox.png';
 import ey from '../images/sponsors/ey.png'
 import linkedin from '../images/sponsors/linkedin.png'
 import hrt from '../images/sponsors/hrt.png'
-import { useScale } from '../hooks/useScale';
+import { useScale } from '../hooks/useScale.js';
 import React from 'react';
 
 export default function Sponsors() {
