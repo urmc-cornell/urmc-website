@@ -1,7 +1,3 @@
-import "../styles/sponsors.css";
-import "../styles/home.css";
-import "../styles/Leadership.css";
-import "../styles/about_us.css";
 import "../styles/points.css";
 
 import React, { useState, useEffect } from "react";
@@ -109,7 +105,7 @@ export default function Points() {
             <h1 className="points">Points</h1>
             
             <div className="points-container">
-                    <h2 className="section-title">Point Allocation</h2>
+                    <h2 className="container-title">Point Allocation</h2>
                     <div className="points-allocation">
                         <div className="point-group">
                             <span className="point-value">+1 Point</span>
@@ -143,7 +139,7 @@ export default function Points() {
 
             <div className="points-container">
 
-                    <h2 className="section-title">Point Rewards</h2>
+                    <h2 className="container-title">Point Rewards</h2>
                     <div className="rewards-grid">
                         <div className="reward-card">
                             <h3 className="reward-title">{"Resume\nBook"}</h3>

@@ -19,9 +19,7 @@ async function populateLeadership() {
 
     const { data, error } = await supabase
       .from("members")
-      .upsert(leadershipData, {
-        onConflict: "netid", // If same netid exists, update the record
-      });
+      .insert(leadershipData, { onConflict: "netid", ignoreDuplicates: true });
 
     if (error) {
       console.error("Error inserting data:", error);

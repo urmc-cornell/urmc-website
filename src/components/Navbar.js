@@ -14,7 +14,7 @@ function Navbar() {
     return (
         <nav className="nav">
             <a href="/">
-                <img src={gold_logo} className="site-title" alt="URMC Logo" />
+                <img src={gold_logo} className="site-logo" alt="URMC Logo" />
             </a>
             <div className="menu-icon" onClick={handleClick}>
                 <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>

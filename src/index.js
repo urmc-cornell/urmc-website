@@ -7,7 +7,7 @@ import reportWebVitals from "./reportWebVitals.js";
 //styles
 import "./styles/bars.css";
 import "./styles/home.css";
-import "./styles/about_us.css";
+// import "./styles/about_us.css";
 import "@fontsource/montserrat";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

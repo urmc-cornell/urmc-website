@@ -18,6 +18,8 @@
     line-height: normal;
     margin-bottom: calc(80px * var(--scale));
     margin-top: calc(1.5rem * var(--scale));
+    text-align: center;
+
 }
 
 .grid-container {
@@ -95,4 +97,50 @@
 
 .text-bold {
     font-family: Hard;
+}
+
+@media (max-width: 768px) {
+
+    .getting-involved{
+        font-size: calc(15rem * var(--scale));;
+
+    }
+
+    .grid-container{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .text-background{
+        width: 100%;
+        height: auto;
+    }
+
+    .header-text{
+        font-size: calc(6.5rem * var(--scale));
+
+    }
+
+    .subheader-text{
+        font-size: calc(3.75rem * var(--scale));
+
+    }
+
+    .button-div{
+        display:flex;
+        width: 100%;
+        justify-content: center;
+
+    }
+
+    .getting-involved-page .btn{
+        font-size: 24px;
+        width: 80%;
+        height: 100%;
+    }
+    
+    
+
+
 }

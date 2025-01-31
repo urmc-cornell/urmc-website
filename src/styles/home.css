@@ -217,50 +217,66 @@
     margin-top: calc(2.56rem * var(--scale));
 }
 
+/* 
 @media (max-width: 768px) {
+    .home-nav {
+        flex-direction: column;
+        margin: calc(1rem * var(--scale));
+        align-items: flex-start;
+    }
+
+    .home-logo {
+        width: calc(12rem * var(--scale));
+        height: auto;
+    }
+
+    .home-nav-menu {
+        display: none;
+    }
 
     .home-content {
-        position: absolute;
-        top: 50%;
-        left: 5%;
-        right: 5%;
-        transform: translateY(-50%);
+        margin-top: calc(4rem * var(--scale));
+        padding: 0 calc(1rem * var(--scale));
     }
 
     .header {
-        font-size: calc(20px * var(--scale));
+        font-size: calc(2rem * var(--scale));
+        padding: calc(0.5rem * var(--scale));
     }
 
-    .buttons {
-        align-items: center;
-        flex-direction: column;
-    }
-
-    .btn {
-        font-size: 16px ;
+    .header.bottom {
+        font-size: calc(2.5rem * var(--scale));
     }
 
     .sub-header {
-        font-size: 16px ;
-        margin-left: 50px;
-        margin-right: 50px;
+        font-size: calc(1.2rem * var(--scale));
+        margin: calc(1rem * var(--scale));
+        padding: 0 calc(1rem * var(--scale));
     }
 
     .images {
-        margin-top: auto;
+        flex-direction: column;
+        margin-top: calc(2rem * var(--scale));
     }
 
-    .btn-gold {
-        font-size: 15px;
-        padding: 10px;
+    .blue_ellipse, .purple_ellipse {
+        display: none;
     }
-    .btn-silver {
-        font-size: 15px;
-        padding: 10px;
+
+    .group {
+        width: 100%;
+        height: auto;
+        margin-top: calc(2rem * var(--scale));
     }
-    
-    .btn-bronze {
-        font-size: 15px;
-        padding: 10px;
+
+    .buttons {
+        flex-direction: column;
+        gap: calc(1rem * var(--scale));
     }
-}
+
+    .btn {
+        width: calc(10rem * var(--scale));
+        font-size: calc(1rem * var(--scale));
+        padding: calc(0.625rem * var(--scale));
+    }
+} */

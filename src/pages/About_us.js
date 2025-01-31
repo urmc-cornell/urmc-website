@@ -15,8 +15,9 @@ import community4 from '../images/sections/community_4.png'
 import profdev1 from '../images/sections/prof_dev1.png' 
 import profdev2 from '../images/sections/prof_dev2.png' 
 import profdev3 from '../images/sections/prof_dev3.png' 
-import '../styles/about_us.css';
 import { useScale } from '../hooks/useScale.js';
+import '../styles/about_us.css';
+
 
 
 // Component for individual pillar

@@ -212,6 +212,32 @@ body {
     /* padding: 20px; */
 }
 
+
+#community-1{
+    width: calc(17.36825re * var(--scale));
+    height: calc(15.41556rem * var(--scale));
+    flex-shrink: 0;
+}
+
+#community-2{
+    width: calc(19.11531rem * var(--scale));
+    height: calc(16.7rem * var(--scale));
+    flex-shrink: 0;
+}
+
+
+#community-3{
+    width: calc(18.94rem * var(--scale));
+height: calc(14.875rem * var(--scale));
+flex-shrink: 0;
+}
+
+#community-4{
+    width: calc(17.5rem * var(--scale));
+height: calc(13.1875rem * var(--scale));
+flex-shrink: 0;
+}
+
 .profdev-images {
     display: grid;
     grid-template-columns: 1fr 1fr;

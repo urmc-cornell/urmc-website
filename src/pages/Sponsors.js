@@ -36,44 +36,50 @@ export default function Sponsors() {
 
                 <div className="sponsor-section plat-sponsors"> 
                         <a className="btn-small btn-plat">PLATINUM</a>
-                        <img src={linkedin} alt="linkedin Logo" className="linkedin logo gold-logo"></img>
+                        <div className="img-section">
+                            <img src={linkedin} alt="linkedin Logo" className="linkedin logo platinum-logo"></img>
                         {/* <img src={reddit} alt="reddit Logo" className="logo gold-logo"></img> */}
                         {/* <img src={thoughtworks} alt="thoughtworks Logo" className="logo gold-logo"></img> */}
-
+                        </div>
 
                 </div>
 
                 <div className="sponsor-section gold-sponsors"> 
                     <a className="btn-small btn-gold">GOLD</a>
+                    <div className="img-section">
+
+                    
                     <img src={janestreet} alt="Jane Street Logo" className="janestreet logo gold-logo"></img>
                     {/* <img src={linkedin} alt="linkedin Logo" className="logo gold-logo"></img> */}
                     {/* <img src={reddit} alt="reddit Logo" className="logo gold-logo"></img> */}
                     {/* <img src={thoughtworks} alt="thoughtworks Logo" className="logo gold-logo"></img> */}
-
+                    </div>
 
                 </div>
                 <div className="sponsor-section silver-sponsors"> 
                     <a className="btn-small btn-silver">SILVER</a>
+                    <div className="img-section">
                         {/* <img src={meta} alt="Meta Logo" className="logo"></img> */}
                         {/* <img src={duolingo} alt="duolingo Logo" className=" duolingo"></img> */}
                         {/* <img src={goldman} alt="goldman Logo" className="logo"></img> */}
                         {/* <img src={yext} alt="yext Logo" className="logo"></img> */}
                         {/* <img src={oracle} alt="oracle Logo" className="logo"></img> */}
                         {/* <img src={capitalone} alt="Capital One Logo" className="duolingo"></img> */}
-                        <img src={bloomberg} alt="Bloomberg Logo" className="logo bloomberg"></img>
-                        <img src={hrt} alt="HRT Logo" className="hrt logo gold-logo"></img>
-
+                        <img src={bloomberg} alt="Bloomberg Logo" className="logo bloomberg silver-logo"></img>
+                        <img src={hrt} alt="HRT Logo" className="hrt logo silver-logo"></img>
+                    </div>
                 </div>
                 <div className="sponsor-section bronze-sponsors"> 
                     <a className="btn-small btn-bronze">BRONZE</a>
-                    <img src={google} alt="google Logo" className="logo"></img>
+                    <div className="img-section">
+                    <img src={google} alt="google Logo" className="logo bronze-logo"></img>
                     {/* <img src={uber} alt="uber Logo" className="logo "></img> */}
-                    <img src={mastercard} alt="master card Logo" className="logo"></img>
-                    <img src={datadog} alt="datadog Logo" className="logo"></img>
-                    <img src={roblox} alt="roblox Logo" className="logo"></img>
+                    <img src={mastercard} alt="master card Logo" className="logo bronze-logo"></img>
+                    <img src={datadog} alt="datadog Logo" className="logo bronze-logo"></img>
+                    <img src={roblox} alt="roblox Logo" className="logo bronze-logo"></img>
                     {/* <img src={palantir} alt="palantir Logo" className="logo "></img> */}
-                    <img src={ey} alt="ey Logo" className="ey logo"></img>
-
+                    <img src={ey} alt="ey Logo" className="ey logo bronze-logo"></img>
+                    </div>
                     
                 </div>
             </div>

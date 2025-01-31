@@ -1,59 +1,3 @@
-/* .points-boxes {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.points-box {
-    padding: 20px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    color: black;
-}
-
-.points-box .points {
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-.points-box.green {
-    background-color: #90EE90;
-}
-
-.points-box.orange {
-    background-color: #FFB347;
-}
-
-.points-box.yellow {
-    background-color: #FFEB99;
-}
-
-.points-container {
-    display: flex;
-    gap: 40px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.points-section {
-    flex: 3;
-}
-
-.leaderboard-section {
-    flex: 3;
-    padding: 20px;
-    background-color: #797979;
-    border-radius: 8px;
-    margin-top: 60px;
-    color: white;
-}
-    */
-
 
 .points-page {
     display: flex;
@@ -63,7 +7,7 @@
     max-width: calc(1200px * var(--scale));
     margin: 0 auto;
     padding: 0 calc(20px * var(--scale));
-    margin-bottom: 10.7rem;
+    margin-bottom: 5rem;
     gap: calc(4rem * var(--scale));
 }
 
@@ -78,7 +22,7 @@
     margin-top: calc(1.5rem * var(--scale));
 }
 
-.section-title {
+.container-title {
     color: #FFF;
     font-family: Medium;
     font-size: calc(2.5rem * var(--scale));
@@ -127,10 +71,14 @@
     font-weight: 400;
 }
 
+.points-container{
+    width: 100%;
+}
+
 .rewards-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: calc(6.3rem * var(--scale));
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
     margin-bottom: calc(50px * var(--scale));
 }
 
@@ -169,7 +117,6 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    /* margin-top: calc(30px * var(--scale)); */
     gap: 2.6rem;
     
 }
@@ -236,6 +183,14 @@
     font-weight: 600;
 }
 
+
+#points-form h3 {
+    color: #F0F0F0;
+    font-family: "Helvetica Neue";
+    font-size: calc(20px * var(--scale));
+    margin-top: calc(10px * var(--scale));
+}
+
 #points-form h3 {
     color: #F0F0F0;
     font-family: "Helvetica Neue";
@@ -244,74 +199,82 @@
 }
 
 @media (max-width: 768px) {
-    .rewards-grid {
-        grid-template-columns: 1fr;
+
+    .points-page{
+        gap: calc(4rem * var(--scale));
+
+    }
+
+    .points{
+        font-size: calc(15rem * var(--scale));;
+    }
+
+    .container-title{
+        font-size: calc(8rem * var(--scale));;
+    }
+
+    .point-value{
+        font-size: calc(5rem * var(--scale));;
+    }
+
+    .point-description{
+        font-size: calc(4rem * var(--scale));;
+    }
+
+    .rewards-grid{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .reward-card{ 
+        width: 80%;
+        height: calc(30rem * var(--scale));
+    }
+
+
+    .reward-title{
+        font-size: calc(4rem * var(--scale));
+    }
+
+    .reward-value{
+        font-size: calc(4rem * var(--scale));
+    }
+
+
+    .view-points {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: calc(4rem * var(--scale));
+        
     }
     
-    .points {
-        font-size: calc(40px * var(--scale));
+    .view-points h1 {
+        font-size: calc(10rem * var(--scale));;
+    }
+
+    .view-points h2 {
+        font-size: calc(4rem * var(--scale));;
+    }
+
+    #points-form input {
+
+        width: 60%;
+        height: calc(8rem * var(--scale));
+    }
+
+    #points-form button {
+        width: 40%;
+        font-size: calc(3rem * var(--scale));
+        height: calc(8rem * var(--scale)); 
+
+    }
+    
+ 
+
+    #points-form h3 {
+        font-size: calc(6rem * var(--scale));
     }
 }
 
-/* Mobile styles - will only apply when screen width is less than 768px */
-@media (max-width: 768px) {
-    .points-page {
-        padding: 20px !important;
-        height: auto !important;
-        min-height: 100vh !important;
-    }
-
-    .points-container {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 30px !important;
-        padding: 10px !important;
-    }
-
-    .points-section {
-        width: 100% !important;
-    }
-
-    .points-boxes {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 15px !important;
-        width: 100% !important;
-        max-width: 500px !important;
-        margin: 0 auto !important;
-    }
-
-    .view_points {
-        width: 100% !important;
-        max-width: 500px !important;
-        margin: 30px auto !important;
-    }
-
-    .leaderboard-section {
-        width: 100% !important;
-        max-width: 500px !important;
-        margin: 0 auto !important;
-        padding: 20px !important;
-        background-color: #ffffff !important;
-        border-radius: 15px !important;
-        color: black !important;
-    }
-
-    .leaderboard-section h2 {
-        text-align: center !important;
-    }
-
-    .leaderboard-section ul {
-        list-style: none !important;
-        margin: 0 !important;
-    }
-
-    .leaderboard-section li {
-        padding: 10px 0 !important;
-        border-bottom: 1px solid #ddd !important;
-    }
-
-    .leaderboard-section li:last-child {
-        border-bottom: none !important;
-    }
-} 
