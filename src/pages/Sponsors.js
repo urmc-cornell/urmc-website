@@ -56,6 +56,7 @@ export default function Sponsors() {
                     </div>
 
                 </div>
+
                 <div className="sponsor-section silver-sponsors"> 
                     <a className="btn-small btn-silver">SILVER</a>
                     <div className="img-section">
@@ -69,6 +70,7 @@ export default function Sponsors() {
                         <img src={hrt} alt="HRT Logo" className="hrt logo silver-logo"></img>
                     </div>
                 </div>
+
                 <div className="sponsor-section bronze-sponsors"> 
                     <a className="btn-small btn-bronze">BRONZE</a>
                     <div className="img-section">
@@ -78,11 +80,12 @@ export default function Sponsors() {
                     <img src={datadog} alt="datadog Logo" className="logo bronze-logo"></img>
                     <img src={roblox} alt="roblox Logo" className="logo bronze-logo"></img>
                     {/* <img src={palantir} alt="palantir Logo" className="logo "></img> */}
+                    <img src={capitalone} alt="Capital One Logo" className="logo bronze-logo"></img>
                     <img src={ey} alt="ey Logo" className="ey logo bronze-logo"></img>
-                    </div>
-                    
+                    <img src={ey} alt="ey Logo" className="ey logo"></img>                    
                 </div>
             </div>
+
             <div className="buttons"> 
                 <a class="btn btn-2" href="/getting-involved" target='_self'>GETTING INVOLVED</a>
                 <a class="btn btn-1" href="https://securelb.imodules.com/s/1717/giving/interior.aspx?sid=1717&gid=2&pgid=16421&bledit=1&dids=702" target="_blank">DONATE</a>
