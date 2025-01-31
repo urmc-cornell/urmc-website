@@ -1,129 +1,152 @@
-import React, { Component } from 'react'
-import EboardCard from '../components/EboardCard';
-import '../styles/Leadership.css';
-import EboardPopup from '../components/eboardPopup';
-import { cards } from '../Supporting/Leadership-Constants.js'
+import { React, useState, useEffect } from "react";
+import { supabase } from "../lib/supabaseClient.js";
+import EboardCard from "../components/EboardCard.js";
+import "../styles/Leadership.css";
+import EboardPopup from "../components/eboardPopup.js";
 
+export default function Leadership() {
+  const [selectedCard, setSelectedCard] = useState(null);
+  const [popupActive, setPopupActive] = useState(false);
+  const [eboardList, setEboardList] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
+  // Fetch leadership data when component mounts
+  useEffect(() => {
+    fetchLeadershipData();
+  }, []);
 
-let sheetID = "1MSvTcAeph8ehYwtBIBBbcLLkVg3JhWwtTCz1ODSEl1w"
-let sheetTitle = "eboard"
-//SHEET_RANGE might have to be changed if we ever have >30 events, but probably not
-let sheetRange = 'A2:O37'
-let fullURL = ("https://docs.google.com/spreadsheets/d/" + sheetID + '/gviz/tq?sheet=' + sheetTitle + '&range=' + sheetRange);
+  // Function to fetch and transform leadership data from Supabase database
+  async function fetchLeadershipData() {
+    try {
+      // Query Supabase for members with role "eboard"
+      const { data, error } = await supabase
+        .from("members")
+        .select(
+          `
+            id,
+            position,
+            headshot_url,
+            secondary_headshot_url,
+            first_name,
+            last_name,
+            major,
+            instagram_url,
+            linkedin_url,
+            ask_about,
+            bio,
+            role
+          `
+        )
+        .contains("role", ["eboard"]);
 
-class Leadership extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            selectedCard: null,
-            popupActive: false,
-            eboard_list: [],
-        };
+      if (error) throw error;
+
+      if (error) throw error;
+
+      // Define position priority order
+      const positionOrder = {
+        "Co - President": 1,
+        "Vice - President": 2,
+        "Treasurer": 3,
+        "Secretary": 4,
+        // Add other positions and their priorities...
+      };
+  
+
+      // Transform database records into format needed for EboardCard components
+      const transformedData = data.map((member) => ({
+        id: member.id,
+        title: member.position,
+        image: member.headshot_url,
+        name: `${member.first_name} ${member.last_name}`,
+        secondaryImage: member.secondary_headshot_url || member.headshot_url, // Fallback to primary image if no secondary
+        majors: member.major,
+        insta: member.instagram_url,
+        linkedIn: member.linkedin_url,
+        askAbout: member.ask_about || [], // Default to empty array if null
+        bio: member.bio,
+        popup: true,
+      }))
+      .sort((a, b) => {
+        // If both are Co-Presidents, sort alphabetically by name
+        if (a.title.includes("Co-President") && b.title.includes("Co - President")) {
+          return a.name.localeCompare(b.name);
+        }
+        // If both are Vice-Presidents, sort alphabetically by name
+        if (a.title.includes("Vice-President") && b.title.includes("Vice - President")) {
+          return a.name.localeCompare(b.name);
+        }
+        
+        // Put Co-Presidents first
+        if (a.title.includes("Co-President")) return -1;
+        if (b.title.includes("Co-President")) return 1;
+        
+        // Put Vice-Presidents second
+        if (a.title.includes("Vice-President")) return -1;
+        if (b.title.includes("Vice-President")) return 1;
+        
+        // Sort rest alphabetically by title, then by name
+        if (a.title === b.title) {
+          return a.name.localeCompare(b.name);
+        }
+        return a.title.localeCompare(b.title);
+      });
+
+      setEboardList(transformedData);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false); // Update loading state regardless of success/failure
     }
+  }
 
-    componentDidMount() {
-        fetch(fullURL)
-            .then(res => res.text())
-            .then(rep => {
-                // figure out why 47, 0, -2 here 
-                    // its from some tutorial but it basicially gets you each row 
-                    // and it's information which we use below
-                
-                let data = JSON.parse(rep.substring(47).slice(0, -2));
-                let activeRows = data.table.rows.length;
+  // Handler for when an eboard card is clicked
+  const handleCardClick = (card) => {
+    setSelectedCard(card);
+    setPopupActive(card.popup);
+  };
 
-                let eboard = []
+  // Handler for closing the popup modal
+  const handleClose = (active) => {
+    setSelectedCard(null);
+    setPopupActive(active);
+  };
 
-                for (let i = 0; i < activeRows; i++) {
-                    let id = data.table.rows[i].c[0].v
-                    let title = data.table.rows[i].c[4].v
-                    let headshot_one = data.table.rows[i].c[5].v
-                    let name = data.table.rows[i].c[2].v
-                    let headshot_two = data.table.rows[i].c[6].v
-                    let majors = data.table.rows[i].c[9].v
-                    let instagram =  data.table.rows[i].c[10].v
-                    let linkedin = data.table.rows[i].c[11].v
-                    let askAbout = data.table.rows[i].c[8].v
-                    let bio = data.table.rows[i].c[7].v
-                    var popup = true
+  // Show loading/error states while data is being fetched
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
-
-                    let headshot_one_id = headshot_one.split('/')[5];
-                    let headshot_one_url = "https://drive.google.com/uc?id=" + headshot_one_id
-                    // https://drive.google.com/uc?id=
-
-                    let headshot_two_id = headshot_two.split('/')[5];
-                    let headshot_two_url = "https://drive.google.com/uc?id=" + headshot_two_id
-
-                    if (bio != 'test') {
-                        popup = true
-                    } else {
-                        popup = false
-                    }
-
-                    let eboard_card = {
-                        id: id,
-                        title: title,
-                        image: headshot_one_url,
-                        name: name,
-                        secondaryImage: headshot_two_url,
-                        majors: majors,
-                        insta: instagram,
-                        linkedIn: linkedin,
-                        // makes comma seperated list of interests
-                        askAbout: askAbout.split(","),
-                        bio: bio,
-                        // popup, popup
-                        popup: popup,
-
-
-                    }
-                    eboard.push(eboard_card)
-                }
-
-                this.setState({
-                    eboard_list: eboard,
-                })
-            })
-
-    }
-    handleCardClick = (card) => {
-        this.setState({ selectedCard: card, popupActive: card.popup });
-    }
-
-    handleClose = (active) => {
-        this.setState({ selectedCard: null, popupActive: active });
-    }
-
-
-    render() {
-        const {selectedCard, eboard_list } = this.state;
-
-        return <div>
-            <h1 className="leadership">Executive Board</h1>
-            <h2 className="fall22"> Spring 2025</h2>
-            <EboardPopup trigger={this.state.popupActive} card={this.state.selectedCard} setTrigger={this.handleClose}>
-            </EboardPopup>
-            <div className="grid-container-container">
-                <div className="grid-container">
-                    {cards.map(card => (
-                        <div className="grid-item"
-                            onClick={() => this.handleCardClick(card)}
-                        >
-                            <EboardCard
-                                key={card.id}
-                                imageURL={card.image}
-                                title={card.title}
-                                name={card.name}
-                                onClick={() => this.handleCardClick(card)}
-                            />
-                        </div>
-                    ))}
-                </div>
+  // Render the leadership page
+  return (
+    <div className='leadership-page'>
+      <h1 className="leadership">Executive Board</h1>
+      <h2 className="fall22">Spring 2025</h2>
+      {/* Popup modal component for showing detailed member info */}
+      <EboardPopup
+        trigger={popupActive}
+        card={selectedCard}
+        setTrigger={handleClose}
+      />
+      <div className="grid-container-container">
+        <div className="grid-container">
+          {/* Map through eboard members and render cards */}
+          {eboardList.map((card) => (
+            <div
+              key={card.id}
+              className="grid-item"
+              onClick={() => handleCardClick(card)}
+            >
+              <EboardCard
+                imageURL={card.image}
+                title={card.title}
+                name={card.name}
+                onClick={() => handleCardClick(card)}
+              />
             </div>
+          ))}
         </div>
-    }
+      </div>
+    </div>
+  );
 }
-
-export default Leadership;

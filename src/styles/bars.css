@@ -2,15 +2,19 @@
     box-sizing: border-box;
 }
 
+:root {
+    --scale: 1;
+}
+
 .foot {
     background: #EEEEE6;
     color: #000000;
     display: flex;
     justify-content: space-between;
     font-family: "Medium";
-    font-size: 15px;
-    gap: 2rem;
-    padding: 0 2rem;
+    font-size: calc(15px * var(--scale));
+    gap: calc(2rem * var(--scale));
+    padding: 0 calc(2rem * var(--scale));
     width: 100%;
 }
 
@@ -21,8 +25,8 @@
 .footer-subtitle {
     align-items: center;
     display: flex;
-    font-size: 10px;
-    gap: 2px;
+    font-size: calc(10px * var(--scale));
+    gap: calc(2px * var(--scale));
     flex-direction: row;
 }
 
@@ -31,14 +35,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
-    padding: 0 1rem;
+    gap: calc(2rem * var(--scale));
+    padding: 0 calc(1rem * var(--scale));
+    margin-top: calc(1.05rem * var(--scale));
+    margin-left: calc(4.53rem * var(--scale));
 }
 
 .nav li.active {
     color: #667BC4;
     background-color: #C7D3FB;
-    border-radius: 11px;
+    padding: calc(0.25rem * var(--scale)) calc(0.625rem * var(--scale));
+    border-radius: calc(0.6875rem * var(--scale));
 }
 
 .nav li:hover {
@@ -46,32 +53,34 @@
 }
 
 .nav-menu {
-    padding: 0 0.25rem;
-    margin: 0;
-    list-style: none;
     display: flex;
-    gap: 1rem;
+    width: calc(65.875rem * var(--scale));
+    justify-content: center;
+    align-items: center;
+    gap: calc(2.75rem * var(--scale));
+    list-style: none;  
+    margin: 0;  
 }
 
 .nav a {
-    color: inherit;
+    color: #F0F0F0;
     font-family: "Medium";
     text-decoration: none;
     font-weight: bold;
     height: 100%;
     display: flex;
     align-items: center;
-    padding: .25rem;
+    font-size: calc(1.2rem * var(--scale));
 }
 
 .menu-icon {
     display: none;
 }
 
-.site-title {
-    font-size: 5rem;
-    width: 112px;
-    height: 49px;
+.site-logo {
+    font-size: calc(5rem * var(--scale));
+    width: calc(16.5rem * var(--scale));
+    height: calc(7.21875rem * var(--scale));
 }
 
 .foot ul {
@@ -79,7 +88,7 @@
     margin: 0;
     list-style: none;
     display: flex;
-    gap: 1rem;
+    gap: calc(1rem * var(--scale));
 }
 
 .foot a {
@@ -90,7 +99,7 @@
     height: 100%;
     display: flex;
     align-items: center;
-    padding: .25rem;
+    padding: calc(0.25rem * var(--scale));
 }
 
 .socials {
@@ -101,14 +110,48 @@
 
 @media (max-width: 768px) {
 
+    .nav{
+        /* margin-top: calc(10rem * var(--scale)); */
+        /* display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: calc(1rem * var(--scale));
+        padding: 0; */
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* margin: calc(8rem * var(--scale)); */
+        padding: 0;
+        margin: calc(5rem * var(--scale)) calc(5rem * var(--scale));
+    }
+
+    .site-logo{
+        width: calc(40rem * var(--scale));
+        height: auto;
+    }
+
+
+    .menu-icon {
+        display: block;
+        position: relative;
+        /* position: absolute; */
+        /* top: 0;
+        right: 0; */
+        /* transform: translate(-100%, 60%); */
+        font-size: calc(8rem * var(--scale));
+        cursor: pointer;
+    }
+
     .nav-menu {
         display: flex;
         flex-direction: column;
         margin-top: 30%;
+        gap: calc(8rem * var(--scale));
     }
 
     .nav-container.active {
-        background-color: #FFF3E2;
+        background-color: darkgray;
         left: 0;
         opacity: 1;
         transition: all 0.5s ease;
@@ -127,14 +170,9 @@
         transition: all 0.5s ease;
     }
 
-    .menu-icon {
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        transform: translate(-100%, 60%);
-        font-size: 1.8rem;
-        cursor: pointer;
+    .nav a {
+        font-size: calc(6rem * var(--scale));
+        text-align: center;
     }
 
     .socials {

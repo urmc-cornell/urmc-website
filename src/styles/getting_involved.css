@@ -3,85 +3,144 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
+    max-width: calc(1200px * var(--scale));
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 calc(20px * var(--scale));
 }
 
 .getting-involved {
-    text-align: center;
+    /* text-align: center; */
     color: #F0F0F0;
     font-family: "Helvetica Neue";
-    font-size: 64px;
+    font-size: calc(64px * var(--scale));
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-bottom: 80px;
+    margin-bottom: calc(80px * var(--scale));
+    margin-top: calc(1.5rem * var(--scale));
+    text-align: center;
+
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(calc(300px * var(--scale)), 1fr));
+    gap: calc(20px * var(--scale));
     width: 100%;
 }
 
 .grid-item {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    /* align-items: center; */
+    /* text-align: center; */
 }
 
 .text-background {
-    width: 550px;
-    height: 372px;
-    background-color: #f0f0f0;
     display: flex;
     flex-direction: column;
-    padding: 56px 46px;
+    width: calc(34.375rem * var(--scale));
+    height: calc(23.25rem * var(--scale));
+    padding: calc(3.44rem * var(--scale)) calc(2.88rem * var(--scale));
+    background-color: #f0f0f0;
+
     box-sizing: border-box;
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: calc(20px * var(--scale));
+    text-align: start;
 }
 
 .header-text {
     color: #000;
-    margin-bottom: 10px;
-    font-size: 40px;
+    /* margin-bottom: 10px; */
+    font-size: calc(40px * var(--scale));
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    margin: 0rem;
 }
 
 .subheader-text {
-    font-size: 28px;
+    font-size: calc(28px * var(--scale));
     font-weight: 400;
     font-family: "Montserrat";
     font-style: normal;
 }
 
 .button-div {
-    margin-top: 44px;
-    margin-bottom: 60px;
+    margin-top: calc(44px * var(--scale));
+    margin-bottom: calc(60px * var(--scale));
 }
 .btn {
     display: flex;
-    width: 330px;
-    height: 69px;
+    height: calc(4.3125rem * var(--scale));
+    padding: calc(0.25rem * var(--scale)) calc(2rem * var(--scale));
+    width: calc(22rem * var(--scale));
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    padding: 4px 32px;
+    gap: calc(10px * var(--scale));
     font-family: "Montserrat-Medium-Soft";
     font-variant: all-small-caps;
-    /* background color for button is in home.css */
     color: white;
-    border-radius: 64px;
-    box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.25);
+    border-radius: calc(64px * var(--scale));
+    box-shadow: 0px calc(4px * var(--scale)) calc(5px * var(--scale)) 0px rgba(0, 0, 0, 0.25);
     transition: all 0.3s ease;
+}
+
+.getting-involved-page .btn {
+    background: var(--urmc-gold-gradient, linear-gradient(108deg, #DFC856 19.51%, #D38745 71.52%));
 }
 
 .btn:hover {
     background-color: #0056b3;
+}
+
+.text-bold {
+    font-family: Hard;
+}
+
+@media (max-width: 768px) {
+
+    .getting-involved{
+        font-size: calc(15rem * var(--scale));;
+
+    }
+
+    .grid-container{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .text-background{
+        width: 100%;
+        height: auto;
+    }
+
+    .header-text{
+        font-size: calc(6.5rem * var(--scale));
+
+    }
+
+    .subheader-text{
+        font-size: calc(3.75rem * var(--scale));
+
+    }
+
+    .button-div{
+        display:flex;
+        width: 100%;
+        justify-content: center;
+
+    }
+
+    .getting-involved-page .btn{
+        font-size: 24px;
+        width: 80%;
+        height: 100%;
+    }
+    
+    
+
+
 }
