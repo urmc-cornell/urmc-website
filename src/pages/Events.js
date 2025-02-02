@@ -90,7 +90,7 @@ export default function Events() {
 
   // Render the events page
   return (
-    <div>
+    <div className="page">
       <h1 className="page-title" align="center">Events</h1>
       {/* Popup modal component for showing detailed event info */}
       <EventsPopup
@@ -98,7 +98,7 @@ export default function Events() {
         event={selectedEvent}
         setTrigger={handleClose}
       />
-      <div align="center">
+      <div className="" align="center">
         {/* Only show upcoming events section if there are any */}
         {comingUpEvents.length ? (
           <h2 align="left" className="this-week">

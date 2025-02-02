@@ -5,16 +5,21 @@
     font-size: 4rem;
     font-weight: 700;
 }
+
+.page{
+    overflow: hidden;
+}
+
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 100fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 20px;
-    overflow: auto;
+    overflow: hidden; 
     max-width: 70%;
-    width: 80%;
-    height: auto;
+    width: 100%;
+    height: auto; 
     margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 20px; 
     align-items: center;
     justify-content: center;
 }
@@ -26,7 +31,7 @@
     align-items: center;
     text-align: center;
     width: auto;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .grid-item img {
