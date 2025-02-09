@@ -21,7 +21,7 @@ export default function Home() {
     }, []);
 
     return <home className="home">
-        {isMobile ? (
+        {/* {isMobile ? (
             <Navbar />
         ) : (
             <nav className="home-nav">
@@ -37,8 +37,8 @@ export default function Home() {
                     <li><a href="/points">POINTS</a></li>
                 </ul>
             </nav>
-        )}
-
+        )} */}
+        <Navbar />
         <div className="home-content">
             <h1 className="header">UNDERREPRESENTED MINORITIES IN</h1>
             <h2 className="header bottom">COMPUTING</h2>
