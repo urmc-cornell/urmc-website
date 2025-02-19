@@ -6,6 +6,9 @@ export default function Leaderboard() {
     const [netIds, setNetIds] = useState([]); // State to store results
     const [error, setError] = useState(null); // State to store error messages
     const [loading, setLoading] = useState(false); // Loading state to show a spinner
+    let semester = "sp25";
+
+    
     const handleSubmit = async (event) => {
         event.preventDefault(); // Prevent default form submission behavior
         setLoading(true); // Set loading state to true
@@ -18,10 +21,10 @@ export default function Leaderboard() {
 
         try {
             const numericThreshold = Number(threshold); // Turn the threshold string to a number
-            // Query points_tracking table for member_id with points above threshold
             const { data: pointsTracking, error: pointsTrackingError } = await supabase
                 .from('points_tracking')
                 .select('member_id, points')
+                .eq('semester', semester) // Add semester filter
                 .gte('points', numericThreshold); // Filter by threshold
 
             if (pointsTrackingError) {
