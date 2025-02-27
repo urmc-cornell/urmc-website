@@ -22,32 +22,16 @@ export default function Leaderboard() {
         try {
             const numericThreshold = Number(threshold); // Turn the threshold string to a number
             const { data: pointsTracking, error: pointsTrackingError } = await supabase
-                .from('points_tracking')
-                .select('member_id, points')
-                .eq('semester', semester) // Add semester filter
-                .gte('points', numericThreshold); // Filter by threshold
+                .from('summed_points')
+                .select('first_name, last_name, netid, total_points')
+                .gte('total_points', numericThreshold); // Filter by threshold
 
             if (pointsTrackingError) {
                 console.error('Error in points_tracking query:', pointsTrackingError);
                 throw pointsTrackingError;
             }
-
-            // Extract member_ids from the points_tracking data
-            const memberIds = pointsTracking.map((student) => student.member_id);
-
-            // Query members table for corresponding net_ids based on member_ids
-            const { data: members, error: membersError } = await supabase
-                .from('members')
-                .select('netid, first_name, last_name')
-                .in('id', memberIds); // Filter by member_ids
-
-            if (membersError) {
-                console.error('Error in member query:', membersError);
-                throw membersError;
-            }
-
             // Store the result (net_ids) in state
-            setNetIds(members);
+            setNetIds(pointsTracking);
             setError(null); // Clear any previous errors
         } catch (err) {
             // If an error occurs, store it in the error state
