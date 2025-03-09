@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/bars.css';
 import { useScale } from '../hooks/useScale.js';
 import gold_logo from '../images/gold_logo.png'
+import giving_day_banner from '../images/giving_day_banner.png';
 
 function Navbar() {
     const [clicked, setClicked] = React.useState(false);
@@ -13,6 +14,16 @@ function Navbar() {
 
     return (
         <div>
+            <div className='banner'>
+                Giving Day Is Near, Donate
+                <a 
+                    href="https://givingday.cornell.edu/campaigns/under-represented-minorities-in-computing-urmc" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                Here!
+                </a>
+            </div>
             <nav className="nav">
                 <a href="/">
                     <img src={gold_logo} className="site-logo" alt="URMC Logo" />
@@ -32,11 +43,11 @@ function Navbar() {
                 </div>
             </nav>
 
-            <div className='info-bar'>
+            {/* <div className='info-bar'>
                 <div className='button-div'> 
                     <a class="info-btn" href="https://givingday.cornell.edu/campaigns/under-represented-minorities-in-computing-urmc" target="_blank">Giving Day!!</a> 
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }
