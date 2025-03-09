@@ -105,7 +105,11 @@ export default function Events() {
             COMING UP @ URMC:
           </h2>
         ) : null}
-        <div className="grid-container">
+        <div className="grid-container" style={{ 
+          maxWidth: "1200px",  // Adjust this value based on your needs
+          margin: "0 auto",    // Centers the grid
+          padding: "0 20px"    // Adds equal padding on both sides
+        }}>
           {/* Map through upcoming events sorted by date (ascending) */}
           {comingUpEvents
             .sort((a, b) => a.date - b.date)
@@ -129,7 +133,11 @@ export default function Events() {
         <h2 className="this-week" style={{ textAlign: "left" }}>
           PAST EVENTS:
         </h2>
-        <div className="grid-container">
+        <div className="grid-container" style={{ 
+          maxWidth: "1200px",  // Adjust this value based on your needs
+          margin: "0 auto",    // Centers the grid
+          padding: "0 20px"    // Adds equal padding on both sides
+        }}>
           {/* Map through past events sorted by date (descending) */}
           {pastEvents
             .sort((a, b) => b.date - a.date)
