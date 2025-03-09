@@ -91,17 +91,17 @@ export default function Events() {
   // Render the events page
   return (
     <div className="page">
-      <h1 className="page-title" align="center">Events</h1>
+      <h1 className="page-title" style={{ textAlign: "center" }}>Events</h1>
       {/* Popup modal component for showing detailed event info */}
       <EventsPopup
         trigger={popupActive}
         event={selectedEvent}
         setTrigger={handleClose}
       />
-      <div className="" align="center">
+      <div style={{ textAlign: "center" }}>
         {/* Only show upcoming events section if there are any */}
         {comingUpEvents.length ? (
-          <h2 align="left" className="this-week">
+          <h2 className="this-week" style={{ textAlign: "left" }}>
             COMING UP @ URMC:
           </h2>
         ) : null}
@@ -115,11 +115,18 @@ export default function Events() {
                 className="grid-item"
                 onClick={() => handleCardClick(event)}
               >
-                <img src={event.flyer} alt="Event flyer" />
+                <iframe
+                  src={event.flyer}
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  title={`Event flyer ${event.id}`}
+                  allowFullScreen
+                />
               </div>
             ))}
         </div>
-        <h2 align="left" className="this-week">
+        <h2 className="this-week" style={{ textAlign: "left" }}>
           PAST EVENTS:
         </h2>
         <div className="grid-container">
