@@ -164,6 +164,11 @@ export default function Points() {
                         type="text" 
                         id="netID" 
                         name="netID" 
+                        style={{
+                            paddingLeft: "10px",
+                            paddingRight: "10px",
+                            textAlign: "center"  // Centers the text/cursor
+                        }}
                     />  
                     <button 
                         type="submit" 
