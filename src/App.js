@@ -9,6 +9,7 @@ import Sponsors from "./pages/Sponsors.js";
 import Points from "./pages/Points.js";
 import Home from "./pages/Home.js";
 import Ta_directory from "./pages/Ta_directory.js";
+import Leaderboard from "./pages/Leaderboard.js";
 
 //fonts
 import "./fonts/static/Montserrat-Light.ttf";
@@ -42,6 +43,9 @@ function App() {
       break;
     case "/points":
       component = <Points />;
+      break;
+    case "/leaderboard":
+      component = <Leaderboard />
       break;
   }
 

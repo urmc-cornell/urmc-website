@@ -1,4 +1,4 @@
-import heart from "../images/assets/heart.png";
+  import heart from "../images/assets/heart.png";
 import mail from "../images/assets/mail.png";
 import facebook from "../images/assets/facebook.png";
 import instagram from "../images/assets/instagram.png";
