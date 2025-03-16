@@ -35,7 +35,7 @@ function Navbar() {
                     <ul className="nav-menu">
                         <CustomLink href="/leadership">LEADERSHIP</CustomLink>
                         <CustomLink href="/events">EVENTS</CustomLink>
-                        <CustomLink href="/ta-directory">TA DIRECTORY</CustomLink>
+                        <CustomLink href="/teaching_assistants">TA DIRECTORY</CustomLink>
                         <CustomLink href="/getting-involved">GETTING INVOLVED</CustomLink>
                         <CustomLink href="/sponsors">SPONSORS</CustomLink>
                         <CustomLink href="/points">POINTS</CustomLink>
