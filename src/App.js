@@ -9,6 +9,7 @@ import Sponsors from "./pages/Sponsors.js";
 import Points from "./pages/Points.js";
 import Home from "./pages/Home.js";
 import Ta_directory from "./pages/Ta_directory.js";
+import TA_page from "./pages/Teaching_assistants.js";
 import Leaderboard from "./pages/Leaderboard.js";
 
 //fonts
@@ -31,6 +32,9 @@ function App() {
       break;
     case "/ta-directory":
       component = <Ta_directory />;
+      break;
+    case "/teaching_assistants":
+      component = <TA_page />
       break;
     case "/getting-involved":
       component = <Getting_involved />;
