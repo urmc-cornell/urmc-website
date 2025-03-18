@@ -14,7 +14,7 @@ function Navbar() {
 
     return (
         <div>
-            <div className='banner'>
+            {/* <div className='banner'>
                 Giving Day Is Near, Donate
                 <a 
                     href="https://givingday.cornell.edu/campaigns/under-represented-minorities-in-computing-urmc" 
@@ -23,7 +23,8 @@ function Navbar() {
                 >
                 Here!
                 </a>
-            </div>
+            </div> */}
+
             <nav className="nav">
                 <a href="/">
                     <img src={gold_logo} className="site-logo" alt="URMC Logo" />
