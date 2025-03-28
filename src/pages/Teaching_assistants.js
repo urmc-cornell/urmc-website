@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import { supabase } from "../lib/supabaseClient.js";
 import TACard from "../components/TACard.js";
-import "../styles/Leadership.css";
+import "../styles/teaching_assistants.css";
 
 export default function TA_page() {
   const [TAList, setTAList] = useState([]);
@@ -49,7 +49,7 @@ export default function TA_page() {
             }
             acc[course].members.push({
               id: member.id,
-              name: `${member.first_name} ${member.last_name} ${member.netid}`,
+              name: `${member.first_name} ${member.last_name}`,
               course, // Store the individual course they are being grouped under
               netid: member.netid,
             });
@@ -81,22 +81,24 @@ export default function TA_page() {
     <div className='leadership-page'>
       <h1 className="leadership">TA Directory</h1>
       <h2 className="fall22">Spring 2025</h2>
-      <div className="grid-container-container">
-        <div className="grid-container">
-          {/* Map through TAs and render cards */}
-          {TAList.map((card) => (
-            <div
-              key={card.id}
-              className="grid-item"
-            >
+      
+      {TAList.map((group) => (
+        <div key={group.course} className="course-section">
+          <div className='course-header'>
+            <h2 className="course-title">{group.course}</h2>
+            <hr className="divider" />
+          </div>
+          <div className="ta-card-row">
+            {group.members.map((member) => (
               <TACard
-                title={card.course}
-                name={card.members.map((member) => member.name).join("\n")}
+                key={member.id}
+                title={member.netid}
+                name={member.name}
               />
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 }

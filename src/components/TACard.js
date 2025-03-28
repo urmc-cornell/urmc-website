@@ -3,7 +3,6 @@ import '../styles/tacard.css'
 
 function TACard(props) {
     return (
-        <eboardcard>
             <div className="card-container">
                 <div className="card-title">
                     {props.title}
@@ -12,8 +11,6 @@ function TACard(props) {
                     {props.name}
                 </div>
             </div>
-
-        </eboardcard>
     )
 }
 
