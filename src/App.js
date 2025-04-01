@@ -33,9 +33,6 @@ function App() {
     case "/ta-directory":
       component = <Ta_directory />;
       break;
-    // case "/teaching_assistants":
-    //   component = <TA_page />
-    //   break;
     case "/getting-involved":
       component = <Getting_involved />;
       break;
