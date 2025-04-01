@@ -1,89 +1,100 @@
-import React, { Component } from "react";
-import EboardCard from "../components/EboardCard.js";
-import "../styles/Leadership.css";
-import { cards } from "../Supporting/TA-Constants.js";
-import EboardPopup from "../components/eboardPopup.js";
-import TaPopup from "../components/taPopup.js";
+import { React, useState, useEffect } from "react";
+import { supabase } from "../lib/supabaseClient.js";
+import TACard from "../components/TACard.js";
+import "../styles/teaching_assistants.css";
 
-class TADirectory extends Component {
+export default function TA_page() {
+  const [TAList, setTAList] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-    render() {
-        return (
-          <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '80vh',
-            textAlign: 'center'
-          }}>
-            <h1 style={{
-              fontSize: '2.5rem',
-              color: '#FFF',
-              fontFamily: 'Montserrat, sans-serif'
-            }}>
-              Updated TA's for Spring 2025 coming soon
-            </h1>
-          </div>
-        );
-      }
+  // Fetch TA data when component mounts
+  useEffect(() => {
+    fetchTAData();
+  }, []);
+
+  // Function to fetch and transform leadership data from Supabase database
+  async function fetchTAData() {
+    try {
+      // Query Supabase for members with role "ta"
+      const { data, error } = await supabase
+        .from("members")
+        .select(
+          `
+            id,
+            netid,
+            first_name,
+            last_name,
+            role,
+            course
+          `
+        )
+        .contains("role", ["ta"]);
+
+      if (error) throw error;
+
+      // Transform database records into format needed for TA card components
+      const sortedData = Object.values(
+        data.reduce((acc, member) => {
+          // Ensure `member.course` is an array, otherwise default to ["Unknown"]
+          const courses =
+            Array.isArray(member.course) && member.course.length > 0
+              ? member.course
+              : ["Unknown"];
+
+          // Add the member to each course they teach
+          courses.forEach((course) => {
+            if (!acc[course]) {
+              acc[course] = { course, members: [] };
+            }
+            acc[course].members.push({
+              id: member.id,
+              name: `${member.first_name} ${member.last_name}`,
+              course, // Store the individual course they are being grouped under
+              netid: member.netid,
+            });
+          });
+
+          return acc;
+        }, {})
+      )
+        .sort((a, b) => a.course.localeCompare(b.course)) // Sort courses alphabetically
+        .map((group) => ({
+          course: group.course,
+          members: group.members.sort((a, b) => a.name.localeCompare(b.name)), // Sort members alphabetically per course
+        }));
+
+      setTAList(sortedData);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false); // Update loading state regardless of success/failure
     }
+  }
 
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         selectedCard: null,
-    //         popupActive: false
-    //     };
-    // }
+  // Show loading/error states while data is being fetched
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
-    // handleCardClick = (card) => {
-    //     this.setState({ selectedCard: card, popupActive: card.popup });
-    // }
+  // Render the TA page
+  return (
+    <div className="leadership-page">
+      <h1 className="leadership">TA Directory</h1>
+      <h2 className="fall22">Spring 2025</h2>
 
-    // handleClose = (active) => {
-    //     this.setState({ selectedCard: null, popupActive: active });
-    // }
-
-    // render() {
-    //     const { selectedCard } = this.state;
-
-    //     return <div>
-    //         <h1 className="leadership">URM TA Directory</h1>
-    //         <h2 className="fall22">Spring 2025</h2>
-    //         <TaPopup trigger={this.state.popupActive} card={this.state.selectedCard} setTrigger={this.handleClose}>
-    //             <h3>My popup!</h3>
-    //         </TaPopup>
-    //         <div className="grid-container-container">
-    //             <div className="grid-container" style={{
-    //                 display: 'grid',
-    //                 gridTemplateColumns: 'repeat(3, 1fr)',
-    //                 gap: '20px',
-    //                 justifyContent: 'center',
-    //                 padding: '20px'
-    //             }}>
-    //                 {cards.map(card => (
-    //                     <div className="grid-item"
-    //                         onClick={() => this.handleCardClick(card)}
-    //                     >
-    //                          <div className="ta-card" style={{
-    //                             backgroundColor: '#EEEEE6',
-    //                             padding: '20px',
-    //                             borderRadius: '12px',
-    //                             boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-    //                             margin: '10px',
-    //                             cursor: 'pointer',
-    //                             width: '264px',
-    //                             height: '150px'
-    //                         }}>
-    //                             <h3>{card.title}</h3>
-    //                             <p>{card.name}</p>
-    //                         </div>
-    //                     </div>
-    //                 ))}
-    //             </div>
-    //         </div>
-    //     </div>
-    // }
-// }
-
-export default TADirectory;
+      {TAList.map((group) => (
+        <div key={group.course} className="course-section">
+          <div className="course-header">
+            <h2 className="course-title">{group.course}</h2>
+            <hr className="divider" />
+          </div>
+          <div className="ta-card-row">
+            {group.members.map((member) => (
+              <TACard key={member.id} title={member.netid} name={member.name} />
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}

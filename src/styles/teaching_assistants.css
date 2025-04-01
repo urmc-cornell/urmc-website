@@ -1,0 +1,105 @@
+.leadership-page {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  
+  }
+  
+  .leadership {
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      font-family: "Helvetica Neue";
+      color: #F0F0F0;
+      font-size: 64px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-bottom: -20px;
+      margin-top: 1.5rem;
+  }
+  
+  .fall22 {
+      display:flex;
+      justify-content: center;
+      color: #D2D1D1;
+      font-size: 36px;
+      font-weight: 400;
+      font-family: "Helvetica Neue";
+  }
+  .grid-container-container {
+    display: flex;
+    align-items: center;
+    height: 80%;
+  
+    justify-content: center;
+  }
+  
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 100fr));
+      grid-gap: 20px;
+      overflow: auto;
+      max-width: 100%;
+      margin-left: 20px;
+      margin-right: 20px;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+  
+    .grid-item {
+      display: flex;
+      padding: 20px;
+      align-items: center;
+      text-align: center;
+      width: auto;
+      justify-content: center;
+    }
+
+    .course-section {
+        margin-bottom: 40px;
+    }
+    
+    .course-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+    margin-left: 1rem;
+    }
+    
+    .divider {
+    border: none;
+    height: 2px;
+    background-color: white;
+    margin: 20px auto;
+    }
+    
+    .ta-card-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .course-header {
+        width: 95%;
+        margin: 20px auto;
+    }
+  
+  
+  @media (max-width: 767px) {
+      .grid-container {
+        width: 200;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    
+      .grid-item {
+        width: fit;
+      }
+    }

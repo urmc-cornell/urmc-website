@@ -45,7 +45,7 @@ function App() {
       component = <Points />;
       break;
     case "/leaderboard":
-      component = <Leaderboard />
+      component = <Leaderboard />;
       break;
   }
 
@@ -53,9 +53,7 @@ function App() {
     <div className="page-container">
       <div className="content-wrap">
         {!isHomePage && <Navbar />}
-        <div className="body">
-          {component}
-        </div>
+        <div className="body">{component}</div>
         <div className="foot-params">
           <Footer />
         </div>

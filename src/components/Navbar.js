@@ -1,16 +1,17 @@
-import React from 'react';
-import '../styles/bars.css';
-import { useScale } from '../hooks/useScale.js';
-import gold_logo from '../images/gold_logo.png'
-import giving_day_banner from '../images/giving_day_banner.png';
+import React from "react";
+import "../styles/bars.css";
+import { useScale } from "../hooks/useScale.js";
+import gold_logo from "../images/gold_logo.png";
+import giving_day_banner from "../images/giving_day_banner.png";
 
 function Navbar() {
-    const [clicked, setClicked] = React.useState(false);
-    useScale();
+  const [clicked, setClicked] = React.useState(false);
+  useScale();
 
-    const handleClick = () => {
-        setClicked(!clicked);
-    }
+  const handleClick = () => {
+    setClicked(!clicked);
+  };
+
 
     return (
         <div>
@@ -43,26 +44,20 @@ function Navbar() {
                     </ul>
                 </div>
             </nav>
-
-            {/* <div className='info-bar'>
-                <div className='button-div'> 
-                    <a class="info-btn" href="https://givingday.cornell.edu/campaigns/under-represented-minorities-in-computing-urmc" target="_blank">Giving Day!!</a> 
-                </div>
-            </div> */}
-        </div>
-    );
+    </div>
+  );
 }
 
 function CustomLink({ href, children, ...props }) {
   const path = window.location.pathname;
 
-    return (
-        <li className={path === href ? "active" : ""}>
-            <a href={href} {...props}>
-                {children}
-            </a>
-        </li>
-    )
+  return (
+    <li className={path === href ? "active" : ""}>
+      <a href={href} {...props}>
+        {children}
+      </a>
+    </li>
+  );
 }
 
 export default Navbar;
