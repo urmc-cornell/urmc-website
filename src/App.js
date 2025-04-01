@@ -33,9 +33,9 @@ function App() {
     case "/ta-directory":
       component = <Ta_directory />;
       break;
-    case "/teaching_assistants":
-      component = <TA_page />
-      break;
+    // case "/teaching_assistants":
+    //   component = <TA_page />
+    //   break;
     case "/getting-involved":
       component = <Getting_involved />;
       break;
@@ -49,7 +49,7 @@ function App() {
       component = <Points />;
       break;
     case "/leaderboard":
-      component = <Leaderboard />
+      component = <Leaderboard />;
       break;
   }
 
@@ -57,9 +57,7 @@ function App() {
     <div className="page-container">
       <div className="content-wrap">
         {!isHomePage && <Navbar />}
-        <div className="body">
-          {component}
-        </div>
+        <div className="body">{component}</div>
         <div className="foot-params">
           <Footer />
         </div>
