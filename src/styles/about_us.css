@@ -231,6 +231,7 @@ body {
     gap: 3rem;
     max-width: 100%;
     place-items: center;
+    min-width: 500px;
 }
 
 
@@ -265,6 +266,7 @@ body {
     grid-template-rows: auto auto;
     gap: 3.5rem;
     max-width: 100%;
+    min-width: 500px;
     grid-template-areas:
         "image1 image3"
         "image2 image3";
@@ -371,8 +373,8 @@ body {
     max-width: 100%;
     height: auto;
     object-fit: contain;
-    width: auto;
-    max-height: 100%;
+    min-width: 200px;
+    min-height: 150px;
 }
 
 .academic-images img {
@@ -406,6 +408,8 @@ body {
     object-fit: contain;
 }
 
+
+
 @media (max-width: 768px) {
 
     .about-us-page {
@@ -426,27 +430,38 @@ body {
     .pillar-sections {
         padding-left: 1rem;
         padding-right: 1rem;
-        gap: 3rem;
+        gap: 2rem;
+        margin-bottom: 0;
     }
 
-    .pillar-section {
-        flex-direction: column;
-        gap: 1.5rem;
-        flex-wrap: wrap;
-        justify-content: center;
-        text-align: center;
+    .pillar-section:last-child {
+        margin-bottom: 0;
     }
 
-    .section-images,
-    .section-content {
+    .pillar-section:last-child .section-images {
+        margin-bottom: 0.5rem;
+    }
+
+    .profdev-images {
+        margin-bottom: 0.5rem;
+    }
+
+    .stats-bar {
+        margin: 0.5rem auto 1rem;
+    }
+
+    .section-images {
+        order: 2; /* Images always appear after text on mobile */
         max-width: 100%;
     }
 
     .section-content {
+        order: 1; /* Content always appears before images on mobile */
         max-width: 100%;
         text-align: center;
     }
 
+    /* Consistent spacing for all image sections on mobile */
     .section-images,
     .academic-images,
     .community-images,
@@ -455,22 +470,93 @@ body {
         flex-direction: column;
         align-items: center;
         width: 100%;
-        gap: 1rem;
+        gap: 1.5rem; /* Standardized gap */
+        margin-bottom: 2rem; /* Add bottom margin for separation from next section */
     }
 
     .community-images,
     .profdev-images {
-        grid-template-columns: 1fr;
-        grid-template-areas: none;
+        min-width: unset;
+        width: 100%;
     }
 
-    .pillar-section img {
-        max-width: 90%;
-        height: auto;
-        width: auto;
-        object-fit: contain;
-        display: block;
+    /* Remove duplicate styles */
+    .academic-images,
+    .community-images,
+    .profdev-images {
+        align-items: center;
+    }
+
+    /* Remove this duplicate definition */
+    .academic-images {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
         margin: 0 auto;
+        padding: 0;
+        text-align: center;
+    }
+
+    /* Reset grid areas and layout for mobile */
+    .profdev-images {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Reduced gap specifically for profdev */
+        min-width: unset;
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Reset all grid area settings for mobile */
+    #profdev-1,
+    #profdev-2,
+    #profdev-3 {
+        grid-area: unset;
+        width: auto;
+        height: auto;
+        max-height: 200px; /* Control maximum height */
+        max-width: 90%;
+        margin: 0 auto;
+        flex-shrink: 1;
+    }
+    
+    /* Improve image container structure */
+    .community-images,
+    .profdev-images {
+        min-width: unset;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Make all images in mobile view use the same sizing rules */
+    .pillar-section img,
+    .academic-images img,
+    .community-images img,
+    .profdev-images img {
+        min-width: 150px;
+        min-height: 0; /* Remove min-height constraint */
+        height: auto;
+        max-height: 200px; /* Add max-height */
+        margin: 0 auto;
+        max-width: 90%;
+        display: block;
+        object-fit: contain;
+    }
+
+    /* Academic images specific adjustments */
+    #academic-1,
+    #academic-2 {
+        margin: 0 auto;
+        max-width: 90%;
+        width: auto;
+        height: auto;
+        position: relative;
+        left: 0;
+        transform: translateX(0);
     }
 
     .section-title {
@@ -502,39 +588,46 @@ body {
         font-size: 1.2rem;
     }
 
-    .stats,
+    /* Hide pillars only, not stats */
     .pillars {
         display: none;
     }
-
-    .academic-images,
-    .community-images,
-    .profdev-images {
-        align-items: center;
-    }
-
-    .academic-images {
+    
+    /* Stats bar styling for mobile */
+    .stats-bar {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        width: 90%;
+        height: auto;
+        padding: 1.5rem;
+        gap: 1.5rem;
+        border-radius: 1.5rem;
+        margin: 1.5rem auto;
+    }
+    
+    .stats-item {
         width: 100%;
-        gap: 1rem;
-        margin: 0 auto;
-        padding: 0;
-        text-align: center;
+        padding: 0.5rem;
+    }
+    
+    .stats-header {
+        font-size: 1.5rem;
+    }
+    
+    .stats-number {
+        font-size: 2.25rem;
     }
 
-    #academic-1,
-    #academic-2 {
-        margin: 0 auto;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 90%;
-        width: auto;
-        height: auto;
-        display: block;
-        position: relative;
-        left: 0;
-        transform: translateX(0);
+    .pillar-section {
+        flex-direction: column;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 1rem; /* Add this to control spacing between sections */
+    }
+    
+    .pillar-section:last-child {
+        margin-bottom: 0;
     }
 }

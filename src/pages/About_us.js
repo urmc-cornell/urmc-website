@@ -37,7 +37,9 @@ const StatsItem = ({ header, number }) => (
 // Component for pillar section
 const PillarSection = ({ title, children, imageSection, className }) => (
   <div className={`pillar-section ${className || ""}`}>
-    {imageSection}
+    <div className="section-images">
+      {imageSection}
+    </div>
     <div className="section-content">
       <div className="section-title">{title}</div>
       <div className="section-text">{children}</div>

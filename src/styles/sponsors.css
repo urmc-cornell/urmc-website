@@ -54,11 +54,13 @@
     align-items: center;
     justify-content: center;
     gap: 2.5%; /* Use percentage-based gap for responsiveness */
+    row-gap: 3rem; /* Add more vertical spacing between rows */
     width: 100%; /* Set width as a percentage of the parent or viewport */
     height: 100%; /* Let height adjust automatically based on content */
     position: relative;
     flex-direction: row;
     padding-top: 2%; /* Use percentage-based padding */
+    padding-bottom: 2%; /* Add bottom padding */
 }
 
 .sponsor-section {
@@ -71,7 +73,6 @@
     overflow: visible;
     align-items: center;
     justify-content: center;
-
 }
 
  .plat-sponsors {
@@ -91,6 +92,9 @@
 
 .bronze-sponsors {
     background: rgba(205, 127, 50, 0.40);
+    aspect-ratio: auto; /* Override the fixed aspect ratio */
+    min-height: fit-content; /* Let it grow with content */
+    height: auto; /* Ensure it expands with content */
 } 
               
 .buttons {
@@ -137,8 +141,15 @@
     max-height: 60%;
     text-align: center;
     position: static;
-
 }
+
+/* Add specific sizing for bronze logos */
+.bronze-logo {
+    max-height: 10rem;
+    max-width: 12rem;
+    object-fit: contain;
+}
+
 
 .btn-1{
     background: var(--blue-cta-color, linear-gradient(138deg, #C0C0C0 -18.69%, #265999 96.38%));

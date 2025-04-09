@@ -191,8 +191,7 @@ html {
 /* Add spacing to the header content */
 .home-content {
     padding: 2rem 1rem;
-    padding-bottom: 4rem;
-    /* Add more bottom padding to prevent overlap with ellipses */
+    padding-bottom: 6rem;
     margin-bottom: auto;
     /* Push content to the top */
     width: 100%;
@@ -225,8 +224,7 @@ html {
     width: auto;
     /* Use natural width instead of percentage */
     height: auto;
-    max-height: 50vh;
-    /* Limit height to half the viewport height */
+    max-height: 45vh;
     z-index: 1;
     object-fit: contain;
 }
@@ -238,8 +236,7 @@ html {
     width: auto;
     /* Use natural width instead of percentage */
     height: auto;
-    max-height: 50vh;
-    /* Limit height to half the viewport height */
+    max-height: 45vh;
     z-index: 1;
     object-fit: contain;
 }
@@ -382,3 +379,4 @@ html {
         max-width: 350px;
     }
 }
+

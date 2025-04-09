@@ -39,11 +39,10 @@
 .text-background {
     display: flex;
     flex-direction: column;
-    width: 34.375rem;
-    height: 23.25rem;
     padding: 3.44rem 2.88rem;
     background-color: #f0f0f0;
-
+    height: 23.25rem;
+    
     box-sizing: border-box;
     overflow: hidden;
     border-radius: 1.25rem;
@@ -115,6 +114,7 @@
     .text-background {
         width: 100%;
         height: auto;
+        min-height: 15rem;
         padding: 1.5rem 1rem;
     }
 
