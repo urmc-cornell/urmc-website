@@ -4,43 +4,53 @@
 
 :root {
     /* dimensionless ratio of (current viewport / 1512px) */
-    --scale: 1;
-  }
+    /* --scale: 1; */
+}
+
+body,
+html {
+    overflow-x: hidden;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
 
 .home {
     display: flex;
-    /* justify-content: center; */
-    flex-grow: 1;
     flex-direction: column;
     position: relative;
-    overflow-x:hidden;
-
-    /* max-width: 1512px;
-    margin: 0 auto; */
+    overflow-x: hidden;
+    min-height: 100vh;
+    /* Ensure home takes at least full viewport height */
+    padding-bottom: 0;
+    /* Remove any bottom padding */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
-.home-nav{
-    
+.home-nav {
+
     display: flex;
     align-items: center;
-    margin-left: calc(4.5rem * var(--scale));
-    margin-top: calc(2.75rem * var(--scale));
+    margin-left: 4.5rem;
+    margin-top: 2.75rem;
 }
 
 
 .home-logo {
-    width: calc(22rem * var(--scale));
-    height: calc(9.1875rem * var(--scale));
+    width: 22rem;
+    height: 9.1875rem;
 }
 
 .home-nav-menu {
     display: flex;
-    width: calc(65.875rem * var(--scale));
+    width: 65.875rem;
     justify-content: center;
     align-items: center;
-    gap: calc(2.6875rem * var(--scale));
+    gap: 2.6875rem;
     list-style: none;
-    padding-top:calc(2rem * var(--scale));
+    padding-top: 2rem;
 }
 
 
@@ -48,7 +58,7 @@
     text-decoration: none;
     color: #D9D9D9;
     font-family: Medium;
-    font-size: calc(1.25rem * var(--scale));
+    font-size: 1.25rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -62,8 +72,8 @@
 .home-nav-menu li.active {
     color: #667BC4;
     background-color: #C7D3FB;
-    padding: calc(0.25rem * var(--scale)) calc(0.625rem * var(--scale));
-    border-radius: calc(0.6875rem * var(--scale));
+    padding: 0.25rem 0.625rem;
+    border-radius: 0.6875rem;
 }
 
 .header {
@@ -72,14 +82,10 @@
     margin-bottom: 0;
     text-align: center;
     font-family: "Hard";
-    font-size: calc(4rem * var(--scale));
+    font-size: 4rem;
     font-weight: 700;
     line-height: normal;
     text-transform: uppercase;
-}
-
-.header.bottom {
-    margin-top: 0;
 }
 
 .sub-header {
@@ -89,42 +95,42 @@
     color: #F0F0F0;
     text-align: center;
     font-family: "Helvetica Neue";
-    font-size: calc(1.875rem * var(--scale));
+    font-size: 1.875rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
 .heart {
-    width: calc(11px * var(--scale));
-    height: calc(11px * var(--scale));
+    width: 0.6875rem;
+    height: 0.6875rem;
 }
 
 .btn {
-    margin: calc(10px * var(--scale));
+    margin: 0.625rem;
     display: flex;
-    padding: calc(20px * var(--scale)) calc(40px * var(--scale));
+    padding: 1.25rem 2.5rem;
     font-weight: bold;
     /* background-size: 200% auto; */
-    font-size: calc(30px * var(--scale));
+    font-size: 1.875rem;
     color: white;
     /* box-shadow: 0 0 20px #eee; */
     text-decoration: none;
-    border-radius: calc(64px * var(--scale));
+    border-radius: 4rem;
     text-align: center;
 }
 
 .btn-small {
-    margin: calc(10px * var(--scale));
+    margin: 0.625rem;
     display: flex;
-    padding: calc(10px * var(--scale)) calc(20px * var(--scale));
+    padding: 0.625rem 1.25rem;
     font-weight: bold;
     background-size: 200% auto;
-    font-size: calc(20px * var(--scale));
+    font-size: 1.25rem;
     color: white;
     /* box-shadow: 0 0 20px grey; */
     text-decoration: none;
-    border-radius: calc(64px * var(--scale));
+    border-radius: 4rem;
 }
 
 .btn-1 {
@@ -152,6 +158,7 @@
     top: 0;
     left: 0;
 }
+
 .btn-silver {
     background-image: linear-gradient(99deg, rgba(192, 192, 192, 0.50) 0.49%, #C0C0C0 102.93%);
     position: absolute;
@@ -181,52 +188,106 @@
     background-image: linear-gradient(to right, #b16802 0%, #d8963a 50%);
 }
 
+/* Add spacing to the header content */
+.home-content {
+    padding: 2rem 1rem;
+    padding-bottom: 6rem;
+    margin-bottom: auto;
+    /* Push content to the top */
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Ensure images container is at the bottom and takes full width */
+.images {
+    position: relative;
+    width: 100%;
+    margin-top: auto;
+    /* Push to bottom of flex container */
+    display: block;
+    overflow: visible;
+    /* Allow ellipses to be fully visible */
+    flex-shrink: 0;
+    /* Prevent shrinking */
+    background-color: transparent;
+    /* Keep transparent */
+    height: auto;
+    /* Let height be determined by content */
+    max-width: 100%;
+}
+
+/* Position the ellipses correctly */
 .blue_ellipse {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: calc(64.0625rem * var(--scale));
-    height: calc(24.74056rem * var(--scale));
-    flex-shrink: 0;
-    padding-top: calc(2rem * var(--scale));
-
-    /* max-width: 100%;
-    max-height: 80%; */
+    width: auto;
+    /* Use natural width instead of percentage */
+    height: auto;
+    max-height: 45vh;
+    z-index: 1;
+    object-fit: contain;
 }
 
 .purple_ellipse {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: calc(57.125rem * var(--scale));
-    height: calc(23.83388rem * var(--scale));
-    flex-shrink: 0;
-    padding-top: calc(2rem * var(--scale));
+    width: auto;
+    /* Use natural width instead of percentage */
+    height: auto;
+    max-height: 45vh;
+    z-index: 1;
+    object-fit: contain;
 }
 
+/* Style the group image to fill the width */
 .group {
-    position: relative;
-    margin-bottom: 0;
+    display: block;
     width: 100%;
-}
-
-.images {
-    display: flex;
-    justify-content: center;
+    height: auto;
+    z-index: 3;
+    /* Keep higher z-index */
+    margin: 0;
+    vertical-align: bottom;
     position: relative;
-    margin-top: calc(2.56rem * var(--scale));
+    mix-blend-mode: normal;
+    background-color: transparent;
 }
 
-/* 
+/* Move About_us component to separate page to avoid conflict */
+/* This requires a change in Home.js component structure */
+
 @media (max-width: 768px) {
+    .home {
+        padding: 0;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* Distribute space evenly */
+    }
+
+    .home-content {
+        padding: 0 1rem;
+        margin: auto 0;
+        /* Center content vertically */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+        /* Allow content to take up available space */
+    }
+
     .home-nav {
         flex-direction: column;
-        margin: calc(1rem * var(--scale));
-        align-items: flex-start;
+        margin: 1rem 0;
+        align-items: center;
+        gap: 1rem;
     }
 
     .home-logo {
-        width: calc(12rem * var(--scale));
+        width: 15rem;
         height: auto;
     }
 
@@ -234,49 +295,88 @@
         display: none;
     }
 
-    .home-content {
-        margin-top: calc(4rem * var(--scale));
-        padding: 0 calc(1rem * var(--scale));
-    }
-
     .header {
-        font-size: calc(2rem * var(--scale));
-        padding: calc(0.5rem * var(--scale));
+        font-size: 7.5vw;
+        /* Dynamic sizing based on viewport width */
+        padding: 0.5rem 0;
+        line-height: 1.1;
+        /* Tighter line height to reduce spacing */
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        /* Control word breaks better */
+        word-wrap: normal;
+        white-space: pre-wrap;
+        /* Respect <br> tags but don't break words */
+        overflow-wrap: break-word;
+        hyphens: none;
+        /* Prevent hyphenation */
     }
 
-    .header.bottom {
-        font-size: calc(2.5rem * var(--scale));
-    }
+
 
     .sub-header {
-        font-size: calc(1.2rem * var(--scale));
-        margin: calc(1rem * var(--scale));
-        padding: 0 calc(1rem * var(--scale));
+        font-size: 4vw;
+        /* Also make sub-header responsive */
+        margin: 0.5rem 0 1rem 0;
+        /* Reduced bottom margin */
+        padding: 0 1rem;
+        line-height: 1.4;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
+    /* Mobile-specific adjustments for the images */
     .images {
-        flex-direction: column;
-        margin-top: calc(2rem * var(--scale));
+        width: 100%;
+        margin-top: 0;
+        /* Remove margin to reduce space */
+        overflow: visible;
+        height: auto;
     }
 
-    .blue_ellipse, .purple_ellipse {
-        display: none;
+    /* Keep ellipses visible and properly sized on mobile */
+    .blue_ellipse,
+    .purple_ellipse {
+        max-height: 30vh;
+        /* Smaller on mobile */
+        display: block;
+        width: 50%;
+        /* Make them take up less space */
     }
 
+    /* Make the group photo appear larger in mobile view */
     .group {
         width: 100%;
         height: auto;
-        margin-top: calc(2rem * var(--scale));
+        margin: 0;
+        display: block;
+        object-fit: cover;
+        /* Maintain aspect ratio while filling width */
+        object-position: center 20%;
+        /* Focus on the upper part of the image */
+        min-height: 50vh;
+        /* Make the image taller */
+    }
+
+    /* Remove the SVG-specific styling since the group isn't an SVG */
+    .group>svg {
+        display: none;
     }
 
     .buttons {
         flex-direction: column;
-        gap: calc(1rem * var(--scale));
+        align-items: center;
+        gap: 1rem;
+        margin-top: 2rem;
     }
 
-    .btn {
-        width: calc(10rem * var(--scale));
-        font-size: calc(1rem * var(--scale));
-        padding: calc(0.625rem * var(--scale));
+    .home .btn {
+        width: 80%;
+        font-size: 1.2rem;
+        padding: 0.8rem 1rem;
+        margin: 0;
+        max-width: 350px;
     }
-} */
+}
+

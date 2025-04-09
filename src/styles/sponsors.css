@@ -4,8 +4,8 @@
 
 
 .sponsor-page{
-    margin-top: calc(1.5rem * var(--scale));
-    margin-bottom: calc(3.47rem * var(--scale));
+    margin-top: 1.5rem;
+    margin-bottom: 3.47rem;
 }
 
 .heading {
@@ -19,7 +19,7 @@
 .corporate-sponsors-text {
     color: #F0F0F0;
     font-family: "Helvetica Neue";
-    font-size: calc(4rem * var(--scale));
+    font-size: 4rem;
     font-weight: 700;
     margin: 0rem;
 }
@@ -31,7 +31,7 @@
 
     color: var(--Leadership-Gray-White, #EEEEE6);
     font-family: "Helvetica Neue";
-    font-size: calc(1.5625rem * var(--scale));
+    font-size: 1.5625rem;
     font-weight: 400;
 }
 
@@ -41,10 +41,10 @@
     column-gap: normal;
     justify-content: center;
     align-items: center; 
-    gap: calc(50px * var(--scale));
-    margin-left: calc(50px * var(--scale));
-    margin-right: calc(50px * var(--scale));
-    margin: calc(2.5rem * var(--scale)) 0rem;
+    gap: 3.125rem;
+    margin-left: 3.125rem;
+    margin-right: 3.125rem;
+    margin: 2.5rem 0rem;
     max-width: 100%;    
 }
 
@@ -54,24 +54,25 @@
     align-items: center;
     justify-content: center;
     gap: 2.5%; /* Use percentage-based gap for responsiveness */
+    row-gap: 3rem; /* Add more vertical spacing between rows */
     width: 100%; /* Set width as a percentage of the parent or viewport */
     height: 100%; /* Let height adjust automatically based on content */
     position: relative;
     flex-direction: row;
     padding-top: 2%; /* Use percentage-based padding */
+    padding-bottom: 2%; /* Add bottom padding */
 }
 
 .sponsor-section {
     width: 90%;   
     height: auto; 
     position: relative;
-    border-radius: calc(15px * var(--scale));
-    max-width: calc(1360px * var(--scale));
+    border-radius: 0.9375rem;
+    max-width: 85rem;
     aspect-ratio: 1360 / 220; 
     overflow: visible;
     align-items: center;
     justify-content: center;
-
 }
 
  .plat-sponsors {
@@ -91,29 +92,32 @@
 
 .bronze-sponsors {
     background: rgba(205, 127, 50, 0.40);
+    aspect-ratio: auto; /* Override the fixed aspect ratio */
+    min-height: fit-content; /* Let it grow with content */
+    height: auto; /* Ensure it expands with content */
 } 
               
 .buttons {
-    padding: calc(30px * var(--scale));
+    padding: 1.875rem;
 }
 .linkedin {
     width: auto;
-    height: calc(50rem * var(--scale));
+    height: 50rem;
 }
 
 .bloomberg {
     width: auto;
-    height: calc(3.9rem * var(--scale));
+    height: 3.9rem;
 }
 
 .roblox {
     width: auto;
-    height: calc(5rem * var(--scale));
+    height: 5rem;
 }
 
 .janestreet {
     width: auto;
-    height: calc(15rem * var(--scale));
+    height: 15rem;
 }
 
 .uber {
@@ -122,7 +126,7 @@
 }
 
 .ey {
-    height: calc(7.6rem * var(--scale));
+    height: 7.6rem;
     width: auto;
     margin-bottom: 2%;
 }
@@ -137,107 +141,191 @@
     max-height: 60%;
     text-align: center;
     position: static;
-
 }
+
+/* Add specific sizing for bronze logos */
+.bronze-logo {
+    max-height: 10rem;
+    max-width: 12rem;
+    object-fit: contain;
+}
+
 
 .btn-1{
     background: var(--blue-cta-color, linear-gradient(138deg, #C0C0C0 -18.69%, #265999 96.38%));
 }
 
 @media (max-width: 768px) {
-
-    .sponsor-page{
-        padding: 0 calc(3rem * var(--scale));
-        
+    /* Page container adjustments */
+    .sponsor-page {
+        padding: 0 1rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
     }
 
+    /* Header adjustments */
     .corporate-sponsors-text {
-        font-size: calc(10rem * var(--scale));;
-    }
-    .thanks{
-        font-size: calc(5rem * var(--scale));;
-
-    }
-
-    .btn-small{
-        font-size: calc(3rem * var(--scale));        
-    }
-
-    .linkedin{
-        width: calc(50rem * var(--scale));;
-        height: auto;
-       
-    }
-
-
-    .logo{
-        width: auto;
-        height: auto;
-        max-width: 80%;
-        max-height: 80%;
-        object-fit: contain;
-    }
-
-
-
-
-    .bronze-logo{
-        max-height: 30%;
-    }
-
-    .silver-logo{
-        max-height: 50%;
-    }
-
- 
-    .sponsor-tiers{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;    
-        column-gap: normal;
-        justify-content: center;
-        align-items: center; 
-        margin-left: 50px;
-        margin-right: 50px;
-        max-width: 100%;    
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
     }
     
-     .sponsor-section{
-        display: flex;
-        flex-direction: column;
-        border-radius: 15px;
+    .thanks {
+        font-size: 1rem;
+        line-height: 1.4;
+        padding: 0 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Adjust spacing between sponsor tiers */
+    .sponsor-tiers {
+        gap: 1.5rem;
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Main sponsor section container */
+    .sponsor-section {
         width: 100%;
-        height: calc(40rem * var(--scale));
         position: relative;
-     }
-
-     .img-section{
-        padding-top: 8%;
-        height: 100%;
-     }
-
-    .plat-sponsors .img-section{
-        padding-top: 0%;
+        border-radius: 0.75rem;
+        padding: 0;
+        margin: 0;
+        display: block; /* Change from flex to block for better positioning */
+        aspect-ratio: auto; /* Remove fixed aspect ratio */
+        min-height: auto; /* Let content determine height */
+        overflow: visible; /* Allow badge to overflow if needed */
     }
 
-    .gold-sponsors .img-section{
-        padding-top: 0%;
+    /* Badge positioning */
+    .sponsor-section .btn-small {
+        position: absolute;
+        top: 0.75rem;
+        left: 0.75rem;
+        z-index: 2;
+        margin: 0;
+        padding: 0.25rem 0.5rem;
+        font-size: 0.7rem;
+        font-weight: bold;
+        border-radius: 0.75rem;
     }
-
-
+    
+    /* Image section adjustments - now with responsive flex layout */
+    .img-section {
+        display: flex;
+        flex-wrap: wrap; /* Allow wrapping */
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 2.5rem 1rem 1.5rem 1rem; /* Reduce top padding from 3rem to 2.5rem */
+        gap: 1.5rem; /* Gap between logos */
+        min-height: 8rem; /* Add minimum height for consistency */
+    }
+    
+    /* For sections with single logos (Platinum, Gold) - improve vertical centering */
+    .plat-sponsors .img-section,
+    .gold-sponsors .img-section {
+        padding-top: 2.5rem; /* Reduce from 3.5rem */
+        padding-bottom: 2.5rem; /* Add bottom padding for balance */
+        display: flex;
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+        min-height: 10rem; /* Ensure consistent height */
+    }
+    
+    /* Logo handling - common styles */
+    .logo {
+        max-width: 40%; /* Reduced from 80% to allow horizontal arrangement */
+        height: auto;
+        object-fit: contain;
+        margin: 0;
+        /* Use flex-basis to control how many logos fit per row */
+        flex: 0 1 auto; /* Don't grow, allow shrink, auto basis */
+    }
+    
+    /* Tier-specific logo sizes and behaviors */
+    /* Larger logos should take more width to ensure they stack vertically */
+    .platinum-logo {
+        max-height: 4.5rem;
+        max-width: 85%; /* Force vertical stacking */
+        flex: 0 1 100%; /* Take full row */
+        display: block; /* Ensure proper rendering */
+        margin: 0 auto; /* Center horizontally */
+    }
+    
+    .gold-logo {
+        max-height: 4rem;
+        max-width: 85%; /* Force vertical stacking */
+        flex: 0 1 100%; /* Take full row */
+        display: block; /* Ensure proper rendering */
+        margin: 0 auto; /* Center horizontally */
+    }
+    
+    .silver-logo {
+        max-height: 3.5rem;
+        max-width: 85%; /* Force vertical stacking in Silver level */
+        flex: 0 1 100%; /* Take full row */
+    }
+    
+    /* Bronze logos can be arranged horizontally */
+    .bronze-logo {
+        max-height: 3rem;
+        max-width: 40%; /* Allow 2 per row */
+        flex: 0 1 auto; /* Allow sharing row space */
+    }
+    
+    /* Specific logo adjustments for ones that might need special handling */
+    .janestreet {
+        max-width: 85%;
+        flex: 0 1 100%; /* Take full row */
+        margin: 0 auto; /* Center horizontally */
+    }
+    
+    .linkedin {
+        max-width: 85%;
+        flex: 0 1 100%; /* Take full row */
+        margin: 0 auto; /* Center horizontally */
+    }
+    
+    /* Bronze tier specific smaller logos - could be positioned horizontally */
+    .bronze-sponsors .google,
+    .bronze-sponsors .mastercard,
+    .bronze-sponsors .datadog {
+        max-width: 40%; /* Allow 2 per row */
+    }
+    
+    /* Potentially wider logos in Bronze tier */
+    .bronze-sponsors .roblox,
+    .bronze-sponsors .capitalone,
+    .bronze-sponsors .ey {
+        max-width: 75%; /* Wider logos may need more space */
+    }
+    
+    /* Bottom buttons */
     .buttons {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        gap: 1rem;
+        padding: 1.5rem 0;
+        width: 100%;
     }
-
-    .sponsor-page .btn{
-       font-size: 24px;
-       width: 80%;
-       height: 100%;
+    
+    .sponsor-page .btn {
+        font-size: 1rem;
+        width: 80%;
+        max-width: 20rem;
+        text-align: center;
+        padding: 0.75rem 1rem;
+        margin: 0;
     }
-
-
+    
+    /* Structure the single-logo sections better */
+    .plat-sponsors, .gold-sponsors {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Center content vertically */
+        min-height: 10rem; /* Ensure consistent height */
+    }
 }
 
