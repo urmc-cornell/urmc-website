@@ -86,6 +86,7 @@ html {
     font-weight: 700;
     line-height: normal;
     text-transform: uppercase;
+    word-break: keep-all;
 }
 
 .sub-header {
@@ -296,7 +297,7 @@ html {
     }
 
     .header {
-        font-size: 7.5vw;
+        font-size: 7vw;
         /* Dynamic sizing based on viewport width */
         padding: 0.5rem 0;
         line-height: 1.1;
