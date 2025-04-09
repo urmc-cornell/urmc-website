@@ -1,64 +1,63 @@
-
 .points-page {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: calc(1200px * var(--scale));
+    max-width: 75rem;
     margin: 0 auto;
-    padding: 0 calc(20px * var(--scale));
+    padding: 0 1.25rem;
     margin-bottom: 5rem;
-    gap: calc(4rem * var(--scale));
+    gap: 4rem;
 }
 
 .points {
     color: #F0F0F0;
     font-family: "Helvetica Neue";
-    font-size: calc(64px * var(--scale));
+    font-size: 4rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-bottom: calc(80px * var(--scale));
-    margin-top: calc(1.5rem * var(--scale));
+    margin-bottom: 5rem;
+    margin-top: 1.5rem;
 }
 
 .container-title {
     color: #FFF;
     font-family: Medium;
-    font-size: calc(2.5rem * var(--scale));
+    font-size: 2.5rem;
     font-weight: 600;
 }
 
 .points-allocation {
     display: flex;
     flex-direction: column;
-    gap: calc(3rem * var(--scale));
-    margin-bottom: calc(50px * var(--scale));
+    gap: 3rem;
+    margin-bottom: 3.125rem;
 }
 
 .point-item {
     display: flex;
-    gap: calc(20px * var(--scale));
+    gap: 1.25rem;
     align-items: center;
 }
 
 .point-group {
     display: flex;
-    gap: calc(20px * var(--scale));
+    gap: 1.25rem;
     align-items: flex-start;
 }
 
 .point-descriptions {
     display: flex;
     flex-direction: column;
-    gap: calc(10px * var(--scale));
+    gap: 0.625rem;
 }
 
 .point-value {
     color: #EEB50C;
     text-align: center;
     font-family: Medium;
-    font-size: calc(2.5rem * var(--scale));
+    font-size: 2.5rem;
     font-weight: 600;
 }
 
@@ -67,11 +66,11 @@
     color: #FFF;
     text-align: center;
     font-family: skinny-montserrat;
-    font-size: calc(2.5rem * var(--scale));
+    font-size: 2.5rem;
     font-weight: 400;
 }
 
-.points-container{
+.points-container {
     width: 100%;
 }
 
@@ -79,19 +78,19 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
-    margin-bottom: calc(50px * var(--scale));
+    margin-bottom: 3.125rem;
 }
 
 .reward-card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-top: calc(1rem * var(--scale));
-    padding-bottom: calc(2.25rem *var(--scale));
+    padding-top: 1rem;
+    padding-bottom: 2.25rem;
     border-radius: 0.625rem;
     background: #D9D9D9;
-    width: calc(20.25rem * var(--scale));
-    height: calc(19.4375rem * var(--scale));
+    width: 20.25rem;
+    height: 19.4375rem;
     flex-shrink: 0;
     text-align: center;
 }
@@ -100,7 +99,7 @@
     color: #667BC4;
     text-align: center;
     font-family: Hard;
-    font-size: calc(2.5rem * var(--scale));
+    font-size: 2.5rem;
     font-weight: 700;
     white-space: pre-line;
 }
@@ -109,7 +108,7 @@
     color: #000;
     text-align: center;
     font-family: Hard;
-    font-size: calc(2.5rem * var(--scale));
+    font-size: 2.5rem;
     font-weight: 600;
 }
 
@@ -118,14 +117,14 @@
     flex-direction: column;
     text-align: center;
     gap: 2.6rem;
-    
+
 }
 
 .view-points h1 {
     color: #FFF;
     text-align: center;
     font-family: Hard;
-    font-size: calc(2.25rem * var(--scale));
+    font-size: 2.25rem;
     font-weight: 600;
     margin: 0;
 }
@@ -134,7 +133,7 @@
     color: #FFF;
     text-align: center;
     font-family: Medium;
-    font-size: calc(2rem * var(--scale));
+    font-size: 2rem;
     font-weight: 600;
     margin: 0;
 }
@@ -143,43 +142,43 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: calc(3.7rem * var(--scale));
-    
+    gap: 3.7rem;
+
 }
 
 #points-form input {
-    width: calc(26.69rem * var(--scale));
-    height: calc(6rem * var(--scale));
+    width: 26.69rem;
+    height: 6rem;
     fill: #D9D9D9;
-    border-radius: calc(25px * var(--scale));
+    border-radius: 1.5625rem;
     border: none;
     color: #F0F0F0;
 
     font-family: Hard;
-    font-size: calc(1.875rem * var(--scale));
+    font-size: 1.875rem;
     font-weight: 600;
     color: black;
 
 }
 
 #points-form button {
-    border-radius: calc(25px * var(--scale));
+    border-radius: 1.5625rem;
     border: none;
     color: #F0F0F0;
-    font-size: calc(1.875rem * var(--scale));
-    border-radius: calc(4rem * var(--scale));
+    font-size: 1.875rem;
+    border-radius: 4rem;
     background: var(--blue-cta-color, linear-gradient(138deg, #C0C0C0 -18.69%, #265999 96.38%));
 
     display: inline-flex;
-    height: calc(4.3125rem * var(--scale)); 
-    padding: calc(1rem * var(--scale)) calc(2rem * var(--scale));
+    height: 4.3125rem;
+    padding: 1rem 2rem;
     justify-content: center;
     align-items: center;
-    gap: calc(0.625rem * var(--scale));;
+    gap: 0.625rem;
     flex-shrink: 0;
 
     font-family: Hard;
-    font-size: calc(1.875rem * var(--scale));;
+    font-size: 1.875rem;
     font-weight: 600;
 }
 
@@ -187,8 +186,8 @@
 #points-form h3 {
     color: #F0F0F0;
     font-family: "Helvetica Neue";
-    font-size: calc(20px * var(--scale));
-    margin-top: calc(10px * var(--scale));
+    font-size: 1.25rem;
+    margin-top: 0.625rem;
 }
 
 #points-form h3 {
@@ -200,81 +199,108 @@
 
 @media (max-width: 768px) {
 
-    .points-page{
-        gap: calc(4rem * var(--scale));
-
+    .points-page {
+        gap: 2rem;
+        padding: 0 1rem;
     }
 
-    .points{
-        font-size: calc(15rem * var(--scale));;
+    .points {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
     }
 
-    .container-title{
-        font-size: calc(8rem * var(--scale));;
+    .container-title {
+        font-size: 1.8rem;
     }
 
-    .point-value{
-        font-size: calc(5rem * var(--scale));;
+    .points-allocation {
+        gap: 1.5rem;
+        margin-bottom: 2rem;
     }
 
-    .point-description{
-        font-size: calc(4rem * var(--scale));;
+    .point-item {
+        gap: 0.8rem;
     }
 
-    .rewards-grid{
+    .point-group {
+        gap: 0.8rem;
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        text-align: center;
     }
 
-    .reward-card{ 
-        width: 80%;
-        height: calc(30rem * var(--scale));
+    .point-value {
+        font-size: 1.8rem;
+    }
+
+    .point-description {
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+
+    .rewards-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+    .reward-card {
+        width: 90%;
+        height: auto;
+        padding: 1rem;
+        gap: 0.8rem;
     }
 
 
-    .reward-title{
-        font-size: calc(4rem * var(--scale));
+    .reward-title {
+        font-size: 1.4rem;
     }
 
-    .reward-value{
-        font-size: calc(4rem * var(--scale));
+    .reward-value {
+        font-size: 1.3rem;
     }
 
 
     .view-points {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        gap: calc(4rem * var(--scale));
-        
+        gap: 1.5rem;
     }
-    
+
     .view-points h1 {
-        font-size: calc(10rem * var(--scale));;
+        font-size: 1.6rem;
     }
 
     .view-points h2 {
-        font-size: calc(4rem * var(--scale));;
+        font-size: 1.2rem;
+        line-height: 1.4;
+    }
+
+    #points-form {
+        gap: 1.5rem;
+        width: 100%;
     }
 
     #points-form input {
-
-        width: 60%;
-        height: calc(8rem * var(--scale));
+        width: 90%;
+        height: 3rem;
+        font-size: 1rem;
+        padding-left: 1rem;
+        border-radius: 1rem;
     }
 
     #points-form button {
-        width: 40%;
-        font-size: calc(3rem * var(--scale));
-        height: calc(8rem * var(--scale)); 
-
+        width: 70%;
+        font-size: 1.1rem;
+        height: 3.2rem;
+        padding: 0.5rem 1rem;
+        border-radius: 2rem;
     }
-    
- 
+
+
 
     #points-form h3 {
-        font-size: calc(6rem * var(--scale));
+        font-size: 1rem;
+        margin-top: 0.5rem;
+        text-align: center;
     }
 }
-

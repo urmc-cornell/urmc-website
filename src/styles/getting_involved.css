@@ -3,29 +3,29 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: calc(1200px * var(--scale));
+    max-width: 75rem;
     margin: 0 auto;
-    padding: 0 calc(20px * var(--scale));
+    padding: 0 1.25rem;
 }
 
 .getting-involved {
     /* text-align: center; */
     color: #F0F0F0;
     font-family: "Helvetica Neue";
-    font-size: calc(64px * var(--scale));
+    font-size: 4rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-bottom: calc(80px * var(--scale));
-    margin-top: calc(1.5rem * var(--scale));
+    margin-bottom: 5rem;
+    margin-top: 1.5rem;
     text-align: center;
 
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(calc(300px * var(--scale)), 1fr));
-    gap: calc(20px * var(--scale));
+    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+    gap: 1.25rem;
     width: 100%;
 }
 
@@ -39,21 +39,21 @@
 .text-background {
     display: flex;
     flex-direction: column;
-    width: calc(34.375rem * var(--scale));
-    height: calc(23.25rem * var(--scale));
-    padding: calc(3.44rem * var(--scale)) calc(2.88rem * var(--scale));
+    width: 34.375rem;
+    height: 23.25rem;
+    padding: 3.44rem 2.88rem;
     background-color: #f0f0f0;
 
     box-sizing: border-box;
     overflow: hidden;
-    border-radius: calc(20px * var(--scale));
+    border-radius: 1.25rem;
     text-align: start;
 }
 
 .header-text {
     color: #000;
     /* margin-bottom: 10px; */
-    font-size: calc(40px * var(--scale));
+    font-size: 2.5rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -61,29 +61,30 @@
 }
 
 .subheader-text {
-    font-size: calc(28px * var(--scale));
+    font-size: 1.75rem;
     font-weight: 400;
     font-family: "Montserrat";
     font-style: normal;
 }
 
 .button-div {
-    margin-top: calc(44px * var(--scale));
-    margin-bottom: calc(60px * var(--scale));
+    margin-top: 2.75rem;
+    margin-bottom: 3.75rem;
 }
+
 .btn {
     display: flex;
-    height: calc(4.3125rem * var(--scale));
-    padding: calc(0.25rem * var(--scale)) calc(2rem * var(--scale));
-    width: calc(22rem * var(--scale));
+    height: 4.3125rem;
+    padding: 0.25rem 2rem;
+    width: 22rem;
     justify-content: center;
     align-items: center;
-    gap: calc(10px * var(--scale));
+    gap: 0.625rem;
     font-family: "Montserrat-Medium-Soft";
     font-variant: all-small-caps;
     color: white;
-    border-radius: calc(64px * var(--scale));
-    box-shadow: 0px calc(4px * var(--scale)) calc(5px * var(--scale)) 0px rgba(0, 0, 0, 0.25);
+    border-radius: 4rem;
+    box-shadow: 0px 0.25rem 0.3125rem 0px rgba(0, 0, 0, 0.25);
     transition: all 0.3s ease;
 }
 
@@ -101,46 +102,48 @@
 
 @media (max-width: 768px) {
 
-    .getting-involved{
-        font-size: calc(15rem * var(--scale));;
-
+    .getting-involved {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
     }
 
-    .grid-container{
+    .grid-container {
         width: 100%;
-        margin-left: auto;
-        margin-right: auto;
+        gap: 1rem;
     }
 
-    .text-background{
+    .text-background {
         width: 100%;
         height: auto;
+        padding: 1.5rem 1rem;
     }
 
-    .header-text{
-        font-size: calc(6.5rem * var(--scale));
-
+    .header-text {
+        font-size: 1.8rem;
+        line-height: 1.3;
     }
 
-    .subheader-text{
-        font-size: calc(3.75rem * var(--scale));
-
+    .subheader-text {
+        font-size: 1.1rem;
+        line-height: 1.4;
     }
 
-    .button-div{
-        display:flex;
+    .button-div {
+        display: flex;
         width: 100%;
         justify-content: center;
-
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
     }
 
-    .getting-involved-page .btn{
-        font-size: 24px;
+    .getting-involved-page .btn {
+        font-size: 1.1rem;
         width: 80%;
-        height: 100%;
+        height: auto;
+        padding: 0.8rem 1rem;
     }
-    
-    
+
+
 
 
 }

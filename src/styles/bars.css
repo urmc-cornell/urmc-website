@@ -3,7 +3,7 @@
 }
 
 :root {
-    --scale: 1;
+    /* --scale: 1; */
 }
 
 .foot {
@@ -12,9 +12,9 @@
     display: flex;
     justify-content: space-between;
     font-family: "Medium";
-    font-size: calc(15px * var(--scale));
-    gap: calc(2rem * var(--scale));
-    padding: 0 calc(2rem * var(--scale));
+    font-size: 0.9375rem;
+    gap: 2rem;
+    padding: 0 2rem;
     width: 100%;
 }
 
@@ -25,8 +25,8 @@
 .footer-subtitle {
     align-items: center;
     display: flex;
-    font-size: calc(10px * var(--scale));
-    gap: calc(2px * var(--scale));
+    font-size: 0.625rem;
+    gap: 0.125rem;
     flex-direction: row;
 }
 
@@ -35,17 +35,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: calc(2rem * var(--scale));
-    padding: 0 calc(1rem * var(--scale));
-    margin-top: calc(1.05rem * var(--scale));
-    margin-left: calc(4.53rem * var(--scale));
+    gap: 2rem;
+    padding: 0 1rem;
+    margin-top: 1.05rem;
+    margin-left: 4.53rem;
 }
 
 .nav li.active {
     color: #667BC4;
     background-color: #C7D3FB;
-    padding: calc(0.25rem * var(--scale)) calc(0.625rem * var(--scale));
-    border-radius: calc(0.6875rem * var(--scale));
+    padding: 0.25rem 0.625rem;
+    border-radius: 0.6875rem;
 }
 
 .nav li:hover {
@@ -54,10 +54,10 @@
 
 .nav-menu {
     display: flex;
-    width: calc(65.875rem * var(--scale));
+    width: 65.875rem;
     justify-content: center;
     align-items: center;
-    gap: calc(2.75rem * var(--scale));
+    gap: 2.75rem;
     list-style: none;  
     margin: 0;  
 }
@@ -70,7 +70,7 @@
     height: 100%;
     display: flex;
     align-items: center;
-    font-size: calc(1.2rem * var(--scale));
+    font-size: 1.2rem;
 }
 
 .menu-icon {
@@ -78,9 +78,9 @@
 }
 
 .site-logo {
-    font-size: calc(5rem * var(--scale));
-    width: calc(16.5rem * var(--scale));
-    height: calc(7.21875rem * var(--scale));
+    font-size: 5rem;
+    width: 16.5rem;
+    height: 7.21875rem;
 }
 
 .foot ul {
@@ -88,7 +88,7 @@
     margin: 0;
     list-style: none;
     display: flex;
-    gap: calc(1rem * var(--scale));
+    gap: 1rem;
 }
 
 .foot a {
@@ -99,7 +99,7 @@
     height: 100%;
     display: flex;
     align-items: center;
-    padding: calc(0.25rem * var(--scale));
+    padding: 0.25rem;
 }
 
 .socials {
@@ -120,23 +120,19 @@
 
 .info-btn {
     display: flex;
-    height: calc(4.3125rem * var(--scale));
-    width: calc(22rem * var(--scale));
+    height: 4.3125rem;
+    width: 22rem;
     justify-content: center;
     align-items: center;  /* Uncommented for vertical centering */
     /* margin-top: -3rem; */
     font-family: "Montserrat-Medium-Soft";
-    font-size: clamp(
-    calc(1.25rem * var(--scale)), 
-    calc(1.5rem * var(--scale) + 0.3vw), 
-    calc(2rem * var(--scale))
-  );
-  line-height: 1;
-  padding: 0 2%;
+    font-size: clamp(1.25rem, 1.25rem + 0.5vw, 2rem);
+    line-height: 1;
+    padding: 0 2%;
     color: white;
     background-color: rgb(255, 92, 92);
-    border-radius: calc(64px * var(--scale));
-    box-shadow: 0px calc(4px * var(--scale)) calc(5px * var(--scale)) 0px rgba(0, 0, 0, 0.25);
+    border-radius: 4rem;
+    box-shadow: 0px 0.25rem 0.3125rem 0px rgba(0, 0, 0, 0.25);
     transition: all 0.3s ease;
     text-decoration: none;
 }
@@ -148,23 +144,14 @@
 @media (max-width: 768px) {
 
     .nav{
-        /* margin-top: calc(10rem * var(--scale)); */
-        /* display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: calc(1rem * var(--scale));
-        padding: 0; */
-
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        /* margin: calc(8rem * var(--scale)); */
+        /* Adjust margin for mobile */
+        margin: 1.5rem;
         padding: 0;
-        margin: calc(5rem * var(--scale)) calc(5rem * var(--scale));
     }
 
     .site-logo{
-        width: calc(40rem * var(--scale));
+        /* Reduce logo size significantly for mobile */
+        width: 12rem; /* ছিল 40rem */
         height: auto;
     }
 
@@ -172,82 +159,112 @@
         display:flex;
         width: 100%;
         justify-content: center;
-
+        /* Add some vertical margin if needed */
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
 
     .info-btn {
-        font-size: 24px;
+        font-size: 1.1rem; /* Reduce font size slightly */
         width: 80%;
-        height: 100%;
+        height: auto; /* Change from 100% */
+        padding: 0.8rem 1rem; /* Add some vertical padding */
     }
 
 
     .menu-icon {
         display: block;
         position: relative;
-        /* position: absolute; */
-        /* top: 0;
-        right: 0; */
-        /* transform: translate(-100%, 60%); */
-        font-size: calc(8rem * var(--scale));
+        font-size: 2.5rem; /* Reduce icon size drastically ( ছিল 8rem) */
         cursor: pointer;
     }
 
-    .nav-menu {
-        display: flex;
-        flex-direction: column;
-        margin-top: 30%;
-        gap: calc(8rem * var(--scale));
-    }
-
-    .nav-container.active {
-        background-color: darkgray;
-        left: 0;
-        opacity: 1;
-        transition: all 0.5s ease;
-        z-index: 1;
-    }
-
+    /* Adjustments for the slide-out/overlay menu container */
     .nav-container {
         display: flex;
         flex-direction: column;
+        align-items: center; /* Center items horizontally */
         width: 80%;
         height: 100vh;
-        position: absolute;
-        top: 0px;
-        left: -100%;
-        opacity: 1;
+        position: fixed; /* Use fixed for overlay */
+        top: 0;
+        left: -100%; /* Start off-screen */
+        background-color: #37383C; /* Match page background? Or keep darkgray */
+        padding-top: 5rem; /* Add padding from the top */
+        opacity: 0;
         transition: all 0.5s ease;
+        z-index: 1000; /* Ensure it's above other content */
+        box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    }
+
+    .nav-container.active {
+        left: 0;
+        opacity: 1;
+    }
+
+    /* Style the menu items within the container */
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center text */
+        width: 100%;
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
+        margin-top: 2rem; /* Adjust space from top ( ছিল 30%) */
+        gap: 2rem; /* Reduce gap significantly ( ছিল 8rem) */
+        list-style: none;
     }
 
     .nav a {
-        font-size: calc(6rem * var(--scale));
+        font-size: 1.5rem;
         text-align: center;
+        padding: 0.5rem 0;
+        width: 100%;
+        color: #F0F0F0; /* Ensure default link color is visible */
+        text-decoration: none; /* Remove underline if any */
+    }
+
+    /* Ensure active/hover states work reasonably */
+    .nav li.active a {
+         color: #FFFFFF; /* Change from gold to white */
+         font-weight: bold;
+         background-color: transparent;
+         padding: 0.5rem 0;
+         border-radius: 0;
+    }
+
+    .nav li a:hover {
+        color: #FFFFFF; /* Change hover to white as well for consistency */
     }
 
     .socials {
-        width: 25px;
-        height: 25px;
+        /* Convert px to rem */
+        width: 1.5625rem; /* ছিল 25px */
+        height: 1.5625rem; /* ছিল 25px */
         object-fit: fill;
     }
 
     .footer-title {
-        font-size: 12px;
+        font-size: 0.875rem; /* Slightly larger than 0.75rem */
     }
 
     .footer-subtitle-text {
-        font-size: 9px;
+        font-size: 0.625rem; /* Slightly larger than 0.5625rem */
     }
 
     .foot {
         flex-direction: column;
-        padding: 0 1rem;
-        gap: 0;
+        align-items: center; /* Center footer content */
+        padding: 1rem; /* Adjust padding */
+        gap: 0.5rem; /* Add small gap */
+        text-align: center;
     }
 
     .foot ul {
-        margin-left: auto;
-        gap: 0.5rem
+        margin-left: 0; /* Remove margin */
+        justify-content: center; /* Center social icons */
+        gap: 1rem; /* Increase gap slightly */
+        margin-top: 0.5rem; /* Add space above icons */
     }
 }
 
