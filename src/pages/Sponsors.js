@@ -20,6 +20,7 @@ import roblox from '../images/sponsors/roblox.png';
 import ey from '../images/sponsors/ey.png'
 import linkedin from '../images/sponsors/linkedin.png'
 import hrt from '../images/sponsors/hrt.png'
+import mckinsey from '../images/sponsors/mckinsey.png'
 import { useScale } from '../hooks/useScale.js';
 import React from 'react';
 
@@ -68,6 +69,7 @@ export default function Sponsors() {
                         {/* <img src={capitalone} alt="Capital One Logo" className="duolingo"></img> */}
                         <img src={bloomberg} alt="Bloomberg Logo" className="logo bloomberg silver-logo"></img>
                         <img src={hrt} alt="HRT Logo" className="hrt logo silver-logo"></img>
+                        <img src={mckinsey} alt="McKinsey Logo" className="mckinsey logo silver-logo"></img>
                     </div>
                 </div>
 
