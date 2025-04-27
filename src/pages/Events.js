@@ -119,7 +119,7 @@ export default function Events() {
                 className="grid-item"
                 onClick={() => handleCardClick(event)}
               >
-                <iframe
+                <img
                   src={event.flyer}
                   width="100%"
                   height="100%"
