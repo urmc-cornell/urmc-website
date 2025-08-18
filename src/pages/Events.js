@@ -96,10 +96,7 @@ export default function Events() {
 
       <div className="calendar-container">
         <iframe
-          src="https://calendar.google.com/calendar/embed?src=ye38%40cornell.edu&ctz=America%2FLos_Angeles"
-          style={{ border: "0" }}
-          width="100%"
-          height="600"
+          src="https://calendar.google.com/calendar/embed?src=archive.urmc%40gmail.com&ctz=America%2FNew_York"
           frameBorder="0"
           scrolling="no"
           title="URMC Google Calendar"

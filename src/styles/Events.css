@@ -59,19 +59,16 @@
 .calendar-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   position: relative;
   padding-bottom: 75%; /* Adjust this value to control the aspect ratio */
-  height: 0;
   overflow: hidden;
-  max-width: 800px; /* Or whatever maximum width you desire */
-  margin: 0 auto 20px auto; /* Center the container and add bottom margin */
+  max-width: 100%; 
+  margin: 0 auto 20px auto; 
 }
 
 .calendar-container iframe {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  width: 75%;
   height: 100%;
 }

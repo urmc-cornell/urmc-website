@@ -23,6 +23,10 @@ export default function Footer() {
             This organization is a registered student organization of Cornell
             University.
           </h2>
+
+          <h2 className="footer-subtitle-text" style={{ marginLeft: "2rem" }}>
+          With a founding principle of “... any person ... any study,” Cornell is an <a href="https://hr.cornell.edu/about/workplace-rights/equal-education-and-employment-opportunity-statement" target="_blank" rel="noopener noreferrer" style={{ color: "lightblue", textDecoration: "underline" }}>equal opportunity employer and educator.</a>
+          </h2>
         </div>
       </div>
 
