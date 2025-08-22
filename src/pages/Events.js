@@ -30,6 +30,7 @@ export default function Events() {
         `);
 
       if (error) throw error;
+      console.log("Fetched data:", data); // Log fetched data
 
       // Transform database records into format needed for display
       const transformedEvents = data.map((event) => {
@@ -86,72 +87,23 @@ export default function Events() {
 
   // Show loading/error states while data is being fetched
   if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  // if (error) return <div>Error: {error}</div>;
 
   // Render the events page
   return (
     <div className="page">
       <h1 className="page-title" style={{ textAlign: "center" }}>Events</h1>
-      {/* Popup modal component for showing detailed event info */}
-      <EventsPopup
-        trigger={popupActive}
-        event={selectedEvent}
-        setTrigger={handleClose}
-      />
-      <div style={{ textAlign: "center" }}>
-        {/* Only show upcoming events section if there are any */}
-        {comingUpEvents.length ? (
-          <h2 className="this-week" style={{ textAlign: "left" }}>
-            COMING UP @ URMC:
-          </h2>
-        ) : null}
-        <div className="grid-container" style={{ 
-          maxWidth: "1200px",  // Adjust this value based on your needs
-          margin: "0 auto",    // Centers the grid
-          padding: "0 20px"    // Adds equal padding on both sides
-        }}>
-          {/* Map through upcoming events sorted by date (ascending) */}
-          {comingUpEvents
-            .sort((a, b) => a.date - b.date)
-            .map((event) => (
-              <div
-                key={event.id}
-                className="grid-item"
-                onClick={() => handleCardClick(event)}
-              >
-                <img
-                  src={event.flyer}
-                  width="100%"
-                  height="100%"
-                  frameBorder="0"
-                  title={`Event flyer ${event.id}`}
-                  allowFullScreen
-                />
-              </div>
-            ))}
-        </div>
-        <h2 className="this-week" style={{ textAlign: "left" }}>
-          PAST EVENTS:
-        </h2>
-        <div className="grid-container" style={{ 
-          maxWidth: "1200px",  // Adjust this value based on your needs
-          margin: "0 auto",    // Centers the grid
-          padding: "0 20px"    // Adds equal padding on both sides
-        }}>
-          {/* Map through past events sorted by date (descending) */}
-          {pastEvents
-            .sort((a, b) => b.date - a.date)
-            .map((event) => (
-              <div
-                key={event.id}
-                className="grid-item"
-                onClick={() => handleCardClick(event)}
-              >
-                <img src={event.flyer} alt="Event flyer" />
-              </div>
-            ))}
-        </div>
+
+      <div className="calendar-container">
+        <iframe
+          src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0&title=URMC&src=Y185MzViZDAwOTliNTNhYTk0MGVkMGYyODhhNTc5MWJkNWM2YTBlNWQ1ZTIyYTAzNTQ5MzVmMjVlYmE2YmFkOWY2QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23f09300" 
+          frameBorder="0"
+          scrolling="no"
+          title="URMC Google Calendar"
+          className="google-calendar-iframe"
+        ></iframe>
       </div>
+      
     </div>
   );
 }

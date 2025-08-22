@@ -17,12 +17,18 @@ export default function Footer() {
             CURRENTLY THRIVING IN ITHACA, NEW YORK.
           </h2>
         </div>
-        <div className="footer-subtitle">
-          {/* <img className="heart" src={heart}></img> */}
+        <div className="footer-subtitle" style={{marginTop: '-1rem'}}>
+          <img className="heart" src={heart}></img>
           <h2 className="footer-subtitle-text">
             This organization is a registered student organization of Cornell
             University.
           </h2>
+        </div>
+
+        <div className="footer-subtitle" style={{marginTop: '-1rem'}}>
+          <h2 className="footer-subtitle-text">
+            With a founding principle of “... any person ... any study,” Cornell is an <a href="https://hr.cornell.edu/about/workplace-rights/equal-education-and-employment-opportunity-statement" target="_blank" rel="noopener noreferrer" style={{ color: "lightblue", textDecoration: "underline" }}>equal opportunity employer and educator.</a>
+            </h2>
         </div>
       </div>
 
