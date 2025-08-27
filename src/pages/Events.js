@@ -96,7 +96,7 @@ export default function Events() {
 
       <div className="calendar-container">
         <iframe
-          src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0&title=URMC&src=Y185MzViZDAwOTliNTNhYTk0MGVkMGYyODhhNTc5MWJkNWM2YTBlNWQ1ZTIyYTAzNTQ5MzVmMjVlYmE2YmFkOWY2QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23f09300" 
+          src="https://calendar.google.com/calendar/embed?src=c_c774353cbf4312cb22fc533ead50cc32589840c1ee4a56ec388ad2c4c4d7478a%40group.calendar.google.com&ctz=America%2FNew_York" 
           frameBorder="0"
           scrolling="no"
           title="URMC Google Calendar"
