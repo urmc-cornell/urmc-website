@@ -21,6 +21,9 @@ import ey from '../images/sponsors/ey.png'
 import linkedin from '../images/sponsors/linkedin.png'
 import hrt from '../images/sponsors/hrt.png'
 import mckinsey from '../images/sponsors/mckinsey.png'
+import visa from '../images/sponsors/visa.png'
+import figma from '../images/sponsors/figma.png'
+import accenture from '../images/sponsors/accenture.png'
 import { useScale } from '../hooks/useScale.js';
 import React from 'react';
 
@@ -67,9 +70,11 @@ export default function Sponsors() {
                         {/* <img src={yext} alt="yext Logo" className="logo"></img> */}
                         {/* <img src={oracle} alt="oracle Logo" className="logo"></img> */}
                         {/* <img src={capitalone} alt="Capital One Logo" className="duolingo"></img> */}
+                        <img src={visa} alt="Visa Logo" className="logo visa silver-logo"></img>
                         <img src={bloomberg} alt="Bloomberg Logo" className="logo bloomberg silver-logo"></img>
                         <img src={hrt} alt="HRT Logo" className="hrt logo silver-logo"></img>
-                        <img src={mckinsey} alt="McKinsey Logo" className="mckinsey logo silver-logo"></img>
+                        {/* <img src={mckinsey} alt="McKinsey Logo" className="mckinsey logo silver-logo"></img> */}
+                        <img src={accenture} alt="Accenture Logo" className="logo accenture silver-logo"></img>
                     </div>
                 </div>
 
@@ -78,12 +83,13 @@ export default function Sponsors() {
                     <div className="img-section">
                         <img src={google} alt="google Logo" className="logo bronze-logo"></img>
                         {/* <img src={uber} alt="uber Logo" className="logo "></img> */}
-                        <img src={mastercard} alt="master card Logo" className="logo bronze-logo"></img>
+                        {/* <img src={mastercard} alt="master card Logo" className="logo bronze-logo"></img> */}
                         <img src={datadog} alt="datadog Logo" className="logo bronze-logo"></img>
                         <img src={roblox} alt="roblox Logo" className="logo bronze-logo"></img>
                         {/* <img src={palantir} alt="palantir Logo" className="logo "></img> */}
                         <img src={capitalone} alt="Capital One Logo" className="logo bronze-logo"></img>
                         <img src={ey} alt="ey Logo" className="ey logo bronze-logo"></img>
+                        <img src={figma} alt="figma Logo" className="logo bronze-logo"></img>
                     </div>     
                 </div>
             </div>
