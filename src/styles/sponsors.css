@@ -136,9 +136,20 @@
     height:50%;
 }
 
+.visa {
+    height: auto;
+    width: 9.4rem;
+}
+
+.accenture {
+    height: 15rem;
+    width: 13rem;
+}
+
+
 .logo {
     max-width: 60%;
-    max-height: 60%;
+    max-height: 65%;
     text-align: center;
     position: static;
 }
@@ -149,7 +160,6 @@
     max-width: 12rem;
     object-fit: contain;
 }
-
 
 .btn-1{
     background: var(--blue-cta-color, linear-gradient(138deg, #C0C0C0 -18.69%, #265999 96.38%));
