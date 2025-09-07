@@ -81,7 +81,7 @@ export default function Sponsors() {
                 <div className="sponsor-section bronze-sponsors"> 
                     <a className="btn-small btn-bronze">BRONZE</a>
                     <div className="img-section">
-                        <img src={google} alt="google Logo" className="logo bronze-logo"></img>
+                        {/* <img src={google} alt="google Logo" className="logo bronze-logo"></img> */}
                         {/* <img src={uber} alt="uber Logo" className="logo "></img> */}
                         {/* <img src={mastercard} alt="master card Logo" className="logo bronze-logo"></img> */}
                         <img src={datadog} alt="datadog Logo" className="logo bronze-logo"></img>
