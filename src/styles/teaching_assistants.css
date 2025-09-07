@@ -20,6 +20,16 @@
       margin-bottom: -20px;
       margin-top: 1.5rem;
   }
+
+  .coming_soon {
+      display:flex;
+      justify-content: center;
+      color: #D2D1D1;
+      font-size: 36px;
+      font-weight: 400;
+      font-family: "Helvetica Neue";
+      margin-bottom: 0;
+  }
   
   .fall22 {
       display:flex;
