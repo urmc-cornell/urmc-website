@@ -165,7 +165,11 @@
     background: var(--blue-cta-color, linear-gradient(138deg, #C0C0C0 -18.69%, #265999 96.38%));
 }
 
-@media (max-width: 768px) {
+.bronze-sponsors .img-section {
+    padding-top: 5rem; /* Increased padding for larger screens */
+}
+
+@media (max-width: 1080px) {
     /* Page container adjustments */
     .sponsor-page {
         padding: 0 1rem;
@@ -275,6 +279,7 @@
         max-height: 3.5rem;
         max-width: 85%; /* Force vertical stacking in Silver level */
         flex: 0 1 100%; /* Take full row */
+        object-fit: contain;
     }
     
     /* Bronze logos can be arranged horizontally */
