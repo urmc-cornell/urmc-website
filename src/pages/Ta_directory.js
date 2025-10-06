@@ -29,6 +29,7 @@ export default function TA_page() {
             course
           `
         )
+        .eq("ta_semester", "fa25")
         .contains("role", ["ta"]);
 
       if (error) throw error;
@@ -80,8 +81,7 @@ export default function TA_page() {
   return (
     <div className="leadership-page">
       <h1 className="leadership">TA Directory</h1>
-      <h2 className="coming_soon">Fall 2025 Coming Soon</h2>
-      <h2 className="fall22">Spring 2025</h2>
+      <h2 className="fall22">Fall 2025</h2>
 
       {TAList.map((group) => (
         <div key={group.course} className="course-section">
