@@ -11,6 +11,16 @@ export default function Leadership() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const transformedTitles = {"Prof Dev": "Professional Development",
+    "Professional Development Chair" : "Professional Development",
+    "Professional Development Co-Chair" : "Professional Development",
+    "Web Dev" : "Web Development",
+    "Web Development Chair": "Web Development",
+    "Web Development Co-Chair": "Web Development",
+    "Fresh" : "Freshman Representative",
+    "Freshman Rep" : "Freshman Representative"
+  }
+
   // Fetch leadership data when component mounts
   useEffect(() => {
     fetchLeadershipData();
@@ -57,7 +67,7 @@ export default function Leadership() {
       // Transform database records into format needed for EboardCard components
       const transformedData = data.map((member) => ({
         id: member.id,
-        title: member.position,
+        title: transformedTitles[member.title] ?? member.title.replace(/\b(Co-?Chair|Chair)\b/gi, "").trim(),
         image: member.headshot_url,
         name: `${member.first_name} ${member.last_name}`,
         secondaryImage: member.secondary_headshot_url || member.headshot_url, // Fallback to primary image if no secondary
