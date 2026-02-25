@@ -57,7 +57,7 @@ export default function Leadership() {
       // Transform database records into format needed for EboardCard components
       const transformedData = data.map((member) => ({
         id: member.id,
-        title: member.position,
+        title: member.position || "",
         image: member.headshot_url,
         name: `${member.first_name} ${member.last_name}`,
         secondaryImage: member.secondary_headshot_url || member.headshot_url, // Fallback to primary image if no secondary

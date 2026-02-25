@@ -35,7 +35,7 @@ export default function Events() {
       // Transform database records into format needed for display
       const transformedEvents = data.map((event) => {
         // Convert Google Drive URL to direct image URL
-        let flyerUrl = event.flyer_url;
+        let flyerUrl = event.flyer_url || "";
 
         // Handle different Google Drive URL formats by extracting file ID
         // and creating a direct thumbnail URL
