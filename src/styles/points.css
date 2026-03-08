@@ -42,9 +42,10 @@
 }
 
 .point-group {
-    display: flex;
+    display: grid;
+    grid-template-columns: 22rem 1fr; /* title column + description column */
     gap: 1.25rem;
-    align-items: flex-start;
+    align-items: start;
 }
 
 .point-descriptions {
@@ -54,11 +55,11 @@
 }
 
 .point-value {
-    color: #EEB50C;
-    text-align: center;
+    color:#EEB50C;
     font-family: Medium;
     font-size: 2.5rem;
     font-weight: 600;
+    text-align: left;
 }
 
 .point-description {
@@ -68,6 +69,9 @@
     font-family: skinny-montserrat;
     font-size: 2.5rem;
     font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
 }
 
 .points-container {
@@ -230,7 +234,13 @@
     }
 
     .point-value {
-        font-size: 1.8rem;
+        color: #EEB50C;
+        font-family: Medium;
+        font-size: 2.5rem;
+        font-weight: 600;
+
+        min-width: 22rem;   /* keeps all titles aligned */
+        text-align: left;   /* aligns text like the others */
     }
 
     .point-description {
