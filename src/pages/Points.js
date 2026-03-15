@@ -101,85 +101,158 @@ export default function Points() {
   };
 
     return (
-        <div className="points-page">
-            <h1 className="points">Points</h1>
-            
-            <div className="points-container">
-                    <h2 className="container-title">Point Allocation</h2>
-                    <div className="points-allocation">
-                        <div className="point-group">
-                            <span className="point-value">+1 Point</span>
-                            <div className="point-descriptions">
-                                <div className="point-item">
-                                    <span className="point-description">Event Attendance</span>
-                                </div>
-                                <div className="point-item">
-                                    <span className="point-description">Updating Academic Folder (Max 3)</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="point-group">
-                            <span className="point-value">+2 Point</span>
-                            <div className="point-descriptions">
-                                <div className="point-item">
-                                    <span className="point-description">Event Attendance as a TA (eg. review session)</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="point-group">
-                            <span className="point-value">+3 Point</span>
-                            <div className="point-descriptions">
-                                <div className="point-item">
-                                    <span className="point-description">Be a mentor/mentee (meet atleast once)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            </div>
+   <div className="points-page">
+     <h1 className="points">Points</h1>
 
-            <div className="points-container">
 
-                    <h2 className="container-title">Point Rewards</h2>
-                    <div className="rewards-grid">
-                        <div className="reward-card">
-                            <h3 className="reward-title">{"Resume\nBook"}</h3>
-                            <p className="reward-value">5 Points</p>
-                        </div>
-                        <div className="reward-card">
-                            <h3 className="reward-title">{"Conference\nScholarships"}</h3>
-                            <p className="reward-value">Top Earners</p>
-                        </div>
-                        <div className="reward-card">
-                            <h3 className="reward-title">{"G-Body\nPrizes"}</h3>
-                            <p className="reward-value">Every 5 Points</p>
-                        </div>
-                    </div>
-            </div>
+     {/* POINT ALLOCATION */}
+     <div className="points-container">
+       <h2 className="container-title">Point Allocation (SP26)</h2>
 
-            <div className="view-points">
-                <h1>View Points</h1>
-                <h2>Enter your netid below to see your points</h2>
-                <form id="points-form">
-                    <input 
-                        type="text" 
-                        id="netID" 
-                        name="netID" 
-                        style={{
-                            paddingLeft: "10px",
-                            paddingRight: "10px",
-                            textAlign: "center"  // Centers the text/cursor
-                        }}
-                    />  
-                    <button 
-                        type="submit" 
-                        id="myButton" 
-                        onClick={point_set}
-                    >
-                        Get Points
-                    </button>
-                    <h3>{points}</h3>
-                </form>
-            </div>
-        </div>
-    );
+
+       <div className="points-allocation">
+
+
+         <div className="point-group">
+           <span className="point-value">Community</span>
+           <div className="point-descriptions">
+             <div className="point-item">
+               <span className="point-description">
+                 General Body Meeting — 3 pts (Max 9)
+               </span>
+             </div>
+             <div className="point-item">
+               <span className="point-description">
+                 General Body Social — 5 pts (Max 15)
+               </span>
+             </div>
+           </div>
+         </div>
+
+
+         <div className="point-group">
+           <span className="point-value">Mentorship</span>
+           <div className="point-descriptions">
+             <div className="point-item">
+               <span className="point-description">
+                 Join Mentorship — 4 pts
+               </span>
+             </div>
+             <div className="point-item">
+               <span className="point-description">
+                 Mentorship Meeting — 1 pt (Max 5)
+               </span>
+             </div>
+           </div>
+         </div>
+
+
+         <div className="point-group">
+           <span className="point-value">Professional Development</span>
+           <div className="point-descriptions">
+             <div className="point-item">
+               <span className="point-description">
+                 Corporate Meeting — 1 pt (Max 4)
+               </span>
+             </div>
+             <div className="point-item">
+               <span className="point-description">
+                 Pre-Professional Dev Meeting — 2 pts (Max 10)
+               </span>
+             </div>
+             <div className="point-item">
+               <span className="point-description">
+                 Website / Web Dev Event — 4 pts
+               </span>
+             </div>
+             <div className="point-item">
+               <span className="point-description">
+                 Design Event — 4 pts
+               </span>
+             </div>
+             <div className="point-item">
+               <span className="point-description">
+                 Alumni Event — 2 pts
+               </span>
+             </div>
+           </div>
+         </div>
+
+
+         <div className="point-group">
+           <span className="point-value">Academic Support</span>
+           <div className="point-descriptions">
+             <div className="point-item">
+               <span className="point-description">
+                 Register as a TA — 4 pts
+               </span>
+             </div>
+             <div className="point-item">
+               <span className="point-description">
+                 Academic Event — 1 pt (Cap 8)
+               </span>
+             </div>
+           </div>
+         </div>
+
+
+         <div className="point-group">
+           <span className="point-value">Flagship</span>
+           <div className="point-descriptions">
+             <div className="point-item">
+               <span className="point-description">
+                 10-Year Gala — 6 pts
+               </span>
+             </div>
+           </div>
+         </div>
+
+
+       </div>
+     </div>
+
+
+     {/* POINT REWARDS */}
+     <div className="points-container">
+       <h2 className="container-title">Point Rewards</h2>
+       <div className="rewards-grid">
+         <div className="reward-card">
+           <h3 className="reward-title">QZ / Crewneck</h3>
+           <p className="reward-value">45 Points</p>
+         </div>
+         <div className="reward-card">
+           <h3 className="reward-title">Conference Scholarships</h3>
+           <p className="reward-value">Top Earners</p>
+         </div>
+         <div className="reward-card">
+           <h3 className="reward-title">Total Possible</h3>
+           <p className="reward-value">77 Points</p>
+         </div>
+       </div>
+     </div>
+
+
+     {/* VIEW POINTS */}
+     <div className="view-points">
+       <h1>View Points</h1>
+       <h2>Enter your netid below to see your points</h2>
+       <form id="points-form">
+         <input
+           type="text"
+           id="netID"
+           name="netID"
+           style={{
+             paddingLeft: "10px",
+             paddingRight: "10px",
+             textAlign: "center",
+           }}
+         />
+         <button type="submit" id="myButton" onClick={point_set}>
+           Get Points
+         </button>
+         <h3>{points}</h3>
+       </form>
+     </div>
+   </div>
+ );
 }
