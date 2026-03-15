@@ -40,19 +40,21 @@ export default function Leadership() {
         )
         .contains("role", ["eboard"]);
 
-      if (error) throw error;
+      if (error) 
+        throw error;
 
-      if (error) throw error;
-
-      // Define position priority order
-      const positionOrder = {
-        "Co - President": 1,
-        "Vice - President": 2,
-        "Treasurer": 3,
-        "Secretary": 4,
-        // Add other positions and their priorities...
+      // Assign a numeric priority to a title for sorting purposes.
+      // Lower number = appears first. Titles not listed get priority 4 (alphabetical bucket).
+      const getPositionPriority = (title) => {
+        const normalized = title.toLowerCase().replace(/\s+/g, "");
+        if (normalized === "president") 
+          return 1;
+        if (normalized.includes("co-president") || normalized.includes("co–president")) 
+          return 2;
+        if (normalized.includes("vicepresident") || normalized.includes("vice-president")) 
+          return 3;
+        return 4;
       };
-  
 
       // Transform database records into format needed for EboardCard components
       const transformedData = data.map((member) => ({
@@ -69,28 +71,15 @@ export default function Leadership() {
         popup: true,
       }))
       .sort((a, b) => {
-        // If both are Co-Presidents, sort alphabetically by name
-        if (a.title.includes("Co-President") && b.title.includes("Co - President")) {
-          return a.name.localeCompare(b.name);
-        }
-        // If both are Vice-Presidents, sort alphabetically by name
-        if (a.title.includes("Vice-President") && b.title.includes("Vice - President")) {
-          return a.name.localeCompare(b.name);
-        }
-        
-        // Put Co-Presidents first
-        if (a.title.includes("Co-President")) return -1;
-        if (b.title.includes("Co-President")) return 1;
-        
-        // Put Vice-Presidents second
-        if (a.title.includes("Vice-President")) return -1;
-        if (b.title.includes("Vice-President")) return 1;
-        
-        // Sort rest alphabetically by title, then by name
-        if (a.title === b.title) {
-          return a.name.localeCompare(b.name);
-        }
-        return a.title.localeCompare(b.title);
+        const priorityA = getPositionPriority(a.title);
+        const priorityB = getPositionPriority(b.title);
+
+        if (priorityA !== priorityB) 
+          return priorityA - priorityB;
+
+        if (a.title !== b.title) 
+          return a.title.localeCompare(b.title);
+        return a.name.localeCompare(b.name);
       });
 
       setEboardList(transformedData);
@@ -121,7 +110,7 @@ export default function Leadership() {
   return (
     <div className='leadership-page'>
       <h1 className="leadership">Executive Board</h1>
-      <h2 className="fall22">Spring 2026</h2>
+      <h2 className="spring26">Spring 2026</h2>
       {/* Popup modal component for showing detailed member info */}
       <EboardPopup
         trigger={popupActive}
