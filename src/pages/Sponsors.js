@@ -32,7 +32,7 @@ export default function Sponsors() {
     return (
         <div className='sponsor-page'> 
             <div className="heading"> 
-                <h1 className="corporate-sponsors-text"> 2025 Corporate Sponsors </h1>
+                <h1 className="corporate-sponsors-text"> 2026 Corporate Sponsors </h1>
                 <h3 className="thanks">Thank you for all your continued support of our organization!</h3>
             </div>
 

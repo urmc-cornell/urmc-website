@@ -81,7 +81,7 @@ export default function TA_page() {
   return (
     <div className="leadership-page">
       <h1 className="leadership">TA Directory</h1>
-      <h2 className="fall22">Fall 2025</h2>
+      <h2 className="fall22">Spring 2026</h2>
 
       {TAList.map((group) => (
         <div key={group.course} className="course-section">
