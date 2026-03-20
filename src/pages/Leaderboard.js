@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { supabase } from "../lib/supabaseClient.js";
+import { currentSemester } from "../lib/semester.js";
 
 export default function Leaderboard() {
     const [threshold, setThreshold] = useState(''); // State for input value
     const [netIds, setNetIds] = useState([]); // State to store results
     const [error, setError] = useState(null); // State to store error messages
     const [loading, setLoading] = useState(false); // Loading state to show a spinner
-    let semester = "sp25";
+    const semester = currentSemester();
 
     
     const handleSubmit = async (event) => {

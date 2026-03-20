@@ -2,12 +2,13 @@ import "../styles/points.css";
 
 import React, { useState, useEffect } from "react";
 import { supabase } from "../lib/supabaseClient.js";
+import { currentSemester, currentSemesterLabel } from "../lib/semester.js";
 
 export default function Points() {
-  let semester = "sp25";
-  // State for individual points lookup and leaderboard
+  const semester = currentSemester();
   const [points, setPoints] = useState(null);
   const [leaderboard, setLeaderboard] = useState([]);
+  const [topThree, setTopThree] = useState([]);
 
   // Function to fetch points for a specific netID
   const fetchPoints = async (netid) => {
@@ -89,9 +90,44 @@ export default function Points() {
       }
     }
 
-    // Call the fetchLeaderboard function
     fetchLeaderboard();
-  }, []); // Empty dependency array means this effect runs only once when component mounts
+
+    const excludedNetids = new Set([
+      "ryg4", "zas36", "bm734", "saf274", "ga362", "jcp349", "kab472",
+      "jwj68", "bbm56", "jce79", "ta375", "doa8", "reb368", "lyb4",
+      "ga324", "nt387", "jt938", "asa253","ce248", "as3734", "fmi4", 
+      "ya287", "ele54", "ym582", "dfb222",
+    ]);
+
+    async function fetchTopThree() {
+      try {
+        const { data, error } = await supabase
+          .from("members")
+          .select(
+            "netid, points_tracking!points_tracking_member_id_fkey (points, semester)"
+          );
+
+        if (error) throw error;
+
+        const ranked = data
+          .map((m) => ({
+            netid: m.netid,
+            totalPoints: m.points_tracking
+              .filter((r) => r.semester === semester)
+              .reduce((sum, r) => sum + r.points, 0),
+          }))
+          .filter((m) => m.totalPoints > 0 && !excludedNetids.has(m.netid))
+          .sort((a, b) => b.totalPoints - a.totalPoints)
+          .slice(0, 3);
+
+        setTopThree(ranked);
+      } catch (err) {
+        console.error("Error fetching top three:", err);
+      }
+    }
+
+    fetchTopThree();
+  }, []);
 
   // Handle individual points lookup
   const point_set = async (event) => {
@@ -104,10 +140,9 @@ export default function Points() {
    <div className="points-page">
      <h1 className="points">Points</h1>
 
-
      {/* POINT ALLOCATION */}
      <div className="points-container">
-       <h2 className="container-title">Point Allocation (SP26)</h2>
+       <h2 className="container-title">Point Allocation ({currentSemester().toUpperCase()})</h2>
 
 
        <div className="points-allocation">
@@ -201,7 +236,7 @@ export default function Points() {
            <div className="point-descriptions">
              <div className="point-item">
                <span className="point-description">
-                 10-Year Gala — 6 pts
+                 10-Year Anniversary — 6 pts
                </span>
              </div>
            </div>
@@ -231,6 +266,28 @@ export default function Points() {
        </div>
      </div>
 
+
+     {topThree.length > 0 && (
+       <div className="top-members-section">
+         <h2 className="container-title">Top Members</h2>
+         <table className="top-members-table">
+           <thead>
+             <tr>
+               <th>Position</th>
+               <th>NetID</th>
+             </tr>
+           </thead>
+           <tbody>
+             {topThree.map((member, i) => (
+               <tr key={member.netid}>
+                 <td>{i + 1}</td>
+                 <td>{member.netid}</td>
+               </tr>
+             ))}
+           </tbody>
+         </table>
+       </div>
+     )}
 
      {/* VIEW POINTS */}
      <div className="view-points">

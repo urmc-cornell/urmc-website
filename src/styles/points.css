@@ -201,6 +201,63 @@
     margin-top: calc(10px * var(--scale));
 }
 
+/* ── Top Members Table ── */
+
+.top-members-section {
+    width: 100%;
+}
+
+.top-members-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 1.5rem;
+    border-radius: 0.625rem;
+    overflow: hidden;
+}
+
+.top-members-table thead th {
+    font-family: Medium;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #FFF;
+    text-align: left;
+    padding: 1rem 2rem;
+    background: #333333;
+}
+
+.top-members-table thead th:first-child {
+    text-align: center;
+}
+
+.top-members-table tbody tr {
+    background: #F5F5F5;
+}
+
+.top-members-table tbody tr:nth-child(even) {
+    background: #E8E8E8;
+}
+
+.top-members-table tbody td {
+    font-family: Hard;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #222;
+    padding: 1.25rem 2rem;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.top-members-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.top-members-table tbody td:first-child {
+    color: #667BC4;
+    font-weight: 700;
+    width: 6rem;
+    text-align: center;
+}
+
 @media (max-width: 768px) {
 
     .points-page {
@@ -312,5 +369,15 @@
         font-size: 1rem;
         margin-top: 0.5rem;
         text-align: center;
+    }
+
+    .top-members-table thead th {
+        font-size: 0.85rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .top-members-table tbody td {
+        font-size: 1rem;
+        padding: 1rem;
     }
 }
