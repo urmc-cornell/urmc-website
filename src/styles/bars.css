@@ -31,62 +31,55 @@
 }
 
 .nav {
-    color: white;
+    background-color: #f5f5f5;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 3rem;
-    padding: 0 2rem;
-    margin-top: 1.05rem;
-    margin-left: 2rem;
-    max-width: 100%;
+    padding: 0 calc(60px * var(--scale, 1));
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
 }
 
-.nav li.active {
-    color: #667BC4;
-    background-color: #C7D3FB;
-    padding: 0.25rem 0.625rem;
-    border-radius: 0.6875rem;
+.nav-logo-link {
+    flex-shrink: 0;
 }
 
-.nav li:hover {
-    color: #667BC4;
+.site-logo {
+    width: calc(160px * var(--scale, 1));
+    height: auto;
+    display: block;
 }
 
 .nav-menu {
     display: flex;
-    width: auto;
-    max-width: 65.875rem;
-    justify-content: center;
     align-items: center;
-    gap: 2.75rem;
-    list-style: none;  
+    gap: calc(48px * var(--scale, 1));
+    list-style: none;
     margin: 0;
-    margin-top: 0.75rem; /* Add top margin to move items down */
-    flex-wrap: wrap;
-    padding: 0.5rem 1rem;
+    padding: calc(24px * var(--scale, 1)) 0;
 }
 
+.nav-menu--left { justify-content: flex-end; }
+.nav-menu--right { justify-content: flex-start; }
+.nav-menu--mobile { display: none; }
+
 .nav a {
-    color: #F0F0F0;
-    font-family: "Medium";
+    color: #1f1f1f;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: calc(18px * var(--scale, 1));
     text-decoration: none;
-    font-weight: bold;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    font-size: 1.2rem;
+    white-space: nowrap;
 }
+
+.nav a:hover { color: #eeb50c; }
+
+.nav li.active a { color: #eeb50c; }
 
 .menu-icon {
     display: none;
-}
-
-.site-logo {
-    font-size: 5rem;
-    width: 16.5rem;
-    height: 7.21875rem;
-    margin-right: 1rem;
 }
 
 .foot ul {
@@ -149,16 +142,39 @@
 
 @media (max-width: 768px) {
 
-    .nav{
-        /* Adjust margin for mobile */
-        margin: 1.5rem;
-        padding: 0;
+    .nav {
+        padding: 12px 20px;
+        flex-wrap: wrap;
     }
 
-    .site-logo{
-        /* Reduce logo size significantly for mobile */
-        width: 12rem; /* ছিল 40rem */
+    .site-logo {
+        width: 100px;
         height: auto;
+    }
+
+    .nav-menu--left,
+    .nav-menu--right {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #1f1f1f;
+        order: -1;
+    }
+
+    .nav-menu--mobile {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 16px 0;
+        gap: 16px;
+    }
+
+    .nav-container.active .nav-menu--mobile {
+        display: flex;
     }
 
     .button-div{
