@@ -3,6 +3,7 @@
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
   border-top: 2px solid #eeb50c;
+  overflow-x: hidden;
 }
 
 .site-footer-top {

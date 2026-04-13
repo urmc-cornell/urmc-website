@@ -8,6 +8,7 @@
   background-color: #1f1f1f;
   width: 100%;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .hero-text {
@@ -94,8 +95,10 @@
     gap: 32px;
   }
 
+  .hero-text { max-width: 100%; }
   .hero-title { font-size: 32px; }
   .hero-subtitle { font-size: 16px; }
+  .hero-ctas { flex-wrap: wrap; }
   .hero-btn-primary, .hero-btn-secondary { font-size: 16px; padding: 12px 20px; }
   .hero-image { width: 100%; }
 }

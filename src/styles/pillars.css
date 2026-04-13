@@ -7,6 +7,7 @@
   gap: calc(72px * var(--scale, 1));
   box-sizing: border-box;
   width: 100%;
+  overflow-x: hidden;
 }
 
 .pillars-heading {
@@ -113,5 +114,5 @@
   .pillars { padding: 60px 24px; gap: 40px; }
   .pillars-heading { font-size: 32px; }
   .pillars-grid { flex-direction: column; align-items: center; }
-  .pillar-card { width: 100%; aspect-ratio: auto; height: 300px; }
+  .pillar-card { flex: none; width: 100%; aspect-ratio: auto; height: 300px; }
 }
