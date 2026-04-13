@@ -1,0 +1,117 @@
+.pillars {
+  background-color: #1f1f1f;
+  padding: 100px 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 72px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.pillars-heading {
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  text-align: center;
+  margin: 0;
+  width: 100%;
+}
+
+.pillars-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 31px;
+  width: 100%;
+}
+
+.pillar-card {
+  position: relative;
+  width: 486px;
+  height: 486px;
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.pillar-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pillar-card-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.pillar-card-hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 43px;
+  box-sizing: border-box;
+}
+
+.pillar-card--active .pillar-card-hover { opacity: 1; }
+.pillar-card--active .pillar-card-gradient { opacity: 0; }
+.pillar-card--active .pillar-card-title { opacity: 0; }
+
+.pillar-card-title {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  z-index: 3;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  margin: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pillar-card-hover-title {
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  margin: 0 0 12px 0;
+}
+
+.pillar-card-desc {
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 12px 0;
+}
+
+.pillar-card-bullets {
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  padding-left: 16px;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .pillars { padding: 60px 24px; gap: 40px; }
+  .pillars-heading { font-size: 32px; }
+  .pillars-grid { flex-direction: column; align-items: center; }
+  .pillar-card { width: 100%; height: 300px; }
+}
