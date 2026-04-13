@@ -1,4 +1,5 @@
-import Slider from 'react-slick';
+import _Slider from 'react-slick';
+const Slider = _Slider.default || _Slider;
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../../styles/sponsors.css';
