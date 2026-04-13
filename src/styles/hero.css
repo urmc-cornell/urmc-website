@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  gap: 100px;
-  padding: 160px 200px;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 100px;
   background-color: #1f1f1f;
   width: 100%;
   box-sizing: border-box;
@@ -14,7 +14,8 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-  max-width: 702px;
+  flex: 1;
+  min-width: 0;
 }
 
 .hero-title {
@@ -76,8 +77,9 @@
 }
 
 .hero-image {
-  width: 718px;
-  height: 478px;
+  width: min(718px, 47%);
+  height: auto;
+  aspect-ratio: 718 / 478;
   object-fit: cover;
   border-radius: 8px;
   flex-shrink: 0;

@@ -29,10 +29,10 @@
 
 .pillar-card {
   position: relative;
-  width: 486px;
-  height: 486px;
+  flex: 1;
+  min-width: 0;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
-  flex-shrink: 0;
   cursor: pointer;
 }
 
