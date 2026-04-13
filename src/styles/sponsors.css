@@ -3,7 +3,7 @@
   padding: calc(48px * var(--scale, 1)) 0 calc(36px * var(--scale, 1));
   width: 100%;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .sponsors-heading {
@@ -32,4 +32,5 @@
 @media (max-width: 768px) {
   .sponsors-heading { font-size: 28px; }
   .sponsor-logo { max-height: 50px; max-width: 120px; }
+  .sponsors-track .slick-slide { padding: 0 16px; }
 }

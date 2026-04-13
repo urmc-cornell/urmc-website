@@ -3,6 +3,7 @@
   padding: calc(100px * var(--scale, 1)) calc(200px * var(--scale, 1));
   box-sizing: border-box;
   width: 100%;
+  overflow-x: hidden;
 }
 
 .happenings-header {
