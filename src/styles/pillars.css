@@ -1,10 +1,10 @@
 .pillars {
   background-color: #1f1f1f;
-  padding: 100px 200px;
+  padding: calc(100px * var(--scale, 1)) calc(200px * var(--scale, 1));
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 72px;
+  gap: calc(72px * var(--scale, 1));
   box-sizing: border-box;
   width: 100%;
 }
@@ -13,7 +13,7 @@
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: 48px;
+  font-size: calc(48px * var(--scale, 1));
   text-align: center;
   margin: 0;
   width: 100%;
@@ -23,7 +23,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 31px;
+  gap: calc(31px * var(--scale, 1));
   width: 100%;
 }
 
@@ -62,7 +62,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 43px;
+  padding: calc(43px * var(--scale, 1));
   box-sizing: border-box;
 }
 
@@ -72,13 +72,13 @@
 
 .pillar-card-title {
   position: absolute;
-  bottom: 30px;
-  left: 30px;
+  bottom: calc(30px * var(--scale, 1));
+  left: calc(30px * var(--scale, 1));
   z-index: 3;
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  font-size: 28px;
+  font-size: calc(28px * var(--scale, 1));
   margin: 0;
   transition: opacity 0.3s ease;
 }
@@ -87,25 +87,25 @@
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  font-size: 22px;
-  margin: 0 0 12px 0;
+  font-size: calc(22px * var(--scale, 1));
+  margin: 0 0 calc(12px * var(--scale, 1)) 0;
 }
 
 .pillar-card-desc {
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: calc(14px * var(--scale, 1));
   line-height: 1.5;
-  margin: 0 0 12px 0;
+  margin: 0 0 calc(12px * var(--scale, 1)) 0;
 }
 
 .pillar-card-bullets {
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
+  font-size: calc(13px * var(--scale, 1));
   line-height: 1.6;
-  padding-left: 16px;
+  padding-left: calc(16px * var(--scale, 1));
   margin: 0;
 }
 
@@ -113,5 +113,5 @@
   .pillars { padding: 60px 24px; gap: 40px; }
   .pillars-heading { font-size: 32px; }
   .pillars-grid { flex-direction: column; align-items: center; }
-  .pillar-card { width: 100%; height: 300px; }
+  .pillar-card { width: 100%; aspect-ratio: auto; height: 300px; }
 }
