@@ -1,4 +1,4 @@
-import heroPhoto from '../../images/homes/hero-photo.jpg';
+import heroPhoto from '../../images/home/hero-photo.jpg';
 import '../../styles/hero.css';
 
 export default function HeroSection() {

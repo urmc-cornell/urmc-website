@@ -1,8 +1,8 @@
 import '../../styles/happenings.css';
-import eventLeft from '../../images/homes/event-left.jpg';
-import eventCenterTop from '../../images/homes/event-center-top.jpg';
-import eventCenterBottom from '../../images/homes/event-center-bottom.jpg';
-import eventRight from '../../images/homes/event-right.jpg';
+import eventLeft from '../../images/home/event-left.jpg';
+import eventCenterTop from '../../images/home/event-center-top.jpg';
+import eventCenterBottom from '../../images/home/event-center-bottom.jpg';
+import eventRight from '../../images/home/event-right.jpg';
 
 const INSTAGRAM_RECAP = 'https://www.instagram.com/p/DW9YIMwkQWi/?img_index=2&igsh=MWkya2Z2c2l1ZWtuMw==';
 

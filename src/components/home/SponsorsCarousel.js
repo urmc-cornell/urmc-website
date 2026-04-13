@@ -3,17 +3,17 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../../styles/sponsors.css';
 
-import accenture from '../../images/homes/sponsor-accenture.png';
-import bloomberg from '../../images/homes/sponsor-bloomberg.png';
-import capitalOne from '../../images/homes/sponsor-capitalone.png';
-import datadog from '../../images/homes/sponsor-datadog.png';
-import ey from '../../images/homes/sponsor-ey.png';
-import figma from '../../images/homes/sponsor-figma.png';
-import hrt from '../../images/homes/sponsor-hrt.png';
-import janeStreet from '../../images/homes/sponsor-janestreet.png';
-import linkedin from '../../images/homes/sponsor-linkedin.png';
-import roblox from '../../images/homes/sponsor-roblox.png';
-import visa from '../../images/homes/sponsor-visa.png';
+import accenture from '../../images/home/sponsor-accenture.png';
+import bloomberg from '../../images/home/sponsor-bloomberg.png';
+import capitalOne from '../../images/home/sponsor-capitalone.png';
+import datadog from '../../images/home/sponsor-datadog.png';
+import ey from '../../images/home/sponsor-ey.png';
+import figma from '../../images/home/sponsor-figma.png';
+import hrt from '../../images/home/sponsor-hrt.png';
+import janeStreet from '../../images/home/sponsor-janestreet.png';
+import linkedin from '../../images/home/sponsor-linkedin.png';
+import roblox from '../../images/home/sponsor-roblox.png';
+import visa from '../../images/home/sponsor-visa.png';
 
 const Slider = _Slider.default || _Slider;
 

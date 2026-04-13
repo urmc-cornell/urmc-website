@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import academicImg from '../../images/homes/pillar-academic.jpg';
-import profdevImg from '../../images/homes/pillar-profdev.jpg';
-import communityImg from '../../images/homes/pillar-community.jpg';
+import academicImg from '../../images/home/pillar-academic.jpg';
+import profdevImg from '../../images/home/pillar-profdev.jpg';
+import communityImg from '../../images/home/pillar-community.jpg';
 import '../../styles/pillars.css';
 
 const pillars = [

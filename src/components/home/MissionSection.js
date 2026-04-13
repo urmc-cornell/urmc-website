@@ -1,5 +1,5 @@
 import '../../styles/mission.css';
-import missionBanner from '../../images/homes/mission-banner.jpg';
+import missionBanner from '../../images/home/mission-banner.jpg';
 
 export default function MissionSection() {
   return (
