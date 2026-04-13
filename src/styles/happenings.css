@@ -45,7 +45,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: calc(8px * var(--scale, 1));
+  gap: 0;
   height: calc(734px * var(--scale, 1));
   margin-bottom: calc(32px * var(--scale, 1));
 }
