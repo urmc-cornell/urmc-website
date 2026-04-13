@@ -41,7 +41,7 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: calc(40px * var(--scale, 1));
-  line-height: 1;
+  line-height: normal;
   letter-spacing: 0;
   text-align: center;
   max-width: calc(1386px * var(--scale, 1));
@@ -52,7 +52,7 @@
 .mission-highlight {
   color: #eeb50c;
   font-weight: 800;
-  font-style: italic;
+  font-style: normal;
 }
 
 @media (max-width: 768px) {

@@ -1,7 +1,8 @@
 import '../../styles/happenings.css';
-
-// TODO: When Figma rate limit resets, extract event photos (nodes 135:47, 141:142, 135:49, 135:50)
-// and replace the .photo-placeholder divs with <img> tags.
+import eventLeft from '../../images/homes/event-left.jpg';
+import eventCenterTop from '../../images/homes/event-center-top.jpg';
+import eventCenterBottom from '../../images/homes/event-center-bottom.jpg';
+import eventRight from '../../images/homes/event-right.jpg';
 
 const INSTAGRAM_RECAP = 'https://www.instagram.com/p/DW9YIMwkQWi/?img_index=2&igsh=MWkya2Z2c2l1ZWtuMw==';
 
@@ -16,10 +17,10 @@ export default function HappeningsSection() {
       <h3 className="happenings-event-title">10-Year Anniversary Celebration</h3>
 
       <div className="happenings-photo-grid">
-        <div className="photo-placeholder photo-left" aria-label="Anniversary event photo 1" />
-        <div className="photo-placeholder photo-center-top" aria-label="Anniversary event photo 2" />
-        <div className="photo-placeholder photo-center-bottom" aria-label="Anniversary event photo 3" />
-        <div className="photo-placeholder photo-right" aria-label="Anniversary event photo 4" />
+        <img src={eventLeft} alt="Anniversary event: students holding 10 balloons" className="photo-left" />
+        <img src={eventCenterTop} alt="Anniversary event: audience celebrating" className="photo-center-top" />
+        <img src={eventCenterBottom} alt="Anniversary event: attendees at table" className="photo-center-bottom" />
+        <img src={eventRight} alt="Anniversary event: alumni reconnecting" className="photo-right" />
       </div>
 
       <div className="happenings-footer">
@@ -34,7 +35,7 @@ export default function HappeningsSection() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          See the Recap
+          See the Recap ↗
         </a>
       </div>
     </section>
