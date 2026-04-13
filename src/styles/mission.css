@@ -1,7 +1,7 @@
 .mission {
   position: relative;
   width: 100%;
-  min-height: 507px;
+  min-height: calc(507px * var(--scale, 1));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,21 +39,21 @@
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: 28px;
+  font-size: calc(28px * var(--scale, 1));
   line-height: 1.5;
   text-align: center;
-  max-width: 1386px;
-  padding: 60px 40px;
+  max-width: calc(1000px * var(--scale, 1));
+  padding: calc(60px * var(--scale, 1)) calc(40px * var(--scale, 1));
   margin: 0;
 }
 
-@media (max-width: 768px) {
-  .mission {
-    min-height: 300px;
-  }
+.mission-text .highlight {
+  color: #eeb50c;
+  font-style: italic;
+  font-weight: 600;
+}
 
-  .mission-text {
-    font-size: 18px;
-    padding: 40px 24px;
-  }
+@media (max-width: 768px) {
+  .mission { min-height: 300px; }
+  .mission-text { font-size: 18px; padding: 40px 24px; max-width: 100%; }
 }
