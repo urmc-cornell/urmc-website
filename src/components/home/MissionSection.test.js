@@ -6,7 +6,7 @@ test('renders mission statement', () => {
   expect(screen.getByText(/advance diversity in computing/i)).toBeInTheDocument();
 });
 
-test('renders full mission text starting with The purpose of URMC', () => {
+test('renders "purpose of URMC" highlight span', () => {
   render(<MissionSection />);
-  expect(screen.getByText(/The purpose of URMC/i)).toBeInTheDocument();
+  expect(screen.getByText(/purpose of URMC/i)).toBeInTheDocument();
 });

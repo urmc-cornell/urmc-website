@@ -11,7 +11,7 @@ export default function MissionSection() {
       <div className="mission-bg-placeholder" aria-hidden="true" />
       <div className="mission-overlay" aria-hidden="true" />
       <p className="mission-text">
-        The purpose of URMC is to advance diversity in computing by supporting
+        The <span className="mission-highlight">purpose of URMC</span> is to advance diversity in computing by supporting
         and empowering Black, Latinx, and Indigenous students pursuing careers
         in technology.
       </p>
