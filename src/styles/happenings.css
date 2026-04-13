@@ -1,0 +1,131 @@
+.happenings {
+  background-color: #ffffff;
+  padding: 100px 200px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.happenings-header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.happenings-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  color: #1f1f1f;
+  margin: 0;
+}
+
+.happenings-view-all {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #1f1f1f;
+  text-decoration: none;
+  border: 2px solid #1f1f1f;
+  padding: 12px 24px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.happenings-event-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  color: #1f1f1f;
+  margin: 0 0 24px 0;
+}
+
+.happenings-photo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+  height: 734px;
+  margin-bottom: 32px;
+}
+
+.happenings-photo-grid .photo-left {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+.happenings-photo-grid .photo-center-top {
+  grid-column: 2;
+  grid-row: 1;
+}
+.happenings-photo-grid .photo-center-bottom {
+  grid-column: 2;
+  grid-row: 2;
+}
+.happenings-photo-grid .photo-right {
+  grid-column: 3;
+  grid-row: 1 / 3;
+}
+
+.happenings-photo-grid img,
+.happenings-photo-grid .photo-placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* TODO: Replace with event photos once Figma rate limit resets (nodes 135:47, 141:142, 135:49, 135:50) */
+.photo-placeholder {
+  background-color: #cccccc;
+}
+
+.happenings-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.happenings-description {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #1f1f1f;
+  margin: 0;
+  max-width: 1190px;
+}
+
+.happenings-recap-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #1f1f1f;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 2px solid #1f1f1f;
+  padding: 28px;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .happenings { padding: 60px 24px; }
+  .happenings-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .happenings-heading { font-size: 32px; }
+  .happenings-photo-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 200px);
+    height: auto;
+  }
+  .happenings-photo-grid .photo-left { grid-column: 1 / 3; grid-row: 1; }
+  .happenings-photo-grid .photo-center-top { grid-column: 1; grid-row: 2; }
+  .happenings-photo-grid .photo-center-bottom { grid-column: 2; grid-row: 2; }
+  .happenings-photo-grid .photo-right { grid-column: 1 / 3; grid-row: 3; }
+  .happenings-footer { flex-direction: column; align-items: flex-start; }
+}
