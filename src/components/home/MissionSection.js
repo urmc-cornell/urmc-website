@@ -1,14 +1,10 @@
 import '../../styles/mission.css';
-
-// TODO: When Figma rate limit resets, extract node 107:149 (IMG_1553):
-//   curl -L "<figma-asset-url>" -o src/images/homes/mission-banner.jpg
-// Then: import missionBanner from '../../images/homes/mission-banner.jpg';
-// Replace .mission-bg-placeholder with: <img src={missionBanner} alt="" className="mission-bg" />
+import missionBanner from '../../images/homes/mission-banner.jpg';
 
 export default function MissionSection() {
   return (
     <section className="mission">
-      <div className="mission-bg-placeholder" aria-hidden="true" />
+      <img src={missionBanner} alt="" className="mission-bg" aria-hidden="true" />
       <div className="mission-overlay" aria-hidden="true" />
       <p className="mission-text">
         The <span className="mission-highlight">purpose of URMC</span> is to advance diversity in computing by supporting

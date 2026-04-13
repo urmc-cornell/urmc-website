@@ -36,6 +36,11 @@
     "eject": "react-scripts eject",
     "populate-eboard": "node scripts/populate-eboard.js"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|svg|webp)$": "<rootDir>/src/__mocks__/fileMock.js"
+    }
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
