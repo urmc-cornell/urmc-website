@@ -1,5 +1,4 @@
 import _Slider from 'react-slick';
-const Slider = _Slider.default || _Slider;
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../../styles/sponsors.css';
@@ -15,6 +14,8 @@ import janeStreet from '../../images/homes/sponsor-janestreet.png';
 import linkedin from '../../images/homes/sponsor-linkedin.png';
 import roblox from '../../images/homes/sponsor-roblox.png';
 import visa from '../../images/homes/sponsor-visa.png';
+
+const Slider = _Slider.default || _Slider;
 
 const sponsors = [
   { src: accenture, alt: 'Accenture' },
