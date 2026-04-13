@@ -33,3 +33,6 @@ secrets.json
 venv/
 __pycache__/
 *.pyc
+
+# Superpowers skill runtime files
+.superpowers/
