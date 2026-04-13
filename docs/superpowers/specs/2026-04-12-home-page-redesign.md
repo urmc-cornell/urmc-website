@@ -9,7 +9,7 @@
 
 ## Scope
 
-Full replacement of the home route (`/`). Rewrites `Home.js` and removes the inline `<About_us />` render from it. The `/about-us` route and `About_us.js` file remain untouched — the "Who We Are" CTA links there.
+Full replacement of the home route (`/`). Rewrites `Home.js` and removes the inline `<About_us />` render from it. The `/about-us` route and `About_us.js` file remain untouched. The "Who We Are" CTA links to `/leadership`.
 
 ---
 
@@ -72,7 +72,7 @@ src/
   - H1: "Underrepresented Minorities in Computing" (Montserrat ExtraBold, 64px, white)
   - Subtitle: "Building a supportive community for **Black**, **Latinx**, and **Indigenous** students since 2016" — highlighted words in `#eeb50c`
   - CTA 1: "Get Involved" → `/getting-involved` — filled button, `#eeb50c` bg, dark text, `border-radius: 20px`
-  - CTA 2: "Who We Are" → `/about-us` — outline button, white border, white text
+  - CTA 2: "Who We Are" → `/leadership` — outline button, white border, white text
 - **Image:** `images/homes/hero-photo.jpg` (right side, ~718×478px)
 - **Responsive:** stack vertically on mobile, photo below text
 
