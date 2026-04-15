@@ -68,7 +68,17 @@
 .happenings-photo-grid .photo-right {
   grid-column: 3;
   grid-row: 1 / 3;
-  object-position: 30% center;
+  overflow: hidden;
+}
+
+.happenings-photo-grid .photo-right-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 72% center;
+  transform: scale(1.1);
+  transform-origin: 72% center;
+  display: block;
 }
 
 .happenings-photo-grid img,

@@ -20,7 +20,9 @@ export default function HappeningsSection() {
         <img src={eventLeft} alt="Anniversary event: students holding 10 balloons" className="photo-left" />
         <img src={eventCenterTop} alt="Anniversary event: audience celebrating" className="photo-center-top" />
         <img src={eventCenterBottom} alt="Anniversary event: attendees at table" className="photo-center-bottom" />
-        <img src={eventRight} alt="Anniversary event: alumni reconnecting" className="photo-right" />
+        <div className="photo-right">
+          <img src={eventRight} alt="Anniversary event: alumni reconnecting" className="photo-right-img" />
+        </div>
       </div>
 
       <div className="happenings-footer">
