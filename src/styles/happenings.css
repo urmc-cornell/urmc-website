@@ -68,7 +68,7 @@
 .happenings-photo-grid .photo-right {
   grid-column: 3;
   grid-row: 1 / 3;
-  object-position: left center;
+  object-position: center center;
 }
 
 .happenings-photo-grid img,
