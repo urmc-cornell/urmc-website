@@ -138,7 +138,7 @@
     height: auto;
     aspect-ratio: 4 / 3;
     object-fit: cover;
-    object-position: center bottom;
+    object-position: center 20%;
   }
   .happenings-photo-grid .photo-center-top {
     grid-column: 1;
