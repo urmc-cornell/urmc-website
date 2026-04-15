@@ -117,7 +117,7 @@
 
   /* Card: image on top, text block below */
   .pillar-card { flex: none; width: 100%; aspect-ratio: auto; height: auto; cursor: default; }
-  .pillar-card img { position: relative; inset: unset; height: 220px; width: 100%; object-fit: cover; }
+  .pillar-card img { position: relative; inset: unset; height: 220px; width: 100%; object-fit: cover; object-position: top; }
 
   /* Always show text — no hover/click required on mobile */
   .pillar-card-title { display: none; }
