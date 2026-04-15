@@ -114,5 +114,23 @@
   .pillars { padding: 60px 24px; gap: 40px; }
   .pillars-heading { font-size: 32px; }
   .pillars-grid { flex-direction: column; align-items: center; }
-  .pillar-card { flex: none; width: 100%; aspect-ratio: auto; height: 300px; }
+
+  /* Card: image on top, text block below */
+  .pillar-card { flex: none; width: 100%; aspect-ratio: auto; height: auto; cursor: default; }
+  .pillar-card img { position: relative; inset: unset; height: 220px; width: 100%; object-fit: cover; }
+
+  /* Always show text — no hover/click required on mobile */
+  .pillar-card-title { display: none; }
+  .pillar-card-gradient { opacity: 0 !important; }
+  .pillar-card-hover {
+    opacity: 1 !important;
+    position: relative;
+    inset: unset;
+    background: #2a2a2a;
+    padding: 20px;
+    display: flex;
+  }
+  .pillar-card-hover-title { font-size: 20px; margin-bottom: 8px; }
+  .pillar-card-desc { font-size: 13px; }
+  .pillar-card-bullets { font-size: 12px; }
 }
