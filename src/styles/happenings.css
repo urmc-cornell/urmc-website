@@ -11,6 +11,8 @@
   flex-direction: row;
   align-items: flex-end;
   justify-content: space-between;
+  padding-bottom: calc(24px * var(--scale, 1));
+  border-bottom: 1px solid #d0d0d0;
   margin-bottom: calc(32px * var(--scale, 1));
 }
 
@@ -47,7 +49,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 0;
-  height: calc(734px * var(--scale, 1));
+  height: calc(480px * var(--scale, 1));
   margin-bottom: calc(32px * var(--scale, 1));
 }
 
