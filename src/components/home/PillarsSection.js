@@ -48,7 +48,7 @@ function PillarCard({ pillar }) {
 
   return (
     <div
-      className={`pillar-card${active ? ' pillar-card--active' : ''}`}
+      className={`pillar-card pillar-card--${pillar.id}${active ? ' pillar-card--active' : ''}`}
       onMouseEnter={() => setActive(true)}
       onMouseLeave={() => setActive(false)}
     >
