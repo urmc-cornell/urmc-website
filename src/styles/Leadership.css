@@ -352,3 +352,107 @@
   .wwa-popup-bio { font-size: 14px; }
   .wwa-popup-pill { font-size: 11px; }
 }
+
+/* ---------- Members Section ---------- */
+.wwa-members-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: calc(40px * var(--scale, 1));
+  padding: calc(60px * var(--scale, 1)) calc(100px * var(--scale, 1));
+  background-color: #1f1f1f;
+  box-sizing: border-box;
+}
+
+/* Sidebar */
+.wwa-sidebar {
+  width: calc(220px * var(--scale, 1));
+  flex-shrink: 0;
+  position: sticky;
+  top: calc(24px * var(--scale, 1));
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.wwa-sidebar-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(11px * var(--scale, 1));
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #eeb50c;
+  margin: 0 0 calc(16px * var(--scale, 1)) 0;
+}
+
+.wwa-sidebar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(4px * var(--scale, 1));
+}
+
+.wwa-sidebar-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: calc(6px * var(--scale, 1)) 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(2px * var(--scale, 1));
+  text-align: left;
+  width: 100%;
+}
+
+.wwa-sidebar-btn:hover .wwa-sidebar-name {
+  color: #eeb50c;
+}
+
+.wwa-sidebar-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(13px * var(--scale, 1));
+  font-weight: 600;
+  color: #f0f0f0;
+  transition: color 0.1s;
+  line-height: 1.2;
+}
+
+.wwa-sidebar-role {
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(11px * var(--scale, 1));
+  font-weight: 400;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Grid */
+.wwa-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: calc(20px * var(--scale, 1));
+}
+
+@media (max-width: 1024px) {
+  .wwa-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .wwa-members-section {
+    flex-direction: column;
+    padding: 32px 20px;
+    gap: 24px;
+  }
+  .wwa-sidebar {
+    display: none;
+  }
+  .wwa-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+  }
+}
