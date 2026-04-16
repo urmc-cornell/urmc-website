@@ -36,3 +36,7 @@ __pycache__/
 
 # Superpowers skill runtime files
 .superpowers/
+
+# Generated docs and test mocks
+docs/
+src/__mocks__/
