@@ -84,3 +84,42 @@
   .wwa-hero-subtitle { font-size: 16px; }
   .wwa-hero-image { width: 100%; }
 }
+
+/* ---------- Quote ---------- */
+.wwa-quote-section {
+  background-color: #1f1f1f;
+  padding: calc(60px * var(--scale, 1)) calc(100px * var(--scale, 1));
+  box-sizing: border-box;
+}
+
+.wwa-quote {
+  border-left: calc(6px * var(--scale, 1)) solid #eeb50c;
+  margin: 0;
+  padding-left: calc(32px * var(--scale, 1));
+  max-width: calc(900px * var(--scale, 1));
+}
+
+.wwa-quote-text {
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(28px * var(--scale, 1));
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.5;
+  letter-spacing: 0;
+  margin: 0 0 calc(16px * var(--scale, 1)) 0;
+}
+
+.wwa-quote-attribution {
+  color: #aaaaaa;
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(16px * var(--scale, 1));
+  font-style: normal;
+  letter-spacing: 0;
+}
+
+@media (max-width: 768px) {
+  .wwa-quote-section { padding: 40px 24px; }
+  .wwa-quote-text { font-size: 18px; }
+  .wwa-quote-attribution { font-size: 13px; }
+}
