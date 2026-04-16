@@ -35,6 +35,7 @@
   font-size: calc(64px * var(--scale, 1));
   line-height: 1;
   margin: 0;
+  letter-spacing: 0;
 }
 
 .wwa-hero-subtitle {
@@ -42,8 +43,9 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: calc(22px * var(--scale, 1));
-  line-height: 1.4;
+  line-height: 1.3;
   margin: 0;
+  letter-spacing: 0;
 }
 
 .wwa-highlight {
@@ -78,7 +80,7 @@
     gap: 32px;
   }
   .wwa-hero-text { max-width: 100%; }
-  .wwa-hero-title { font-size: 36px; }
+  .wwa-hero-title { font-size: 32px; }
   .wwa-hero-subtitle { font-size: 16px; }
   .wwa-hero-image { width: 100%; }
 }
