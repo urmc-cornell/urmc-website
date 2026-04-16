@@ -46,8 +46,9 @@ export default function MemberPopup({ member, onClose }) {
 
             <p className="wwa-popup-section-label">Contact</p>
             <div className="wwa-popup-contacts">
+              {/* Links to URMC's main Instagram — member emails are not stored in the DB */}
               <a href="https://www.instagram.com/urmc_cornell/" target="_blank" rel="noreferrer">
-                <img src={mailGold} alt="Email" className="wwa-popup-social-icon" />
+                <img src={mailGold} alt="Contact URMC" className="wwa-popup-social-icon" />
               </a>
               {member.insta && (
                 <a href={member.insta} target="_blank" rel="noreferrer">
