@@ -9,7 +9,7 @@ const pillars = [
     id: 'academic',
     title: 'Academic Support',
     image: academicImg,
-    imgStyle: { width: '149.9%', height: '100.15%', top: '-0.24%', left: '-16.31%' },
+    imgStyle: { width: '149.9%', height: '102%', top: '-1%', left: '-16.31%' },
     description: 'We support academic success in computing courses through collaborative resources and structured guidance.',
     bullets: [
       'Slack channels for academic help',
