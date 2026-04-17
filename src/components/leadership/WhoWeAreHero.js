@@ -1,4 +1,5 @@
 import '../../styles/Leadership.css';
+import linkIcon from '../../images/link.svg';
 
 export default function WhoWeAreHero({ photo }) {
   return (
@@ -19,7 +20,8 @@ export default function WhoWeAreHero({ photo }) {
             rel="noreferrer"
             className="wwa-hero-btn-primary"
           >
-            10-Year Anniversary Recap ↗
+            10-Year Anniversary Recap
+          <img src={linkIcon} alt="" className="wwa-hero-btn-icon" />
           </a>
           <a href="/getting-involved" className="wwa-hero-btn-secondary">
             Get Involved
