@@ -24,8 +24,8 @@
   display: flex;
   flex-direction: column;
   gap: calc(24px * var(--scale, 1));
-  flex: 1;
   max-width: calc(680px * var(--scale, 1));
+  flex-shrink: 0;
 }
 
 .wwa-hero-title {
