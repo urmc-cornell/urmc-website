@@ -102,11 +102,11 @@
 }
 
 .wwa-hero-image {
-  width: min(calc(718px * var(--scale, 1)), 47%);
-  height: auto;
-  aspect-ratio: 718 / 478;
+  width: calc(705px * var(--scale, 1));
+  height: calc(438px * var(--scale, 1));
+  aspect-ratio: 235 / 146;
   object-fit: cover;
-  border-radius: calc(8px * var(--scale, 1));
+  object-position: center;
   flex-shrink: 0;
 }
 
@@ -130,7 +130,7 @@
   .wwa-hero-text { max-width: 100%; }
   .wwa-hero-title { font-size: 32px; }
   .wwa-hero-subtitle { font-size: 16px; }
-  .wwa-hero-image { width: 100%; }
+  .wwa-hero-image { width: 100%; height: auto; }
   .wwa-hero-btn-primary, .wwa-hero-btn-secondary { font-size: 15px; padding: 14px 20px; border-radius: 20px; }
 }
 
