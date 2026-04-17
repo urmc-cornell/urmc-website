@@ -53,6 +53,38 @@
   font-weight: 600;
 }
 
+.wwa-hero-ctas {
+  display: flex;
+  flex-direction: row;
+  gap: calc(16px * var(--scale, 1));
+  flex-wrap: wrap;
+}
+
+.wwa-hero-btn-primary {
+  background-color: #eeb50c;
+  color: #1f1f1f;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: calc(18px * var(--scale, 1));
+  padding: calc(14px * var(--scale, 1)) calc(28px * var(--scale, 1));
+  border-radius: calc(100px * var(--scale, 1));
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.wwa-hero-btn-secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border: calc(2px * var(--scale, 1)) solid #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: calc(18px * var(--scale, 1));
+  padding: calc(14px * var(--scale, 1)) calc(28px * var(--scale, 1));
+  border-radius: calc(100px * var(--scale, 1));
+  text-decoration: none;
+  white-space: nowrap;
+}
+
 .wwa-hero-image {
   width: min(calc(718px * var(--scale, 1)), 47%);
   height: auto;
@@ -83,6 +115,7 @@
   .wwa-hero-title { font-size: 32px; }
   .wwa-hero-subtitle { font-size: 16px; }
   .wwa-hero-image { width: 100%; }
+  .wwa-hero-btn-primary, .wwa-hero-btn-secondary { font-size: 15px; padding: 12px 20px; }
 }
 
 /* ---------- Quote ---------- */

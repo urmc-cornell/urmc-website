@@ -6,16 +6,29 @@ export default function WhoWeAreHero({ photo }) {
       <div className="wwa-hero-text">
         <h1 className="wwa-hero-title">Who We Are</h1>
         <p className="wwa-hero-subtitle">
-          URMC is a community of{' '}
-          <span className="wwa-highlight">Black</span>,{' '}
-          <span className="wwa-highlight">Latinx</span>, and{' '}
-          <span className="wwa-highlight">Indigenous</span>{' '}
-          students in computing at Cornell — led by the people below.
+          Founded in 2016, URMC began with a simple mission: to create a space
+          where all computing students can belong and thrive. Today, we've grown
+          into a diverse, cross-disciplinary community, building partnerships,
+          attending national conferences, and becoming a proud ColorStack chapter.
+          Every step has helped shape URMC into the community it is today.
         </p>
+        <div className="wwa-hero-ctas">
+          <a
+            href="https://www.colorstack.org/"
+            target="_blank"
+            rel="noreferrer"
+            className="wwa-hero-btn-primary"
+          >
+            10-Year Anniversary Recap ↗
+          </a>
+          <a href="/getting-involved" className="wwa-hero-btn-secondary">
+            Get Involved
+          </a>
+        </div>
       </div>
       <img
         src={photo}
-        alt="URMC leadership group"
+        alt="URMC members"
         className="wwa-hero-image"
       />
     </section>
