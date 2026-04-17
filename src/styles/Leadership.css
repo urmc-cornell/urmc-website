@@ -136,41 +136,47 @@
 
 /* ---------- Quote ---------- */
 .wwa-quote-section {
-  background-color: #1f1f1f;
-  padding: calc(60px * var(--scale, 1)) calc(100px * var(--scale, 1));
+  background-color: #eeb50c;
+  padding: calc(64px * var(--scale, 1));
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wwa-quote {
-  border-left: calc(6px * var(--scale, 1)) solid #eeb50c;
   margin: 0;
-  padding-left: calc(32px * var(--scale, 1));
-  max-width: calc(900px * var(--scale, 1));
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(8px * var(--scale, 1));
+  max-width: calc(1200px * var(--scale, 1));
+  width: 100%;
 }
 
 .wwa-quote-text {
-  color: #ffffff;
+  color: #1f1f1f;
   font-family: 'Montserrat', sans-serif;
-  font-size: calc(28px * var(--scale, 1));
-  font-weight: 500;
-  font-style: italic;
-  line-height: 1.5;
-  letter-spacing: 0;
-  margin: 0 0 calc(16px * var(--scale, 1)) 0;
+  font-size: calc(64px * var(--scale, 1));
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  margin: 0;
 }
 
 .wwa-quote-attribution {
-  color: #aaaaaa;
+  color: #1f1f1f;
   font-family: 'Montserrat', sans-serif;
-  font-size: calc(16px * var(--scale, 1));
+  font-size: calc(36px * var(--scale, 1));
   font-style: normal;
-  letter-spacing: 0;
+  font-weight: 600;
+  line-height: normal;
 }
 
 @media (max-width: 768px) {
   .wwa-quote-section { padding: 40px 24px; }
-  .wwa-quote-text { font-size: 18px; }
-  .wwa-quote-attribution { font-size: 13px; }
+  .wwa-quote-text { font-size: 28px; }
+  .wwa-quote-attribution { font-size: 18px; }
 }
 
 /* ---------- Member Card ---------- */

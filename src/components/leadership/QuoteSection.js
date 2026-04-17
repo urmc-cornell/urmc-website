@@ -5,9 +5,9 @@ export default function QuoteSection() {
     <section className="wwa-quote-section">
       <blockquote className="wwa-quote">
         <p className="wwa-quote-text">
-          "Really cool quote giving URMC journalist, really cool quote giving URMC goals."
+          "Really cool quote glazing URMC yessirski, really cool quote glazing URMC yessir."
         </p>
-        <cite className="wwa-quote-attribution">— URMC Member</cite>
+        <cite className="wwa-quote-attribution">- Lebron James, CS '28</cite>
       </blockquote>
     </section>
   );
