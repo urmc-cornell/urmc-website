@@ -15,8 +15,8 @@ export default function MemberCard({ member, onClick }) {
         />
       </div>
       <div className="wwa-member-card-info">
-        <span className="wwa-member-card-role">{member.title}</span>
-        <span className="wwa-member-card-name">{member.name}</span>
+        <p className="wwa-member-card-name">{member.name}</p>
+        <p className="wwa-member-card-role">{member.title}</p>
       </div>
     </button>
   );
