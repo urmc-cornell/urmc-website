@@ -17,18 +17,19 @@ import visa from '../../images/home/sponsor-visa.png';
 
 const Slider = _Slider.default || _Slider;
 
+// Figma exact dimensions (node 135-85)
 const sponsors = [
-  { src: accenture, alt: 'Accenture' },
-  { src: bloomberg, alt: 'Bloomberg' },
-  { src: capitalOne, alt: 'Capital One' },
-  { src: datadog, alt: 'Datadog' },
-  { src: ey, alt: 'EY' },
-  { src: figma, alt: 'Figma' },
-  { src: hrt, alt: 'HRT' },
-  { src: janeStreet, alt: 'Jane Street' },
-  { src: linkedin, alt: 'LinkedIn' },
-  { src: roblox, alt: 'Roblox' },
-  { src: visa, alt: 'Visa' },
+  { src: accenture,  alt: 'Accenture',  w: 154, h: 86    },
+  { src: bloomberg,  alt: 'Bloomberg',   w: 303, h: 56    },
+  { src: capitalOne, alt: 'Capital One', w: 268, h: 151   },
+  { src: datadog,    alt: 'Datadog',     w: 176, h: 178   },
+  { src: ey,         alt: 'EY',          w: 164, h: 168   },
+  { src: figma,      alt: 'Figma',       w: 301, h: 150   },
+  { src: hrt,        alt: 'HRT',         w: 258, h: 150   },
+  { src: janeStreet, alt: 'Jane Street', w: 302, h: 119   },
+  { src: linkedin,   alt: 'LinkedIn',    w: 302, h: 74    },
+  { src: roblox,     alt: 'Roblox',      w: 301, h: 80    },
+  { src: visa,       alt: 'Visa',        w: 300, h: 300   },
 ];
 
 const sliderSettings = {
@@ -37,14 +38,14 @@ const sliderSettings = {
   autoplaySpeed: 0,
   speed: 5000,
   cssEase: 'linear',
-  slidesToShow: 6,
+  slidesToShow: 5,
   slidesToScroll: 1,
   arrows: false,
   dots: false,
   responsive: [
     { breakpoint: 1024, settings: { slidesToShow: 4 } },
-    { breakpoint: 768, settings: { slidesToShow: 3 } },
-    { breakpoint: 480, settings: { slidesToShow: 2 } },
+    { breakpoint: 900,  settings: { slidesToShow: 4 } },
+    { breakpoint: 600,  settings: { slidesToShow: 3 } },
   ],
 };
 
@@ -54,9 +55,17 @@ export default function SponsorsCarousel() {
       <h2 className="sponsors-heading">Our Sponsors</h2>
       <div className="sponsors-track">
         <Slider {...sliderSettings}>
-          {sponsors.map(({ src, alt }) => (
-            <div key={alt}>
-              <img src={src} alt={alt} className="sponsor-logo" />
+          {sponsors.map(({ src, alt, w, h }) => (
+            <div key={alt} className="sponsor-slide">
+              <img
+                src={src}
+                alt={alt}
+                className={`sponsor-logo${alt === 'Visa' ? ' sponsor-logo--visa' : ''}${alt === 'EY' ? ' sponsor-logo--ey' : ''}`}
+                style={{
+                  width:  `calc(${w}px * var(--scale, 1))`,
+                  height: `calc(${h}px * var(--scale, 1))`,
+                }}
+              />
             </div>
           ))}
         </Slider>

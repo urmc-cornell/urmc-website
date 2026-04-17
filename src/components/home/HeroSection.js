@@ -18,11 +18,13 @@ export default function HeroSection() {
           <a href="/leadership" className="hero-btn-secondary">Who We Are</a>
         </div>
       </div>
-      <img
-        src={heroPhoto}
-        alt="URMC students"
-        className="hero-image"
-      />
+      <div className="hero-image-wrap">
+        <img
+          src={heroPhoto}
+          alt="URMC students"
+          className="hero-image"
+        />
+      </div>
     </section>
   );
 }

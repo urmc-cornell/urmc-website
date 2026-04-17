@@ -1,6 +1,6 @@
 .sponsors {
   background-color: #f5f5f5;
-  padding: calc(48px * var(--scale, 1)) 0 calc(36px * var(--scale, 1));
+  padding: calc(60px * var(--scale, 1)) 0 calc(48px * var(--scale, 1));
   width: 100%;
   box-sizing: border-box;
   overflow-x: hidden;
@@ -11,8 +11,14 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: calc(48px * var(--scale, 1));
-  color: #000000;
-  margin: 0 0 calc(24px * var(--scale, 1)) 0;
+  color: #1f1f1f;
+  margin: 0 0 calc(40px * var(--scale, 1)) 0;
+}
+
+/* Align all slides to the same vertical midpoint */
+.sponsors-track .slick-track {
+  display: flex !important;
+  align-items: center;
 }
 
 .sponsors-track .slick-slide {
@@ -20,17 +26,33 @@
   align-items: center;
   justify-content: center;
   padding: 0 calc(36px * var(--scale, 1));
+  height: auto !important;
+}
+
+.sponsor-slide {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
 }
 
 .sponsor-logo {
-  max-height: calc(80px * var(--scale, 1));
-  max-width: calc(200px * var(--scale, 1));
-  width: auto;
   object-fit: contain;
+  display: block;
+  flex-shrink: 0;
 }
 
-@media (max-width: 768px) {
-  .sponsors-heading { font-size: 28px; }
-  .sponsor-logo { max-height: 50px; max-width: 120px; }
-  .sponsors-track .slick-slide { padding: 0 16px; }
+@media (max-width: 900px) {
+  .sponsors { padding: 40px 0 32px; }
+  .sponsors-heading { font-size: 28px; margin-bottom: 12px; }
+  .sponsor-logo {
+    width: auto !important;
+    height: auto !important;
+    max-width: 79px !important;
+    max-height: 46px !important;
+    object-fit: contain;
+  }
+  .sponsors-track .slick-slide { padding: 0 5px; }
+  .sponsors-track .slick-track { align-items: center; }
+  .sponsor-logo--visa { max-width: 64px !important; max-height: 64px !important; }
+  .sponsor-logo--ey { position: relative; top: -6px; }
 }

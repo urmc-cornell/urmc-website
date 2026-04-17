@@ -1,19 +1,22 @@
 .happenings {
-  background-color: #ffffff;
-  padding: calc(100px * var(--scale, 1)) calc(200px * var(--scale, 1));
+  background-color: #f5f5f5;
+  padding: calc(120px * var(--scale, 1)) calc(200px * var(--scale, 1));
   box-sizing: border-box;
   width: 100%;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: calc(60px * var(--scale, 1));
 }
 
+/* ── Header ── */
 .happenings-header {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
-  padding-bottom: calc(24px * var(--scale, 1));
-  border-bottom: 1px solid #d0d0d0;
-  margin-bottom: calc(32px * var(--scale, 1));
+  padding-bottom: calc(72px * var(--scale, 1));
+  border-bottom: 1px solid #8e8e8e;
 }
 
 .happenings-heading {
@@ -27,154 +30,174 @@
 .happenings-view-all {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: calc(20px * var(--scale, 1));
+  font-size: calc(24px * var(--scale, 1));
   color: #1f1f1f;
   text-decoration: none;
-  border: calc(2px * var(--scale, 1)) solid #1f1f1f;
-  padding: calc(12px * var(--scale, 1)) calc(24px * var(--scale, 1));
+  border: 2px solid #1f1f1f;
+  padding: calc(16px * var(--scale, 1)) calc(24px * var(--scale, 1));
   border-radius: calc(20px * var(--scale, 1));
   white-space: nowrap;
+}
+
+/* ── Event content block ── */
+.happenings-event {
+  display: flex;
+  flex-direction: column;
+  gap: calc(60px * var(--scale, 1));
 }
 
 .happenings-event-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: calc(32px * var(--scale, 1));
+  font-size: calc(36px * var(--scale, 1));
   color: #1f1f1f;
-  margin: 0 0 calc(24px * var(--scale, 1)) 0;
+  margin: 0;
 }
 
+/* ── Photo grid ──
+   Columns: left (portrait) | center (2 landscape stacked) | right (portrait)
+   Column widths from Figma: 32.11% | 36.24% | 31.65%
+*/
 .happenings-photo-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 0;
-  height: calc(480px * var(--scale, 1));
-  margin-bottom: calc(32px * var(--scale, 1));
+  grid-template-columns: 32.11% 36.24% 31.65%;
+  grid-template-rows: auto auto;
+  width: 100%;
 }
 
-.happenings-photo-grid .photo-left {
+.photo-left {
   grid-column: 1;
   grid-row: 1 / 3;
+  width: 100%;
+  aspect-ratio: 2723 / 4096;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
 }
-.happenings-photo-grid .photo-center-top {
+
+.photo-center-top {
   grid-column: 2;
   grid-row: 1;
+  width: 100%;
+  aspect-ratio: 4096 / 2732;
+  object-fit: cover;
+  display: block;
 }
-.happenings-photo-grid .photo-center-bottom {
+
+.photo-center-bottom {
   grid-column: 2;
   grid-row: 2;
+  width: 100%;
+  aspect-ratio: 4096 / 2732;
+  object-fit: cover;
+  display: block;
 }
-.happenings-photo-grid .photo-right {
+
+/* Right photo: container clips the image crop */
+.photo-right {
   grid-column: 3;
   grid-row: 1 / 3;
+  position: relative;
   overflow: hidden;
 }
 
-.happenings-photo-grid .photo-right-img {
-  width: 100%;
+/* Figma crop: w-[227.93%] left-[-104.09%] h-full */
+.photo-right-img {
+  position: absolute;
+  width: 227.93%;
   height: 100%;
-  object-fit: cover;
-  object-position: 72% center;
-  transform: scale(1.1);
-  transform-origin: 72% center;
-  display: block;
-}
-
-.happenings-photo-grid img,
-.happenings-photo-grid .photo-placeholder {
-  width: 100%;
-  height: 100%;
+  left: -104.09%;
+  top: 0;
   object-fit: cover;
   display: block;
-  border: none;
-  margin: 0;
-  padding: 0;
 }
 
-/* TODO: Replace with event photos once Figma rate limit resets (nodes 135:47, 141:142, 135:49, 135:50) */
-.photo-placeholder {
-  background-color: #cccccc;
-}
-
+/* ── Footer: description + recap button ── */
 .happenings-footer {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
-  gap: calc(40px * var(--scale, 1));
+  gap: calc(60px * var(--scale, 1));
 }
 
 .happenings-description {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: calc(18px * var(--scale, 1));
-  line-height: 1.6;
+  font-size: calc(24px * var(--scale, 1));
+  line-height: normal;
   color: #1f1f1f;
   margin: 0;
-  max-width: calc(1190px * var(--scale, 1));
+  flex: 1;
 }
 
 .happenings-recap-link {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: calc(12px * var(--scale, 1));
+  gap: calc(10px * var(--scale, 1));
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: calc(20px * var(--scale, 1));
+  font-size: calc(24px * var(--scale, 1));
   color: #1f1f1f;
   text-decoration: none;
   white-space: nowrap;
-  border: calc(2px * var(--scale, 1)) solid #1f1f1f;
-  padding: calc(20px * var(--scale, 1)) calc(28px * var(--scale, 1));
-  border-radius: calc(8px * var(--scale, 1));
+  background-color: #eeb50c;
+  padding: calc(16px * var(--scale, 1)) calc(28px * var(--scale, 1));
+  border-radius: calc(20px * var(--scale, 1));
+  align-self: center;
 }
 
+.happenings-recap-icon {
+  width: calc(26px * var(--scale, 1));
+  height: calc(26px * var(--scale, 1));
+  flex-shrink: 0;
+}
+
+/* ── Mobile ── */
 @media (max-width: 768px) {
-  .happenings { padding: 60px 24px; }
-  .happenings-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .happenings { padding: 60px 24px; gap: 32px; }
+  .happenings-header { flex-direction: column; align-items: flex-start; gap: 16px; padding-bottom: 32px; }
   .happenings-heading { font-size: 32px; }
+  .happenings-view-all { font-size: 16px; }
+  .happenings-event-title { font-size: 24px; }
+
   .happenings-photo-grid {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
-    height: auto;
-    gap: 0;
   }
-  /* Full-width rows: natural aspect ratio, no fixed height = no cropping */
-  .happenings-photo-grid .photo-left {
+
+  .photo-left {
     grid-column: 1 / 3;
     grid-row: 1;
-    width: 100%;
-    height: auto;
     aspect-ratio: 4 / 3;
-    object-fit: cover;
-    object-position: center 20%;
+    object-position: top center;
   }
-  .happenings-photo-grid .photo-center-top {
+  .photo-center-top {
     grid-column: 1;
     grid-row: 2;
     aspect-ratio: 4 / 3;
-    height: auto;
-    object-fit: cover;
-    object-position: center;
   }
-  .happenings-photo-grid .photo-center-bottom {
+  .photo-center-bottom {
     grid-column: 2;
     grid-row: 2;
     aspect-ratio: 4 / 3;
-    height: auto;
-    object-fit: cover;
-    object-position: center;
   }
-  .happenings-photo-grid .photo-right {
+  .photo-right {
     grid-column: 1 / 3;
     grid-row: 3;
-    width: 100%;
-    height: auto;
     aspect-ratio: 4 / 3;
+  }
+  .photo-right-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 0;
     object-fit: cover;
     object-position: center;
   }
-  .happenings-footer { flex-direction: column; align-items: flex-start; }
+
+  .happenings-footer { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .happenings-description { font-size: 16px; }
+  .happenings-recap-link { font-size: 16px; }
 }
