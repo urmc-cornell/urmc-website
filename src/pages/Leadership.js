@@ -3,6 +3,7 @@ import { supabase } from '../lib/supabaseClient.js';
 import { useScale } from '../hooks/useScale.js';
 import WhoWeAreHero from '../components/leadership/WhoWeAreHero.js';
 import QuoteSection from '../components/leadership/QuoteSection.js';
+import TeamSection from '../components/leadership/TeamSection.js';
 import MembersSection from '../components/leadership/MembersSection.js';
 import MemberPopup from '../components/leadership/MemberPopup.js';
 import groupPhoto from '../images/urmcMembers.jpg';
@@ -14,6 +15,7 @@ export default function Leadership() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedMember, setSelectedMember] = useState(null);
+  const [activeCategory, setActiveCategory] = useState('all');
 
   useEffect(() => {
     fetchLeadershipData();
@@ -28,7 +30,7 @@ export default function Leadership() {
           first_name, last_name, major, instagram_url, linkedin_url,
           ask_about, bio, role
         `)
-        .contains('role', ['eboard']);
+        .or('role.cs.{eboard},role.cs.{advisor}');
 
       if (error) throw error;
 
@@ -69,6 +71,18 @@ export default function Leadership() {
     }
   }
 
+  const CATEGORY_FILTER = {
+    'all':               () => true,
+    'presidents':        (m) => /president/i.test(m.title),
+    'events':            (m) => /academic|corporate|event|professional development/i.test(m.title),
+    'community-building':(m) => /community|mentorship|social/i.test(m.title),
+    'external':          (m) => /external|design|outreach|public relations/i.test(m.title),
+    'internal':          (m) => /internal|secretary|treasurer|web development/i.test(m.title),
+    'advisors':          (m) => /advisor|leeann|eva tardos|hakim/i.test(m.title + ' ' + m.name),
+  };
+
+  const filteredMembers = members.filter(CATEGORY_FILTER[activeCategory] ?? (() => true));
+
   if (loading) return <div className="wwa-status">Loading…</div>;
   if (error)   return <div className="wwa-status">Error: {error}</div>;
 
@@ -76,8 +90,9 @@ export default function Leadership() {
     <div className="who-we-are-page">
       <WhoWeAreHero photo={groupPhoto} />
       <QuoteSection />
+      <TeamSection onCategoryChange={setActiveCategory} />
       <MembersSection
-        members={members}
+        members={filteredMembers}
         onCardClick={setSelectedMember}
       />
       {selectedMember && (

@@ -18,15 +18,16 @@
 .nav-logo-link { flex-shrink: 0; }
 
 .site-logo {
-    width: calc(160px * var(--scale, 1));
-    height: auto;
+    width: calc(233px * var(--scale, 1));
+    height: calc(90px * var(--scale, 1));
     display: block;
+    object-fit: contain;
 }
 
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: calc(48px * var(--scale, 1));
+    gap: calc(60px * var(--scale, 1));
     list-style: none;
     margin: 0;
     padding: 0;
@@ -39,10 +40,10 @@
 .nav-container   { display: none; }
 
 .nav a {
-    color: #000000;
+    color: #1f1f1f;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: calc(18px * var(--scale, 1));
+    font-weight: 600;
+    font-size: calc(24px * var(--scale, 1));
     text-decoration: none;
     white-space: nowrap;
 }
