@@ -14,9 +14,20 @@ function Navbar() {
   return (
     <nav className="nav">
       {/* Mobile hamburger */}
-      <div className="menu-icon" onClick={handleClick} aria-label="Toggle menu">
-        <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
-      </div>
+      <button className="menu-icon" onClick={handleClick} aria-label="Toggle menu">
+        {clicked ? (
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="2" y1="2" x2="18" y2="18" stroke="#eeb50c" strokeWidth="2.5" strokeLinecap="round"/>
+            <line x1="18" y1="2" x2="2" y2="18" stroke="#eeb50c" strokeWidth="2.5" strokeLinecap="round"/>
+          </svg>
+        ) : (
+          <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="1" x2="22" y2="1" stroke="#eeb50c" strokeWidth="2" strokeLinecap="round"/>
+            <line x1="0" y1="8" x2="22" y2="8" stroke="#eeb50c" strokeWidth="2" strokeLinecap="round"/>
+            <line x1="0" y1="15" x2="22" y2="15" stroke="#eeb50c" strokeWidth="2" strokeLinecap="round"/>
+          </svg>
+        )}
+      </button>
 
       {/* Left links */}
       <ul className="nav-menu nav-menu--left">

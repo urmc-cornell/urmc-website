@@ -41,7 +41,7 @@ export default function Footer() {
               <li><a href="/about-us">About</a></li>
               <li><a href="/events">Events</a></li>
               <li><a href="/getting-involved">Get Involved</a></li>
-              <li><a href="/events">10-Year Anniversary</a></li>
+              <li><a href="https://www.instagram.com/p/DW9YIMwkQWi/?img_index=2&igsh=MWkya2Z2c2l1ZWtuMw==" target="_blank" rel="noopener noreferrer">10-Year Anniversary</a></li>
             </ul>
           </div>
           <div className="footer-nav-col">
@@ -73,6 +73,13 @@ export default function Footer() {
             equal opportunity employer and educator.
           </a>
         </p>
+        <button
+          className="footer-back-to-top"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          aria-label="Back to top"
+        >
+          ↑ Back to top
+        </button>
       </div>
     </footer>
   );

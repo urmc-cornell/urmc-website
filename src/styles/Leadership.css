@@ -55,7 +55,7 @@
 
 .wwa-hero-subtitle-link {
   color: #eeb50c;
-  text-decoration: underline;
+  text-decoration: none;
   font-weight: 400;
 }
 
@@ -135,18 +135,25 @@
   min-height: 100vh;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  /* Flatten wwa-hero-text so its children participate directly in the
+     wwa-hero flex column — allows us to order title / image / subtitle / CTAs */
   .wwa-hero {
     flex-direction: column;
     padding: 40px 24px;
-    gap: 32px;
+    gap: 16px;
+    align-items: stretch;
   }
-  .wwa-hero-text { max-width: 100%; }
-  .wwa-hero-title { font-size: 32px; }
-  .wwa-hero-subtitle { font-size: 16px; }
-  .wwa-hero-image-wrap { width: 100%; height: 220px; }
+  .wwa-hero-text {
+    display: contents; /* children promoted to flex level */
+  }
+  .wwa-hero-title    { order: 1; font-size: 25px; margin: 0; }
+  .wwa-hero-image-wrap { order: 2; width: 218px; height: 135px; align-self: center; }
+  .wwa-hero-subtitle { order: 3; font-size: 10px; }
+  .wwa-hero-ctas     { order: 4; gap: 10px; }
   .wwa-hero-image { width: 107.94%; height: 115.92%; }
-  .wwa-hero-btn-primary, .wwa-hero-btn-secondary { font-size: 16px; padding: 14px 20px; border-radius: 20px; }
+  .wwa-hero-btn-primary, .wwa-hero-btn-secondary { font-size: 10px; padding: 8px 14px; border-radius: 10px; }
+  .wwa-hero-btn-icon { width: 12px; height: 12px; }
 }
 
 /* ---------- Quote ---------- */
@@ -189,10 +196,10 @@
   white-space: nowrap;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .wwa-quote-section { padding: 48px 24px; }
-  .wwa-quote-text { font-size: 22px; }
-  .wwa-quote-attribution { font-size: 14px; white-space: normal; }
+  .wwa-quote-text { font-size: 25px; }
+  .wwa-quote-attribution { font-size: 18px; white-space: normal; }
 }
 
 /* ---------- Member Card ---------- */
@@ -268,10 +275,11 @@
   width: 100%;
 }
 
-@media (max-width: 768px) {
-  .wwa-member-card-name { font-size: 14px; }
-  .wwa-member-card-role { font-size: 11px; }
-  .wwa-member-card-info { gap: 2px; }
+@media (max-width: 900px) {
+  .wwa-member-card-name { font-size: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .wwa-member-card-role { font-size: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .wwa-member-card-info { gap: 1px; }
+  .wwa-member-card { border-radius: 5px; }
 }
 
 /* ---------- Member Popup ---------- */
@@ -430,27 +438,49 @@
   line-height: 1;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .wwa-popup-backdrop {
+    align-items: flex-end; /* slide up from bottom */
+    padding: 0;
+  }
   .wwa-popup-inner {
     flex-direction: column;
-    max-height: 100vh;
+    width: 100%;
     max-width: 100vw;
+    max-height: 92vh;
+    border-radius: 16px 16px 0 0;
     overflow-y: auto;
   }
   .wwa-popup-photo-wrap {
     width: 100%;
-    height: 280px;
+    height: 260px;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .wwa-popup-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
   }
   .wwa-popup-content {
     width: 100%;
-    padding: 24px 20px 40px;
+    padding: 20px 20px 40px;
   }
-  .wwa-popup-name { font-size: 28px; }
-  .wwa-popup-role { font-size: 16px; }
-  .wwa-popup-ask-label { font-size: 16px; }
-  .wwa-popup-pill { font-size: 14px; }
-  .wwa-popup-bio { font-size: 14px; }
-  .wwa-popup-close { top: 16px; right: 16px; font-size: 32px; }
+  .wwa-popup-info { gap: 20px; }
+  .wwa-popup-header { gap: 8px; }
+  .wwa-popup-name { font-size: 22px; }
+  .wwa-popup-role { font-size: 14px; }
+  .wwa-popup-ask-label { font-size: 14px; }
+  .wwa-popup-pills { gap: 8px; }
+  .wwa-popup-pill { font-size: 12px; padding: 6px 12px; border-radius: 12px; }
+  .wwa-popup-bio { font-size: 13px; }
+  .wwa-popup-socials { margin-top: 20px; justify-content: flex-start; gap: 14px; }
+  .wwa-popup-social-icon { width: 22px; height: 22px; }
+  .wwa-popup-close { top: 12px; right: 16px; font-size: 28px; }
 }
 
 /* ---------- Team Section ---------- */
@@ -458,6 +488,9 @@
   background-color: #f5f5f5;
   padding: calc(120px * var(--scale, 1)) calc(200px * var(--scale, 1)) 0;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: calc(48px * var(--scale, 1));
 }
 
 .wwa-team-content {
@@ -475,12 +508,6 @@
   gap: calc(48px * var(--scale, 1));
   width: calc(707px * var(--scale, 1));
   flex-shrink: 0;
-}
-
-.wwa-team-intro-texts {
-  display: flex;
-  flex-direction: column;
-  gap: calc(24px * var(--scale, 1));
 }
 
 .wwa-team-title {
@@ -553,22 +580,25 @@
   object-fit: cover;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .wwa-team-section {
-    padding: 40px 24px 0;
+    padding: 40px 20px 0;
+    gap: 16px;
   }
+  .wwa-team-title { font-size: 20px; text-align: center; }
   .wwa-team-content {
-    flex-direction: column;
-    gap: 32px;
+    display: grid;
+    grid-template-columns: 1fr 185px;
+    column-gap: 12px;
     padding-bottom: 40px;
+    align-items: start;
   }
-  .wwa-team-intro { width: 100%; }
-  .wwa-team-title { font-size: 28px; }
-  .wwa-team-subtitle { font-size: 16px; }
-  .wwa-team-categories { width: 100%; gap: 12px; }
-  .wwa-team-category-btn { font-size: 20px; }
-  .wwa-team-photo-wrap { width: 100%; height: 260px; position: static; overflow: hidden; }
-  .wwa-team-photo { position: static; width: 100%; height: 100%; object-fit: cover; }
+  .wwa-team-intro { width: 100%; gap: 12px; }
+  .wwa-team-subtitle { font-size: 10px; }
+  .wwa-team-categories { width: 100%; gap: 6px; }
+  .wwa-team-category-btn { font-size: 13px; }
+  .wwa-team-photo-wrap { width: 185px; height: 144px; position: static; overflow: hidden; }
+  .wwa-team-photo { position: static; width: 116.2%; height: 100.1%; max-width: none; object-fit: cover; }
 }
 
 /* ---------- Members Section ---------- */
@@ -654,13 +684,13 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .wwa-members-section {
-    padding: 40px 20px;
+    padding: 40px 17px;
   }
   .wwa-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
     width: 100%;
   }
 }
