@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import MemberCard from './MemberCard';
+import MemberCard from './MemberCard.js';
 import '../../styles/Leadership.css';
 
 export default function MembersSection({ members, onCardClick }) {
