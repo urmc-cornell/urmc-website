@@ -5,7 +5,7 @@ import WhoWeAreHero from '../components/leadership/WhoWeAreHero.js';
 import QuoteSection from '../components/leadership/QuoteSection.js';
 import MembersSection from '../components/leadership/MembersSection.js';
 import MemberPopup from '../components/leadership/MemberPopup.js';
-import groupPhoto from '../images/home/hero-photo.jpg';
+import groupPhoto from '../images/eboardPhoto.jpg';
 import '../styles/Leadership.css';
 
 export default function Leadership() {
