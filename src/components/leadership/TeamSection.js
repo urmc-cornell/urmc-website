@@ -22,21 +22,23 @@ export default function TeamSection({ onCategoryChange }) {
 
   return (
     <section className="wwa-team-section">
-      <h2 className="wwa-team-title">
-        The <span className="wwa-team-title-highlight">team</span> behind the impact
-      </h2>
       <div className="wwa-team-content">
         <div className="wwa-team-intro">
-          <p className="wwa-team-subtitle">
-            Meet the leaders working to make computing a space where every student can thrive
-          </p>
+          <div className="wwa-team-intro-texts">
+            <h2 className="wwa-team-title">
+              The <span className="wwa-team-title-highlight">team</span> behind the{' '}
+              <br className="wwa-team-title-break" />impact
+            </h2>
+            <p className="wwa-team-subtitle">
+              Meet the leaders working to make computing a space where every student can thrive
+            </p>
+          </div>
           <div className="wwa-team-categories">
             {CATEGORIES.map((cat) => (
               <button
                 key={cat.key}
                 className={[
                   'wwa-team-category-btn',
-                  cat.key === 'all' ? 'wwa-team-category-btn--bold' : '',
                   active === cat.key ? 'wwa-team-category-btn--active' : '',
                 ].join(' ')}
                 onClick={() => handleClick(cat.key)}

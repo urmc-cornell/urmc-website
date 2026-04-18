@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/bars.css";
 import { useScale } from "../hooks/useScale.js";
 import gold_logo from "../images/gold_logo.png";
+import hamburgerIcon from "../images/assets/hamburger.svg";
 
 function Navbar() {
   const [clicked, setClicked] = React.useState(false);
@@ -17,15 +18,11 @@ function Navbar() {
       <button className="menu-icon" onClick={handleClick} aria-label="Toggle menu">
         {clicked ? (
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="2" y1="2" x2="18" y2="18" stroke="#eeb50c" strokeWidth="2.5" strokeLinecap="round"/>
-            <line x1="18" y1="2" x2="2" y2="18" stroke="#eeb50c" strokeWidth="2.5" strokeLinecap="round"/>
+            <line x1="2" y1="2" x2="18" y2="18" stroke="#1f1f1f" strokeWidth="2.5" strokeLinecap="round"/>
+            <line x1="18" y1="2" x2="2" y2="18" stroke="#1f1f1f" strokeWidth="2.5" strokeLinecap="round"/>
           </svg>
         ) : (
-          <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="0" y1="1" x2="22" y2="1" stroke="#eeb50c" strokeWidth="2" strokeLinecap="round"/>
-            <line x1="0" y1="8" x2="22" y2="8" stroke="#eeb50c" strokeWidth="2" strokeLinecap="round"/>
-            <line x1="0" y1="15" x2="22" y2="15" stroke="#eeb50c" strokeWidth="2" strokeLinecap="round"/>
-          </svg>
+          <img src={hamburgerIcon} width="28" height="24" alt="" />
         )}
       </button>
 

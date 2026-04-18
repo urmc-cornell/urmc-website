@@ -49,18 +49,18 @@
 }
 
 .nav a:hover         { color: #eeb50c; }
-.nav li.active a     { color: #eeb50c; }
+.nav li.active a     { color: #eeb50c; font-weight: 800; }
 .menu-icon           { display: none; }
 
 /* ─── Mobile nav (≤ 900 px) ─── */
 @media (max-width: 900px) {
     .nav {
-        padding: 6px 19px;
+        padding: 24px 20px;
         flex-wrap: nowrap;
-        border-bottom: 1px solid #e0e0e0;
+        border-bottom: none;
     }
 
-    .site-logo { width: 75px; height: auto; }
+    .site-logo { width: 147px; height: 56px; object-fit: contain; }
 
     /* hide left/right lists */
     .nav-menu--left,
