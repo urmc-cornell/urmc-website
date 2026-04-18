@@ -3,7 +3,6 @@
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
   border-top: 2px solid #eeb50c;
-  overflow-x: hidden;
 }
 
 .site-footer-top {
@@ -149,10 +148,18 @@
 }
 
 @media (max-width: 900px) {
+  .site-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding: 48px 20px;
+    box-sizing: border-box;
+  }
+
   /* ─── Top section ─── */
   .site-footer-top {
     flex-direction: column;
-    padding: 48px 20px 0;
+    padding: 0;
     gap: 36px;
   }
 
@@ -165,7 +172,7 @@
     max-width: 100%;
   }
 
-  .footer-brand > a:first-child { line-height: 0; }
+  .footer-brand > a:first-child { display: block; }
 
   .footer-logo {
     width: 198px;
@@ -239,7 +246,7 @@
   /* ─── Bottom ─── */
   .site-footer-bottom {
     border-top: none;
-    padding: 24px 20px;
+    padding: 0;
     gap: 24px;
   }
 

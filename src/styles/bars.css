@@ -88,10 +88,11 @@
         display: none;
         position: absolute;
         top: 100%;
-        right: 0;
+        left: 0;
         width: 256px;
         background: #F5F5F5;
-        border-top: 1px solid #1f1f1f;
+        border-top: 2px solid #1f1f1f;
+        border-right: 2px solid #1f1f1f;
         z-index: 1000;
     }
 

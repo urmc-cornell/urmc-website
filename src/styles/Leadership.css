@@ -576,8 +576,10 @@
   font-weight: 800;
 }
 
-.wwa-team-category-btn:hover {
-  color: #eeb50c;
+@media (hover: hover) {
+  .wwa-team-category-btn:hover {
+    color: #eeb50c;
+  }
 }
 
 .wwa-team-category-btn--active {

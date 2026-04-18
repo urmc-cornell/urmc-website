@@ -15,9 +15,10 @@ const CATEGORIES = [
 export default function TeamSection({ onCategoryChange }) {
   const [active, setActive] = useState('all');
 
-  const handleClick = (key) => {
+  const handleClick = (key, e) => {
     setActive(key);
     onCategoryChange(key);
+    e.currentTarget.blur();
   };
 
   return (
@@ -41,7 +42,7 @@ export default function TeamSection({ onCategoryChange }) {
                   'wwa-team-category-btn',
                   active === cat.key ? 'wwa-team-category-btn--active' : '',
                 ].join(' ')}
-                onClick={() => handleClick(cat.key)}
+                onClick={(e) => handleClick(cat.key, e)}
               >
                 {cat.label}
               </button>
