@@ -2,6 +2,7 @@ import { useState } from 'react';
 import academicImg from '../../images/home/pillar-academic.jpg';
 import profdevImg from '../../images/home/pillar-profdev.jpg';
 import communityImg from '../../images/home/pillar-community.jpg';
+import goldPointer from '../../images/assets/gold-pointer.svg';
 import '../../styles/pillars.css';
 
 const pillars = [
@@ -46,14 +47,18 @@ const pillars = [
   },
 ];
 
-function PillarCard({ pillar }) {
-  const [hovered, setHovered] = useState(false);
+function PillarCard({ pillar, isActive, onActivate, onDeactivate, onToggle }) {
+  const handleTouchEnd = (e) => {
+    e.preventDefault();
+    onToggle(pillar.id);
+  };
 
   return (
     <div
-      className={`pillar-card pillar-card--${pillar.id}${hovered ? ' pillar-card--hovered' : ''}`}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      className={`pillar-card pillar-card--${pillar.id}${isActive ? ' pillar-card--hovered' : ''}`}
+      onMouseEnter={onActivate}
+      onMouseLeave={onDeactivate}
+      onTouchEnd={handleTouchEnd}
     >
       {/* Photo — no overlay by default */}
       <div className="pillar-card-photo">
@@ -75,16 +80,32 @@ function PillarCard({ pillar }) {
       <div className="pillar-card-footer">
         <p className="pillar-card-title">{pillar.title}</p>
       </div>
+
+      {/* Gold pointer — bottom-right of card */}
+      <img src={goldPointer} alt="" className="pillar-card-pointer" aria-hidden="true" />
     </div>
   );
 }
 
 export default function PillarsSection() {
+  const [activeId, setActiveId] = useState(null);
+
+  const handleToggle = (id) => setActiveId(prev => prev === id ? null : id);
+
   return (
     <section className="pillars">
       <h2 className="pillars-heading">Our 3 Pillars</h2>
       <div className="pillars-grid">
-        {pillars.map(p => <PillarCard key={p.id} pillar={p} />)}
+        {pillars.map(p => (
+          <PillarCard
+            key={p.id}
+            pillar={p}
+            isActive={activeId === p.id}
+            onActivate={() => setActiveId(p.id)}
+            onDeactivate={() => setActiveId(null)}
+            onToggle={handleToggle}
+          />
+        ))}
       </div>
     </section>
   );

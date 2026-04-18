@@ -1,4 +1,5 @@
 import '../../styles/happenings.css';
+import linkIcon from '../../images/assets/link.svg';
 import eventLeft from '../../images/home/event-left.jpg';
 import eventCenterTop from '../../images/home/event-center-top.jpg';
 import eventCenterBottom from '../../images/home/event-center-bottom.jpg';
@@ -41,9 +42,7 @@ export default function HappeningsSection() {
             rel="noopener noreferrer"
           >
             See the Recap
-            <svg className="happenings-recap-icon" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 21L21 5M21 5H9M21 5V17" stroke="#1f1f1f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+            <img src={linkIcon} alt="" className="happenings-recap-icon" aria-hidden="true" />
           </a>
         </div>
       </div>

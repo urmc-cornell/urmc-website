@@ -108,7 +108,7 @@
 /* ── Footer: title + arrow ── */
 .pillar-card-footer {
   position: absolute;
-  bottom: 8.8%;
+  bottom: 8%;
   left: 6.2%;
   display: flex;
   align-items: center;
@@ -121,7 +121,7 @@
   color: #f5f5f5;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  font-size: calc(28px * var(--scale, 1));
+  font-size: calc(24px * var(--scale, 1));
   line-height: normal;
   margin: 0;
   white-space: nowrap;
@@ -133,25 +133,35 @@
   color: #eeb50c;
 }
 
+/* Gold pointer icon — mobile only */
+.pillar-card-pointer {
+  display: none;
+  position: absolute;
+  object-fit: contain;
+  z-index: 3;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
 
-/* ── Mobile — always show content ── */
+
+
+/* ── Mobile — click to reveal (same look as desktop) ── */
 @media (max-width: 768px) {
-  .pillars { padding: 60px 24px; gap: 40px; }
+  .pillars { padding: 60px 24px; gap: 24px; }
   .pillars-heading { font-size: 32px; }
   .pillars-grid { flex-direction: column; }
 
   .pillar-card {
     flex: none;
     width: 100%;
-    aspect-ratio: auto;
-    height: 380px;
-    cursor: default;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
   }
 
-  .pillar-card-overlay { opacity: 1; }
-  .pillar-card-content { opacity: 1; pointer-events: auto; top: 16%; }
-  .pillar-card-title { color: #eeb50c; font-size: 22px; }
-  .pillar-card-arrow-icon { display: none; }
+  .pillar-card-title { font-size: 18px; font-weight: 800; color: #f5f5f5; }
   .pillar-card-desc { font-size: 14px; }
-  .pillar-card-bullets { font-size: 13px; }
+  .pillar-card-bullets { font-size: 13px; padding-left: 20px; }
+  .pillar-card-content { gap: 16px; }
+  .pillar-card-pointer { display: block; width: 36px; height: 36px; right: 20px; bottom: calc(8% - 9px); }
 }

@@ -19,7 +19,7 @@ const Slider = _Slider.default || _Slider;
 
 // Figma exact dimensions (node 135-85)
 const sponsors = [
-  { src: accenture,  alt: 'Accenture',  w: 154, h: 86    },
+  { src: accenture,  alt: 'Accenture',  w: 260, h: 145   },
   { src: bloomberg,  alt: 'Bloomberg',   w: 303, h: 56    },
   { src: capitalOne, alt: 'Capital One', w: 268, h: 151   },
   { src: datadog,    alt: 'Datadog',     w: 176, h: 178   },
@@ -42,10 +42,12 @@ const sliderSettings = {
   slidesToScroll: 1,
   arrows: false,
   dots: false,
+  focusOnSelect: false,
+  accessibility: false,
   responsive: [
-    { breakpoint: 1024, settings: { slidesToShow: 4 } },
-    { breakpoint: 900,  settings: { slidesToShow: 4 } },
-    { breakpoint: 600,  settings: { slidesToShow: 3 } },
+    { breakpoint: 1024, settings: { slidesToShow: 6 } },
+    { breakpoint: 900,  settings: { slidesToShow: 5 } },
+    { breakpoint: 600,  settings: { slidesToShow: 4 } },
   ],
 };
 
@@ -60,7 +62,7 @@ export default function SponsorsCarousel() {
               <img
                 src={src}
                 alt={alt}
-                className={`sponsor-logo${alt === 'Visa' ? ' sponsor-logo--visa' : ''}${alt === 'EY' ? ' sponsor-logo--ey' : ''}`}
+                className={`sponsor-logo${alt === 'Visa' ? ' sponsor-logo--visa' : ''}${alt === 'EY' ? ' sponsor-logo--ey' : ''}${alt === 'Accenture' ? ' sponsor-logo--accenture' : ''}`}
                 style={{
                   width:  `calc(${w}px * var(--scale, 1))`,
                   height: `calc(${h}px * var(--scale, 1))`,
