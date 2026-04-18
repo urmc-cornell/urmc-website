@@ -88,12 +88,11 @@
         display: none;
         position: absolute;
         top: 100%;
-        left: 0;
         right: 0;
+        width: 256px;
         background: #F5F5F5;
-        border-bottom: 1px solid #e0e0e0;
+        border-top: 1px solid #1f1f1f;
         z-index: 1000;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
     .nav-container.active { display: block; }
@@ -102,20 +101,32 @@
     .nav-menu--mobile {
         display: flex;
         flex-direction: column;
+        align-items: stretch;
         list-style: none;
         margin: 0;
-        padding: 20px 24px;
-        gap: 20px;
+        padding: 8px 24px;
+        gap: 0;
     }
 
-    .nav a {
-        font-size: 16px;
+    .nav-menu--mobile li {
+        border-bottom: 1px solid #ccc;
+    }
+
+    .nav-menu--mobile li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-menu--mobile li a {
+        display: block;
+        padding: 16px 0;
+        font-size: 15px;
+        font-weight: 600;
         color: #1f1f1f;
         white-space: normal;
     }
 
     .nav a:hover     { color: #eeb50c; }
-    .nav li.active a { color: #eeb50c; }
+    .nav li.active a { color: #eeb50c; font-weight: 800; }
 }
 
 /* ─── Misc shared styles ─── */

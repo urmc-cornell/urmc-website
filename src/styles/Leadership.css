@@ -493,7 +493,8 @@
   .wwa-popup-bio { font-size: 15px; }
   .wwa-popup-socials { margin-top: 0; justify-content: flex-end; gap: 14px; }
   .wwa-popup-social-icon { width: 22px; height: 22px; }
-  .wwa-popup-close { position: fixed; top: 16px; right: 17px; z-index: 1100; padding: 12px; background: none; border: none; cursor: pointer; }
+  .wwa-popup-close { position: fixed; top: 16px; right: 17px; z-index: 1100; padding: 12px; background: #1f1f1f; border: none; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  .wwa-popup-close img { width: 20px; height: 20px; }
 }
 
 /* ---------- Team Section ---------- */
