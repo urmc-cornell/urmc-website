@@ -72,6 +72,7 @@
   height: calc(26px * var(--scale, 1));
   display: block;
   flex-shrink: 0;
+  margin-left: calc(40px * var(--scale, 1));
 }
 
 .wwa-hero-btn-primary {
