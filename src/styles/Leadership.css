@@ -72,7 +72,6 @@
   height: calc(26px * var(--scale, 1));
   display: block;
   flex-shrink: 0;
-  margin-left: calc(40px * var(--scale, 1));
 }
 
 .wwa-hero-btn-primary {
@@ -155,6 +154,7 @@
     border-radius: 9px;
     width: 100%;
     justify-content: center;
+    gap: 12px;
   }
   .wwa-hero-btn-secondary { border-width: 1.5px; }
   .wwa-hero-btn-icon { width: 20px; height: 20px; }
