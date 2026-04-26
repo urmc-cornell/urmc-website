@@ -42,7 +42,7 @@
 .nav a {
     color: #1f1f1f;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     font-size: calc(24px * var(--scale, 1));
     text-decoration: none;
     white-space: nowrap;
@@ -89,10 +89,10 @@
         position: absolute;
         top: 100%;
         left: 0;
-        width: 256px;
+        right: 0;
+        width: 100%;
         background: #F5F5F5;
         border-top: 2px solid #1f1f1f;
-        border-right: 2px solid #1f1f1f;
         z-index: 1000;
     }
 
@@ -121,9 +121,10 @@
         display: block;
         padding: 16px 0;
         font-size: 15px;
-        font-weight: 600;
+        font-weight: 500;
         color: #1f1f1f;
         white-space: normal;
+        text-align: center;
     }
 
     .nav a:hover     { color: #eeb50c; }

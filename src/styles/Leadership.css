@@ -263,20 +263,20 @@
 
 .wwa-member-card-name {
   font-family: 'Montserrat', sans-serif;
-  font-size: calc(24px * var(--scale, 1));
+  font-size: calc(18px * var(--scale, 1));
   font-weight: 600;
   color: #f5f5f5;
-  line-height: normal;
+  line-height: 1.15;
   margin: 0;
   width: 100%;
 }
 
 .wwa-member-card-role {
   font-family: 'Montserrat', sans-serif;
-  font-size: calc(16px * var(--scale, 1));
+  font-size: calc(13px * var(--scale, 1));
   font-weight: 400;
   color: #f5f5f5;
-  line-height: normal;
+  line-height: 1.15;
   margin: 0;
   width: 100%;
 }
@@ -571,6 +571,7 @@
   padding: 0;
   line-height: normal;
   transition: color 0.15s ease;
+  white-space: nowrap;
 }
 
 .wwa-team-category-btn--bold {
@@ -620,7 +621,7 @@
   .wwa-team-intro { width: 100%; gap: 24px; }
   .wwa-team-subtitle { font-size: 15px; text-align: center; }
   .wwa-team-categories { width: 100%; gap: 12px; }
-  .wwa-team-category-btn { font-size: 20px; text-align: center; }
+  .wwa-team-category-btn { font-size: 20px; text-align: center; white-space: nowrap; }
   .wwa-team-photo-wrap {
     width: 100%;
     height: auto;
@@ -714,13 +715,13 @@
 
 .wwa-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: calc(40px * var(--scale, 1));
+  grid-template-columns: repeat(5, 1fr);
+  gap: calc(32px * var(--scale, 1));
 }
 
 @media (max-width: 1024px) {
   .wwa-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
