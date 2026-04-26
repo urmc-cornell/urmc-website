@@ -285,6 +285,18 @@ body {
   object-fit: contain;
 }
 
+/* Visa's source PNG has significant vertical whitespace baked in; scale
+   the rendered image up so the visible wordmark fills the tile like the
+   other logos. The tile's overflow:hidden clips the surrounding empty space. */
+.gi-partner-tile {
+  overflow: hidden;
+}
+
+.gi-partner-tile img[alt="Visa"] {
+  transform: scale(2);
+  transform-origin: center;
+}
+
 /* ---------- Alumni mailing form ---------- */
 
 .gi-mailing-form {
