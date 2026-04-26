@@ -59,15 +59,17 @@ export default function SponsorsCarousel() {
         <Slider {...sliderSettings}>
           {sponsors.map(({ src, alt, w, h }) => (
             <div key={alt} className="sponsor-slide">
-              <img
-                src={src}
-                alt={alt}
-                className={`sponsor-logo${alt === 'Visa' ? ' sponsor-logo--visa' : ''}${alt === 'EY' ? ' sponsor-logo--ey' : ''}${alt === 'Accenture' ? ' sponsor-logo--accenture' : ''}`}
-                style={{
-                  width:  `calc(${w}px * var(--scale, 1))`,
-                  height: `calc(${h}px * var(--scale, 1))`,
-                }}
-              />
+              <a href="/sponsors" className="sponsor-link" aria-label={`${alt} — View all sponsors`}>
+                <img
+                  src={src}
+                  alt={alt}
+                  className={`sponsor-logo${alt === 'Visa' ? ' sponsor-logo--visa' : ''}${alt === 'EY' ? ' sponsor-logo--ey' : ''}${alt === 'Accenture' ? ' sponsor-logo--accenture' : ''}`}
+                  style={{
+                    width:  `calc(${w}px * var(--scale, 1))`,
+                    height: `calc(${h}px * var(--scale, 1))`,
+                  }}
+                />
+              </a>
             </div>
           ))}
         </Slider>
