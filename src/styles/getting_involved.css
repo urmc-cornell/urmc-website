@@ -1,149 +1,461 @@
-.getting-involved-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 75rem;
-    margin: 0 auto;
-    padding: 0 1.25rem;
+/* Get Involved page — desktop layout matches Figma at 1920px and scales
+   proportionally via the --scale CSS variable (window.innerWidth / 1920)
+   set by useScale(). Mobile fallback (<=768px) drops scale and stacks. */
+
+.gi-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  --gi-pad-x: calc(200px * var(--scale, 1));
 }
 
-.getting-involved {
-    /* text-align: center; */
-    color: #F0F0F0;
-    font-family: "Helvetica Neue";
-    font-size: 4rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    margin-bottom: 5rem;
-    margin-top: 1.5rem;
-    text-align: center;
-
+.gi-page * {
+  box-sizing: border-box;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
-    gap: 1.25rem;
-    width: 100%;
+/* ---------- Hero ---------- */
+
+.gi-hero {
+  background: #1f1f1f;
+  width: 100%;
+  padding: calc(160px * var(--scale, 1)) var(--gi-pad-x);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.grid-item {
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    /* text-align: center; */
+.gi-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(40px * var(--scale, 1));
+  width: 100%;
 }
 
-.text-background {
-    display: flex;
-    flex-direction: column;
-    padding: 3.44rem 2.88rem;
-    background-color: #f0f0f0;
-    height: 23.25rem;
-    
-    box-sizing: border-box;
-    overflow: hidden;
-    border-radius: 1.25rem;
-    text-align: start;
+.gi-hero-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: calc(64px * var(--scale, 1));
+  color: #ffffff;
+  margin: 0;
+  line-height: 1;
 }
 
-.header-text {
-    color: #000;
-    /* margin-bottom: 10px; */
-    font-size: 2.5rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    margin: 0rem;
+.gi-hero-subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: calc(24px * var(--scale, 1));
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.3;
 }
 
-.subheader-text {
-    font-size: 1.75rem;
-    font-weight: 400;
-    font-family: "Montserrat";
-    font-style: normal;
+/* ---------- Generic split section (Students, Companies, Alumni) ---------- */
+
+.gi-section {
+  width: 100%;
+  padding: calc(120px * var(--scale, 1)) var(--gi-pad-x);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: calc(60px * var(--scale, 1));
 }
 
-.button-div {
-    margin-top: 2.75rem;
-    margin-bottom: 3.75rem;
+.gi-section--light {
+  background: #f5f5f5;
 }
 
-.btn {
-    display: flex;
-    height: 4.3125rem;
-    padding: 0.25rem 2rem;
-    width: 22rem;
-    justify-content: center;
-    align-items: center;
-    gap: 0.625rem;
-    font-family: "Montserrat-Medium-Soft";
-    font-variant: all-small-caps;
-    color: white;
-    border-radius: 4rem;
-    box-shadow: 0px 0.25rem 0.3125rem 0px rgba(0, 0, 0, 0.25);
-    transition: all 0.3s ease;
+.gi-section--dark {
+  background: #1f1f1f;
+  align-items: center;
 }
 
-.getting-involved-page .btn {
-    background: var(--urmc-gold-gradient, linear-gradient(108deg, #DFC856 19.51%, #D38745 71.52%));
+.gi-split-content {
+  display: flex;
+  flex-direction: column;
+  gap: calc(36px * var(--scale, 1));
+  width: calc(721px * var(--scale, 1));
+  flex-shrink: 0;
+  align-self: stretch;
 }
 
-.btn:hover {
-    background-color: #0056b3;
+.gi-split-content--companies {
+  gap: calc(84px * var(--scale, 1));
 }
 
-.text-bold {
-    font-family: Hard;
+.gi-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: calc(24px * var(--scale, 1));
+  width: 100%;
 }
+
+.gi-section--dark .gi-text-block {
+  gap: calc(36px * var(--scale, 1));
+}
+
+.gi-section-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: calc(48px * var(--scale, 1));
+  margin: 0;
+  line-height: 1;
+}
+
+.gi-section-title--dark {
+  color: #1f1f1f;
+}
+
+.gi-section-title--light {
+  color: #f5f5f5;
+}
+
+.gi-section-body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: calc(24px * var(--scale, 1));
+  margin: 0;
+  line-height: 1.3;
+}
+
+.gi-section-body--dark {
+  color: #1f1f1f;
+}
+
+.gi-section-body--light {
+  color: #f5f5f5;
+}
+
+.gi-split-image {
+  flex-shrink: 0;
+  width: calc(731px * var(--scale, 1));
+  height: calc(549px * var(--scale, 1));
+  overflow: hidden;
+}
+
+.gi-split-image--tall {
+  height: calc(722px * var(--scale, 1));
+}
+
+.gi-split-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Reverse the order in Companies (image left, content right) */
+.gi-section--reverse {
+  flex-direction: row;
+}
+
+/* ---------- Buttons ---------- */
+
+.gi-button-group {
+  display: flex;
+  gap: calc(24px * var(--scale, 1));
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.gi-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(10px * var(--scale, 1));
+  padding: calc(16px * var(--scale, 1)) calc(24px * var(--scale, 1));
+  border-radius: calc(20px * var(--scale, 1));
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: calc(24px * var(--scale, 1));
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  border: calc(2px * var(--scale, 1)) solid transparent;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.gi-btn:hover {
+  opacity: 0.85;
+}
+
+.gi-btn-icon {
+  width: calc(25px * var(--scale, 1));
+  height: calc(25px * var(--scale, 1));
+  display: block;
+}
+
+.gi-btn--gold {
+  background: #eeb50c;
+  color: #1f1f1f;
+  border-color: #eeb50c;
+}
+
+.gi-btn--light {
+  background: #f5f5f5;
+  color: #1f1f1f;
+  border-color: #f5f5f5;
+}
+
+.gi-btn--dark {
+  background: #1f1f1f;
+  color: #f5f5f5;
+  border-color: #1f1f1f;
+}
+
+.gi-btn--outline-light {
+  background: transparent;
+  color: #f5f5f5;
+  border-color: #f5f5f5;
+}
+
+.gi-btn--outline-dark {
+  background: transparent;
+  color: #1f1f1f;
+  border-color: #1f1f1f;
+}
+
+/* ---------- Partners grid ---------- */
+
+.gi-partners {
+  display: flex;
+  flex-direction: column;
+  gap: calc(36px * var(--scale, 1));
+  width: 100%;
+}
+
+.gi-partners-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: calc(32px * var(--scale, 1));
+  color: #f5f5f5;
+  margin: 0;
+  line-height: 1;
+}
+
+.gi-partners-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: calc(24px * var(--scale, 1));
+}
+
+.gi-partners-row--short {
+  width: calc(537px * var(--scale, 1));
+  justify-content: space-between;
+}
+
+.gi-partner-tile {
+  background: #f5f5f5;
+  border-radius: calc(12px * var(--scale, 1));
+  width: calc(153px * var(--scale, 1));
+  height: calc(89px * var(--scale, 1));
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(10px * var(--scale, 1));
+}
+
+.gi-partner-tile img {
+  max-width: 92%;
+  max-height: 82%;
+  object-fit: contain;
+}
+
+/* ---------- Alumni mailing form ---------- */
+
+.gi-mailing-form {
+  display: flex;
+  gap: calc(24px * var(--scale, 1));
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.gi-mailing-input {
+  width: calc(410px * var(--scale, 1));
+  flex-shrink: 0;
+  background: #e8e8e8;
+  border: calc(1px * var(--scale, 1)) solid #646464;
+  border-radius: calc(20px * var(--scale, 1));
+  padding: calc(16px * var(--scale, 1)) calc(24px * var(--scale, 1));
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: calc(24px * var(--scale, 1));
+  color: #1f1f1f;
+  line-height: 1;
+  outline: none;
+}
+
+.gi-mailing-input::placeholder {
+  color: #646464;
+}
+
+.gi-mailing-input:focus {
+  border-color: #1f1f1f;
+}
+
+/* ---------- Supporters ---------- */
+
+.gi-supporters {
+  background: #1f1f1f;
+  padding: calc(160px * var(--scale, 1)) var(--gi-pad-x);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(36px * var(--scale, 1));
+  width: 100%;
+}
+
+.gi-supporters-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: calc(48px * var(--scale, 1));
+  color: #f5f5f5;
+  margin: 0;
+  line-height: 1;
+  padding-bottom: calc(8px * var(--scale, 1));
+  border-bottom: calc(7px * var(--scale, 1)) solid #eeb50c;
+}
+
+.gi-supporters-body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: calc(24px * var(--scale, 1));
+  color: #f5f5f5;
+  margin: 0;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.gi-supporters .gi-button-group {
+  justify-content: center;
+}
+
+/* ---------- Mobile (≤768px) ---------- */
 
 @media (max-width: 768px) {
+  .gi-page {
+    --scale: 1;
+    --gi-pad-x: 24px;
+  }
 
-    .getting-involved {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-    }
+  .gi-hero {
+    padding: 80px var(--gi-pad-x);
+  }
 
-    .grid-container {
-        width: 100%;
-        gap: 1rem;
-    }
+  .gi-hero-content {
+    gap: 24px;
+  }
 
-    .text-background {
-        width: 100%;
-        height: auto;
-        min-height: 15rem;
-        padding: 1.5rem 1rem;
-    }
+  .gi-hero-title {
+    font-size: 40px;
+  }
 
-    .header-text {
-        font-size: 1.8rem;
-        line-height: 1.3;
-    }
+  .gi-hero-subtitle {
+    font-size: 18px;
+  }
 
-    .subheader-text {
-        font-size: 1.1rem;
-        line-height: 1.4;
-    }
+  .gi-section {
+    flex-direction: column;
+    padding: 64px var(--gi-pad-x);
+    gap: 36px;
+    align-items: stretch;
+  }
 
-    .button-div {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        margin-top: 1.5rem;
-        margin-bottom: 2rem;
-    }
+  .gi-section--reverse {
+    flex-direction: column-reverse;
+  }
 
-    .getting-involved-page .btn {
-        font-size: 1.1rem;
-        width: 80%;
-        height: auto;
-        padding: 0.8rem 1rem;
-    }
+  .gi-split-content,
+  .gi-split-content--companies {
+    width: 100%;
+    gap: 36px;
+  }
 
+  .gi-section-title {
+    font-size: 32px;
+  }
 
+  .gi-section-body {
+    font-size: 16px;
+  }
 
+  .gi-split-image,
+  .gi-split-image--tall {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
 
+  .gi-btn {
+    font-size: 16px;
+    padding: 12px 20px;
+    border-radius: 16px;
+    border-width: 2px;
+  }
+
+  .gi-btn-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .gi-button-group {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .gi-partners-title {
+    font-size: 22px;
+  }
+
+  .gi-partners {
+    gap: 16px;
+  }
+
+  .gi-partners-row,
+  .gi-partners-row--short {
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .gi-partner-tile {
+    width: calc((100% - 12px) / 2);
+    height: 72px;
+    border-radius: 12px;
+  }
+
+  .gi-mailing-form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .gi-mailing-input {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px;
+    border-radius: 16px;
+    border-width: 1px;
+  }
+
+  .gi-supporters {
+    padding: 80px var(--gi-pad-x);
+    gap: 24px;
+  }
+
+  .gi-supporters-title {
+    font-size: 32px;
+    border-bottom-width: 5px;
+  }
+
+  .gi-supporters-body {
+    font-size: 16px;
+  }
 }
