@@ -18,7 +18,7 @@ import visa from '../images/sponsors/visa.png';
 import '../styles/getting_involved.css';
 
 const SLACK_URL = 'https://join.slack.com/t/urmc/shared_invite/zt-2dy8ndtoy-~6zcRR2skt7Z5iT5iAyIBg';
-const INSTAGRAM_URL = 'https://www.instagram.com/cornellurmc/';
+const INSTAGRAM_URL = 'https://www.instagram.com/urmc_cornell';
 const DONATE_URL = 'https://securelb.imodules.com/s/1717/giving/interior.aspx?sid=1717&gid=2&pgid=16421&bledit=1&dids=702';
 
 const PARTNERS_ROW_1 = [
@@ -105,10 +105,10 @@ function CompaniesSection() {
           <p className="gi-section-body gi-section-body--light">
             Partner with URMC to connect with diverse, talented students in computing.
           </p>
-          <div className="gi-button-group">
-            <a href="mailto:urmc@cornell.edu" className="gi-btn gi-btn--light">Partner With Us</a>
-            <a href="/sponsors" className="gi-btn gi-btn--outline-light">Our Sponsors</a>
-          </div>
+        </div>
+        <div className="gi-button-group gi-button-group--companies">
+          <a href="mailto:urmc@cornell.edu" className="gi-btn gi-btn--light">Partner With Us</a>
+          <a href="/sponsors" className="gi-btn gi-btn--outline-light">Our Sponsors</a>
         </div>
         <div className="gi-partners">
           <h3 className="gi-partners-title">Current Partners</h3>

@@ -2,12 +2,27 @@
    proportionally via the --scale CSS variable (window.innerWidth / 1920)
    set by useScale(). Mobile fallback (<=768px) drops scale and stacks. */
 
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  margin: 0;
+}
+
 .gi-page {
   display: flex;
   flex-direction: column;
   width: 100%;
   font-family: "Montserrat", sans-serif;
   --gi-pad-x: calc(200px * var(--scale, 1));
+}
+
+.gi-page,
+.gi-page .gi-hero,
+.gi-page .gi-section,
+.gi-page .gi-supporters {
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .gi-page * {
@@ -81,7 +96,11 @@
 }
 
 .gi-split-content--companies {
-  gap: calc(84px * var(--scale, 1));
+  gap: calc(36px * var(--scale, 1));
+}
+
+.gi-split-content--companies .gi-partners {
+  margin-top: calc(48px * var(--scale, 1));
 }
 
 .gi-text-block {
@@ -336,126 +355,174 @@
   justify-content: center;
 }
 
-/* ---------- Mobile (≤768px) ---------- */
+/* ---------- Mobile (≤768px) — matches Figma node 780:4124 (390px design) ---------- */
 
 @media (max-width: 768px) {
   .gi-page {
     --scale: 1;
-    --gi-pad-x: 24px;
+    --gi-pad-x: 20px;
   }
 
+  /* Hero */
   .gi-hero {
-    padding: 80px var(--gi-pad-x);
+    padding: 60px var(--gi-pad-x);
   }
 
   .gi-hero-content {
-    gap: 24px;
+    gap: 20px;
   }
 
   .gi-hero-title {
-    font-size: 40px;
+    font-size: 32px;
   }
 
   .gi-hero-subtitle {
-    font-size: 18px;
+    font-size: 15px;
   }
 
+  /* Sections become column stacks; flatten split-content so we can re-order
+     siblings (text → image → buttons / partners) per Figma. */
   .gi-section {
     flex-direction: column;
-    padding: 64px var(--gi-pad-x);
+    padding: 40px var(--gi-pad-x);
     gap: 36px;
     align-items: stretch;
   }
 
   .gi-section--reverse {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 
-  .gi-split-content,
-  .gi-split-content--companies {
-    width: 100%;
-    gap: 36px;
+  .gi-split-content {
+    display: contents;
   }
+
+  /* Students & Alumni: text (1) → image (2) → buttons / mailing form (3) */
+  .gi-section .gi-text-block { order: 1; }
+  .gi-section .gi-split-image { order: 2; }
+  .gi-section .gi-button-group,
+  .gi-section .gi-mailing-form { order: 3; }
+
+  /* Companies: text (1) → image (2) → partners (3) → buttons (4) */
+  .gi-section--dark .gi-partners { order: 3; margin-top: 0; }
+  .gi-section--dark .gi-button-group--companies { order: 4; }
 
   .gi-section-title {
-    font-size: 32px;
+    font-size: 24px;
   }
 
   .gi-section-body {
-    font-size: 16px;
+    font-size: 15px;
   }
 
-  .gi-split-image,
-  .gi-split-image--tall {
+  .gi-text-block {
+    gap: 24px;
+  }
+
+  /* Images — full width; aspect ratios from Figma */
+  .gi-split-image {
     width: 100%;
     height: auto;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4096 / 3074;
+  }
+
+  .gi-split-image--tall {
+    aspect-ratio: 731 / 722;
+  }
+
+  /* Buttons — full-width stacked */
+  .gi-button-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    width: 100%;
   }
 
   .gi-btn {
-    font-size: 16px;
-    padding: 12px 20px;
-    border-radius: 16px;
-    border-width: 2px;
+    width: 100%;
+    font-size: 15px;
+    padding: 16px 20px;
+    border-radius: 9.098px;
+    border-width: 1px;
+  }
+
+  /* Slack & Follow Us buttons (only ones with icons) keep slightly different radius */
+  .gi-btn--outline-dark {
+    border-radius: 12.228px;
+    border-width: 1.223px;
   }
 
   .gi-btn-icon {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
   }
 
-  .gi-button-group {
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
+  /* Partner tiles — 4/4/3 small grid */
   .gi-partners-title {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .gi-partners {
     gap: 16px;
   }
 
+  /* Use a 4-column grid so the 3-tile row's columns line up with the
+     4-tile rows above (Visa under HRT, etc.) */
   .gi-partners-row,
   .gi-partners-row--short {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 8.8px;
     width: 100%;
-    justify-content: flex-start;
-    gap: 12px;
+    flex-wrap: initial;
+    justify-content: initial;
   }
 
   .gi-partner-tile {
-    width: calc((100% - 12px) / 2);
-    height: 72px;
-    border-radius: 12px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 80.899 / 47.059;
+    max-width: 80.899px;
+    border-radius: 6.345px;
+    padding: 5.288px;
+    justify-self: center;
   }
 
+  /* Alumni mailing form */
   .gi-mailing-form {
     flex-direction: column;
     align-items: stretch;
-    gap: 16px;
+    gap: 8px;
+    width: 100%;
   }
 
   .gi-mailing-input {
     width: 100%;
-    font-size: 16px;
-    padding: 12px 20px;
-    border-radius: 16px;
+    font-size: 15px;
+    padding: 16px 24px;
+    border-radius: 20px;
     border-width: 1px;
   }
 
+  /* The dark submit button in the mailing form should match the Figma
+     small radius (9.098px), overriding the .gi-btn--outline-dark rule above
+     which doesn't apply here, but explicit for clarity. */
+  .gi-mailing-form .gi-btn--dark {
+    border-radius: 9.098px;
+  }
+
+  /* Supporters */
   .gi-supporters {
-    padding: 80px var(--gi-pad-x);
-    gap: 24px;
+    padding: 60px var(--gi-pad-x);
+    gap: 36px;
   }
 
   .gi-supporters-title {
-    font-size: 32px;
-    border-bottom-width: 5px;
+    font-size: 24px;
+    border-bottom-width: 4px;
   }
 
   .gi-supporters-body {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
