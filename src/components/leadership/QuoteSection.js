@@ -5,9 +5,9 @@ export default function QuoteSection() {
     <section className="wwa-quote-section">
       <blockquote className="wwa-quote">
         <p className="wwa-quote-text">
-          "Really cool quote glazing URMC yessirski, really cool quote glazing URMC yessir."
+          “URMC opened up my network so much... Without URMC, I wouldn’t be where I am now.”
         </p>
-        <cite className="wwa-quote-attribution">- Lebron James, CS '28</cite>
+        <cite className="wwa-quote-attribution">- Lidya Bekele, CS '28</cite>
       </blockquote>
     </section>
   );
