@@ -1,0 +1,167 @@
+.pillars {
+  background-color: #1f1f1f;
+  padding: calc(100px * var(--scale, 1)) calc(200px * var(--scale, 1));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(72px * var(--scale, 1));
+  box-sizing: border-box;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.pillars-heading {
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: calc(48px * var(--scale, 1));
+  text-align: center;
+  margin: 0;
+  width: 100%;
+}
+
+.pillars-grid {
+  display: flex;
+  flex-direction: row;
+  gap: calc(31px * var(--scale, 1));
+  width: 100%;
+}
+
+/* ── Card shell ── */
+.pillar-card {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  aspect-ratio: 487 / 486;
+  overflow: hidden;
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+/* ── Photo ── */
+.pillar-card-photo {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.pillar-card-photo img {
+  position: absolute;
+  max-width: none;
+  filter: grayscale(100%);
+}
+
+/* ── Dark overlay — hidden by default, shown on hover ── */
+.pillar-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.pillar-card--hovered .pillar-card-overlay {
+  opacity: 1;
+}
+
+/* ── Description + bullets — hidden by default, shown on hover ── */
+.pillar-card-content {
+  position: absolute;
+  top: 25.3%;
+  left: 8.9%;
+  width: 82%;
+  display: flex;
+  flex-direction: column;
+  gap: calc(24px * var(--scale, 1));
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.pillar-card--hovered .pillar-card-content {
+  opacity: 1;
+}
+
+.pillar-card-desc {
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: calc(20px * var(--scale, 1));
+  line-height: normal;
+  text-align: center;
+  margin: 0;
+}
+
+.pillar-card-bullets {
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: calc(20px * var(--scale, 1));
+  line-height: normal;
+  padding-left: calc(30px * var(--scale, 1));
+  margin: 0;
+  list-style: disc;
+}
+
+/* ── Footer: title + arrow ── */
+.pillar-card-footer {
+  position: absolute;
+  bottom: 8%;
+  left: 6.2%;
+  display: flex;
+  align-items: center;
+  gap: calc(97px * var(--scale, 1));
+  z-index: 2;
+}
+
+/* Default: white title */
+.pillar-card-title {
+  color: #f5f5f5;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: calc(24px * var(--scale, 1));
+  line-height: normal;
+  margin: 0;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+/* Hover: gold title */
+.pillar-card--hovered .pillar-card-title {
+  color: #eeb50c;
+}
+
+/* Gold pointer icon — mobile only */
+.pillar-card-pointer {
+  display: none;
+  position: absolute;
+  object-fit: contain;
+  z-index: 3;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+
+
+/* ── Mobile — click to reveal (same look as desktop) ── */
+@media (max-width: 768px) {
+  .pillars { padding: 60px 24px; gap: 24px; }
+  .pillars-heading { font-size: 32px; }
+  .pillars-grid { flex-direction: column; }
+
+  .pillar-card {
+    flex: none;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+  }
+
+  .pillar-card-title { font-size: 18px; font-weight: 800; color: #f5f5f5; }
+  .pillar-card-desc { font-size: 14px; }
+  .pillar-card-bullets { font-size: 13px; padding-left: 20px; }
+  .pillar-card-content { gap: 16px; }
+  .pillar-card-pointer { display: block; width: 36px; height: 36px; right: 20px; bottom: calc(8% - 9px); }
+}

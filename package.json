@@ -24,6 +24,7 @@
     "react-slick": "^0.29.0",
     "request": "^2.88.2",
     "serve": "^14.2.0",
+    "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },
   "type": "module",
@@ -34,6 +35,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "populate-eboard": "node scripts/populate-eboard.js"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|svg|webp)$": "<rootDir>/src/__mocks__/fileMock.js"
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -52,6 +58,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {}
+  }
 }

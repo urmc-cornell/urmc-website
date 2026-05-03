@@ -2,7 +2,6 @@ import React from "react";
 import "../styles/bars.css";
 import { useScale } from "../hooks/useScale.js";
 import gold_logo from "../images/gold_logo.png";
-import giving_day_banner from "../images/giving_day_banner.png";
 
 function Navbar() {
   const [clicked, setClicked] = React.useState(false);
@@ -12,50 +11,52 @@ function Navbar() {
     setClicked(!clicked);
   };
 
+  return (
+    <nav className="nav">
+      {/* Mobile hamburger */}
+      <div className="menu-icon" onClick={handleClick} aria-label="Toggle menu">
+        <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
+      </div>
 
-    return (
-        <div>
-            {/* <div className='banner'>
-                Giving Day Is Near, Donate
-                <a 
-                    href="https://givingday.cornell.edu/campaigns/under-represented-minorities-in-computing-urmc" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                Here!
-                </a>
-            </div> */}
+      {/* Left links */}
+      <ul className="nav-menu nav-menu--left">
+        <CustomLink href="/leadership">Who We Are</CustomLink>
+        <CustomLink href="/events">Events</CustomLink>
+        <CustomLink href="/getting-involved">Get Involved</CustomLink>
+      </ul>
 
-            <nav className="nav">
-                <a href="/">
-                    <img src={gold_logo} className="site-logo" alt="URMC Logo" />
-                </a>
-                <div className="menu-icon" onClick={handleClick}>
-                    <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
-                </div>
-                <div className={clicked ? "nav-container active" : "nav-container"}>
-                    <ul className="nav-menu">
-                        <CustomLink href="/leadership">LEADERSHIP</CustomLink>
-                        <CustomLink href="/events">EVENTS</CustomLink>
-                        <CustomLink href="/ta-directory">TA DIRECTORY</CustomLink>
-                        <CustomLink href="/getting-involved">GETTING INVOLVED</CustomLink>
-                        <CustomLink href="/sponsors">SPONSORS</CustomLink>
-                        <CustomLink href="/points">POINTS</CustomLink>
-                    </ul>
-                </div>
-            </nav>
-    </div>
+      {/* Center logo */}
+      <a href="/" className="nav-logo-link">
+        <img src={gold_logo} className="site-logo" alt="URMC Logo" />
+      </a>
+
+      {/* Right links */}
+      <ul className="nav-menu nav-menu--right">
+        <CustomLink href="/sponsors">Sponsors</CustomLink>
+        <CustomLink href="/ta-directory">TA Directory</CustomLink>
+        <CustomLink href="/points">Points</CustomLink>
+      </ul>
+
+      {/* Mobile slide-out menu */}
+      <div className={clicked ? "nav-container active" : "nav-container"}>
+        <ul className="nav-menu nav-menu--mobile">
+          <CustomLink href="/leadership">Who We Are</CustomLink>
+          <CustomLink href="/events">Events</CustomLink>
+          <CustomLink href="/getting-involved">Get Involved</CustomLink>
+          <CustomLink href="/sponsors">Sponsors</CustomLink>
+          <CustomLink href="/ta-directory">TA Directory</CustomLink>
+          <CustomLink href="/points">Points</CustomLink>
+        </ul>
+      </div>
+    </nav>
   );
 }
 
 function CustomLink({ href, children, ...props }) {
   const path = window.location.pathname;
-
   return (
     <li className={path === href ? "active" : ""}>
-      <a href={href} {...props}>
-        {children}
-      </a>
+      <a href={href} {...props}>{children}</a>
     </li>
   );
 }
