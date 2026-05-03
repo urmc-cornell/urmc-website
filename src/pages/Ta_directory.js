@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import { supabase } from "../lib/supabaseClient.js";
 import TACard from "../components/TACard.js";
 import "../styles/teaching_assistants.css";
+import { currentSemester, currentSemesterLabel } from "../lib/semester.js";
 
 export default function TA_page() {
   const [TAList, setTAList] = useState([]);
@@ -81,7 +82,7 @@ export default function TA_page() {
   return (
     <div className="leadership-page">
       <h1 className="leadership">TA Directory</h1>
-      <h2 className="fall22">Fall 2025</h2>
+      <h2 className="fall22">{currentSemesterLabel()}</h2>
 
       {TAList.map((group) => (
         <div key={group.course} className="course-section">

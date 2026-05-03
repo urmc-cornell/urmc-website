@@ -3,6 +3,7 @@ import { supabase } from "../lib/supabaseClient.js";
 import EboardCard from "../components/EboardCard.js";
 import "../styles/Leadership.css";
 import EboardPopup from "../components/eboardPopup.js";
+import { currentSemesterLabel } from "../lib/semester.js";
 
 export default function Leadership() {
   const [selectedCard, setSelectedCard] = useState(null);
@@ -11,7 +12,6 @@ export default function Leadership() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fetch leadership data when component mounts
   useEffect(() => {
     fetchLeadershipData();
   }, []);
@@ -110,7 +110,7 @@ export default function Leadership() {
   return (
     <div className='leadership-page'>
       <h1 className="leadership">Executive Board</h1>
-      <h2 className="spring26">Spring 2026</h2>
+      <h2 className="spring26">{currentSemesterLabel()}</h2>
       {/* Popup modal component for showing detailed member info */}
       <EboardPopup
         trigger={popupActive}
