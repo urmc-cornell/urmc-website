@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import '../../styles/Leadership.css';
+import popoutX from '../../images/assets/popoutX.svg';
 import mailGold from '../../images/assets/mailGold.png';
 import instaGold from '../../images/assets/instagramGold.png';
 import linkedGold from '../../images/assets/linkedinGold.png';
@@ -72,7 +73,9 @@ export default function MemberPopup({ member, onClose }) {
         </div>
 
         {/* Close button */}
-        <button className="wwa-popup-close" onClick={onClose} aria-label="Close">×</button>
+        <button className="wwa-popup-close" onClick={onClose} aria-label="Close">
+          <img src={popoutX} alt="" />
+        </button>
       </div>
     </div>
   );

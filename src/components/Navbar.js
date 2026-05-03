@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/bars.css";
 import { useScale } from "../hooks/useScale.js";
 import gold_logo from "../images/gold_logo.png";
+import hamburgerIcon from "../images/assets/hamburger.svg";
 
 function Navbar() {
   const [clicked, setClicked] = React.useState(false);
@@ -14,9 +15,16 @@ function Navbar() {
   return (
     <nav className="nav">
       {/* Mobile hamburger */}
-      <div className="menu-icon" onClick={handleClick} aria-label="Toggle menu">
-        <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
-      </div>
+      <button className="menu-icon" onClick={handleClick} aria-label="Toggle menu">
+        {clicked ? (
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="2" y1="2" x2="18" y2="18" stroke="#1f1f1f" strokeWidth="2.5" strokeLinecap="round"/>
+            <line x1="18" y1="2" x2="2" y2="18" stroke="#1f1f1f" strokeWidth="2.5" strokeLinecap="round"/>
+          </svg>
+        ) : (
+          <img src={hamburgerIcon} width="28" height="24" alt="" />
+        )}
+      </button>
 
       {/* Left links */}
       <ul className="nav-menu nav-menu--left">

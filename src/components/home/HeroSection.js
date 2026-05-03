@@ -1,9 +1,4 @@
-import { useState, useEffect } from 'react';
-import carousel1 from '../../images/home/gbody.jpg';
-import carousel2 from '../../images/home/urmc-carousel2.jpg';
-import carousel3 from '../../images/home/hero-photo.jpg';
-import carousel4 from '../../images/home/event-center-top.jpg';
-import carousel5 from '../../images/home/event-center-bottom.jpg';
+import heroPhoto from '../../images/home/gbody.jpg';
 import '../../styles/hero.css';
 
 const SLIDES = [carousel1, carousel2, carousel3, carousel4, carousel5];

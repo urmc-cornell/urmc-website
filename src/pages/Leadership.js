@@ -11,7 +11,7 @@ import '../styles/Leadership.css';
 
 export default function Leadership() {
   useScale();
-  const [members, setMembers] = useState([]);
+  const [members, setMembers] = useState({ advisors: [], eboard: [] });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedMember, setSelectedMember] = useState(null);
@@ -42,19 +42,35 @@ export default function Leadership() {
         return 4;
       };
 
-      const sorted = data
-        .map((m) => ({
-          id: m.id,
-          title: m.position || '',
-          image: m.headshot_url,
-          secondaryImage: m.secondary_headshot_url || m.headshot_url,
-          name: `${m.first_name} ${m.last_name}`,
-          majors: m.major,
-          insta: m.instagram_url,
-          linkedIn: m.linkedin_url,
-          askAbout: m.ask_about || [],
-          bio: m.bio,
-        }))
+      const mapped = data.map((m) => ({
+        id: m.id,
+        title: m.position || '',
+        image: m.headshot_url,
+        secondaryImage: m.secondary_headshot_url || m.headshot_url,
+        name: `${m.first_name} ${m.last_name}`,
+        majors: m.major,
+        insta: m.instagram_url,
+        linkedIn: m.linkedin_url,
+        askAbout: m.ask_about || [],
+        bio: m.bio,
+        role: m.role || '',
+      }));
+
+      const ADVISOR_ORDER = ['roberts', 'tardos', 'weatherspoon'];
+      const advisorRank = (name) => {
+        const lower = name.toLowerCase();
+        const idx = ADVISOR_ORDER.findIndex((key) => lower.includes(key));
+        return idx === -1 ? 99 : idx;
+      };
+
+      const isAdvisor = (m) => [].concat(m.role).includes('advisor');
+
+      const advisors = mapped
+        .filter(isAdvisor)
+        .sort((a, b) => advisorRank(a.name) - advisorRank(b.name));
+
+      const eboard = mapped
+        .filter((m) => !isAdvisor(m))
         .sort((a, b) => {
           const pa = getPositionPriority(a.title);
           const pb = getPositionPriority(b.title);
@@ -63,7 +79,7 @@ export default function Leadership() {
           return a.name.localeCompare(b.name);
         });
 
-      setMembers(sorted);
+      setMembers({ advisors, eboard });
     } catch (err) {
       setError(err.message);
     } finally {
@@ -71,17 +87,20 @@ export default function Leadership() {
     }
   }
 
-  const CATEGORY_FILTER = {
+  const EBOARD_FILTER = {
     'all':               () => true,
     'presidents':        (m) => /president/i.test(m.title),
     'events':            (m) => /academic|corporate|event|professional development/i.test(m.title),
     'community-building':(m) => /community|mentorship|social/i.test(m.title),
     'external':          (m) => /external|design|outreach|public relations/i.test(m.title),
     'internal':          (m) => /internal|secretary|treasurer|web development/i.test(m.title),
-    'advisors':          (m) => /advisor|leeann|eva tardos|hakim/i.test(m.title + ' ' + m.name),
+    'advisors':          () => false,
   };
 
-  const filteredMembers = members.filter(CATEGORY_FILTER[activeCategory] ?? (() => true));
+  const showAdvisors = activeCategory === 'all' || activeCategory === 'advisors';
+  const filteredEboard = activeCategory === 'advisors'
+    ? []
+    : members.eboard.filter(EBOARD_FILTER[activeCategory] ?? (() => true));
 
   if (loading) return <div className="wwa-status">Loading…</div>;
   if (error)   return <div className="wwa-status">Error: {error}</div>;
@@ -92,7 +111,8 @@ export default function Leadership() {
       <QuoteSection />
       <TeamSection onCategoryChange={setActiveCategory} />
       <MembersSection
-        members={filteredMembers}
+        advisors={showAdvisors ? members.advisors : []}
+        members={filteredEboard}
         onCardClick={setSelectedMember}
       />
       {selectedMember && (
