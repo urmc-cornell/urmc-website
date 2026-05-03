@@ -1,7 +1,6 @@
 # URMC Website
 
-<p align="center"><img src="https://github.com/emarc0314/urmc-website/assets/75585259/e2364b44-1c8e-40ff-9441-2b2b267a06f0" width="40%"></img>
-</p>
+
 
 The purpose of the Underrepresented Minorities in Computing club (URMC), is to promote diversity in the tech space. [Our website](https://urmc.cs.cornell.edu) serves to contribute to URMC's outreach, and inform our community of who we are and what resources we offer at Cornell.
 
@@ -16,6 +15,8 @@ The purpose of the Underrepresented Minorities in Computing club (URMC), is to p
 ### Running Locally
 
 ```bash
+npm install # run on first pull or if theres every new dependencies
+
 npm start           # production environment
 npm run start:staging  # staging environment
 ```
@@ -24,4 +25,4 @@ npm run start:staging  # staging environment
 
 Run `npm run build` to generate the `build` folder with all production assets.
 
-For any questions or concerns on our website, reach out to urmc@cornell.edu
+For any questions or concerns on our website, reach out to [urmc@cornell.edu](mailto:urmc@cornell.edu)
