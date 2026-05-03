@@ -1,0 +1,421 @@
+.points-page {
+  width: 100%;
+  background: #1f1f1f;
+  display: flex;
+  flex-direction: column;
+}
+
+.points-hero {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 4.5rem 2.25rem 4.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.hero-copy {
+  max-width: 660px;
+}
+
+.hero-title {
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2.25rem, 4.5vw, 4rem);
+  line-height: 1.1;
+  margin: 0 0 1.25rem;
+  font-weight: 800;
+}
+
+.hero-description {
+  color: #d9d9d9;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(0.95rem, 1.15vw, 1.5rem);
+  line-height: 1.6;
+  margin: 0 0 1.75rem;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #eeb50c;
+  color: #1f1f1f;
+  border-radius: 0.75rem;
+  padding: 0.6rem 1.05rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-decoration: none;
+}
+
+.view-points-section {
+  background: #f5f5f5;
+  width: 100%;
+  padding: 4.75rem 0;
+}
+
+.points-section-content {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 2.25rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.view-points-copy {
+  display: grid;
+  gap: 2rem;
+}
+
+.view-points-header h2 {
+  margin: 0 0 0.8rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  font-weight: 600;
+  color: #1f1f1f;
+}
+
+.view-points-header p {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(0.86rem, 1vw, 1.15rem);
+  color: #444444;
+  line-height: 1.5;
+}
+
+.points-form {
+  margin: 0;
+}
+
+.points-form-row {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.points-form-row input {
+  flex: 0 0 180px;
+  height: 2.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid #6d6d6d;
+  background: #e8e8e8;
+  padding: 0 0.85rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.84rem;
+  color: #595959;
+}
+
+.points-form-row button {
+  height: 2.25rem;
+  border: none;
+  border-radius: 0.75rem;
+  background: #1f1f1f;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 0.84rem;
+  cursor: pointer;
+  padding: 0 1rem;
+}
+
+.points-result {
+  color: #1f1f1f;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.top-members {
+  margin-top: 0.25rem;
+}
+
+.top-members-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1.35rem, 2vw, 2.2rem);
+  font-weight: 600;
+  color: #1f1f1f;
+  margin-bottom: 0.75rem;
+}
+
+.top-members-list {
+  display: grid;
+  gap: 0.65rem;
+  max-width: 420px;
+}
+
+.top-member-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.top-member-row.placeholder {
+  justify-items: start;
+}
+
+.member-rank,
+.member-points {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: #1f1f1f;
+}
+
+.member-name {
+  font-family: "Montserrat", sans-serif;
+  color: #1f1f1f;
+  font-size: 0.95rem;
+}
+
+.view-points-image {
+  display: flex;
+  justify-content: center;
+}
+
+.view-points-image img {
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 731 / 549;
+  border-radius: 0;
+  object-fit: cover;
+}
+
+.earn-points-section {
+  background: #1f1f1f;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 4.75rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.section-header p {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(0.86rem, 1vw, 1.1rem);
+  color: #dfdfdf;
+  line-height: 1.5;
+  max-width: 100%;
+}
+
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.tier-card {
+  background: #f5f5f5;
+  border-radius: 0.8rem;
+  padding: 1.35rem 1.35rem 1.1rem;
+  border-top: 0.38rem solid #eeb50c;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tier-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tier-card-header h3 {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1.2rem, 1.6vw, 2rem);
+  font-weight: 700;
+  color: #1f1f1f;
+}
+
+.tier-card-header span {
+  font-size: 0.95rem;
+}
+
+.tier-items {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.tier-items div {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.88rem;
+  color: #1f1f1f;
+}
+
+.tier-items div strong {
+  font-weight: 500;
+  color: #1f1f1f;
+  white-space: nowrap;
+}
+
+.rewards-section {
+  width: 100%;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 4.75rem 2.25rem;
+}
+
+.rewards-header {
+  align-items: center;
+}
+
+.rewards-header h2 {
+  color: #1f1f1f;
+  font-size: clamp(2rem, 2.8vw, 3rem);
+}
+
+.reward-grid {
+  width: 100%;
+  max-width: 1140px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.reward-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.reward-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-align: center;
+}
+
+.reward-copy span {
+  color: #1f1f1f;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.reward-copy strong {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1.3rem, 1.9vw, 2rem);
+  font-weight: 700;
+  color: #1f1f1f;
+}
+
+.reward-card img {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 562 / 456;
+  height: auto;
+  border-radius: 0;
+  object-fit: cover;
+}
+
+@media (max-width: 1100px) {
+  .points-hero,
+  .points-section-content,
+  .earn-points-section,
+  .reward-grid {
+    max-width: 960px;
+  }
+
+  .points-section-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .reward-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .tier-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .view-points-image {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .points-hero,
+  .points-section-content,
+  .earn-points-section,
+  .rewards-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .points-hero,
+  .view-points-section,
+  .earn-points-section,
+  .rewards-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-title {
+    font-size: 2.35rem;
+  }
+
+  .hero-description,
+  .section-header p,
+  .view-points-header p {
+    font-size: 0.92rem;
+  }
+
+  .points-form-row {
+    flex-wrap: wrap;
+    gap: 0.65rem;
+  }
+
+  .points-form-row input {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .points-form-row button {
+    width: auto;
+  }
+
+  .top-member-row {
+    grid-template-columns: auto 1fr auto;
+    gap: 0.4rem;
+  }
+
+  .member-name,
+  .member-rank,
+  .member-points {
+    font-size: 0.85rem;
+  }
+}

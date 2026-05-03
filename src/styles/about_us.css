@@ -1,0 +1,633 @@
+body {
+    margin: 0;
+}
+
+.about-us-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* gap: 100px; */
+    gap: 6rem;
+    padding-bottom: 3.75rem;
+    margin-bottom: 6rem;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.about-us {
+    padding-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    /* font-size: 40px; */
+    /* font-weight: 700; */
+    justify-content: center;
+}
+
+.about-header {
+    color: #F0F0F0;
+    text-align: center;
+    font-family: "Helvetica Neue";
+    font-size: 3.375rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.heading-academic {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #265999;
+}
+
+.purpose {
+    width: 90%;
+    margin-top: 1.25rem;
+    margin-bottom: 0.625rem;
+
+    color: #F0F0F0;
+    font-family: "Helvetica Neue";
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.purpose-bolded {
+    color: #EEB50C;
+    font-weight: 700;
+}
+
+.pillars {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 2rem;
+    gap: 4rem;
+    box-sizing: border-box;
+}
+
+.pillar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 23.9375rem;
+    height: auto;
+    padding: 3.6875rem 0.5rem;
+    gap: 2.5rem;
+    border-radius: 1rem;
+    background: #667BC4;
+}
+
+.pillar-icon {
+    width: 9.375rem;
+    height: 9.375rem;
+}
+
+.pillar-text {
+    color: #FFF;
+    text-align: center;
+    font-family: Hard;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.stats-bar {
+    display: flex;
+    width: 100%;
+    max-width: 76.375rem;
+    height: 12.125rem;
+    padding: 2.4375rem 6.8125rem;
+    justify-content: center;
+    align-items: center;
+    gap: 9.5rem;
+    flex-shrink: 0;
+    border-radius: 2.25rem;
+    background: #667BC4;
+    box-shadow: 0px 0.25rem 0.25rem 0px rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.stats-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--URMC-Gray, #37383C);
+}
+
+.stats-header {
+    color: #F0F0F0;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.stats-number {
+    color: #F0F0F0;
+    text-align: center;
+    font-family: Hard;
+    font-size: 2.8125rem;
+    font-weight: 700;
+}
+
+.stats-block.bottom {
+    font-size: 1.875rem;
+    font-weight: bold;
+}
+
+.pillar-sections {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    gap: 6.25rem;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+    /* margin-left: 5.84rem; */
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+
+}
+
+.pillar-section {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    flex-wrap: nowrap;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+.section-images {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    flex-shrink: 1;
+    align-items: center;
+}
+
+.section-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 45%;
+    flex-shrink: 1;
+    text-align: left;
+}
+
+.section-title {
+    color: #EEB50C;
+    font-family: Montserrat;
+    font-size: 3.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.section-text {
+    color: #FFF;
+    font-family: Medium;
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.academic-images {
+    display: flex;
+    flex-direction: column;
+    gap: 2.69rem;
+}
+
+#academic-1 {
+    width: 34.1875rem;
+    height: 20.5625rem;
+    flex-shrink: 0;
+}
+
+#academic-2 {
+    margin-left: 4.12rem;
+    width: 32.25rem;
+    height: 21.5625rem;
+}
+
+.community-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    max-width: 100%;
+    place-items: center;
+    min-width: 500px;
+}
+
+
+#community-1 {
+    width: 17.36825rem;
+    height: 15.41556rem;
+    flex-shrink: 0;
+}
+
+#community-2 {
+    width: 19.11531rem;
+    height: 16.7rem;
+    flex-shrink: 0;
+}
+
+
+#community-3 {
+    width: 18.94rem;
+    height: 14.875rem;
+    flex-shrink: 0;
+}
+
+#community-4 {
+    width: 17.5rem;
+    height: 13.1875rem;
+    flex-shrink: 0;
+}
+
+.profdev-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 3.5rem;
+    max-width: 100%;
+    min-width: 500px;
+    grid-template-areas:
+        "image1 image3"
+        "image2 image3";
+    place-items: center;
+}
+
+#profdev-1 {
+    grid-area: image1;
+    width: 23.14094rem;
+    height: 17.35569rem;
+    flex-shrink: 0;
+}
+
+#profdev-2 {
+    grid-area: image2;
+    width: 24.04019rem;
+    height: 18.03013rem;
+    flex-shrink: 0;
+    flex-shrink: 0;
+}
+
+#profdev-3 {
+    grid-area: image3;
+    width: 22.51144rem;
+    height: 15.01763rem;
+    flex-shrink: 0;
+    margin: auto;
+}
+
+.join-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+#join-header {
+    color: #EEB50C;
+    font-family: Hard;
+    font-size: 3.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    height: 5rem;
+    margin: 0;
+}
+
+#join-button {
+    display: flex;
+    height: 4.3125rem;
+    padding: 0.25rem 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+
+    border-radius: 4rem;
+    background: var(--urmc-gold-gradient, linear-gradient(108deg, #DFC856 19.51%, #D38745 71.52%));
+    box-shadow: 0px 0.25rem 0.25rem 0px rgba(0, 0, 0, 0.25);
+    margin: 0;
+}
+
+#join-text {
+    color: var(--URMC-White, #F9F9F9);
+    text-align: center;
+    font-family: Hard;
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.section-cards {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 6.25rem;
+}
+
+.section-widgets {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.25rem;
+    grid-template-columns: repeat(2, auto);
+}
+
+.widget-row {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    gap: 1.875rem;
+    flex-grow: 1;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Maintain image aspect ratios */
+.pillar-section img,
+.academic-images img,
+.community-images img,
+.profdev-images img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    min-width: 200px;
+    min-height: 150px;
+}
+
+.academic-images img {
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    max-width: 100%;
+}
+
+#academic-1,
+#academic-2 {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Community images */
+.community-images img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Professional development images */
+.profdev-images img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .about-us-page {
+        gap: 1.25rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .about-header {
+        font-size: 2.5rem;
+    }
+
+    .purpose {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .pillar-sections {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        gap: 2rem;
+        margin-bottom: 0;
+    }
+
+    .pillar-section:last-child {
+        margin-bottom: 0;
+    }
+
+    .pillar-section:last-child .section-images {
+        margin-bottom: 0.5rem;
+    }
+
+    .profdev-images {
+        margin-bottom: 0.5rem;
+    }
+
+    .stats-bar {
+        margin: 0.5rem auto 1rem;
+    }
+
+    .section-images {
+        order: 2; /* Images always appear after text on mobile */
+        max-width: 100%;
+    }
+
+    .section-content {
+        order: 1; /* Content always appears before images on mobile */
+        max-width: 100%;
+        text-align: center;
+    }
+
+    /* Consistent spacing for all image sections on mobile */
+    .section-images,
+    .academic-images,
+    .community-images,
+    .profdev-images {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 1.5rem; /* Standardized gap */
+        margin-bottom: 2rem; /* Add bottom margin for separation from next section */
+    }
+
+    .community-images,
+    .profdev-images {
+        min-width: unset;
+        width: 100%;
+    }
+
+    /* Remove duplicate styles */
+    .academic-images,
+    .community-images,
+    .profdev-images {
+        align-items: center;
+    }
+
+    /* Remove this duplicate definition */
+    .academic-images {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
+        margin: 0 auto;
+        padding: 0;
+        text-align: center;
+    }
+
+    /* Reset grid areas and layout for mobile */
+    .profdev-images {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Reduced gap specifically for profdev */
+        min-width: unset;
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Reset all grid area settings for mobile */
+    #profdev-1,
+    #profdev-2,
+    #profdev-3 {
+        grid-area: unset;
+        width: auto;
+        height: auto;
+        max-height: 200px; /* Control maximum height */
+        max-width: 90%;
+        margin: 0 auto;
+        flex-shrink: 1;
+    }
+    
+    /* Improve image container structure */
+    .community-images,
+    .profdev-images {
+        min-width: unset;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Make all images in mobile view use the same sizing rules */
+    .pillar-section img,
+    .academic-images img,
+    .community-images img,
+    .profdev-images img {
+        min-width: 150px;
+        min-height: 0; /* Remove min-height constraint */
+        height: auto;
+        max-height: 200px; /* Add max-height */
+        margin: 0 auto;
+        max-width: 90%;
+        display: block;
+        object-fit: contain;
+    }
+
+    /* Academic images specific adjustments */
+    #academic-1,
+    #academic-2 {
+        margin: 0 auto;
+        max-width: 90%;
+        width: auto;
+        height: auto;
+        position: relative;
+        left: 0;
+        transform: translateX(0);
+    }
+
+    .section-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .section-text {
+        font-size: 1rem;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    #join-header {
+        font-size: 2rem;
+        height: auto;
+        text-align: center;
+    }
+
+    #join-button {
+        height: auto;
+        padding: 0.8rem 1.5rem;
+        border-radius: 2rem;
+        margin: 0 auto;
+        width: fit-content;
+    }
+
+    #join-text {
+        font-size: 1.2rem;
+    }
+
+    /* Hide pillars only, not stats */
+    .pillars {
+        display: none;
+    }
+    
+    /* Stats bar styling for mobile */
+    .stats-bar {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        padding: 1.5rem;
+        gap: 1.5rem;
+        border-radius: 1.5rem;
+        margin: 1.5rem auto;
+    }
+    
+    .stats-item {
+        width: 100%;
+        padding: 0.5rem;
+    }
+    
+    .stats-header {
+        font-size: 1.5rem;
+    }
+    
+    .stats-number {
+        font-size: 2.25rem;
+    }
+
+    .pillar-section {
+        flex-direction: column;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 1rem; /* Add this to control spacing between sections */
+    }
+    
+    .pillar-section:last-child {
+        margin-bottom: 0;
+    }
+}
