@@ -2,12 +2,13 @@ import "../styles/points.css";
 
 import React, { useState, useEffect } from "react";
 import { supabase } from "../lib/supabaseClient.js";
+import { currentSemester } from "../lib/semester.js";
 import pointsHeroImage from "../images/view_points_image.png";
 import merchImage from "../images/urmc_merch_image.png";
 import conferenceImage from "../images/conference_image.png";
 
 export default function Points() {
-  const semester = process.env.REACT_APP_POINTS_SEMESTER || "fa24";
+  const semester = currentSemester();
   const [netidQuery, setNetidQuery] = useState("");
   const [points, setPoints] = useState(null);
   const [leaderboard, setLeaderboard] = useState([]);
