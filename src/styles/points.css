@@ -1,383 +1,568 @@
+/* ─── Points Page ─── */
+
 .points-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: #1f1f1f;
+  min-height: 100vh;
+}
+
+/* ---------- Hero ---------- */
+.points-hero {
+  background-color: #1f1f1f;
+  padding: calc(160px * var(--scale, 1)) calc(200px * var(--scale, 1));
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.points-hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: calc(40px * var(--scale, 1));
+  width: 100%;
+  align-items: flex-start;
+}
+
+.points-hero-title {
+  color: #f5f5f5;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: calc(64px * var(--scale, 1));
+  line-height: normal;
+  margin: 0;
+  letter-spacing: 0;
+}
+
+.points-hero-subtitle {
+  color: #f5f5f5;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: calc(24px * var(--scale, 1));
+  line-height: normal;
+  margin: 0;
+  letter-spacing: 0;
+  max-width: calc(1520px * var(--scale, 1));
+}
+
+.points-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eeb50c;
+  color: #1f1f1f;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: calc(24px * var(--scale, 1));
+  padding: calc(16px * var(--scale, 1)) calc(24px * var(--scale, 1));
+  border-radius: calc(20px * var(--scale, 1));
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* ---------- View Your Points ---------- */
+.points-vyp-section {
+  background-color: #f5f5f5;
+  padding: calc(120px * var(--scale, 1)) calc(200px * var(--scale, 1));
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: calc(60px * var(--scale, 1));
+  width: 100%;
+}
+
+.points-vyp-left {
+  display: flex;
+  flex-direction: column;
+  gap: calc(96px * var(--scale, 1));
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.points-vyp-form-block {
+  display: flex;
+  flex-direction: column;
+  gap: calc(36px * var(--scale, 1));
+}
+
+.points-vyp-heading-block {
+  display: flex;
+  flex-direction: column;
+  gap: calc(24px * var(--scale, 1));
+}
+
+.points-vyp-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: calc(48px * var(--scale, 1));
+  color: #1f1f1f;
+  margin: 0;
+  line-height: normal;
+}
+
+.points-vyp-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: calc(24px * var(--scale, 1));
+  color: #1f1f1f;
+  margin: 0;
+  line-height: normal;
+}
+
+.points-vyp-form {
+  display: flex;
+  align-items: center;
+  gap: calc(24px * var(--scale, 1));
+  flex-wrap: wrap;
+}
+
+.points-vyp-input {
+  background-color: #e8e8e8;
+  border: 1px solid #646464;
+  border-radius: calc(20px * var(--scale, 1));
+  padding: calc(16px * var(--scale, 1)) calc(24px * var(--scale, 1));
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: calc(24px * var(--scale, 1));
+  color: #1f1f1f;
+  width: calc(200px * var(--scale, 1));
+  box-sizing: border-box;
+  outline: none;
+}
+
+.points-vyp-input::placeholder {
+  color: #646464;
+}
+
+.points-vyp-submit {
+  background-color: #1f1f1f;
+  color: #f5f5f5;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: calc(24px * var(--scale, 1));
+  padding: calc(16px * var(--scale, 1)) calc(24px * var(--scale, 1));
+  border-radius: calc(20px * var(--scale, 1));
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.points-vyp-result {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: calc(24px * var(--scale, 1));
+  color: #1f1f1f;
+  white-space: nowrap;
+}
+
+/* ---------- Top Members ---------- */
+.points-top-members {
+  display: flex;
+  flex-direction: column;
+  gap: calc(24px * var(--scale, 1));
+  width: 100%;
+  max-width: calc(622px * var(--scale, 1));
+}
+
+.points-top-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: calc(36px * var(--scale, 1));
+  color: #1f1f1f;
+  margin: 0;
+  line-height: normal;
+}
+
+.points-top-empty {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: calc(20px * var(--scale, 1));
+  color: #646464;
+  margin: 0;
+}
+
+.points-top-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(24px * var(--scale, 1));
+}
+
+.points-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: calc(24px * var(--scale, 1));
+  color: #1f1f1f;
+}
+
+.points-top-name {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(8px * var(--scale, 1));
+}
+
+.points-top-rank {
+  font-weight: 400;
+}
+
+.points-top-pts {
+  white-space: nowrap;
+}
+
+/* Right photo */
+.points-vyp-photo-wrap {
+  width: calc(731px * var(--scale, 1));
+  height: calc(549px * var(--scale, 1));
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.points-vyp-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- How to Earn Points ---------- */
+.points-howto-section {
+  background-color: #1f1f1f;
+  padding: calc(120px * var(--scale, 1)) calc(200px * var(--scale, 1));
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: calc(84px * var(--scale, 1));
+  width: 100%;
+}
+
+.points-howto-header {
+  display: flex;
+  flex-direction: column;
+  gap: calc(24px * var(--scale, 1));
+}
+
+.points-howto-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: calc(48px * var(--scale, 1));
+  color: #f5f5f5;
+  margin: 0;
+  line-height: normal;
+}
+
+.points-howto-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: calc(24px * var(--scale, 1));
+  color: #f5f5f5;
+  margin: 0;
+  line-height: normal;
+}
+
+.points-tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: calc(37px * var(--scale, 1));
+}
+
+.points-tier-card {
+  background-color: #f5f5f5;
+  border-top: calc(16px * var(--scale, 1)) solid #eeb50c;
+  border-radius: calc(20px * var(--scale, 1));
+  padding: calc(36px * var(--scale, 1));
+  display: flex;
+  flex-direction: column;
+  gap: calc(36px * var(--scale, 1));
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.points-tier-title-block {
+  display: flex;
+  align-items: center;
+  gap: calc(16px * var(--scale, 1));
+}
+
+.points-tier-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: calc(36px * var(--scale, 1));
+  color: #1f1f1f;
+  margin: 0;
+  line-height: normal;
+}
+
+.points-tier-icon {
+  width: auto;
+  height: calc(26px * var(--scale, 1));
+  display: block;
+}
+
+.points-tier-events {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(17px * var(--scale, 1));
+}
+
+.points-tier-event {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(16px * var(--scale, 1));
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(24px * var(--scale, 1));
+  color: #1f1f1f;
+  line-height: normal;
+}
+
+.points-tier-event-name {
+  font-weight: 600;
+}
+
+.points-tier-event-points {
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+/* ---------- Rewards ---------- */
+.points-rewards-section {
+  background-color: #f5f5f5;
+  padding: calc(120px * var(--scale, 1)) calc(200px * var(--scale, 1));
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(84px * var(--scale, 1));
+  width: 100%;
+}
+
+.points-rewards-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: calc(48px * var(--scale, 1));
+  color: #1f1f1f;
+  margin: 0;
+  line-height: normal;
+  text-align: center;
+}
+
+.points-rewards-grid {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: calc(100px * var(--scale, 1));
+  width: 100%;
+}
+
+.points-reward-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(40px * var(--scale, 1));
+  width: calc(562px * var(--scale, 1));
+}
+
+.points-reward-header {
+  display: flex;
+  flex-direction: column;
+  gap: calc(12px * var(--scale, 1));
+  text-align: center;
+  width: 100%;
+}
+
+.points-reward-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: calc(32px * var(--scale, 1));
+  color: #1f1f1f;
+  margin: 0;
+  line-height: normal;
+}
+
+.points-reward-detail {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: calc(24px * var(--scale, 1));
+  color: #1f1f1f;
+  margin: 0;
+  line-height: normal;
+}
+
+.points-reward-photo-wrap {
+  width: 100%;
+  height: calc(456px * var(--scale, 1));
+  overflow: hidden;
+  border-radius: calc(8px * var(--scale, 1));
+}
+
+.points-reward-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 900px) {
+  .points-hero {
+    padding: 60px 20px;
+  }
+  .points-hero-text {
+    gap: 18px;
+  }
+  .points-hero-title {
+    font-size: 32px;
+  }
+  .points-hero-subtitle {
+    font-size: 15px;
+  }
+  .points-hero-btn {
+    font-size: 15px;
+    padding: 16px 24px;
+    border-radius: 9px;
     width: 100%;
-    max-width: 75rem;
-    margin: 0 auto;
-    padding: 0 1.25rem;
-    margin-bottom: 5rem;
-    gap: 4rem;
-}
+  }
 
-.points {
-    color: #F0F0F0;
-    font-family: "Helvetica Neue";
-    font-size: 4rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    margin-bottom: 5rem;
-    margin-top: 1.5rem;
-}
-
-.container-title {
-    color: #FFF;
-    font-family: Medium;
-    font-size: 2.5rem;
-    font-weight: 600;
-}
-
-.points-allocation {
-    display: flex;
+  .points-vyp-section {
     flex-direction: column;
-    gap: 2.25rem;
-    margin-top: 1.5rem;
-    margin-bottom: 3.125rem;
-}
-
-.point-item {
-    display: flex;
-    gap: 1.25rem;
+    padding: 40px 20px;
+    gap: 36px;
+  }
+  .points-vyp-left {
+    width: 100%;
+    gap: 36px;
+  }
+  .points-vyp-form-block {
+    gap: 36px;
     align-items: center;
-}
-
-.point-group {
-    display: grid;
-    grid-template-columns: 22rem 1fr;
-    gap: 1.5rem;
-    align-items: baseline;
-}
-
-.point-descriptions {
-    display: flex;
-    flex-direction: column;
-    gap: 0.875rem;
-}
-
-.point-value {
-    color:#EEB50C;
-    font-family: Medium;
-    font-size: 2.5rem;
-    font-weight: 600;
+  }
+  .points-vyp-heading-block {
+    gap: 24px;
+    align-items: center;
     text-align: left;
-}
-
-.point-description {
-
-    color: #FFF;
-    text-align: left;
-    font-family: skinny-montserrat;
-    font-size: 2.5rem;
-    font-weight: 400;
-    display: flex;
-    flex-direction: column;
-    gap: 0.625rem;
-}
-
-.points-container {
     width: 100%;
-}
-
-.rewards-grid {
-    display: flex;
+  }
+  .points-vyp-title {
+    font-size: 24px;
+  }
+  .points-vyp-subtitle {
+    font-size: 15px;
+  }
+  .points-vyp-form {
+    gap: 24px 12px;
+    align-items: stretch;
     width: 100%;
-    justify-content: space-between;
-    margin-bottom: 3.125rem;
-}
-
-.reward-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1.5rem 1.25rem 2.25rem;
-    border-radius: 0.625rem;
-    background: #D9D9D9;
-    width: 20.25rem;
-    height: 19.4375rem;
-    flex-shrink: 0;
+  }
+  .points-vyp-input {
+    font-size: 15px;
+    padding: 16px 24px;
+    border-radius: 20px;
+    width: 232px;
+    flex: 0 0 232px;
+  }
+  .points-vyp-submit {
+    font-size: 15px;
+    padding: 16px 8px;
+    border-radius: 9px;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .points-vyp-result {
+    font-size: 24px;
     text-align: center;
-}
+    width: 100%;
+    flex-basis: 100%;
+  }
 
-.reward-title {
-    color: #667BC4;
-    text-align: center;
-    font-family: Hard;
-    font-size: 2.5rem;
-    font-weight: 700;
-    white-space: pre-line;
-}
+  .points-top-members {
+    gap: 12px;
+    max-width: none;
+  }
+  .points-top-title {
+    font-size: 20px;
+  }
+  .points-top-list {
+    gap: 12px;
+  }
+  .points-top-row {
+    font-size: 15px;
+  }
 
-.reward-value {
-    color: #000;
-    text-align: center;
-    font-family: Hard;
-    font-size: 2.5rem;
-    font-weight: 600;
-}
+  .points-vyp-photo-wrap {
+    display: none;
+  }
 
-.view-points {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 2.6rem;
+  .points-howto-section {
+    padding: 40px 20px;
+    gap: 24px;
+  }
+  .points-howto-header {
+    gap: 24px;
+  }
+  .points-howto-title {
+    font-size: 24px;
+  }
+  .points-howto-subtitle {
+    font-size: 15px;
+  }
+  .points-tiers-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .points-tier-card {
+    padding: 36px;
+    gap: 16px;
+    border-top-width: 16px;
+    border-radius: 20px;
+  }
+  .points-tier-title {
+    font-size: 20px;
+  }
+  .points-tier-icon {
+    height: 23px;
+  }
+  .points-tier-events {
+    gap: 8px;
+  }
+  .points-tier-event {
+    font-size: 15px;
+  }
 
-}
-
-.view-points h1 {
-    color: #FFF;
-    text-align: center;
-    font-family: Hard;
-    font-size: 2.25rem;
-    font-weight: 600;
-    margin: 0;
-}
-
-.view-points h2 {
-    color: #FFF;
-    text-align: center;
-    font-family: Medium;
-    font-size: 2rem;
-    font-weight: 600;
-    margin: 0;
-}
-
-#points-form {
-    display: flex;
+  .points-rewards-section {
+    padding: 40px 20px;
+    gap: 36px;
+  }
+  .points-rewards-title {
+    font-size: 24px;
+  }
+  .points-rewards-grid {
     flex-direction: column;
     align-items: center;
-    gap: 3.7rem;
-
-}
-
-#points-form input {
-    width: 26.69rem;
-    height: 6rem;
-    fill: #D9D9D9;
-    border-radius: 1.5625rem;
-    border: none;
-    color: #F0F0F0;
-
-    font-family: Hard;
-    font-size: 1.875rem;
-    font-weight: 600;
-    color: black;
-
-}
-
-#points-form button {
-    border-radius: 1.5625rem;
-    border: none;
-    color: #F0F0F0;
-    font-size: 1.875rem;
-    border-radius: 4rem;
-    background: var(--blue-cta-color, linear-gradient(138deg, #C0C0C0 -18.69%, #265999 96.38%));
-
-    display: inline-flex;
-    height: 4.3125rem;
-    padding: 1rem 2rem;
-    justify-content: center;
-    align-items: center;
-    gap: 0.625rem;
-    flex-shrink: 0;
-
-    font-family: Hard;
-    font-size: 1.875rem;
-    font-weight: 600;
-}
-
-
-#points-form h3 {
-    color: #F0F0F0;
-    font-family: "Helvetica Neue";
-    font-size: 1.25rem;
-    margin-top: 0.625rem;
-}
-
-#points-form h3 {
-    color: #F0F0F0;
-    font-family: "Helvetica Neue";
-    font-size: calc(20px * var(--scale));
-    margin-top: calc(10px * var(--scale));
-}
-
-/* ── Top Members Table ── */
-
-.top-members-section {
+    gap: 36px;
+  }
+  .points-reward-card {
     width: 100%;
-}
-
-.top-members-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    margin-top: 1.5rem;
-    border-radius: 0.625rem;
-    overflow: hidden;
-}
-
-.top-members-table thead th {
-    font-family: Medium;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #FFF;
-    text-align: left;
-    padding: 1rem 2rem;
-    background: #333333;
-}
-
-.top-members-table thead th:first-child {
-    text-align: center;
-}
-
-.top-members-table tbody tr {
-    background: #F5F5F5;
-}
-
-.top-members-table tbody tr:nth-child(even) {
-    background: #E8E8E8;
-}
-
-.top-members-table tbody td {
-    font-family: Hard;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #222;
-    padding: 1.25rem 2rem;
-    border-bottom: 1px solid #D9D9D9;
-}
-
-.top-members-table tbody tr:last-child td {
-    border-bottom: none;
-}
-
-.top-members-table tbody td:first-child {
-    color: #667BC4;
-    font-weight: 700;
-    width: 6rem;
-    text-align: center;
-}
-
-@media (max-width: 768px) {
-
-    .points-page {
-        gap: 2rem;
-        padding: 0 1rem;
-    }
-
-    .points {
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .container-title {
-        font-size: 1.8rem;
-    }
-
-    .points-allocation {
-        gap: 1.5rem;
-        margin-bottom: 2rem;
-    }
-
-    .point-item {
-        gap: 0.8rem;
-    }
-
-    .point-group {
-        gap: 0.8rem;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .point-value {
-        color: #EEB50C;
-        font-family: Medium;
-        font-size: 2.5rem;
-        font-weight: 600;
-
-        min-width: 22rem;   /* keeps all titles aligned */
-        text-align: left;   /* aligns text like the others */
-    }
-
-    .point-description {
-        font-size: 1.1rem;
-        line-height: 1.4;
-    }
-
-    .rewards-grid {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.25rem;
-        margin-bottom: 2rem;
-    }
-
-    .reward-card {
-        width: 90%;
-        height: auto;
-        padding: 1rem;
-        gap: 0.8rem;
-    }
-
-
-    .reward-title {
-        font-size: 1.4rem;
-    }
-
-    .reward-value {
-        font-size: 1.3rem;
-    }
-
-
-    .view-points {
-        gap: 1.5rem;
-    }
-
-    .view-points h1 {
-        font-size: 1.6rem;
-    }
-
-    .view-points h2 {
-        font-size: 1.2rem;
-        line-height: 1.4;
-    }
-
-    #points-form {
-        gap: 1.5rem;
-        width: 100%;
-    }
-
-    #points-form input {
-        width: 90%;
-        height: 3rem;
-        font-size: 1rem;
-        padding-left: 1rem;
-        border-radius: 1rem;
-    }
-
-    #points-form button {
-        width: 70%;
-        font-size: 1.1rem;
-        height: 3.2rem;
-        padding: 0.5rem 1rem;
-        border-radius: 2rem;
-    }
-
-
-
-    #points-form h3 {
-        font-size: 1rem;
-        margin-top: 0.5rem;
-        text-align: center;
-    }
-
-    .top-members-table thead th {
-        font-size: 0.85rem;
-        padding: 0.75rem 1rem;
-    }
-
-    .top-members-table tbody td {
-        font-size: 1rem;
-        padding: 1rem;
-    }
+    max-width: none;
+    gap: 12px;
+  }
+  .points-reward-name {
+    font-size: 16px;
+  }
+  .points-reward-detail {
+    font-size: 15px;
+  }
+  .points-reward-photo-wrap {
+    height: auto;
+    aspect-ratio: 580 / 471;
+    border-radius: 8px;
+  }
 }
