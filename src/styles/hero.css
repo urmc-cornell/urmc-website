@@ -88,6 +88,15 @@
   object-position: center 30%;
 }
 
+.hero-image-wrap {
+  flex: 1;
+  min-width: 0;
+  aspect-ratio: 718 / 478;
+  position: relative;
+  overflow: hidden;
+  border-radius: calc(20px * var(--scale, 1));
+}
+
 
 .hero-carousel-img {
   position: absolute;
@@ -142,4 +151,5 @@
   .hero-ctas { flex-wrap: wrap; }
   .hero-btn-primary, .hero-btn-secondary { font-size: 16px; padding: 12px 20px; border-radius: 20px; }
   .hero-image { width: 100%; }
+  .hero-image-wrap { width: 100%; flex: none; aspect-ratio: 718 / 478; border-radius: 12px; }
 }
