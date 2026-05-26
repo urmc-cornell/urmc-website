@@ -1,37 +1,101 @@
-.card-container {
-    width: 250px;
-    overflow: hidden;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background-color: #EEEEE6;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 15px;
+.ta-card {
+  background-color: #1f1f1f;
+  border-radius: calc(20px * var(--scale, 1));
+  padding: calc(24px * var(--scale, 1)) calc(36px * var(--scale, 1));
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: calc(20px * var(--scale, 1));
+  width: 100%;
+  min-height: calc(215px * var(--scale, 1));
+  box-sizing: border-box;
 }
 
-.card-container:hover {
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+.ta-card__name {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: calc(24px * var(--scale, 1));
+  color: #f5f5f5;
+  text-align: center;
+  margin: 0;
+  line-height: 1.15;
+  word-break: break-word;
 }
 
-.card-title {
-    align-self: stretch;
-    text-align: center;
-    font-family: "Montserrat-Medium-Soft";
-    font-variant: all-small-caps;
-    color: #37383C;
-    font-weight: 600;
-    font-size: 22px;
-    line-height: normal;
-    padding-top: 5px;
-    padding-bottom: 5px;
+.ta-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(8px * var(--scale, 1));
+  justify-content: center;
+  align-items: center;
 }
 
-.card-name {
-    font-family: "Montserrat-Medium-Soft";
-    color: #000;
-    font-size: 23px;
-    padding-bottom: 17px;
-    padding-left: 5px;
-    padding-right: 5px;
-    text-align: center;
+.ta-card__tag {
+  background-color: #eeb50c;
+  color: #1f1f1f;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: calc(16px * var(--scale, 1));
+  padding: calc(8px * var(--scale, 1)) calc(12px * var(--scale, 1));
+  border-radius: calc(12px * var(--scale, 1));
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.ta-card__email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(8px * var(--scale, 1));
+  text-decoration: none;
+  color: #f5f5f5;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: calc(16px * var(--scale, 1));
+}
+
+.ta-card__email:hover {
+  text-decoration: underline;
+}
+
+.ta-card__email-icon {
+  width: calc(19px * var(--scale, 1));
+  height: calc(14px * var(--scale, 1));
+  flex-shrink: 0;
+}
+
+.ta-card__email-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 767px) {
+  .ta-card {
+    padding: 16px 18px;
+    border-radius: 14px;
+    gap: 12px;
+    min-height: 0;
+  }
+
+  .ta-card__name {
+    font-size: 16px;
+  }
+
+  .ta-card__tag {
+    font-size: 11px;
+    padding: 5px 8px;
+    border-radius: 8px;
+  }
+
+  .ta-card__email {
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  .ta-card__email-icon {
+    width: 13px;
+    height: 10px;
+  }
 }
