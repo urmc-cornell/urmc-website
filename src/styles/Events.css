@@ -1,74 +1,245 @@
-.page-title{
-    color: #F0F0F0;
-    text-align: center;
-    font-family: "Helvetica Neue";
-    font-size: 4rem;
-    font-weight: 700;
+.events-hero {
+  gap: calc(61px * var(--scale, 1));
+  height: calc(758px * var(--scale, 1));
 }
-
-.page{
-    overflow: hidden;
+.events-hero .redesign-hero-image {
+  width: calc(713px * var(--scale, 1));
+  aspect-ratio: 713 / 488;
 }
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 20px;
-    overflow: hidden; 
-    max-width: 70%;
-    width: 100%;
-    height: auto; 
-    /* margin-left: 20px; */
-    margin-right: 20px; 
-    align-items: flex-start;
-    justify-content: flex-start;
+.events-hero .redesign-hero-image img {
+  width: 122.05%;
+  height: 133.69%;
+  left: -2.62%;
+  top: -32.28%;
 }
-
-
-.grid-item {
-    display: flex;
-    padding: 20px;
-    align-items: center;
-    text-align: center;
-    width: auto;
-    justify-content: flex-start;
-}
-
-.grid-item img {
-    width: 300px;
-    height: 300px;
-}
-
-.this-week {
-    font-family: "Montserrat-Medium-Soft";
-    display: flex;
-    left: 72px;
-    margin-left: 72px;
-    color: #265999;
-
-    color: #EEB50C;
-    font-size: 2.25rem;
-    font-weight: 600;
-}
-
-.google-calendar-iframe {
-  filter: invert(0.9) saturate(0.5) hue-rotate(145deg);
-  border-radius: 2%; /* Adjust as desired */
-}
-
-.calendar-container {
+.events-calendar-section {
+  background: var(--redesign-light);
+  color: var(--redesign-dark);
+  padding: calc(120px * var(--scale, 1)) var(--redesign-pad);
   display: flex;
-  justify-content: center;
-  /* align-items: center; */
-  position: relative;
-  padding-bottom: 75%; /* Adjust this value to control the aspect ratio */
-  overflow: hidden;
-  max-width: 100%; 
-  margin: 0 auto 20px auto; 
+  flex-direction: column;
+  align-items: center;
+  gap: calc(48px * var(--scale, 1));
 }
-
-.calendar-container iframe {
-  position: absolute;
-  width: 75%;
+.events-calendar-frame {
+  width: calc(1138px * var(--scale, 1));
+  max-width: 100%;
+  aspect-ratio: 1138 / 702;
+  border: 3px solid #9a9a9a;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #e4e4e4;
+}
+.events-calendar-frame iframe {
+  display: block;
+  width: 100%;
   height: 100%;
+  border: 0;
+}
+.featured-events {
+  padding: calc(120px * var(--scale, 1)) var(--redesign-pad);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(72px * var(--scale, 1));
+}
+.featured-events-heading {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: calc(24px * var(--scale, 1));
+}
+.featured-events-heading p {
+  font-size: calc(24px * var(--scale, 1));
+}
+.featured-events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: calc(16px * var(--scale, 1));
+  width: calc(1303px * var(--scale, 1));
+  max-width: 100%;
+}
+.featured-event-card {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1.5px solid var(--redesign-light);
+  border-radius: calc(12px * var(--scale, 1));
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.featured-event-card img {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  left: 0;
+  top: 0;
+}
+.featured-event-card--bowling img {
+  height: 125%;
+  top: -24.95%;
+}
+.featured-event-card--trivia img {
+  height: 125%;
+  top: -14.99%;
+}
+.featured-event-card--career-quest img {
+  height: 125%;
+  top: -10.68%;
+}
+.featured-event-card--prelim-review img {
+  height: 125%;
+  top: -24.05%;
+}
+.featured-event-dialog {
+  padding: 0;
+  border: 0;
+  width: min(1100px, 92vw);
+  max-height: 92dvh;
+  color: #f5f5f5;
+  background: #1f1f1f;
+  font-family: 'Montserrat', sans-serif;
+}
+.featured-event-dialog::backdrop {
+  background: rgb(0 0 0 / 75%);
+}
+.featured-event-detail {
+  display: flex;
+  position: relative;
+}
+.featured-event-full-flyer {
+  display: block;
+  width: 50%;
+  object-fit: contain;
+  align-self: flex-start;
+}
+.featured-event-detail-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 48px 32px 24px;
+  flex: 1;
+}
+.featured-event-detail-copy h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+.featured-event-detail-copy p {
+  font-size: 15px;
+  line-height: normal;
+  margin: 0;
+}
+.featured-event-tags {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.featured-event-tags span {
+  background: #eeb50c;
+  color: #1f1f1f;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 7px 11px;
+  border-radius: 11px;
+}
+.featured-event-detail-copy .featured-event-description {
+  margin-top: 12px;
+}
+.featured-event-detail-copy a {
+  align-self: flex-end;
+  margin-top: auto;
+  padding-top: 20px;
+}
+.featured-event-detail-copy a img {
+  width: 32px;
+  height: 31px;
+}
+.featured-event-close img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.featured-event-close {
+  padding: 0;
+  position: absolute;
+  right: 14px;
+  top: 19px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: #1f1f1f;
+  color: #f5f5f5;
+  font-size: 36px;
+  line-height: 1;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .events-hero {
+    height: auto;
+    gap: 36px;
+  }
+  .events-hero .redesign-hero-image {
+    width: 100%;
+    aspect-ratio: 730 / 500;
+  }
+  .events-calendar-section {
+    padding: 40px 20px;
+    gap: 36px;
+  }
+  .events-calendar-frame {
+    width: 100%;
+    aspect-ratio: 329 / 203;
+  }
+  .featured-events {
+    padding: 40px 20px;
+    gap: 36px;
+  }
+  .featured-events-heading {
+    gap: 24px;
+  }
+  .featured-events-heading p {
+    font-size: 15px;
+  }
+  .featured-events-grid {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .featured-event-card {
+    border-width: .609px;
+    border-radius: 4.874px;
+  }
+  .featured-event-card--bowling img {
+    top: -9.11%;
+  }
+  .featured-event-card--trivia img {
+    top: -7.94%;
+  }
+  .featured-event-card--career-quest img {
+    top: -8.05%;
+  }
+  .featured-event-card--prelim-review img {
+    top: -7.61%;
+  }
+  .featured-event-dialog {
+    width: 100%;
+    max-width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    margin: 0;
+  }
+  .featured-event-detail {
+    flex-direction: column;
+    min-height: 100%;
+  }
+  .featured-event-full-flyer {
+    width: 100%;
+  }
+  .featured-event-detail-copy {
+    padding: 24px 20px;
+  }
 }

@@ -1,7 +1,7 @@
 import _Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import '../../styles/sponsors.css';
+import '../../styles/sponsors-carousel.css';
 
 import accenture from '../../images/home/sponsor-accenture.png';
 import bloomberg from '../../images/home/sponsor-bloomberg.png';
