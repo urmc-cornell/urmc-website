@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { supabase } from "../lib/supabaseClient.js";
 import TACard from "../components/TACard.js";
-import { useScale } from "../hooks/useScale.js";
 import heroImage from "../images/ta-directory/hero.jpg";
 import externalLinkIcon from "../images/ta-directory/external-link.svg";
 import searchIcon from "../images/ta-directory/search.svg";
@@ -16,7 +15,7 @@ function getDepartment(course) {
 }
 
 export default function Ta_directory() {
-  useScale();
+
   const [tas, setTAs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

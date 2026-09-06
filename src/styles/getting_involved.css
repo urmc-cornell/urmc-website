@@ -1,10 +1,6 @@
-/* Get Involved page — desktop layout matches Figma at 1920px and scales
-   proportionally via the --scale CSS variable (window.innerWidth / 1920)
-   set by useScale(). Mobile fallback (<=768px) drops scale and stacks. */
-
 html,
 body {
-  overflow-x: hidden;
+
   max-width: 100%;
   margin: 0;
 }
@@ -14,14 +10,14 @@ body {
   flex-direction: column;
   width: 100%;
   font-family: "Montserrat", sans-serif;
-  --gi-pad-x: calc(200px * var(--scale, 1));
+  --gi-pad-x: var(--page-gutter);
 }
 
 .gi-page,
 .gi-page .gi-hero,
 .gi-page .gi-section,
 .gi-page .gi-supporters {
-  overflow-x: hidden;
+
   max-width: 100%;
 }
 
@@ -34,7 +30,7 @@ body {
 .gi-hero {
   background: #1f1f1f;
   width: 100%;
-  padding: calc(160px * var(--scale, 1)) var(--gi-pad-x);
+  padding: var(--space-hero) var(--gi-pad-x);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,14 +40,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: calc(40px * var(--scale, 1));
+  gap: var(--space-copy);
   width: 100%;
 }
 
 .gi-hero-title {
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
-  font-size: calc(64px * var(--scale, 1));
+  font-size: var(--font-page-title);
   color: #ffffff;
   margin: 0;
   line-height: 1;
@@ -60,7 +56,7 @@ body {
 .gi-hero-subtitle {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  font-size: calc(24px * var(--scale, 1));
+  font-size: var(--font-body);
   color: #ffffff;
   margin: 0;
   line-height: 1.3;
@@ -70,11 +66,11 @@ body {
 
 .gi-section {
   width: 100%;
-  padding: calc(120px * var(--scale, 1)) var(--gi-pad-x);
+  padding: var(--space-section) var(--gi-pad-x);
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: calc(60px * var(--scale, 1));
+  gap: 3.75rem;
 }
 
 .gi-section--light {
@@ -89,35 +85,35 @@ body {
 .gi-split-content {
   display: flex;
   flex-direction: column;
-  gap: calc(36px * var(--scale, 1));
-  width: calc(721px * var(--scale, 1));
+  gap: 2.25rem;
+  width: 45.0625rem;
   flex-shrink: 0;
   align-self: stretch;
 }
 
 .gi-split-content--companies {
-  gap: calc(36px * var(--scale, 1));
+  gap: 2.25rem;
 }
 
 .gi-split-content--companies .gi-partners {
-  margin-top: calc(48px * var(--scale, 1));
+  margin-top: 3rem;
 }
 
 .gi-text-block {
   display: flex;
   flex-direction: column;
-  gap: calc(24px * var(--scale, 1));
+  gap: 1.5rem;
   width: 100%;
 }
 
 .gi-section--dark .gi-text-block {
-  gap: calc(36px * var(--scale, 1));
+  gap: 2.25rem;
 }
 
 .gi-section-title {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  font-size: calc(48px * var(--scale, 1));
+  font-size: var(--font-section-title);
   margin: 0;
   line-height: 1;
 }
@@ -133,7 +129,7 @@ body {
 .gi-section-body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  font-size: calc(24px * var(--scale, 1));
+  font-size: var(--font-body);
   margin: 0;
   line-height: 1.3;
 }
@@ -148,13 +144,13 @@ body {
 
 .gi-split-image {
   flex-shrink: 0;
-  width: calc(731px * var(--scale, 1));
-  height: calc(549px * var(--scale, 1));
+  width: 45.6875rem;
+  height: 34.3125rem;
   overflow: hidden;
 }
 
 .gi-split-image--tall {
-  height: calc(722px * var(--scale, 1));
+  height: 45.125rem;
 }
 
 .gi-split-image img {
@@ -173,7 +169,7 @@ body {
 
 .gi-button-group {
   display: flex;
-  gap: calc(24px * var(--scale, 1));
+  gap: 1.5rem;
   align-items: center;
   flex-wrap: nowrap;
 }
@@ -182,16 +178,16 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: calc(10px * var(--scale, 1));
-  padding: calc(16px * var(--scale, 1)) calc(24px * var(--scale, 1));
-  border-radius: calc(20px * var(--scale, 1));
+  gap: 0.625rem;
+  padding: 1rem 1.5rem;
+  border-radius: 1.25rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  font-size: calc(24px * var(--scale, 1));
+  font-size: var(--font-body);
   line-height: 1;
   text-decoration: none;
   cursor: pointer;
-  border: calc(2px * var(--scale, 1)) solid transparent;
+  border: 0.125rem solid transparent;
   transition: opacity 0.2s ease;
   white-space: nowrap;
 }
@@ -201,8 +197,8 @@ body {
 }
 
 .gi-btn-icon {
-  width: calc(25px * var(--scale, 1));
-  height: calc(25px * var(--scale, 1));
+  width: 1.5625rem;
+  height: 1.5625rem;
   display: block;
 }
 
@@ -241,14 +237,14 @@ body {
 .gi-partners {
   display: flex;
   flex-direction: column;
-  gap: calc(36px * var(--scale, 1));
+  gap: 2.25rem;
   width: 100%;
 }
 
 .gi-partners-title {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  font-size: calc(32px * var(--scale, 1));
+  font-size: 2rem;
   color: #f5f5f5;
   margin: 0;
   line-height: 1;
@@ -259,24 +255,24 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  gap: calc(24px * var(--scale, 1));
+  gap: 1.5rem;
 }
 
 .gi-partners-row--short {
-  width: calc(537px * var(--scale, 1));
+  width: 33.5625rem;
   justify-content: space-between;
 }
 
 .gi-partner-tile {
   background: #f5f5f5;
-  border-radius: calc(12px * var(--scale, 1));
-  width: calc(153px * var(--scale, 1));
-  height: calc(89px * var(--scale, 1));
+  border-radius: 0.75rem;
+  width: 9.5625rem;
+  height: 5.5625rem;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: calc(10px * var(--scale, 1));
+  padding: 0.625rem;
 }
 
 .gi-partner-tile img {
@@ -301,22 +297,22 @@ body {
 
 .gi-mailing-form {
   display: flex;
-  gap: calc(24px * var(--scale, 1));
+  gap: 1.5rem;
   align-items: center;
   flex-wrap: nowrap;
   width: 100%;
 }
 
 .gi-mailing-input {
-  width: calc(410px * var(--scale, 1));
+  width: 25.625rem;
   flex-shrink: 0;
   background: #e8e8e8;
-  border: calc(1px * var(--scale, 1)) solid #646464;
-  border-radius: calc(20px * var(--scale, 1));
-  padding: calc(16px * var(--scale, 1)) calc(24px * var(--scale, 1));
+  border: 0.0625rem solid #646464;
+  border-radius: 1.25rem;
+  padding: 1rem 1.5rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  font-size: calc(24px * var(--scale, 1));
+  font-size: var(--font-body);
   color: #1f1f1f;
   line-height: 1;
   outline: none;
@@ -334,29 +330,29 @@ body {
 
 .gi-supporters {
   background: #1f1f1f;
-  padding: calc(160px * var(--scale, 1)) var(--gi-pad-x);
+  padding: var(--space-hero) var(--gi-pad-x);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: calc(36px * var(--scale, 1));
+  gap: 2.25rem;
   width: 100%;
 }
 
 .gi-supporters-title {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  font-size: calc(48px * var(--scale, 1));
+  font-size: var(--font-section-title);
   color: #f5f5f5;
   margin: 0;
   line-height: 1;
-  padding-bottom: calc(8px * var(--scale, 1));
-  border-bottom: calc(7px * var(--scale, 1)) solid #eeb50c;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.4375rem solid #eeb50c;
 }
 
 .gi-supporters-body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  font-size: calc(24px * var(--scale, 1));
+  font-size: var(--font-body);
   color: #f5f5f5;
   margin: 0;
   text-align: center;
@@ -367,37 +363,37 @@ body {
   justify-content: center;
 }
 
-/* ---------- Mobile (≤768px) — matches Figma node 780:4124 (390px design) ---------- */
+/* ---------- Mobile (≤48rem) — matches Figma node 780:4124 (24.375rem design) ---------- */
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .gi-page {
-    --scale: 1;
-    --gi-pad-x: 20px;
+
+    --gi-pad-x: 1.25rem;
   }
 
   /* Hero */
   .gi-hero {
-    padding: 60px var(--gi-pad-x);
+    padding: 3.75rem var(--gi-pad-x);
   }
 
   .gi-hero-content {
-    gap: 20px;
+    gap: 1.25rem;
   }
 
   .gi-hero-title {
-    font-size: 32px;
+    font-size: 2rem;
   }
 
   .gi-hero-subtitle {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
 
   /* Sections become column stacks; flatten split-content so we can re-order
      siblings (text → image → buttons / partners) per Figma. */
   .gi-section {
     flex-direction: column;
-    padding: 40px var(--gi-pad-x);
-    gap: 36px;
+    padding: 2.5rem var(--gi-pad-x);
+    gap: 2.25rem;
     align-items: stretch;
   }
 
@@ -420,15 +416,15 @@ body {
   .gi-section--dark .gi-button-group--companies { order: 4; }
 
   .gi-section-title {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 
   .gi-section-body {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
 
   .gi-text-block {
-    gap: 24px;
+    gap: 1.5rem;
   }
 
   /* Images — full width; aspect ratios from Figma */
@@ -446,36 +442,36 @@ body {
   .gi-button-group {
     flex-direction: column;
     align-items: stretch;
-    gap: 8px;
+    gap: 0.5rem;
     width: 100%;
   }
 
   .gi-btn {
     width: 100%;
-    font-size: 15px;
-    padding: 16px 20px;
-    border-radius: 9.098px;
-    border-width: 1px;
+    font-size: 0.9375rem;
+    padding: 1rem 1.25rem;
+    border-radius: 0.568625rem;
+    border-width: 0.0625rem;
   }
 
   /* Slack & Follow Us buttons (only ones with icons) keep slightly different radius */
   .gi-btn--outline-dark {
-    border-radius: 12.228px;
-    border-width: 1.223px;
+    border-radius: 0.76425rem;
+    border-width: 0.0764375rem;
   }
 
   .gi-btn-icon {
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem;
   }
 
   /* Partner tiles — 4/4/3 small grid */
   .gi-partners-title {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 
   .gi-partners {
-    gap: 16px;
+    gap: 1rem;
   }
 
   /* Use a 4-column grid so the 3-tile row's columns line up with the
@@ -484,7 +480,7 @@ body {
   .gi-partners-row--short {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 8.8px;
+    column-gap: 0.55rem;
     width: 100%;
     flex-wrap: initial;
     justify-content: initial;
@@ -494,9 +490,9 @@ body {
     width: 100%;
     height: auto;
     aspect-ratio: 80.899 / 47.059;
-    max-width: 80.899px;
-    border-radius: 6.345px;
-    padding: 5.288px;
+    max-width: 5.05619rem;
+    border-radius: 0.396562rem;
+    padding: 0.3305rem;
     justify-self: center;
   }
 
@@ -504,37 +500,57 @@ body {
   .gi-mailing-form {
     flex-direction: column;
     align-items: stretch;
-    gap: 8px;
+    gap: 0.5rem;
     width: 100%;
   }
 
   .gi-mailing-input {
     width: 100%;
-    font-size: 15px;
-    padding: 16px 24px;
-    border-radius: 20px;
-    border-width: 1px;
+    font-size: 0.9375rem;
+    padding: 1rem 1.5rem;
+    border-radius: 1.25rem;
+    border-width: 0.0625rem;
   }
 
   /* The dark submit button in the mailing form should match the Figma
-     small radius (9.098px), overriding the .gi-btn--outline-dark rule above
+     small radius (0.568625rem), overriding the .gi-btn--outline-dark rule above
      which doesn't apply here, but explicit for clarity. */
   .gi-mailing-form .gi-btn--dark {
-    border-radius: 9.098px;
+    border-radius: 0.568625rem;
   }
 
   /* Supporters */
   .gi-supporters {
-    padding: 60px var(--gi-pad-x);
-    gap: 36px;
+    padding: 3.75rem var(--gi-pad-x);
+    gap: 2.25rem;
   }
 
   .gi-supporters-title {
-    font-size: 24px;
-    border-bottom-width: 4px;
+    font-size: 1.5rem;
+    border-bottom-width: 0.25rem;
   }
 
   .gi-supporters-body {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
+}
+
+.gi-split-content { width: 45.0625rem; max-width: calc((100% - 3.75rem) / 2); flex-shrink: 1; min-width: 0; }
+.gi-split-image { width: 45.6875rem; max-width: calc((100% - 3.75rem) / 2); height: auto; aspect-ratio: 731 / 549; flex-shrink: 1; }
+.gi-split-image--tall { aspect-ratio: 731 / 722; }
+.gi-button-group, .gi-mailing-form { flex-wrap: wrap; }
+.gi-btn { white-space: normal; line-height: normal; text-align: center; max-width: 100%; }
+.gi-mailing-input { max-width: 100%; min-width: 0; flex: 1 1 15rem; }
+.gi-partners-row, .gi-partners-row--short { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; width: 100%; }
+.gi-partner-tile { width: 100%; height: auto; aspect-ratio: 153 / 89; min-width: 0; }
+@media (min-width: 48.001rem) and (max-width: 68.75rem) {
+  .gi-section { flex-direction: column; }
+  .gi-split-content, .gi-split-image { width: 100%; max-width: none; }
+  .gi-split-image { max-width: 45.6875rem; align-self: center; }
+  .gi-section--reverse .gi-split-image { order: 2; }
+}
+@media (max-width: 48rem) {
+  .gi-split-image, .gi-split-content { max-width: 100%; }
+  .gi-mailing-input { flex: none; }
+  .gi-partners-row, .gi-partners-row--short { gap: .55rem; }
 }

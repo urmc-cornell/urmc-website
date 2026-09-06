@@ -1,8 +1,8 @@
 .sponsors-hero {
-  border-bottom: calc(4px * var(--scale, 1)) solid #e4e4e4;
+  border-bottom: 0.25rem solid #e4e4e4;
 }
 .sponsors-hero .redesign-hero-image {
-  width: calc(692px * var(--scale, 1));
+  width: 43.25rem;
   aspect-ratio: 692 / 417;
 }
 .sponsors-hero .redesign-hero-image img {
@@ -12,45 +12,45 @@
   left: 0;
 }
 .corporate-sponsors {
-  padding: calc(160px * var(--scale, 1)) var(--redesign-pad);
+  padding: var(--space-hero) var(--redesign-pad);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: calc(160px * var(--scale, 1));
+  gap: 10rem;
 }
 .corporate-sponsor-tiers {
   display: flex;
   flex-direction: column;
-  gap: calc(120px * var(--scale, 1));
+  gap: 7.5rem;
   width: 100%;
 }
 .corporate-sponsor-tier {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: calc(64px * var(--scale, 1));
+  gap: 4rem;
 }
 .corporate-tier-heading {
   display: flex;
   align-items: center;
-  gap: calc(64px * var(--scale, 1));
+  gap: 4rem;
   width: 100%;
 }
 .corporate-tier-heading::before, .corporate-tier-heading::after {
   content: '';
   flex: 1;
-  height: 1px;
+  height: 0.0625rem;
   background: #646464;
 }
 .corporate-tier-heading h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: calc(251px * var(--scale, 1));
-  height: calc(64px * var(--scale, 1));
-  border-radius: calc(20px * var(--scale, 1));
+  width: 15.6875rem;
+  height: 4rem;
+  border-radius: 1.25rem;
   color: var(--redesign-dark);
-  font-size: calc(36px * var(--scale, 1));
+  font-size: 2.25rem;
   font-weight: 600;
   background: linear-gradient(to right, var(--tier-start), var(--tier-end));
 }
@@ -77,7 +77,7 @@
 .corporate-sponsor-cards {
   display: flex;
   justify-content: center;
-  gap: calc(64px * var(--scale, 1));
+  gap: 4rem;
   width: 100%;
 }
 .corporate-sponsor-card {
@@ -85,14 +85,14 @@
   flex-shrink: 0;
   overflow: hidden;
   background: var(--redesign-light);
-  border-radius: calc(20px * var(--scale, 1));
+  border-radius: 1.25rem;
 }
 .corporate-sponsor-card::before {
   content: '';
   position: absolute;
   z-index: 1;
   inset: 0 0 auto;
-  height: calc(16px * var(--scale, 1));
+  height: 1rem;
   background: var(--tier-accent);
 }
 .corporate-sponsor-card img {
@@ -101,15 +101,15 @@
   height: auto;
 }
 .corporate-sponsor-tier--platinum .corporate-sponsor-card {
-  width: calc(623.31px * var(--scale, 1));
+  width: 38.9569rem;
   aspect-ratio: 623.31 / 375;
 }
 .corporate-sponsor-tier--gold .corporate-sponsor-card {
-  width: calc(530.12px * var(--scale, 1));
+  width: 33.1325rem;
   aspect-ratio: 530.12 / 309;
 }
 .corporate-sponsor-tier--silver .corporate-sponsor-card {
-  width: calc(330px * var(--scale, 1));
+  width: 20.625rem;
   aspect-ratio: 330 / 213;
 }
 .corporate-sponsor-tier--bronze .corporate-sponsor-cards {
@@ -117,7 +117,7 @@
   gap: 0;
 }
 .corporate-sponsor-tier--bronze .corporate-sponsor-card {
-  width: calc(264px * var(--scale, 1));
+  width: 16.5rem;
   aspect-ratio: 264 / 170;
 }
 .corporate-sponsor-card--linkedin img {
@@ -175,62 +175,79 @@
   left: 3.03%;
   top: 18.82%;
 }
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .sponsors-hero {
-    border-bottom-width: 2px;
+    border-bottom-width: 0.125rem;
   }
   .sponsors-hero .redesign-hero-image {
     width: 100%;
   }
   .corporate-sponsors {
-    padding: 60px 20px;
-    gap: 60px;
+    padding: 3.75rem 1.25rem;
+    gap: 3.75rem;
   }
   .corporate-sponsor-tiers {
-    gap: 46.505px;
+    gap: 2.90656rem;
   }
   .corporate-sponsor-tier {
-    gap: 24.803px;
+    gap: 1.55019rem;
   }
   .corporate-tier-heading {
-    gap: 24.803px;
+    gap: 1.55019rem;
   }
   .corporate-tier-heading h3 {
-    width: 120px;
-    height: 31px;
-    font-size: 17.276px;
-    border-radius: 9.598px;
+    width: 7.5rem;
+    height: 1.9375rem;
+    font-size: 1.07975rem;
+    border-radius: 0.599875rem;
   }
   .corporate-sponsor-card {
-    border-radius: 7.751px;
+    border-radius: 0.484438rem;
   }
   .corporate-sponsor-card::before {
-    height: 6.201px;
+    height: 0.387562rem;
   }
   .corporate-sponsor-tier--platinum .corporate-sponsor-card {
-    width: 241.559px;
+    width: 15.0974rem;
     max-width: 100%;
   }
   .corporate-sponsor-tier--gold .corporate-sponsor-card {
-    width: 205.444px;
+    width: 12.8402rem;
     max-width: 100%;
   }
   .corporate-sponsor-tier--silver .corporate-sponsor-cards {
     display: grid;
-    grid-template-columns: repeat(2, 127.889px);
-    gap: 24.803px 25px;
+    grid-template-columns: repeat(2, 7.99306rem);
+    gap: 1.55019rem 1.5625rem;
   }
   .corporate-sponsor-tier--silver .corporate-sponsor-card {
-    width: 127.889px;
+    width: 7.99306rem;
   }
   .corporate-sponsor-tier--bronze .corporate-sponsor-cards {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 19px;
-    max-width: 350px;
+    gap: 1.1875rem;
+    max-width: 21.875rem;
   }
   .corporate-sponsor-tier--bronze .corporate-sponsor-card {
-    width: calc((100% - 38px) / 3);
-    max-width: 102.311px;
+    width: calc((100% - 2.375rem) / 3);
+    max-width: 6.39444rem;
   }
+}
+
+@media (min-width: 68.751rem) {
+  .sponsors-hero .redesign-hero-image { width: min(45.53%, 43.25rem); }
+}
+.corporate-sponsor-card { flex-shrink: 1; min-width: 0; }
+.corporate-sponsor-cards { flex-wrap: wrap; }
+@media (min-width: 48.001rem) {
+  .corporate-sponsor-tier--silver .corporate-sponsor-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 20.625rem)); }
+  .corporate-sponsor-tier--silver .corporate-sponsor-card { width: 100%; }
+  .corporate-sponsor-tier--bronze .corporate-sponsor-cards { display: grid; grid-template-columns: repeat(5, minmax(0, 16.5rem)); gap: 1.5rem; }
+  .corporate-sponsor-tier--bronze .corporate-sponsor-card { width: 100%; }
+}
+@media (min-width: 48.001rem) and (max-width: 68.75rem) {
+  .corporate-sponsor-tier--silver .corporate-sponsor-cards { grid-template-columns: repeat(2, minmax(0, 20.625rem)); }
+  .corporate-sponsor-tier--bronze .corporate-sponsor-cards { display: flex; gap: 1.5rem; justify-content: center; }
+  .corporate-sponsor-tier--bronze .corporate-sponsor-card { width: 16.5rem; }
 }

@@ -56,6 +56,16 @@ function PillarCard({ pillar, isActive, onActivate, onDeactivate, onToggle }) {
   return (
     <div
       className={`pillar-card pillar-card--${pillar.id}${isActive ? ' pillar-card--hovered' : ''}`}
+      role="button"
+      tabIndex={0}
+      aria-label={pillar.title}
+      aria-expanded={isActive}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          onToggle(pillar.id);
+        }
+      }}
       onMouseEnter={onActivate}
       onMouseLeave={onDeactivate}
       onTouchEnd={handleTouchEnd}

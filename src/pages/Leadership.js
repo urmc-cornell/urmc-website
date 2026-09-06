@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabaseClient.js';
-import { useScale } from '../hooks/useScale.js';
 import WhoWeAreHero from '../components/leadership/WhoWeAreHero.js';
 import QuoteSection from '../components/leadership/QuoteSection.js';
 import TeamSection from '../components/leadership/TeamSection.js';
@@ -10,7 +9,7 @@ import groupPhoto from '../images/urmcMembers.jpg';
 import '../styles/Leadership.css';
 
 export default function Leadership() {
-  useScale();
+
   const [members, setMembers] = useState({ advisors: [], eboard: [] });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

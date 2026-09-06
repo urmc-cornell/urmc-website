@@ -1,4 +1,3 @@
-import { useScale } from '../hooks/useScale.js';
 import RedesignHero from '../components/RedesignHero.js';
 import afrotech from '../images/sponsors/afrotech.jpg';
 import externalLink from '../images/sponsors/external-link.svg';
@@ -34,7 +33,7 @@ const SPONSOR_TIERS = [
 ];
 
 export default function Sponsors() {
-  useScale();
+
   return (
     <main className="redesign-page sponsors-page">
       <RedesignHero title="Our Sponsors" description="Our corporate partners help expand access to opportunities for underrepresented students in tech, while gaining direct access to a talented and diverse community." image={afrotech} imageAlt="URMC members at the AfroTech Conference" className="sponsors-hero">

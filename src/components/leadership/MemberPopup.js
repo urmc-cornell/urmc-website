@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import '../../styles/Leadership.css';
 import popoutX from '../../images/assets/popoutX.svg';
 import mailGold from '../../images/assets/mailGold.png';
@@ -6,10 +6,34 @@ import instaGold from '../../images/assets/instagramGold.png';
 import linkedGold from '../../images/assets/linkedinGold.png';
 
 export default function MemberPopup({ member, onClose }) {
+  const popupRef = useRef(null);
+  const closeRef = useRef(null);
   useEffect(() => {
+    const previousFocus = document.activeElement;
+    const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
-    return () => { document.body.style.overflow = ''; };
-  }, []);
+    closeRef.current.focus();
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') onClose();
+      if (event.key !== 'Tab') return;
+      const controls = [...popupRef.current.querySelectorAll('a[href], button:not([disabled])')];
+      const first = controls[0];
+      const last = controls[controls.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', handleKeyDown);
+      previousFocus?.focus();
+    };
+  }, [onClose]);
 
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) onClose();
@@ -19,7 +43,7 @@ export default function MemberPopup({ member, onClose }) {
 
   return (
     <div className="wwa-popup-backdrop" onClick={handleBackdropClick}>
-      <div className="wwa-popup-inner" role="dialog" aria-modal="true" aria-label={`${member.name} profile`}>
+      <div ref={popupRef} className="wwa-popup-inner" role="dialog" aria-modal="true" aria-label={`${member.name} profile`}>
 
         {/* Square photo — fills full modal height */}
         <div className="wwa-popup-photo-wrap">
@@ -73,7 +97,7 @@ export default function MemberPopup({ member, onClose }) {
         </div>
 
         {/* Close button */}
-        <button className="wwa-popup-close" onClick={onClose} aria-label="Close">
+        <button ref={closeRef} className="wwa-popup-close" onClick={onClose} aria-label="Close">
           <img src={popoutX} alt="" />
         </button>
       </div>

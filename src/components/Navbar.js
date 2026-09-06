@@ -1,12 +1,11 @@
 import React from "react";
 import "../styles/bars.css";
-import { useScale } from "../hooks/useScale.js";
 import gold_logo from "../images/gold_logo.png";
 import hamburgerIcon from "../images/assets/hamburger.svg";
 
 function Navbar() {
   const [clicked, setClicked] = React.useState(false);
-  useScale();
+
 
   const handleClick = () => {
     setClicked(!clicked);
@@ -15,7 +14,7 @@ function Navbar() {
   return (
     <nav className="nav">
       {/* Mobile hamburger */}
-      <button className="menu-icon" onClick={handleClick} aria-label="Toggle menu">
+      <button className="menu-icon" onClick={handleClick} aria-label="Toggle menu" aria-expanded={clicked} aria-controls="mobile-navigation">
         {clicked ? (
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <line x1="2" y1="2" x2="18" y2="18" stroke="#1f1f1f" strokeWidth="2.5" strokeLinecap="round"/>
@@ -46,7 +45,7 @@ function Navbar() {
       </ul>
 
       {/* Mobile slide-out menu */}
-      <div className={clicked ? "nav-container active" : "nav-container"}>
+      <div id="mobile-navigation" className={clicked ? "nav-container active" : "nav-container"}>
         <ul className="nav-menu nav-menu--mobile">
           <CustomLink href="/leadership">Who We Are</CustomLink>
           <CustomLink href="/events">Events</CustomLink>

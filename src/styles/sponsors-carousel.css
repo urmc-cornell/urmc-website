@@ -1,6 +1,6 @@
 .sponsors {
   background-color: #f5f5f5;
-  padding: calc(60px * var(--scale, 1)) 0 calc(48px * var(--scale, 1));
+  padding: 3.75rem 0 3rem;
   width: 100%;
   box-sizing: border-box;
   overflow-x: hidden;
@@ -10,42 +10,32 @@
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: calc(48px * var(--scale, 1));
+  font-size: 3rem;
   color: #1f1f1f;
-  margin: 0 0 calc(40px * var(--scale, 1)) 0;
+  margin: 0 0 2.5rem 0;
 }
 
-/* Align all slides to the same vertical midpoint */
-.sponsors-track .slick-track {
-  display: flex !important;
-  align-items: center;
+/* Two identical groups make the loop boundary visually seamless. */
+.sponsors-track { overflow: hidden; }
+.sponsors-marquee {
+  display: flex;
+  width: max-content;
+  animation: sponsors-scroll-right 55s linear infinite;
 }
-
-.sponsors-track .slick-slide {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  height: auto !important;
-  outline: none;
-  pointer-events: none;
-}
-
-.sponsors-track .slick-slide * {
-  pointer-events: none;
-  outline: none;
-}
-
+.sponsors-group { display: flex; align-items: center; flex-shrink: 0; }
 .sponsor-slide {
-  display: flex !important;
+  display: flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 24rem;
+  width: 24rem;
 }
-
-.sponsors-track .slick-slide .sponsor-link,
-.sponsors-track .slick-slide .sponsor-link * {
-  pointer-events: auto;
+@keyframes sponsors-scroll-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
 }
+/* Keep a keyboard-focused link still while it is being used. */
+.sponsors-track:focus-within .sponsors-marquee { animation-play-state: paused; }
 
 .sponsor-link {
   display: inline-flex;
@@ -63,26 +53,40 @@
 
 .sponsor-logo--ey {
   position: relative;
-  top: calc(-20px * var(--scale, 1));
+  top: -1.25rem;
 }
 
 .sponsor-logo--accenture {
   position: relative;
-  top: calc(-20px * var(--scale, 1));
+  top: -1.25rem;
 }
 
-@media (max-width: 900px) {
-  .sponsors { padding: 40px 0 32px; }
-  .sponsors-heading { font-size: 28px; margin-bottom: 12px; }
+@media (max-width: 56.25rem) {
+  .sponsors { padding: 2.5rem 0 2rem; }
+  .sponsors-heading { font-size: 1.75rem; margin-bottom: 0.75rem; }
   .sponsor-logo {
     width: auto !important;
     height: auto !important;
-    max-width: 79px !important;
-    max-height: 46px !important;
+    max-width: 4.9375rem !important;
+    max-height: 2.875rem !important;
     object-fit: contain;
   }
-  .sponsors-track .slick-slide { padding: 0; }
-  .sponsors-track .slick-track { align-items: center; }
-  .sponsor-logo--visa { max-width: 64px !important; max-height: 64px !important; }
-  .sponsor-logo--ey { position: relative; top: -6px; }
+  .sponsor-logo--visa { max-width: 4rem !important; max-height: 4rem !important; }
+  .sponsor-logo--ey { position: relative; top: -0.375rem; }
+}
+
+/* Fixed slide slots reveal more logos as the available width grows. */
+.sponsor-slide { width: 24rem !important; }
+.sponsor-logo { max-width: 20rem; }
+.sponsor-link:focus-visible { outline: 3px solid #b38700; outline-offset: 4px; }
+@media (max-width: 56.25rem) {
+  .sponsor-slide { width: 6.125rem !important; flex-basis: 6.125rem; }
+  .sponsors-marquee { animation-duration: 14.036458s; }
+  .sponsors { padding-block: 2.5rem; }
+  .sponsors-heading { font-size: 1.5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sponsors-marquee { animation: none; width: 100%; }
+  .sponsors-group { flex-wrap: wrap; justify-content: center; width: 100%; }
+  .sponsors-group[aria-hidden="true"] { display: none; }
 }

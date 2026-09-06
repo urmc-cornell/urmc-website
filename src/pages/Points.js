@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabaseClient.js';
 import { currentSemester } from '../lib/semester.js';
-import { useScale } from '../hooks/useScale.js';
 import PointsHero from '../components/points/PointsHero.js';
 import ViewYourPointsSection from '../components/points/ViewYourPointsSection.js';
 import HowToEarnSection from '../components/points/HowToEarnSection.js';
@@ -16,7 +15,7 @@ const EXCLUDED_NETIDS = new Set([
 ]);
 
 export default function Points() {
-  useScale();
+
   const semester = currentSemester();
   const [topMembers, setTopMembers] = useState([]);
 

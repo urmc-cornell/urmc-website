@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useScale } from '../hooks/useScale.js';
 import RedesignHero from '../components/RedesignHero.js';
 import FeaturedEventDialog from '../components/FeaturedEventDialog.js';
 import hero from '../images/events/hero.jpg';
@@ -26,7 +25,7 @@ const FEATURED_EVENTS = [
 ];
 
 export default function Events() {
-  useScale();
+
   const [selectedEvent, setSelectedEvent] = useState(null);
   return (
     <main className="redesign-page events-page">

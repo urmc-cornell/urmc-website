@@ -13,10 +13,10 @@ body {
     margin-bottom: 6rem;
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden;
+
 }
 
-.about-us {
+.about-us-page .about-us {
     padding-top: 1.25rem;
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@ body {
     justify-content: center;
 }
 
-.about-header {
+.about-us-page .about-header {
     color: #F0F0F0;
     text-align: center;
     font-family: "Helvetica Neue";
@@ -37,13 +37,13 @@ body {
     line-height: normal;
 }
 
-.heading-academic {
+.about-us-page .heading-academic {
     font-size: 2.5rem;
     font-weight: 600;
     color: #265999;
 }
 
-.purpose {
+.about-us-page .purpose {
     width: 90%;
     margin-top: 1.25rem;
     margin-bottom: 0.625rem;
@@ -56,12 +56,12 @@ body {
     line-height: normal;
 }
 
-.purpose-bolded {
+.about-us-page .purpose-bolded {
     color: #EEB50C;
     font-weight: 700;
 }
 
-.pillars {
+.about-us-page .pillars {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -73,7 +73,7 @@ body {
     box-sizing: border-box;
 }
 
-.pillar {
+.about-us-page .pillar {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,12 +85,12 @@ body {
     background: #667BC4;
 }
 
-.pillar-icon {
+.about-us-page .pillar-icon {
     width: 9.375rem;
     height: 9.375rem;
 }
 
-.pillar-text {
+.about-us-page .pillar-text {
     color: #FFF;
     text-align: center;
     font-family: Hard;
@@ -99,7 +99,7 @@ body {
     line-height: normal;
 }
 
-.stats-bar {
+.about-us-page .stats-bar {
     display: flex;
     width: 100%;
     max-width: 76.375rem;
@@ -116,7 +116,7 @@ body {
     box-sizing: border-box;
 }
 
-.stats-item {
+.about-us-page .stats-item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -124,7 +124,7 @@ body {
     color: var(--URMC-Gray, #37383C);
 }
 
-.stats-header {
+.about-us-page .stats-header {
     color: #F0F0F0;
     text-align: center;
     font-family: Montserrat;
@@ -132,7 +132,7 @@ body {
     font-weight: 600;
 }
 
-.stats-number {
+.about-us-page .stats-number {
     color: #F0F0F0;
     text-align: center;
     font-family: Hard;
@@ -140,12 +140,12 @@ body {
     font-weight: 700;
 }
 
-.stats-block.bottom {
+.about-us-page .stats-block.bottom {
     font-size: 1.875rem;
     font-weight: bold;
 }
 
-.pillar-sections {
+.about-us-page .pillar-sections {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -160,7 +160,7 @@ body {
 
 }
 
-.pillar-section {
+.about-us-page .pillar-section {
     display: flex;
     gap: 3rem;
     align-items: center;
@@ -172,7 +172,7 @@ body {
     box-sizing: border-box;
 }
 
-.section-images {
+.about-us-page .section-images {
     display: flex;
     flex-direction: column;
     max-width: 50%;
@@ -180,7 +180,7 @@ body {
     align-items: center;
 }
 
-.section-content {
+.about-us-page .section-content {
     display: flex;
     flex-direction: column;
     max-width: 45%;
@@ -188,7 +188,7 @@ body {
     text-align: left;
 }
 
-.section-title {
+.about-us-page .section-title {
     color: #EEB50C;
     font-family: Montserrat;
     font-size: 3.5rem;
@@ -198,7 +198,7 @@ body {
     text-transform: capitalize;
 }
 
-.section-text {
+.about-us-page .section-text {
     color: #FFF;
     font-family: Medium;
     font-size: 1.75rem;
@@ -207,25 +207,25 @@ body {
     line-height: normal;
 }
 
-.academic-images {
+.about-us-page .academic-images {
     display: flex;
     flex-direction: column;
     gap: 2.69rem;
 }
 
-#academic-1 {
+.about-us-page #academic-1 {
     width: 34.1875rem;
     height: 20.5625rem;
     flex-shrink: 0;
 }
 
-#academic-2 {
+.about-us-page #academic-2 {
     margin-left: 4.12rem;
     width: 32.25rem;
     height: 21.5625rem;
 }
 
-.community-images {
+.about-us-page .community-images {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
@@ -235,32 +235,32 @@ body {
 }
 
 
-#community-1 {
+.about-us-page #community-1 {
     width: 17.36825rem;
     height: 15.41556rem;
     flex-shrink: 0;
 }
 
-#community-2 {
+.about-us-page #community-2 {
     width: 19.11531rem;
     height: 16.7rem;
     flex-shrink: 0;
 }
 
 
-#community-3 {
+.about-us-page #community-3 {
     width: 18.94rem;
     height: 14.875rem;
     flex-shrink: 0;
 }
 
-#community-4 {
+.about-us-page #community-4 {
     width: 17.5rem;
     height: 13.1875rem;
     flex-shrink: 0;
 }
 
-.profdev-images {
+.about-us-page .profdev-images {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
@@ -273,14 +273,14 @@ body {
     place-items: center;
 }
 
-#profdev-1 {
+.about-us-page #profdev-1 {
     grid-area: image1;
     width: 23.14094rem;
     height: 17.35569rem;
     flex-shrink: 0;
 }
 
-#profdev-2 {
+.about-us-page #profdev-2 {
     grid-area: image2;
     width: 24.04019rem;
     height: 18.03013rem;
@@ -288,7 +288,7 @@ body {
     flex-shrink: 0;
 }
 
-#profdev-3 {
+.about-us-page #profdev-3 {
     grid-area: image3;
     width: 22.51144rem;
     height: 15.01763rem;
@@ -296,13 +296,13 @@ body {
     margin: auto;
 }
 
-.join-section {
+.about-us-page .join-section {
     display: flex;
     flex-direction: column;
     gap: 1.75rem;
 }
 
-#join-header {
+.about-us-page #join-header {
     color: #EEB50C;
     font-family: Hard;
     font-size: 3.5rem;
@@ -313,7 +313,7 @@ body {
     margin: 0;
 }
 
-#join-button {
+.about-us-page #join-button {
     display: flex;
     height: 4.3125rem;
     padding: 0.25rem 2rem;
@@ -327,7 +327,7 @@ body {
     margin: 0;
 }
 
-#join-text {
+.about-us-page #join-text {
     color: var(--URMC-White, #F9F9F9);
     text-align: center;
     font-family: Hard;
@@ -337,7 +337,7 @@ body {
     text-decoration: none;
 }
 
-.section-cards {
+.about-us-page .section-cards {
     display: flex;
     width: 100%;
     flex-direction: row;
@@ -345,7 +345,7 @@ body {
     gap: 6.25rem;
 }
 
-.section-widgets {
+.about-us-page .section-widgets {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -353,7 +353,7 @@ body {
     grid-template-columns: repeat(2, auto);
 }
 
-.widget-row {
+.about-us-page .widget-row {
     justify-content: space-between;
     display: flex;
     flex-direction: row;
@@ -361,15 +361,15 @@ body {
     flex-grow: 1;
 }
 
-.reverse {
+.about-us-page .reverse {
     flex-direction: row-reverse;
 }
 
 /* Maintain image aspect ratios */
-.pillar-section img,
-.academic-images img,
-.community-images img,
-.profdev-images img {
+.about-us-page .pillar-section img,
+.about-us-page .academic-images img,
+.about-us-page .community-images img,
+.about-us-page .profdev-images img {
     max-width: 100%;
     height: auto;
     object-fit: contain;
@@ -377,15 +377,15 @@ body {
     min-height: 150px;
 }
 
-.academic-images img {
+.about-us-page .academic-images img {
     width: auto;
     height: auto;
     object-fit: contain;
     max-width: 100%;
 }
 
-#academic-1,
-#academic-2 {
+.about-us-page #academic-1,
+.about-us-page #academic-2 {
     width: auto;
     max-width: 100%;
     height: auto;
@@ -393,7 +393,7 @@ body {
 }
 
 /* Community images */
-.community-images img {
+.about-us-page .community-images img {
     width: auto;
     max-width: 100%;
     height: auto;
@@ -401,7 +401,7 @@ body {
 }
 
 /* Professional development images */
-.profdev-images img {
+.about-us-page .profdev-images img {
     width: auto;
     max-width: 100%;
     height: auto;
@@ -418,54 +418,54 @@ body {
         padding-right: 1rem;
     }
 
-    .about-header {
+    .about-us-page .about-header {
         font-size: 2.5rem;
     }
 
-    .purpose {
+    .about-us-page .purpose {
         font-size: 1rem;
         line-height: 1.5;
     }
 
-    .pillar-sections {
+    .about-us-page .pillar-sections {
         padding-left: 1rem;
         padding-right: 1rem;
         gap: 2rem;
         margin-bottom: 0;
     }
 
-    .pillar-section:last-child {
+    .about-us-page .pillar-section:last-child {
         margin-bottom: 0;
     }
 
-    .pillar-section:last-child .section-images {
+    .about-us-page .pillar-section:last-child .section-images {
         margin-bottom: 0.5rem;
     }
 
-    .profdev-images {
+    .about-us-page .profdev-images {
         margin-bottom: 0.5rem;
     }
 
-    .stats-bar {
+    .about-us-page .stats-bar {
         margin: 0.5rem auto 1rem;
     }
 
-    .section-images {
+    .about-us-page .section-images {
         order: 2; /* Images always appear after text on mobile */
         max-width: 100%;
     }
 
-    .section-content {
+    .about-us-page .section-content {
         order: 1; /* Content always appears before images on mobile */
         max-width: 100%;
         text-align: center;
     }
 
     /* Consistent spacing for all image sections on mobile */
-    .section-images,
-    .academic-images,
-    .community-images,
-    .profdev-images {
+    .about-us-page .section-images,
+.about-us-page .academic-images,
+.about-us-page .community-images,
+.about-us-page .profdev-images {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -474,21 +474,21 @@ body {
         margin-bottom: 2rem; /* Add bottom margin for separation from next section */
     }
 
-    .community-images,
-    .profdev-images {
+    .about-us-page .community-images,
+.about-us-page .profdev-images {
         min-width: unset;
         width: 100%;
     }
 
     /* Remove duplicate styles */
-    .academic-images,
-    .community-images,
-    .profdev-images {
+    .about-us-page .academic-images,
+.about-us-page .community-images,
+.about-us-page .profdev-images {
         align-items: center;
     }
 
     /* Remove this duplicate definition */
-    .academic-images {
+    .about-us-page .academic-images {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -500,7 +500,7 @@ body {
     }
 
     /* Reset grid areas and layout for mobile */
-    .profdev-images {
+    .about-us-page .profdev-images {
         display: flex;
         flex-direction: column;
         gap: 1rem; /* Reduced gap specifically for profdev */
@@ -510,9 +510,9 @@ body {
     }
     
     /* Reset all grid area settings for mobile */
-    #profdev-1,
-    #profdev-2,
-    #profdev-3 {
+    .about-us-page #profdev-1,
+.about-us-page #profdev-2,
+.about-us-page #profdev-3 {
         grid-area: unset;
         width: auto;
         height: auto;
@@ -523,8 +523,8 @@ body {
     }
     
     /* Improve image container structure */
-    .community-images,
-    .profdev-images {
+    .about-us-page .community-images,
+.about-us-page .profdev-images {
         min-width: unset;
         width: 100%;
         display: flex;
@@ -533,10 +533,10 @@ body {
     }
     
     /* Make all images in mobile view use the same sizing rules */
-    .pillar-section img,
-    .academic-images img,
-    .community-images img,
-    .profdev-images img {
+    .about-us-page .pillar-section img,
+.about-us-page .academic-images img,
+.about-us-page .community-images img,
+.about-us-page .profdev-images img {
         min-width: 150px;
         min-height: 0; /* Remove min-height constraint */
         height: auto;
@@ -548,8 +548,8 @@ body {
     }
 
     /* Academic images specific adjustments */
-    #academic-1,
-    #academic-2 {
+    .about-us-page #academic-1,
+.about-us-page #academic-2 {
         margin: 0 auto;
         max-width: 90%;
         width: auto;
@@ -559,24 +559,24 @@ body {
         transform: translateX(0);
     }
 
-    .section-title {
+    .about-us-page .section-title {
         font-size: 2rem;
         text-align: center;
     }
 
-    .section-text {
+    .about-us-page .section-text {
         font-size: 1rem;
         line-height: 1.5;
         text-align: center;
     }
 
-    #join-header {
+    .about-us-page #join-header {
         font-size: 2rem;
         height: auto;
         text-align: center;
     }
 
-    #join-button {
+    .about-us-page #join-button {
         height: auto;
         padding: 0.8rem 1.5rem;
         border-radius: 2rem;
@@ -584,17 +584,17 @@ body {
         width: fit-content;
     }
 
-    #join-text {
+    .about-us-page #join-text {
         font-size: 1.2rem;
     }
 
     /* Hide pillars only, not stats */
-    .pillars {
+    .about-us-page .pillars {
         display: none;
     }
     
     /* Stats bar styling for mobile */
-    .stats-bar {
+    .about-us-page .stats-bar {
         display: flex;
         flex-direction: column;
         width: 90%;
@@ -605,20 +605,20 @@ body {
         margin: 1.5rem auto;
     }
     
-    .stats-item {
+    .about-us-page .stats-item {
         width: 100%;
         padding: 0.5rem;
     }
     
-    .stats-header {
+    .about-us-page .stats-header {
         font-size: 1.5rem;
     }
     
-    .stats-number {
+    .about-us-page .stats-number {
         font-size: 2.25rem;
     }
 
-    .pillar-section {
+    .about-us-page .pillar-section {
         flex-direction: column;
         gap: 1.5rem;
         flex-wrap: wrap;
@@ -627,7 +627,17 @@ body {
         margin-bottom: 1rem; /* Add this to control spacing between sections */
     }
     
-    .pillar-section:last-child {
+    .about-us-page .pillar-section:last-child {
         margin-bottom: 0;
     }
+}
+
+.about-us-page .stats-bar { height: auto; flex-wrap: wrap; gap: 2rem; padding: 2.5rem; }
+.about-us-page .pillar-sections { max-width: 95rem; padding-inline: 1.5rem; }
+.about-us-page .pillar { max-width: 100%; }
+.about-us-page .community-images, .about-us-page .profdev-images { min-width: 0; }
+.about-us-page .section-images { min-width: 0; }
+@media (max-width: 68.75rem) {
+  .about-us-page .pillar-section { flex-direction: column; padding-inline: 0; }
+  .about-us-page .section-content, .about-us-page .section-images { max-width: 100%; }
 }

@@ -1,4 +1,3 @@
-import { useScale } from '../hooks/useScale.js';
 import studentsImg from '../images/getting-involved/students.jpg';
 import companiesImg from '../images/getting-involved/companies.jpg';
 import alumniImg from '../images/getting-involved/alumni.jpg';
@@ -172,7 +171,7 @@ function SupportersSection() {
 }
 
 export default function Getting_involved() {
-  useScale();
+
   return (
     <div className="gi-page">
       <Hero />
