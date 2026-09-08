@@ -1,4 +1,5 @@
 import RedesignHero from '../components/RedesignHero.js';
+import PartnershipButton from '../components/PartnershipButton.js';
 import afrotech from '../images/sponsors/afrotech.jpg';
 import externalLink from '../images/sponsors/external-link.svg';
 import linkedin from '../images/sponsors/linkedin.png';
@@ -37,7 +38,7 @@ export default function Sponsors() {
   return (
     <main className="redesign-page sponsors-page">
       <RedesignHero title="Our Sponsors" description="Our corporate partners help expand access to opportunities for underrepresented students in tech, while gaining direct access to a talented and diverse community." image={afrotech} imageAlt="URMC members at the AfroTech Conference" className="sponsors-hero">
-        <a href="mailto:urmc@cornell.edu?subject=URMC%20Partnership" className="redesign-button redesign-button--gold">Become a Partner<img src={externalLink} alt="" /></a>
+        <PartnershipButton className="redesign-button redesign-button--gold">Become a Partner<img src={externalLink} alt="" /></PartnershipButton>
         <a href="mailto:urmc@cornell.edu" className="redesign-button">Contact Us</a>
       </RedesignHero>
       <section className="corporate-sponsors" aria-labelledby="corporate-sponsors-title">

@@ -126,7 +126,7 @@
   font-weight: 400;
   font-size: var(--font-body);
   color: #1f1f1f;
-  width: var(--page-gutter);
+  width: 12.5rem;
   box-sizing: border-box;
   outline: none;
 }

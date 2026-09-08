@@ -31,7 +31,7 @@ export default function Events() {
     <main className="redesign-page events-page">
       <RedesignHero title="Events" description="From professional development workshops to social events, URMC brings students together to learn, connect, and grow." image={hero} imageAlt="URMC members gathered for a campus event" className="events-hero">
         <a className="redesign-button redesign-button--gold" href={SLACK_URL} target="_blank" rel="noreferrer">Join our Slack<img src={slackIcon} alt="" /></a>
-        <a className="redesign-button" href={INSTAGRAM_URL} target="_blank" rel="noreferrer">View Monthly Recap<img src={instagramIcon} alt="" /></a>
+        <a className="redesign-button" href={INSTAGRAM_URL} target="_blank" rel="noreferrer">View Recaps<img src={instagramIcon} alt="" /></a>
       </RedesignHero>
       <section className="events-calendar-section" aria-labelledby="events-calendar-title">
         <h2 id="events-calendar-title" className="redesign-section-title">Events Calendar</h2>

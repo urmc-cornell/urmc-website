@@ -242,8 +242,10 @@
 /* One desktop size; gutters adapt without resizing the text or logo. */
 @media (min-width: 64.001rem) {
   .nav { padding: 2rem max(1.5rem, calc((100% - 75rem) / 2)); gap: 1rem; }
-  .nav-menu { gap: 1.5rem; }
-  .nav a { font-size: 1.25rem; }
+  /* Figma's 60px link gaps adapted to the 20px desktop typography.
+     Tighten only spacing continuously when the available width is smaller. */
+  .nav-menu { gap: clamp(.5rem, calc((100vw - 64rem) * .1), 3rem); }
+  .nav a { font-size: 1.25rem; font-weight: 600; }
   .site-logo { width: 11.5rem; height: 4.5rem; }
 }
 .nav-container { max-height: calc(100dvh - 6.5rem); overflow-y: auto; }

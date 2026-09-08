@@ -1,4 +1,5 @@
 import studentsImg from '../images/getting-involved/students.jpg';
+import PartnershipButton from '../components/PartnershipButton.js';
 import companiesImg from '../images/getting-involved/companies.jpg';
 import alumniImg from '../images/getting-involved/alumni.jpg';
 import slackIcon from '../images/getting-involved/slack-icon.svg';
@@ -55,7 +56,7 @@ function Hero() {
           Whether you're a student, alum, or company, there's a place for you in URMC.
         </p>
         <div className="gi-button-group">
-          <button type="button" className="gi-btn gi-btn--gold">Support Us</button>
+          <a href={DONATE_URL} target="_blank" rel="noreferrer" className="gi-btn gi-btn--gold">Support Us</a>
           <a href="/events" className="gi-btn gi-btn--outline-light">View Events</a>
         </div>
       </div>
@@ -106,7 +107,7 @@ function CompaniesSection() {
           </p>
         </div>
         <div className="gi-button-group gi-button-group--companies">
-          <a href="mailto:urmc@cornell.edu" className="gi-btn gi-btn--light">Partner With Us</a>
+          <PartnershipButton className="gi-btn gi-btn--light">Partner With Us</PartnershipButton>
           <a href="/sponsors" className="gi-btn gi-btn--outline-light">Our Sponsors</a>
         </div>
         <div className="gi-partners">
@@ -164,7 +165,7 @@ function SupportersSection() {
         <a href={DONATE_URL} target="_blank" rel="noreferrer" className="gi-btn gi-btn--gold">
           Donate
         </a>
-        <button type="button" className="gi-btn gi-btn--outline-light">Learn More</button>
+        <a href="/leadership" className="gi-btn gi-btn--outline-light">About URMC</a>
       </div>
     </section>
   );

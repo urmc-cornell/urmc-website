@@ -101,15 +101,15 @@
   height: auto;
 }
 .corporate-sponsor-tier--platinum .corporate-sponsor-card {
-  width: 38.9569rem;
+  width: 31.16552rem;
   aspect-ratio: 623.31 / 375;
 }
 .corporate-sponsor-tier--gold .corporate-sponsor-card {
-  width: 33.1325rem;
+  width: 26.506rem;
   aspect-ratio: 530.12 / 309;
 }
 .corporate-sponsor-tier--silver .corporate-sponsor-card {
-  width: 20.625rem;
+  width: 16.5rem;
   aspect-ratio: 330 / 213;
 }
 .corporate-sponsor-tier--bronze .corporate-sponsor-cards {
@@ -117,7 +117,7 @@
   gap: 0;
 }
 .corporate-sponsor-tier--bronze .corporate-sponsor-card {
-  width: 16.5rem;
+  width: 13.2rem;
   aspect-ratio: 264 / 170;
 }
 .corporate-sponsor-card--linkedin img {
@@ -174,6 +174,18 @@
   width: 93.94%;
   left: 3.03%;
   top: 18.82%;
+}
+/* Match the compact desktop composition used by the rest of the site.
+   Card artwork retains the Figma aspect ratios and logo placement. */
+@media (min-width: 48.001rem) {
+  .corporate-sponsors { gap: 8rem; }
+  .corporate-sponsor-tiers { gap: 6rem; }
+  .corporate-sponsor-tier { gap: 3.2rem; }
+  .corporate-tier-heading { gap: 3.2rem; }
+  .corporate-tier-heading h3 { width: 12.55rem; height: 3.2rem; font-size: 1.8rem; }
+  .corporate-sponsor-cards { width: 80%; gap: 3.2rem; }
+  .corporate-sponsor-card { border-radius: 1rem; }
+  .corporate-sponsor-card::before { height: .8rem; }
 }
 @media (max-width: 48rem) {
   .sponsors-hero {
@@ -241,13 +253,13 @@
 .corporate-sponsor-card { flex-shrink: 1; min-width: 0; }
 .corporate-sponsor-cards { flex-wrap: wrap; }
 @media (min-width: 48.001rem) {
-  .corporate-sponsor-tier--silver .corporate-sponsor-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 20.625rem)); }
+  .corporate-sponsor-tier--silver .corporate-sponsor-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 16.5rem)); }
   .corporate-sponsor-tier--silver .corporate-sponsor-card { width: 100%; }
-  .corporate-sponsor-tier--bronze .corporate-sponsor-cards { display: grid; grid-template-columns: repeat(5, minmax(0, 16.5rem)); gap: 1.5rem; }
+  .corporate-sponsor-tier--bronze .corporate-sponsor-cards { display: grid; grid-template-columns: repeat(5, minmax(0, 13.2rem)); gap: 1.2rem; }
   .corporate-sponsor-tier--bronze .corporate-sponsor-card { width: 100%; }
 }
 @media (min-width: 48.001rem) and (max-width: 68.75rem) {
-  .corporate-sponsor-tier--silver .corporate-sponsor-cards { grid-template-columns: repeat(2, minmax(0, 20.625rem)); }
-  .corporate-sponsor-tier--bronze .corporate-sponsor-cards { display: flex; gap: 1.5rem; justify-content: center; }
-  .corporate-sponsor-tier--bronze .corporate-sponsor-card { width: 16.5rem; }
+  .corporate-sponsor-tier--silver .corporate-sponsor-cards { grid-template-columns: repeat(2, minmax(0, 16.5rem)); }
+  .corporate-sponsor-tier--bronze .corporate-sponsor-cards { display: flex; gap: 1.2rem; justify-content: center; }
+  .corporate-sponsor-tier--bronze .corporate-sponsor-card { width: 13.2rem; }
 }

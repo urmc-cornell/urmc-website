@@ -12,7 +12,7 @@ import linkedin from '../../images/home/sponsor-linkedin.png';
 import roblox from '../../images/home/sponsor-roblox.png';
 import visa from '../../images/home/sponsor-visa.png';
 
-// Figma exact dimensions (node 135-85)
+// Reference logo proportions (Figma node 135-85).
 const sponsors = [
   { src: accenture,  alt: 'Accenture',  w: 260, h: 145   },
   { src: bloomberg,  alt: 'Bloomberg',   w: 303, h: 56    },
@@ -44,8 +44,8 @@ export default function SponsorsCarousel() {
                   alt={alt}
                   className={`sponsor-logo${alt === 'Visa' ? ' sponsor-logo--visa' : ''}${alt === 'EY' ? ' sponsor-logo--ey' : ''}${alt === 'Accenture' ? ' sponsor-logo--accenture' : ''}`}
                   style={{
-                    width:  `${w / 16}rem`,
-                    height: `${h / 16}rem`,
+                    width:  `${w / 20}rem`,
+                    height: `${h / 20}rem`,
                   }}
                 />
               </a>

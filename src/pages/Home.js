@@ -10,8 +10,10 @@ export default function Home() {
 
   return (
     <div className="home">
-      <Navbar />
-      <HeroSection />
+      <div className="home-intro">
+        <Navbar />
+        <HeroSection />
+      </div>
       <MissionSection />
       <SponsorsCarousel />
       <PillarsSection />

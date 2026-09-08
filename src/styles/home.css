@@ -23,3 +23,18 @@ body::-webkit-scrollbar {
   max-width: 100%;
 
 }
+
+/* Let the actual header height determine the space left for the hero. */
+.home-intro {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.home-intro > .nav { flex: none; }
+.home-intro > .hero { flex: 1 0 auto; }
+
+@media (max-width: 68.75rem) {
+  .home-intro > .hero { justify-content: center; }
+}
