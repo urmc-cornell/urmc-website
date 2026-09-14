@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import '../../styles/Leadership.css';
+import MemberPhoto from './MemberPhoto.js';
 import popoutX from '../../images/assets/popoutX.svg';
 import mailGold from '../../images/assets/mailGold.png';
 import instaGold from '../../images/assets/instagramGold.png';
@@ -47,8 +48,9 @@ export default function MemberPopup({ member, onClose }) {
 
         {/* Square photo — fills full modal height */}
         <div className="wwa-popup-photo-wrap">
-          <img
-            src={member.secondaryImage || member.image}
+          <MemberPhoto
+            src={member.secondaryImage}
+            fallbackSrc={member.image}
             alt={member.name}
             className="wwa-popup-photo"
           />
@@ -80,9 +82,11 @@ export default function MemberPopup({ member, onClose }) {
 
           {/* Social icons — bottom right */}
           <div className="wwa-popup-socials">
-            <a href="https://www.instagram.com/urmc_cornell/" target="_blank" rel="noreferrer" aria-label="Email URMC">
-              <img src={mailGold} alt="Contact URMC" className="wwa-popup-social-icon" />
-            </a>
+            {member.email && (
+              <a href={`mailto:${member.email}`} aria-label={`Email ${member.name}`}>
+                <img src={mailGold} alt="" className="wwa-popup-social-icon" />
+              </a>
+            )}
             {member.insta && (
               <a href={member.insta} target="_blank" rel="noreferrer" aria-label="Instagram">
                 <img src={instaGold} alt="Instagram" className="wwa-popup-social-icon" />

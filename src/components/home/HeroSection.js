@@ -1,15 +1,21 @@
+/* Carousel temporarily disabled: keep these imports for future use.
 import { useState, useEffect } from 'react';
 import carousel1 from '../../images/home/gbody.jpg';
 import carousel2 from '../../images/home/urmc-carousel2.jpg';
 import carousel3 from '../../images/home/hero-photo.jpg';
 import carousel4 from '../../images/home/event-center-top.jpg';
 import carousel5 from '../../images/home/event-center-bottom.jpg';
+*/
+import anniversaryGroup from '../../images/home/anniversary-group.png';
 import '../../styles/hero.css';
 
+/* Restore these settings when re-enabling the carousel.
 const SLIDES = [carousel1, carousel2, carousel3, carousel4, carousel5];
 const INTERVAL = 4000;
+*/
 
 export default function HeroSection() {
+  /* Carousel state and timer preserved for future use.
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -18,6 +24,7 @@ export default function HeroSection() {
     }, INTERVAL);
     return () => clearInterval(timer);
   }, []);
+  */
 
   return (
     <section className="hero">
@@ -37,6 +44,14 @@ export default function HeroSection() {
       </div>
 
       <div className="hero-image-wrap">
+        <img
+          src={anniversaryGroup}
+          alt="URMC students, alumni, and faculty celebrating the 10-year anniversary"
+          className="hero-carousel-img hero-carousel-img--active"
+        />
+        {/* Carousel temporarily disabled in favor of the anniversary group photo.
+            To restore it, remove the static image above and uncomment this markup,
+            the carousel imports, settings, state, and timer.
         {SLIDES.map((src, i) => (
           <img
             key={i}
@@ -55,6 +70,7 @@ export default function HeroSection() {
             />
           ))}
         </div>
+        */}
       </div>
     </section>
   );

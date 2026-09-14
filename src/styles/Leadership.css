@@ -710,6 +710,7 @@
   margin-bottom: 3.75rem;
 }
 .wwa-advisors-grid > * {
+  min-width: 0;
   flex: 0 0 calc((100% - 8rem) / 5);
 }
 
@@ -729,7 +730,7 @@
   .wwa-members-section { padding: 2.5rem 1.25rem; }
   .wwa-advisors-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
     margin-bottom: 2rem;
   }
@@ -805,4 +806,24 @@
   .wwa-team-intro-texts { order: 1; }
   .wwa-team-photo-wrap { order: 2; }
   .wwa-team-categories { order: 3; }
+}
+
+/* Keep every member card the same height, regardless of name length. */
+.wwa-member-card { overflow: hidden; }
+.wwa-member-card-info {
+  box-sizing: border-box;
+  height: 6rem;
+  min-height: 6rem;
+  padding: .75rem;
+  overflow: hidden;
+}
+.wwa-member-card-name, .wwa-member-card-role {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wwa-member-card-name--long { font-size: .9375rem; }
+@media (max-width: 56.25rem) {
+  .wwa-member-card-info { height: 4.5rem; min-height: 4.5rem; padding: .5rem; }
+  .wwa-member-card-name--long { font-size: .75rem; }
 }

@@ -13,6 +13,7 @@ import instagramIcon from '../images/events/instagram.svg';
 import '../styles/Events.css';
 
 const SLACK_URL = 'https://join.slack.com/t/urmc/shared_invite/zt-2dy8ndtoy-~6zcRR2skt7Z5iT5iAyIBg';
+const INSTAGRAM_RECAP_URL = 'https://www.instagram.com/p/DWZkLCKkQhS/';
 const INSTAGRAM_URL = 'https://www.instagram.com/urmc_cornell/';
 const CALENDAR_URL = 'https://calendar.google.com/calendar/embed?src=c_c774353cbf4312cb22fc533ead50cc32589840c1ee4a56ec388ad2c4c4d7478a%40group.calendar.google.com&ctz=America%2FNew_York';
 const FEATURED_EVENTS = [
@@ -31,7 +32,7 @@ export default function Events() {
     <main className="redesign-page events-page">
       <RedesignHero title="Events" description="From professional development workshops to social events, URMC brings students together to learn, connect, and grow." image={hero} imageAlt="URMC members gathered for a campus event" className="events-hero">
         <a className="redesign-button redesign-button--gold" href={SLACK_URL} target="_blank" rel="noreferrer">Join our Slack<img src={slackIcon} alt="" /></a>
-        <a className="redesign-button" href={INSTAGRAM_URL} target="_blank" rel="noreferrer">View Recaps<img src={instagramIcon} alt="" /></a>
+        <a className="redesign-button" href={INSTAGRAM_RECAP_URL} target="_blank" rel="noreferrer">View Recaps<img src={instagramIcon} alt="" /></a>
       </RedesignHero>
       <section className="events-calendar-section" aria-labelledby="events-calendar-title">
         <h2 id="events-calendar-title" className="redesign-section-title">Events Calendar</h2>

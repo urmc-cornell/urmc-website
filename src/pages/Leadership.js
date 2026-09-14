@@ -26,7 +26,7 @@ export default function Leadership() {
         .from('members')
         .select(`
           id, position, headshot_url, secondary_headshot_url,
-          first_name, last_name, major, instagram_url, linkedin_url,
+          first_name, last_name, major, graduation_year, email, netid, instagram_url, linkedin_url,
           ask_about, bio, role
         `)
         .or('role.cs.{eboard},role.cs.{advisor}');
@@ -47,7 +47,12 @@ export default function Leadership() {
         image: m.headshot_url,
         secondaryImage: m.secondary_headshot_url || m.headshot_url,
         name: `${m.first_name} ${m.last_name}`,
-        majors: m.major,
+        majors: [
+          m.major,
+          m.graduation_year && !/(?:20\d{2}|['’]\d{2})/.test(m.major || '')
+            ? `’${String(m.graduation_year).slice(-2)}` : null,
+        ].filter(Boolean).join(' '),
+        email: m.email?.trim() || (m.netid ? (m.netid.includes('@') ? m.netid.trim() : `${m.netid.trim()}@cornell.edu`) : ''),
         insta: m.instagram_url,
         linkedIn: m.linkedin_url,
         askAbout: m.ask_about || [],

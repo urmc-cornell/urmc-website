@@ -21,7 +21,7 @@ export default function WhoWeAreHero({ photo }) {
         </p>
         <div className="wwa-hero-ctas">
           <a
-            href="https://www.instagram.com/p/DWZkLCKkQhS/?img_index=5"
+            href="https://www.instagram.com/p/DWZkLCKkQhS/"
             target="_blank"
             rel="noreferrer"
             className="wwa-hero-btn-primary"

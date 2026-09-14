@@ -41,7 +41,7 @@ export default function Footer() {
               <li><a href="/leadership">About</a></li>
               <li><a href="/events">Events</a></li>
               <li><a href="/getting-involved">Get Involved</a></li>
-              <li><a href="https://www.instagram.com/p/DWZkLCKkQhS/?img_index=5" target="_blank" rel="noopener noreferrer">10-Year Anniversary</a></li>
+              <li><a href="https://www.instagram.com/p/DWZkLCKkQhS/" target="_blank" rel="noopener noreferrer">10-Year Anniversary</a></li>
             </ul>
           </div>
           <div className="footer-nav-col">
