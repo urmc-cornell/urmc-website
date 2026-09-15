@@ -1,88 +1,265 @@
-.sponsors {
-  background-color: #f5f5f5;
-  padding: calc(60px * var(--scale, 1)) 0 calc(48px * var(--scale, 1));
+.sponsors-hero {
+  border-bottom: 0.25rem solid #e4e4e4;
+}
+.sponsors-hero .redesign-hero-image {
+  width: 43.25rem;
+  aspect-ratio: 692 / 417;
+}
+.sponsors-hero .redesign-hero-image img {
   width: 100%;
-  box-sizing: border-box;
-  overflow-x: hidden;
+  height: 124.46%;
+  top: -15.11%;
+  left: 0;
 }
-
-.sponsors-heading {
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
+.corporate-sponsors {
+  padding: var(--space-hero) var(--redesign-pad);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10rem;
+}
+.corporate-sponsor-tiers {
+  display: flex;
+  flex-direction: column;
+  gap: 7.5rem;
+  width: 100%;
+}
+.corporate-sponsor-tier {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+.corporate-tier-heading {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+}
+.corporate-tier-heading::before, .corporate-tier-heading::after {
+  content: '';
+  flex: 1;
+  height: 0.0625rem;
+  background: #646464;
+}
+.corporate-tier-heading h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15.6875rem;
+  height: 4rem;
+  border-radius: 1.25rem;
+  color: var(--redesign-dark);
+  font-size: 2.25rem;
   font-weight: 600;
-  font-size: calc(48px * var(--scale, 1));
-  color: #1f1f1f;
-  margin: 0 0 calc(40px * var(--scale, 1)) 0;
+  background: linear-gradient(to right, var(--tier-start), var(--tier-end));
 }
-
-/* Align all slides to the same vertical midpoint */
-.sponsors-track .slick-track {
-  display: flex !important;
-  align-items: center;
+.corporate-sponsor-tier--platinum {
+  --tier-start: #c8e7f5;
+  --tier-end: #0789c4;
+  --tier-accent: #12ade1;
 }
-
-.sponsors-track .slick-slide {
-  display: flex !important;
-  align-items: center;
+.corporate-sponsor-tier--gold {
+  --tier-start: #ffd361;
+  --tier-end: #aa7b02;
+  --tier-accent: #eeb50c;
+}
+.corporate-sponsor-tier--silver {
+  --tier-start: #c0c0c0;
+  --tier-end: #626466;
+  --tier-accent: #a6a6a6;
+}
+.corporate-sponsor-tier--bronze {
+  --tier-start: #e0954f;
+  --tier-end: #8b4604;
+  --tier-accent: #cd7f32;
+}
+.corporate-sponsor-cards {
+  display: flex;
   justify-content: center;
-  padding: 0;
-  height: auto !important;
-  outline: none;
-  pointer-events: none;
+  gap: 4rem;
+  width: 100%;
 }
-
-.sponsors-track .slick-slide * {
-  pointer-events: none;
-  outline: none;
-}
-
-.sponsor-slide {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-}
-
-.sponsors-track .slick-slide .sponsor-link,
-.sponsors-track .slick-slide .sponsor-link * {
-  pointer-events: auto;
-}
-
-.sponsor-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.sponsor-logo {
-  object-fit: contain;
-  display: block;
+.corporate-sponsor-card {
+  position: relative;
   flex-shrink: 0;
+  overflow: hidden;
+  background: var(--redesign-light);
+  border-radius: 1.25rem;
 }
-
-.sponsor-logo--ey {
-  position: relative;
-  top: calc(-20px * var(--scale, 1));
+.corporate-sponsor-card::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  inset: 0 0 auto;
+  height: 1rem;
+  background: var(--tier-accent);
 }
-
-.sponsor-logo--accenture {
-  position: relative;
-  top: calc(-20px * var(--scale, 1));
+.corporate-sponsor-card img {
+  display: block;
+  position: absolute;
+  height: auto;
 }
-
-@media (max-width: 900px) {
-  .sponsors { padding: 40px 0 32px; }
-  .sponsors-heading { font-size: 28px; margin-bottom: 12px; }
-  .sponsor-logo {
-    width: auto !important;
-    height: auto !important;
-    max-width: 79px !important;
-    max-height: 46px !important;
-    object-fit: contain;
+.corporate-sponsor-tier--platinum .corporate-sponsor-card {
+  width: 31.16552rem;
+  aspect-ratio: 623.31 / 375;
+}
+.corporate-sponsor-tier--gold .corporate-sponsor-card {
+  width: 26.506rem;
+  aspect-ratio: 530.12 / 309;
+}
+.corporate-sponsor-tier--silver .corporate-sponsor-card {
+  width: 16.5rem;
+  aspect-ratio: 330 / 213;
+}
+.corporate-sponsor-tier--bronze .corporate-sponsor-cards {
+  justify-content: space-between;
+  gap: 0;
+}
+.corporate-sponsor-tier--bronze .corporate-sponsor-card {
+  width: 13.2rem;
+  aspect-ratio: 264 / 170;
+}
+.corporate-sponsor-card--linkedin img {
+  width: 80.7%;
+  left: 9.63%;
+  top: 32%;
+}
+.corporate-sponsor-card--jane-street img {
+  width: 75.46%;
+  left: 12.27%;
+  top: 24.6%;
+}
+.corporate-sponsor-card--visa img {
+  width: 70%;
+  left: 14.85%;
+  top: -1.88%;
+}
+.corporate-sponsor-card--bloomberg img {
+  width: 91.82%;
+  left: 3.94%;
+  top: 38.5%;
+}
+.corporate-sponsor-card--hrt img {
+  width: 67.88%;
+  left: 16.06%;
+  top: 19.72%;
+}
+.corporate-sponsor-card--accenture img {
+  width: 81.82%;
+  left: 9.09%;
+  top: 14.55%;
+}
+.corporate-sponsor-card--datadog img {
+  width: 48.48%;
+  left: 25.76%;
+  top: 17.06%;
+}
+.corporate-sponsor-card--roblox img {
+  width: 82.2%;
+  left: 8.8%;
+  top: 39.41%;
+}
+.corporate-sponsor-card--capital-one img {
+  width: 86.8%;
+  left: 6.6%;
+  top: 17.06%;
+}
+.corporate-sponsor-card--ey img {
+  width: 46.59%;
+  left: 26.42%;
+  top: 15.29%;
+}
+.corporate-sponsor-card--figma img {
+  width: 93.94%;
+  left: 3.03%;
+  top: 18.82%;
+}
+/* Match the compact desktop composition used by the rest of the site.
+   Card artwork retains the Figma aspect ratios and logo placement. */
+@media (min-width: 48.001rem) {
+  .corporate-sponsors { gap: 8rem; }
+  .corporate-sponsor-tiers { gap: 6rem; }
+  .corporate-sponsor-tier { gap: 3.2rem; }
+  .corporate-tier-heading { gap: 3.2rem; }
+  .corporate-tier-heading h3 { width: 12.55rem; height: 3.2rem; font-size: 1.8rem; }
+  .corporate-sponsor-cards { width: 80%; gap: 3.2rem; }
+  .corporate-sponsor-card { border-radius: 1rem; }
+  .corporate-sponsor-card::before { height: .8rem; }
+}
+@media (max-width: 48rem) {
+  .sponsors-hero {
+    border-bottom-width: 0.125rem;
   }
-  .sponsors-track .slick-slide { padding: 0; }
-  .sponsors-track .slick-track { align-items: center; }
-  .sponsor-logo--visa { max-width: 64px !important; max-height: 64px !important; }
-  .sponsor-logo--ey { position: relative; top: -6px; }
+  .sponsors-hero .redesign-hero-image {
+    width: 100%;
+  }
+  .corporate-sponsors {
+    padding: 3.75rem 1.25rem;
+    gap: 3.75rem;
+  }
+  .corporate-sponsor-tiers {
+    gap: 2.90656rem;
+  }
+  .corporate-sponsor-tier {
+    gap: 1.55019rem;
+  }
+  .corporate-tier-heading {
+    gap: 1.55019rem;
+  }
+  .corporate-tier-heading h3 {
+    width: 7.5rem;
+    height: 1.9375rem;
+    font-size: 1.07975rem;
+    border-radius: 0.599875rem;
+  }
+  .corporate-sponsor-card {
+    border-radius: 0.484438rem;
+  }
+  .corporate-sponsor-card::before {
+    height: 0.387562rem;
+  }
+  .corporate-sponsor-tier--platinum .corporate-sponsor-card {
+    width: 15.0974rem;
+    max-width: 100%;
+  }
+  .corporate-sponsor-tier--gold .corporate-sponsor-card {
+    width: 12.8402rem;
+    max-width: 100%;
+  }
+  .corporate-sponsor-tier--silver .corporate-sponsor-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 7.99306rem);
+    gap: 1.55019rem 1.5625rem;
+  }
+  .corporate-sponsor-tier--silver .corporate-sponsor-card {
+    width: 7.99306rem;
+  }
+  .corporate-sponsor-tier--bronze .corporate-sponsor-cards {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.1875rem;
+    max-width: 21.875rem;
+  }
+  .corporate-sponsor-tier--bronze .corporate-sponsor-card {
+    width: calc((100% - 2.375rem) / 3);
+    max-width: 6.39444rem;
+  }
+}
+
+@media (min-width: 68.751rem) {
+  .sponsors-hero .redesign-hero-image { width: min(45.53%, 43.25rem); }
+}
+.corporate-sponsor-card { flex-shrink: 1; min-width: 0; }
+.corporate-sponsor-cards { flex-wrap: wrap; }
+@media (min-width: 48.001rem) {
+  .corporate-sponsor-tier--silver .corporate-sponsor-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 16.5rem)); }
+  .corporate-sponsor-tier--silver .corporate-sponsor-card { width: 100%; }
+  .corporate-sponsor-tier--bronze .corporate-sponsor-cards { display: grid; grid-template-columns: repeat(5, minmax(0, 13.2rem)); gap: 1.2rem; }
+  .corporate-sponsor-tier--bronze .corporate-sponsor-card { width: 100%; }
+}
+@media (min-width: 48.001rem) and (max-width: 68.75rem) {
+  .corporate-sponsor-tier--silver .corporate-sponsor-cards { grid-template-columns: repeat(2, minmax(0, 16.5rem)); }
+  .corporate-sponsor-tier--bronze .corporate-sponsor-cards { display: flex; gap: 1.2rem; justify-content: center; }
+  .corporate-sponsor-tier--bronze .corporate-sponsor-card { width: 13.2rem; }
 }

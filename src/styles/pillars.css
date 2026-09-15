@@ -1,20 +1,20 @@
 .pillars {
   background-color: #1f1f1f;
-  padding: calc(100px * var(--scale, 1)) calc(200px * var(--scale, 1));
+  padding: 6.25rem var(--page-gutter);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: calc(72px * var(--scale, 1));
+  gap: 4.5rem;
   box-sizing: border-box;
   width: 100%;
-  overflow-x: hidden;
+
 }
 
 .pillars-heading {
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: calc(48px * var(--scale, 1));
+  font-size: 3rem;
   text-align: center;
   margin: 0;
   width: 100%;
@@ -23,7 +23,7 @@
 .pillars-grid {
   display: flex;
   flex-direction: row;
-  gap: calc(31px * var(--scale, 1));
+  gap: 1.9375rem;
   width: 100%;
 }
 
@@ -73,7 +73,7 @@
   width: 82%;
   display: flex;
   flex-direction: column;
-  gap: calc(24px * var(--scale, 1));
+  gap: 1.5rem;
   z-index: 2;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -88,7 +88,7 @@
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: calc(20px * var(--scale, 1));
+  font-size: 1.25rem;
   line-height: normal;
   text-align: center;
   margin: 0;
@@ -98,9 +98,9 @@
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  font-size: calc(20px * var(--scale, 1));
+  font-size: 1.25rem;
   line-height: normal;
-  padding-left: calc(30px * var(--scale, 1));
+  padding-left: 1.875rem;
   margin: 0;
   list-style: disc;
 }
@@ -112,7 +112,7 @@
   left: 6.2%;
   display: flex;
   align-items: center;
-  gap: calc(97px * var(--scale, 1));
+  gap: 6.0625rem;
   z-index: 2;
 }
 
@@ -121,7 +121,7 @@
   color: #f5f5f5;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  font-size: calc(24px * var(--scale, 1));
+  font-size: 1.5rem;
   line-height: normal;
   margin: 0;
   white-space: nowrap;
@@ -147,9 +147,9 @@
 
 
 /* ── Mobile — click to reveal (same look as desktop) ── */
-@media (max-width: 768px) {
-  .pillars { padding: 60px 24px; gap: 24px; }
-  .pillars-heading { font-size: 32px; }
+@media (max-width: 48rem) {
+  .pillars { padding: 3.75rem 1.5rem; gap: 1.5rem; }
+  .pillars-heading { font-size: 2rem; }
   .pillars-grid { flex-direction: column; }
 
   .pillar-card {
@@ -159,9 +159,31 @@
     cursor: pointer;
   }
 
-  .pillar-card-title { font-size: 18px; font-weight: 800; color: #f5f5f5; }
-  .pillar-card-desc { font-size: 14px; }
-  .pillar-card-bullets { font-size: 13px; padding-left: 20px; }
-  .pillar-card-content { gap: 16px; }
-  .pillar-card-pointer { display: block; width: 36px; height: 36px; right: 20px; bottom: calc(8% - 9px); }
+  .pillar-card-title { font-size: 1.125rem; font-weight: 800; color: #f5f5f5; }
+  .pillar-card-desc { font-size: 0.875rem; }
+  .pillar-card-bullets { font-size: 0.8125rem; padding-left: 1.25rem; }
+  .pillar-card-content { gap: 1rem; }
+  .pillar-card-pointer { display: block; width: 2.25rem; height: 2.25rem; right: 1.25rem; bottom: calc(8% - 0.5625rem); }
 }
+
+.pillars-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.pillar-card { min-height: 0; }
+.pillar-card-content { top: 10%; bottom: 22%; overflow-y: auto; }
+.pillar-card--hovered .pillar-card-content { pointer-events: auto; }
+.pillar-card-footer { right: 6.2%; }
+.pillar-card-title { white-space: normal; }
+@media (min-width: 48.001rem) {
+  .pillar-card-title { font-size: 1.25rem; }
+}
+@media (min-width: 48.001rem) and (max-width: 81.25rem) {
+  .pillars-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pillar-card:last-child { grid-column: 1 / -1; width: calc((100% - 1.9375rem) / 2); justify-self: center; }
+}
+@media (max-width: 48rem) {
+  .pillars { padding: 2.5rem 1.25rem; }
+  .pillars-heading { font-size: 1.5rem; }
+  .pillars-grid { grid-template-columns: minmax(0, 1fr); gap: 1.654rem; }
+  .pillar-card { min-height: 0; }
+  .pillar-card-content { top: 10%; }
+}
+.pillar-card { width: 100%; }

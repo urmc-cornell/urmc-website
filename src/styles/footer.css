@@ -2,7 +2,7 @@
   background-color: #1f1f1f;
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
-  border-top: 2px solid #eeb50c;
+  border-top: 0.125rem solid #eeb50c;
 }
 
 .site-footer-top {
@@ -10,26 +10,26 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  padding: calc(100px * var(--scale, 1)) calc(200px * var(--scale, 1)) calc(130px * var(--scale, 1));
-  gap: 40px;
+  padding: 6.25rem var(--page-gutter) 8.125rem;
+  gap: 2.5rem;
   box-sizing: border-box;
 }
 
 .footer-brand {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  max-width: 360px;
+  gap: 1.5rem;
+  max-width: 22.5rem;
 }
 
 .footer-logo {
-  width: 180px;
+  width: 11.25rem;
   height: auto;
 }
 
 .footer-tagline {
   color: #b0b0b0;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5;
   margin: 0;
   font-weight: 400;
@@ -38,13 +38,13 @@
 .footer-socials {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 1.25rem;
   align-items: center;
 }
 
 .footer-social-icon {
-  width: 28px;
-  height: 28px;
+  width: 1.75rem;
+  height: 1.75rem;
   filter: brightness(0) invert(0.961);
   transition: opacity 0.2s ease;
 }
@@ -59,9 +59,9 @@
   color: #1f1f1f;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 16px;
-  padding: 14px 28px;
-  border-radius: 12px;
+  font-size: 1rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.75rem;
   text-decoration: none;
   width: fit-content;
   transition: background-color 0.2s ease;
@@ -74,7 +74,7 @@
 .footer-nav {
   display: flex;
   flex-direction: row;
-  gap: 80px;
+  gap: 5rem;
 }
 
 .footer-nav-col {
@@ -86,8 +86,8 @@
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 18px;
-  margin: 0 0 24px 0;
+  font-size: 1.125rem;
+  margin: 0 0 1.5rem 0;
 }
 
 .footer-nav-list {
@@ -96,14 +96,14 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 1.125rem;
 }
 
 .footer-nav-list a {
   color: #b0b0b0;
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   transition: color 0.2s ease;
 }
@@ -113,18 +113,18 @@
 }
 
 .site-footer-bottom {
-  border-top: 1px solid #333333;
-  padding: calc(40px * var(--scale, 1)) calc(200px * var(--scale, 1)) calc(100px * var(--scale, 1));
+  border-top: 0.0625rem solid #333333;
+  padding: 2.5rem var(--page-gutter) 6.25rem;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1rem;
   box-sizing: border-box;
 }
 
 .footer-legal {
   color: #b0b0b0;
   font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   margin: 0;
 }
@@ -147,12 +147,12 @@
   display: none;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 56.25rem) {
   .site-footer {
     display: flex;
     flex-direction: column;
-    gap: 80px;
-    padding: 48px 20px;
+    gap: 5rem;
+    padding: 3rem 1.25rem;
     box-sizing: border-box;
   }
 
@@ -160,14 +160,14 @@
   .site-footer-top {
     flex-direction: column;
     padding: 0;
-    gap: 36px;
+    gap: 2.25rem;
   }
 
   /* ─── Brand: centered column ─── */
   .footer-brand {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 2rem;
     align-items: center;
     max-width: 100%;
   }
@@ -175,7 +175,7 @@
   .footer-brand > a:first-child { display: block; }
 
   .footer-logo {
-    width: 198px;
+    width: 12.375rem;
     height: auto;
     object-fit: contain;
   }
@@ -183,7 +183,7 @@
   .footer-tagline {
     color: #F5F5F5;
     font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
+    font-size: 0.9375rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -193,22 +193,22 @@
   .footer-socials {
     flex-direction: row;
     justify-content: center;
-    gap: 24px;
+    gap: 1.5rem;
     align-items: center;
   }
 
   .footer-social-icon {
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
     opacity: 1;
   }
 
   .footer-cta {
     width: 100%;
-    font-size: 15px;
+    font-size: 0.9375rem;
     font-weight: 600;
-    padding: 16px;
-    border-radius: 9px;
+    padding: 1rem;
+    border-radius: 0.5625rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -218,24 +218,24 @@
   .footer-nav {
     display: flex;
     flex-direction: column;
-    gap: 42px;
+    gap: 2.625rem;
     width: 100%;
   }
 
   .footer-nav-col { min-width: 0; }
 
   .footer-nav-heading {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 800;
     color: #f5f5f5;
-    margin: 0 0 24px 0;
+    margin: 0 0 1.5rem 0;
     white-space: normal;
   }
 
-  .footer-nav-list { gap: 13px; }
+  .footer-nav-list { gap: 0.8125rem; }
 
   .footer-nav-list a {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 500;
     color: #9f9f9f;
     white-space: normal;
@@ -247,11 +247,11 @@
   .site-footer-bottom {
     border-top: none;
     padding: 0;
-    gap: 24px;
+    gap: 1.5rem;
   }
 
   .footer-legal {
-    font-size: 15px;
+    font-size: 0.9375rem;
     color: #f5f5f5;
     line-height: 1.5;
   }
@@ -259,4 +259,27 @@
   .footer-legal a { color: #f5f5f5; }
 
   .footer-back-to-top { display: none; }
+}
+
+.footer-brand, .footer-nav, .footer-nav-col { min-width: 0; }
+.footer-nav { flex-wrap: wrap; }
+.footer-legal, .footer-tagline, .footer-nav-heading { overflow-wrap: anywhere; }
+@media (min-width: 56.251rem) {
+  .site-footer-top { padding-bottom: 7.5rem; }
+  .footer-brand { max-width: 23.5rem; gap: 3rem; }
+  .footer-logo { width: 18.625rem; }
+  .footer-tagline { font-size: 1.25rem; color: #f5f5f5; line-height: normal; }
+  .footer-socials { gap: 2.25rem; }
+  .footer-cta { font-size: 1.5rem; font-weight: 600; padding: 1rem 1.5rem; border-radius: 1.25rem; }
+  .footer-nav { gap: 4rem; }
+  .footer-nav-heading { font-size: 1.5rem; font-weight: 800; margin-bottom: 2.25rem; }
+  .footer-nav-list { gap: 1.25rem; }
+  .footer-nav-list a { font-size: 1.25rem; font-weight: 500; }
+  .site-footer-bottom { padding-top: 0; border-top: 0; gap: 2.25rem; }
+  .footer-legal { font-size: 1.5rem; color: #f5f5f5; line-height: normal; }
+  .footer-legal a { color: inherit; }
+}
+@media (min-width: 56.251rem) and (max-width: 75rem) {
+  .site-footer-top { flex-direction: column; gap: 4rem; }
+  .footer-brand { max-width: 35rem; }
 }

@@ -1,5 +1,5 @@
-import { useScale } from '../hooks/useScale.js';
 import studentsImg from '../images/getting-involved/students.jpg';
+import PartnershipButton from '../components/PartnershipButton.js';
 import companiesImg from '../images/getting-involved/companies.jpg';
 import alumniImg from '../images/getting-involved/alumni.jpg';
 import slackIcon from '../images/getting-involved/slack-icon.svg';
@@ -56,7 +56,7 @@ function Hero() {
           Whether you're a student, alum, or company, there's a place for you in URMC.
         </p>
         <div className="gi-button-group">
-          <button type="button" className="gi-btn gi-btn--gold">Support Us</button>
+          <a href={DONATE_URL} target="_blank" rel="noreferrer" className="gi-btn gi-btn--gold">Support Us</a>
           <a href="/events" className="gi-btn gi-btn--outline-light">View Events</a>
         </div>
       </div>
@@ -107,7 +107,7 @@ function CompaniesSection() {
           </p>
         </div>
         <div className="gi-button-group gi-button-group--companies">
-          <a href="mailto:urmc@cornell.edu" className="gi-btn gi-btn--light">Partner With Us</a>
+          <PartnershipButton className="gi-btn gi-btn--light">Partner With Us</PartnershipButton>
           <a href="/sponsors" className="gi-btn gi-btn--outline-light">Our Sponsors</a>
         </div>
         <div className="gi-partners">
@@ -137,15 +137,16 @@ function AlumniSection() {
             Stay connected with URMC through updates, events, and opportunities to support our community.
           </p>
         </div>
-        <form className="gi-mailing-form" onSubmit={(e) => e.preventDefault()}>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="gi-mailing-input"
-            aria-label="Email address"
-          />
-          <button type="submit" className="gi-btn gi-btn--dark">Join Mailing List</button>
-        </form>
+        <div className="gi-button-group">
+          <a
+            className="gi-btn gi-btn--dark"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScrGuUyGzeA0c5mIDec7YyBGlUIrxM_XmprUe8a0ivRJLkXzg/viewform?usp=publish-editor"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Join the Alumni Mailing List
+          </a>
+        </div>
       </div>
       <div className="gi-split-image">
         <img src={alumniImg} alt="URMC alumni" />
@@ -165,14 +166,14 @@ function SupportersSection() {
         <a href={DONATE_URL} target="_blank" rel="noreferrer" className="gi-btn gi-btn--gold">
           Donate
         </a>
-        <button type="button" className="gi-btn gi-btn--outline-light">Learn More</button>
+        <a href="/leadership" className="gi-btn gi-btn--outline-light">About URMC</a>
       </div>
     </section>
   );
 }
 
 export default function Getting_involved() {
-  useScale();
+
   return (
     <div className="gi-page">
       <Hero />

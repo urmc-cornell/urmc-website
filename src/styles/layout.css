@@ -1,0 +1,32 @@
+/* Reference frame: 1920px viewport, 1520px content, 200px side gutters.
+   Only gutters respond continuously to viewport width; type never does. */
+:root {
+  --content-width: 95rem;
+  --page-gutter: max(1.5rem, 10%, calc((100% - var(--content-width)) / 2));
+  --font-page-title: 3.25rem;
+  --font-section-title: 2.5rem;
+  --font-body: 1.25rem;
+  --space-hero: 7.5rem;
+  --space-section: 6rem;
+  --space-copy: 2rem;
+}
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+*, *::before, *::after { box-sizing: border-box; }
+button, input, select, textarea { font: inherit; }
+button, a, input { touch-action: manipulation; }
+:focus-visible { outline: 3px solid #b38700; outline-offset: 4px; }
+@media (max-width: 56.25rem) {
+  :root {
+    --font-page-title: 2rem;
+    --font-section-title: 1.5rem;
+    --font-body: .9375rem;
+    --space-hero: 3.75rem;
+    --space-section: 2.5rem;
+    --space-copy: 1.25rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+h1, h2, h3 { overflow-wrap: anywhere; }

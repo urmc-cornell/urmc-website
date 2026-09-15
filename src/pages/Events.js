@@ -1,109 +1,57 @@
-import "../styles/Events.css";
-import EventsPopup from "../components/eventsPopup.js";
-import { React, useState, useEffect } from "react";
-import { supabase } from "../lib/supabaseClient.js";
+import { useState } from 'react';
+import RedesignHero from '../components/RedesignHero.js';
+import FeaturedEventDialog from '../components/FeaturedEventDialog.js';
+import hero from '../images/events/hero.jpg';
+import bowling from '../images/events/bowling.jpg';
+import sharkTank from '../images/events/shark-tank.jpg';
+import marchGbody from '../images/events/march-gbody.jpg';
+import trivia from '../images/events/trivia.jpg';
+import careerQuest from '../images/events/career-quest.jpg';
+import prelimReview from '../images/events/prelim-review.jpg';
+import slackIcon from '../images/getting-involved/slack-icon.svg';
+import instagramIcon from '../images/events/instagram.svg';
+import '../styles/Events.css';
+
+const SLACK_URL = 'https://join.slack.com/t/urmc/shared_invite/zt-2dy8ndtoy-~6zcRR2skt7Z5iT5iAyIBg';
+const INSTAGRAM_RECAP_URL = 'https://www.instagram.com/p/DWZkLCKkQhS/';
+const INSTAGRAM_URL = 'https://www.instagram.com/urmc_cornell/';
+const CALENDAR_URL = 'https://calendar.google.com/calendar/embed?src=c_c774353cbf4312cb22fc533ead50cc32589840c1ee4a56ec388ad2c4c4d7478a%40group.calendar.google.com&ctz=America%2FNew_York';
+const FEATURED_EVENTS = [
+  { id: 'bowling', image: bowling, title: 'URMC x Verkada Bowling Social', details: 'April 16, 2026 | 7pm | Helen Newman', tags: ['Social', 'Corporate'], description: 'We partnered with Verkada for a night of bowling, networking, and great conversations with industry professionals! Members had the chance to learn more about the company in a fun and relaxed setting.' },
+  { id: 'shark-tank', image: sharkTank, title: 'Shark Tank: Startups 101' },
+  { id: 'march-gbody', image: marchGbody, title: 'March G-Body: Imposter Syndrome' },
+  { id: 'trivia', image: trivia, title: 'M&M Trivia Night' },
+  { id: 'career-quest', image: careerQuest, title: 'Computing Career Quest' },
+  { id: 'prelim-review', image: prelimReview, title: 'CS 1110 & 2110 Prelim Reviews' },
+];
 
 export default function Events() {
+
   const [selectedEvent, setSelectedEvent] = useState(null);
-  const [pastEvents, setPastEvents] = useState([]);
-  const [comingUpEvents, setComingUpEvents] = useState([]);
-  const [popupActive, setPopupActive] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  // Fetch events data when component mounts
-  useEffect(() => {
-    fetchEvents();
-  }, []);
-
-  // Fetches and processes events data from Supabase database
-  async function fetchEvents() {
-    try {
-      // Query events table for required fields
-      const { data, error } = await supabase.from("events").select(`
-          id,
-          name,
-          date,
-          description,
-          flyer_url,
-          instagram_url
-        `);
-
-      if (error) throw error;
-      console.log("Fetched data:", data); // Log fetched data
-
-      // Transform database records into format needed for display
-      const transformedEvents = data.map((event) => {
-        // Convert Google Drive URL to direct image URL
-        let flyerUrl = event.flyer_url || "";
-
-        // Handle different Google Drive URL formats by extracting file ID
-        // and creating a direct thumbnail URL
-        if (flyerUrl.includes("drive.google.com/file")) {
-          const fileId = flyerUrl.split("/d/")[1].split("/")[0];
-          flyerUrl = `https://drive.google.com/thumbnail?id=${fileId}&sz=w1000`;
-        } else if (flyerUrl.includes("drive.google.com/open?id=")) {
-          const fileId = flyerUrl.split("id=")[1];
-          flyerUrl = `https://drive.google.com/thumbnail?id=${fileId}&sz=w1000`;
-          console.log(flyerUrl)
-        }
-
-        // Return transformed event object with needed properties
-        return {
-          id: event.id,
-          flyer: flyerUrl,
-          blurb: event.description,
-          date: new Date(event.date),
-          instaLink: event.instagram_url || "", // Default to empty string if no Instagram URL
-        };
-      });
-
-      // Split events into past and upcoming based on current date
-      const now = new Date();
-      const upcoming = transformedEvents.filter((event) => event.date >= now);
-      const past = transformedEvents.filter((event) => event.date < now);
-
-      // Update state with sorted events
-      setComingUpEvents(upcoming);
-      setPastEvents(past);
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false); // Update loading state whether successful or not
-    }
-  }
-
-  // Handler for when an event card is clicked - shows popup with event details
-  const handleCardClick = (event) => {
-    setSelectedEvent(event);
-    setPopupActive(true);
-  };
-
-  // Handler for closing the event popup modal
-  const handleClose = (active) => {
-    setSelectedEvent(null);
-    setPopupActive(active);
-  };
-
-  // Show loading/error states while data is being fetched
-  if (loading) return <div>Loading...</div>;
-  // if (error) return <div>Error: {error}</div>;
-
-  // Render the events page
   return (
-    <div className="page">
-      <h1 className="page-title" style={{ textAlign: "center" }}>Events</h1>
-
-      <div className="calendar-container">
-        <iframe
-          src="https://calendar.google.com/calendar/embed?src=c_c774353cbf4312cb22fc533ead50cc32589840c1ee4a56ec388ad2c4c4d7478a%40group.calendar.google.com&ctz=America%2FNew_York" 
-          frameBorder="0"
-          scrolling="no"
-          title="URMC Google Calendar"
-          className="google-calendar-iframe"
-        ></iframe>
-      </div>
-      
-    </div>
+    <main className="redesign-page events-page">
+      <RedesignHero title="Events" description="From professional development workshops to social events, URMC brings students together to learn, connect, and grow." image={hero} imageAlt="URMC members gathered for a campus event" className="events-hero">
+        <a className="redesign-button redesign-button--gold" href={SLACK_URL} target="_blank" rel="noreferrer">Join our Slack<img src={slackIcon} alt="" /></a>
+        <a className="redesign-button" href={INSTAGRAM_RECAP_URL} target="_blank" rel="noreferrer">View Recaps<img src={instagramIcon} alt="" /></a>
+      </RedesignHero>
+      <section className="events-calendar-section" aria-labelledby="events-calendar-title">
+        <h2 id="events-calendar-title" className="redesign-section-title">Events Calendar</h2>
+        <div className="events-calendar-frame"><iframe src={CALENDAR_URL} title="URMC Google Calendar" /></div>
+      </section>
+      <section className="featured-events" aria-labelledby="featured-events-title">
+        <div className="featured-events-heading">
+          <h2 id="featured-events-title" className="redesign-section-title">Featured Events</h2>
+          <p>Explore some of the events that have shaped the URMC community over the past few semesters.</p>
+        </div>
+        <div className="featured-events-grid">
+          {FEATURED_EVENTS.map(event => (
+            <button key={event.id} type="button" className={`featured-event-card featured-event-card--${event.id}`} onClick={() => setSelectedEvent(event)} aria-label={`View ${event.title}`} aria-haspopup="dialog">
+              <img src={event.image} alt={`${event.title} flyer`} loading="lazy" />
+            </button>
+          ))}
+        </div>
+      </section>
+      {selectedEvent && <FeaturedEventDialog event={selectedEvent} onClose={() => setSelectedEvent(null)} instagramUrl={INSTAGRAM_URL} />}
+    </main>
   );
 }

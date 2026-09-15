@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { supabase } from "../lib/supabaseClient.js";
 import TACard from "../components/TACard.js";
-import { useScale } from "../hooks/useScale.js";
 import heroImage from "../images/ta-directory/hero.jpg";
 import externalLinkIcon from "../images/ta-directory/external-link.svg";
 import searchIcon from "../images/ta-directory/search.svg";
@@ -16,7 +15,7 @@ function getDepartment(course) {
 }
 
 export default function Ta_directory() {
-  useScale();
+
   const [tas, setTAs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -31,7 +30,7 @@ export default function Ta_directory() {
     try {
       const { data, error } = await supabase
         .from("members")
-        .select("id, netid, first_name, last_name, role, course")
+        .select("id, netid, first_name, last_name, role, course, headshot_url")
         .eq("ta_semester", "fa25")
         .contains("role", ["ta"]);
 
@@ -45,6 +44,7 @@ export default function Ta_directory() {
             id: m.id,
             name: `${m.first_name} ${m.last_name}`.trim(),
             email: m.netid ? `${m.netid}@cornell.edu` : "",
+            photoUrl: m.headshot_url?.trim() || null,
             courses: [...courses].sort((a, b) => a.localeCompare(b)),
           };
         })
@@ -154,6 +154,7 @@ export default function Ta_directory() {
                   name={ta.name}
                   email={ta.email}
                   courses={ta.courses}
+                  photoUrl={ta.photoUrl}
                 />
               ))}
             </div>

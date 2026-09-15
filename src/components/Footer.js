@@ -38,10 +38,10 @@ export default function Footer() {
             <h3 className="footer-nav-heading">Explore</h3>
             <ul className="footer-nav-list">
               <li><a href="/">Home</a></li>
-              <li><a href="/about-us">About</a></li>
+              <li><a href="/leadership">About</a></li>
               <li><a href="/events">Events</a></li>
               <li><a href="/getting-involved">Get Involved</a></li>
-              <li><a href="https://www.instagram.com/p/DW9YIMwkQWi/?img_index=2&igsh=MWkya2Z2c2l1ZWtuMw==" target="_blank" rel="noopener noreferrer">10-Year Anniversary</a></li>
+              <li><a href="https://www.instagram.com/p/DWZkLCKkQhS/" target="_blank" rel="noopener noreferrer">10-Year Anniversary</a></li>
             </ul>
           </div>
           <div className="footer-nav-col">

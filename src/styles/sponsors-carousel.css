@@ -1,0 +1,92 @@
+.sponsors {
+  background-color: #f5f5f5;
+  padding: 3rem 0 2.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.sponsors-heading {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: var(--font-section-title);
+  color: #1f1f1f;
+  margin: 0 0 2rem 0;
+}
+
+/* Two identical groups make the loop boundary visually seamless. */
+.sponsors-track { overflow: hidden; }
+.sponsors-marquee {
+  display: flex;
+  width: max-content;
+  animation: sponsors-scroll-right 44s linear infinite;
+}
+.sponsors-group { display: flex; align-items: center; flex-shrink: 0; }
+.sponsor-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 19.2rem;
+  width: 19.2rem;
+}
+@keyframes sponsors-scroll-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+/* Keep a keyboard-focused link still while it is being used. */
+.sponsors-track:focus-within .sponsors-marquee { animation-play-state: paused; }
+
+.sponsor-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.sponsor-logo {
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+.sponsor-logo--ey {
+  position: relative;
+  top: -1.25rem;
+}
+
+.sponsor-logo--accenture {
+  position: relative;
+  top: -1.25rem;
+}
+
+@media (max-width: 56.25rem) {
+  .sponsors { padding: 2.5rem 0 2rem; }
+  .sponsors-heading { font-size: 1.75rem; margin-bottom: 0.75rem; }
+  .sponsor-logo {
+    width: auto !important;
+    height: auto !important;
+    max-width: 4.9375rem !important;
+    max-height: 2.875rem !important;
+    object-fit: contain;
+  }
+  .sponsor-logo--visa { max-width: 4rem !important; max-height: 4rem !important; }
+  .sponsor-logo--ey, .sponsor-logo--accenture { top: 0; }
+}
+
+/* Fixed slide slots reveal more logos as the available width grows. */
+.sponsor-slide { width: 19.2rem !important; }
+.sponsor-logo { max-width: 20rem; }
+.sponsor-link:focus-visible { outline: 3px solid #b38700; outline-offset: 4px; }
+@media (max-width: 56.25rem) {
+  .sponsor-slide { width: 6.125rem !important; flex-basis: 6.125rem; height: 4rem; }
+  .sponsors-marquee { animation-duration: 28s; }
+  .sponsors { padding-block: 2.5rem; }
+  .sponsors-heading { font-size: 1.5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sponsors-marquee { animation: none; width: 100%; }
+  .sponsors-group { flex-wrap: wrap; justify-content: center; width: 100%; }
+  .sponsors-group[aria-hidden="true"] { display: none; }
+}

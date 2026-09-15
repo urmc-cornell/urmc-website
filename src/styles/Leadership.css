@@ -12,19 +12,19 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: calc(60px * var(--scale, 1));
-  padding: calc(160px * var(--scale, 1)) calc(200px * var(--scale, 1));
+  gap: 3.75rem;
+  padding: var(--space-hero) var(--page-gutter);
   background-color: #1f1f1f;
   width: 100%;
   box-sizing: border-box;
-  overflow-x: hidden;
+
 }
 
 .wwa-hero-text {
   display: flex;
   flex-direction: column;
-  gap: calc(40px * var(--scale, 1));
-  width: calc(746px * var(--scale, 1));
+  gap: var(--space-copy);
+  width: 46.625rem;
   flex-shrink: 0;
 }
 
@@ -32,7 +32,7 @@
   color: #f5f5f5;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  font-size: calc(64px * var(--scale, 1));
+  font-size: var(--font-page-title);
   line-height: normal;
   margin: 0;
   letter-spacing: 0;
@@ -42,7 +42,7 @@
   color: #f5f5f5;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: calc(23px * var(--scale, 1));
+  font-size: 1.4375rem;
   line-height: normal;
   margin: 0;
   letter-spacing: 0;
@@ -62,14 +62,14 @@
 .wwa-hero-ctas {
   display: flex;
   flex-direction: row;
-  gap: calc(16px * var(--scale, 1));
+  gap: 1rem;
   flex-wrap: wrap;
   align-self: flex-start;
 }
 
 .wwa-hero-btn-icon {
-  width: calc(26px * var(--scale, 1));
-  height: calc(26px * var(--scale, 1));
+  width: 1.625rem;
+  height: 1.625rem;
   display: block;
   flex-shrink: 0;
 }
@@ -78,14 +78,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: calc(10px * var(--scale, 1));
+  gap: 0.625rem;
   background-color: #eeb50c;
   color: #1f1f1f;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: calc(24px * var(--scale, 1));
-  padding: calc(16px * var(--scale, 1)) calc(24px * var(--scale, 1));
-  border-radius: calc(20px * var(--scale, 1));
+  font-size: var(--font-body);
+  padding: 1rem 1.5rem;
+  border-radius: 1.25rem;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -94,22 +94,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: calc(10px * var(--scale, 1));
+  gap: 0.625rem;
   background-color: transparent;
   color: #f5f5f5;
-  border: calc(2px * var(--scale, 1)) solid #f5f5f5;
+  border: 0.125rem solid #f5f5f5;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: calc(24px * var(--scale, 1));
-  padding: calc(16px * var(--scale, 1)) calc(24px * var(--scale, 1));
-  border-radius: calc(20px * var(--scale, 1));
+  font-size: var(--font-body);
+  padding: 1rem 1.5rem;
+  border-radius: 1.25rem;
   text-decoration: none;
   white-space: nowrap;
 }
 
 .wwa-hero-image-wrap {
-  width: calc(705px * var(--scale, 1));
-  height: calc(438px * var(--scale, 1));
+  width: 44.0625rem;
+  height: 27.375rem;
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
@@ -128,42 +128,42 @@
 .wwa-status {
   color: #f0f0f0;
   font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  padding: 80px;
+  font-size: 1.25rem;
+  padding: 5rem;
   text-align: center;
   background-color: #1f1f1f;
   min-height: 100vh;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 56.25rem) {
   .wwa-hero {
     flex-direction: column;
-    padding: 60px 20px;
-    gap: 18px;
+    padding: 3.75rem 1.25rem;
+    gap: 1.125rem;
     align-items: stretch;
   }
   .wwa-hero-text { display: contents; }
-  .wwa-hero-title    { order: 1; font-size: 32px; font-weight: 800; margin: 0; }
-  .wwa-hero-subtitle { order: 2; font-size: 15px; }
-  .wwa-hero-ctas     { order: 3; gap: 7px; flex-direction: column; align-self: stretch; width: 100%; }
+  .wwa-hero-title    { order: 1; font-size: 2rem; font-weight: 800; margin: 0; }
+  .wwa-hero-subtitle { order: 2; font-size: 0.9375rem; }
+  .wwa-hero-ctas     { order: 3; gap: 0.4375rem; flex-direction: column; align-self: stretch; width: 100%; }
   .wwa-hero-image-wrap { order: 4; width: 100%; height: auto; aspect-ratio: 647 / 402; align-self: stretch; }
   .wwa-hero-image { width: 107.94%; height: 115.92%; }
   .wwa-hero-btn-primary, .wwa-hero-btn-secondary {
-    font-size: 15px;
-    padding: 16px 24px;
-    border-radius: 9px;
+    font-size: 0.9375rem;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5625rem;
     width: 100%;
     justify-content: center;
-    gap: 12px;
+    gap: 0.75rem;
   }
-  .wwa-hero-btn-secondary { border-width: 1.5px; }
-  .wwa-hero-btn-icon { width: 20px; height: 20px; }
+  .wwa-hero-btn-secondary { border-width: 0.09375rem; }
+  .wwa-hero-btn-icon { width: 1.25rem; height: 1.25rem; }
 }
 
 /* ---------- Quote ---------- */
 .wwa-quote-section {
   background-color: #eeb50c;
-  padding: calc(84px * var(--scale, 1)) calc(200px * var(--scale, 1));
+  padding: 5.25rem var(--page-gutter);
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -175,15 +175,15 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: calc(36px * var(--scale, 1));
-  max-width: calc(1520px * var(--scale, 1));
+  gap: 2.25rem;
+  max-width: 95rem;
   width: 100%;
 }
 
 .wwa-quote-text {
   color: #1f1f1f;
   font-family: 'Montserrat', sans-serif;
-  font-size: calc(64px * var(--scale, 1));
+  font-size: var(--font-page-title);
   font-style: normal;
   font-weight: 800;
   line-height: normal;
@@ -193,17 +193,17 @@
 .wwa-quote-attribution {
   color: #1f1f1f;
   font-family: 'Montserrat', sans-serif;
-  font-size: calc(36px * var(--scale, 1));
+  font-size: 2.25rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   white-space: nowrap;
 }
 
-@media (max-width: 900px) {
-  .wwa-quote-section { padding: 40px 20px; }
-  .wwa-quote-text { font-size: 24px; }
-  .wwa-quote-attribution { font-size: 16px; font-weight: 600; white-space: normal; }
+@media (max-width: 56.25rem) {
+  .wwa-quote-section { padding: 2.5rem 1.25rem; }
+  .wwa-quote-text { font-size: 1.5rem; }
+  .wwa-quote-attribution { font-size: 1rem; font-weight: 600; white-space: normal; }
 }
 
 /* ---------- Member Card ---------- */
@@ -213,7 +213,7 @@
   aspect-ratio: 350 / 450;
   background-color: #1f1f1f;
   border: none;
-  border-radius: calc(16px * var(--scale, 1));
+  border-radius: 1rem;
   overflow: hidden;
   cursor: pointer;
   position: relative;
@@ -222,8 +222,8 @@
 }
 
 .wwa-member-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transform: translateY(-0.25rem);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.25);
 }
 
 /* Photo wrapper: square, covers top 350/450 = 77.78% of card */
@@ -254,7 +254,7 @@
   width: 79.14%; /* 277/350 */
   display: flex;
   flex-direction: column;
-  gap: calc(4px * var(--scale, 1));
+  gap: 0.25rem;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -263,7 +263,7 @@
 
 .wwa-member-card-name {
   font-family: 'Montserrat', sans-serif;
-  font-size: calc(18px * var(--scale, 1));
+  font-size: 1.125rem;
   font-weight: 600;
   color: #f5f5f5;
   line-height: 1.15;
@@ -273,7 +273,7 @@
 
 .wwa-member-card-role {
   font-family: 'Montserrat', sans-serif;
-  font-size: calc(13px * var(--scale, 1));
+  font-size: 0.8125rem;
   font-weight: 400;
   color: #f5f5f5;
   line-height: 1.15;
@@ -281,12 +281,12 @@
   width: 100%;
 }
 
-@media (max-width: 900px) {
-  .wwa-member-card { aspect-ratio: 170 / 219; border-radius: 7.5px; }
+@media (max-width: 56.25rem) {
+  .wwa-member-card { aspect-ratio: 170 / 219; border-radius: 0.46875rem; }
   .wwa-member-card-photo-wrap { height: 77.6%; }
-  .wwa-member-card-info { top: 77.6%; gap: 2px; left: 5%; width: 90%; }
-  .wwa-member-card-name { font-size: 13px; white-space: normal; overflow: visible; text-overflow: unset; }
-  .wwa-member-card-role { font-size: 10px; white-space: normal; overflow: visible; text-overflow: unset; }
+  .wwa-member-card-info { top: 77.6%; gap: 0.125rem; left: 5%; width: 90%; }
+  .wwa-member-card-name { font-size: 0.8125rem; white-space: normal; overflow: visible; text-overflow: unset; }
+  .wwa-member-card-role { font-size: 0.625rem; white-space: normal; overflow: visible; text-overflow: unset; }
 }
 
 /* ---------- Member Popup ---------- */
@@ -319,7 +319,7 @@
 
 /* Square photo — fixed width, fills modal height */
 .wwa-popup-photo-wrap {
-  width: calc(633px * var(--scale, 1));
+  width: 39.5625rem;
   flex-shrink: 0;
   overflow: hidden;
 }
@@ -334,9 +334,9 @@
 
 /* Right content column */
 .wwa-popup-content {
-  width: calc(786px * var(--scale, 1));
+  width: 49.125rem;
   flex-shrink: 0;
-  padding: calc(60px * var(--scale, 1)) calc(48px * var(--scale, 1)) calc(60px * var(--scale, 1)) calc(60px * var(--scale, 1));
+  padding: 3.75rem 3rem 3.75rem 3.75rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -347,18 +347,18 @@
 .wwa-popup-info {
   display: flex;
   flex-direction: column;
-  gap: calc(69px * var(--scale, 1));
+  gap: 4.3125rem;
 }
 
 .wwa-popup-header {
   display: flex;
   flex-direction: column;
-  gap: calc(20px * var(--scale, 1));
+  gap: 1.25rem;
 }
 
 .wwa-popup-name {
   font-family: 'Montserrat', sans-serif;
-  font-size: calc(48px * var(--scale, 1));
+  font-size: var(--font-section-title);
   font-weight: 700;
   color: #f5f5f5;
   margin: 0;
@@ -367,7 +367,7 @@
 
 .wwa-popup-role {
   font-family: 'Montserrat', sans-serif;
-  font-size: calc(24px * var(--scale, 1));
+  font-size: var(--font-body);
   font-weight: 400;
   color: #f5f5f5;
   margin: 0;
@@ -377,12 +377,12 @@
 .wwa-popup-ask {
   display: flex;
   flex-direction: column;
-  gap: calc(20px * var(--scale, 1));
+  gap: 1.25rem;
 }
 
 .wwa-popup-ask-label {
   font-family: 'Montserrat', sans-serif;
-  font-size: calc(24px * var(--scale, 1));
+  font-size: var(--font-body);
   font-weight: 600;
   color: #f5f5f5;
   margin: 0;
@@ -392,24 +392,24 @@
 .wwa-popup-pills {
   display: flex;
   flex-wrap: wrap;
-  gap: calc(16px * var(--scale, 1));
+  gap: 1rem;
 }
 
 .wwa-popup-pill {
   background-color: #eeb50c;
   color: #1f1f1f;
   font-family: 'Montserrat', sans-serif;
-  font-size: calc(24px * var(--scale, 1));
+  font-size: var(--font-body);
   font-weight: 600;
-  padding: calc(12px * var(--scale, 1)) calc(20px * var(--scale, 1));
-  border-radius: calc(20px * var(--scale, 1));
+  padding: 0.75rem 1.25rem;
+  border-radius: 1.25rem;
   white-space: nowrap;
   line-height: normal;
 }
 
 .wwa-popup-bio {
   font-family: 'Montserrat', sans-serif;
-  font-size: calc(24px * var(--scale, 1));
+  font-size: var(--font-body);
   font-weight: 400;
   color: #f5f5f5;
   margin: 0;
@@ -418,35 +418,35 @@
 
 .wwa-popup-socials {
   display: flex;
-  gap: calc(12px * var(--scale, 1));
+  gap: 0.75rem;
   align-items: center;
   justify-content: flex-end;
-  margin-top: calc(100px * var(--scale, 1));
+  margin-top: 6.25rem;
 }
 
 .wwa-popup-social-icon {
-  width: calc(31px * var(--scale, 1));
-  height: calc(31px * var(--scale, 1));
+  width: 1.9375rem;
+  height: 1.9375rem;
   object-fit: contain;
   filter: brightness(0) invert(0.961);
 }
 
 .wwa-popup-close {
   position: absolute;
-  top: calc(35px * var(--scale, 1));
-  right: calc(48px * var(--scale, 1));
+  top: 2.1875rem;
+  right: 3rem;
   background: none;
   border: none;
   cursor: pointer;
   color: #f5f5f5;
   font-family: 'Montserrat', sans-serif;
-  font-size: calc(40px * var(--scale, 1));
+  font-size: 2.5rem;
   font-weight: 600;
   padding: 0;
   line-height: 1;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 56.25rem) {
   .wwa-popup-backdrop { align-items: flex-end; padding: 0; }
   .wwa-popup-inner {
     position: fixed;
@@ -477,31 +477,31 @@
     width: 100%;
     flex: 1;
     min-height: 0;
-    padding: 24px 20px;
+    padding: 1.5rem 1.25rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
   }
-  .wwa-popup-info { gap: 28px; width: 100%; align-items: flex-start; }
-  .wwa-popup-header { gap: 11px; }
-  .wwa-popup-name { font-size: 24px; font-weight: 600; }
-  .wwa-popup-role { font-size: 15px; font-weight: 400; }
-  .wwa-popup-ask { gap: 11px; }
-  .wwa-popup-ask-label { font-size: 15px; font-weight: 600; }
-  .wwa-popup-pills { gap: 9px; flex-wrap: wrap; }
-  .wwa-popup-pill { font-size: 14px; padding: 7px 11px; border-radius: 11px; }
-  .wwa-popup-bio { font-size: 15px; }
-  .wwa-popup-socials { margin-top: 0; justify-content: flex-end; gap: 14px; }
-  .wwa-popup-social-icon { width: 22px; height: 22px; }
-  .wwa-popup-close { position: fixed; top: 16px; right: 17px; z-index: 1100; padding: 12px; background: #1f1f1f; border: none; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-  .wwa-popup-close img { width: 20px; height: 20px; }
+  .wwa-popup-info { gap: 1.75rem; width: 100%; align-items: flex-start; }
+  .wwa-popup-header { gap: 0.6875rem; }
+  .wwa-popup-name { font-size: 1.5rem; font-weight: 600; }
+  .wwa-popup-role { font-size: 0.9375rem; font-weight: 400; }
+  .wwa-popup-ask { gap: 0.6875rem; }
+  .wwa-popup-ask-label { font-size: 0.9375rem; font-weight: 600; }
+  .wwa-popup-pills { gap: 0.5625rem; flex-wrap: wrap; }
+  .wwa-popup-pill { font-size: 0.875rem; padding: 0.4375rem 0.6875rem; border-radius: 0.6875rem; }
+  .wwa-popup-bio { font-size: 0.9375rem; }
+  .wwa-popup-socials { margin-top: 0; justify-content: flex-end; gap: 0.875rem; }
+  .wwa-popup-social-icon { width: 1.375rem; height: 1.375rem; }
+  .wwa-popup-close { position: fixed; top: 1rem; right: 1.0625rem; z-index: 1100; padding: 0.75rem; background: #1f1f1f; border: none; border-radius: 0.5rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  .wwa-popup-close img { width: 1.25rem; height: 1.25rem; }
 }
 
 /* ---------- Team Section ---------- */
 .wwa-team-section {
   background-color: #f5f5f5;
-  padding: calc(120px * var(--scale, 1)) calc(200px * var(--scale, 1)) 0;
+  padding: var(--space-section) var(--page-gutter) 0;
   box-sizing: border-box;
 }
 
@@ -510,27 +510,27 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  border-bottom: 1px solid #8e8e8e;
-  padding-bottom: calc(100px * var(--scale, 1));
+  border-bottom: 0.0625rem solid #8e8e8e;
+  padding-bottom: 6.25rem;
 }
 
 .wwa-team-intro {
   display: flex;
   flex-direction: column;
-  gap: calc(48px * var(--scale, 1));
-  width: calc(707px * var(--scale, 1));
+  gap: 3rem;
+  width: 44.1875rem;
   flex-shrink: 0;
 }
 
 .wwa-team-intro-texts {
   display: flex;
   flex-direction: column;
-  gap: calc(24px * var(--scale, 1));
+  gap: 1.5rem;
 }
 
 .wwa-team-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: calc(48px * var(--scale, 1));
+  font-size: var(--font-section-title);
   font-weight: 600;
   color: #1f1f1f;
   margin: 0;
@@ -545,7 +545,7 @@
 
 .wwa-team-subtitle {
   font-family: 'Montserrat', sans-serif;
-  font-size: calc(24px * var(--scale, 1));
+  font-size: var(--font-body);
   font-weight: 400;
   color: #1f1f1f;
   margin: 0;
@@ -555,13 +555,13 @@
 .wwa-team-categories {
   display: flex;
   flex-direction: column;
-  gap: calc(16px * var(--scale, 1));
-  width: calc(382px * var(--scale, 1));
+  gap: 1rem;
+  width: 23.875rem;
 }
 
 .wwa-team-category-btn {
   font-family: 'Montserrat', sans-serif;
-  font-size: calc(36px * var(--scale, 1));
+  font-size: 2.25rem;
   font-weight: 500;
   color: #1f1f1f;
   background: none;
@@ -590,8 +590,8 @@
 }
 
 .wwa-team-photo-wrap {
-  width: calc(761px * var(--scale, 1));
-  height: calc(589px * var(--scale, 1));
+  width: 47.5625rem;
+  height: 36.8125rem;
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
@@ -607,21 +607,21 @@
   object-fit: cover;
 }
 
-@media (max-width: 900px) {
-  .wwa-team-section { padding: 40px 20px 0; gap: 24px; }
-  .wwa-team-title { font-size: 24px; font-weight: 600; text-align: center; }
+@media (max-width: 56.25rem) {
+  .wwa-team-section { padding: 2.5rem 1.25rem 0; gap: 1.5rem; }
+  .wwa-team-title { font-size: 1.5rem; font-weight: 600; text-align: center; }
   .wwa-team-title-break { display: inline; }
   .wwa-team-content {
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    padding-bottom: 36px;
+    gap: 1.5rem;
+    padding-bottom: 2.25rem;
     align-items: stretch;
   }
-  .wwa-team-intro { width: 100%; gap: 24px; }
-  .wwa-team-subtitle { font-size: 15px; text-align: center; }
-  .wwa-team-categories { width: 100%; gap: 12px; }
-  .wwa-team-category-btn { font-size: 20px; text-align: center; white-space: nowrap; }
+  .wwa-team-intro { width: 100%; gap: 1.5rem; }
+  .wwa-team-subtitle { font-size: 0.9375rem; text-align: center; }
+  .wwa-team-categories { width: 100%; gap: 0.75rem; }
+  .wwa-team-category-btn { font-size: 1.25rem; text-align: center; white-space: nowrap; }
   .wwa-team-photo-wrap {
     width: 100%;
     height: auto;
@@ -634,29 +634,29 @@
 
 /* ---------- Members Section ---------- */
 .wwa-members-section {
-  padding: calc(120px * var(--scale, 1)) calc(200px * var(--scale, 1));
+  padding: var(--space-section) var(--page-gutter);
   background-color: #f5f5f5;
   box-sizing: border-box;
 }
 
 /* Sidebar */
 .wwa-sidebar {
-  width: calc(220px * var(--scale, 1));
+  width: 13.75rem;
   flex-shrink: 0;
   position: sticky;
-  top: calc(24px * var(--scale, 1));
+  top: 1.5rem;
   max-height: 80vh;
   overflow-y: auto;
 }
 
 .wwa-sidebar-heading {
   font-family: 'Montserrat', sans-serif;
-  font-size: calc(11px * var(--scale, 1));
+  font-size: 0.6875rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: #eeb50c;
-  margin: 0 0 calc(16px * var(--scale, 1)) 0;
+  margin: 0 0 1rem 0;
 }
 
 .wwa-sidebar-list {
@@ -665,17 +665,17 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: calc(4px * var(--scale, 1));
+  gap: 0.25rem;
 }
 
 .wwa-sidebar-btn {
   background: none;
   border: none;
   cursor: pointer;
-  padding: calc(6px * var(--scale, 1)) 0;
+  padding: 0.375rem 0;
   display: flex;
   flex-direction: column;
-  gap: calc(2px * var(--scale, 1));
+  gap: 0.125rem;
   text-align: left;
   width: 100%;
 }
@@ -686,7 +686,7 @@
 
 .wwa-sidebar-name {
   font-family: 'Montserrat', sans-serif;
-  font-size: calc(13px * var(--scale, 1));
+  font-size: 0.8125rem;
   font-weight: 600;
   color: #f0f0f0;
   transition: color 0.1s;
@@ -695,7 +695,7 @@
 
 .wwa-sidebar-role {
   font-family: 'Montserrat', sans-serif;
-  font-size: calc(11px * var(--scale, 1));
+  font-size: 0.6875rem;
   font-weight: 400;
   color: #888888;
   text-transform: uppercase;
@@ -706,49 +706,124 @@
 .wwa-advisors-grid {
   display: flex;
   justify-content: center;
-  gap: calc(40px * var(--scale, 1));
-  margin-bottom: calc(60px * var(--scale, 1));
+  gap: 2rem;
+  margin-bottom: 3.75rem;
 }
 .wwa-advisors-grid > * {
-  flex: 0 0 calc((100% - 3 * 40px * var(--scale, 1)) / 4);
+  min-width: 0;
+  flex: 0 0 calc((100% - 8rem) / 5);
 }
 
 .wwa-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: calc(32px * var(--scale, 1));
+  gap: 2rem;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 64rem) {
   .wwa-grid {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-@media (max-width: 900px) {
-  .wwa-members-section { padding: 40px 20px; }
+@media (max-width: 56.25rem) {
+  .wwa-members-section { padding: 2.5rem 1.25rem; }
   .wwa-advisors-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    margin-bottom: 32px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
   }
   .wwa-advisors-grid > * {
     flex: unset;
   }
   .wwa-advisors-grid > *:last-child:nth-child(odd) {
     grid-column: 1 / -1;
-    width: 50%;
+    width: calc((100% - 1rem) / 2);
     margin: 0 auto;
   }
   .wwa-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 1rem;
     width: 100%;
   }
   .wwa-grid > *:last-child:nth-child(odd) {
     grid-column: 1 / -1;
-    width: 50%;
+    width: calc((100% - 1rem) / 2);
     margin: 0 auto;
   }
+}
+
+.wwa-hero-text { width: 49.08%; flex-shrink: 1; min-width: 0; }
+.wwa-hero-image-wrap { width: 46.38%; height: auto; aspect-ratio: 705 / 438; }
+.wwa-team-content { gap: 3.25rem; }
+.wwa-team-intro { width: 46.51%; flex-shrink: 1; min-width: 0; }
+.wwa-team-photo-wrap { width: 50.07%; height: auto; aspect-ratio: 761 / 589; }
+.wwa-team-categories { width: 100%; }
+.wwa-team-category-btn, .wwa-popup-pill, .wwa-hero-btn-primary, .wwa-hero-btn-secondary { white-space: normal; }
+.wwa-quote-attribution, .wwa-popup-content { overflow-wrap: anywhere; }
+.wwa-member-card { aspect-ratio: auto; overflow: visible; }
+.wwa-member-card-photo-wrap { position: relative; aspect-ratio: 1; height: auto; overflow: hidden; border-radius: inherit; }
+.wwa-member-card-info { position: static; width: 100%; min-height: 5rem; padding: 1rem; overflow-wrap: anywhere; }
+.wwa-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.wwa-popup-inner { width: min(88.6875rem, 95vw); max-height: 90dvh; overflow-y: auto; }
+.wwa-popup-photo-wrap { width: 44.61%; flex-shrink: 1; }
+.wwa-popup-content { width: 55.39%; flex-shrink: 1; min-width: 0; overflow-y: visible; }
+.wwa-popup-close { top: 1rem; right: 1rem; width: 2.75rem; height: 2.75rem; background: #1f1f1f; padding: .5rem; }
+.wwa-popup-close img { width: 100%; height: 100%; }
+@media (min-width: 56.251rem) and (max-width: 81.25rem) {
+  .wwa-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .wwa-advisors-grid > * { flex-basis: calc((100% - 6rem) / 4); }
+}
+@media (min-width: 56.251rem) and (max-width: 68.75rem) {
+  .wwa-hero, .wwa-team-content { flex-direction: column; }
+  .wwa-hero-text, .wwa-hero-image-wrap, .wwa-team-intro, .wwa-team-photo-wrap { width: 100%; }
+  .wwa-hero-image-wrap, .wwa-team-photo-wrap { max-width: 47.5625rem; align-self: center; }
+  .wwa-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .wwa-advisors-grid > * { flex-basis: calc((100% - 4rem) / 3); }
+}
+@media (max-width: 56.25rem) {
+  .wwa-hero { gap: 2.843rem; }
+  .wwa-hero-text { display: flex; width: 100%; gap: 1.137rem; }
+  .wwa-hero-image-wrap, .wwa-team-intro, .wwa-team-photo-wrap { width: 100%; }
+  .wwa-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .wwa-member-card-photo-wrap { height: auto; }
+  .wwa-member-card-info { padding: .5rem .25rem; min-height: 3rem; }
+  .wwa-popup-inner { width: 100%; max-height: 100dvh; }
+  .wwa-popup-photo-wrap { width: 100%; flex-shrink: 0; }
+  .wwa-popup-content { width: 100%; flex: none; overflow: visible; }
+}
+@media (max-width: 22rem) {
+  .wwa-grid, .wwa-advisors-grid { grid-template-columns: minmax(0, 1fr); }
+  .wwa-grid > *:last-child:nth-child(odd), .wwa-advisors-grid > *:last-child:nth-child(odd) { width: 100%; }
+}
+@media (min-width: 56.251rem) {
+  .wwa-popup-inner { overflow: hidden; }
+  .wwa-popup-content { max-height: 90dvh; overflow-y: auto; padding-top: 5rem; }
+}
+@media (max-width: 56.25rem) {
+  .wwa-team-intro { display: contents; }
+  .wwa-team-intro-texts { order: 1; }
+  .wwa-team-photo-wrap { order: 2; }
+  .wwa-team-categories { order: 3; }
+}
+
+/* Keep every member card the same height, regardless of name length. */
+.wwa-member-card { overflow: hidden; }
+.wwa-member-card-info {
+  box-sizing: border-box;
+  height: 6rem;
+  min-height: 6rem;
+  padding: .75rem;
+  overflow: hidden;
+}
+.wwa-member-card-name, .wwa-member-card-role {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wwa-member-card-name--long { font-size: .9375rem; }
+@media (max-width: 56.25rem) {
+  .wwa-member-card-info { height: 4.5rem; min-height: 4.5rem; padding: .5rem; }
+  .wwa-member-card-name--long { font-size: .75rem; }
 }

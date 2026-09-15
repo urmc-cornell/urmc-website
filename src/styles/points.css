@@ -8,7 +8,7 @@
 /* ---------- Hero ---------- */
 .points-hero {
   background-color: #1f1f1f;
-  padding: calc(160px * var(--scale, 1)) calc(200px * var(--scale, 1));
+  padding: var(--space-hero) var(--page-gutter);
   box-sizing: border-box;
   width: 100%;
   display: flex;
@@ -19,7 +19,7 @@
 .points-hero-text {
   display: flex;
   flex-direction: column;
-  gap: calc(40px * var(--scale, 1));
+  gap: var(--space-copy);
   width: 100%;
   align-items: flex-start;
 }
@@ -28,7 +28,7 @@
   color: #f5f5f5;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  font-size: calc(64px * var(--scale, 1));
+  font-size: var(--font-page-title);
   line-height: normal;
   margin: 0;
   letter-spacing: 0;
@@ -38,11 +38,11 @@
   color: #f5f5f5;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: calc(24px * var(--scale, 1));
+  font-size: var(--font-body);
   line-height: normal;
   margin: 0;
   letter-spacing: 0;
-  max-width: calc(1520px * var(--scale, 1));
+  max-width: 95rem;
 }
 
 .points-hero-btn {
@@ -53,9 +53,9 @@
   color: #1f1f1f;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: calc(24px * var(--scale, 1));
-  padding: calc(16px * var(--scale, 1)) calc(24px * var(--scale, 1));
-  border-radius: calc(20px * var(--scale, 1));
+  font-size: var(--font-body);
+  padding: 1rem 1.5rem;
+  border-radius: 1.25rem;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -63,19 +63,19 @@
 /* ---------- View Your Points ---------- */
 .points-vyp-section {
   background-color: #f5f5f5;
-  padding: calc(120px * var(--scale, 1)) calc(200px * var(--scale, 1));
+  padding: var(--space-section) var(--page-gutter);
   box-sizing: border-box;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: calc(60px * var(--scale, 1));
+  gap: 3.75rem;
   width: 100%;
 }
 
 .points-vyp-left {
   display: flex;
   flex-direction: column;
-  gap: calc(96px * var(--scale, 1));
+  gap: 6rem;
   flex: 1 1 auto;
   min-width: 0;
 }
@@ -83,19 +83,19 @@
 .points-vyp-form-block {
   display: flex;
   flex-direction: column;
-  gap: calc(36px * var(--scale, 1));
+  gap: 2.25rem;
 }
 
 .points-vyp-heading-block {
   display: flex;
   flex-direction: column;
-  gap: calc(24px * var(--scale, 1));
+  gap: 1.5rem;
 }
 
 .points-vyp-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: calc(48px * var(--scale, 1));
+  font-size: var(--font-section-title);
   color: #1f1f1f;
   margin: 0;
   line-height: normal;
@@ -104,7 +104,7 @@
 .points-vyp-subtitle {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: calc(24px * var(--scale, 1));
+  font-size: var(--font-body);
   color: #1f1f1f;
   margin: 0;
   line-height: normal;
@@ -113,20 +113,20 @@
 .points-vyp-form {
   display: flex;
   align-items: center;
-  gap: calc(24px * var(--scale, 1));
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 
 .points-vyp-input {
   background-color: #e8e8e8;
-  border: 1px solid #646464;
-  border-radius: calc(20px * var(--scale, 1));
-  padding: calc(16px * var(--scale, 1)) calc(24px * var(--scale, 1));
+  border: 0.0625rem solid #646464;
+  border-radius: 1.25rem;
+  padding: 1rem 1.5rem;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: calc(24px * var(--scale, 1));
+  font-size: var(--font-body);
   color: #1f1f1f;
-  width: calc(200px * var(--scale, 1));
+  width: 12.5rem;
   box-sizing: border-box;
   outline: none;
 }
@@ -140,9 +140,9 @@
   color: #f5f5f5;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: calc(24px * var(--scale, 1));
-  padding: calc(16px * var(--scale, 1)) calc(24px * var(--scale, 1));
-  border-radius: calc(20px * var(--scale, 1));
+  font-size: var(--font-body);
+  padding: 1rem 1.5rem;
+  border-radius: 1.25rem;
   border: none;
   cursor: pointer;
   white-space: nowrap;
@@ -151,7 +151,7 @@
 .points-vyp-result {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: calc(24px * var(--scale, 1));
+  font-size: var(--font-body);
   color: #1f1f1f;
   white-space: nowrap;
 }
@@ -160,15 +160,15 @@
 .points-top-members {
   display: flex;
   flex-direction: column;
-  gap: calc(24px * var(--scale, 1));
+  gap: 1.5rem;
   width: 100%;
-  max-width: calc(622px * var(--scale, 1));
+  max-width: 38.875rem;
 }
 
 .points-top-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: calc(36px * var(--scale, 1));
+  font-size: 2.25rem;
   color: #1f1f1f;
   margin: 0;
   line-height: normal;
@@ -177,7 +177,7 @@
 .points-top-empty {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: calc(20px * var(--scale, 1));
+  font-size: 1.25rem;
   color: #646464;
   margin: 0;
 }
@@ -188,7 +188,7 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: calc(24px * var(--scale, 1));
+  gap: 1.5rem;
 }
 
 .points-top-row {
@@ -197,14 +197,14 @@
   justify-content: space-between;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: calc(24px * var(--scale, 1));
+  font-size: var(--font-body);
   color: #1f1f1f;
 }
 
 .points-top-name {
   display: inline-flex;
   align-items: center;
-  gap: calc(8px * var(--scale, 1));
+  gap: 0.5rem;
 }
 
 .points-top-rank {
@@ -217,8 +217,8 @@
 
 /* Right photo */
 .points-vyp-photo-wrap {
-  width: calc(731px * var(--scale, 1));
-  height: calc(549px * var(--scale, 1));
+  width: 45.6875rem;
+  height: 34.3125rem;
   flex-shrink: 0;
   overflow: hidden;
 }
@@ -233,24 +233,24 @@
 /* ---------- How to Earn Points ---------- */
 .points-howto-section {
   background-color: #1f1f1f;
-  padding: calc(120px * var(--scale, 1)) calc(200px * var(--scale, 1));
+  padding: var(--space-section) var(--page-gutter);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: calc(84px * var(--scale, 1));
+  gap: 5.25rem;
   width: 100%;
 }
 
 .points-howto-header {
   display: flex;
   flex-direction: column;
-  gap: calc(24px * var(--scale, 1));
+  gap: 1.5rem;
 }
 
 .points-howto-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: calc(48px * var(--scale, 1));
+  font-size: var(--font-section-title);
   color: #f5f5f5;
   margin: 0;
   line-height: normal;
@@ -259,7 +259,7 @@
 .points-howto-subtitle {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: calc(24px * var(--scale, 1));
+  font-size: var(--font-body);
   color: #f5f5f5;
   margin: 0;
   line-height: normal;
@@ -268,17 +268,17 @@
 .points-tiers-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: calc(37px * var(--scale, 1));
+  gap: 2.3125rem;
 }
 
 .points-tier-card {
   background-color: #f5f5f5;
-  border-top: calc(16px * var(--scale, 1)) solid #eeb50c;
-  border-radius: calc(20px * var(--scale, 1));
-  padding: calc(36px * var(--scale, 1));
+  border-top: 1rem solid #eeb50c;
+  border-radius: 1.25rem;
+  padding: 2.25rem;
   display: flex;
   flex-direction: column;
-  gap: calc(36px * var(--scale, 1));
+  gap: 2.25rem;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -286,13 +286,13 @@
 .points-tier-title-block {
   display: flex;
   align-items: center;
-  gap: calc(16px * var(--scale, 1));
+  gap: 1rem;
 }
 
 .points-tier-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: calc(36px * var(--scale, 1));
+  font-size: 2.25rem;
   color: #1f1f1f;
   margin: 0;
   line-height: normal;
@@ -300,7 +300,7 @@
 
 .points-tier-icon {
   width: auto;
-  height: calc(26px * var(--scale, 1));
+  height: 1.625rem;
   display: block;
 }
 
@@ -310,16 +310,16 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: calc(17px * var(--scale, 1));
+  gap: 1.0625rem;
 }
 
 .points-tier-event {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: calc(16px * var(--scale, 1));
+  gap: 1rem;
   font-family: 'Montserrat', sans-serif;
-  font-size: calc(24px * var(--scale, 1));
+  font-size: var(--font-body);
   color: #1f1f1f;
   line-height: normal;
 }
@@ -336,19 +336,19 @@
 /* ---------- Rewards ---------- */
 .points-rewards-section {
   background-color: #f5f5f5;
-  padding: calc(120px * var(--scale, 1)) calc(200px * var(--scale, 1));
+  padding: var(--space-section) var(--page-gutter);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: calc(84px * var(--scale, 1));
+  gap: 5.25rem;
   width: 100%;
 }
 
 .points-rewards-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: calc(48px * var(--scale, 1));
+  font-size: var(--font-section-title);
   color: #1f1f1f;
   margin: 0;
   line-height: normal;
@@ -359,7 +359,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  gap: calc(100px * var(--scale, 1));
+  gap: 6.25rem;
   width: 100%;
 }
 
@@ -367,14 +367,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: calc(40px * var(--scale, 1));
-  width: calc(562px * var(--scale, 1));
+  gap: var(--space-copy);
+  width: 35.125rem;
 }
 
 .points-reward-header {
   display: flex;
   flex-direction: column;
-  gap: calc(12px * var(--scale, 1));
+  gap: 0.75rem;
   text-align: center;
   width: 100%;
 }
@@ -382,7 +382,7 @@
 .points-reward-name {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: calc(32px * var(--scale, 1));
+  font-size: 2rem;
   color: #1f1f1f;
   margin: 0;
   line-height: normal;
@@ -391,7 +391,7 @@
 .points-reward-detail {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: calc(24px * var(--scale, 1));
+  font-size: var(--font-body);
   color: #1f1f1f;
   margin: 0;
   line-height: normal;
@@ -399,9 +399,9 @@
 
 .points-reward-photo-wrap {
   width: 100%;
-  height: calc(456px * var(--scale, 1));
+  height: 28.5rem;
   overflow: hidden;
-  border-radius: calc(8px * var(--scale, 1));
+  border-radius: 0.5rem;
 }
 
 .points-reward-photo {
@@ -412,89 +412,89 @@
 }
 
 /* ---------- Mobile ---------- */
-@media (max-width: 900px) {
+@media (max-width: 56.25rem) {
   .points-hero {
-    padding: 60px 20px;
+    padding: 3.75rem 1.25rem;
   }
   .points-hero-text {
-    gap: 18px;
+    gap: 1.125rem;
   }
   .points-hero-title {
-    font-size: 32px;
+    font-size: 2rem;
   }
   .points-hero-subtitle {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
   .points-hero-btn {
-    font-size: 15px;
-    padding: 16px 24px;
-    border-radius: 9px;
+    font-size: 0.9375rem;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5625rem;
     width: 100%;
   }
 
   .points-vyp-section {
     flex-direction: column;
-    padding: 40px 20px;
-    gap: 36px;
+    padding: 2.5rem 1.25rem;
+    gap: 2.25rem;
   }
   .points-vyp-left {
     width: 100%;
-    gap: 36px;
+    gap: 2.25rem;
   }
   .points-vyp-form-block {
-    gap: 36px;
+    gap: 2.25rem;
     align-items: center;
   }
   .points-vyp-heading-block {
-    gap: 24px;
+    gap: 1.5rem;
     align-items: center;
     text-align: left;
     width: 100%;
   }
   .points-vyp-title {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
   .points-vyp-subtitle {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
   .points-vyp-form {
-    gap: 24px 12px;
+    gap: 1.5rem 0.75rem;
     align-items: stretch;
     width: 100%;
   }
   .points-vyp-input {
-    font-size: 15px;
-    padding: 16px 24px;
-    border-radius: 20px;
-    width: 232px;
-    flex: 0 0 232px;
+    font-size: 0.9375rem;
+    padding: 1rem 1.5rem;
+    border-radius: 1.25rem;
+    width: 14.5rem;
+    flex: 0 0 14.5rem;
   }
   .points-vyp-submit {
-    font-size: 15px;
-    padding: 16px 8px;
-    border-radius: 9px;
+    font-size: 0.9375rem;
+    padding: 1rem 0.5rem;
+    border-radius: 0.5625rem;
     flex: 1 1 0;
     min-width: 0;
   }
   .points-vyp-result {
-    font-size: 24px;
+    font-size: 1.5rem;
     text-align: center;
     width: 100%;
     flex-basis: 100%;
   }
 
   .points-top-members {
-    gap: 12px;
+    gap: 0.75rem;
     max-width: none;
   }
   .points-top-title {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
   .points-top-list {
-    gap: 12px;
+    gap: 0.75rem;
   }
   .points-top-row {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
 
   .points-vyp-photo-wrap {
@@ -502,67 +502,92 @@
   }
 
   .points-howto-section {
-    padding: 40px 20px;
-    gap: 24px;
+    padding: 2.5rem 1.25rem;
+    gap: 1.5rem;
   }
   .points-howto-header {
-    gap: 24px;
+    gap: 1.5rem;
   }
   .points-howto-title {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
   .points-howto-subtitle {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
   .points-tiers-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 1rem;
   }
   .points-tier-card {
-    padding: 36px;
-    gap: 16px;
-    border-top-width: 16px;
-    border-radius: 20px;
+    padding: 2.25rem;
+    gap: 1rem;
+    border-top-width: 1rem;
+    border-radius: 1.25rem;
   }
   .points-tier-title {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
   .points-tier-icon {
-    height: 23px;
+    height: 1.4375rem;
   }
   .points-tier-events {
-    gap: 8px;
+    gap: 0.5rem;
   }
   .points-tier-event {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
 
   .points-rewards-section {
-    padding: 40px 20px;
-    gap: 36px;
+    padding: 2.5rem 1.25rem;
+    gap: 2.25rem;
   }
   .points-rewards-title {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
   .points-rewards-grid {
     flex-direction: column;
     align-items: center;
-    gap: 36px;
+    gap: 2.25rem;
   }
   .points-reward-card {
     width: 100%;
     max-width: none;
-    gap: 12px;
+    gap: 0.75rem;
   }
   .points-reward-name {
-    font-size: 16px;
+    font-size: 1rem;
   }
   .points-reward-detail {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
   .points-reward-photo-wrap {
     height: auto;
     aspect-ratio: 580 / 471;
-    border-radius: 8px;
+    border-radius: 0.5rem;
   }
+}
+
+.points-vyp-photo-wrap { width: min(48.09%, 45.6875rem); height: auto; aspect-ratio: 731 / 549; }
+.points-top-name { min-width: 0; overflow-wrap: anywhere; }
+.points-top-row { gap: 1rem; }
+.points-vyp-input { min-width: 0; max-width: 100%; }
+.points-vyp-result, .points-hero-btn { white-space: normal; }
+.points-tiers-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.points-tier-card { min-width: 0; overflow: visible; }
+.points-tier-event { flex-wrap: wrap; }
+.points-tier-event-name { overflow-wrap: anywhere; }
+.points-reward-card { min-width: 0; max-width: 35.125rem; flex: 1 1 0; }
+.points-reward-photo-wrap { height: auto; aspect-ratio: 562 / 456; }
+@media (min-width: 56.251rem) and (max-width: 75rem) {
+  .points-tiers-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .points-tier-card:last-child { grid-column: 1 / -1; width: calc((100% - 2.3125rem) / 2); justify-self: center; }
+}
+@media (max-width: 56.25rem) {
+  .points-tiers-grid { grid-template-columns: minmax(0, 1fr); }
+  .points-vyp-input { flex: 1 1 10rem; width: auto; }
+  .points-vyp-submit { flex: 0 1 auto; min-width: 4rem; }
+  .points-reward-card { flex: none; width: 100%; }
+}
+@media (max-width: 56.25rem) {
+  .points-vyp-heading-block { align-items: flex-start; }
 }

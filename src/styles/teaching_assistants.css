@@ -1,9 +1,3 @@
-/*
- * TA Directory styles
- * Uses --scale (set by useScale hook = window.innerWidth / 1920)
- * so all sizes scale 1:1 with the Figma design at 1920px.
- */
-
 .ta-page {
   display: flex;
   flex-direction: column;
@@ -22,25 +16,25 @@
 .ta-hero__inner {
   width: 100%;
   box-sizing: border-box;
-  padding: calc(160px * var(--scale, 1)) calc(200px * var(--scale, 1));
+  padding: var(--space-hero) var(--page-gutter);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: calc(105px * var(--scale, 1));
+  gap: 6.5625rem;
 }
 
 .ta-hero__text {
   display: flex;
   flex-direction: column;
-  gap: calc(40px * var(--scale, 1));
-  width: calc(801px * var(--scale, 1));
+  gap: var(--space-copy);
+  width: 50.0625rem;
   flex-shrink: 0;
 }
 
 .ta-hero__title {
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
-  font-size: calc(64px * var(--scale, 1));
+  font-size: var(--font-page-title);
   line-height: 1.1;
   color: #f5f5f5;
   margin: 0;
@@ -49,7 +43,7 @@
 .ta-hero__subtitle {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  font-size: calc(24px * var(--scale, 1));
+  font-size: var(--font-body);
   line-height: 1.3;
   color: #f5f5f5;
   margin: 0;
@@ -59,14 +53,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: calc(10px * var(--scale, 1));
+  gap: 0.625rem;
   background-color: #eeb50c;
   color: #1f1f1f;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  font-size: calc(24px * var(--scale, 1));
-  padding: calc(16px * var(--scale, 1)) calc(24px * var(--scale, 1));
-  border-radius: calc(20px * var(--scale, 1));
+  font-size: var(--font-body);
+  padding: 1rem 1.5rem;
+  border-radius: 1.25rem;
   text-decoration: none;
   align-self: flex-start;
   transition: filter 0.15s ease, transform 0.15s ease;
@@ -74,20 +68,20 @@
 
 .ta-hero__cta:hover {
   filter: brightness(0.95);
-  transform: translateY(-1px);
+  transform: translateY(-0.0625rem);
 }
 
 .ta-hero__cta-icon {
-  width: calc(26px * var(--scale, 1));
-  height: calc(26px * var(--scale, 1));
+  width: 1.625rem;
+  height: 1.625rem;
   flex-shrink: 0;
 }
 
 .ta-hero__image-wrap {
   flex-shrink: 0;
-  width: calc(614px * var(--scale, 1));
-  height: calc(438px * var(--scale, 1));
-  border-radius: calc(20px * var(--scale, 1));
+  width: 38.375rem;
+  height: 27.375rem;
+  border-radius: 1.25rem;
   overflow: hidden;
 }
 
@@ -103,16 +97,16 @@
 .ta-directory {
   background-color: #f5f5f5;
   width: 100%;
-  padding: calc(120px * var(--scale, 1)) 0;
+  padding: var(--space-section) 0;
 }
 
 .ta-directory__inner {
   width: 100%;
   box-sizing: border-box;
-  padding: 0 calc(200px * var(--scale, 1));
+  padding: 0 var(--page-gutter);
   display: flex;
   flex-direction: column;
-  gap: calc(72px * var(--scale, 1));
+  gap: 4.5rem;
 }
 
 /* Search + filter row */
@@ -121,25 +115,25 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: calc(24px * var(--scale, 1));
+  gap: 1.5rem;
   width: 100%;
 }
 
 .ta-search {
   display: flex;
   align-items: center;
-  gap: calc(20px * var(--scale, 1));
+  gap: 1.25rem;
   flex: 1 1 auto;
   min-width: 0;
-  border: 1px solid #1f1f1f;
-  border-radius: calc(12px * var(--scale, 1));
-  padding: calc(16px * var(--scale, 1)) calc(24px * var(--scale, 1));
+  border: 0.0625rem solid #1f1f1f;
+  border-radius: 0.75rem;
+  padding: 1rem 1.5rem;
   background-color: #f5f5f5;
 }
 
 .ta-search__icon {
-  width: calc(25px * var(--scale, 1));
-  height: calc(25px * var(--scale, 1));
+  width: 1.5625rem;
+  height: 1.5625rem;
   flex-shrink: 0;
 }
 
@@ -150,7 +144,7 @@
   background: transparent;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  font-size: calc(24px * var(--scale, 1));
+  font-size: var(--font-body);
   color: #1f1f1f;
   min-width: 0;
 }
@@ -163,12 +157,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: calc(24px * var(--scale, 1));
+  gap: 1.5rem;
   flex: 0 0 auto;
-  width: calc(434px * var(--scale, 1));
-  border: 1px solid #1f1f1f;
-  border-radius: calc(12px * var(--scale, 1));
-  padding: calc(16px * var(--scale, 1)) calc(48px * var(--scale, 1));
+  width: 27.125rem;
+  border: 0.0625rem solid #1f1f1f;
+  border-radius: 0.75rem;
+  padding: 1rem 3rem;
   background-color: #f5f5f5;
   box-sizing: border-box;
 }
@@ -180,7 +174,7 @@
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  font-size: calc(24px * var(--scale, 1));
+  font-size: var(--font-body);
   color: #1f1f1f;
   line-height: 1;
 }
@@ -194,7 +188,7 @@
 .ta-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: calc(25px * var(--scale, 1));
+  gap: 1.5625rem;
   width: 100%;
 }
 
@@ -203,7 +197,7 @@
 .ta-stats {
   display: flex;
   align-items: flex-end;
-  gap: calc(16px * var(--scale, 1));
+  gap: 1rem;
   align-self: flex-end;
 }
 
@@ -218,7 +212,7 @@
 .ta-stats__num {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  font-size: calc(36px * var(--scale, 1));
+  font-size: 2.25rem;
   line-height: 1.1;
   margin: 0;
 }
@@ -226,12 +220,12 @@
 .ta-stats__label {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  font-size: calc(16px * var(--scale, 1));
+  font-size: 1rem;
   margin: 0;
 }
 
 .ta-stats__divider {
-  width: 1px;
+  width: 0.0625rem;
   background-color: #1f1f1f;
   align-self: stretch;
 }
@@ -242,7 +236,7 @@
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  font-size: calc(18px * var(--scale, 1));
+  font-size: 1.125rem;
   color: #1f1f1f;
   margin: 0;
 }
@@ -253,111 +247,135 @@
 
 /* -------------------- Responsive: mobile -------------------- */
 
-@media (max-width: 767px) {
+@media (max-width: 47.9375rem) {
   .ta-hero {
-    border-bottom: 2px solid #e4e4e4;
+    border-bottom: 0.125rem solid #e4e4e4;
   }
 
   .ta-hero__inner {
     flex-direction: column;
     align-items: stretch;
-    padding: 60px 20px;
-    gap: 36px;
+    padding: 3.75rem 1.25rem;
+    gap: 2.25rem;
   }
 
   .ta-hero__text {
-    gap: 20px;
+    gap: 1.25rem;
     width: 100%;
     max-width: 100%;
   }
 
   .ta-hero__title {
-    font-size: 32px;
+    font-size: 2rem;
   }
 
   .ta-hero__subtitle {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
 
   .ta-hero__cta {
     align-self: stretch;
-    padding: 16px;
-    font-size: 15px;
-    border-radius: 9px;
-    gap: 8px;
+    padding: 1rem;
+    font-size: 0.9375rem;
+    border-radius: 0.5625rem;
+    gap: 0.5rem;
   }
 
   .ta-hero__cta-icon {
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem;
   }
 
   .ta-hero__image-wrap {
     width: 100%;
     height: auto;
     aspect-ratio: 605 / 432;
-    border-radius: 12px;
+    border-radius: 0.75rem;
   }
 
   .ta-directory {
-    padding: 40px 0;
+    padding: 2.5rem 0;
   }
 
   .ta-directory__inner {
-    padding: 0 20px;
-    gap: 36px;
+    padding: 0 1.25rem;
+    gap: 2.25rem;
   }
 
   .ta-controls {
     flex-direction: column;
-    gap: 16px;
+    gap: 1rem;
   }
 
   .ta-search,
   .ta-filters {
     width: 100%;
     box-sizing: border-box;
-    padding: 12px 16px;
-    height: 44px;
-    gap: 12px;
-    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    height: 2.75rem;
+    gap: 0.75rem;
+    border-radius: 0.75rem;
   }
 
   .ta-search__icon {
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem;
   }
 
   .ta-search__input,
   .ta-search__input::placeholder {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
 
   .ta-filters {
-    padding: 12px 24px;
+    padding: 0.75rem 1.5rem;
     justify-content: space-between;
-    gap: 12px;
+    gap: 0.75rem;
   }
 
   .ta-filters__btn {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
 
   .ta-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+    gap: 0.625rem;
   }
 
   .ta-stats {
     align-self: center;
-    gap: 16px;
+    gap: 1rem;
   }
 
   .ta-stats__num {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 
   .ta-stats__label {
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
+}
+
+.ta-hero__text { width: 52.7%; flex-shrink: 1; min-width: 0; }
+.ta-hero__image-wrap { width: 40.4%; height: auto; aspect-ratio: 614 / 438; }
+.ta-hero__cta { text-align: center; }
+.ta-search { max-width: 55.5rem; }
+.ta-filters { max-width: 100%; flex-shrink: 1; flex-wrap: wrap; }
+@media (min-width: 47.938rem) and (max-width: 81.25rem) {
+  .ta-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (min-width: 47.938rem) and (max-width: 68.75rem) {
+  .ta-hero__inner { flex-direction: column; gap: 2.25rem; }
+  .ta-hero__text, .ta-hero__image-wrap { width: 100%; }
+  .ta-hero__image-wrap { max-width: 38.375rem; }
+  .ta-controls { flex-direction: column; align-items: stretch; }
+  .ta-search, .ta-filters { width: 100%; max-width: none; }
+  .ta-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 47.9375rem) {
+  .ta-hero__text, .ta-hero__image-wrap { width: 100%; }
+  .ta-search, .ta-filters { height: auto; min-height: 2.75rem; }
+}
+@media (max-width: 22rem) {
+  .ta-grid { grid-template-columns: minmax(0, 1fr); }
 }

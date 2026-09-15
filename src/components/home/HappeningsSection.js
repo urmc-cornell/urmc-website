@@ -5,7 +5,7 @@ import eventCenterTop from '../../images/home/event-center-top.jpg';
 import eventCenterBottom from '../../images/home/event-center-bottom.jpg';
 import eventRight from '../../images/home/event-right.jpg';
 
-const INSTAGRAM_RECAP = 'https://www.instagram.com/p/DW9YIMwkQWi/?img_index=2&igsh=MWkya2Z2c2l1ZWtuMw==';
+const INSTAGRAM_RECAP = 'https://www.instagram.com/p/DWZkLCKkQhS/';
 
 export default function HappeningsSection() {
   return (

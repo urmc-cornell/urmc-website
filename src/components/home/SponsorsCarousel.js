@@ -1,7 +1,4 @@
-import _Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import '../../styles/sponsors.css';
+import '../../styles/sponsors-carousel.css';
 
 import accenture from '../../images/home/sponsor-accenture.png';
 import bloomberg from '../../images/home/sponsor-bloomberg.png';
@@ -15,9 +12,7 @@ import linkedin from '../../images/home/sponsor-linkedin.png';
 import roblox from '../../images/home/sponsor-roblox.png';
 import visa from '../../images/home/sponsor-visa.png';
 
-const Slider = _Slider.default || _Slider;
-
-// Figma exact dimensions (node 135-85)
+// Reference logo proportions (Figma node 135-85).
 const sponsors = [
   { src: accenture,  alt: 'Accenture',  w: 260, h: 145   },
   { src: bloomberg,  alt: 'Bloomberg',   w: 303, h: 56    },
@@ -32,47 +27,33 @@ const sponsors = [
   { src: visa,       alt: 'Visa',        w: 300, h: 300   },
 ];
 
-const sliderSettings = {
-  infinite: true,
-  autoplay: true,
-  autoplaySpeed: 0,
-  speed: 5000,
-  cssEase: 'linear',
-  slidesToShow: 5,
-  slidesToScroll: 1,
-  arrows: false,
-  dots: false,
-  focusOnSelect: false,
-  accessibility: false,
-  responsive: [
-    { breakpoint: 1024, settings: { slidesToShow: 6 } },
-    { breakpoint: 900,  settings: { slidesToShow: 5 } },
-    { breakpoint: 600,  settings: { slidesToShow: 4 } },
-  ],
-};
-
 export default function SponsorsCarousel() {
   return (
     <section className="sponsors">
       <h2 className="sponsors-heading">Our Sponsors</h2>
       <div className="sponsors-track">
-        <Slider {...sliderSettings}>
+        <div className="sponsors-marquee">
+          {[0, 1].map(copy => (
+          <div className="sponsors-group" key={copy} aria-hidden={copy === 1 ? true : undefined}>
           {sponsors.map(({ src, alt, w, h }) => (
-            <div key={alt} className="sponsor-slide">
-              <a href="/sponsors" className="sponsor-link" aria-label={`${alt} — View all sponsors`}>
+            <div key={alt} className="sponsor-slide" >
+              <a href="/sponsors" className="sponsor-link" tabIndex={copy === 1 ? -1 : undefined} draggable={false} aria-label={`${alt} — View all sponsors`}>
                 <img
                   src={src}
+                  draggable={false}
                   alt={alt}
                   className={`sponsor-logo${alt === 'Visa' ? ' sponsor-logo--visa' : ''}${alt === 'EY' ? ' sponsor-logo--ey' : ''}${alt === 'Accenture' ? ' sponsor-logo--accenture' : ''}`}
                   style={{
-                    width:  `calc(${w}px * var(--scale, 1))`,
-                    height: `calc(${h}px * var(--scale, 1))`,
+                    width:  `${w / 20}rem`,
+                    height: `${h / 20}rem`,
                   }}
                 />
               </a>
             </div>
           ))}
-        </Slider>
+        </div>
+          ))}
+        </div>
       </div>
     </section>
   );
