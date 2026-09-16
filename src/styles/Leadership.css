@@ -108,6 +108,7 @@
 }
 
 .wwa-hero-image-wrap {
+  border-radius: 1.25rem;
   width: 44.0625rem;
   height: 27.375rem;
   position: relative;
@@ -146,7 +147,7 @@
   .wwa-hero-title    { order: 1; font-size: 2rem; font-weight: 800; margin: 0; }
   .wwa-hero-subtitle { order: 2; font-size: 0.9375rem; }
   .wwa-hero-ctas     { order: 3; gap: 0.4375rem; flex-direction: column; align-self: stretch; width: 100%; }
-  .wwa-hero-image-wrap { order: 4; width: 100%; height: auto; aspect-ratio: 647 / 402; align-self: stretch; }
+  .wwa-hero-image-wrap { border-radius: 0.75rem; order: 4; width: 100%; height: auto; aspect-ratio: 647 / 402; align-self: stretch; }
   .wwa-hero-image { width: 107.94%; height: 115.92%; }
   .wwa-hero-btn-primary, .wwa-hero-btn-secondary {
     font-size: 0.9375rem;

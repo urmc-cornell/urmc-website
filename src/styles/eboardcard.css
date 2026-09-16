@@ -27,7 +27,7 @@ eboardcard .card-container {
 .card-title {
     align-self: stretch;
     text-align: center;
-    font-family: "Montserrat-Medium-Soft";
+    font-family: 'Montserrat', sans-serif;
     font-variant: all-small-caps;
     color: #37383C;
     font-weight: 600;
@@ -38,7 +38,8 @@ eboardcard .card-container {
 }
 
 .card-name {
-    font-family: "Montserrat-Medium-Soft";
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
     color: #000;
     font-size: 23px;
     padding-bottom: 17px;

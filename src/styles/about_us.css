@@ -30,7 +30,7 @@ body {
 .about-us-page .about-header {
     color: #F0F0F0;
     text-align: center;
-    font-family: "Helvetica Neue";
+    font-family: 'Montserrat', sans-serif;
     font-size: 3.375rem;
     font-style: normal;
     font-weight: 700;
@@ -49,7 +49,7 @@ body {
     margin-bottom: 0.625rem;
 
     color: #F0F0F0;
-    font-family: "Helvetica Neue";
+    font-family: 'Montserrat', sans-serif;
     font-size: 2.25rem;
     font-style: normal;
     font-weight: 400;
@@ -93,7 +93,7 @@ body {
 .about-us-page .pillar-text {
     color: #FFF;
     text-align: center;
-    font-family: Hard;
+    font-family: 'Montserrat', sans-serif;
     font-size: 3rem;
     font-weight: 700;
     line-height: normal;
@@ -135,7 +135,7 @@ body {
 .about-us-page .stats-number {
     color: #F0F0F0;
     text-align: center;
-    font-family: Hard;
+    font-family: 'Montserrat', sans-serif;
     font-size: 2.8125rem;
     font-weight: 700;
 }
@@ -200,7 +200,7 @@ body {
 
 .about-us-page .section-text {
     color: #FFF;
-    font-family: Medium;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.75rem;
     font-style: normal;
     font-weight: 700;
@@ -304,7 +304,7 @@ body {
 
 .about-us-page #join-header {
     color: #EEB50C;
-    font-family: Hard;
+    font-family: 'Montserrat', sans-serif;
     font-size: 3.5rem;
     font-style: normal;
     font-weight: 700;
@@ -330,7 +330,7 @@ body {
 .about-us-page #join-text {
     color: var(--URMC-White, #F9F9F9);
     text-align: center;
-    font-family: Hard;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.875rem;
     font-style: normal;
     font-weight: 600;

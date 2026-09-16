@@ -106,7 +106,7 @@
 
   .blurb {
     width: 80%;
-    font-family: 'Montserrat-Medium-Soft';
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     color: #FFFF;
   }

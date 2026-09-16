@@ -11,10 +11,6 @@ import Home from "./pages/Home.js";
 import Ta_directory from "./pages/Ta_directory.js";
 import Leaderboard from "./pages/Leaderboard.js";
 
-//fonts
-import "./fonts/static/Montserrat-Light.ttf";
-import "./fonts/static/Montserrat-Medium.ttf";
-
 function App() {
   let component;
   const isHomePage = window.location.pathname === "/";

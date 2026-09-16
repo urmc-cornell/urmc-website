@@ -78,6 +78,7 @@
   height: 1.5625rem;
 }
 .redesign-hero-image {
+  border-radius: 1.25rem;
   position: relative;
   flex-shrink: 0;
   overflow: hidden;
@@ -93,6 +94,7 @@
   text-align: center;
 }
 @media (max-width: 48rem) {
+  .redesign-hero-image { border-radius: 0.75rem; }
   .redesign-page {
 
     --redesign-pad: 1.25rem;

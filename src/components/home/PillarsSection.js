@@ -23,7 +23,7 @@ const pillars = [
     id: 'profdev',
     title: 'Professional Development',
     image: profdevImg,
-    imgStyle: { width: '141.04%', height: '201.31%', top: '-24.59%', left: '-17.13%' },
+    imgStyle: { width: '100%', height: '100%', top: 0, left: 0, objectFit: 'cover', objectPosition: 'center 35%' },
     description: 'We prepare members to succeed in the tech industry with hands-on career support and opportunities.',
     bullets: [
       'Company-sponsored recruitment events',

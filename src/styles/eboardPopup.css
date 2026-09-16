@@ -57,7 +57,7 @@
 }
 
 .name {
-  font-family: "Montserrat-Medium-Soft";
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 25px;
@@ -67,7 +67,7 @@
 }
 
 .ask-about {
-  font-family: 'Montserrat-Medium-Soft';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 25px;
@@ -123,7 +123,7 @@
   height: 32px;
   background: #667BC4;
   border-radius: 11px;
-  font-family: 'Montserrat-Medium-Soft';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -135,7 +135,7 @@
 }
 
 .contact {
-  font-family: 'Montserrat-Medium-Soft';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 25px;
@@ -156,7 +156,7 @@
 
 
 .bio {
-  font-family: 'Helvetica Neue';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 17px;

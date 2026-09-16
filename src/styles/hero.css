@@ -17,13 +17,18 @@
   gap: var(--space-copy);
   width: 40.625rem;
   flex-shrink: 0;
+  container-type: inline-size;
 }
 
 .hero-title {
   color: #f5f5f5;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  font-size: var(--font-page-title);
+  /* Fit the longest word within the text column before wrapping at spaces. */
+  font-size: min(var(--font-page-title), 9.5cqi);
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
   line-height: normal;
   letter-spacing: 0;
   margin: 0;
@@ -149,7 +154,7 @@
   }
 
   .hero-text { width: 100%; flex-shrink: unset; }
-  .hero-title { font-size: 2rem; }
+  .hero-title { font-size: min(2rem, 9.5cqi); }
   .hero-subtitle { font-size: 1rem; }
   .hero-ctas { flex-wrap: wrap; }
   .hero-btn-primary, .hero-btn-secondary { font-size: 1rem; padding: 0.75rem 1.25rem; border-radius: 1.25rem; }
