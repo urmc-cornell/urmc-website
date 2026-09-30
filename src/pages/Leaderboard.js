@@ -2,82 +2,133 @@ import React, { useState } from 'react'
 import { supabase } from "../lib/supabaseClient.js";
 import { currentSemester } from "../lib/semester.js";
 
-export default function Leaderboard() {
-    const [threshold, setThreshold] = useState(''); // State for input value
-    const [netIds, setNetIds] = useState([]); // State to store results
-    const [error, setError] = useState(null); // State to store error messages
-    const [loading, setLoading] = useState(false); // Loading state to show a spinner
-    const semester = currentSemester();
+import { useState, useEffect } from 'react';
+import { supabase } from '../lib/supabaseClient.js';
+import WhoWeAreHero from '../components/leadership/WhoWeAreHero.js';
+import QuoteSection from '../components/leadership/QuoteSection.js';
+import TeamSection from '../components/leadership/TeamSection.js';
+import MembersSection from '../components/leadership/MembersSection.js';
+import MemberPopup from '../components/leadership/MemberPopup.js';
+import groupPhoto from '../images/urmcMembers.jpg';
+import '../styles/Leadership.css';
 
-    
-    const handleSubmit = async (event) => {
-        event.preventDefault(); // Prevent default form submission behavior
-        setLoading(true); // Set loading state to true
+export default function Leadership() {
 
-        if (isNaN(threshold) || threshold <= 0) {
-            setError('Please enter a valid positive number for the threshold.');
-            setLoading(false);
-            return;
-        }
+  const [members, setMembers] = useState({ advisors: [], eboard: [] });
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [selectedMember, setSelectedMember] = useState(null);
+  const [activeCategory, setActiveCategory] = useState('all');
 
-        try {
-            const numericThreshold = Number(threshold); // Turn the threshold string to a number
-            const { data: pointsTracking, error: pointsTrackingError } = await supabase
-                .from('summed_points')
-                .select('first_name, last_name, netid, total_points')
-                .gte('total_points', numericThreshold); // Filter by threshold
+  useEffect(() => {
+    fetchLeadershipData();
+  }, []);
 
-            if (pointsTrackingError) {
-                console.error('Error in points_tracking query:', pointsTrackingError);
-                throw pointsTrackingError;
-            }
-            // Store the result (net_ids) in state
-            setNetIds(pointsTracking);
-            setError(null); // Clear any previous errors
-        } catch (err) {
-            // If an error occurs, store it in the error state
-            setError(`Error fetching data. Please try again. ${err.message}`);
-            setNetIds([]); // Clear previous results on error
-        } finally {
-            setLoading(false); // Set loading state to false
-        }
-    };
+  async function fetchLeadershipData() {
+    try {
+      const { data, error } = await supabase
+        .from('members')
+        .select(`
+          id, position, headshot_url, secondary_headshot_url,
+          first_name, last_name, major, graduation_year, email, netid, instagram_url, linkedin_url,
+          ask_about, bio, role
+        `)
+        .or('role.cs.{eboard},role.cs.{advisor}');
 
-    return (
-        <div>
-            <h1>Find Students Above a Point Threshold</h1>
+      if (error) throw error;
 
-            {/* Form to input point threshold */}
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="threshold">Please enter point threshold:</label>
-                <input
-                    type="number"
-                    id="threshold"
-                    value={threshold}
-                    onChange={(e) => setThreshold(e.target.value)} // Update threshold state
-                    placeholder="Enter threshold points"
-                    min="0"
-                />
-                <button type="submit" disabled={loading}>
-                    {loading ? 'Loading...' : 'Get Students Above Threshold'}
-                </button>
-            </form>
+      const getPositionPriority = (title) => {
+        const normalized = title.toLowerCase().replace(/\s+/g, '');
+        if (normalized === 'president') return 1;
+        if (normalized.includes('co-president') || normalized.includes('co–president')) return 2;
+        if (normalized.includes('vicepresident') || normalized.includes('vice-president')) return 3;
+        return 4;
+      };
 
-            {/* Show error message if there's an error */}
-            {error && <div style={{ color: 'red' }}>{error}</div>}
+      const mapped = data.map((m) => ({
+        id: m.id,
+        title: m.position || '',
+        image: m.headshot_url,
+        secondaryImage: m.secondary_headshot_url || m.headshot_url,
+        name: `${m.first_name} ${m.last_name}`,
+        majors: [
+          m.major,
+          m.graduation_year && !/(?:20\d{2}|['’]\d{2})/.test(m.major || '')
+            ? `’${String(m.graduation_year).slice(-2)}` : null,
+        ].filter(Boolean).join(' '),
+        email: m.email?.trim() || (m.netid ? (m.netid.includes('@') ? m.netid.trim() : `${m.netid.trim()}@cornell.edu`) : ''),
+        insta: m.instagram_url,
+        linkedIn: m.linkedin_url,
+        askAbout: m.ask_about || [],
+        bio: m.bio,
+        role: m.role || '',
+      }));
 
-            {/* Display result */}
-            <div className="result" style={{ marginTop: '20px' }}>
-                {netIds.length > 0 ? (
-                    <ul>
-                        {netIds.map((student, index) => (
-                            <li key={index}>{student.first_name} {student.last_name} | NetID: {student.netid} </li>
-                        ))}
-                    </ul>
-                ) : (
-                    !loading && <p>No students found above the threshold.</p>
-                )}
-            </div>
-        </div>
-    );
+      const ADVISOR_ORDER = ['roberts', 'tardos', 'weatherspoon'];
+      const advisorRank = (name) => {
+        const lower = name.toLowerCase();
+        const idx = ADVISOR_ORDER.findIndex((key) => lower.includes(key));
+        return idx === -1 ? 99 : idx;
+      };
+
+      const isAdvisor = (m) => [].concat(m.role).includes('advisor');
+
+      const advisors = mapped
+        .filter(isAdvisor)
+        .sort((a, b) => advisorRank(a.name) - advisorRank(b.name));
+
+      const eboard = mapped
+        .filter((m) => !isAdvisor(m))
+        .sort((a, b) => {
+          const pa = getPositionPriority(a.title);
+          const pb = getPositionPriority(b.title);
+          if (pa !== pb) return pa - pb;
+          if (a.title !== b.title) return a.title.localeCompare(b.title);
+          return a.name.localeCompare(b.name);
+        });
+
+      setMembers({ advisors, eboard });
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  const EBOARD_FILTER = {
+    'all':               () => true,
+    'presidents':        (m) => /president/i.test(m.title),
+    'events':            (m) => /academic|corporate|event|professional development/i.test(m.title),
+    'community-building':(m) => /community|mentorship|social/i.test(m.title),
+    'external':          (m) => /external|design|outreach|public relations/i.test(m.title),
+    'internal':          (m) => /internal|secretary|treasurer|web development/i.test(m.title),
+    'advisors':          () => false,
+  };
+
+  const showAdvisors = activeCategory === 'all' || activeCategory === 'advisors';
+  const filteredEboard = activeCategory === 'advisors'
+    ? []
+    : members.eboard.filter(EBOARD_FILTER[activeCategory] ?? (() => true));
+
+  if (loading) return <div className="wwa-status">Loading…</div>;
+  if (error)   return <div className="wwa-status">Error: {error}</div>;
+
+  return (
+    <div className="who-we-are-page">
+      <WhoWeAreHero photo={groupPhoto} />
+      <QuoteSection />
+      <TeamSection onCategoryChange={setActiveCategory} />
+      <MembersSection
+        advisors={showAdvisors ? members.advisors : []}
+        members={filteredEboard}
+        onCardClick={setSelectedMember}
+      />
+      {selectedMember && (
+        <MemberPopup
+          member={selectedMember}
+          onClose={() => setSelectedMember(null)}
+        />
+      )}
+    </div>
+  );
 }
