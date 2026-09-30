@@ -24,4 +24,12 @@ npm run start:staging  # staging environment
 
 Run `npm run build` to generate the `build` folder with all production assets.
 
+### Before Opening a Pull Request
+
+- Describe what changed and how you checked it.
+- Include screenshots for visible updates.
+- Keep each pull request focused on one change to make reviews easier.
+
+For a practice workflow, see the [stacked PR demo](STACKED_PR_DEMO.md).
+
 For any questions or concerns on our website, reach out to urmc@cornell.edu
