@@ -1,3 +1,4 @@
+/* global chrome */
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE_PATH||'playwright');
 const {fixtures,routes,metrics}=require('./layout.cjs');
 const fs=require('node:fs'),os=require('node:os'),path=require('node:path');
@@ -17,7 +18,7 @@ const assert=require('node:assert/strict');
   for(const zoom of [.8,1,1.25,1.5,2]){
    await worker.evaluate(async({zoom,baseURL})=>{const tabs=await chrome.tabs.query({url:`${baseURL}/*`});await chrome.tabs.setZoom(tabs[0].id,zoom)},{zoom,baseURL});
    await page.waitForTimeout(150);
-   const result={route:route||'home',zoom,...await metrics(page),...await page.evaluate(()=>({outerWidth,devicePixelRatio,viewportHeight:innerHeight,bodySize:getComputedStyle(document.querySelector('.hero-subtitle,.wwa-hero-subtitle,.gi-hero-subtitle,.ta-hero__subtitle,.points-hero-subtitle,.redesign-hero-copy p')||document.querySelector('h1')).fontSize}))};
+   const result={route:route||'home',zoom,...await metrics(page),...await page.evaluate(()=>({outerWidth:window.outerWidth,devicePixelRatio:window.devicePixelRatio,viewportHeight:window.innerHeight,bodySize:getComputedStyle(document.querySelector('.hero-subtitle,.wwa-hero-subtitle,.gi-hero-subtitle,.ta-hero__subtitle,.points-hero-subtitle,.redesign-hero-copy p')||document.querySelector('h1')).fontSize}))};
    results.push(result);
    assert.equal(result.outerWidth,1920,'Desktop window must stay fixed');
    assert.ok(Math.abs(result.devicePixelRatio-zoom)<.01,'Must use actual browser zoom');

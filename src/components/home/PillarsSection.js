@@ -48,37 +48,25 @@ const pillars = [
 ];
 
 function PillarCard({ pillar, isActive, onActivate, onDeactivate, onToggle }) {
-  const handleTouchEnd = (e) => {
-    e.preventDefault();
-    onToggle(pillar.id);
-  };
-
   return (
-    <div
+    <button
+      type="button"
       className={`pillar-card pillar-card--${pillar.id}${isActive ? ' pillar-card--hovered' : ''}`}
-      role="button"
-      tabIndex={0}
       aria-label={pillar.title}
       aria-expanded={isActive}
-      onKeyDown={(event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          onToggle(pillar.id);
-        }
-      }}
-      onMouseEnter={onActivate}
-      onMouseLeave={onDeactivate}
-      onTouchEnd={handleTouchEnd}
+      onClick={() => onToggle(pillar.id)}
+      onPointerEnter={event => { if (event.pointerType === 'mouse') onActivate(); }}
+      onPointerLeave={event => { if (event.pointerType === 'mouse') onDeactivate(); }}
     >
       {/* Photo — no overlay by default */}
       <div className="pillar-card-photo">
         <img src={pillar.image} alt={pillar.title} style={pillar.imgStyle} />
       </div>
 
-      {/* Dark overlay — only visible on hover */}
+      {/* Dark overlay when the card is active */}
       <div className="pillar-card-overlay" aria-hidden="true" />
 
-      {/* Description + bullets — only visible on hover */}
+      {/* Description and bullets when the card is active */}
       <div className="pillar-card-content">
         <p className="pillar-card-desc">{pillar.description}</p>
         <ul className="pillar-card-bullets">
@@ -93,7 +81,7 @@ function PillarCard({ pillar, isActive, onActivate, onDeactivate, onToggle }) {
 
       {/* Gold pointer — bottom-right of card */}
       <img src={goldPointer} alt="" className="pillar-card-pointer" aria-hidden="true" />
-    </div>
+    </button>
   );
 }
 

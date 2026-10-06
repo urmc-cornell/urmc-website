@@ -7,13 +7,6 @@ import HowToEarnSection from '../components/points/HowToEarnSection.js';
 import RewardsSection from '../components/points/RewardsSection.js';
 import '../styles/points.css';
 
-const EXCLUDED_NETIDS = new Set([
-  'ryg4', 'zas36', 'bm734', 'saf274', 'ga362', 'jcp349', 'kab472',
-  'jwj68', 'bbm56', 'jce79', 'ta375', 'doa8', 'reb368', 'lyb4',
-  'ga324', 'nt387', 'jt938', 'asa253', 'ce248', 'as3734', 'fmi4',
-  'ya287', 'ele54', 'ym582', 'dfb222',
-]);
-
 export default function Points() {
 
   const semester = currentSemester();
@@ -25,11 +18,12 @@ export default function Points() {
         const { data, error } = await supabase
           .from('members')
           .select(
-            'netid, first_name, last_name, points_tracking!points_tracking_member_id_fkey (points, semester)'
+            'netid, first_name, last_name, role, points_tracking!points_tracking_member_id_fkey (points, semester)'
           );
         if (error) throw error;
 
         const ranked = data
+          .filter((m) => ![].concat(m.role).includes('eboard'))
           .map((m) => ({
             netid: m.netid,
             name: `${m.first_name ?? ''} ${m.last_name ?? ''}`.trim() || m.netid,
@@ -37,7 +31,7 @@ export default function Points() {
               .filter((r) => r.semester === semester)
               .reduce((sum, r) => sum + r.points, 0),
           }))
-          .filter((m) => m.totalPoints > 0 && !EXCLUDED_NETIDS.has(m.netid))
+          .filter((m) => m.totalPoints > 0)
           .sort((a, b) => b.totalPoints - a.totalPoints)
           .slice(0, 3);
 
@@ -58,9 +52,10 @@ export default function Points() {
         )
         .eq('netid', netidInput.toLowerCase())
         .eq('points_tracking.semester', semester)
-        .single();
+        .maybeSingle();
 
-      if (error || !data) return 'NetID not found';
+      if (error) throw error;
+      if (!data) return 'NetID not found';
 
       const total = (data.points_tracking ?? []).reduce(
         (sum, r) => sum + r.points,

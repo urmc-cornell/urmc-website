@@ -1,6 +1,5 @@
 .events-hero {
   gap: 3.8125rem;
-  height: 47.375rem;
 }
 .events-hero .redesign-hero-image {
   width: 44.5625rem;
@@ -67,7 +66,6 @@
   border-radius: 0.75rem;
   padding: 0;
   background: transparent;
-  /* Restore when featured-event dialogs are re-enabled: cursor: pointer; */
 }
 .featured-event-card img {
   display: block;
@@ -93,89 +91,6 @@
 .featured-event-card--prelim-review img {
   height: 125%;
   top: -24.05%;
-}
-.featured-event-dialog {
-  padding: 0;
-  border: 0;
-  width: min(68.75rem, 92vw);
-  max-height: 92dvh;
-  color: #f5f5f5;
-  background: #1f1f1f;
-  font-family: 'Montserrat', sans-serif;
-}
-.featured-event-dialog::backdrop {
-  background: rgb(0 0 0 / 75%);
-}
-.featured-event-detail {
-  display: flex;
-  position: relative;
-}
-.featured-event-full-flyer {
-  display: block;
-  width: 50%;
-  object-fit: contain;
-  align-self: flex-start;
-}
-.featured-event-detail-copy {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 3rem 2rem 1.5rem;
-  flex: 1;
-}
-.featured-event-detail-copy h2 {
-  font-size: var(--font-body);
-  font-weight: 600;
-  margin: 0;
-}
-.featured-event-detail-copy p {
-  font-size: 0.9375rem;
-  line-height: normal;
-  margin: 0;
-}
-.featured-event-tags {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-.featured-event-tags span {
-  background: #eeb50c;
-  color: #1f1f1f;
-  font-size: 0.875rem;
-  font-weight: 600;
-  padding: 0.4375rem 0.6875rem;
-  border-radius: 0.6875rem;
-}
-.featured-event-detail-copy .featured-event-description {
-  margin-top: 0.75rem;
-}
-.featured-event-detail-copy a {
-  align-self: flex-end;
-  margin-top: auto;
-  padding-top: 1.25rem;
-}
-.featured-event-detail-copy a img {
-  width: 2rem;
-  height: 1.9375rem;
-}
-.featured-event-close img {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.featured-event-close {
-  padding: 0;
-  position: absolute;
-  right: 0.875rem;
-  top: 1.1875rem;
-  width: 2.75rem;
-  height: 2.75rem;
-  border: 0;
-  background: #1f1f1f;
-  color: #f5f5f5;
-  font-size: 2.25rem;
-  line-height: 1;
-  cursor: pointer;
 }
 @media (max-width: 48rem) {
   .events-hero {
@@ -210,7 +125,7 @@
     gap: 0.375rem;
   }
   .featured-event-card {
-    border-width: .38.0625rem;
+    border-width: 0.380625rem;
     border-radius: 0.304625rem;
   }
   .featured-event-card--bowling img {
@@ -225,23 +140,6 @@
   .featured-event-card--prelim-review img {
     top: -7.61%;
   }
-  .featured-event-dialog {
-    width: 100%;
-    max-width: 100%;
-    height: 100dvh;
-    max-height: 100dvh;
-    margin: 0;
-  }
-  .featured-event-detail {
-    flex-direction: column;
-    min-height: 100%;
-  }
-  .featured-event-full-flyer {
-    width: 100%;
-  }
-  .featured-event-detail-copy {
-    padding: 1.5rem 1.25rem;
-  }
 }
 
 .events-hero { height: auto; min-height: 47.375rem; padding-bottom: 6.875rem; }
@@ -254,5 +152,3 @@
 @media (max-width: 68.75rem) {
   .events-hero { min-height: 0; padding-bottom: var(--space-hero); }
 }
-.featured-event-dialog { overflow-y: auto; }
-.featured-event-detail-copy { min-width: 0; overflow-wrap: anywhere; }

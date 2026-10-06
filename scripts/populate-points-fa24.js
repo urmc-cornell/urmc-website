@@ -46,7 +46,7 @@ async function populatePoints() {
 
         if (!member_id) {
           console.error(`No member found for netid: ${netid}`);
-          return;
+          return null;
         }
 
         return {
@@ -57,9 +57,9 @@ async function populatePoints() {
           reason: "Transfer from SP24 to New Database",
         };
       })
-      .filter((record) => record !== null);
+      .filter(Boolean);
 
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from("points_tracking")
       .upsert(transformedRecords);
 

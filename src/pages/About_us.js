@@ -1,11 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import academic from "../images/academic_icon.svg";
 import community from "../images/community_icon.svg";
 import profdev from "../images/prof_icon.svg";
-import Carousel from "../components/Carousel.js";
-import AboutUsPillarCard from "../components/AboutUsPillarCard.js";
-import * as Constants from "../Supporting/AboutUsConstants.js";
-import Widget from "../components/Widget.js";
 import academic1 from "../images/sections/academic_1.png";
 import academic2 from "../images/sections/academic_2.png";
 import community1 from "../images/sections/community_1.png";
