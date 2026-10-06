@@ -50,6 +50,36 @@ const output=process.env.OUTPUT_DIR||'/tmp/urmc-zoom/after';
    }
    await testPage.close();
   }
+  const rankingsPage = await browser.newPage();
+  const { currentSemester } = await import('../../src/lib/semester.js');
+  const semester = currentSemester();
+  const rankingMember = (netid, role, points, pointsSemester = semester) => ({
+   netid, first_name: netid, last_name: 'Member', role,
+   points_tracking: [{ points, semester: pointsSemester }],
+  });
+  const rankingMembers = [
+   rankingMember('board1', ['eboard'], 100),
+   rankingMember('board2', ['ta', 'eboard'], 90),
+   rankingMember('ryg4', ['member'], 70),
+   rankingMember('advisor1', ['advisor'], 60),
+   rankingMember('missing1', null, 50),
+   rankingMember('fourth1', [], 40),
+   rankingMember('zero1', ['member'], 0),
+   rankingMember('old1', ['member'], 200, 'fa25'),
+  ];
+  await rankingsPage.route('**/rest/v1/**', route => {
+   const url = new URL(route.request().url());
+   const lookup = url.searchParams.has('netid');
+   if (!lookup) assert.ok(url.searchParams.get('select').includes('role'), 'Ranking query must select roles');
+   return route.fulfill({contentType:'application/json', body:JSON.stringify(lookup ? rankingMembers[0] : rankingMembers)});
+  });
+  await rankingsPage.goto(`${baseURL}/points`);
+  await rankingsPage.locator('.points-top-row').first().waitFor();
+  assert.deepEqual(await rankingsPage.locator('.points-top-name').allTextContents(), ['#1:ryg4 Member', '#2:advisor1 Member', '#3:missing1 Member']);
+  await rankingsPage.getByRole('textbox', {name:'Cornell NetID'}).fill('board1');
+  await rankingsPage.getByRole('button', {name:'Enter',exact:true}).click();
+  await rankingsPage.getByRole('status').filter({hasText:'100 pts'}).waitFor();
+  await rankingsPage.close();
   await browser.close();console.log(engine,'passed');
   fs.mkdirSync(output,{recursive:true});fs.writeFileSync(path.join(output,'interaction-results.json'),JSON.stringify(results,null,2));
  }
