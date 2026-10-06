@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import teamPhoto from '../../images/eboardPhoto.jpg';
 import '../../styles/Leadership.css';
 
@@ -12,15 +11,7 @@ const CATEGORIES = [
   { label: 'Advisors',           key: 'advisors' },
 ];
 
-export default function TeamSection({ onCategoryChange }) {
-  const [active, setActive] = useState('all');
-
-  const handleClick = (key, e) => {
-    setActive(key);
-    onCategoryChange(key);
-    e.currentTarget.blur();
-  };
-
+export default function TeamSection({ activeCategory, onCategoryChange }) {
   return (
     <section className="wwa-team-section">
       <div className="wwa-team-content">
@@ -40,9 +31,10 @@ export default function TeamSection({ onCategoryChange }) {
                 key={cat.key}
                 className={[
                   'wwa-team-category-btn',
-                  active === cat.key ? 'wwa-team-category-btn--active' : '',
+                  activeCategory === cat.key ? 'wwa-team-category-btn--active' : '',
                 ].join(' ')}
-                onClick={(e) => handleClick(cat.key, e)}
+                aria-pressed={activeCategory === cat.key}
+                onClick={() => onCategoryChange(cat.key)}
               >
                 {cat.label}
               </button>

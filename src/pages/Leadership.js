@@ -102,9 +102,7 @@ export default function Leadership() {
   };
 
   const showAdvisors = activeCategory === 'all' || activeCategory === 'advisors';
-  const filteredEboard = activeCategory === 'advisors'
-    ? []
-    : members.eboard.filter(EBOARD_FILTER[activeCategory] ?? (() => true));
+  const filteredEboard = members.eboard.filter(EBOARD_FILTER[activeCategory]);
 
   if (loading) return <div className="wwa-status">Loading…</div>;
   if (error)   return <div className="wwa-status">Error: {error}</div>;
@@ -113,7 +111,7 @@ export default function Leadership() {
     <div className="who-we-are-page">
       <WhoWeAreHero photo={groupPhoto} />
       <QuoteSection />
-      <TeamSection onCategoryChange={setActiveCategory} />
+      <TeamSection activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
       <MembersSection
         advisors={showAdvisors ? members.advisors : []}
         members={filteredEboard}

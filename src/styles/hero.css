@@ -99,7 +99,7 @@
 }
 
 
-.hero-carousel-img {
+.hero-image {
   position: absolute;
   inset: 0;
   display: block;
@@ -108,37 +108,6 @@
   max-width: none;
   object-fit: cover;
   object-position: center;
-  opacity: 0;
-  transition: opacity 0.8s ease;
-}
-
-.hero-carousel-img--active {
-  opacity: 1;
-}
-
-.hero-carousel-dots {
-  position: absolute;
-  bottom: 0.75rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 0.5rem;
-  z-index: 2;
-}
-
-.hero-carousel-dot {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  border: none;
-  background: rgba(245, 245, 245, 0.5);
-  cursor: pointer;
-  padding: 0;
-  transition: background 0.3s ease;
-}
-
-.hero-carousel-dot--active {
-  background: #f5f5f5;
 }
 
 @media (max-width: 48rem) {

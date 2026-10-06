@@ -9,7 +9,7 @@
   font-family: 'Montserrat', sans-serif;
   width: 100%;
 }
-.redesign-page *, .featured-event-dialog * {
+.redesign-page * {
   box-sizing: border-box;
 }
 .redesign-page h1, .redesign-page h2, .redesign-page h3, .redesign-page p {

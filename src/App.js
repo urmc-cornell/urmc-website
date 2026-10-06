@@ -1,14 +1,14 @@
 import "./App.css";
 import Navbar from "./components/Navbar.js";
 import Footer from "./components/Footer.js";
-import About_us from "./pages/About_us.js";
+import AboutUs from "./pages/About_us.js";
 import Events from "./pages/Events.js";
-import Getting_involved from "./pages/Getting_involved.js";
+import GettingInvolved from "./pages/Getting_involved.js";
 import Leadership from "./pages/Leadership.js";
 import Sponsors from "./pages/Sponsors.js";
 import Points from "./pages/Points.js";
 import Home from "./pages/Home.js";
-import Ta_directory from "./pages/Ta_directory.js";
+import TaDirectory from "./pages/Ta_directory.js";
 import Leaderboard from "./pages/Leaderboard.js";
 
 //fonts
@@ -24,16 +24,16 @@ function App() {
       component = <Home className="body" />;
       break;
     case "/about-us":
-      component = <About_us />;
+      component = <AboutUs />;
       break;
     case "/events":
       component = <Events />;
       break;
     case "/ta-directory":
-      component = <Ta_directory />;
+      component = <TaDirectory />;
       break;
     case "/getting-involved":
-      component = <Getting_involved />;
+      component = <GettingInvolved />;
       break;
     case "/leadership":
       component = <Leadership />;
@@ -47,6 +47,8 @@ function App() {
     case "/leaderboard":
       component = <Leaderboard />;
       break;
+    default:
+      component = null;
   }
 
   return (
