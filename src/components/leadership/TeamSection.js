@@ -1,15 +1,7 @@
 import teamPhoto from '../../images/eboardPhoto.jpg';
 import '../../styles/Leadership.css';
 
-const CATEGORIES = [
-  { label: 'Full Team',          key: 'all' },
-  { label: 'Presidents',         key: 'presidents' },
-  { label: 'Events',             key: 'events' },
-  { label: 'Community Building', key: 'community-building' },
-  { label: 'External',           key: 'external' },
-  { label: 'Internal',           key: 'internal' },
-  { label: 'Advisors',           key: 'advisors' },
-];
+import { LEADERSHIP_CATEGORIES } from '../../Supporting/LeadershipCategories.js';
 
 export default function TeamSection({ activeCategory, onCategoryChange }) {
   return (
@@ -26,7 +18,7 @@ export default function TeamSection({ activeCategory, onCategoryChange }) {
             </p>
           </div>
           <div className="wwa-team-categories">
-            {CATEGORIES.map((cat) => (
+            {LEADERSHIP_CATEGORIES.map((cat) => (
               <button
                 key={cat.key}
                 className={[

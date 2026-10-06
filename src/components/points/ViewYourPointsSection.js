@@ -5,13 +5,18 @@ import '../../styles/points.css';
 export default function ViewYourPointsSection({ topMembers, onLookup }) {
   const [netid, setNetid] = useState('');
   const [result, setResult] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const trimmed = netid.trim();
-    if (!trimmed) return;
-    const lookup = await onLookup(trimmed);
-    setResult(lookup);
+    if (!trimmed || loading) return;
+    setLoading(true);
+    try {
+      setResult(await onLookup(trimmed));
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -30,13 +35,14 @@ export default function ViewYourPointsSection({ topMembers, onLookup }) {
               className="points-vyp-input"
               placeholder="abc123"
               value={netid}
+              disabled={loading}
               onChange={(e) => setNetid(e.target.value)}
               aria-label="Cornell NetID"
             />
-            <button type="submit" className="points-vyp-submit">
-              Enter
+            <button type="submit" className="points-vyp-submit" disabled={loading}>
+              {loading ? 'Loading…' : 'Enter'}
             </button>
-            {result && <span className="points-vyp-result">{result}</span>}
+            {result && <span className="points-vyp-result" role="status">{result}</span>}
           </form>
         </div>
 

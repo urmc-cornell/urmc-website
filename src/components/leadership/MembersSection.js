@@ -14,7 +14,7 @@ export default function MembersSection({ advisors = [], members, onCardClick }) 
         </div>
       )}
       {members.length > 0 && (
-        <div className={`wwa-grid${advisors.length > 0 ? ' wwa-grid--below-advisors' : ''}`}>
+        <div className="wwa-grid">
           {members.map((m) => (
             <div key={m.id}>
               <MemberCard member={m} onClick={onCardClick} />

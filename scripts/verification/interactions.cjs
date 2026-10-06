@@ -26,13 +26,14 @@ const output=process.env.OUTPUT_DIR||'/tmp/urmc-zoom/after';
     assert.ok(await page.locator('.nav-menu--left').isVisible());assert.ok(await page.locator('.nav-menu--right').isVisible());
    }
    const pillar=page.locator('.pillar-card').first();await pillar.focus();await page.keyboard.press('Enter');assert.equal(await pillar.getAttribute('aria-expanded'),'true');await page.keyboard.press('Enter');assert.equal(await pillar.getAttribute('aria-expanded'),'false');
-   const visibleLogos=await page.locator('.sponsor-logo').evaluateAll(els=>els.filter(el=>{const r=el.getBoundingClientRect();return r.right>0&&r.left<innerWidth}).length);assert.ok(visibleLogos>=3,'Carousel must show multiple bounded logos');
+   const visibleLogos=await page.locator('.sponsor-logo').evaluateAll(els=>els.filter(el=>{const r=el.getBoundingClientRect();return r.right>0&&r.left<window.innerWidth}).length);assert.ok(visibleLogos>=3,'Carousel must show multiple bounded logos');
    await page.goto(`${baseURL}/ta-directory`);await page.locator('.ta-card').first().waitFor();assert.equal(await page.locator('.ta-card').count(),12);await page.locator('.ta-filters__btn').filter({hasText:'INFO'}).click();assert.equal(await page.locator('.ta-card').count(),6);await page.locator('.ta-search__input').fill('NoSuchCourse');assert.equal(await page.locator('.ta-card').count(),0);
-   await page.goto(`${baseURL}/leadership`);const member=page.locator('.wwa-member-card').first();await member.click();await page.locator('[role="dialog"]').waitFor();const close=page.getByRole('button',{name:'Close',exact:true});assert.ok(await close.isVisible());await page.keyboard.press('Escape');assert.equal(await page.locator('[role="dialog"]').count(),0);assert.equal(await page.evaluate(()=>document.activeElement.className),'wwa-member-card');
+   await page.goto(`${baseURL}/leadership`);const member=page.locator('.wwa-member-card').first();await member.click();await page.getByRole('dialog').waitFor();const close=page.getByRole('button',{name:'Close',exact:true});assert.ok(await close.isVisible());assert.equal(await close.evaluate(el=>el===document.activeElement),true);await page.keyboard.press('Tab');assert.equal(await page.evaluate(()=>document.activeElement === document.body || document.activeElement.closest('dialog') !== null),true);await page.keyboard.press('Escape');assert.equal(await page.getByRole('dialog').count(),0);assert.equal(await page.evaluate(()=>document.activeElement.className),'wwa-member-card');
    const presidents=page.getByRole('button',{name:'Presidents',exact:true});await presidents.focus();await page.keyboard.press('Enter');assert.equal(await presidents.getAttribute('aria-pressed'),'true');assert.equal(await page.locator('.wwa-member-card').count(),1);assert.equal(await page.evaluate(()=>document.activeElement.textContent.trim()),'Presidents');
    await page.getByRole('button',{name:'Advisors',exact:true}).click();assert.equal(await page.locator('.wwa-member-card').count(),3);assert.equal(await presidents.getAttribute('aria-pressed'),'false');
    await page.getByRole('button',{name:'Full Team',exact:true}).click();assert.equal(await page.locator('.wwa-member-card').count(),12);
    await page.goto(`${baseURL}/events`);assert.equal(await page.locator('.featured-event-card').count(),6);assert.equal(await page.locator('button.featured-event-card').count(),0);await page.locator('.featured-event-card').first().click();assert.equal(await page.locator('dialog').count(),0);
+   await page.goto(`${baseURL}/sponsors`);const partner=page.getByRole('button',{name:'Become a Partner'});await partner.click();await page.getByRole('dialog').waitFor();await page.keyboard.press('Escape');assert.equal(await page.getByRole('dialog').count(),0);assert.equal(await partner.evaluate(el=>el===document.activeElement),true);
    await page.goto(`${baseURL}/points`);await page.getByRole('textbox',{name:'Cornell NetID'}).fill('test0');await page.getByRole('button',{name:'Enter',exact:true}).click();await page.getByText('8 pts',{exact:true}).first().waitFor();
    results.push({engine,width,interactions:'passed'});
   }
@@ -42,6 +43,10 @@ const output=process.env.OUTPUT_DIR||'/tmp/urmc-zoom/after';
     await testPage.goto(`${baseURL}/${route}`,{waitUntil:'domcontentloaded'});
     await testPage.waitForTimeout(150);
     const m=await metrics(testPage);assert.ok(m.scrollWidth<=m.width+1,`${engine} ${route} ${mode} overflow`);
+    if(route==='points'){
+     await testPage.getByRole('textbox',{name:'Cornell NetID'}).fill('test0');await testPage.getByRole('button',{name:'Enter',exact:true}).click();
+     await testPage.getByRole('status').filter({hasText:mode==='error'?'Error fetching points':'NetID not found'}).waitFor();
+    }
    }
    await testPage.close();
   }

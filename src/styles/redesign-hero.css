@@ -55,7 +55,6 @@
   font-size: var(--font-body);
   font-weight: 600;
   line-height: normal;
-  white-space: nowrap;
 }
 .redesign-button--gold {
   background: var(--redesign-gold);

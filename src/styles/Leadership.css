@@ -24,8 +24,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-copy);
-  width: 46.625rem;
-  flex-shrink: 0;
 }
 
 .wwa-hero-title {
@@ -46,11 +44,6 @@
   line-height: normal;
   margin: 0;
   letter-spacing: 0;
-}
-
-.wwa-highlight {
-  color: #eeb50c;
-  font-weight: 600;
 }
 
 .wwa-hero-subtitle-link {
@@ -108,8 +101,6 @@
 }
 
 .wwa-hero-image-wrap {
-  width: 44.0625rem;
-  height: 27.375rem;
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
@@ -139,10 +130,8 @@
   .wwa-hero {
     flex-direction: column;
     padding: 3.75rem 1.25rem;
-    gap: 1.125rem;
     align-items: stretch;
   }
-  .wwa-hero-text { display: contents; }
   .wwa-hero-title    { order: 1; font-size: 2rem; font-weight: 800; margin: 0; }
   .wwa-hero-subtitle { order: 2; font-size: 0.9375rem; }
   .wwa-hero-ctas     { order: 3; gap: 0.4375rem; flex-direction: column; align-self: stretch; width: 100%; }
@@ -210,11 +199,9 @@
 .wwa-member-card {
   display: block;
   width: 100%;
-  aspect-ratio: 350 / 450;
   background-color: #1f1f1f;
   border: none;
   border-radius: 1rem;
-  overflow: hidden;
   cursor: pointer;
   position: relative;
   padding: 0;
@@ -226,13 +213,11 @@
   box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.25);
 }
 
-/* Photo wrapper: square, covers top 350/450 = 77.78% of card */
+/* Square photo above the member details */
 .wwa-member-card-photo-wrap {
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 77.78%;
 }
 
 .wwa-member-card-photo {
@@ -245,13 +230,11 @@
   max-width: none;
 }
 
-/* Info: spans the dark section below the photo */
+/* Member details below the photo */
 .wwa-member-card-info {
-  position: absolute;
   top: 77.78%;
   bottom: 0;
   left: 10.29%; /* 36/350 */
-  width: 79.14%; /* 277/350 */
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -283,7 +266,6 @@
 
 @media (max-width: 56.25rem) {
   .wwa-member-card { aspect-ratio: 170 / 219; border-radius: 0.46875rem; }
-  .wwa-member-card-photo-wrap { height: 77.6%; }
   .wwa-member-card-info { top: 77.6%; gap: 0.125rem; left: 5%; width: 90%; }
   .wwa-member-card-name { font-size: 0.8125rem; white-space: normal; overflow: visible; text-overflow: unset; }
   .wwa-member-card-role { font-size: 0.625rem; white-space: normal; overflow: visible; text-overflow: unset; }
@@ -293,11 +275,21 @@
 .wwa-popup-backdrop {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.65);
-  display: flex;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  color: inherit;
+  background: transparent;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+}
+.wwa-popup-backdrop[open] { display: flex; }
+.wwa-popup-backdrop::backdrop {
+  background-color: rgba(0, 0, 0, 0.65);
   animation: wwaFadeIn 0.15s ease forwards;
 }
 
@@ -312,15 +304,12 @@
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  max-height: 85vh;
   max-width: 95vw;
   overflow: hidden;
 }
 
 /* Square photo — fixed width, fills modal height */
 .wwa-popup-photo-wrap {
-  width: 39.5625rem;
-  flex-shrink: 0;
   overflow: hidden;
 }
 
@@ -334,13 +323,10 @@
 
 /* Right content column */
 .wwa-popup-content {
-  width: 49.125rem;
-  flex-shrink: 0;
   padding: 3.75rem 3rem 3.75rem 3.75rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow-y: auto;
   box-sizing: border-box;
 }
 
@@ -433,16 +419,12 @@
 
 .wwa-popup-close {
   position: absolute;
-  top: 2.1875rem;
-  right: 3rem;
-  background: none;
   border: none;
   cursor: pointer;
   color: #f5f5f5;
   font-family: 'Montserrat', sans-serif;
   font-size: 2.5rem;
   font-weight: 600;
-  padding: 0;
   line-height: 1;
 }
 
@@ -451,17 +433,13 @@
   .wwa-popup-inner {
     position: fixed;
     inset: 0;
-    width: 100%;
     max-width: 100%;
     flex-direction: column;
-    max-height: 100vh;
     border-radius: 0;
     overflow-y: auto;
   }
   .wwa-popup-photo-wrap {
-    width: 100%;
     aspect-ratio: 1 / 1;
-    flex-shrink: 0;
     overflow: hidden;
     position: relative;
   }
@@ -474,8 +452,6 @@
     object-position: top center;
   }
   .wwa-popup-content {
-    width: 100%;
-    flex: 1;
     min-height: 0;
     padding: 1.5rem 1.25rem;
     display: flex;
@@ -518,8 +494,6 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  width: 44.1875rem;
-  flex-shrink: 0;
 }
 
 .wwa-team-intro-texts {
@@ -556,7 +530,6 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 23.875rem;
 }
 
 .wwa-team-category-btn {
@@ -574,10 +547,6 @@
   white-space: nowrap;
 }
 
-.wwa-team-category-btn--bold {
-  font-weight: 800;
-}
-
 @media (hover: hover) {
   .wwa-team-category-btn:hover {
     color: #eeb50c;
@@ -590,8 +559,6 @@
 }
 
 .wwa-team-photo-wrap {
-  width: 47.5625rem;
-  height: 36.8125rem;
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
@@ -639,69 +606,6 @@
   box-sizing: border-box;
 }
 
-/* Sidebar */
-.wwa-sidebar {
-  width: 13.75rem;
-  flex-shrink: 0;
-  position: sticky;
-  top: 1.5rem;
-  max-height: 80vh;
-  overflow-y: auto;
-}
-
-.wwa-sidebar-heading {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #eeb50c;
-  margin: 0 0 1rem 0;
-}
-
-.wwa-sidebar-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.wwa-sidebar-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.375rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.125rem;
-  text-align: left;
-  width: 100%;
-}
-
-.wwa-sidebar-btn:hover .wwa-sidebar-name {
-  color: #eeb50c;
-}
-
-.wwa-sidebar-name {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: #f0f0f0;
-  transition: color 0.1s;
-  line-height: 1.2;
-}
-
-.wwa-sidebar-role {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.6875rem;
-  font-weight: 400;
-  color: #888888;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
 /* Grid */
 .wwa-advisors-grid {
   display: flex;
@@ -716,7 +620,6 @@
 
 .wwa-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
   gap: 2rem;
 }
 
@@ -743,7 +646,6 @@
     margin: 0 auto;
   }
   .wwa-grid {
-    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     width: 100%;
   }
@@ -762,9 +664,9 @@
 .wwa-team-categories { width: 100%; }
 .wwa-team-category-btn, .wwa-popup-pill, .wwa-hero-btn-primary, .wwa-hero-btn-secondary { white-space: normal; }
 .wwa-quote-attribution, .wwa-popup-content { overflow-wrap: anywhere; }
-.wwa-member-card { aspect-ratio: auto; overflow: visible; }
+.wwa-member-card { aspect-ratio: auto; }
 .wwa-member-card-photo-wrap { position: relative; aspect-ratio: 1; height: auto; overflow: hidden; border-radius: inherit; }
-.wwa-member-card-info { position: static; width: 100%; min-height: 5rem; padding: 1rem; overflow-wrap: anywhere; }
+.wwa-member-card-info { position: static; width: 100%; overflow-wrap: anywhere; }
 .wwa-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 .wwa-popup-inner { width: min(88.6875rem, 95vw); max-height: 90dvh; overflow-y: auto; }
 .wwa-popup-photo-wrap { width: 44.61%; flex-shrink: 1; }
@@ -788,7 +690,6 @@
   .wwa-hero-image-wrap, .wwa-team-intro, .wwa-team-photo-wrap { width: 100%; }
   .wwa-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .wwa-member-card-photo-wrap { height: auto; }
-  .wwa-member-card-info { padding: .5rem .25rem; min-height: 3rem; }
   .wwa-popup-inner { width: 100%; max-height: 100dvh; }
   .wwa-popup-photo-wrap { width: 100%; flex-shrink: 0; }
   .wwa-popup-content { width: 100%; flex: none; overflow: visible; }

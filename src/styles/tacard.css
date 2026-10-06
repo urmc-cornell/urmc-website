@@ -64,8 +64,6 @@
   font-size: .875rem;
   padding: 0.5rem 0.75rem;
   border-radius: 0.75rem;
-  white-space: nowrap;
-  line-height: 1;
 }
 
 .ta-card__email {
@@ -91,8 +89,6 @@
 }
 
 .ta-card__email-text {
-  white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
 }
 

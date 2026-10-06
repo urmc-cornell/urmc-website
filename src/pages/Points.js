@@ -58,9 +58,10 @@ export default function Points() {
         )
         .eq('netid', netidInput.toLowerCase())
         .eq('points_tracking.semester', semester)
-        .single();
+        .maybeSingle();
 
-      if (error || !data) return 'NetID not found';
+      if (error) throw error;
+      if (!data) return 'NetID not found';
 
       const total = (data.points_tracking ?? []).reduce(
         (sum, r) => sum + r.points,

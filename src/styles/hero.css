@@ -1,104 +1,57 @@
 .hero {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   gap: 3.75rem;
-  padding: 6.25rem var(--page-gutter);
+  padding: var(--space-hero) var(--page-gutter);
   background-color: #1f1f1f;
   width: 100%;
   box-sizing: border-box;
-
 }
-
 .hero-text {
   display: flex;
   flex-direction: column;
   gap: var(--space-copy);
-  width: 40.625rem;
-  flex-shrink: 0;
+  width: 43.875rem;
+  max-width: 48%;
+  flex-shrink: 1;
+  min-width: 0;
 }
-
-.hero-title {
+.hero-title, .hero-subtitle {
   color: #f5f5f5;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
-  font-size: var(--font-page-title);
   line-height: normal;
   letter-spacing: 0;
   margin: 0;
 }
-
-.hero-subtitle {
-  color: #f5f5f5;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  font-size: var(--font-body);
-  line-height: normal;
-  letter-spacing: 0;
-  margin: 0;
-}
-
-.hero-subtitle .highlight {
-  color: #eeb50c;
-  font-weight: 600;
-}
-
-.hero-subtitle .bold {
-  font-weight: 600;
-}
-
-.hero-ctas {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-}
-
-.hero-btn-primary {
-  background-color: #eeb50c;
-  color: #1f1f1f;
+.hero-title { font-weight: 800; font-size: var(--font-page-title); }
+.hero-subtitle { font-weight: 400; font-size: var(--font-body); }
+.hero-subtitle .highlight { color: #eeb50c; font-weight: 600; }
+.hero-subtitle .bold { font-weight: 600; }
+.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-btn-primary, .hero-btn-secondary {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: var(--font-body);
   padding: 1rem 1.5rem;
   border-radius: 1.25rem;
   text-decoration: none;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
 }
-
-.hero-btn-secondary {
-  background-color: transparent;
-  color: #f5f5f5;
-  border: 0.125rem solid #f5f5f5;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: var(--font-body);
-  padding: 1rem 1.5rem;
-  border-radius: 1.25rem;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
+.hero-btn-primary { background-color: #eeb50c; color: #1f1f1f; }
+.hero-btn-secondary { background-color: transparent; color: #f5f5f5; border: 0.125rem solid #f5f5f5; }
 .hero-image-wrap {
-  flex: 0 1 49.625rem;
+  flex: 1 1 0;
   width: 100%;
   max-width: 49.625rem;
-  height: 30.875rem;
-  position: relative;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.hero-image-wrap {
-  flex: 1;
   min-width: 0;
-  aspect-ratio: 718 / 478;
+  height: auto;
+  aspect-ratio: 794 / 494;
   position: relative;
   overflow: hidden;
   border-radius: 1.25rem;
 }
-
-
 .hero-image {
   position: absolute;
   inset: 0;
@@ -109,41 +62,20 @@
   object-fit: cover;
   object-position: center;
 }
-
-@media (max-width: 48rem) {
-  .hero {
-    flex-direction: column;
-    padding: 2.5rem 1.5rem;
-    gap: 2rem;
-  }
-
-  .hero-text { width: 100%; flex-shrink: unset; }
-  .hero-title { font-size: 2rem; }
-  .hero-subtitle { font-size: 1rem; }
-  .hero-ctas { flex-wrap: wrap; }
-  .hero-btn-primary, .hero-btn-secondary { font-size: 1rem; padding: 0.75rem 1.25rem; border-radius: 1.25rem; }
-  .hero-image { width: 100%; }
-  .hero-image-wrap { width: 100%; flex: none; aspect-ratio: 718 / 478; border-radius: 0.75rem; }
-}
-
-.hero { padding-block: var(--space-hero); }
-.hero-text { width: 43.875rem; max-width: 48%; flex-shrink: 1; min-width: 0; }
-.hero-image-wrap { height: auto; flex: 1 1 0; aspect-ratio: 794 / 494; }
-.hero-ctas { flex-wrap: wrap; }
-.hero-btn-primary, .hero-btn-secondary { white-space: normal; text-align: center; }
 @media (min-width: 68.751rem) {
   .hero { gap: 3rem; }
 }
 @media (max-width: 68.75rem) {
   .hero { flex-direction: column; gap: 2.843rem; }
   .hero-text { width: 100%; max-width: none; }
-  .hero-image-wrap { width: 100%; flex: none; max-width: 49.625rem; }
+  .hero-image-wrap { flex: none; }
 }
 @media (max-width: 48rem) {
   .hero { padding: 3.75rem 1.25rem; }
   .hero-text { gap: 1.137rem; }
+  .hero-title { font-size: 2rem; }
   .hero-subtitle { font-size: .9375rem; }
   .hero-ctas { flex-direction: column; gap: .5rem; }
   .hero-btn-primary, .hero-btn-secondary { font-size: .9375rem; padding: 1rem; border-radius: .5686rem; }
-  .hero-image-wrap { aspect-ratio: 718 / 478; }
+  .hero-image-wrap { aspect-ratio: 718 / 478; border-radius: .75rem; }
 }
