@@ -1,14 +1,11 @@
 .profile {
-  --profile-bg: #f3f4f4;
-  --profile-panel: #ffffff;
-  --profile-ink: #1a1d29;
-  --profile-ink-soft: #5a5f72;
-  --profile-navy: #1f2a4a;
-  --profile-navy-soft: #3a456b;
-  --profile-gold: #c9922f;
-  --profile-gold-ink: #7a5717;
-  --profile-line: #e0e2e8;
-  --profile-radius: 3px;
+  --profile-bg: #15171d;
+  --profile-panel: #1e212a;
+  --profile-panel-raised: #262a35;
+  --profile-ink: #ffffff;
+  --profile-ink-soft: #9aa0b4;
+  --profile-gold: #f0b83f;
+  --profile-line: #2e323e;
 
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--profile-ink);
@@ -22,13 +19,17 @@
   box-sizing: border-box;
 }
 
+/* Sizes below use rem (relative to the root font size) rather than fixed
+   pixels, so the layout scales with the user's settings. Borders, radii and
+   focus rings stay in px on purpose — they should stay hairline-thin. */
+
 .profile-layout {
-  max-width: 920px;
+  max-width: 57.5rem;
   margin: 0 auto;
-  padding: 48px 24px;
+  padding: 3rem 1.5rem;
   display: grid;
-  grid-template-columns: 232px 1fr;
-  gap: 56px;
+  grid-template-columns: 14.5rem 1fr;
+  gap: 3.5rem;
   align-items: start;
 }
 
@@ -36,90 +37,89 @@
 
 .profile-identity {
   position: sticky;
-  top: 32px;
+  top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 1.25rem;
 }
 
 .profile-avatar {
-  width: 84px;
-  height: 84px;
+  width: 5.25rem;
+  aspect-ratio: 1 / 1; /* always a circle, never an oval */
+  flex-shrink: 0; /* don't let the flex row squash it */
   border-radius: 50%;
-  background: var(--profile-navy);
-  color: #fff;
+  background: var(--profile-panel-raised);
+  color: var(--profile-gold);
   font-family: "Montserrat", sans-serif;
-  font-size: 28px;
-  font-weight: 500;
+  font-size: 1.75rem;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 0 3px var(--profile-panel), 0 0 0 5px var(--profile-gold);
+  box-shadow: 0 0 0 3px var(--profile-bg), 0 0 0 5px var(--profile-gold);
 }
 
-.profile-avatar-edit {
-  margin-top: 12px;
-  background: none;
-  border: none;
-  padding: 0;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--profile-navy-soft);
-  cursor: pointer;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.profile-avatar-edit:hover {
-  color: var(--profile-navy);
+/* Name, headline and major/year stack in one column beneath (or, on small
+   screens, beside) the avatar. */
+.profile-identity-text {
+  min-width: 0;
+  width: 100%;
 }
 
 .profile-identity-name {
   font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  font-size: 24px;
+  font-weight: 800;
+  font-size: 1.5rem;
   line-height: 1.2;
-  margin: 20px 0 0;
+  margin: 0;
+}
+
+/* Shown only when no first/last name has been entered yet — kept visually
+   distinct (muted, lighter weight) so it reads as a hint, not real data. */
+.profile-identity-name-placeholder {
+  color: var(--profile-ink-soft);
+  font-weight: 600;
+  opacity: 0.8;
 }
 
 .profile-identity-headline {
-  margin: 6px 0 0;
-  font-size: 14px;
+  margin: 0.375rem 0 0;
+  font-size: 0.875rem;
   color: var(--profile-ink-soft);
   line-height: 1.5;
 }
 
 .profile-identity-meta {
-  margin: 10px 0 0;
-  font-size: 13px;
+  margin: 0.625rem 0 0;
+  font-size: 0.8125rem;
   color: var(--profile-ink-soft);
 }
 
 .profile-identity-since {
-  margin: 24px 0 0;
-  padding-top: 16px;
+  margin: 1.5rem 0 0;
+  padding-top: 1rem;
   border-top: 1px solid var(--profile-line);
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--profile-ink-soft);
-  width: 100%;
 }
 
 /* ---------- Tabs ---------- */
 
 .profile-tabs {
   display: flex;
-  gap: 28px;
+  gap: 1.75rem;
   border-bottom: 1px solid var(--profile-line);
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
 }
 
 .profile-tab {
   background: none;
   border: none;
-  padding: 0 0 12px;
+  padding: 0 0 0.75rem;
   font-family: inherit;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 0.875rem;
+  font-weight: 600;
   color: var(--profile-ink-soft);
   cursor: pointer;
   position: relative;
@@ -144,114 +144,82 @@
 }
 
 .profile-tab:focus-visible,
-.profile-avatar-edit:focus-visible,
-.profile-save:focus-visible,
 .profile input:focus-visible {
-  outline: 2px solid var(--profile-navy-soft);
+  outline: 2px solid var(--profile-gold);
   outline-offset: 2px;
 }
 
 /* ---------- Sections & fields ---------- */
 
 .profile-section {
-  margin-bottom: 40px;
-  padding-left: 18px;
-  border-left: 2px solid var(--profile-line);
+  margin-bottom: 2.5rem;
+  padding-left: 1.125rem;
+  border-left: 2px solid var(--profile-gold);
 }
 
 .profile-section-title {
   font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  margin: 0 0 20px;
+  font-weight: 800;
+  font-size: 1.125rem;
+  margin: 0 0 1.25rem;
 }
 
 .profile-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
+/* Each field is a column, and its input is pushed to the bottom. Fields that
+   sit side by side in a grid row therefore always line up their inputs, even
+   when only one of them has helper text. */
 .profile-field {
-  display: block;
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+}
+
+.profile-field > input {
+  margin-top: auto;
 }
 
 .profile-field-label {
   display: block;
-  font-size: 13px;
-  font-weight: 500;
-  margin-bottom: 4px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--profile-ink-soft);
 }
 
 .profile-field-required {
-  color: var(--profile-gold-ink);
-  margin-left: 2px;
+  color: var(--profile-gold);
+  margin-left: 0.125rem;
 }
 
 .profile-field-hint {
   display: block;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--profile-ink-soft);
-  margin-bottom: 6px;
+  margin-bottom: 0.375rem;
 }
 
-.profile-field input,
-.profile-section input[type="text"],
-.profile-section input[type="email"],
-.profile-section input[type="tel"] {
+.profile-field input {
   width: 100%;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--profile-ink);
   background: var(--profile-panel);
   border: 1px solid var(--profile-line);
-  border-radius: var(--profile-radius);
-  padding: 10px 12px;
+  border-radius: 8px;
+  padding: 0.625rem 0.75rem;
 }
 
 .profile-field input:focus {
-  border-color: var(--profile-navy-soft);
+  border-color: var(--profile-gold);
 }
 
 .profile-field input::placeholder {
-  color: #a8abb8;
-}
-
-/* ---------- Actions ---------- */
-
-.profile-actions {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 16px;
-  padding-top: 8px;
-}
-
-.profile-saved {
-  font-size: 13px;
-  color: var(--profile-navy-soft);
-}
-
-.profile-save {
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 600;
-  color: #fff;
-  background: var(--profile-navy);
-  border: none;
-  border-radius: var(--profile-radius);
-  padding: 11px 22px;
-  cursor: pointer;
-}
-
-.profile-save:hover:not(:disabled) {
-  background: var(--profile-navy-soft);
-}
-
-.profile-save:disabled {
-  opacity: 0.6;
-  cursor: default;
+  color: #6a6f80;
 }
 
 /* ---------- Responsive ---------- */
@@ -259,18 +227,20 @@
 @media (max-width: 700px) {
   .profile-layout {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 2rem;
   }
 
+  /* Avatar on the left; name, headline and major/year stacked beside it. */
   .profile-identity {
     position: static;
     flex-direction: row;
     align-items: center;
-    gap: 16px;
+    gap: 1rem;
   }
 
-  .profile-identity-name {
-    margin: 0;
+  .profile-identity-text {
+    flex: 1;
+    width: auto;
   }
 
   .profile-identity-since {
@@ -282,13 +252,7 @@
   }
 
   .profile-tabs {
-    gap: 20px;
+    gap: 1.25rem;
     overflow-x: auto;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .profile * {
-    transition: none !important;
   }
 }
