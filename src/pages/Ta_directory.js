@@ -29,7 +29,7 @@ export default function Ta_directory() {
   async function fetchTAData() {
     try {
       const { data, error } = await supabase
-        .from("members")
+        .from("member_directory")
         .select("id, netid, first_name, last_name, role, course, headshot_url")
         .eq("ta_semester", "fa25")
         .contains("role", ["ta"]);

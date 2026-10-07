@@ -23,10 +23,10 @@ export default function Leadership() {
   async function fetchLeadershipData() {
     try {
       const { data, error } = await supabase
-        .from('members')
+        .from('member_directory')
         .select(`
           id, position, headshot_url, secondary_headshot_url,
-          first_name, last_name, major, graduation_year, email, netid, instagram_url, linkedin_url,
+          first_name, last_name, major, graduation_year, public_email, netid, instagram_url, linkedin_url,
           ask_about, bio, role
         `)
         .or('role.cs.{eboard},role.cs.{advisor}');
@@ -52,7 +52,7 @@ export default function Leadership() {
           m.graduation_year && !/(?:20\d{2}|['’]\d{2})/.test(m.major || '')
             ? `’${String(m.graduation_year).slice(-2)}` : null,
         ].filter(Boolean).join(' '),
-        email: m.email?.trim() || (m.netid ? (m.netid.includes('@') ? m.netid.trim() : `${m.netid.trim()}@cornell.edu`) : ''),
+        email: m.public_email || '',
         insta: m.instagram_url,
         linkedIn: m.linkedin_url,
         askAbout: m.ask_about || [],

@@ -9,7 +9,7 @@ export default function Leaderboard() {
     const [loading, setLoading] = useState(false); // Loading state to show a spinner
     const semester = currentSemester();
 
-    
+
     const handleSubmit = async (event) => {
         event.preventDefault(); // Prevent default form submission behavior
         setLoading(true); // Set loading state to true
@@ -23,8 +23,9 @@ export default function Leaderboard() {
         try {
             const numericThreshold = Number(threshold); // Turn the threshold string to a number
             const { data: pointsTracking, error: pointsTrackingError } = await supabase
-                .from('summed_points')
+                .from('member_leaderboard')
                 .select('first_name, last_name, netid, total_points')
+                .eq('semester', semester)
                 .gte('total_points', numericThreshold); // Filter by threshold
 
             if (pointsTrackingError) {

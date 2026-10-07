@@ -23,19 +23,16 @@ export default function Points() {
     async function fetchTopThree() {
       try {
         const { data, error } = await supabase
-          .from('members')
-          .select(
-            'netid, first_name, last_name, points_tracking!points_tracking_member_id_fkey (points, semester)'
-          );
+          .from('member_leaderboard')
+          .select('netid, first_name, last_name, total_points')
+          .eq('semester', semester);
         if (error) throw error;
 
         const ranked = data
           .map((m) => ({
             netid: m.netid,
             name: `${m.first_name ?? ''} ${m.last_name ?? ''}`.trim() || m.netid,
-            totalPoints: (m.points_tracking ?? [])
-              .filter((r) => r.semester === semester)
-              .reduce((sum, r) => sum + r.points, 0),
+            totalPoints: Number(m.total_points),
           }))
           .filter((m) => m.totalPoints > 0 && !EXCLUDED_NETIDS.has(m.netid))
           .sort((a, b) => b.totalPoints - a.totalPoints)
@@ -52,21 +49,15 @@ export default function Points() {
   const lookupPoints = async (netidInput) => {
     try {
       const { data, error } = await supabase
-        .from('members')
-        .select(
-          'netid, points_tracking!points_tracking_member_id_fkey (points, semester)'
-        )
-        .eq('netid', netidInput.toLowerCase())
-        .eq('points_tracking.semester', semester)
-        .single();
+        .rpc('get_public_member_points', {
+          p_netid: netidInput.trim().toLowerCase(),
+          p_semester: semester,
+        })
+        .maybeSingle();
 
-      if (error || !data) return 'NetID not found';
-
-      const total = (data.points_tracking ?? []).reduce(
-        (sum, r) => sum + r.points,
-        0
-      );
-      return `${total} pts`;
+      if (error) throw error;
+      if (!data) return 'NetID not found';
+      return `${data.total_points} pts`;
     } catch (err) {
       console.error('Error fetching points:', err);
       return 'Error fetching points';
