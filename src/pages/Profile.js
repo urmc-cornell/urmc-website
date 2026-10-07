@@ -4,18 +4,13 @@ import "../styles/profile.css";
 /**
  * Profile
  * ------------------------------------------------------------------
- * Member profile settings page: an identity panel (avatar, name,
- * headline, major/class year) next to a tabbed form — General,
+ * Member profile page: an identity panel (avatar initials, name,
+ * headline, major/graduation year) next to a tabbed form — General and
  * Contact & links.
  *
- * This component is UI-only — it manages its own form state and
- * calls `onSave` with the current values. Wire `onSave` up to
- * whatever API call saves the member's profile, and pass
- * `initialProfile` down from wherever the signed-in member's data
- * is loaded (context, a hook, etc).
- *
- * Usage (e.g. in App.js, alongside your other routes):
- *   <Profile initialProfile={member} onSave={updateMember} />
+ * UI only for now: the form keeps its values in local state, and
+ * nothing is loaded from or saved to a backend yet. Saving (and the
+ * Save button) comes in a follow-up PR.
  */
 
 const TABS = [
@@ -58,60 +53,59 @@ function Field({ label, hint, required, children }) {
   );
 }
 
-export default function Profile({ initialProfile = {}, memberSince, onSave }) {
+export default function Profile({ initialProfile = {}, memberSince }) {
   const [profile, setProfile] = useState({ ...DEFAULT_PROFILE, ...initialProfile });
   const [activeTab, setActiveTab] = useState("general");
-  const [status, setStatus] = useState("idle"); // idle | saving | saved
 
   const initials = useMemo(
     () => getInitials(profile.firstName, profile.lastName),
     [profile.firstName, profile.lastName]
   );
 
-  const fullName =
-    [profile.firstName, profile.lastName].filter(Boolean).join(" ") || "Your name";
+  // The "Your name" fallback is a placeholder, not real data, so it gets
+  // a visually distinct (muted) style.
+  const hasName = Boolean(profile.firstName || profile.lastName);
+  const fullName = hasName
+    ? [profile.firstName, profile.lastName].filter(Boolean).join(" ")
+    : "Your name";
 
   function update(field, value) {
     setProfile((prev) => ({ ...prev, [field]: value }));
   }
 
-  async function handleSave(e) {
-    e.preventDefault();
-    setStatus("saving");
-    try {
-      await onSave?.(profile);
-      setStatus("saved");
-      setTimeout(() => setStatus("idle"), 2500);
-    } catch {
-      setStatus("idle");
-    }
-  }
-
   return (
     <div className="profile">
-      <form className="profile-layout" onSubmit={handleSave}>
+      {/* There's no submit button yet (saving is a follow-up PR), so just
+          make sure pressing Enter can't reload the page. */}
+      <form className="profile-layout" onSubmit={(e) => e.preventDefault()}>
         {/* Identity panel */}
         <aside className="profile-identity">
           <div className="profile-avatar" aria-hidden="true">
             {initials}
           </div>
-          <button type="button" className="profile-avatar-edit">
-            Change photo
-          </button>
 
-          <h1 className="profile-identity-name">{fullName}</h1>
-          {profile.headline && (
-            <p className="profile-identity-headline">{profile.headline}</p>
-          )}
-          {(profile.major || profile.classYear) && (
-            <p className="profile-identity-meta">
-              {[profile.major, profile.classYear].filter(Boolean).join(" \u00b7 ")}
-            </p>
-          )}
+          <div className="profile-identity-text">
+            <h1
+              className={
+                "profile-identity-name" +
+                (!hasName ? " profile-identity-name-placeholder" : "")
+              }
+            >
+              {fullName}
+            </h1>
+            {profile.headline && (
+              <p className="profile-identity-headline">{profile.headline}</p>
+            )}
+            {(profile.major || profile.classYear) && (
+              <p className="profile-identity-meta">
+                {[profile.major, profile.classYear].filter(Boolean).join(" \u00b7 ")}
+              </p>
+            )}
 
-          {memberSince && (
-            <p className="profile-identity-since">URMC member since {memberSince}</p>
-          )}
+            {memberSince && (
+              <p className="profile-identity-since">URMC member since {memberSince}</p>
+            )}
+          </div>
         </aside>
 
         {/* Tabbed content */}
@@ -163,7 +157,7 @@ export default function Profile({ initialProfile = {}, memberSince, onSave }) {
                   />
                 </Field>
 
-                <Field label="Pronouns">
+                <Field label="Pronouns" hint="Add the pronouns you'd like others to use.">
                   <input
                     type="text"
                     placeholder="she/her, he/him, they/them..."
@@ -181,7 +175,7 @@ export default function Profile({ initialProfile = {}, memberSince, onSave }) {
                   />
                 </Field>
 
-                <Field label="Class year">
+                <Field label="Graduation year">
                   <input
                     type="text"
                     placeholder="2029"
@@ -227,7 +221,7 @@ export default function Profile({ initialProfile = {}, memberSince, onSave }) {
                   />
                 </Field>
 
-                <Field label="Current location">
+                <Field label="Current location" hint="Where you're currently based.">
                   <input
                     type="text"
                     placeholder="Ithaca, NY"
@@ -267,17 +261,6 @@ export default function Profile({ initialProfile = {}, memberSince, onSave }) {
               </div>
             </section>
           )}
-
-          <div className="profile-actions">
-            {status === "saved" && (
-              <span className="profile-saved" role="status">
-                Changes saved
-              </span>
-            )}
-            <button type="submit" className="profile-save" disabled={status === "saving"}>
-              {status === "saving" ? "Saving\u2026" : "Save changes"}
-            </button>
-          </div>
         </div>
       </form>
     </div>
