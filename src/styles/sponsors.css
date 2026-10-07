@@ -82,7 +82,6 @@
 }
 .corporate-sponsor-card {
   position: relative;
-  flex-shrink: 0;
   overflow: hidden;
   background: var(--redesign-light);
   border-radius: 1.25rem;

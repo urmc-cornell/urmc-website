@@ -25,7 +25,7 @@ async function populateEvents() {
       semester: "sp23",
     }));
 
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from("events")
       .upsert(transformedRecords);
 

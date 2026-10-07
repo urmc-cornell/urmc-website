@@ -11,7 +11,7 @@ async function populateLeadership() {
     );
     const leadershipData = JSON.parse(rawData);
 
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from("members")
       .insert(leadershipData, { onConflict: "netid", ignoreDuplicates: true });
 

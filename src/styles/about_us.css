@@ -37,12 +37,6 @@ body {
     line-height: normal;
 }
 
-.about-us-page .heading-academic {
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: #265999;
-}
-
 .about-us-page .purpose {
     width: 90%;
     margin-top: 1.25rem;
@@ -103,11 +97,8 @@ body {
     display: flex;
     width: 100%;
     max-width: 76.375rem;
-    height: 12.125rem;
-    padding: 2.4375rem 6.8125rem;
     justify-content: center;
     align-items: center;
-    gap: 9.5rem;
     flex-shrink: 0;
     border-radius: 2.25rem;
     background: #667BC4;
@@ -140,16 +131,10 @@ body {
     font-weight: 700;
 }
 
-.about-us-page .stats-block.bottom {
-    font-size: 1.875rem;
-    font-weight: bold;
-}
-
 .about-us-page .pillar-sections {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 100%;
     gap: 6.25rem;
     padding-left: 4.5rem;
     padding-right: 4.5rem;
@@ -285,7 +270,6 @@ body {
     width: 24.04019rem;
     height: 18.03013rem;
     flex-shrink: 0;
-    flex-shrink: 0;
 }
 
 .about-us-page #profdev-3 {
@@ -335,30 +319,6 @@ body {
     font-style: normal;
     font-weight: 600;
     text-decoration: none;
-}
-
-.about-us-page .section-cards {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 6.25rem;
-}
-
-.about-us-page .section-widgets {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.25rem;
-    grid-template-columns: repeat(2, auto);
-}
-
-.about-us-page .widget-row {
-    justify-content: space-between;
-    display: flex;
-    flex-direction: row;
-    gap: 1.875rem;
-    flex-grow: 1;
 }
 
 .about-us-page .reverse {
@@ -434,20 +394,8 @@ body {
         margin-bottom: 0;
     }
 
-    .about-us-page .pillar-section:last-child {
-        margin-bottom: 0;
-    }
-
     .about-us-page .pillar-section:last-child .section-images {
         margin-bottom: 0.5rem;
-    }
-
-    .about-us-page .profdev-images {
-        margin-bottom: 0.5rem;
-    }
-
-    .about-us-page .stats-bar {
-        margin: 0.5rem auto 1rem;
     }
 
     .about-us-page .section-images {
@@ -472,12 +420,6 @@ body {
         width: 100%;
         gap: 1.5rem; /* Standardized gap */
         margin-bottom: 2rem; /* Add bottom margin for separation from next section */
-    }
-
-    .about-us-page .community-images,
-.about-us-page .profdev-images {
-        min-width: unset;
-        width: 100%;
     }
 
     /* Remove duplicate styles */

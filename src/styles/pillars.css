@@ -21,7 +21,6 @@
 }
 
 .pillars-grid {
-  display: flex;
   flex-direction: row;
   gap: 1.9375rem;
   width: 100%;
@@ -29,6 +28,10 @@
 
 /* ── Card shell ── */
 .pillar-card {
+  border: 0;
+  padding: 0;
+  color: inherit;
+  text-align: left;
   position: relative;
   flex: 1;
   min-width: 0;
@@ -68,7 +71,6 @@
 /* ── Description + bullets — hidden by default, shown on hover ── */
 .pillar-card-content {
   position: absolute;
-  top: 25.3%;
   left: 8.9%;
   width: 82%;
   display: flex;
@@ -124,7 +126,6 @@
   font-size: 1.5rem;
   line-height: normal;
   margin: 0;
-  white-space: nowrap;
   transition: color 0.3s ease;
 }
 
@@ -148,8 +149,7 @@
 
 /* ── Mobile — click to reveal (same look as desktop) ── */
 @media (max-width: 48rem) {
-  .pillars { padding: 3.75rem 1.5rem; gap: 1.5rem; }
-  .pillars-heading { font-size: 2rem; }
+  .pillars { gap: 1.5rem; }
   .pillars-grid { flex-direction: column; }
 
   .pillar-card {

@@ -7,13 +7,6 @@ import HowToEarnSection from '../components/points/HowToEarnSection.js';
 import RewardsSection from '../components/points/RewardsSection.js';
 import '../styles/points.css';
 
-const EXCLUDED_NETIDS = new Set([
-  'ryg4', 'zas36', 'bm734', 'saf274', 'ga362', 'jcp349', 'kab472',
-  'jwj68', 'bbm56', 'jce79', 'ta375', 'doa8', 'reb368', 'lyb4',
-  'ga324', 'nt387', 'jt938', 'asa253', 'ce248', 'as3734', 'fmi4',
-  'ya287', 'ele54', 'ym582', 'dfb222',
-]);
-
 export default function Points() {
 
   const semester = currentSemester();
@@ -22,19 +15,28 @@ export default function Points() {
   useEffect(() => {
     async function fetchTopThree() {
       try {
-        const { data, error } = await supabase
-          .from('member_leaderboard')
-          .select('netid, first_name, last_name, total_points')
-          .eq('semester', semester);
-        if (error) throw error;
+        const [totals, leadership] = await Promise.all([
+          supabase
+            .from('member_leaderboard')
+            .select('netid, first_name, last_name, total_points')
+            .eq('semester', semester),
+          supabase
+            .from('member_directory')
+            .select('netid')
+            .contains('role', ['eboard']),
+        ]);
+        if (totals.error) throw totals.error;
+        if (leadership.error) throw leadership.error;
+        const eboardNetids = new Set(leadership.data.map((m) => m.netid));
 
-        const ranked = data
+        const ranked = totals.data
+          .filter((m) => !eboardNetids.has(m.netid))
           .map((m) => ({
             netid: m.netid,
             name: `${m.first_name ?? ''} ${m.last_name ?? ''}`.trim() || m.netid,
             totalPoints: Number(m.total_points),
           }))
-          .filter((m) => m.totalPoints > 0 && !EXCLUDED_NETIDS.has(m.netid))
+          .filter((m) => m.totalPoints > 0)
           .sort((a, b) => b.totalPoints - a.totalPoints)
           .slice(0, 3);
 

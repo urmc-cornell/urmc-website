@@ -3,18 +3,39 @@ import "../styles/bars.css";
 import gold_logo from "../images/gold_logo.png";
 import hamburgerIcon from "../images/assets/hamburger.svg";
 
+const LINKS = [
+  { href: '/leadership', label: 'Who We Are' },
+  { href: '/events', label: 'Events' },
+  { href: '/getting-involved', label: 'Get Involved' },
+  { href: '/sponsors', label: 'Sponsors' },
+  { href: '/ta-directory', label: 'TA Directory' },
+  { href: '/points', label: 'Points' },
+];
+
+function NavLinks({ links, className }) {
+  return (
+    <ul className={`nav-menu ${className}`}>
+      {links.map(({ href, label }) => (
+        <li key={href} className={window.location.pathname === href ? 'active' : ''}>
+          <a href={href} aria-current={window.location.pathname === href ? 'page' : undefined}>{label}</a>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function Navbar() {
   const [clicked, setClicked] = React.useState(false);
 
 
   const handleClick = () => {
-    setClicked(!clicked);
+    setClicked(open => !open);
   };
 
   return (
     <nav className="nav">
       {/* Mobile hamburger */}
-      <button className="menu-icon" onClick={handleClick} aria-label="Toggle menu" aria-expanded={clicked} aria-controls="mobile-navigation">
+      <button type="button" className="menu-icon" onClick={handleClick} aria-label="Toggle menu" aria-expanded={clicked} aria-controls="mobile-navigation">
         {clicked ? (
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <line x1="2" y1="2" x2="18" y2="18" stroke="#1f1f1f" strokeWidth="2.5" strokeLinecap="round"/>
@@ -26,11 +47,7 @@ function Navbar() {
       </button>
 
       {/* Left links */}
-      <ul className="nav-menu nav-menu--left">
-        <CustomLink href="/leadership">Who We Are</CustomLink>
-        <CustomLink href="/events">Events</CustomLink>
-        <CustomLink href="/getting-involved">Get Involved</CustomLink>
-      </ul>
+      <NavLinks links={LINKS.slice(0, 3)} className="nav-menu--left" />
 
       {/* Center logo */}
       <a href="/" className="nav-logo-link">
@@ -38,33 +55,13 @@ function Navbar() {
       </a>
 
       {/* Right links */}
-      <ul className="nav-menu nav-menu--right">
-        <CustomLink href="/sponsors">Sponsors</CustomLink>
-        <CustomLink href="/ta-directory">TA Directory</CustomLink>
-        <CustomLink href="/points">Points</CustomLink>
-      </ul>
+      <NavLinks links={LINKS.slice(3)} className="nav-menu--right" />
 
       {/* Mobile slide-out menu */}
       <div id="mobile-navigation" className={clicked ? "nav-container active" : "nav-container"}>
-        <ul className="nav-menu nav-menu--mobile">
-          <CustomLink href="/leadership">Who We Are</CustomLink>
-          <CustomLink href="/events">Events</CustomLink>
-          <CustomLink href="/getting-involved">Get Involved</CustomLink>
-          <CustomLink href="/sponsors">Sponsors</CustomLink>
-          <CustomLink href="/ta-directory">TA Directory</CustomLink>
-          <CustomLink href="/points">Points</CustomLink>
-        </ul>
+        <NavLinks links={LINKS} className="nav-menu--mobile" />
       </div>
     </nav>
-  );
-}
-
-function CustomLink({ href, children, ...props }) {
-  const path = window.location.pathname;
-  return (
-    <li className={path === href ? "active" : ""}>
-      <a href={href} {...props}>{children}</a>
-    </li>
   );
 }
 

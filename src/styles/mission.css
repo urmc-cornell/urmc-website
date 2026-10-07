@@ -21,12 +21,6 @@
 }
 
 /* Shown until mission-banner.jpg (IMG_1553) is exported from Figma */
-.mission-bg-placeholder {
-  position: absolute;
-  inset: 0;
-  background-color: #2a2a2a;
-  z-index: 0;
-}
 
 .mission-overlay {
   position: absolute;

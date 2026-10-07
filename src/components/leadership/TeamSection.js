@@ -1,26 +1,9 @@
-import { useState } from 'react';
 import teamPhoto from '../../images/eboardPhoto.jpg';
 import '../../styles/Leadership.css';
 
-const CATEGORIES = [
-  { label: 'Full Team',          key: 'all' },
-  { label: 'Presidents',         key: 'presidents' },
-  { label: 'Events',             key: 'events' },
-  { label: 'Community Building', key: 'community-building' },
-  { label: 'External',           key: 'external' },
-  { label: 'Internal',           key: 'internal' },
-  { label: 'Advisors',           key: 'advisors' },
-];
+import { LEADERSHIP_CATEGORIES } from '../../Supporting/LeadershipCategories.js';
 
-export default function TeamSection({ onCategoryChange }) {
-  const [active, setActive] = useState('all');
-
-  const handleClick = (key, e) => {
-    setActive(key);
-    onCategoryChange(key);
-    e.currentTarget.blur();
-  };
-
+export default function TeamSection({ activeCategory, onCategoryChange }) {
   return (
     <section className="wwa-team-section">
       <div className="wwa-team-content">
@@ -35,14 +18,15 @@ export default function TeamSection({ onCategoryChange }) {
             </p>
           </div>
           <div className="wwa-team-categories">
-            {CATEGORIES.map((cat) => (
+            {LEADERSHIP_CATEGORIES.map((cat) => (
               <button
                 key={cat.key}
                 className={[
                   'wwa-team-category-btn',
-                  active === cat.key ? 'wwa-team-category-btn--active' : '',
+                  activeCategory === cat.key ? 'wwa-team-category-btn--active' : '',
                 ].join(' ')}
-                onClick={(e) => handleClick(cat.key, e)}
+                aria-pressed={activeCategory === cat.key}
+                onClick={() => onCategoryChange(cat.key)}
               >
                 {cat.label}
               </button>
