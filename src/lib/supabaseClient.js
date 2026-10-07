@@ -10,4 +10,11 @@ const supabaseAnonKey = isStaging
   ? process.env.REACT_APP_STAGING_SUPABASE_ANON_KEY
   : process.env.REACT_APP_SUPABASE_ANON_KEY;
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+  auth: {
+    flowType: "pkce",
+    detectSessionInUrl: false,
+    persistSession: true,
+    autoRefreshToken: true,
+  },
+});

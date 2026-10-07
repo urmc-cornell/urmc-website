@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./styles/index.css";
 import "./styles/layout.css";
 import App from "./App.js";
+import { AuthProvider } from "./contexts/AuthContext.js";
 
 //styles
 import "./styles/bars.css";
@@ -12,6 +13,8 @@ import "@fontsource/montserrat";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <AuthProvider>
+      <App />
+    </AuthProvider>
   </React.StrictMode>
 );

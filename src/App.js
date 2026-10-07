@@ -11,7 +11,10 @@ import Home from "./pages/Home.js";
 import TaDirectory from "./pages/Ta_directory.js";
 import Leaderboard from "./pages/Leaderboard.js";
 
+import AuthCallback from "./pages/AuthCallback.js";
+
 const PAGES = {
+  '/auth/callback': AuthCallback,
   '/': Home,
   '/about-us': AboutUs,
   '/events': Events,
