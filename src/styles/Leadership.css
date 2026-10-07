@@ -104,6 +104,7 @@
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
+  border-radius: 1.25rem;
 }
 
 .wwa-hero-image {
@@ -562,6 +563,7 @@
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
+  border-radius: 1.25rem;
 }
 
 .wwa-team-photo {
@@ -727,4 +729,9 @@
 @media (max-width: 56.25rem) {
   .wwa-member-card-info { height: 4.5rem; min-height: 4.5rem; padding: .5rem; }
   .wwa-member-card-name--long { font-size: .75rem; }
+}
+
+/* Match the homepage photo corners on mobile. */
+@media (max-width: 48rem) {
+  .wwa-hero-image-wrap, .wwa-team-photo-wrap { border-radius: .75rem; }
 }

@@ -219,6 +219,7 @@
 .points-vyp-photo-wrap {
   flex-shrink: 0;
   overflow: hidden;
+  border-radius: 1.25rem;
 }
 
 .points-vyp-photo {
@@ -396,7 +397,7 @@
 .points-reward-photo-wrap {
   width: 100%;
   overflow: hidden;
-  border-radius: 0.5rem;
+  border-radius: 1.25rem;
 }
 
 .points-reward-photo {
@@ -551,7 +552,7 @@
   .points-reward-photo-wrap {
     height: auto;
     aspect-ratio: 580 / 471;
-    border-radius: 0.5rem;
+    border-radius: 1.25rem;
   }
 }
 
@@ -578,4 +579,9 @@
 }
 @media (max-width: 56.25rem) {
   .points-vyp-heading-block { align-items: flex-start; }
+}
+
+/* Match the homepage photo corners on mobile. */
+@media (max-width: 48rem) {
+  .points-vyp-photo-wrap, .points-reward-photo-wrap { border-radius: .75rem; }
 }

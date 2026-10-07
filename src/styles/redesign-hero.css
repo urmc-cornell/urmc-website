@@ -80,6 +80,7 @@
   position: relative;
   flex-shrink: 0;
   overflow: hidden;
+  border-radius: 1.25rem;
 }
 .redesign-hero-image img {
   position: absolute;
@@ -92,6 +93,9 @@
   text-align: center;
 }
 @media (max-width: 48rem) {
+  .redesign-hero-image {
+    border-radius: 0.75rem;
+  }
   .redesign-page {
 
     --redesign-pad: 1.25rem;

@@ -142,6 +142,7 @@ body {
 
 .gi-split-image {
   overflow: hidden;
+  border-radius: 1.25rem;
 }
 
 .gi-split-image--tall {
@@ -493,4 +494,9 @@ body {
 @media (max-width: 48rem) {
   .gi-split-image, .gi-split-content { max-width: 100%; }
   .gi-partners-row, .gi-partners-row--short { gap: .55rem; }
+}
+
+/* Match the homepage photo corners on mobile. */
+@media (max-width: 48rem) {
+  .gi-split-image { border-radius: .75rem; }
 }
