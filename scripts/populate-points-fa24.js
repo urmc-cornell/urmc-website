@@ -1,14 +1,8 @@
-import { createClient } from "@supabase/supabase-js";
+import { supabase } from "./lib/supabaseClient.js";
 import fs from "fs";
 import { parse } from "csv-parse/sync";
-import dotenv from "dotenv";
 
-dotenv.config();
 
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_ANON_KEY
-);
 
 async function populatePoints() {
   try {
@@ -46,7 +40,7 @@ async function populatePoints() {
 
         if (!member_id) {
           console.error(`No member found for netid: ${netid}`);
-          return;
+          return null;
         }
 
         return {
@@ -57,9 +51,9 @@ async function populatePoints() {
           reason: "Transfer from SP24 to New Database",
         };
       })
-      .filter((record) => record !== null);
+      .filter(Boolean);
 
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from("points_tracking")
       .upsert(transformedRecords);
 

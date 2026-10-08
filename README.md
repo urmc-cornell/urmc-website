@@ -22,6 +22,8 @@ npm run start:staging  # staging environment
 
 ### Deployment
 
-Run `npm run build` to generate the `build` folder with all production assets.
+1. Run `npm run build` to generate production assets in `build/`.
+2. From `build/`, upload `static/` and `index.html` to the deployment server.
+3. Verify the live site at [https://urmc.cs.cornell.edu/](https://urmc.cs.cornell.edu/).
 
 For any questions or concerns on our website, reach out to urmc@cornell.edu

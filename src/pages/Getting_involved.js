@@ -137,15 +137,16 @@ function AlumniSection() {
             Stay connected with URMC through updates, events, and opportunities to support our community.
           </p>
         </div>
-        <form className="gi-mailing-form" onSubmit={(e) => e.preventDefault()}>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="gi-mailing-input"
-            aria-label="Email address"
-          />
-          <button type="submit" className="gi-btn gi-btn--dark">Join Mailing List</button>
-        </form>
+        <div className="gi-button-group">
+          <a
+            className="gi-btn gi-btn--dark"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScrGuUyGzeA0c5mIDec7YyBGlUIrxM_XmprUe8a0ivRJLkXzg/viewform?usp=publish-editor"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Join the Alumni Mailing List
+          </a>
+        </div>
       </div>
       <div className="gi-split-image">
         <img src={alumniImg} alt="URMC alumni" />

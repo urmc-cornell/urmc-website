@@ -86,8 +86,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2.25rem;
-  width: 45.0625rem;
-  flex-shrink: 0;
   align-self: stretch;
 }
 
@@ -143,10 +141,8 @@ body {
 }
 
 .gi-split-image {
-  flex-shrink: 0;
-  width: 45.6875rem;
-  height: 34.3125rem;
   overflow: hidden;
+  border-radius: 1.25rem;
 }
 
 .gi-split-image--tall {
@@ -184,12 +180,10 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: var(--font-body);
-  line-height: 1;
   text-decoration: none;
   cursor: pointer;
   border: 0.125rem solid transparent;
   transition: opacity 0.2s ease;
-  white-space: nowrap;
 }
 
 .gi-btn:hover {
@@ -266,8 +260,6 @@ body {
 .gi-partner-tile {
   background: #f5f5f5;
   border-radius: 0.75rem;
-  width: 9.5625rem;
-  height: 5.5625rem;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -294,37 +286,6 @@ body {
 }
 
 /* ---------- Alumni mailing form ---------- */
-
-.gi-mailing-form {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-  flex-wrap: nowrap;
-  width: 100%;
-}
-
-.gi-mailing-input {
-  width: 25.625rem;
-  flex-shrink: 0;
-  background: #e8e8e8;
-  border: 0.0625rem solid #646464;
-  border-radius: 1.25rem;
-  padding: 1rem 1.5rem;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  font-size: var(--font-body);
-  color: #1f1f1f;
-  line-height: 1;
-  outline: none;
-}
-
-.gi-mailing-input::placeholder {
-  color: #646464;
-}
-
-.gi-mailing-input:focus {
-  border-color: #1f1f1f;
-}
 
 /* ---------- Supporters ---------- */
 
@@ -408,8 +369,7 @@ body {
   /* Students & Alumni: text (1) → image (2) → buttons / mailing form (3) */
   .gi-section .gi-text-block { order: 1; }
   .gi-section .gi-split-image { order: 2; }
-  .gi-section .gi-button-group,
-  .gi-section .gi-mailing-form { order: 3; }
+  .gi-section .gi-button-group { order: 3; }
 
   /* Companies: text (1) → image (2) → partners (3) → buttons (4) */
   .gi-section--dark .gi-partners { order: 3; margin-top: 0; }
@@ -497,27 +457,10 @@ body {
   }
 
   /* Alumni mailing form */
-  .gi-mailing-form {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.5rem;
-    width: 100%;
-  }
-
-  .gi-mailing-input {
-    width: 100%;
-    font-size: 0.9375rem;
-    padding: 1rem 1.5rem;
-    border-radius: 1.25rem;
-    border-width: 0.0625rem;
-  }
 
   /* The dark submit button in the mailing form should match the Figma
      small radius (0.568625rem), overriding the .gi-btn--outline-dark rule above
      which doesn't apply here, but explicit for clarity. */
-  .gi-mailing-form .gi-btn--dark {
-    border-radius: 0.568625rem;
-  }
 
   /* Supporters */
   .gi-supporters {
@@ -538,9 +481,8 @@ body {
 .gi-split-content { width: 45.0625rem; max-width: calc((100% - 3.75rem) / 2); flex-shrink: 1; min-width: 0; }
 .gi-split-image { width: 45.6875rem; max-width: calc((100% - 3.75rem) / 2); height: auto; aspect-ratio: 731 / 549; flex-shrink: 1; }
 .gi-split-image--tall { aspect-ratio: 731 / 722; }
-.gi-button-group, .gi-mailing-form { flex-wrap: wrap; }
+.gi-button-group { flex-wrap: wrap; }
 .gi-btn { white-space: normal; line-height: normal; text-align: center; max-width: 100%; }
-.gi-mailing-input { max-width: 100%; min-width: 0; flex: 1 1 15rem; }
 .gi-partners-row, .gi-partners-row--short { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; width: 100%; }
 .gi-partner-tile { width: 100%; height: auto; aspect-ratio: 153 / 89; min-width: 0; }
 @media (min-width: 48.001rem) and (max-width: 68.75rem) {
@@ -551,6 +493,10 @@ body {
 }
 @media (max-width: 48rem) {
   .gi-split-image, .gi-split-content { max-width: 100%; }
-  .gi-mailing-input { flex: none; }
   .gi-partners-row, .gi-partners-row--short { gap: .55rem; }
+}
+
+/* Match the homepage photo corners on mobile. */
+@media (max-width: 48rem) {
+  .gi-split-image { border-radius: .75rem; }
 }

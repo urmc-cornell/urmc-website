@@ -9,7 +9,7 @@
   font-family: 'Montserrat', sans-serif;
   width: 100%;
 }
-.redesign-page *, .featured-event-dialog * {
+.redesign-page * {
   box-sizing: border-box;
 }
 .redesign-page h1, .redesign-page h2, .redesign-page h3, .redesign-page p {
@@ -55,7 +55,6 @@
   font-size: var(--font-body);
   font-weight: 600;
   line-height: normal;
-  white-space: nowrap;
 }
 .redesign-button--gold {
   background: var(--redesign-gold);
@@ -81,6 +80,7 @@
   position: relative;
   flex-shrink: 0;
   overflow: hidden;
+  border-radius: 1.25rem;
 }
 .redesign-hero-image img {
   position: absolute;
@@ -93,6 +93,9 @@
   text-align: center;
 }
 @media (max-width: 48rem) {
+  .redesign-hero-image {
+    border-radius: 0.75rem;
+  }
   .redesign-page {
 
     --redesign-pad: 1.25rem;

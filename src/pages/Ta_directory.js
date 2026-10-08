@@ -29,7 +29,7 @@ export default function Ta_directory() {
   async function fetchTAData() {
     try {
       const { data, error } = await supabase
-        .from("members")
+        .from("member_directory")
         .select("id, netid, first_name, last_name, role, course, headshot_url")
         .eq("ta_semester", "fa25")
         .contains("role", ["ta"]);
@@ -122,13 +122,12 @@ export default function Ta_directory() {
                 aria-label="Search courses"
               />
             </div>
-            <div className="ta-filters" role="tablist" aria-label="Filter by department">
+            <div className="ta-filters" role="group" aria-label="Filter by department">
               {FILTERS.map((f) => (
                 <button
                   key={f}
                   type="button"
-                  role="tab"
-                  aria-selected={activeFilter === f}
+                  aria-pressed={activeFilter === f}
                   className={`ta-filters__btn ${
                     activeFilter === f ? "ta-filters__btn--active" : ""
                   }`}

@@ -63,7 +63,7 @@
 
 @media (max-width: 56.25rem) {
   .sponsors { padding: 2.5rem 0 2rem; }
-  .sponsors-heading { font-size: 1.75rem; margin-bottom: 0.75rem; }
+  .sponsors-heading { margin-bottom: 0.75rem; }
   .sponsor-logo {
     width: auto !important;
     height: auto !important;

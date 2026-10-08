@@ -1,13 +1,7 @@
-import { createClient } from "@supabase/supabase-js";
+import { supabase } from "./lib/supabaseClient.js";
 import fs from "fs";
-import dotenv from "dotenv";
 
-dotenv.config();
 
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_ANON_KEY
-);
 
 async function populateLeadership() {
   try {
@@ -17,7 +11,7 @@ async function populateLeadership() {
     );
     const leadershipData = JSON.parse(rawData);
 
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from("members")
       .insert(leadershipData, { onConflict: "netid", ignoreDuplicates: true });
 

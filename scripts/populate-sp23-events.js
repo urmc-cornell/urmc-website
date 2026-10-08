@@ -1,14 +1,8 @@
-import { createClient } from "@supabase/supabase-js";
+import { supabase } from "./lib/supabaseClient.js";
 import fs from "fs";
 import { parse } from "csv-parse/sync";
-import dotenv from "dotenv";
 
-dotenv.config();
 
-const supabase = createClient(
-  process.env.REACT_APP_SUPABASE_URL,
-  process.env.REACT_APP_SUPABASE_ANON_KEY
-);
 
 async function populateEvents() {
   try {
@@ -31,7 +25,7 @@ async function populateEvents() {
       semester: "sp23",
     }));
 
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from("events")
       .upsert(transformedRecords);
 

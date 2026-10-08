@@ -1,19 +1,15 @@
+// Server-side administration only; never import this module from src/.
 import { createClient } from "@supabase/supabase-js";
 import dotenv from "dotenv";
 
 dotenv.config();
 
-export const supabase = createClient(
-  process.env.REACT_APP_SUPABASE_URL,
-  process.env.REACT_APP_SUPABASE_ANON_KEY
-);
+const url = process.env.SUPABASE_URL;
+const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+if (!url || !key) {
+  throw new Error("Admin scripts require SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY. Anonymous keys cannot write member data.");
+}
 
-import { StorageClient } from "@supabase/storage-js";
-
-const STORAGE_URL = "https://<project_ref>.supabase.co/storage/v1";
-const SERVICE_KEY = "<service_role>"; //! service key, not anon key
-
-const storageClient = new StorageClient(STORAGE_URL, {
-  apikey: SERVICE_KEY,
-  Authorization: `Bearer ${SERVICE_KEY}`,
+export const supabase = createClient(url, key, {
+  auth: { persistSession: false, autoRefreshToken: false },
 });
