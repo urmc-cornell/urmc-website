@@ -10,6 +10,7 @@ import Points from "./pages/Points.js";
 import Home from "./pages/Home.js";
 import TaDirectory from "./pages/Ta_directory.js";
 import Leaderboard from "./pages/Leaderboard.js";
+import Profile from "./pages/Profile.js";
 
 import AuthCallback from "./pages/AuthCallback.js";
 
@@ -24,6 +25,7 @@ const PAGES = {
   '/sponsors': Sponsors,
   '/points': Points,
   '/leaderboard': Leaderboard,
+  '/profile': Profile,
 };
 
 function App() {
