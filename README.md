@@ -26,4 +26,12 @@ npm run start:staging  # staging environment
 2. From `build/`, upload `static/` and `index.html` to the deployment server.
 3. Verify the live site at [https://urmc.cs.cornell.edu/](https://urmc.cs.cornell.edu/).
 
+### Before Opening a Pull Request
+
+- Describe what changed and how you checked it.
+- Include screenshots for visible updates.
+- Keep each pull request focused on one change to make reviews easier.
+
+For a practice workflow, see the [stacked PR demo](STACKED_PR_DEMO.md).
+
 For any questions or concerns on our website, reach out to urmc@cornell.edu
