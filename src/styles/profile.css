@@ -1,0 +1,514 @@
+.profile-page {
+  --page-bg: var(--redesign-light);
+  --page-off-white: var(--redesign-light);
+  --page-card: var(--redesign-dark);
+  --page-card-raised: #2a2a2a;
+  --page-ink: #ffffff;
+  --page-ink-soft: #9f9f9f;
+  --page-gold: var(--redesign-gold);
+  --page-gold-ink: var(--redesign-dark);
+  --page-line: #3a3a3a;
+
+  /* Page sizing from Figma, on a 1920px-wide frame, expressed relative to the
+     viewport so it scales: 200px side padding, 160px header top/bottom. */
+  --page-header-pad-y: clamp(2.5rem, 8.3333vw, 10rem);
+  --page-gap: clamp(1rem, 2.5vw, 3rem);
+
+  background: var(--page-bg);
+  color: var(--page-ink);
+  padding: 0 0 4rem;
+}
+.profile-page.redesign-page {
+  background: var(--page-bg);
+}
+
+.profile-page *,
+.profile-page *::before,
+.profile-page *::after {
+  box-sizing: border-box;
+}
+
+/* Full-width band, like the Figma header: hello + name + welcome banner. */
+.profile-page-header {
+  background: var(--page-card);
+  padding: var(--page-header-pad-y) var(--page-gutter);
+}
+
+/* The header text scales with the page like the name does. The 1920px-frame
+   sizes in the comments are approximate (read from the Figma frame). */
+.profile-page-hello {
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-size: clamp(1.25rem, 1.6667vw, 2rem); /* 32px on the 1920 frame */
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  align-self: stretch;
+}
+
+.profile-page-name {
+  margin: 0.25rem 0 clamp(1.5rem, 2.4vw, 2.875rem); /* ~2.875rem at 1920 */
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  /* Figma: 96px on a 1920px-wide frame = 5vw. Clamped so it stays readable on
+     phones and doesn't grow past the design size on very wide screens. */
+  font-size: clamp(1.75rem, 5vw, 6rem);
+  line-height: 1;
+  letter-spacing: 0;
+  color: #ffffff;
+}
+
+.profile-page-welcome-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(0.875rem, 1.05vw, 1.25rem);
+  background: #f4f4f4;
+  color: #1a1a1a;
+  border-radius: 14px;
+  padding: clamp(1.125rem, 2.1vw, 2.5rem) clamp(1.25rem, 2.1vw, 2.5rem); /* ~2.5rem at 1920 */
+}
+
+.profile-page-pin {
+  width: clamp(1rem, 1.352vw, 1.623rem);
+  height: auto;
+  aspect-ratio: 12 / 17;
+  flex-shrink: 0;
+  transform: rotate(5deg);
+  position: relative;
+  top: 0.5rem;
+}
+
+.profile-page-welcome-title {
+  margin: 0 0 0.25rem;
+  font-weight: 700;
+  font-size: clamp(0.9375rem, 1.25vw, 1.5rem); /* ~1.5rem at 1920 */
+}
+
+.profile-page-welcome-text {
+  margin: 0;
+  font-size: clamp(0.875rem, 0.95vw, 1.125rem); /* ~1.125rem at 1920 */
+  color: #4a4a4a;
+  line-height: 1.5;
+}
+
+/* ---------- Body layout ---------- */
+
+.profile-page-body {
+  /* Same side gutters as the header so the cards line up with it. */
+  display: grid;
+  grid-template-columns: minmax(0, 666fr) minmax(0, 806fr); /* Figma column widths */
+  gap: var(--page-gap);
+  align-items: start;
+  padding: var(--space-hero) var(--page-gutter);
+}
+
+.profile-page-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--page-gap);
+}
+
+/* ---------- Cards ---------- */
+
+.profile-page-card {
+  background: var(--page-card);
+  border-radius: 2rem;
+  padding: clamp(1.25rem, 1.875vw, 2.25rem);
+}
+
+.profile-page-card-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-page-card-title {
+  margin: 0 0 clamp(1rem, 1.25vw, 1.5rem);
+  font-weight: 800;
+  font-size: clamp(1.25rem, 1.667vw, 2rem);
+}
+
+.profile-page-card-row .profile-page-card-title {
+  margin-bottom: 0;
+}
+
+/* ---------- My Profile card ---------- */
+
+.profile-page-photo {
+  /* About half the card (Figma: ~354px of 666px), within sensible limits. */
+  width: clamp(11rem, 18.385vw, 22.0625rem);
+  aspect-ratio: 1 / 1;
+  border-radius: 0;
+  background: #d9d9d9;
+  color: #8a8a8a;
+  font-size: 3rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: clamp(1.25rem, 1.875vw, 2.25rem);
+}
+
+.profile-page-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1rem, 1.5vw, 1.75rem) 0.75rem;
+  margin-bottom: clamp(1.25rem, 2.35vw, 2.8rem);
+}
+
+.profile-page-label {
+  margin: 0 0 0.25rem;
+  font-size: clamp(0.75rem, 0.833vw, 1rem);  /* 16px on the 1920 frame */
+  color: var(--page-ink-soft);
+}
+
+.profile-page-value {
+  margin: 0;
+  font-size: clamp(0.875rem, 1.042vw, 1.25rem); /* 20px on the 1920 frame */
+  font-weight: 700;
+}
+
+.profile-page-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(0.75rem, 1.25vw, 1.5rem);  /* the 24px between the two tags */
+
+}
+
+.profile-page-tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(0.4rem, 0.52vw, 0.65rem) clamp(0.65rem, 0.8vw, 1rem);
+  gap: clamp(0.3rem, 0.3887vw, 0.4664rem);                                         /* 7.463px */
+  border-radius: 0.75rem;
+  background: var(--page-gold);                                                    /* #EEB50C */
+  color: #1f1f1f;
+  font-family: Montserrat, sans-serif;
+  font-size: clamp(0.65rem, 0.78vw, 0.95rem);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.profile-page .profile-page-outline-btn {
+  border-radius: 999px;
+  padding: clamp(0.6rem, 0.8vw, 0.95rem) clamp(1.1rem, 1.35vw, 1.6rem);
+  font-size: clamp(0.9rem, 1.04vw, 1.25rem);
+  background: transparent;
+  cursor: pointer;
+}
+
+.profile-page-card .profile-page-outline-btn {
+  margin-top: clamp(1.25rem, 1.667vw, 2rem);
+}
+
+/* ---------- Points Tracker ---------- */
+
+.profile-page-big-number {
+  font-weight: 800;
+  font-size: clamp(1.75rem, 2.5vw, 3rem); /* 48px on the 1920 frame */
+  color: var(--page-gold);
+}
+
+.profile-page-muted {
+  margin: 0.875rem 0 clamp(1rem, 1.5vw, 1.75rem);
+  font-size: clamp(0.875rem, 1.042vw, 1.25rem);
+  color: var(--page-ink-soft);
+}
+
+.profile-page-muted-small {
+  font-size: clamp(0.8rem, 0.833vw, 1rem);
+  color: var(--page-ink-soft);
+}
+
+.profile-page-gold-text {
+  color: var(--page-gold);
+  font-weight: 700;
+}
+
+/* ---------- Action Items ---------- */
+
+.profile-page-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.profile-page-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(0.75rem, 1vw, 1.2rem);
+  border: 2px solid var(--page-off-white);
+  border-radius: 1.5rem;
+  padding: clamp(0.875rem, 1.25vw, 1.5rem) clamp(1rem, 1.5vw, 1.75rem);
+}
+
+.profile-page-checkbox {
+  flex-shrink: 0;
+  width: clamp(1.25rem, 1.4vw, 1.7rem);
+  height: clamp(1.25rem, 1.4vw, 1.7rem);
+  border-radius: 5px;
+  border: 1.5px solid var(--page-ink-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--page-gold-ink);
+  margin-top: 0.125rem;
+}
+
+.profile-page-checkbox-done {
+  background: var(--page-gold);
+  border-color: var(--page-gold);
+}
+
+.profile-page-check-label {
+  margin: 0 0 0.25rem;
+  font-size: clamp(0.9rem, 1.042vw, 1.25rem);  /* 20px on the 1920 frame */
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.profile-page-check-description {
+  margin: 0;
+  font-size: clamp(0.75rem, 0.833vw, 1rem);    /* 16px on the 1920 frame */
+  color: var(--page-ink-soft);
+  line-height: 1.5;
+}
+
+.profile-page-flag-dot {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  background: var(--page-gold);
+  display: inline-block;
+}
+
+/* ---------- Event Attendance ---------- */
+
+.profile-page-attendance {
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(1.75rem, 2.5vw, 3rem);
+}
+
+/* ---------- Edit-mode transition ---------- */
+
+.profile-page-transition {
+  animation: profilePageFadeSlideIn 0.35s ease-out;
+  /* Space between the stacked cards in the right column. */
+  display: flex;
+  flex-direction: column;
+  gap: var(--page-gap);
+}
+
+/* Breathing room between a card's title row and the list under it. */
+.profile-page-card-row + .profile-page-checklist {
+  margin-top: 1.25rem;
+}
+
+@keyframes profilePageFadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-page-edit-card {
+  padding: 1.75rem 1.75rem 0.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-page-transition {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   Edit form (ProfileForm.js)
+   ============================================================ */
+
+.profile-form {
+  --profile-panel: #2a2a2a;
+  --profile-ink: #ffffff;
+  --profile-ink-soft: var(--page-ink-soft);
+  --profile-gold: var(--redesign-gold);
+  --profile-line: var(--page-line);
+
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--profile-ink);
+}
+
+.profile-form *,
+.profile-form *::before,
+.profile-form *::after {
+  box-sizing: border-box;
+}
+
+/* Sizes use rem (relative to the root font size) rather than fixed pixels,
+   so the form scales with the user's settings. Borders, radii and focus
+   rings stay in px on purpose: they should stay hairline-thin. */
+
+.profile-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  background: none;
+  border: none;
+  padding: 0 0 1.25rem;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--profile-gold);
+  cursor: pointer;
+}
+
+.profile-back-link:hover {
+  color: #ffd27a;
+}
+
+/* ---------- Tabs ---------- */
+
+.profile-tabs {
+  display: flex;
+  gap: 1.75rem;
+  border-bottom: 1px solid var(--profile-line);
+  margin-bottom: 2rem;
+  overflow-x: auto;
+}
+
+.profile-tab {
+  background: none;
+  border: none;
+  padding: 0 0 0.75rem;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--profile-ink-soft);
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+}
+
+.profile-tab:hover,
+.profile-tab-active {
+  color: var(--profile-ink);
+}
+
+.profile-tab-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--profile-gold);
+}
+
+.profile-tab:focus-visible,
+.profile-back-link:focus-visible,
+.profile-form input:focus-visible {
+  outline: 2px solid var(--profile-gold);
+  outline-offset: 2px;
+}
+
+/* ---------- Sections & fields ---------- */
+
+.profile-section {
+  margin-bottom: 1.5rem;
+  padding-left: 1.125rem;
+  border-left: 2px solid var(--profile-gold);
+}
+
+.profile-section-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 1.125rem;
+  margin: 0 0 1.25rem;
+}
+
+/* Two columns when there's room, one when the card gets narrow. */
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  gap: 1.25rem;
+}
+
+/* Each field is a column and its input sits at the bottom, so fields side by
+   side line up their inputs even when only one of them has helper text. */
+.profile-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+}
+
+.profile-field > input {
+  margin-top: auto;
+}
+
+.profile-field-label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--profile-ink-soft);
+}
+
+.profile-field-required {
+  color: var(--profile-gold);
+  margin-left: 0.125rem;
+}
+
+.profile-field-hint {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--profile-ink-soft);
+  margin-bottom: 0.375rem;
+}
+
+.profile-field input {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: var(--profile-ink);
+  background: var(--profile-panel);
+  border: 1px solid var(--profile-line);
+  border-radius: 8px;
+  padding: 0.625rem 0.75rem;
+}
+
+.profile-field input:focus {
+  border-color: var(--profile-gold);
+}
+
+.profile-field input::placeholder {
+  color: #7a7a7a;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  /* Small screens: compact fixed gutters, single column. */
+  .profile-page {
+    --page-gutter: 1.5rem;
+    --page-header-pad-y: 2.5rem;
+  }
+
+  .profile-page-body {
+    grid-template-columns: 1fr;
+    padding-top: 2rem;
+  }
+}
+
+.profile-page-attendance .profile-page-gold-text {
+  color: var(--page-off-white);
+}
