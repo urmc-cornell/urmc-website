@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "../styles/profile.css";
+import pinIcon from "../images/pin.svg";
+import "../styles/redesign-hero.css";
 
 /**
  * Profile
@@ -280,7 +282,7 @@ export default function Profile() {
   const doneCount = SAMPLE_ACTION_ITEMS.filter((item) => item.done).length;
 
   return (
-    <div className="profile-page">
+    <div className="profile-page redesign-page">
       {/* Header */}
       <div className="profile-page-header">
         <p className="profile-page-hello">Hello!</p>
@@ -289,9 +291,7 @@ export default function Profile() {
         </h1>
 
         <div className="profile-page-welcome-banner">
-          <span className="profile-page-pin" aria-hidden="true">
-            📌
-          </span>
+         <img className="profile-page-pin" src={pinIcon} alt="" aria-hidden="true" />
           <div>
             <p className="profile-page-welcome-title">Welcome to Fall 2026!</p>
             <p className="profile-page-welcome-text">
@@ -343,7 +343,7 @@ export default function Profile() {
 
             <button
               type="button"
-              className="profile-page-outline-btn"
+              className="redesign-button profile-page-outline-btn"
               onClick={() => setIsEditing(true)}
             >
               Edit Profile
@@ -359,7 +359,7 @@ export default function Profile() {
               Nearest reward:{" "}
               <span className="profile-page-gold-text">{SAMPLE_POINTS.nearestReward}</span>
             </p>
-            <button type="button" className="profile-page-outline-btn">
+            <button type="button" className="redesign-button profile-page-outline-btn">
               How to Earn Points
             </button>
           </div>
