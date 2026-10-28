@@ -1,7 +1,15 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "../styles/profile.css";
 import pinIcon from "../images/pin.svg";
 import "../styles/redesign-hero.css";
+import { useAuth } from "../contexts/AuthContext.js";
+import { currentSemesterLabel } from "../lib/semester.js";
+import {
+  loadMyProfile,
+  replaceHeadshot,
+  updateMyProfile,
+  validateHeadshot,
+} from "../lib/profile.js";
 
 /**
  * Profile
@@ -13,10 +21,10 @@ import "../styles/redesign-hero.css";
  * clicking "Edit Profile" swaps it for the edit form (ProfileForm,
  * defined further down in this file) with a short fade/slide.
  *
- * UI only for now: every value below is SAMPLE data, and the edit form
- * keeps its values in local state. Nothing is loaded from or saved to a
- * backend yet; wiring this to real member data, and saving (with a Save
- * button), come in a follow-up PR.
+ * Profile data and points come from Supabase for the signed-in member.
+ * Edits are saved with update_my_profile, which only accepts the fields
+ * listed in EDITABLE_FIELDS. Action Items and Event Attendance are still
+ * sample data until there is a backend for them.
  */
 
 // ------------------------------------------------------------------
@@ -28,21 +36,64 @@ const TABS = [
   { id: "contact", label: "Contact & links" },
 ];
 
-const DEFAULT_PROFILE = {
-  firstName: "",
-  lastName: "",
-  preferredName: "",
-  pronouns: "",
-  major: "",
-  classYear: "",
-  headline: "",
-  email: "",
-  phone: "",
-  location: "",
-  github: "",
-  linkedin: "",
-  website: "",
-};
+const EDITABLE_FIELDS = [
+  "first_name",
+  "last_name",
+  "major",
+  "graduation_year",
+  "bio",
+  "ask_about",
+  "linkedin_url",
+  "instagram_url",
+];
+
+const MAX_TOPICS = 10;
+
+// Form inputs are all strings; the database wants numbers, arrays and nulls.
+function toForm(member) {
+  return {
+    first_name: member.first_name ?? "",
+    last_name: member.last_name ?? "",
+    major: member.major ?? "",
+    graduation_year: member.graduation_year ? String(member.graduation_year) : "",
+    bio: member.bio ?? "",
+    ask_about: (member.ask_about ?? []).join(", "),
+    linkedin_url: member.linkedin_url ?? "",
+    instagram_url: member.instagram_url ?? "",
+  };
+}
+
+function toPatchValue(field, value) {
+  const trimmed = value.trim();
+  if (field === "ask_about") {
+    return trimmed ? trimmed.split(",").map((topic) => topic.trim()).filter(Boolean) : [];
+  }
+  if (field === "graduation_year") return trimmed ? Number(trimmed) : null;
+  if (field === "first_name" || field === "last_name") return trimmed;
+  return trimmed || null;
+}
+
+// Only the fields that changed, so untouched fields stay as they are.
+export function buildPatch(initial, current) {
+  const patch = {};
+  for (const field of EDITABLE_FIELDS) {
+    const before = JSON.stringify(toPatchValue(field, initial[field]));
+    const after = toPatchValue(field, current[field]);
+    if (JSON.stringify(after) !== before) patch[field] = after;
+  }
+  return patch;
+}
+
+function validate(form) {
+  if (!form.first_name.trim() || !form.last_name.trim()) return "First and last name are required.";
+  if (form.graduation_year.trim() && !/^\d{4}$/.test(form.graduation_year.trim())) {
+    return "Graduation year must be a four-digit year.";
+  }
+  if (toPatchValue("ask_about", form.ask_about).length > MAX_TOPICS) {
+    return `Add at most ${MAX_TOPICS} career interests.`;
+  }
+  return null;
+}
 
 function Field({ label, hint, required, children }) {
   return (
@@ -57,18 +108,58 @@ function Field({ label, hint, required, children }) {
   );
 }
 
-function ProfileForm({ initialProfile = {}, onBack }) {
-  const [profile, setProfile] = useState({ ...DEFAULT_PROFILE, ...initialProfile });
+function ProfileForm({ member, onSaved, onBack }) {
+  const [initial] = useState(() => toForm(member));
+  const [profile, setProfile] = useState(initial);
   const [activeTab, setActiveTab] = useState("general");
+  const [saving, setSaving] = useState(false);
+  const [status, setStatus] = useState({ error: null, message: null });
+  const fileInput = useRef(null);
 
   function update(field, value) {
     setProfile((prev) => ({ ...prev, [field]: value }));
   }
 
+  async function handleSubmit(e) {
+    e.preventDefault();
+    if (saving) return;
+    const invalid = validate(profile);
+    if (invalid) return setStatus({ error: invalid, message: null });
+
+    const patch = buildPatch(initial, profile);
+    if (Object.keys(patch).length === 0) return onBack();
+
+    setSaving(true);
+    setStatus({ error: null, message: null });
+    try {
+      onSaved(await updateMyProfile(patch));
+      onBack();
+    } catch (error) {
+      setStatus({ error: error.message, message: null });
+      setSaving(false);
+    }
+  }
+
+  async function handlePhoto(e) {
+    const file = e.target.files[0];
+    e.target.value = "";
+    if (!file || saving) return;
+    const invalid = validateHeadshot(file);
+    if (invalid) return setStatus({ error: invalid, message: null });
+
+    setSaving(true);
+    setStatus({ error: null, message: null });
+    try {
+      onSaved(await replaceHeadshot(member, file));
+      setStatus({ error: null, message: "Photo updated." });
+    } catch (error) {
+      setStatus({ error: error.message, message: null });
+    }
+    setSaving(false);
+  }
+
   return (
-    // No submit button yet (saving is a follow-up PR), so just make sure
-    // pressing Enter can't reload the page.
-    <form className="profile-form" onSubmit={(e) => e.preventDefault()}>
+    <form className="profile-form" onSubmit={handleSubmit}>
       {onBack && (
         <button type="button" className="profile-back-link" onClick={onBack}>
           &larr; Back to profile
@@ -95,12 +186,33 @@ function ProfileForm({ initialProfile = {}, onBack }) {
             General
           </h2>
 
+          <div className="profile-field">
+            <span className="profile-field-label">Photo</span>
+            <span className="profile-field-hint">JPEG, PNG, or WebP, up to 5 MB. Saves right away.</span>
+            <input
+              ref={fileInput}
+              type="file"
+              accept="image/jpeg,image/png,image/webp"
+              onChange={handlePhoto}
+              hidden
+            />
+            <button
+              type="button"
+              className="profile-photo-btn"
+              onClick={() => fileInput.current.click()}
+              disabled={saving}
+            >
+              {member.headshot_url ? "Change photo" : "Upload photo"}
+            </button>
+          </div>
+
           <div className="profile-grid">
             <Field label="First name" required>
               <input
                 type="text"
-                value={profile.firstName}
-                onChange={(e) => update("firstName", e.target.value)}
+                maxLength={100}
+                value={profile.first_name}
+                onChange={(e) => update("first_name", e.target.value)}
                 required
               />
             </Field>
@@ -108,32 +220,17 @@ function ProfileForm({ initialProfile = {}, onBack }) {
             <Field label="Last name" required>
               <input
                 type="text"
-                value={profile.lastName}
-                onChange={(e) => update("lastName", e.target.value)}
+                maxLength={100}
+                value={profile.last_name}
+                onChange={(e) => update("last_name", e.target.value)}
                 required
-              />
-            </Field>
-
-            <Field label="Preferred name" hint="If you go by a different name, add it here.">
-              <input
-                type="text"
-                value={profile.preferredName}
-                onChange={(e) => update("preferredName", e.target.value)}
-              />
-            </Field>
-
-            <Field label="Pronouns" hint="Add the pronouns you'd like others to use.">
-              <input
-                type="text"
-                placeholder="she/her, he/him, they/them..."
-                value={profile.pronouns}
-                onChange={(e) => update("pronouns", e.target.value)}
               />
             </Field>
 
             <Field label="Major">
               <input
                 type="text"
+                maxLength={200}
                 placeholder="Computer Science"
                 value={profile.major}
                 onChange={(e) => update("major", e.target.value)}
@@ -143,19 +240,30 @@ function ProfileForm({ initialProfile = {}, onBack }) {
             <Field label="Graduation year">
               <input
                 type="text"
+                inputMode="numeric"
+                maxLength={4}
                 placeholder="2029"
-                value={profile.classYear}
-                onChange={(e) => update("classYear", e.target.value)}
+                value={profile.graduation_year}
+                onChange={(e) => update("graduation_year", e.target.value)}
               />
             </Field>
           </div>
 
-          <Field label="Headline" hint="One line other members will see next to your name.">
+          <Field label="Career interests" hint="Separate topics with commas, up to 10.">
             <input
               type="text"
-              placeholder="CS @ Cornell, interested in ML"
-              value={profile.headline}
-              onChange={(e) => update("headline", e.target.value)}
+              placeholder="Software Engineering, Artificial Intelligence (AI)"
+              value={profile.ask_about}
+              onChange={(e) => update("ask_about", e.target.value)}
+            />
+          </Field>
+
+          <Field label="Bio" hint="A few sentences other members can read.">
+            <textarea
+              rows={4}
+              maxLength={2000}
+              value={profile.bio}
+              onChange={(e) => update("bio", e.target.value)}
             />
           </Field>
         </section>
@@ -167,65 +275,53 @@ function ProfileForm({ initialProfile = {}, onBack }) {
             Contact &amp; links
           </h2>
 
-          <Field label="Email" required>
-            <input
-              type="email"
-              value={profile.email}
-              onChange={(e) => update("email", e.target.value)}
-              required
-            />
-          </Field>
-
           <div className="profile-grid">
-            <Field label="Phone number" hint="Used for event reminders only.">
-              <input
-                type="tel"
-                placeholder="(555) 123-4567"
-                value={profile.phone}
-                onChange={(e) => update("phone", e.target.value)}
-              />
+            <Field label="Email" hint="Comes from your Cornell Google account.">
+              <input type="email" value={member.email ?? ""} readOnly />
             </Field>
 
-            <Field label="Current location" hint="Where you're currently based.">
-              <input
-                type="text"
-                placeholder="Ithaca, NY"
-                value={profile.location}
-                onChange={(e) => update("location", e.target.value)}
-              />
+            <Field label="NetID">
+              <input type="text" value={member.netid ?? ""} readOnly />
             </Field>
           </div>
 
           <div className="profile-grid">
-            <Field label="GitHub">
-              <input
-                type="text"
-                placeholder="github.com/username"
-                value={profile.github}
-                onChange={(e) => update("github", e.target.value)}
-              />
-            </Field>
-
             <Field label="LinkedIn">
               <input
-                type="text"
-                placeholder="linkedin.com/in/username"
-                value={profile.linkedin}
-                onChange={(e) => update("linkedin", e.target.value)}
+                type="url"
+                maxLength={500}
+                placeholder="https://www.linkedin.com/in/username"
+                value={profile.linkedin_url}
+                onChange={(e) => update("linkedin_url", e.target.value)}
               />
             </Field>
 
-            <Field label="Personal website">
+            <Field label="Instagram">
               <input
-                type="text"
-                placeholder="yourname.dev"
-                value={profile.website}
-                onChange={(e) => update("website", e.target.value)}
+                type="url"
+                maxLength={500}
+                placeholder="https://www.instagram.com/username"
+                value={profile.instagram_url}
+                onChange={(e) => update("instagram_url", e.target.value)}
               />
             </Field>
           </div>
         </section>
       )}
+
+      <div className="profile-form-actions">
+        <button type="submit" className="redesign-button redesign-button--gold" disabled={saving}>
+          {saving ? "Saving…" : "Save"}
+        </button>
+        {(status.error || status.message) && (
+          <p
+            className={status.error ? "profile-form-error" : "profile-form-message"}
+            role={status.error ? "alert" : "status"}
+          >
+            {status.error || status.message}
+          </p>
+        )}
+      </div>
     </form>
   );
 }
@@ -234,29 +330,17 @@ function ProfileForm({ initialProfile = {}, onBack }) {
 // Page
 // ------------------------------------------------------------------
 
-const SAMPLE_MEMBER = {
-  firstName: "Alex",
-  lastName: "Rivera",
-  netId: "xx123",
-  major: "Computer Science",
-  graduationYear: "2027",
-  status: "Executive Board",
-  careerInterests: ["Software Engineering", "Artificial Intelligence (AI)"],
-};
+const NEAREST_REWARD = { name: "URMC Merch", points: 45 };
 
-const SAMPLE_POINTS = {
-  total: 13,
-  nearestReward: "URMC Merch (45 pts)",
-};
+const ROLE_LABELS = { eboard: "Executive Board", advisor: "Advisor", ta: "Teaching Assistant" };
+
+function memberStatus(member) {
+  if (member.position) return member.position;
+  const role = [].concat(member.role ?? []).find((r) => ROLE_LABELS[r]);
+  return role ? ROLE_LABELS[role] : "Member";
+}
 
 const SAMPLE_ACTION_ITEMS = [
-  {
-    id: "profile",
-    label: "Complete your member profile",
-    description: "Add your NetID, major, and graduation year to your profile.",
-    done: true,
-    flagged: true,
-  },
   {
     id: "survey",
     label: "Fill out the semester survey",
@@ -275,11 +359,83 @@ const SAMPLE_ACTION_ITEMS = [
 
 const SAMPLE_ATTENDANCE = { attended: 5, total: 14 };
 
-export default function Profile() {
-  const [isEditing, setIsEditing] = useState(false);
+function ProfileStatus({ title, children }) {
+  return (
+    <div className="profile-page redesign-page">
+      <div className="profile-page-header profile-page-status" aria-live="polite">
+        <h1 className="profile-page-name">{title}</h1>
+        {children}
+      </div>
+    </div>
+  );
+}
 
-  const member = SAMPLE_MEMBER;
-  const doneCount = SAMPLE_ACTION_ITEMS.filter((item) => item.done).length;
+export default function Profile() {
+  const { user, loading: authLoading, signInWithGoogle } = useAuth();
+  const [state, setState] = useState({ loading: true, error: null, member: null, points: 0 });
+  const [isEditing, setIsEditing] = useState(false);
+  // Session refreshes hand us a new user object; only reload for a different user.
+  const userId = user?.id;
+
+  useEffect(() => {
+    if (!userId) return;
+    let active = true;
+    setState({ loading: true, error: null, member: null, points: 0 });
+    loadMyProfile()
+      .then(({ member, points }) => active && setState({ loading: false, error: null, member, points }))
+      .catch((error) => active && setState({ loading: false, error: error.message, member: null, points: 0 }));
+    return () => { active = false; };
+  }, [userId]);
+
+  if (authLoading || (user && state.loading)) {
+    return <ProfileStatus title="Loading…"><p className="profile-page-hello">Checking sign-in…</p></ProfileStatus>;
+  }
+
+  if (!user) {
+    return (
+      <ProfileStatus title="My Profile">
+        <p className="profile-page-hello">Sign in with your Cornell Google account to see your profile.</p>
+        <button type="button" className="redesign-button redesign-button--gold profile-page-signin" onClick={signInWithGoogle}>
+          Continue with Google
+        </button>
+      </ProfileStatus>
+    );
+  }
+
+  if (state.error) {
+    return (
+      <ProfileStatus title="Something went wrong">
+        <p className="profile-page-hello" role="alert">{state.error}</p>
+      </ProfileStatus>
+    );
+  }
+
+  if (!state.member) {
+    return (
+      <ProfileStatus title="No member record">
+        <p className="profile-page-hello">
+          You are signed in, but we could not find your URMC member record.{" "}
+          <a href="mailto:urmc@cornell.edu">Contact URMC</a> for help linking your account.
+        </p>
+      </ProfileStatus>
+    );
+  }
+
+  const member = state.member;
+  const interests = member.ask_about ?? [];
+  const profileComplete = Boolean(member.major && member.graduation_year);
+  const actionItems = [
+    {
+      id: "profile",
+      label: "Complete your member profile",
+      description: "Add your major and graduation year to your profile.",
+      done: profileComplete,
+      flagged: !profileComplete,
+    },
+    ...SAMPLE_ACTION_ITEMS,
+  ];
+  const doneCount = actionItems.filter((item) => item.done).length;
+  const pointsToReward = NEAREST_REWARD.points - state.points;
 
   return (
     <div className="profile-page redesign-page">
@@ -287,13 +443,13 @@ export default function Profile() {
       <div className="profile-page-header">
         <p className="profile-page-hello">Hello!</p>
         <h1 className="profile-page-name">
-          {member.firstName} {member.lastName}
+          {member.first_name} {member.last_name}
         </h1>
 
         <div className="profile-page-welcome-banner">
          <img className="profile-page-pin" src={pinIcon} alt="" aria-hidden="true" />
           <div>
-            <p className="profile-page-welcome-title">Welcome to Fall 2026!</p>
+            <p className="profile-page-welcome-title">Welcome to {currentSemesterLabel()}!</p>
             <p className="profile-page-welcome-text">
               We're so excited to kick off another semester with you all. Check the
               events calendar and stay active!
@@ -309,37 +465,52 @@ export default function Profile() {
           <div className="profile-page-card">
             <h2 className="profile-page-card-title">My Profile</h2>
 
-            <div className="profile-page-photo" aria-hidden="true">
-              {member.firstName[0]}
-            </div>
+            {member.headshot_url ? (
+              <img className="profile-page-photo" src={member.headshot_url} alt={`${member.first_name} ${member.last_name}`} />
+            ) : (
+              <div className="profile-page-photo" aria-hidden="true">
+                {member.first_name?.[0]}
+              </div>
+            )}
 
             <div className="profile-page-info-grid">
               <div>
                 <p className="profile-page-label">NetID</p>
-                <p className="profile-page-value">{member.netId}</p>
+                <p className="profile-page-value">{member.netid}</p>
               </div>
               <div>
                 <p className="profile-page-label">Major</p>
-                <p className="profile-page-value">{member.major}</p>
+                <p className="profile-page-value">{member.major || "—"}</p>
               </div>
               <div>
                 <p className="profile-page-label">Graduation Year</p>
-                <p className="profile-page-value">{member.graduationYear}</p>
+                <p className="profile-page-value">{member.graduation_year || "—"}</p>
               </div>
               <div>
                 <p className="profile-page-label">Status</p>
-                <p className="profile-page-value">{member.status}</p>
+                <p className="profile-page-value">{memberStatus(member)}</p>
               </div>
             </div>
 
             <p className="profile-page-label">Career Interests</p>
-            <div className="profile-page-tags">
-              {member.careerInterests.map((interest) => (
-                <span key={interest} className="profile-page-tag">
-                  {interest}
-                </span>
-              ))}
-            </div>
+            {interests.length > 0 ? (
+              <div className="profile-page-tags">
+                {interests.map((interest) => (
+                  <span key={interest} className="profile-page-tag">
+                    {interest}
+                  </span>
+                ))}
+              </div>
+            ) : (
+              <p className="profile-page-muted-small">Add your interests with Edit Profile.</p>
+            )}
+
+            {member.bio && (
+              <>
+                <p className="profile-page-label profile-page-bio-label">Bio</p>
+                <p className="profile-page-bio">{member.bio}</p>
+              </>
+            )}
 
             <button
               type="button"
@@ -353,15 +524,25 @@ export default function Profile() {
           <div className="profile-page-card">
             <div className="profile-page-card-row">
               <h2 className="profile-page-card-title">Points Tracker</h2>
-              <span className="profile-page-big-number">{SAMPLE_POINTS.total}</span>
+              <span className="profile-page-big-number">{state.points}</span>
             </div>
             <p className="profile-page-muted">
-              Nearest reward:{" "}
-              <span className="profile-page-gold-text">{SAMPLE_POINTS.nearestReward}</span>
+              {pointsToReward > 0 ? (
+                <>
+                  Nearest reward:{" "}
+                  <span className="profile-page-gold-text">
+                    {NEAREST_REWARD.name} ({NEAREST_REWARD.points} pts)
+                  </span>
+                </>
+              ) : (
+                <>
+                  You've earned <span className="profile-page-gold-text">{NEAREST_REWARD.name}</span>!
+                </>
+              )}
             </p>
-            <button type="button" className="redesign-button profile-page-outline-btn">
+            <a href="/points" className="redesign-button profile-page-outline-btn">
               How to Earn Points
-            </button>
+            </a>
           </div>
         </div>
 
@@ -371,12 +552,8 @@ export default function Profile() {
             {isEditing ? (
               <div className="profile-page-card profile-page-edit-card">
                 <ProfileForm
-                  initialProfile={{
-                    firstName: member.firstName,
-                    lastName: member.lastName,
-                    major: member.major,
-                    classYear: member.graduationYear,
-                  }}
+                  member={member}
+                  onSaved={(saved) => setState((prev) => ({ ...prev, member: { ...prev.member, ...saved } }))}
                   onBack={() => setIsEditing(false)}
                 />
               </div>
@@ -386,12 +563,12 @@ export default function Profile() {
                   <div className="profile-page-card-row">
                     <h2 className="profile-page-card-title">Action Items</h2>
                     <span className="profile-page-muted-small">
-                      {doneCount}/{SAMPLE_ACTION_ITEMS.length} done
+                      {doneCount}/{actionItems.length} done
                     </span>
                   </div>
 
                   <div className="profile-page-checklist">
-                    {SAMPLE_ACTION_ITEMS.map((item) => (
+                    {actionItems.map((item) => (
                       <div className="profile-page-check-item" key={item.id}>
                         <span
                           className={
@@ -400,7 +577,7 @@ export default function Profile() {
                           }
                           aria-hidden="true"
                         >
-                          {item.done ? "\u2713" : ""}
+                          {item.done ? "✓" : ""}
                         </span>
                         <div>
                           <p className="profile-page-check-label">
@@ -414,14 +591,18 @@ export default function Profile() {
                       </div>
                     ))}
                   </div>
+                  <p className="profile-page-coming-soon">More action items are coming soon.</p>
                 </div>
 
-                <div className="profile-page-card profile-page-card-row">
-                  <h2 className="profile-page-card-title">Event Attendance</h2>
-                  <p className="profile-page-attendance">
-                    <span className="profile-page-gold-text">{SAMPLE_ATTENDANCE.attended}</span>
-                    <span className="profile-page-muted-small">/{SAMPLE_ATTENDANCE.total}</span>
-                  </p>
+                <div className="profile-page-card">
+                  <div className="profile-page-card-row">
+                    <h2 className="profile-page-card-title">Event Attendance</h2>
+                    <p className="profile-page-attendance">
+                      <span className="profile-page-gold-text">{SAMPLE_ATTENDANCE.attended}</span>
+                      <span className="profile-page-muted-small">/{SAMPLE_ATTENDANCE.total}</span>
+                    </p>
+                  </div>
+                  <p className="profile-page-coming-soon">Sample numbers. Attendance tracking is coming soon.</p>
                 </div>
               </>
             )}
