@@ -46,7 +46,7 @@
   align-self: stretch;
 }
 
-.profile-page-name {
+.profile-page .profile-page-name {
   margin: 0.25rem 0 clamp(1.5rem, 2.4vw, 2.875rem); /* ~2.875rem at 1920 */
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
@@ -78,7 +78,7 @@
   top: 0.5rem;
 }
 
-.profile-page-welcome-title {
+.profile-page .profile-page-welcome-title {
   margin: 0 0 0.25rem;
   font-weight: 700;
   font-size: clamp(0.9375rem, 1.25vw, 1.5rem); /* ~1.5rem at 1920 */
@@ -122,7 +122,7 @@
   justify-content: space-between;
 }
 
-.profile-page-card-title {
+.profile-page .profile-page-card-title {
   margin: 0 0 clamp(1rem, 1.25vw, 1.5rem);
   font-weight: 800;
   font-size: clamp(1.25rem, 1.667vw, 2rem);
@@ -156,13 +156,13 @@
   margin-bottom: clamp(1.25rem, 2.35vw, 2.8rem);
 }
 
-.profile-page-label {
+.profile-page .profile-page-label {
   margin: 0 0 0.25rem;
   font-size: clamp(0.75rem, 0.833vw, 1rem);  /* 16px on the 1920 frame */
   color: var(--page-ink-soft);
 }
 
-.profile-page-value {
+.profile-page .profile-page-value {
   margin: 0;
   font-size: clamp(0.875rem, 1.042vw, 1.25rem); /* 20px on the 1920 frame */
   font-weight: 700;
@@ -212,7 +212,7 @@
   color: var(--page-gold);
 }
 
-.profile-page-muted {
+.profile-page .profile-page-muted {
   margin: 0.875rem 0 clamp(1rem, 1.5vw, 1.75rem);
   font-size: clamp(0.875rem, 1.042vw, 1.25rem);
   color: var(--page-ink-soft);
@@ -265,7 +265,7 @@
   border-color: var(--page-gold);
 }
 
-.profile-page-check-label {
+.profile-page .profile-page-check-label {
   margin: 0 0 0.25rem;
   font-size: clamp(0.9rem, 1.042vw, 1.25rem);  /* 20px on the 1920 frame */
   font-weight: 700;
@@ -274,7 +274,7 @@
   gap: 0.5rem;
 }
 
-.profile-page-check-description {
+.profile-page .profile-page-check-description {
   margin: 0;
   font-size: clamp(0.75rem, 0.833vw, 1rem);    /* 16px on the 1920 frame */
   color: var(--page-ink-soft);
@@ -291,7 +291,7 @@
 
 /* ---------- Event Attendance ---------- */
 
-.profile-page-attendance {
+.profile-page .profile-page-attendance {
   margin: 0;
   font-weight: 800;
   font-size: clamp(1.75rem, 2.5vw, 3rem);
@@ -416,7 +416,9 @@
 
 .profile-tab:focus-visible,
 .profile-back-link:focus-visible,
-.profile-form input:focus-visible {
+.profile-photo-btn:focus-visible,
+.profile-form input:focus-visible,
+.profile-form textarea:focus-visible {
   outline: 2px solid var(--profile-gold);
   outline-offset: 2px;
 }
@@ -429,7 +431,7 @@
   border-left: 2px solid var(--profile-gold);
 }
 
-.profile-section-title {
+.profile-page .profile-section-title {
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
   font-size: 1.125rem;
@@ -451,7 +453,8 @@
   margin-bottom: 1.25rem;
 }
 
-.profile-field > input {
+.profile-field > input,
+.profile-field > textarea {
   margin-top: auto;
 }
 
@@ -475,7 +478,8 @@
   margin-bottom: 0.375rem;
 }
 
-.profile-field input {
+.profile-field input,
+.profile-field textarea {
   width: 100%;
   font-family: inherit;
   font-size: 0.875rem;
@@ -486,12 +490,69 @@
   padding: 0.625rem 0.75rem;
 }
 
-.profile-field input:focus {
+.profile-field input:focus,
+.profile-field textarea:focus {
   border-color: var(--profile-gold);
 }
 
-.profile-field input::placeholder {
+.profile-field input::placeholder,
+.profile-field textarea::placeholder {
   color: #7a7a7a;
+}
+
+.profile-field textarea {
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.profile-field input[readonly] {
+  color: var(--profile-ink-soft);
+  cursor: default;
+}
+
+.profile-photo-btn {
+  align-self: flex-start;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--profile-ink);
+  background: var(--profile-panel);
+  border: 1px solid var(--profile-line);
+  border-radius: 8px;
+  padding: 0.625rem 1rem;
+  cursor: pointer;
+}
+
+.profile-photo-btn:disabled,
+.profile-form-actions .redesign-button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.profile-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.profile-form-actions .redesign-button {
+  cursor: pointer;
+}
+
+.profile-page .profile-form-error,
+.profile-page .profile-form-message {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.profile-form-error {
+  color: #ff8a80;
+}
+
+.profile-form-message {
+  color: var(--profile-gold);
 }
 
 /* ---------- Responsive ---------- */
@@ -511,4 +572,48 @@
 
 .profile-page-attendance .profile-page-gold-text {
   color: var(--page-off-white);
+}
+
+/* ---------- Live data additions ---------- */
+
+img.profile-page-photo {
+  display: block;
+  object-fit: cover;
+}
+
+.profile-page .profile-page-bio-label {
+  margin-top: clamp(1rem, 1.5vw, 1.75rem);
+}
+
+.profile-page .profile-page-bio {
+  margin: 0;
+  font-size: clamp(0.875rem, 1.042vw, 1.25rem);
+  line-height: 1.5;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.profile-page a.profile-page-outline-btn {
+  display: inline-flex;
+}
+
+.profile-page .profile-page-coming-soon {
+  margin: clamp(0.75rem, 1vw, 1.25rem) 0 0;
+  font-size: clamp(0.75rem, 0.833vw, 1rem);
+  font-style: italic;
+  color: var(--page-ink-soft);
+}
+
+/* Sign-in, loading and error states reuse the dark header band. */
+.profile-page-status {
+  min-height: 50vh;
+}
+
+.profile-page-status a {
+  color: var(--page-gold);
+}
+
+.profile-page-signin {
+  margin-top: clamp(1.5rem, 2vw, 2.5rem);
+  cursor: pointer;
 }
