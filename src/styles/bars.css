@@ -33,9 +33,6 @@
     padding: 0;
 }
 
-.nav-menu--left  { justify-content: flex-end; }
-.nav-menu--right { justify-content: flex-start; }
-
 /* Mobile menu hidden on desktop */
 .nav-container   { display: none; }
 
@@ -62,9 +59,8 @@
 
     .site-logo { width: 9.1875rem; height: 3.5rem; object-fit: contain; }
 
-    /* hide left/right lists */
-    .nav-menu--left,
-    .nav-menu--right { display: none; }
+    /* hide the desktop links and button */
+    .nav-desktop { display: none; }
 
     /* logo left, hamburger right */
     .nav-logo-link { order: 1; }
@@ -129,21 +125,67 @@
 
     .nav a:hover     { color: #eeb50c; }
     .nav li.active a { color: #eeb50c; font-weight: 800; }
+
+    .nav-auth--mobile {
+        padding: 0.5rem 1.5rem 1.5rem;
+    }
+
+    .nav-auth--mobile .nav-auth-btn {
+        width: 100%;
+        font-size: 0.9375rem;
+        padding: 1rem;
+        border-radius: 0.5625rem;
+    }
 }
 
 .nav { gap: 2rem; }
-@media (min-width: 64.001rem) {
-  .nav { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
-  .nav-menu--left { justify-content: flex-start; }
-  .nav-menu--right { justify-content: flex-end; }
-}
-/* One desktop size; gutters adapt without resizing the text or logo. */
-@media (min-width: 64.001rem) {
-  .nav { padding: 2rem max(1.5rem, calc((100% - 75rem) / 2)); gap: 1rem; }
-  /* Figma's 60px link gaps adapted to the 20px desktop typography.
-     Tighten only spacing continuously when the available width is smaller. */
-  .nav-menu { gap: clamp(.5rem, calc((100vw - 64rem) * .1), 3rem); }
-  .nav a { font-size: 1.25rem; font-weight: 600; }
-  .site-logo { width: 11.5rem; height: 4.5rem; }
-}
 .nav-container { max-height: calc(100dvh - 6.5rem); overflow-y: auto; }
+
+/* ─── Member Portal / Sign Out button ─── */
+.nav a.nav-auth-btn,
+.nav button.nav-auth-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    line-height: normal;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #1f1f1f;
+    border: 0.1875rem solid transparent;
+    border-radius: 1.25rem;
+    /* Figma's border sits inside the 16px/24px padding (161x61 Sign In button). */
+    padding: calc(1rem - 0.1875rem) calc(1.5rem - 0.1875rem);
+    cursor: pointer;
+}
+.nav-auth-btn--gold { background: #eeb50c; }
+.nav-auth-btn--gold:hover { background: #d9a30a; }
+.nav-auth-btn--outline { background: transparent; }
+.nav .nav-auth-btn.nav-auth-btn--outline { border-color: #1f1f1f; }
+.nav .nav-auth-btn--outline:hover { background: #1f1f1f; color: #f5f5f5; }
+.nav-auth-btn--pending { visibility: hidden; }
+
+/* ─── Desktop layout ───
+   Figma frame: 1920px wide, 48px/100px padding, 24px text, 60px link gaps.
+   Everything scales down from there so the row fits until the hamburger takes over. */
+@media (min-width: 64.001rem) {
+  .nav {
+    padding: clamp(1.5rem, 2.5vw, 3rem) clamp(1.5rem, 5.2083vw, 6.25rem);
+    border-bottom: none;
+  }
+  .nav-desktop {
+    display: flex;
+    align-items: center;
+    gap: clamp(.75rem, calc((100vw - 64rem) * .1 + .75rem), 3.75rem);
+  }
+  .nav-menu { gap: clamp(.75rem, calc((100vw - 64rem) * .1 + .75rem), 3.75rem); }
+  .nav a { font-size: clamp(1rem, 1.25vw, 1.5rem); font-weight: 500; }
+  .nav button.nav-auth-btn,
+  .nav a.nav-auth-btn {
+    font-size: clamp(1rem, 1.25vw, 1.5rem);
+    padding: calc(clamp(.625rem, .8333vw, 1rem) - .1875rem) calc(clamp(1rem, 1.25vw, 1.5rem) - .1875rem);
+  }
+  .site-logo { width: clamp(9.5rem, 12.135vw, 14.5625rem); height: auto; aspect-ratio: 233 / 90; }
+}

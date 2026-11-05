@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { completeGoogleSignIn, signInWithGoogle, signOut } from '../lib/auth.js';
+import { completeGoogleSignIn, NO_MEMBER_MESSAGE, signInWithGoogle, signOut } from '../lib/auth.js';
 
 export default function AuthCallback() {
   const [search] = useState(() => window.location.search);
@@ -8,7 +8,7 @@ export default function AuthCallback() {
     let active = true;
     completeGoogleSignIn(search).then(({ memberId }) => {
       if (!active) return;
-      if (memberId) window.location.replace('/');
+      if (memberId) window.location.replace('/profile');
       else setStatus({ loading: false, error: null, unmatched: true });
     }).catch(error => {
       if (active) setStatus({ loading: false, error: error.message, unmatched: false });
@@ -29,8 +29,9 @@ export default function AuthCallback() {
   return <section className="wwa-status" aria-live="polite">
     <h1>Google sign-in</h1>
     {status.loading ? <p>Finishing sign-in…</p> : <>
-      <p role={status.error ? 'alert' : undefined}>{status.error || 'You are signed in, but we could not find your URMC member record. Contact URMC for help linking your account.'}</p>
-      <p><a href="mailto:urmc@cornell.edu">Contact URMC</a></p>
+      <p role={status.error ? 'alert' : undefined}>{status.error || NO_MEMBER_MESSAGE}</p>
+      {status.unmatched && <p><a href="/events">See upcoming events</a></p>}
+      <p>{status.unmatched && 'Already attended one? '}<a href="mailto:urmc@cornell.edu">Contact URMC</a></p>
       <button type="button" onClick={restart}>Try Google sign-in again</button>
       <p><a href="/">Return to home</a></p>
     </>}
