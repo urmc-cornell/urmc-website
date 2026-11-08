@@ -34,22 +34,26 @@ async function updateHeadshotsFromBucket() {
 
         // Check if file is for Primary or Secondary and build updates
         if (type.startsWith("Primary")) {
-          updates.headshot_url = `${process.env.REACT_APP_SUPABASE_URL}/storage/v1/object/public/${bucketName}/eboard/${fileName}`;
+          updates.headshot_url = `${process.env.SUPABASE_URL}/storage/v1/object/public/${bucketName}/eboard/${fileName}`;
         } else if (type.startsWith("Secondary")) {
-          updates.secondary_headshot_url = `${process.env.REACT_APP_SUPABASE_URL}/storage/v1/object/public/${bucketName}/eboard/${fileName}`;
+          updates.secondary_headshot_url = `${process.env.SUPABASE_URL}/storage/v1/object/public/${bucketName}/eboard/${fileName}`;
         }
 
         // Update the database for this netid if there's an update to make
         if (Object.keys(updates).length > 0) {
-          const { error: updateError } = await supabase
+          const { data: updated, error: updateError } = await supabase
             .from("members")
             .update(updates)
-            .eq("netid", netid);
+            .eq("netid", netid)
+            .is("profile_updated_at", null)
+            .select("id");
 
           if (updateError) {
             console.error(`Error updating ${netid}:`, updateError);
-          } else {
+          } else if (updated.length) {
             console.log(`Successfully updated headshots for ${netid}`);
+          } else {
+            console.log(`Skipped ${netid}: missing member or member-edited profile`);
           }
         }
       } catch (error) {
