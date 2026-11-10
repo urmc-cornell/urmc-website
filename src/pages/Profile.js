@@ -17,8 +17,8 @@ import {
  * ------------------------------------------------------------------
  * Member profile page, built from the Figma "Member Portal" frame:
  * a full-width header (greeting, name, welcome banner), then two
- * columns. The left column (My Profile, Points Tracker) never changes.
- * The right column shows Action Items and Event Attendance, and
+ * columns. The left column (My Profile) never changes.
+ * The right column shows Action Items and Points Tracker, and
  * clicking "Edit Profile" swaps it for the edit form (ProfileForm,
  * defined further down in this file) with a short fade/slide.
  *
@@ -514,18 +514,9 @@ export default function Profile() {
             </button>
           </div>
 
-          <div className="profile-page-card">
-            <div className="profile-page-card-row">
-              <h2 className="profile-page-card-title">Points Tracker</h2>
-              <span className="profile-page-big-number">{state.points}</span>
-            </div>
-            <a href="/points" className="redesign-button profile-page-outline-btn">
-              How to Earn Points
-            </a>
-          </div>
         </div>
 
-        {/* Right column: Action Items + Event Attendance, or the edit form */}
+        {/* Right column: Action Items + Points Tracker, or the edit form */}
         <div className="profile-page-col">
           <div key={isEditing ? "edit" : "view"} className="profile-page-transition">
             {isEditing ? (
@@ -575,6 +566,17 @@ export default function Profile() {
 
                 <div className="profile-page-card">
                   <div className="profile-page-card-row">
+                    <h2 className="profile-page-card-title">Points Tracker</h2>
+                    <span className="profile-page-big-number">{state.points}</span>
+                  </div>
+                  <a href="/points" className="redesign-button profile-page-outline-btn">
+                    How to Earn Points
+                  </a>
+                </div>
+
+                {/* Event Attendance card (hidden for now):
+                <div className="profile-page-card">
+                  <div className="profile-page-card-row">
                     <h2 className="profile-page-card-title">Event Attendance</h2>
                     <p className="profile-page-attendance">
                       <span className="profile-page-gold-text">{state.attendance.attended}</span>
@@ -583,6 +585,7 @@ export default function Profile() {
                   </div>
                   <p className="profile-page-coming-soon">Events you've attended out of those hosted in {currentSemesterLabel()}.</p>
                 </div>
+                */}
               </>
             )}
           </div>

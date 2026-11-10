@@ -22,16 +22,19 @@ test('accounts with no member record are told to attend an event', async () => {
   expect(window.location.replace).not.toHaveBeenCalled();
 });
 
-test('Event Attendance shows attended over hosted this semester', async () => {
+test('Points Tracker follows Action Items and shows semester points', async () => {
   useAuth.mockReturnValue({ user: { id: 'u1' }, loading: false });
   loadMyProfile.mockResolvedValue({
     member: { id: 'm1', first_name: 'Alex', last_name: 'Rivera', netid: 'ar123' },
     points: 3,
     attendance: { attended: 1, hosted: 1 },
   });
-  const { container } = render(<Profile />);
-  await screen.findByText('Event Attendance');
-  expect(container.querySelector('.profile-page-attendance').textContent).toBe('1/1');
+  render(<Profile />);
+  await screen.findByRole('heading', { name: 'Points Tracker' });
+  const headings = screen.getAllByRole('heading', { level: 2 }).map(h => h.textContent);
+  expect(headings.slice(-2)).toEqual(['Action Items', 'Points Tracker']);
+  expect(screen.getByText('3')).toBeTruthy();
+  expect(screen.queryByRole('heading', { name: 'Event Attendance' })).toBeNull();
 });
 
 test('signed-out visitors are sent home without a sign-in page', () => {
