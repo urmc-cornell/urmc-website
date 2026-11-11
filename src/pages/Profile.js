@@ -25,8 +25,7 @@ import {
  * Profile data and points come from Supabase for the signed-in member.
  * Edits are saved with update_my_profile, which only accepts the fields
  * listed in EDITABLE_FIELDS. Event Attendance is counted from the member's
- * points rows. Most Action Items are still sample data until there is a
- * backend for them.
+ * points rows. Action Items and their done checks live in ACTION_ITEMS.
  */
 
 // ------------------------------------------------------------------
@@ -340,20 +339,20 @@ function memberStatus(member) {
   return role ? ROLE_LABELS[role] : "Member";
 }
 
-const SAMPLE_ACTION_ITEMS = [
+// Every field on the General tab of the edit form, including the photo.
+export function isProfileComplete(member) {
+  const filled = (value) => typeof value === "string" ? value.trim() !== "" : Boolean(value);
+  return ["headshot_url", "first_name", "last_name", "major", "graduation_year", "bio"].every(
+    (field) => filled(member[field])
+  ) && (member.ask_about ?? []).length > 0;
+}
+
+const ACTION_ITEMS = [
   {
-    id: "survey",
-    label: "Fill out the semester survey",
-    description: "Help us plan events that match your interests",
-    done: false,
-    flagged: true,
-  },
-  {
-    id: "gbm",
-    label: "Attend a General Body Meeting",
-    description: "Earn 10 points and meet fellow URMC members",
-    done: false,
-    flagged: false,
+    id: "profile",
+    label: "Complete your member profile",
+    note: "Click Edit Profile and fill out every field on the General tab",
+    isDone: isProfileComplete,
   },
 ];
 
@@ -417,17 +416,7 @@ export default function Profile() {
 
   const member = state.member;
   const interests = member.ask_about ?? [];
-  const profileComplete = Boolean(member.major && member.graduation_year);
-  const actionItems = [
-    {
-      id: "profile",
-      label: "Complete your member profile",
-      description: "Add your major and graduation year to your profile.",
-      done: profileComplete,
-      flagged: !profileComplete,
-    },
-    ...SAMPLE_ACTION_ITEMS,
-  ];
+  const actionItems = ACTION_ITEMS.map((item) => ({ ...item, done: item.isDone(member) }));
   const doneCount = actionItems.filter((item) => item.done).length;
 
   return (
@@ -444,7 +433,7 @@ export default function Profile() {
           <div>
             <p className="profile-page-welcome-title">Welcome to {currentSemesterLabel()}!</p>
             <p className="profile-page-welcome-text">
-              We're so excited to kick off another semester with you all. Check the
+              We're so glad to have you with us this semester. Check the
               events calendar and stay active!
             </p>
           </div>
@@ -552,16 +541,15 @@ export default function Profile() {
                         <div>
                           <p className="profile-page-check-label">
                             {item.label}
-                            {item.flagged && (
+                            {!item.done && (
                               <span className="profile-page-flag-dot" aria-hidden="true" />
                             )}
                           </p>
-                          <p className="profile-page-check-description">{item.description}</p>
+                          <p className="profile-page-check-description">{item.note}</p>
                         </div>
                       </div>
                     ))}
                   </div>
-                  <p className="profile-page-coming-soon">More action items are coming soon.</p>
                 </div>
 
                 <div className="profile-page-card">

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Profile from './Profile.js';
+import Profile, { isProfileComplete } from './Profile.js';
 import { useAuth } from '../contexts/AuthContext.js';
 import { loadMyProfile } from '../lib/profile.js';
 jest.mock('../contexts/AuthContext.js', () => ({ useAuth: jest.fn() }));
@@ -35,6 +35,31 @@ test('Points Tracker follows Action Items and shows semester points', async () =
   expect(headings.slice(-2)).toEqual(['Action Items', 'Points Tracker']);
   expect(screen.getByText('3')).toBeTruthy();
   expect(screen.queryByRole('heading', { name: 'Event Attendance' })).toBeNull();
+});
+
+const completeMember = {
+  id: 'm1', netid: 'ar123', headshot_url: 'https://x/photo.png', first_name: 'Alex', last_name: 'Rivera',
+  major: 'CS', graduation_year: 2028, ask_about: ['AI'], bio: 'Hi!',
+};
+
+test('profile is complete only when every General tab field is filled', () => {
+  expect(isProfileComplete(completeMember)).toBe(true);
+  for (const field of ['headshot_url', 'first_name', 'last_name', 'major', 'graduation_year', 'bio']) {
+    expect(isProfileComplete({ ...completeMember, [field]: null })).toBe(false);
+  }
+  expect(isProfileComplete({ ...completeMember, bio: '   ' })).toBe(false);
+  expect(isProfileComplete({ ...completeMember, ask_about: [] })).toBe(false);
+});
+
+test('Action Items is a single profile checkbox with instructions', async () => {
+  useAuth.mockReturnValue({ user: { id: 'u1' }, loading: false });
+  loadMyProfile.mockResolvedValue({ member: { ...completeMember, bio: null }, points: 0 });
+  const { container } = render(<Profile />);
+  await screen.findByText('Complete your member profile');
+  expect(screen.getByText('0/1 done')).toBeTruthy();
+  expect(screen.getByText(/fill out every field on the General tab/)).toBeTruthy();
+  expect(container.querySelectorAll('.profile-page-check-item')).toHaveLength(1);
+  expect(container.querySelector('.profile-page-checkbox-done')).toBeNull();
 });
 
 test('signed-out visitors are sent home without a sign-in page', () => {
