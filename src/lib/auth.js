@@ -1,5 +1,7 @@
 import { supabase } from './supabaseClient.js';
 
+export const NO_MEMBER_MESSAGE = 'You are signed in, but we could not find your URMC member record. Attend a URMC event to access the member portal.';
+
 export async function signInWithGoogle() {
   const { error } = await supabase.auth.signInWithOAuth({
     provider: 'google',

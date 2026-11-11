@@ -10,7 +10,7 @@ test('Strict Mode exchanges once and renders the unmatched-account state', async
   supabase.auth.exchangeCodeForSession.mockResolvedValue({ data: { session: {} }, error: null });
   supabase.rpc.mockResolvedValue({ data: null, error: null });
   render(<StrictMode><AuthCallback /></StrictMode>);
-  await screen.findByText(/could not find your URMC member record/);
+  await screen.findByText(/Attend a URMC event to access the member portal/);
   expect(supabase.auth.exchangeCodeForSession).toHaveBeenCalledTimes(1);
   expect(supabase.rpc).toHaveBeenCalledTimes(1);
   expect(window.location.search).toBe('');
