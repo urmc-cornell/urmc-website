@@ -3,6 +3,7 @@ import "../styles/profile.css";
 import pinIcon from "../images/pin.svg";
 import "../styles/redesign-hero.css";
 import { useAuth } from "../contexts/AuthContext.js";
+import { NO_MEMBER_MESSAGE } from "../lib/auth.js";
 import { currentSemesterLabel } from "../lib/semester.js";
 import {
   loadMyProfile,
@@ -16,15 +17,16 @@ import {
  * ------------------------------------------------------------------
  * Member profile page, built from the Figma "Member Portal" frame:
  * a full-width header (greeting, name, welcome banner), then two
- * columns. The left column (My Profile, Points Tracker) never changes.
- * The right column shows Action Items and Event Attendance, and
+ * columns. The left column (My Profile) never changes.
+ * The right column shows Action Items and Points Tracker, and
  * clicking "Edit Profile" swaps it for the edit form (ProfileForm,
  * defined further down in this file) with a short fade/slide.
  *
  * Profile data and points come from Supabase for the signed-in member.
  * Edits are saved with update_my_profile, which only accepts the fields
- * listed in EDITABLE_FIELDS. Action Items and Event Attendance are still
- * sample data until there is a backend for them.
+ * listed in EDITABLE_FIELDS. Event Attendance is counted from the member's
+ * points rows. Most Action Items are still sample data until there is a
+ * backend for them.
  */
 
 // ------------------------------------------------------------------
@@ -330,8 +332,6 @@ function ProfileForm({ member, onSaved, onBack }) {
 // Page
 // ------------------------------------------------------------------
 
-const NEAREST_REWARD = { name: "URMC Merch", points: 45 };
-
 const ROLE_LABELS = { eboard: "Executive Board", advisor: "Advisor", ta: "Teaching Assistant" };
 
 function memberStatus(member) {
@@ -357,8 +357,6 @@ const SAMPLE_ACTION_ITEMS = [
   },
 ];
 
-const SAMPLE_ATTENDANCE = { attended: 5, total: 14 };
-
 function ProfileStatus({ title, children }) {
   return (
     <div className="profile-page redesign-page">
@@ -371,7 +369,7 @@ function ProfileStatus({ title, children }) {
 }
 
 export default function Profile() {
-  const { user, loading: authLoading, signInWithGoogle } = useAuth();
+  const { user, loading: authLoading } = useAuth();
   const [state, setState] = useState({ loading: true, error: null, member: null, points: 0 });
   const [isEditing, setIsEditing] = useState(false);
   // Session refreshes hand us a new user object; only reload for a different user.
@@ -382,24 +380,19 @@ export default function Profile() {
     let active = true;
     setState({ loading: true, error: null, member: null, points: 0 });
     loadMyProfile()
-      .then(({ member, points }) => active && setState({ loading: false, error: null, member, points }))
+      .then(({ member, points, attendance }) => active && setState({ loading: false, error: null, member, points, attendance }))
       .catch((error) => active && setState({ loading: false, error: error.message, member: null, points: 0 }));
     return () => { active = false; };
   }, [userId]);
 
-  if (authLoading || (user && state.loading)) {
-    return <ProfileStatus title="Loading…"><p className="profile-page-hello">Checking sign-in…</p></ProfileStatus>;
-  }
+  // The portal is members-only: signing in starts from Member Portal in the
+  // header, so anyone signed out (or who just signed out) goes back home.
+  useEffect(() => {
+    if (!authLoading && !userId) window.location.replace("/");
+  }, [authLoading, userId]);
 
-  if (!user) {
-    return (
-      <ProfileStatus title="My Profile">
-        <p className="profile-page-hello">Sign in with your Cornell Google account to see your profile.</p>
-        <button type="button" className="redesign-button redesign-button--gold profile-page-signin" onClick={signInWithGoogle}>
-          Continue with Google
-        </button>
-      </ProfileStatus>
-    );
+  if (authLoading || !user || state.loading) {
+    return <ProfileStatus title="Loading…"><p className="profile-page-hello">Checking sign-in…</p></ProfileStatus>;
   }
 
   if (state.error) {
@@ -412,10 +405,11 @@ export default function Profile() {
 
   if (!state.member) {
     return (
-      <ProfileStatus title="No member record">
+      <ProfileStatus title="Attend an event to get access">
+        <p className="profile-page-hello">{NO_MEMBER_MESSAGE}</p>
         <p className="profile-page-hello">
-          You are signed in, but we could not find your URMC member record.{" "}
-          <a href="mailto:urmc@cornell.edu">Contact URMC</a> for help linking your account.
+          <a href="/events">See upcoming events</a>. Already attended one?{" "}
+          <a href="mailto:urmc@cornell.edu">Contact URMC</a>.
         </p>
       </ProfileStatus>
     );
@@ -435,7 +429,6 @@ export default function Profile() {
     ...SAMPLE_ACTION_ITEMS,
   ];
   const doneCount = actionItems.filter((item) => item.done).length;
-  const pointsToReward = NEAREST_REWARD.points - state.points;
 
   return (
     <div className="profile-page redesign-page">
@@ -521,32 +514,9 @@ export default function Profile() {
             </button>
           </div>
 
-          <div className="profile-page-card">
-            <div className="profile-page-card-row">
-              <h2 className="profile-page-card-title">Points Tracker</h2>
-              <span className="profile-page-big-number">{state.points}</span>
-            </div>
-            <p className="profile-page-muted">
-              {pointsToReward > 0 ? (
-                <>
-                  Nearest reward:{" "}
-                  <span className="profile-page-gold-text">
-                    {NEAREST_REWARD.name} ({NEAREST_REWARD.points} pts)
-                  </span>
-                </>
-              ) : (
-                <>
-                  You've earned <span className="profile-page-gold-text">{NEAREST_REWARD.name}</span>!
-                </>
-              )}
-            </p>
-            <a href="/points" className="redesign-button profile-page-outline-btn">
-              How to Earn Points
-            </a>
-          </div>
         </div>
 
-        {/* Right column: Action Items + Event Attendance, or the edit form */}
+        {/* Right column: Action Items + Points Tracker, or the edit form */}
         <div className="profile-page-col">
           <div key={isEditing ? "edit" : "view"} className="profile-page-transition">
             {isEditing ? (
@@ -596,14 +566,26 @@ export default function Profile() {
 
                 <div className="profile-page-card">
                   <div className="profile-page-card-row">
+                    <h2 className="profile-page-card-title">Points Tracker</h2>
+                    <span className="profile-page-big-number">{state.points}</span>
+                  </div>
+                  <a href="/points" className="redesign-button profile-page-outline-btn">
+                    How to Earn Points
+                  </a>
+                </div>
+
+                {/* Event Attendance card (hidden for now):
+                <div className="profile-page-card">
+                  <div className="profile-page-card-row">
                     <h2 className="profile-page-card-title">Event Attendance</h2>
                     <p className="profile-page-attendance">
-                      <span className="profile-page-gold-text">{SAMPLE_ATTENDANCE.attended}</span>
-                      <span className="profile-page-muted-small">/{SAMPLE_ATTENDANCE.total}</span>
+                      <span className="profile-page-gold-text">{state.attendance.attended}</span>
+                      <span className="profile-page-muted-small">/{state.attendance.hosted}</span>
                     </p>
                   </div>
-                  <p className="profile-page-coming-soon">Sample numbers. Attendance tracking is coming soon.</p>
+                  <p className="profile-page-coming-soon">Events you've attended out of those hosted in {currentSemesterLabel()}.</p>
                 </div>
+                */}
               </>
             )}
           </div>

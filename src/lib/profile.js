@@ -8,23 +8,36 @@ export const HEADSHOT_MAX_BYTES = 5 * 1024 * 1024;
 const PROFILE_COLUMNS = `id, netid, email, first_name, last_name, major, graduation_year,
   role, position, bio, ask_about, linkedin_url, instagram_url, headshot_url`;
 
-// Returns { member, points } for the signed-in user, or { member: null } when the
-// account has no linked member record yet.
+// There is no attendance table yet: sign-ins are recorded as points rows whose
+// reason starts with "Event Attendance". The same event counts once, since some
+// events have repeat rows.
+export function countAttendance(rows) {
+  const reasons = rows.map((row) => (row.reason ?? '').trim().toLowerCase());
+  return new Set(reasons.filter((reason) => reason.startsWith('event attendance'))).size;
+}
+
+// Returns { member, points, attendance } for the signed-in user, or
+// { member: null } when the account has no linked member record yet.
 export async function loadMyProfile() {
   const { data: memberId, error: linkError } = await supabase.rpc('link_my_member');
   if (linkError) throw linkError;
   if (!memberId) return { member: null, points: 0 };
 
   const semester = currentSemester();
-  const [member, points] = await Promise.all([
+  const [member, points, hosted] = await Promise.all([
     supabase.from('members').select(PROFILE_COLUMNS).eq('id', memberId).single(),
-    supabase.from('points_tracking').select('points').eq('member_id', memberId).eq('semester', semester),
+    supabase.from('points_tracking').select('points, reason').eq('member_id', memberId).eq('semester', semester),
+    supabase.rpc('get_semester_event_count', { p_semester: semester }),
   ]);
   if (member.error) throw member.error;
   if (points.error) throw points.error;
+  // One card's total isn't worth losing the whole profile page over.
+  if (hosted.error) console.error('Error loading event count:', hosted.error);
+  const attended = countAttendance(points.data);
   return {
     member: member.data,
     points: points.data.reduce((sum, row) => sum + Number(row.points || 0), 0),
+    attendance: { attended, hosted: Math.max(hosted.data ?? 0, attended) },
   };
 }
 

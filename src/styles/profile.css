@@ -212,12 +212,6 @@
   color: var(--page-gold);
 }
 
-.profile-page .profile-page-muted {
-  margin: 0.875rem 0 clamp(1rem, 1.5vw, 1.75rem);
-  font-size: clamp(0.875rem, 1.042vw, 1.25rem);
-  color: var(--page-ink-soft);
-}
-
 .profile-page-muted-small {
   font-size: clamp(0.8rem, 0.833vw, 1rem);
   color: var(--page-ink-soft);
@@ -613,7 +607,3 @@ img.profile-page-photo {
   color: var(--page-gold);
 }
 
-.profile-page-signin {
-  margin-top: clamp(1.5rem, 2vw, 2.5rem);
-  cursor: pointer;
-}
